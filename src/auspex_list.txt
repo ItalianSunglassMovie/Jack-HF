@@ -1,0 +1,123 @@
+# auspex_list
+IF wizard_mode = 1: auspex = 1
+
+$auspex_list = ''
+$return_lock  = 'slave_stat'
+
+IF auspex = 0:
+ $auspex_list = '' 
+ $info_text = '   Without spells reinforcing auspex, aura of your slave is seen as pale and indistinct shadow. You can not determine the color, strength and direction of flow of her spiritual field.
+<center><a href = ''EXEC: interaction = 61 & gt "interaction"''>Cast auspex (2 sparks)</a></center>'
+ else
+ $auspex_list = '' 
+ IF slave["obedience"] => 0:
+  IF slave["obedience"] < 10:
+   $auspex_list += $aura_obedience[slave["obedience"]]  
+   else
+   $auspex_list += $aura_obedience[10]  
+  END
+  else
+  if slave["obedience"] = -1:$auspex_list += $aura_obedience[11]  
+  if slave["obedience"] = -2:$auspex_list += $aura_obedience[12]  
+  if slave["obedience"] = -3:$auspex_list += $aura_obedience[13]  
+  if slave["obedience"] = -4:$auspex_list += $aura_obedience[15]  
+  if slave["obedience"] = -5:$auspex_list += $aura_obedience[14]  
+  if slave["obedience"] = -6:$auspex_list += $aura_obedience[16]  
+  if slave["obedience"] = -7:$auspex_list += $aura_obedience[17]  
+  if slave["obedience"] = -8:$auspex_list += $aura_obedience[18]  
+  if slave["obedience"] = -9:$auspex_list += $aura_obedience[19]  
+  if slave["obedience"] < -9:$auspex_list += $aura_obedience[20]    
+ END
+
+ if master_supermacy = 0: $auspex_list += ' <<$aura_supermacy[3]>><BR><BR>'
+ if master_supermacy > 0 and master_supermacy < 4: $auspex_list += ' <<$aura_supermacy[4]>><BR><BR>'
+ if master_supermacy > 3: $auspex_list += ' <<$aura_supermacy[5]>><BR><BR>'
+ if master_supermacy > -4 and master_supermacy < 0: $auspex_list += ' <<$aura_supermacy[2]>><BR><BR>'
+ if master_supermacy < -3: $auspex_list += ' <<$aura_supermacy[1]>><BR><BR>'
+
+ $auspex_list += '<<$aura_lust[slave["arousal"]]>><br><BR>' 
+ $auspex_list += '<<$aura_fear[slave["fear"]]>><br><BR>'
+ $auspex_list += '<<$aura_angst[slave["angst"]]>><br><BR>'
+ $auspex_list += '<<$aura_rational[slave["rational"]]>><br><BR>'   
+ $auspex_list += '<<$aura_instinct[slave["instinct"]]>><br><BR>'
+ $auspex_list += '<<$aura_custom[slave["custom"]]>><br><BR>'
+ $auspex_list += '<<$aura_spoil[slave["spoil"]]>><br><BR>'
+ $auspex_list += '<<$aura_moral[slave["moral"]]>>'
+ 
+ $info_text = '   Auspex allows you to distinguish between colors, direction and strength of the spiritual flow field of your slave. After analyzing them, you get detailed information.'
+ $auspex_list += ''
+END
+
+IF assistant_aura = 1:
+ $auspex_list = ''
+ $return_lock  = 'assistant_stat'
+ IF auspex = 0:
+  $auspex_list = '' 
+  $assistant_info_text = '   Without spells reinforcing auspex, aura of your assistant is seen as pale and indistinct shadow. You can not determine the color, strength and direction of flow of her spiritual field.
+  <center><a href = ''EXEC: interaction = 61 & gt "interaction"''>Cast auspex (2 sparks)</a></center>'
+  else
+  $auspex_list = '' 
+  IF assistant["obedience"] => 0:
+   IF assistant["obedience"] < 10:
+    $auspex_list += $aura_assistant_obedience[assistant["obedience"]]  
+    else
+    $auspex_list += $aura_assistant_obedience[10]  
+   END
+   else
+   if assistant["obedience"] = -1:$auspex_list += $aura_assistant_obedience[11]  
+   if assistant["obedience"] = -2:$auspex_list += $aura_assistant_obedience[12]  
+   if assistant["obedience"] = -3:$auspex_list += $aura_assistant_obedience[13]  
+   if assistant["obedience"] = -4:$auspex_list += $aura_assistant_obedience[15]  
+   if assistant["obedience"] = -5:$auspex_list += $aura_assistant_obedience[14]  
+   if assistant["obedience"] = -6:$auspex_list += $aura_assistant_obedience[16]  
+   if assistant["obedience"] = -7:$auspex_list += $aura_assistant_obedience[17]  
+   if assistant["obedience"] = -8:$auspex_list += $aura_assistant_obedience[18]  
+   if assistant["obedience"] = -9:$auspex_list += $aura_assistant_obedience[19]  
+   if assistant["obedience"] < -9:$auspex_list += $aura_assistant_obedience[20]    
+  END
+
+  if master_supermacy = 0: $auspex_list += ' <<$aura_assistant_supermacy[3]>><BR><BR>'
+  if master_supermacy > 0 and master_supermacy < 4: $auspex_list += ' <<$aura_assistant_supermacy[4]>><BR><BR>'
+  if master_supermacy > 3: $auspex_list += ' <<$aura_assistant_supermacy[5]>><BR><BR>'
+  if master_supermacy > -4 and master_supermacy < 0: $auspex_list += ' <<$aura_assistant_supermacy[2]>><BR><BR>'
+  if master_supermacy < -3: $auspex_list += ' <<$aura_assistant_supermacy[1]>><BR><BR>'
+
+  $auspex_list += '<<$aura_assistant_lust[assistant["arousal"]]>><br><BR>' 
+  $auspex_list += '<<$aura_assistant_fear[assistant["fear"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_angst[assistant["angst"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_rational[assistant["rational"]]>><br><BR>'   
+  $auspex_list += '<<$aura_assistant_instinct[assistant["instinct"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_custom[assistant["custom"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_spoil[assistant["spoil"]]>><br><BR>'
+  $auspex_list += '<<$aura_assistant_moral[assistant["moral"]]>>'
+ 
+  $assistant_info_text = '   Auspex allows you to distinguish between colors, direction and strength of the spiritual flow field of your assistant. After analyzing them, you get detailed information.'
+  $auspex_list += ''
+ END
+END
+
+!"IF wizard_mode = 1:
+ $auspex_list += ''
+ $auspex_list += '
+Fear:          <<slave["fear"]>>/<<slave_rate["fear"]>>      Cal: <<slave["calories"]>>
+Angst:          <<slave["angst"]>>/<<slave_rate["angst"]>>    
+Instinct:       <<slave["instinct"]>>/<<slave_rate["instinct"]>>  
+Ratio:          <<slave["rational"]>>/<<slave_rate["rational"]>>  
+Custom:       <<slave["custom"]>>/<<slave_rate["custom"]>>      
+Moral:         <<slave["moral"]>>/<<slave_rate["moral"]>>       
+Spoil: <<slave["spoil"]>>/<<slave_rate["spoil"]>>      
+
+<<$beauty[slave["beauty"]]>> (<<slave_rate["beauty"]>>)
+<<$stamina[slave["stamina"]]>> (<<slave_rate["stamina"]>>)
+<<$exotic[slave["exotic"]]>> (<<slave_rate["exotic"]>>)
+<<$fat[slave["fat"]]>> (<<slave_rate["fat"]>>)
+<<$sensitivity[slave["sensitivity"]]>> (<<slave_rate["sensitivity"]>>)
+<<$style[slave["style"]]>> (<<slave["style"]>>)
+<<$intellect[slave["intellect"]]>> (<<slave_rate["intellect"]>>)
+<<$temper[slave["temper"]]>> (<<slave_rate["temper"]>>)
+<<$ego[slave["ego"]]>> (<<slave_rate["ego"]>>)
+<<$pride[slave["pride"]]>> (<<slave_rate["pride"]>>)
+'
+END"
+--- auspex_list ---------------------------------
+

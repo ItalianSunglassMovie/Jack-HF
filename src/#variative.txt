@@ -1,0 +1,81 @@
+# #variative
+!variable attributes database
+
+!for generate slave
+$stockatr[1] = 'stock["beauty"]'
+$stockatr[2] = 'stock["stamina"]'
+$stockatr[3] = 'stock["sensitivity"]'
+$stockatr[4] = 'stock["temper"]'
+$stockatr[5] = 'stock["ego"]'
+$stockatr[6] = 'stock["pride"]'
+$stockatr[7] = 'stock["intellect"]'
+
+!Continuous, field independence
+$cont_atr[0] = 'none'
+$cont_atr[1] = 'bruises'
+$cont_atr[2] = 'scares'
+$cont_atr[3] = 'hygiene'
+$cont_atr[4] = 'arousal'
+$cont_atr[5] = 'wounds'
+$cont_atr[6] = 'fame'
+
+!Discrete, field independence
+$indep_atr[0] = 'none'
+$indep_atr[1] = 'fat'
+$indep_atr[2] = 'stamina'
+$indep_atr[3] = 'sensitivity'
+$indep_atr[4] = 'temper'
+$indep_atr[5] = 'ego'
+$indep_atr[6] = 'pride'
+$indep_atr[7] = 'intellect'
+$indep_atr[8] = 'custom'
+$indep_atr[9] = 'moral'
+$indep_atr[10] = 'angst'
+$indep_atr[11] = 'spoil'
+$indep_atr[12] = 'instinct'
+$indep_atr[13] = 'rational'
+$indep_atr[14] = 'fear'
+
+!Discrete, field dependence (skills)
+$dep_atr[0] = 'none'
+$dep_atr[1] = 'expression'
+$dep_atr[2] = 'pet'
+$dep_atr[3] = 'dressage'
+$dep_atr[4] = 'nurse'
+$dep_atr[5] = 'service'
+$dep_atr[6] = 'cook'
+$dep_atr[7] = 'gladiatrix'
+$dep_atr[8] = 'enchanter'
+$dep_atr[9] = 'vocal'
+$dep_atr[10] = 'music'
+$dep_atr[11] = 'callisthenics'
+$dep_atr[12] = 'secretary'
+
+!master stats
+
+!continuous
+$hero_con[0] = 'none'
+$hero_con[1] = 'hygiene'
+$hero_con[2] = 'mess'
+$hero_con[3] = 'wounds'
+$hero_con[4] = 'str'
+$hero_con[5] = 'cha'
+
+!Discrete, field dependence
+$hero_dep[0] = 'none'
+$hero_dep[1] = 'petting'
+$hero_dep[2] = 'penetration'
+$hero_dep[3] = 'oral'
+$hero_dep[4] = 'fetish'
+$hero_dep[5] = 'tutor'
+$hero_dep[6] = 'butler'
+$hero_dep[7] = 'artdirector'
+$hero_dep[8] = 'medic'
+$hero_dep[9] = 'fighter'
+$hero_dep[10] = 'mage'
+$hero_dep[11] = 'domination'
+$hero_dep[12] = 'flagelation'
+$hero_dep[13] = 'torture'
+$hero_dep[14] = 'bondage'
+--- #variative ---------------------------------
+

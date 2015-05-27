@@ -1,0 +1,205 @@
+# master_stat_clients
+!ИНФОРМАЦИЯ О КЛИЕНТАХ
+GS '_layout'
+txt_count = 0
+
+!Подсчитываем количество записей для пролистывания
+IF $great_house = 'serpis':
+ IF npc_reveal['barman'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'barman'
+ END
+ IF npc_reveal['лао_ван'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'лао_ван'
+ END 
+END
+
+IF $great_house = 'taurus':
+ IF npc_reveal['madame_jofre'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'madame_jofre'
+ END
+END
+
+IF $great_house = 'kamira':
+ IF npc_reveal['uncle_bo'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'uncle_bo'
+ END
+END
+
+IF $great_house = 'korvus':
+ IF npc_reveal['poison'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'poison'
+ END
+END
+
+
+IF $great_house = 'neutral':
+ IF npc_reveal['брина_рыжая'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'брина_рыжая'
+ END
+ IF npc_reveal['менхантер'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'менхантер'
+ END 
+ IF npc_reveal['kagami_san'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'kagami_san'
+ END 
+ IF npc_reveal['azura'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'azura'
+ END
+ IF npc_reveal['servilia_quinta'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'servilia_quinta'
+ END 
+ IF npc_reveal['estelindel'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'estelindel'
+ END
+ IF npc_reveal['moneylender'] = 1: 
+  txt_count += 1
+  $npc[txt_count] = 'moneylender'
+ END 
+END
+
+
+$place = 'study'
+
+if txt = 0: txt = 1
+$text[txt] = ''
+$npc_id = $npc[txt]
+
+IF no_slave_count[$npc_id] > 0:
+ $client_status = '<font color="#cd0000"><b>Не покупает</b></font> [<<no_slave_count[$npc_id]>>]'
+ if train_slave_count[$npc_id] > 0: $client_status = '<font color="#008080"><b>Есть контракт на обучение</b></font> [<<train_slave_count[$npc_id]>>]'
+ else
+ $client_status = '<font color="#008000"><b>Заинтересован в приобретении рабыни!</b></font>'
+END
+
+index = 1
+$npc_demand_list_add = ''
+killvar '$pre_list'
+killvar 'stat_importance'
+killvar 'demand'
+demand['max_exotic'] = 99
+demand['max_fat'] = 99
+dynamic $buyer_demand[$npc_id]
+dynamic $npc_preferences[$npc_id]
+
+if stat_importance['sensitivity'] > 0: $pre_list[index] = "Утонченность: <<$rating[stat_importance['sensitivity']]>> / <<$rating[slave['sensitivity']]>>" & index += 1
+if stat_importance['temper'] > 0: $pre_list[index] = "Темперамент: <<$rating[stat_importance['temper']]>> / <<$rating[slave['temper']]>>" & index += 1
+if stat_importance['intellect'] > 0: $pre_list[index] = "Интеллект: <<$rating[stat_importance['intellect']]>> / <<$rating[slave['intellect']]>>" & index += 1
+if stat_importance['ego'] > 0: $pre_list[index] = "Характер: <<$rating[stat_importance['ego']]>> / <<$rating[slave['ego']]>>" & index += 1
+
+if stat_importance['expression'] > 0: $pre_list[index] = "Этикет: <<$rating[stat_importance['expression']]>> / <<$rating[slave['expression']]>>" & index += 1
+if stat_importance['pet'] > 0: $pre_list[index] = "Питомец: <<$rating[stat_importance['pet']]>> / <<$rating[slave['pet']]>>" & index += 1
+if stat_importance['dressage'] > 0: $pre_list[index] = "Выездка: <<$rating[stat_importance['dressage']]>> / <<$rating[slave['dressage']]>>" & index += 1
+if stat_importance['nurse'] > 0: $pre_list[index] = "Медицина: <<$rating[stat_importance['nurse']]>> / <<$rating[slave['nurse']]>>" & index += 1
+if stat_importance['service'] > 0: $pre_list[index] = "Уборка: <<$rating[stat_importance['service']]>> / <<$rating[slave['service']]>>" & index += 1
+if stat_importance['cook'] > 0: $pre_list[index] = "Кулинария: <<$rating[stat_importance['cook']]>> / <<$rating[slave['cook']]>>" & index += 1
+if stat_importance['gladiatrix'] > 0: $pre_list[index] = "Боевые искусства: <<$rating[stat_importance['gladiatrix']]>> / <<$rating[slave['gladiatrix']]>>" & index += 1
+if stat_importance['enchanter'] > 0: $pre_list[index] = "Чародейство: <<$rating[stat_importance['enchanter']]>> / <<$rating[slave['enchanter']]>>" & index += 1
+if stat_importance['callisthenics'] > 0 : $pre_list[index] = "Грация: <<$rating[stat_importance['callisthenics']]>> / <<$rating[slave['callisthenics']]>>" & index += 1
+if stat_importance['vocal'] > 0: $pre_list[index] = "Пение: <<$rating[stat_importance['vocal']]>> / <<$rating[slave['vocal']]>>" & index += 1
+if stat_importance['music'] > 0: $pre_list[index] = "Музыка: <<$rating[stat_importance['music']]>> / <<$rating[slave['music']]>>" & index += 1
+if stat_importance['secretary'] > 0: $pre_list[index] = "Грамота: <<$rating[stat_importance['secretary']]>> / <<$rating[slave['secretary']]>>" & index += 1
+
+if stat_importance['oral'] > 0: $pre_list[index] = "Язычок: <<$rating[stat_importance['oral']]>> / <<$rating[slave['oral']]>>" & index += 1
+if stat_importance['penetration'] > 0: $pre_list[index] = "Пенетрация: <<$rating[stat_importance['penetration']]>> / <<$rating[slave['penetration']]>>" & index += 1
+if stat_importance['petting'] > 0: $pre_list[index] = "Петтинг: <<$rating[stat_importance['petting']]>> / <<$rating[slave['petting']]>>" & index += 1
+if stat_importance['orgy'] > 0: $pre_list[index] = "Оргии: <<$rating[stat_importance['orgy']]>> / <<$rating[slave['orgy']]>>" & index += 1
+if stat_importance['roleplay'] > 0: $pre_list[index] = "Демонстрация: <<$rating[stat_importance['roleplay']]>> / <<$rating[slave['roleplay']]>>" & index += 1
+if stat_importance['xenophily'] > 0: $pre_list[index] = "Ксенофилия: <<$rating[stat_importance['xenophily']]>> / <<$rating[slave['xenophily']]>>" & index += 1
+if stat_importance['fetishism'] > 0: $pre_list[index] = "Фетишизм: <<$rating[stat_importance['fetishism']]>> / <<$rating[slave['fetishism']]>>" & index += 1
+
+IF index > 8:
+$npc_demand_list = '		<<$pre_list[1]>>'
+$npc_demand_list += '<br>		<<$pre_list[2]>>'
+$npc_demand_list += '<br>		<<$pre_list[3]>>'
+$npc_demand_list += '<br>		<<$pre_list[4]>>'
+$npc_demand_list += '<br>		<<$pre_list[5]>>'
+$npc_demand_list += '<br>		<<$pre_list[6]>>'
+$npc_demand_list += '<br>		<<$pre_list[7]>>'
+$npc_demand_list += '<br>		<<$pre_list[8]>>'
+
+$npc_demand_list_add = $pre_list[9]
+if index => 10: $npc_demand_list_add += '<br><<$pre_list[10]>>'
+if index => 11: $npc_demand_list_add += '<br><<$pre_list[11]>>'
+if index => 12: $npc_demand_list_add += '<br><<$pre_list[12]>>'
+if index => 13: $npc_demand_list_add += '<br><<$pre_list[13]>>'
+if index => 14: $npc_demand_list_add += '<br><<$pre_list[14]>>'
+if index => 15: $npc_demand_list_add += '<br><<$pre_list[15]>>'
+if index => 16: $npc_demand_list_add += '<br><<$pre_list[16]>>'
+ELSE
+
+$npc_demand_list = $pre_list[1]
+if index => 2: $npc_demand_list += '<br><<$pre_list[2]>>'
+if index => 2: $npc_demand_list += '<br><<$pre_list[3]>>'
+if index => 2: $npc_demand_list += '<br><<$pre_list[4]>>'
+if index => 2: $npc_demand_list += '<br><<$pre_list[5]>>'
+if index => 2: $npc_demand_list += '<br><<$pre_list[6]>>'
+if index => 2: $npc_demand_list += '<br><<$pre_list[7]>>'
+if index => 2: $npc_demand_list += '<br><<$pre_list[8]>>'
+END
+
+$npc_demand_list += '<br><br>Дополнительные требования:'
+if demand['refuse_age'] = 1: $npc_demand_list += ' не ребёнок,'
+if demand['refuse_age'] = 2: $npc_demand_list += ' не старая,'
+if demand['agree_age'] = 1: $npc_demand_list += ' незрелая,'
+if demand['agree_age'] = 2: $npc_demand_list += ' зрелая,'
+if demand['virginity'] = 1: $npc_demand_list += ' обязательно девственница,'
+if demand['virginity'] = 2: $npc_demand_list += ' зрелая,'
+if demand['min_beauty'] > 0: $npc_demand_list += ' красивая [<<$rating[demand["min_beauty"]]>>],'
+if demand['min_stamina'] > 0: $npc_demand_list += ' здоровая [<<$rating[demand["min_stamina"]]>>],'
+if demand['max_exotic'] ! 99: $npc_demand_list += ' без модификаций,'
+if demand['min_exotic'] > 0: $npc_demand_list += ' экзотичная [<<$rating[demand["min_exotic"]]>>],'
+if demand['min_fat'] > 0: $npc_demand_list += ' не худая.'
+if demand['max_fat'] ! 99: $npc_demand_list += ' стройная.'
+
+$text_display = '<center>ИНФОРМАЦИЯ О КЛИЕНТЕ 
+Категория: <<$rating[demand_rating[$npc_id]]>>  /  <<$rating[rating]>>
+<<$client_status>></center> 
+                                  ТРЕБОВАНИЯ:
+<<$npc_demand_list>>  
+'
+
+*p '<div id = "bg"><img src="content\pic\bg\page_blank.gif"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+*p '<div id = "bg_blue_script"><<$text_display>></div>'
+*p '<div id = "bg_blue_script_add"><<$npc_demand_list_add>></div>'
+*p '<div id = "close_left"><a href = "EXEC: gt ''master_stat''"><img src = "content\pic\buttons\close_button.png"></a></div>'
+
+
+$info_bar = '' 
+*p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
+
+Информация к размышлению:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+
+!'
+IF slave_state = 0 and contract['time'] = 0:
+ *p {<div id = "evaluate"><a href = 'EXEC: interaction_city = 900 & gt "interaction_city"'><img src="content\pic\buttons\evaluate.png"></a></div>}
+ else
+ *p {<div id = "evaluate"><img src="content\pic\buttons\deny.png"></div>} 
+END
+'
+
+if txt > 1: 
+ addobj '<img src = "content\pic\buttons\back_button.png">'
+ else
+ addobj '<img src = "content\pic\buttons\noback_button.png">' 
+END 
+addobj '<img src = "content\pic\buttons\forward_button.png">'
+
+--- master_stat_clients ---------------------------------
+

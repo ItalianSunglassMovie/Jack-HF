@@ -1,0 +1,90 @@
+# slave_sell_chek
+!Проверка на отказ
+byer_interested = 1
+
+killvar 'stat_importance'
+dynamic $npc_preferences[$npc_id]
+if stat_importance['sensitivity'] > slave['sensitivity']: sl_txt = 102
+if stat_importance['temper'] > slave['temper']: sl_txt = 102
+if stat_importance['intellect']  > slave['intellect']: sl_txt = 102
+if stat_importance['ego']  > slave['ego']: sl_txt = 102
+IF stat_importance['pride'] > 0 and stat_importance['pride'] < slave['pride']: sl_txt = 102
+
+if stat_importance['expression'] > slave['expression']: sl_txt = 102
+if stat_importance['pet'] > slave['pet']: sl_txt = 102
+if stat_importance['dressage'] > slave['dressage']: sl_txt = 102
+if stat_importance['nurse'] > slave['nurse']: sl_txt = 102
+if stat_importance['service'] > slave['service']: sl_txt = 102
+if stat_importance['cook'] > slave['cook']: sl_txt = 102
+if stat_importance['roleplay'] > slave['roleplay']: sl_txt = 102
+if stat_importance['gladiatrix'] > slave['gladiatrix']: sl_txt = 102
+if stat_importance['enchanter'] > slave['enchanter']: sl_txt = 102
+if stat_importance['callisthenics'] > slave['callisthenics']: sl_txt = 102
+if stat_importance['vocal'] > slave['vocal']: sl_txt = 102
+if stat_importance['music'] > slave['music']: sl_txt = 102
+if stat_importance['secretary'] > slave['secretary']: sl_txt = 102
+
+if stat_importance['oral'] > slave['oral']: sl_txt = 102
+if stat_importance['penetration'] > slave['penetration']: sl_txt = 102
+if stat_importance['petting'] > slave['petting']: sl_txt = 102
+if stat_importance['orgy'] > slave['orgy']: sl_txt = 102
+if stat_importance['xenophily'] > slave['xenophily']: sl_txt = 102
+if stat_importance['fetishism'] > slave['fetishism']: sl_txt = 102
+
+if slave[$npc_id] < 1: slave[$npc_id] = 0
+if byer_from_house = 0:
+ charm_demand_max = 8 + demand_rating[$npc_id]*2
+ charm_demand = RAND (0,charm_demand_max)
+ if charm_demand > charm: slave[$npc_id] = 1
+ if slave[$npc_id] = 1: sl_txt = 103
+end
+
+if wizard_mode = 1: 
+msg 'charm_demand_max = <<charm_demand_max>>
+charm_demand = <<charm_demand>>
+charm = <<charm>>
+slave[$npc_id] = <<slave[$npc_id]>>'
+end
+
+killvar 'demand'
+demand['refuse_age'] = 99
+demand['max_exotic'] = 99
+demand['max_fat'] = 99
+dynamic $buyer_demand[$npc_id]
+if slave['age'] = demand['refuse_age']: sl_txt = 100
+IF demand['agree_age'] ! 0:
+ if slave['age'] ! demand['agree_age']: sl_txt = 100
+END
+if slave['exotic'] > demand['max_exotic']: sl_txt = 100 
+if slave['exotic'] < demand['min_exotic']: sl_txt = 100
+if slave['beauty'] < demand['min_beauty']: sl_txt = 100
+if slave['fat'] < demand['min_fat']: sl_txt = 100
+if slave['fat'] > demand['max_fat']: sl_txt = 100
+
+IF demand['enchanter'] = 1:
+ IF slave['enchanter'] > 0: 
+  sl_txt = 100
+ END
+END
+
+killvar 'virgin_price'
+IF demand['virginity'] = 1:
+ IF virginity > 1: 
+  sl_txt = 100
+ END
+END
+
+if virginity < 2: virgin_price += 50*rating
+
+if virgin_price > 0: $virgin_price = ' plus <<virgin_price>> for virginity'
+
+IF rating < demand_rating[$npc_id]: sl_txt = 101
+IF rating > demand_rating[$npc_id]: 
+ if sl_txt = 1: sl_txt = 2
+END
+
+IF sl_txt > 2: 
+ byer_interested = 0
+END
+--- slave_sell_chek ---------------------------------
+

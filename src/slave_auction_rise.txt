@@ -1,0 +1,16 @@
+# slave_auction_rise
+!Place your bets on auction
+
+auction_phase = 1
+if cur_stock_price > stock_base_price: cur_stock_price += 5
+rise_stock_price = cur_stock_price + 5
+rises += 1
+haggling_stage = 2
+
+a = RAND (1,5)
+$text = '<<$auction_buy_player_bets[a]>>'
+
+killobj 
+GT 'slave_auction_buy'
+--- slave_auction_rise ---------------------------------
+

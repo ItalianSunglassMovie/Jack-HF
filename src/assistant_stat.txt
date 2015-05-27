@@ -1,0 +1,482 @@
+# assistant_stat
+!rewritten a piece of code with assistant infotext, now its all in one file, removed some from main_screen
+
+IF $assistant_info_text = '':
+	$assistant_info_text = '   [<<$assistant_name>>]
+  - Newcomer slaves can often try to escape or make any stupid moves. I will watch over them with my comprehension and devotion. But if you order me to supervise over them, then I''ll pay particular attention to this, having to use all my will and fighting skills in order to keep your goods.'
+	IF slave_state > CONST_INT['no_slave']:
+		gs '$slave_price'
+		$spec_list = 'laborer'
+		if slave_specialisation['concubine'] = 1: $spec_list += ', concubine'
+		if slave_specialisation['pet'] = 1: $spec_list += ', pet'
+		if slave_specialisation['nurse'] = 1: $spec_list += ', nurse'
+		if slave_specialisation['maid'] = 1: $spec_list += ', maid'
+		if slave_specialisation['gladiatrix'] = 1: $spec_list += ', gladiatrix'
+		if slave_specialisation['enchanter'] = 1: $spec_list += ', enchanter'
+		if slave_specialisation['artist'] = 1: $spec_list += ', artist'
+		if slave_specialisation['refferent'] = 1: $spec_list += ', assistant'
+		$assistant_info_text = '  [<<$assistant_name>>]
+<div style="font-size: 90%;">  - I checked the specialization of your slave, master. At this moment she meets the requirements for the following roles: <<$spec_list>>. To match a particular profession, slave should have any suitable skill at least at the <<$rating[3]>> level and also not less than her own rank.</div>'
+		IF slave['brand'] = 0:
+			$assistant_info_text = '  [<<$assistant_name>>]
+  - You should put on a brand to the slave before she is ready for sale, master. I also noticed that women already having a brand are more inclined to obey, than those which have not yet been branded.'
+		END
+	END
+END
+
+!reset equip choice menu
+if slot = 0: $equip_choice = ''
+slot = 0
+
+ IF assistant['image_mode'] = 0:
+  assistant['nude'] = 0
+  assistant['maido'] = 0
+  assistant['domina'] = 0
+  assistant['executive'] = 0  
+ END
+ IF assistant['image_mode'] = 1:
+  assistant['domina'] = 1
+  assistant['nude'] = 1
+  assistant['maido'] = 0
+  assistant['executive'] = 0  
+ END
+ IF assistant['image_mode'] = 2:
+  assistant['executive'] = 0
+  assistant['nude'] = 1
+  assistant['domina'] = 0
+  assistant['maido'] = 1
+ END
+ IF assistant['image_mode'] = 3:
+  assistant['nude'] = 1
+  assistant['maido'] = 0
+  assistant['domina'] = 0
+  assistant['executive'] = 1  
+ END
+  
+gs 'stats_layout'
+
+*p '<div id = "bookmark_one">Rules</div>'
+*p '<div id = "bookmark_two">Anatomy</div>'
+*p '<div id = "bookmark_three">Equipment</div>'
+*p '<div id = "bookmark_four">Aura</div>'
+*p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & $assistant_info_text = '''' & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
+
+*p '<div id="left_column">
+<u>SUMMARY</u>
+<<$beauty[assistant["beauty"]]>> 
+<<$stamina[assistant["stamina"]]>> 
+<<$exotic[assistant["exotic"]]>> 
+<<$fat[assistant["fat"]]>> 
+<<$sensitivity[assistant["sensitivity"]]>> 
+<<$style[assistant["style"]]>>
+<<$intellect[assistant["intellect"]]>> 
+<<$temper[assistant["temper"]]>> 
+<<$ego[assistant["ego"]]>> 
+<<$pride[assistant["pride"]]>> 
+
+<u>TRAITS</u>
+<<$assistant_features_list>>
+</div>'
+
+!"
+ОСОБЕННОСТИ:
+<<$assistant_features_list>>
+"
+
+!main tab
+!$assistant_info_text = ''&nbsp'' - info text will reset after switching
+IF assistant_stat_screen = 0:
+ *p '<div id = "mark_one"><img src = "content\pic\buttons\sel_button.png"></div>'
+ *p '<div id = "mark_two"><a href = "EXEC: assistant_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_three"><a href = "EXEC: assistant_stat_screen = 2 & $assistant_info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_four"><a href = "EXEC: assistant_stat_screen = 3 & $assistant_info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+ *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
+ IF nsfw = 0:
+  if assistant['nude'] = 0: *p '<div id="center_image"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>' 
+  if assistant['maido'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>' 
+  if assistant['domina'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>' 
+  if assistant['executive'] = 1: *p '<div id="center_image"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>' 
+ END
+ *p '<div id="right_padding">JOBS: <BR><BR><BR><BR><BR><BR><BR><BR><BR>APPEARANCE:</div>'  
+ *p '<div id="right_rules">
+Maid - 
+Cook - 
+Bath slave - 
+Accountant - 
+Supervise slave - 
+Alchemist - 
+Milkmaid - 
+<BR><BR><BR><BR><BR><BR><BR><BR><BR>
+&nbsp&nbsp&nbsp<a style = "color: #FFD700;" href = "EXEC: dynamic $assistant_purge_rules & gt curloc"><u>Reset rules</u></a>
+</div>'  
+
+ if sparks > 50: *p '<div id="left_padding">GROCERIES: <BR><BR><BR><BR><BR><BR><BR><BR>DERIVATIVES:<BR><BR><BR><BR><BR>MEAT:<BR><BR><BR><BR><BR></div>'  
+ IF assistant_cleans_rule = 1:
+  slave_cleans_rule = 0
+  *p '<div id="chekbox_1r"><a href = "EXEC: assistant_cleans_rule = 0 & $assistant_info_text = $assistant_cleans_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_1r"><a href = "EXEC: assistant_cleans_rule = 1 & $assistant_info_text = $assistant_cleans_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF assistant_cooks_rule = 1:
+  slave_cooks_rule = 0 
+  *p '<div id="chekbox_2r"><a href = "EXEC: assistant_cooks_rule = 0 & $assistant_info_text =  $assistant_cooks_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_2r"><a href = "EXEC: assistant_cooks_rule = 1 & $assistant_info_text = $assistant_cooks_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF assistant_washes_rule = 1:
+  slave_washes_rule = 0
+  *p '<div id="chekbox_3r"><a href = "EXEC: assistant_washes_rule = 0 & $assistant_info_text = $assistant_washes_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_3r"><a href = "EXEC: assistant_washes_rule = 1 & $assistant_info_text = $assistant_washes_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END     
+ IF assistant_account_rule = 1:
+  slave_account_rule = 0
+  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_account_rule = 0 & $assistant_info_text = $assistant_account_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_account_rule = 1 & $assistant_info_text = $assistant_account_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END     
+ IF assistant_supervise_rule = 1:
+  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_supervise_rule = 0 & $assistant_info_text = $assistant_supervise_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_supervise_rule = 1 & $assistant_info_text = $assistant_supervise_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END     
+ IF assistant_alchemist_rule = 1:
+  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_alchemist_rule = 0 & $assistant_info_text = $assistant_alchemist_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_alchemist_rule = 1 & $assistant_info_text = $assistant_alchemist_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END   
+ IF assistant_tentacle_rule = 1:
+  slave_tentacle_rule = 0
+  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_tentacle_rule = 0 & $assistant_info_text = $assistant_tentacle_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_tentacle_rule = 1 & $assistant_info_text = $assistant_tentacle_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END   
+
+ if kitchen => 0 and sparks > 50: *p '<div id="left_rules">
+ - Vegetables
+ - Flour and grains
+ - Herbs and spices
+ - Cheese and butter
+ - Alcohol
+
+
+
+ - Eggs
+ - Milk
+ - Cream
+
+
+ - Mince
+ - Tenderloin
+</div>'  
+
+IF kitchen > 0 and sparks > 50:
+ IF assistant_buy_vegetables = 1:
+  *p '<div id="chekbox_1l"><a href = "EXEC: assistant_buy_vegetables = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_1l"><a href = "EXEC: assistant_buy_vegetables = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF assistant_buy_flower = 1:
+  *p '<div id="chekbox_2l"><a href = "EXEC: assistant_buy_flower = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_2l"><a href = "EXEC: assistant_buy_flower = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF assistant_buy_spice = 1:
+  *p '<div id="chekbox_3l"><a href = "EXEC: assistant_buy_spice = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_3l"><a href = "EXEC: assistant_buy_spice = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF assistant_buy_cheese = 1:
+  *p '<div id="chekbox_4l"><a href = "EXEC: assistant_buy_cheese = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_4l"><a href = "EXEC: assistant_buy_cheese = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END  
+ IF assistant_buy_alcohol = 1:
+  *p '<div id="chekbox_5l"><a href = "EXEC: assistant_buy_alcohol = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_5l"><a href = "EXEC: assistant_buy_alcohol = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END 
+ IF assistant_buy_eggs = 1:
+  *p '<div id="chekbox_6l_a"><a href = "EXEC: assistant_buy_eggs = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_6l_a"><a href = "EXEC: assistant_buy_eggs = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF assistant_buy_milk = 1:
+  *p '<div id="chekbox_7l_a"><a href = "EXEC: assistant_buy_milk = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_7l_a"><a href = "EXEC: assistant_buy_milk = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF assistant_buy_cream = 1:
+  *p '<div id="chekbox_8l_a"><a href = "EXEC: assistant_buy_cream = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_8l_a"><a href = "EXEC: assistant_buy_cream = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF assistant_buy_mince = 1:
+  *p '<div id="chekbox_10l_a"><a href = "EXEC: assistant_buy_mince = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_10l_a"><a href = "EXEC: assistant_buy_mince = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF assistant_buy_meat = 1:
+  *p '<div id="chekbox_11l_a"><a href = "EXEC: assistant_buy_meat = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_11l_a"><a href = "EXEC: assistant_buy_meat = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+END
+
+!appearance
+$assistant_apperiance = 'Slave - <br>'
+if $fullmade[assistant_type] ! '': 
+ $assistant_apperiance += 'Maid - <br>'
+ else
+ $assistant_apperiance += '<br>'
+end
+if $fullmistress[assistant_type] ! '': 
+ $assistant_apperiance += 'Dominatrix - <br>'
+ else
+ $assistant_apperiance += '<br>'
+end
+ IF assistant["age"] ! 1:
+  if $fullsecretary[assistant_type] ! '': $assistant_apperiance += 'Secretary -&nbsp'
+  else
+  if $fullsecretary[assistant_type] ! '': $assistant_apperiance += 'Schoolgirl -&nbsp'
+ END
+ 
+*p '<div id="a_apperiance">
+<<$assistant_apperiance>></div>'
+ 
+ IF assistant['nude'] = 0:
+  *p '<div id="chekbox_9_5r"><img src="content\pic\buttons\sel_button.png"></div>'  
+  else
+  *p '<div id="chekbox_9_5r"><a href = "EXEC: assistant[''image_mode''] = 0 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ 
+ IF $fullmistress[assistant_type] ! '':
+  IF assistant['domina'] = 1:
+   *p '<div id="chekbox_11r"><img src="content\pic\buttons\sel_button.png"></div>'  
+   else
+   *p '<div id="chekbox_11r"><a href = "EXEC: assistant[''image_mode''] = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+  END
+ END
+
+ IF $fullmade[assistant_type] ! '':
+  IF assistant['maido'] = 1:
+   *p '<div id="chekbox_10r"><img src="content\pic\buttons\sel_button.png"></div>'  
+   else
+   *p '<div id="chekbox_10r"><a href = "EXEC: assistant[''image_mode''] = 2 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+  END
+ END
+
+ IF $fullsecretary[assistant_type] ! '':
+  IF assistant['executive'] = 1:
+   *p '<div id="chekbox_12r"><img src="content\pic\buttons\sel_button.png"></div>'  
+   else
+   *p '<div id="chekbox_12r"><a href = "EXEC: assistant[''image_mode''] = 3 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+  END
+ END
+END
+
+!ANATOMY TAB
+!removed hairstyle_demo hardcode
+If assistant_stat_screen = 1:
+ *p '<div id = "mark_one"><a href = "EXEC: assistant_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_two"><img src = "content\pic\buttons\sel_button.png"></div>'
+ *p '<div id = "mark_three"><a href = "EXEC: assistant_stat_screen = 2 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_four"><a href = "EXEC: assistant_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'  
+ IF ui_style = 2: 
+  *p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
+  else
+  *p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
+ END
+ if nsfw = 0: *p '<div id="upper_image"><img width = "370px" src = "content\pic\girls\body\<<$assistant["boobs_img"]>>.jpg"></div>'
+ if nsfw = 0: *p '<div id="lower_image"><img width = "370px" src = "content\pic\girls\body\<<$assistant["pussy_img"]>>.jpg"></div>' 
+ *p '<div id = "stat_text"><center>
+ <b><a href = "EXEC: msg $charm_help & gt curloc"><<$assistant_charm_stat>></a></b>
+ <<$красота[assistant["beauty"]]>> = <<$природная_красота[assistant["base_beauty"]]>> + <<$пластика[assistant["beauty_enchanced"]]>> - (<<$шрамы[assistant["scares"]]>> + <<$синяки[assistant["bruises"]]>>)
+ <<$экзотика[assistant["exotic"]]>> = <<$природная_экзотика[assistant["base_exotic"]]>> + <<$slave_tatoo[assistant["tatoo"]]>> + <<$пирсинг[assistant["piercing_count"]]>> + <<$wear[assistant["ex_count"]]>>
+ <<$стиль[assistant["style"]]>> = <<$wear[assistant["st_count"]]>> + <<$slave_makeup[assistant["makeup"]]>> + <<$hair_style[assistant["hairstyle"]]>> + <<$мейкап[assistant["makeup_count"]]>> + <<$гигиена[assistant["hygiene"]]>> + <<$грация[assistant["grace_count"]]>></div>
+ </div>'
+ *p '<div id = "upper_text">
+<<$slave_boobs[assistant["boobs"]]>>
+<<$slave_lactation[assistant["lactation"]]>>
+<<$niple_piercing[assistant["niple_piercing"]]>>
+<<$boobs_modification[assistant["breast_enchanced"]]>>
+</div>'
+ *p '<div id = "lower_text">
+<<$virginity[assistant_virginity]>>
+<<$slave_anal_description[assistant["anal_stretch"]]>>
+<<$clit_piercing[assistant["clit_piercing"]]>>
+<<$vaginal_modification[assistant["vaginal_modification"]]>>
+<<$slave_brand[assistant["brand"]]>>
+</div>' 
+END
+ 
+!equipment tab
+!$assistant_info_text = '''' - infotext will show the right information after switching
+IF assistant_stat_screen = 2:
+    *p '<div id = "mark_one"><a href = "EXEC: assistant_stat_screen = 0 & $assistant_info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+    *p '<div id = "mark_two"><a href = "EXEC: assistant_stat_screen = 1 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+    *p '<div id = "mark_three"><img src = "content\pic\buttons\sel_button.png"></div>'
+	*p '<div id = "mark_four"><a href = "EXEC: assistant_stat_screen = 3 & $assistant_info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
+	IF ui_style = 2: 
+		*p '<div id="center_image"><img src = "content\pic\ui\grimdark\bg\page_blank.gif"></div>'
+		else
+		*p '<div id="center_image"><img src = "content\pic\page_blank.gif"></div>' 
+	END
+    *p '<div id = "center_text_column_1">'
+        *p '<div style = "text-align: center;"><u>ASSISTANT EQUIPMENT</u></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 40 & dynamic $assistant_armor_list"><u>Armour:</u> <<$название_предмета[$assistant["armor"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 41 & dynamic $assistant_wpn_list_large"><u>Shoulder holster:</u> <<$название_предмета[$assistant["back_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 42 & dynamic $assistant_wpn_list"><u>Left hand:</u> <<$название_предмета[$assistant["left_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 43 & dynamic $assistant_wpn_list_2"><u>Right hand:</u> <<$название_предмета[$assistant["right_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 44 & dynamic $assistant_cloth_list"><u>Clothes:</u> <<$item_name[$assistant["cloth"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 45 & dynamic $assistant_head_list"><u>Headgear:</u> <<$item_name[$assistant["headband"]]>></a></div>'
+        *p '<br>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 46 & dynamic $assistant_ears_list"><u>Earring:</u> <<$item_name[$assistant["earrings"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 47 & dynamic $assistant_neck_list"><u>Neck:</u> <<$item_name[$assistant["collar"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 48 & dynamic $assistant_hands_list"><u>Hands:</u> <<$item_name[$assistant["gloves"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 49 & dynamic $assistant_niples_list"><u>Nipples:</u> <<$item_name[$assistant["nipplerings"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 50 & dynamic $assistant_clitor_list"><u>Clitoris:</u> <<$item_name[$assistant["clitring"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 51 & dynamic $assistant_feet_list"><u>Feet:</u> <<$item_name[$assistant["boots"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 52 & dynamic $assistant_ring_list"><u>Ring 1:</u> <<$item_name[$assistant["ring_left"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 53 & dynamic $assistant_ring_list_2"><u>Ring 2:</u> <<$item_name[$assistant["ring_right"]]>></a></div>'
+        *p '</div>'
+
+    *p '<div id = "center_text_column_2"> <center><u>AVAILABLE OPTIONS</u></center><<$equip_choice>>
+    </div>'
+ 
+END 
+
+!ASSISTANT AURA TAB
+If assistant_stat_screen = 3:
+ *p '<div id = "mark_one"><a href = "EXEC: assistant_stat_screen = 0 & $assistant_info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_three"><a href = "EXEC: assistant_stat_screen = 2 & $assistant_info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+ *p '<div id = "mark_four"><img src = "content\pic\buttons\sel_button.png"></div>' 
+ IF ui_style = 2:
+  *p '<div id="center_image"><img src = "content\pic\ui\grimdark\page_aura.gif"></div>'
+  else
+  *p '<div id="center_image"><img src = "content\pic\page_aura.gif"></div>'
+ END
+ assistant_aura = 1
+ gs 'auspex_list'
+ *p '<div id = "center_text_compact_blue"><<$auspex_list>></div>'
+END
+ 
+IF slave_state = CONST_INT['slave_exist']:
+ *p '<div id="right_column_a">
+<u>SKILLS</u>
+<a href = "EXEC: interaction = 4111 & gt ''interaction''"><<$slave_service[assistant["service"]]>></a> 
+<a href = "EXEC: interaction = 4112 & gt ''interaction''"><<$slave_cook[assistant["cook"]]>></a>
+<a href = "EXEC: interaction = 4113 & gt ''interaction''"><<$slave_nurse[assistant["nurse"]]>></a>
+<a href = "EXEC: interaction = 4114 & gt ''interaction''"><<$slave_secretary[assistant["secretary"]]>></a>
+<a href = "EXEC: interaction = 4123 & gt ''interaction''"><<$slave_gladiatrix[assistant["gladiatrix"]]>></a>
+<a href = "EXEC: interaction = 4142 & gt ''interaction''"><<$slave_enchanter[assistant["enchanter"]]>></a> 
+<a href = "EXEC: interaction = 4131 & gt ''interaction''"><<$slave_expression[assistant["expression"]]>></a>
+<a href = "EXEC: interaction = 4122 & gt ''interaction''"><<$slave_callisthenics[assistant["callisthenics"]]>></a>
+<a href = "EXEC: interaction = 4133 & gt ''interaction''"><<$slave_vocal[assistant["vocal"]]>></a>
+<a href = "EXEC: menu_form = 4132 & gt ''menu_form''"><<$slave_music[assistant["music"]]>></a>
+<a href = "EXEC: menu_form = 4141 & gt ''menu_form''"><<$slave_pet[assistant["pet"]]>></a>
+<a href = "EXEC: menu_form = 4143 & gt ''menu_form''"><<$slave_dressage[assistant["dressage"]]>></a>
+</div>'
+
+ *p '<div id="right_column"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><u>SEX-TECHNIQUES</u>
+<<$slave_petting[assistant["petting"]]>> 
+<<$slave_penetration[assistant["penetration"]]>> 
+<<$slave_oral[assistant["oral"]]>>
+<<$slave_orgy[assistant["orgy"]]>>
+<<$slave_roleplay[assistant["roleplay"]]>>
+<<$slave_fetishism[assistant["fetishism"]]>>
+<<$slave_xenophily[assistant["xenophily"]]>>
+</div>'
+
+ IF house_mess > 0 and assistant["service"] > slave["service"]:
+  *p '<div id="study_1"><a href = "EXEC: interaction = 4111 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_1"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END
+ IF kitchen > 0 and assistant["cook"] > slave["cook"]:
+  *p '<div id="study_2"><a href = "EXEC: interaction = 4112 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_2"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END
+ IF assistant["nurse"] > slave["nurse"]: 
+  *p '<div id="study_3"><a href = "EXEC: interaction = 4113 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>' 
+  else
+  *p '<div id="study_3"><img src = "content/pic/buttons/study_gray.png"></div>'    
+ END
+ IF assistant["secretary"] > slave["secretary"]: 
+  *p '<div id="study_4"><a href = "EXEC: interaction = 4114 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_4"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END
+ IF assistant["gladiatrix"] > slave["gladiatrix"]:  
+  *p '<div id="study_5"><a href = "EXEC: interaction = 4123 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_5"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END
+ IF lab = 1 and  assistant["enchanter"] > slave["enchanter"]:
+  *p '<div id="study_6"><a href = "EXEC: interaction = 4142 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_6"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END
+ IF assistant["expression"] > slave["expression"]:  
+  *p '<div id="study_7"><a href = "EXEC: interaction = 4131 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_7"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END
+ IF assistant["callisthenics"] > slave["callisthenics"]:  
+  *p '<div id="study_8"><a href = "EXEC: interaction = 4122 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_8"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END  
+ IF assistant["vocal"] > slave["vocal"]:  
+  *p '<div id="study_9"><a href = "EXEC: interaction = 4133 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_9"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END   
+ IF assistant["music"] > slave["music"]: 
+  *p '<div id="study_10"><a href = "EXEC: interaction = 4132 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_10"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END  
+ IF assistant["pet"] > slave["pet"]: 
+  *p '<div id="study_11"><a href = "EXEC: interaction = 4141 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_11"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END    
+ IF slave["stamina"] > 1 and assistant["dressage"] > slave["dressage"]:   
+  *p '<div id="study_12"><a href = "EXEC: interaction = 4143 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
+  else
+  *p '<div id="study_12"><img src = "content/pic/buttons/study_gray.png"></div>'  
+ END     
+  
+ else
+ *p '<div id="right_column">
+<u>SKILLS</u>
+<<$slave_service[assistant["service"]]>> 
+<<$slave_cook[assistant["cook"]]>> 
+<<$slave_nurse[assistant["nurse"]]>> 
+<<$slave_secretary[assistant["secretary"]]>> 
+<<$slave_gladiatrix[assistant["gladiatrix"]]>> 
+<<$slave_enchanter[assistant["enchanter"]]>> 
+<<$slave_expression[assistant["expression"]]>> 
+<<$slave_callisthenics[assistant["callisthenics"]]>> 
+<<$slave_vocal[assistant["vocal"]]>> 
+<<$slave_music[assistant["music"]]>> 
+<<$slave_pet[assistant["pet"]]>>
+<<$slave_dressage[assistant["dressage"]]>> 
+
+<u>SEX-TECHNIQUES</u>
+<<$slave_petting[assistant["petting"]]>> 
+<<$slave_penetration[assistant["penetration"]]>> 
+<<$slave_oral[assistant["oral"]]>>
+<<$slave_orgy[assistant["orgy"]]>>
+<<$slave_roleplay[assistant["roleplay"]]>>
+<<$slave_fetishism[assistant["fetishism"]]>>
+<<$slave_xenophily[assistant["xenophily"]]>>
+</div>'
+END
+
+*p '<div id="info"><<$assistant_info_text>></div>'
+--- assistant_stat ---------------------------------
+

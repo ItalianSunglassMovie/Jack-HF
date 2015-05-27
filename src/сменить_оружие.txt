@@ -1,0 +1,15 @@
+# сменить_оружие
+!CHANGING WEAPONS
+
+!creating menu
+$боевое_меню = ''
+$боевое_меню += "<a href='EXEC: gt ""сменить_оружие_основное""'>Change primary</a><br>"
+$боевое_меню += "<a href='EXEC: gt ""сменить_оружие_вторичное""'>Change secondary</a><br>"
+$боевое_меню += "<a href='EXEC: dynamic $убрать_основное'>Remove primary</a><br>"
+$боевое_меню += "<a href='EXEC: dynamic $убрать_вторичное'>Remove secondary</a><br>"
+$боевое_меню += "<br>"
+$боевое_меню += "<a href='EXEC: dynamic $вернуться_в_корень'>Back</a><br>"
+
+GT 'боевой_интерфейс'
+--- сменить_оружие ---------------------------------
+

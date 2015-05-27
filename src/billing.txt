@@ -1,0 +1,102 @@
+# billing
+!Billing on the basis of the decade
+
+rental_cost = estate_cost_main[$estate]
+if dungeon > 0: rental_cost += estate_cost_dungeon[$estate]
+if bouduar > 0: rental_cost += estate_cost_bouduar[$estate]
+if lab > 0: rental_cost += estate_cost_lab[$estate]
+if pen > 0: rental_cost += 10
+
+food_bill = total_food_cost
+total_food_cost = 0
+
+master_wealth = master_wealth_target
+
+if master_wealth = 0: other_bills = 0
+if master_wealth = 1: other_bills = RAND (20,30)
+if master_wealth = 2: other_bills = RAND (40,60)
+if master_wealth = 3: other_bills = RAND (80,120)
+if master_wealth = 4: other_bills = RAND (200,300)
+if master_wealth = 5: other_bills = RAND (400,600)
+if master_wealth = 6: other_bills = RAND (800,1200)
+
+other_bills += autobuy_cost
+autobuy_cost = 0
+
+revised_payment = food_bill + other_bills
+
+IF assistant_account_rule = 1:
+ assistant_rate["intellect"] += 3
+ assistant_rate["secretary"] += 15
+ account_skill = assistant["secretary"] + assistant["intellect"]
+ IF assistant["secretary_affinity"] > 0:
+  account_skill += 2
+ END
+ IF assistant["secretary_affinity"] < 0:
+  account_skill -= 2
+ END  
+END
+
+IF slave_account_rule = 1:
+ slave_rate["intellect"] += 3
+ slave_rate["secretary"] += 15
+ account_skill = slave["secretary"] + slave["intellect"]
+ if slave["obedience"] < 0: account_skill += slave["obedience"]
+ IF slave["secretary_affinity"] > 0:
+  account_skill += 2
+  if slave["pos_job"] < 3: slave["pos_job"] = 3
+ END
+ IF slave["secretary_affinity"] < 0:
+  account_skill -= 2
+  if slave["neg_job"] < 3: slave["neg_job"] = 3
+ END 
+END
+
+fine = 0
+discount = 0
+
+IF slave_account_rule = 1 or assistant_account_rule = 1:
+ percent = revised_payment/20
+ fine_chance = RAND (2,10)
+ a = fine_chance - account_skill
+ if a > 0: fine = a*percent
+ discount_chance = RAND (2,10)
+ a = account_skill - discount_chance
+ if a > 0: discount = a*percent 
+ else
+ master_mood[neg_accounts] = 1 + brand_reputation
+END
+
+final_payment = rental_cost + revised_payment + fine - discount
+
+barn_report_cow_profit = barn_milk_profit + barn_cream_profit
+barn_report_egg_profit = barn_egg_profit
+barn_report_pig_profit = barn_pig_profit
+barn_report_food_cost = barn_cow_food + barn_harpy_food + barn_pig_food
+barn_cow_food = 0
+barn_harpy_food = 0
+barn_pig_food = 0
+barn_total_profit = barn_report_cow_profit + barn_report_egg_profit + barn_report_pig_profit - barn_report_food_cost
+barn_milk_profit = 0
+barn_cream_profit = 0
+barn_egg_profit = 0
+barn_pig_profit = 0
+
+$bill_message = '<center>BILLS TO PAY</center>
+Rental cost: <<rental_cost>> sparks
+Food bills: <<food_bill>> sparks
+Other expenses: <<other_bills>> sparks
+Discount: <<discount>> sparks
+Fines: <<fine>> sparks 
+--------------------------
+       Total: <<final_payment>> sparks'
+
+$barn_accounts = '<center>BARN ACCOUNTS</center>
+Cow Income: <<barn_report_cow_profit>> sparks
+Egglayer Income: <<barn_report_egg_profit>> sparks
+Pig Income: <<barn_report_pig_profit>> sparks
+Food costs: <<barn_report_food_cost>> sparks
+--------------------------
+       Profit: <<barn_total_profit>> sparks'
+--- billing ---------------------------------
+

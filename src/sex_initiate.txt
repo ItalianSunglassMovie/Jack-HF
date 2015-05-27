@@ -1,0 +1,378 @@
+# sex_initiate
+!INITIATE SEX STATS WHEN STARTING
+sex['girl_virgin'] = 2
+add_master_hygiene = 5 
+add_slave_hygiene = 5 
+add_house_mess = 5
+friction_temp = 0
+intensity = 1
+lube = 0
+deflorated = 0
+sex["climax_buildup"] = 0 
+$rise_skill = 'dump'
+
+
+$return_lock_prev = $return_lock
+$return_lock  = 'sex_screen'
+
+killvar 'sex'
+killvar 'sex_done_thisperson'
+killvar 'sex_done_today'
+
+sex["girl_pain"] = 3
+sex["girl_attention"] = 3
+sex["girl_openmind"] = 1
+sex["girl_excitement"] = 1
+$sex['partner'] = $sex_partner
+
+$onnewloc = '$sex_newloc' 
+
+!base sex stats for slave
+$sex["girl_ava"] = $slave["ava"]
+$sex["girl_name"] = $slave_name
+
+IF $sex_partner = '':
+ sex['girl_callisthenics'] = slave['callisthenics']
+ sex['girl_beauty'] = slave['beauty']
+ sex['girl_sensitivity'] = slave['sensitivity'] 
+ sex['girl_ego'] = slave['ego']  
+ sex['girl_temper'] = slave['temper']  
+ sex['girl_intellect'] = slave['intellect']  
+ sex['girl_pride'] = slave['pride']  
+ sex['girl_fear'] = slave['fear']  
+ sex['girl_instinct'] = slave['instinct']  
+ sex['girl_spoil'] = slave['spoil']  
+ sex['girl_moral'] = slave['moral']
+ sex['girl_angst'] = slave['angst']
+ sex['girl_custom'] = slave['custom']
+ sex['girl_style'] = slave['style']
+ sex['girl_exotic'] = slave['exotic']  
+ sex['girl_obedience'] = slave['obedience']  
+ sex['girl_fat'] = slave['fat']   
+ sex['girl_dirty'] = slave['hygiene']   
+ sex['girl_probed'] =  slave['probed']  
+ sex['girl_age'] = slave['age']
+ sex['girl_type'] = slave_type
+ 
+ sex['girl_mood'] =  slave['mood']  
+ sex['girl_love'] =  slave['moral']
+ sex['girl_fear'] =  slave['fear']
+ sex['girl_submission'] =  slave['custom']
+ sex['girl_greed'] =  slave['rational']
+ sex['girl_affection'] =  slave['instinct']  
+ sex['girl_spoil'] =  slave['spoil']  
+ sex['girl_angst'] =  slave['angst']  
+ sex['girl_pride'] =  slave['pride']  
+ 
+ sex['girl_nympo'] = slave["nymphomania"]
+ sex['girl_preversion'] = slave["preversion"]
+ sex['girl_masohism'] = slave["masohism"]
+ sex['girl_deprivation_attitude'] = slave["deprivation_attitude"]
+ 
+ sex['girl_boobs'] = slave["boobs"]
+  
+ sex['girl_petting'] =  slave['petting']  
+ sex['girl_sub_hj'] =  slave['sub_hj']  
+ sex['girl_sub_fj'] =  slave['sub_fj']  
+ sex['girl_sub_hug'] =  slave['sub_hug']  
+ sex['girl_sub_pazuri'] =  slave['sub_pazuri']  
+ sex['girl_oral'] =  slave['probed']  
+ sex['girl_sub_kiss'] =  slave['sub_kiss']  
+ sex['girl_sub_thongue'] =  slave['sub_thongue']  
+ sex['girl_sub_bj'] =  slave['sub_bj']  
+ sex['girl_sub_dt'] =  slave['sub_dt']  
+ sex['girl_sub_asslik'] =  slave['sub_asslik']  
+ sex['girl_penetration'] =  slave['penetration']  
+ sex['girl_sub_vaginal'] =  slave['sub_vaginal']  
+ sex['girl_sub_anal'] =  slave['sub_anal']  
+ sex['girl_sub_fisting'] =  slave['sub_fisting']  
+ sex['girl_anal_stretch'] =  slave['anal_stretch']  
+ sex['girl_roleplay'] =  slave['roleplay']  
+ sex['girl_sub_seduce'] =  slave['sub_seduce']  
+ sex['girl_sub_masturbation'] =  slave['sub_masturbation']  
+ sex['girl_sub_dildo'] =  slave['sub_dildo']  
+ sex['girl_sub_exhibit'] =  slave['sub_exhibit']  
+ sex['girl_sub_humiliation'] =  slave['sub_humiliation']  
+ sex['girl_fetishism'] =  slave['fetishism']  
+ sex['girl_sub_enema'] =  slave['sub_enema']  
+ sex['girl_sub_mazo'] =  slave['sub_mazo']  
+ sex['girl_sub_selfpain'] =  slave['sub_selfpain']  
+ sex['girl_sub_piss'] =  slave['sub_piss']  
+ sex['girl_sub_kopro'] =  slave['sub_kopro']  
+ sex['girl_orgy'] =  slave['orgy']  
+ sex['girl_sub_bukake'] =  slave["sub_bukake"]
+ sex['girl_xenophily'] =  slave['xenophily']  
+ sex['girl_ovulation'] = slave['ovulation']
+
+ sex['girl_orgasm_type'] =  slave['orgasm_type']  
+ if virginity < 2: sex['girl_virgin'] = 1 
+ if virginity <= 2: sex['girl_tightness'] += 1
+ if virginity > 2: sex['girl_tightness'] -= 1
+ if sex['girl_age'] = 1: sex['girl_tightness'] += 1
+ if sex['girl_age'] = 2: sex['girl_tightness'] -= 1
+
+ copyarr 'sex_done_today','today_sex_curslave'
+ copyarr 'sex_done_thisperson','already_sex_curslave'
+
+ sex['girl_newness'] = slave['newness']
+
+ sex['girl_arousal'] = slave["arousal"]
+ sex['girl_stamina'] = slave["stamina"]
+ sex['girl_energy_bonus'] = slave["energy"]
+
+ strip = IIF($slave["cloth"] = 'голая', 1, 0)
+ 
+ $sex['girl_name'] = $slave_name
+END
+!for assistant
+IF $sex_partner = 'assistant':
+ $sex['girl_ava'] = $assistant["ava"]
+ $sex["girl_name"] = $assistant_name 
+ 
+ sex['girl_callisthenics'] = assistant['callisthenics']
+ sex['girl_beauty'] = assistant['beauty']
+ sex['girl_sensitivity'] = assistant['sensitivity'] 
+ sex['girl_ego'] = assistant['ego']  
+ sex['girl_temper'] = assistant['temper']  
+ sex['girl_intellect'] = assistant['intellect']  
+ sex['girl_pride'] = assistant['pride']  
+ sex['girl_fear'] = assistant['fear']  
+ sex['girl_instinct'] = assistant['instinct']  
+ sex['girl_spoil'] = assistant['spoil']  
+ sex['girl_moral'] = assistant['moral']
+ sex['girl_angst'] = assistant['angst']
+ sex['girl_custom'] = assistant['custom']
+ sex['girl_style'] = assistant['style']
+ sex['girl_exotic'] = assistant['exotic']  
+ sex['girl_obedience'] = assistant['obedience']  
+ sex['girl_fat'] = assistant['fat']   
+ sex['girl_dirty'] = assistant['hygiene']   
+ sex['girl_probed'] =  assistant['probed']  
+ sex['girl_age'] = assistant['age']
+ sex['girl_type'] = assistant_type
+ 
+ sex['girl_mood'] =  assistant['mood']  
+ sex['girl_love'] =  assistant['moral']
+ sex['girl_fear'] =  assistant['fear']
+ sex['girl_submission'] =  assistant['custom']
+ sex['girl_greed'] =  assistant['rational']
+ sex['girl_affection'] =  assistant['instinct']  
+ sex['girl_spoil'] =  assistant['spoil']  
+ sex['girl_angst'] =  assistant['angst']  
+ sex['girl_pride'] =  assistant['pride']  
+ 
+ sex['girl_nympo'] = assistant["nymphomania"]
+ sex['girl_preversion'] = assistant["preversion"]
+ sex['girl_masohism'] = assistant["masohism"]
+ sex['girl_deprivation_attitude'] = assistant["deprivation_attitude"]
+ 
+ sex['girl_boobs'] = assistant["boobs"]
+  
+ sex['girl_petting'] =  assistant['petting']  
+ sex['girl_sub_hj'] =  assistant['sub_hj']  
+ sex['girl_sub_fj'] =  assistant['sub_fj']  
+ sex['girl_sub_hug'] =  assistant['sub_hug']  
+ sex['girl_sub_pazuri'] =  assistant['sub_pazuri']  
+ sex['girl_oral'] =  assistant['probed']  
+ sex['girl_sub_kiss'] =  assistant['sub_kiss']  
+ sex['girl_sub_thongue'] =  assistant['sub_thongue']  
+ sex['girl_sub_bj'] =  assistant['sub_bj']  
+ sex['girl_sub_dt'] =  assistant['sub_dt']  
+ sex['girl_sub_asslik'] =  assistant['sub_asslik']  
+ sex['girl_penetration'] =  assistant['penetration']  
+ sex['girl_sub_vaginal'] =  assistant['sub_vaginal']  
+ sex['girl_sub_anal'] =  assistant['sub_anal']  
+ sex['girl_sub_fisting'] =  assistant['sub_fisting']  
+ sex['girl_anal_stretch'] =  assistant['anal_stretch']  
+ sex['girl_roleplay'] =  assistant['roleplay']  
+ sex['girl_sub_seduce'] =  assistant['sub_seduce']  
+ sex['girl_sub_masturbation'] =  assistant['sub_masturbation']  
+ sex['girl_sub_dildo'] =  assistant['sub_dildo']  
+ sex['girl_sub_exhibit'] =  assistant['sub_exhibit']  
+ sex['girl_sub_humiliation'] =  assistant['sub_humiliation']  
+ sex['girl_fetishism'] =  assistant['fetishism']  
+ sex['girl_sub_enema'] =  assistant['sub_enema']  
+ sex['girl_sub_mazo'] =  assistant['sub_mazo']  
+ sex['girl_sub_selfpain'] =  assistant['sub_selfpain']  
+ sex['girl_sub_piss'] =  assistant['sub_piss']  
+ sex['girl_sub_kopro'] =  assistant['sub_kopro']  
+ sex['girl_orgy'] =  assistant['orgy']  
+ sex['girl_sub_bukake'] =  assistant["sub_bukake"]
+ sex['girl_xenophily'] =  assistant['xenophily']  
+ sex['girl_ovulation'] = assistant['ovulation']
+
+ sex['girl_orgasm_type'] =  assistant['orgasm_type']  
+ if assistant_virginity < 2: sex['girl_virgin'] = 1 
+ if assistant_virginity <= 2: sex['girl_tightness'] += 1
+ if assistant_virginity > 2: sex['girl_tightness'] -= 1
+ if assistant_['girl_age'] = 1: sex['girl_tightness'] += 1
+ if assistant_['girl_age'] = 2: sex['girl_tightness'] -= 1
+
+ copyarr 'sex_done_today','today_sex_assistant'
+ copyarr 'sex_done_thisperson','already_assistant'
+
+ sex['girl_newness'] = assistant['newness']
+
+ sex['girl_arousal'] = assistant["arousal"]
+ sex['girl_stamina'] = assistant["stamina"]
+ sex['girl_energy_bonus'] = assistant["energy"]
+
+ strip = IIF($assistant["cloth"] = 'голая', 1, 0)
+ 
+ $sex['girl_name'] = $assistant_name
+END
+
+!The calculated starting sex partner characteristics
+!CLIMAX COUNT
+if sex['girl_arousal'] > 1: sex['girl_excitement'] += 1
+if sex['girl_arousal'] > 3: sex['girl_excitement'] += 1
+if sex['girl_arousal'] > 4: sex['girl_excitement'] += 1
+
+!STAMINA
+IF sex['girl_stamina'] <= 0: sex['girl_energy'] = 5
+IF sex['girl_stamina'] = 1: sex['girl_energy'] = 10
+IF sex['girl_stamina'] = 2: sex['girl_energy'] = 25
+IF sex['girl_stamina'] = 3: sex['girl_energy'] = 50
+IF sex['girl_stamina'] = 4: sex['girl_energy'] = 65
+IF sex['girl_stamina'] => 5: sex['girl_energy'] = 75
+sex['girl_energy'] += sex['girl_energy_bonus'] * 5
+
+!OPENNESS
+IF sex['girl_pride'] < master_style: sex['girl_openmind'] += 1
+IF sex['girl_pride'] < master_hygiene: sex['girl_openmind'] += 1
+
+!PAIN
+
+!ATTENTION
+IF sex['girl_intellect'] < 3: sex['girl_attention'] -= 1
+IF sex['girl_intellect'] > 3: sex['girl_attention'] += 1
+
+IF sex['girl_ego'] < 2: sex['girl_attention'] -= 1
+IF sex['girl_ego'] > 4: sex['girl_attention'] += 1
+
+IF sex['girl_temper'] < 2: sex['girl_attention'] += 1
+IF sex['girl_temper'] > 4: sex['girl_attention'] -= 1
+
+IF sex['girl_spoil'] > 1: sex['girl_attention'] -= 1
+IF sex['girl_spoil'] => 5: sex['girl_attention'] -= 1
+
+IF sex['girl_angst'] > 1: sex['girl_attention'] -= 1
+IF sex['girl_angst'] > 2: sex['girl_attention'] -= 1
+IF sex['girl_angst'] > 3: sex['girl_attention'] -= 1
+IF sex['girl_angst'] > 4: sex['girl_attention'] -= 1
+
+!OPENNESS
+IF sex['girl_fear'] => 1: sex['girl_openmind'] -= 1
+IF sex['girl_fear'] => 2: sex['girl_openmind'] -= 1
+IF sex['girl_fear'] => 3: sex['girl_openmind'] -= 1
+IF sex['girl_fear'] => 4: sex['girl_openmind'] -= 1
+IF sex['girl_fear'] => 5: sex['girl_openmind'] -= 1
+
+IF sex['girl_instinct'] > 1: sex['girl_openmind'] += 1
+IF sex['girl_instinct'] > 4: sex['girl_openmind'] += 1
+
+IF sex['girl_moral'] > 1: sex['girl_openmind'] += 1
+IF sex['girl_moral'] > 2: sex['girl_openmind'] += 1
+IF sex['girl_moral'] > 3: sex['girl_openmind'] += 1
+IF sex['girl_moral'] > 4: sex['girl_openmind'] += 1
+
+IF sex['girl_spoil'] > 1: sex['girl_openmind'] -= 1
+IF sex['girl_spoil'] > 4: sex['girl_openmind'] -= 1
+
+IF sex['girl_angst'] => 1: sex['girl_openmind'] -= 1
+IF sex['girl_angst'] => 2: sex['girl_openmind'] -= 1
+IF sex['girl_angst'] => 3: sex['girl_openmind'] -= 1
+IF sex['girl_angst'] => 4: sex['girl_openmind'] -= 1
+IF sex['girl_angst'] => 5: sex['girl_openmind'] -= 1
+
+!calculate player sex stats
+!ENERGY
+IF master_str <= 0: sex['pc_energy'] = 5
+IF master_str = 1: sex['pc_energy'] = 10
+IF master_str = 2: sex['pc_energy'] = 25
+IF master_str = 3: sex['pc_energy'] = 50
+IF master_str = 4: sex['pc_energy'] = 65
+IF master_str => 5: sex['pc_energy'] = 75
+sex['pc_energy'] += master_energy * 5
+IF sex['pc_energy'] < 1: sex['pc_energy'] = 1
+
+!CUM BUILDUP
+sex['pc_boner'] = master_excitement
+sex['base_boner'] = master_excitement
+if sex['pc_boner'] < 0: sex['pc_boner'] = 1
+
+!EXCITMENT
+if master_excitement <= -5: sex['pc_excitement'] = -25
+if master_excitement = -4: sex['pc_excitement'] = -20
+if master_excitement = -3: sex['pc_excitement'] = -15
+if master_excitement = -2: sex['pc_excitement'] = -10
+if master_excitement = -1: sex['pc_excitement'] = -5
+if master_excitement = 0: sex['pc_excitement'] = 0
+if master_excitement = 1: sex['pc_excitement'] = 5
+if master_excitement = 2: sex['pc_excitement'] = 10
+if master_excitement = 3: sex['pc_excitement'] = 15
+if master_excitement = 4: sex['pc_excitement'] = 20
+if master_excitement => 5: sex['pc_excitement'] = 25
+
+if sex['pc_excitement'] < 0: sex['pc_excitement'] = 0
+
+sex['prev_pc_excitement'] = sex['pc_excitement']
+
+!INTEREST
+if chimera_gem_on = 1: sex['pc_interest'] += 25
+
+if sex['girl_beauty'] <= 0: sex['pc_interest'] -= 15
+if sex['girl_beauty'] <= 1: sex['pc_interest'] -= 10
+if sex['girl_beauty'] => 3: sex['pc_interest'] += 5
+if sex['girl_beauty'] => 4: sex['pc_interest'] += 10
+if sex['girl_beauty'] => 5: sex['pc_interest'] += 25
+
+if sex['girl_style'] <= 0: sex['pc_interest'] -= 10
+if sex['girl_style'] <= 1: sex['pc_interest'] -= 5
+if sex['girl_style'] => 3: sex['pc_interest'] += 5
+if sex['girl_style'] => 4: sex['pc_interest'] += 10
+if sex['girl_style'] => 5: sex['pc_interest'] += 25
+
+if sex['girl_exotic'] => 1: sex['pc_interest'] += 5
+if sex['girl_exotic'] => 2: sex['pc_interest'] += 10
+if sex['girl_exotic'] => 3: sex['pc_interest'] += 10
+if sex['girl_exotic'] => 4: sex['pc_interest'] += 10
+if sex['girl_exotic'] => 5: sex['pc_interest'] += 15
+
+if sex['girl_fat'] = 1: sex['pc_interest'] += 10
+if sex['girl_fat'] => 3: sex['pc_interest'] -= 5
+if sex['girl_fat'] => 4: sex['pc_interest'] -= 10
+if sex['girl_fat'] => 5: sex['pc_interest'] -= 25
+
+if sex['girl_dirty'] = 0 : sex['pc_interest'] += 5
+if sex['girl_dirty'] => 2: sex['pc_interest'] -= 5
+if sex['girl_dirty'] => 3: sex['pc_interest'] -= 10
+if sex['girl_dirty'] => 4: sex['pc_interest'] -= 20
+if sex['girl_dirty'] => 5: sex['pc_interest'] -= 25
+
+if master_mood <= -5: sex['pc_interest'] -= 5
+if master_mood <= -4: sex['pc_interest'] -= 5
+if master_mood <= -3: sex['pc_interest'] -= 5
+if master_mood <= -2: sex['pc_interest'] -= 5
+if master_mood <= -1: sex['pc_interest'] -= 5
+if master_mood => 1: sex['pc_interest'] += 5
+if master_mood => 2: sex['pc_interest'] += 5
+if master_mood => 3: sex['pc_interest'] += 5
+if master_mood => 4: sex['pc_interest'] += 5
+if master_mood => 5: sex['pc_interest'] += 5
+
+if sex['pc_boner'] > 1: sex['pc_interest'] += 5
+if sex['pc_boner'] > 2: sex['pc_interest'] += 10
+if sex['pc_boner'] > 3: sex['pc_interest'] += 15
+if sex['pc_boner'] > 4: sex['pc_interest'] += 20
+
+if sex['girl_virginity'] = 1: sex['pc_interest'] += 10
+sex['pc_interest'] += sex['girl_newness']
+
+if sex['pc_interest'] < sex['girl_newness']: sex['pc_interest'] = sex['girl_newness']
+if sex['pc_interest'] < 1: sex['pc_interest'] = 1
+
+gs '$sex_newloc'
+gt 'sex_screen'
+--- sex_initiate ---------------------------------
+

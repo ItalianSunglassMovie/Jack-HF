@@ -1,0 +1,21 @@
+# achtung
+!ACHTUNG
+$backimage = 'content/pic/achtung.jpg'
+
+LCOLOR = rgb(100,100,255)
+
+$MAINDESC_BACKIMAGE = 'content/pic/.jpg'
+MAINDESC_X = 200
+MAINDESC_Y = 670
+MAINDESC_W = 900
+MAINDESC_H = 95
+
+'<center><a href=1><H2><u>Yes, I am adult and I want to continue</u></H2></a>'
+'<a href=2><H2><u>Exit immediately</u></H2></a></center>'
+
+!'<a href=2><img src="content/pic/buttons/disagree.gif"></a><a href=1><img src="content/pic/buttons/agree.gif"></a>'
+
+act '1 agree': achtung_pass = 1 & gt 'main_menu'
+act '2 disagree': gt 'exid'
+--- achtung ---------------------------------
+

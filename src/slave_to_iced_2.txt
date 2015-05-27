@@ -1,0 +1,203 @@
+# slave_to_iced_2
+!move slave to a cryo cell with replacement
+temp = slave_state
+slave_state = iced_2_state
+iced_2_state = temp
+
+temp = slave_type
+slave_type = iced_2_type
+iced_2_type = temp
+
+$temp = $slave_type
+$slave_type = $iced_2_type
+$iced_2_type = $temp
+
+$temp_name = $slave_name
+$slave_name = $iced_2_name
+$iced_2_name = $temp_name 
+v_balls_rule = 0
+rules_broken = 0
+
+killvar 'temp'
+killvar '$temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','iced_2'
+copyarr '$slave','$iced_2'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','iced_2_rate'
+
+killvar 'iced_2'
+killvar '$iced_2'
+copyarr 'iced_2','temp'
+copyarr '$iced_2','$temp'
+killvar 'iced_2_rate'
+copyarr 'iced_2_rate','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_iced_2'
+killvar 'already_done_iced_2'
+copyarr 'already_done_iced_2','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_gain_iced_2'
+killvar 'already_gain_iced_2'
+copyarr 'already_gain_iced_2','already_gain_virtue'
+killvar 'already_gain_virtue'
+copyarr 'already_gain_virtue','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_iced_2'
+killvar 'already_sex_iced_2'
+copyarr 'already_sex_iced_2','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','iced_2_inventory'
+copyarr 'iced_2_inventory','temp'
+
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_psy_basic = $iced_2_psy_basic
+$slave_world_description = $iced_2_world_description
+$slave_family_description = $iced_2_family_description
+$slave_occupation_description = $iced_2_occupation_description
+$slave_psy_basic = $iced_2_psy_basic 
+virginity = iced_2_virginity
+
+$iced_2_psy_basic = $temp_psy_basic
+$iced_2_world_description = $temp_world_description
+$iced_2_family_description = $temp_family_description
+$iced_2_occupation_description = $temp_occupation_description
+$iced_2_psy_basic = $temp_psy_basic 
+iced_2_virginity = temp_virginity
+
+tempo["mood"] = slave_prev["mood"]
+tempo["arousal"] = slave_prev["mood"]
+slave["mood"] = iced_2_prev["mood"]
+slave["arousal"] = iced_2_prev["arousal"]
+iced_2["mood"] = tempo["mood"]
+iced_2["arousal"] = tempo["mood"]
+
+tmp = prise_promised
+prise_promised = prise_promised_iced_2
+prise_promised_iced_2 = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_iced_2
+gift_promised_iced_2 = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_iced_2
+prise_promised_iced_2 = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_iced_2
+abandon_treat_iced_2 = tmp
+
+tmp = death_treat
+death_treat = death_treat_iced_2
+death_treat_iced_2 = tmp
+
+temp = slave_sleep_condition
+slave_sleep_condition = iced_2_slave_sleep_condition
+iced_2_slave_sleep_condition = temp
+
+temp = slave_food_type
+slave_food_type = iced_2_slave_food_type
+iced_2_slave_food_type = temp
+
+temp = slave_eats_remains
+slave_eats_remains = iced_2_slave_eats_remains
+iced_2_slave_eats_remains = temp
+
+temp = slave_ration
+slave_ration = iced_2_slave_ration
+iced_2_slave_ration = temp
+
+temp = slave_food_portion
+slave_food_portion = iced_2_slave_food_portion
+iced_2_slave_food_portion = temp
+
+temp = vitamin
+vitamin = iced_2_vitamin
+iced_2_vitamin = temp
+
+temp = silence_rule
+silence_rule = iced_2_silence_rule
+iced_2_silence_rule = temp
+
+temp = master_rule
+master_rule = iced_2_master_rule
+iced_2_master_rule = temp
+
+temp = orgasm_prohibited
+orgasm_prohibited = iced_2_orgasm_prohibited
+iced_2_orgasm_prohibited = temp
+
+temp = shit_prohibited
+shit_prohibited = iced_2_shit_prohibited
+iced_2_shit_prohibited = temp
+
+temp = pet_rule
+pet_rule = iced_2_pet_rule
+iced_2_pet_rule = temp
+
+temp = blowjob_rule
+blowjob_rule = iced_2_blowjob_rule
+iced_2_blowjob_rule = temp
+
+temp = pissuar_rule
+pissuar_rule = iced_2_pissuar_rule
+iced_2_pissuar_rule = temp
+
+temp = toilet_rule
+toilet_rule = iced_2_toilet_rule
+iced_2_toilet_rule = temp
+
+temp = slave_cleans_rule
+slave_cleans_rule = iced_2_slave_cleans_rule
+iced_2_slave_cleans_rule = temp
+
+temp = slave_cooks_rule
+slave_cooks_rule = iced_2_slave_cooks_rule
+iced_2_slave_cooks_rule = temp
+
+temp = slave_washes_rule
+slave_washes_rule = iced_2_slave_washes_rule
+iced_2_slave_washes_rule = temp
+
+temp = slave_tentacle_rule
+slave_tentacle_rule = iced_2_slave_tentacle_rule
+iced_2_slave_tentacle_rule = temp
+
+temp = v_balls_rule
+v_balls_rule = iced_2_v_balls_rule
+iced_2_v_balls_rule = temp
+
+temp = rule_masturbation
+rule_masturbation = iced_2_rule_masturbation
+iced_2_rule_masturbation = temp
+
+gs '#txt'
+gs '#txt_2'
+gs '$newloc'
+sp_txt = 2
+GT 'shop_general'
+--- slave_to_iced_2 ---------------------------------
+

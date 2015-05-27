@@ -1,0 +1,52 @@
+# guild_board
+!BILLBOARDS IN SLAVERS GUILD
+$place = 'guild_board'
+txt_count = notes_count
+$text_display = $guild_board[txt]
+$text[txt] = ''
+
+*p '<div id = "bg"><img src="content\pic\page_blank.gif"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+*p '<div id = "bg_blue"><<$text_display>></div>'
+*p '<div id = "close_left"><a href = "EXEC: gt ''guild''"><img src = "content\pic\buttons\close_button.png"></a></div>'
+
+if npc = 0:
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div><<$place_location[$place]>>
+
+ Information for consideration:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+ else
+ $info_bar = '' 
+ *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
+
+Information for consideration:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+END
+
+IF $interaction_type = 'special':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+IF slave_state = CONST_INT['no_slave'] and contract['time'] = 0:
+ *p {<div id = "evaluate"><a href = 'EXEC: interaction_city = 900 & gt "interaction_city"'><img src="content\pic\buttons\evaluate.png"></a></div>}
+ else
+ *p {<div id = "evaluate"><img src="content\pic\buttons\deny.png"></div>} 
+END
+
+if txt > 1: 
+ addobj '<img src = "content\pic\buttons\back_button.png">'
+ else
+ addobj '<img src = "content\pic\buttons\noback_button.png">' 
+END 
+addobj '<img src = "content\pic\buttons\forward_button.png">'
+
+--- guild_board ---------------------------------
+

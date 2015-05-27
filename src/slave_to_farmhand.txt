@@ -1,0 +1,190 @@
+# slave_to_farmhand
+!move slave to farmhand
+temp = slave_state
+slave_state = farmhand_state
+farmhand_state = temp
+
+temp = slave_type
+slave_type = farmhand_type
+farmhand_type = temp
+
+$temp = $slave_type
+$slave_type = $farmhand_type
+$farmhand_type = $temp
+
+$temp_name = $slave_name
+$slave_name = $farmhand_name
+$farmhand_name = $temp_name 
+v_balls_rule = 0
+rules_broken = 0
+
+killvar 'temp'
+killvar '$temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','farmhand'
+copyarr '$slave','$farmhand'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','farmhand_rate'
+
+killvar 'farmhand'
+killvar '$farmhand'
+copyarr 'farmhand','temp'
+copyarr '$farmhand','$temp'
+killvar 'farmhand_rate'
+copyarr 'farmhand_rate','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_farmhand'
+killvar 'already_done_farmhand'
+copyarr 'already_done_farmhand','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_farmhand'
+killvar 'already_sex_farmhand'
+copyarr 'already_sex_farmhand','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','farmhand_inventory'
+copyarr 'farmhand_inventory','temp'
+
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_psy_basic = $farmhand_psy_basic
+$slave_world_description = $farmhand_world_description
+$slave_family_description = $farmhand_family_description
+$slave_occupation_description = $farmhand_occupation_description
+$slave_psy_basic = $farmhand_psy_basic 
+virginity = farmhand_virginity
+
+$farmhand_psy_basic = $temp_psy_basic
+$farmhand_world_description = $temp_world_description
+$farmhand_family_description = $temp_family_description
+$farmhand_occupation_description = $temp_occupation_description
+$farmhand_psy_basic = $temp_psy_basic 
+farmhand_virginity = temp_virginity
+
+tempo["mood"] = slave_prev["mood"]
+tempo["arousal"] = slave_prev["mood"]
+slave["mood"] = farmhand_prev["mood"]
+slave["arousal"] = farmhand_prev["arousal"]
+farmhand["mood"] = tempo["mood"]
+farmhand["arousal"] = tempo["mood"]
+
+tmp = prise_promised
+prise_promised = prise_promised_farmhand
+prise_promised_farmhand = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_farmhand
+gift_promised_farmhand = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_farmhand
+prise_promised_farmhand = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_farmhand
+abandon_treat_farmhand = tmp
+
+tmp = death_treat
+death_treat = death_treat_farmhand
+death_treat_farmhand = tmp
+
+temp = slave_sleep_condition
+slave_sleep_condition = farmhand_slave_sleep_condition
+farmhand_slave_sleep_condition = temp
+
+temp = slave_food_type
+slave_food_type = farmhand_slave_food_type
+farmhand_slave_food_type = temp
+
+temp = slave_eats_remains
+slave_eats_remains = farmhand_slave_eats_remains
+farmhand_slave_eats_remains = temp
+
+temp = slave_ration
+slave_ration = farmhand_slave_ration
+farmhand_slave_ration = temp
+
+temp = slave_food_portion
+slave_food_portion = farmhand_slave_food_portion
+farmhand_slave_food_portion = temp
+
+temp = vitamin
+vitamin = farmhand_vitamin
+farmhand_vitamin = temp
+
+temp = silence_rule
+silence_rule = farmhand_silence_rule
+farmhand_silence_rule = temp
+
+temp = master_rule
+master_rule = farmhand_master_rule
+farmhand_master_rule = temp
+
+temp = orgasm_prohibited
+orgasm_prohibited = farmhand_orgasm_prohibited
+farmhand_orgasm_prohibited = temp
+
+temp = shit_prohibited
+shit_prohibited = farmhand_shit_prohibited
+farmhand_shit_prohibited = temp
+
+temp = pet_rule
+pet_rule = farmhand_pet_rule
+farmhand_pet_rule = temp
+
+temp = blowjob_rule
+blowjob_rule = farmhand_blowjob_rule
+farmhand_blowjob_rule = temp
+
+temp = pissuar_rule
+pissuar_rule = farmhand_pissuar_rule
+farmhand_pissuar_rule = temp
+
+temp = toilet_rule
+toilet_rule = farmhand_toilet_rule
+farmhand_toilet_rule = temp
+
+temp = slave_cleans_rule
+slave_cleans_rule = farmhand_slave_cleans_rule
+farmhand_slave_cleans_rule = temp
+
+temp = slave_cooks_rule
+slave_cooks_rule = farmhand_slave_cooks_rule
+farmhand_slave_cooks_rule = temp
+
+temp = slave_washes_rule
+slave_washes_rule = farmhand_slave_washes_rule
+farmhand_slave_washes_rule = temp
+
+temp = slave_tentacle_rule
+slave_tentacle_rule = farmhand_slave_tentacle_rule
+farmhand_slave_tentacle_rule = temp
+
+temp = v_balls_rule
+v_balls_rule = farmhand_v_balls_rule
+farmhand_v_balls_rule = temp
+
+temp = rule_masturbation
+rule_masturbation = farmhand_rule_masturbation
+farmhand_rule_masturbation = temp
+--- slave_to_farmhand ---------------------------------
+

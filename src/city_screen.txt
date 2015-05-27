@@ -1,0 +1,179 @@
+# city_screen
+IF sound_on = 1:
+ play 'content/snd/city.mp3', music_volume, 'only, loop'
+ else
+ close 'content/snd/city.mp3'
+end
+
+gs 'main_layout'
+
+*p '<div id = "large_image"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+
+IF wizard_mode = 1:
+ *p '<div id = "upper">Day: <<day>> (<<sparks>>$)  |  Cal: <<slave["calories"]>>  |  Fr: <<slave["fear"]>>/<<slave_rate["fear"]>>  |  Ins: <<slave["instinct"]>>/<<slave_rate["instinct"]>>  |  Rat: <<slave["rational"]>>/<<slave_rate["rational"]>>  |  Cus: <<slave["custom"]>>/<<slave_rate["custom"]>>  |  Mor: <<slave["moral"]>>/<<slave_rate["moral"]>>  |  Spl: <<slave["spoil"]>>/<<slave_rate["spoil"]>>  |  Ang: <<slave["angst"]>>/<<slave_rate["angst"]>></div>' 
+ else
+ *p '<div id = "upper">Day: <<day>> (<<sparks>>$)</div>' 
+END
+
+*p '<div id = "master_short_stat">Energy <<$stars[master_energy_plus]>>
+<<$boy_mood[master_mood_plus]>> 
+<<$excitement[master_excitement_plus]>>
+<<$boy_hygiene[master_hygiene]>>
+</div>'
+
+!lillimerge: added fiend name
+IF pet_tentacle = 0:
+ IF assistant_state = 1:
+ *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
+ *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+ <<$cooked_food[cooked_food_plus]>>
+ Energy <<$stars[assistant_energy_plus]>>
+ <<$tentacle_state[tentacle_state]>>
+</div>'
+ else
+ *p '<div id = "assistant_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
+ *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+ <<$cooked_food[cooked_food_plus]>>
+ 
+ <<$tentacle_state[tentacle_state]>>
+</div>'
+ END
+ ELSE
+ IF assistant_state = 1:
+ *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
+ *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+ <<$cooked_food[cooked_food_plus]>>
+ Energy <<$stars[assistant_energy_plus]>>
+ <<$tentacle_name[tentacle_size]>>
+</div>'
+ else
+ *p '<div id = "assistant_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
+ *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+ <<$cooked_food[cooked_food_plus]>>
+ 
+ <<$tentacle_name[tentacle_size]>>
+</div>'
+ END
+END
+
+IF slave_state = CONST_INT['slave_dead']:
+ *p '<div id = "slave_short_ava"><img src = "<<$slave["ava_gray"]>>.jpg"></div>'
+ *p '<div id = "slave_short_stat">Died
+</div>'
+END
+
+IF slave_state = CONST_INT['no_slave']:
+ *p '<div id = "slave_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
+ *p '<div id = "slave_short_stat">No slave
+</div>'
+END
+
+IF slave_state = CONST_INT['slave_exist']:
+ *p '<div id = "slave_short_ava"><img src = "<<$slave["ava"]>>.jpg"></div>'
+ *p '<div id = "slave_short_stat">Energy <<$stars[slave_energy_plus]>>
+<<$girl_mood[slave_mood_plus]>> 
+<<$behavior_evaluation[eval]>>
+<<$girl_hygiene[slave["hygiene"]]>>
+</div>'
+END
+
+IF slave_state = CONST_INT['slave_faint']:
+ *p '<div id = "slave_short_ava"><img src = "<<$slave["ava_gray"]>>.jpg"></div>'
+ *p '<div id = "slave_short_stat">Unconscious
+</div>'
+END
+
+IF ui_style = 2:
+ IF sound_on = 1:
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_off.png"></a></div>'  
+ END
+ ELSE
+ IF sound_on = 1:
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
+ END
+END
+
+!options
+IF ui_style = 2:
+ if city_form ! 1000:*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\pic\ui\grimdark\buttons\gear.png"></a></div>}
+ else
+ if city_form ! 1000:*p {<div id="options_icon"><a href = "EXEC: $prev_city_form = city_form & city_form = 1000 & gt 'city_menu_form'"><img src="content\pic\buttons\gear.png"></a></div>}
+END
+
+IF city_form = 1000:
+ *p '<div style="position:absolute;top:525px;left:619px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
+ *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
+END
+
+ACT '1':
+ music_volume -= 10
+ if music_volume < 0: music_volume = 0
+ gt curloc
+END
+ACT '2':
+ music_volume += 10
+ if music_volume > 100: music_volume = 100
+ gt curloc
+END
+ACT '3':
+ if music_volume ! 0:
+  rem_music_volume = music_volume
+  music_off = 1
+  music_volume = 0
+ else
+  music_volume = rem_music_volume
+  music_off = 0
+ end
+ gt curloc
+END
+
+ACT '4':
+ sound_volume  -= 10
+ if sound_volume < 0: sound_volume = 0 
+ gt curloc
+END
+ACT '5':
+ sound_volume += 10
+ if sound_volume > 100: sound_volume = 100
+ gt curloc
+END
+ACT '6':
+ if sound_volume ! 0:
+  rem_sound_volume =  sound_volume
+  sound_off = 1
+  sound_volume = 0
+ else
+  sound_volume = rem_sound_volume
+  sound_off = 0
+ end
+ gt curloc
+END
+
+*p '<div id = "settings"><<$setting_display>></div>'
+*p '<div id = "settings_ex"><<$setting_display_c>></div>'
+*p '<div id = "settings_ex2"><<$setting_display_c2>></div>'
+*p '<div id = "settings_2r"><<$setting_display_r>></div>'
+
+*p '<div id = "master_short_ava"><img src = "<<$master_ava>>"></div>'
+*p '<div id = "main_screen"><<$text_display>></div>'
+
+if sbros = 1:
+ sbros = 0
+ gt 'city_menu_form'
+END
+
+IF city_form ! 1000 and city_form ! 1010 and city_form ! 1011 :
+ IF city_form = 1 or city_form = 2 or city_form = 3 or city_form = 4 or city_form = 5 :
+  *p '<div id = "leave_quarter"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-right" tooltip-data="Leave the quarter" href = "EXEC: city_form = 0 & gt ''city_menu_form''"><img src="content\pic\buttons\leave_quarter.png"></a></div>'
+ ELSEIF city_form = 6 :
+  *p '<div id = "leave_quarter"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-right" tooltip-data="Walk to the city" href = "EXEC: city_form = 0 & gt ''city_menu_form''"><img src="content\pic\buttons\walk_city.png"></a></div>'
+ END
+ *p '<div id = "back_home"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-left" tooltip-data="Go home" href = "EXEC: menu_form = 0 & city_form = 0 & gt ''menu_form''"><img src="content\pic\buttons\home_button.png"></a></div>'
+END
+--- city_screen ---------------------------------
+

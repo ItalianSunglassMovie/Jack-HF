@@ -1,0 +1,57 @@
+# torture_result
+fear_resistance = slave['ego']*2 + slave['temper']
+fear_resistance += slave['pride']
+fear_resistance -= slave['sensitivity']
+fear_resistance += already_done_today[interaction] 
+if phobia = 1: fear_resistance *= 2
+
+modifer = torture_intensity - slave['fear']
+if modifer > 0: torture_fear += 1
+if modifer > 1: torture_fear += 1
+if modifer > 2: torture_fear += 2
+if modifer > 3: torture_fear += 4
+
+torture_succed = 0
+IF torture_fear => fear_resistance: 
+ torture_succed = 1 
+ if torture_intensity > slave['fear']: torture_succed = 2
+END 
+if phobia = -1:
+    torture_succed = 2
+elseif phobia = 2:
+    torture_succed = 0
+end
+
+IF torture_succed > 0 and slave["sin"] < torture_intensity and already_done_today[interaction] = 0:
+  slave_rate["angst"] += torture_intensity + slave["sensitivity"]  
+ else
+  msm = min(master_supermacy,5)
+  if master_supermacy > 0: slave_rate["instinct"] += msm + 1
+  if master_supermacy <= 0: slave_rate["instinct"] += 1
+END
+
+IF torture_succed = 0 and slave['fear'] < torture_intensity and already_done_today[interaction] = 0: 
+ if slave['fear'] > 0: slave['fear'] -= 1
+ if phobia = 0: slave_rate["ego"] += slave['pride']
+ slave_rate["custom"] -= slave['pride']
+ slave_rate["instinct"] -= slave["temper"]
+END
+
+if slave["sensitivity"] > sensitivity_threshold: slave_rate["sensitivity"] -= slave["sensitivity"]
+IF torture_succed = 2: 
+ slave["fear"] += 1
+END
+if slave["fear"] > 5: slave["fear"] = 5
+
+$удача_пытки[0] = 'наказание провалилось'
+$удача_пытки[1] = 'наказание успешно, без повышения страха'
+$удача_пытки[2] = 'наказание успешно, c повышением страха'
+!msg 'уровень пытки = <<torture_intensity>>
+эффективность пытки = <<torture_fear>>
+Фактор фобий = <<phobia>>
+сопротивляемость рабыни = <<fear_resistance>>
+Результат: <<$удача_пытки[torture_succed]>>
+Новый уровень страха: <<slave["fear"]>>
+'
+--- torture_result ---------------------------------
+

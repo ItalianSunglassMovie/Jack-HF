@@ -1,0 +1,33 @@
+# init_custom_game
+get_initial_slave = 0
+hero_points = 600
+
+master_str = 1
+master_cha = 0
+master_style = 0
+master_libido = 0
+master_energy = 5
+
+master_tutor = 0
+master_fighter = 0
+master_butler = 0
+master_artdirector = 0
+master_medic = 0
+master_mage = 0
+master_torture = 0
+master_domination = 0
+master_bondage = 0
+master_flagelation = 0
+
+master_petting = 0
+master_oral = 0
+master_penetration = 0
+master_fetish = 0
+
+$estate = 'slum_house'
+$starting_area = 'Slum'
+
+custom_game = 1
+patrician_mode_off = 1
+--- init_custom_game ---------------------------------
+

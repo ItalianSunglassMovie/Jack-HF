@@ -1,0 +1,174 @@
+# get_demo_slave
+!activates the slave for training mode
+slave_state = CONST_INT['slave_exist']
+$slave_psy_basic = $seed_psy_basic[slave_type]
+$slave_type = 'unic'
+slave["null"] = 0
+slave["age"] = seed_age[slave_type]
+
+if slave["age"] = CONST_INT['loli_age']: slave['fertility'] = -2
+if slave["age"] ! CONST_INT['loli_age']: slave['fertility'] = 0
+
+IF slave["age"] = CONST_INT['loli_age']:
+ slave["epilation"] = 100
+ if slave["makeup"] = 0: slave["makeup"] = 2
+END
+
+IF slave["age"] ! CONST_INT['loli_age']:
+ slave["epilation"] = 0
+ slave["makeup"] = 0
+END
+
+!STATS
+slave["beauty"] = seed_beauty[slave_type]
+slave["stamina"] = seed_stamina[slave_type]
+slave["sensitivity"] = seed_sensitivity[slave_type]
+slave["temper"] = seed_temper[slave_type]
+slave["ego"] = seed_ego[slave_type]
+slave["pride"] = seed_pride[slave_type]
+slave["intellect"] = seed_intellect[slave_type]
+slave["exotic"] = seed_exotic[slave_type]
+slave["base_exotic"] = seed_exotic[slave_type]
+
+slave["custom"] = seed_custom[slave_type]
+slave["moral"] = seed_moral[slave_type]
+slave["instinct"] = seed_instinct[slave_type]
+slave["rational"] = seed_rational[slave_type]
+slave["spoil"] = seed_spoil[slave_type]
+
+slave['expression'] = seed_expression[slave_type]
+slave['pet'] = seed_pet[slave_type]
+slave['dressage'] = seed_dressage[slave_type]
+slave['nurse'] = seed_nurse[slave_type]
+slave['service'] = seed_service[slave_type]
+slave['cook'] = seed_cook[slave_type]
+slave['gladiatrix'] = seed_gladiatrix[slave_type]
+slave['enchanter'] = seed_enchanter[slave_type]
+slave['vocal'] = seed_vocal[slave_type]
+slave['music'] = seed_music[slave_type]
+slave['callisthenics'] = seed_callisthenics[slave_type]
+slave['secretary'] = seed_secretary[slave_type]
+
+slave["petting"] = 0
+slave["oral"] = 0
+slave["roleplay"] = 0
+
+slave["sub_hj"] = seed_sub_hj[slave_type]
+slave["sub_fj"] = seed_sub_fj[slave_type]
+slave["sub_hug"] = seed_sub_hug[slave_type]
+slave["sub_pazuri"] = seed_sub_pazuri[slave_type]
+slave["sub_kiss"] = seed_sub_kiss[slave_type]
+slave["sub_thongue"] = seed_sub_thongue[slave_type]
+slave["sub_bj"] = seed_sub_bj[slave_type]
+slave["sub_dt"] = seed_sub_dt[slave_type]
+slave["sub_asslik"] = seed_sub_asslik[slave_type]
+slave["sub_vaginal"] = seed_sub_vaginal[slave_type]
+slave["sub_anal"] = seed_sub_anal[slave_type]
+slave["sub_fisting"] = seed_sub_fisting[slave_type]
+slave["anal_stretch"]= seed_anal_stretch[slave_type]
+slave["sub_seduce"] = seed_sub_seduce[slave_type]
+slave["sub_masturbation"] = seed_sub_masturbation[slave_type]
+slave["sub_dildo"] = seed_sub_dildo[slave_type]
+slave["sub_exhibit"] = seed_sub_exhibit[slave_type]
+slave["sub_humiliation"] = seed_sub_humiliation[slave_type]
+slave["sub_enema"] = seed_sub_enema[slave_type]
+slave["sub_mazo"] = seed_sub_mazo[slave_type]
+slave["sub_selfpain"] = seed_sub_selfpain[slave_type]
+slave["sub_piss"] = seed_sub_piss[slave_type]
+slave["sub_kopro"] = seed_sub_kopro[slave_type]
+slave["sub_threesome"] = seed_sub_threesome[slave_type]
+slave["sub_dp"] = seed_sub_dp[slave_type]
+slave["sub_tp"] = seed_sub_tp[slave_type]
+slave["sub_gangbang"] = seed_sub_gangbang[slave_type]
+slave["sub_bukake"] = seed_sub_bukake[slave_type]
+slave["sub_zoosex"] = seed_sub_zoosex[slave_type]
+slave["sub_bestiality"] = seed_sub_bestiality[slave_type]
+slave["sub_tentacles"] = seed_sub_tentacles[slave_type]
+
+slave["fat"] = seed_fat[slave_type]
+slave["metabolism"] = seed_metabolism[slave_type]
+
+slave["scares"] = seed_scares[slave_type]
+
+$slave_psy_basic = $seed_psy_basic[slave_type]
+
+!TRAITS
+slave["masohism"] = seed_masohism[slave_type]
+slave["nymphomania"] = seed_nymphomania[slave_type]
+slave["exhibitionism"] = seed_exhibitionism[slave_type]
+slave["homosexualism"] = seed_homosexualism[slave_type]
+slave["homosexualism_revealed"] = seed_homosexualism_revealed[slave_type]
+slave["abuse_attitude"] = seed_abuse_attitude[slave_type]
+slave["blood_attitude"] = seed_blood_attitude[slave_type]
+slave["passion_sweets"] = seed_passion_sweets[slave_type]
+slave["courage"] = seed_courage[slave_type]
+
+slave["boobs"] = seed_boobs[slave_type]
+virginity = seed_virginity[slave_type]
+display_psy_status = 1
+
+!BACKGROUND
+$slave_world_description = $stock_world_description[slave_type]
+$slave_family_description = $stock_family_description[slave_type]
+$slave_occupation_description = $stock_occupation_description[slave_type]
+$slave_name = $seed_name[slave_type]
+
+slave['ill'] = 0
+slave['parasite'] = 0
+$slave['boobs_img'] = $seed_boobs_img[slave_type]
+$slave['pussy_img'] = $seed_pussy_img[slave_type]
+slave['brand'] = 4
+
+!stats alignment
+slave["energy"] = slave["metabolism"]
+slave["hygiene"] = 2
+slave["exotic"] = seed_exotic[slave_type]
+slave["bcheck"] = 0
+
+slave["neg_slave"] = 1 + slave["pride"] + slave["temper"] + slave["ego"] - slave["custom"]
+slave['cycle_day'] = RAND (1,28)
+slave["calories"] = 3
+
+$slave['fullimage'] = $fullimage[slave_type]
+$slave['ava'] = $seed_ava[slave_type]
+$slave['ava_gray'] = $seed_ava_gray[slave_type]
+$slave['ava_clear'] = $seed_ava_clear[slave_type]
+
+!EQUIP
+!"$slave["wpn"] = 'кинжал'
+$slave["armor"] = 'кожан'
+$slave["scnd"] = ''
+
+$slave["back_wpn"] = ''
+$slave["left_wpn"] = ''
+$slave["right_wpn"] = ''
+$slave["arm_wpn"] = ''
+$slave["leg_wpn"] = 'кинжал'
+
+$slave["cloth"] = 'leather_corset'"
+
+slave['newness'] = 10
+
+if slave["bruises"] = 1: slave_rate["bruises"] = 10
+if slave["bruises"] = 2: slave_rate["bruises"] = 20
+if slave["bruises"] = 3: slave_rate["bruises"] = 40
+if slave["bruises"] = 4: slave_rate["bruises"] = 80
+if slave["bruises"] = 5: slave_rate["bruises"] = 160
+
+!if slave["scares"] = 0: slave_rate["scares"] = 0
+if slave["scares"] = 1: slave_rate["scares"] = 10
+if slave["scares"] = 2: slave_rate["scares"] = 20
+if slave["scares"] = 3: slave_rate["scares"] = 40
+if slave["scares"] = 4: slave_rate["scares"] = 80
+if slave["scares"] = 5: slave_rate["scares"] = 160
+
+if slave["hygiene"] = 1: slave_rate["hygiene"] = 10
+if slave["hygiene"] = 2: slave_rate["hygiene"] = 20
+if slave["hygiene"] = 3: slave_rate["hygiene"] = 40
+if slave["hygiene"] = 4: slave_rate["hygiene"] = 80
+if slave["hygiene"] = 5: slave_rate["hygiene"] = 160
+
+gs '#txt'
+gs '#txt_2'
+--- get_demo_slave ---------------------------------
+

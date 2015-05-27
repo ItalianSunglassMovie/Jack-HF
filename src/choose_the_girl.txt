@@ -1,0 +1,58 @@
+# choose_the_girl
+!slave selection screen for the training mode
+exam_in_progress = 1
+txt_count = 1
+ui_style = 1
+killobj
+addobj '<img src = "content\pic\buttons\demo_forward_button.png">'
+
+*p '<div id = "bg"><img src="content\pic\bg\dungeon.jpg"></div>'
+*p '<div id = "bg"><center>Choose your slave</center></div>'
+
+IF choice = 0:
+ *p '<div id = "bg"><img src="content\pic\demo\choose_slave.gif"></div>'
+ $text[1] = 'Former housewife who sold into slavery by bank, for the debts of her husband. She served as a «specialist in entertainment» for the managers of a corporation, so she has some required experience. But she is not specially trained.
+ <font color="#008000">Difficulty: minimal</font>'
+ slave_type = 902
+END
+
+IF choice = 1:
+ *p '<div id = "bg"><img src="content\pic\demo\choose_amazon.gif"></div>'
+ $text[1] = 'Lesbian amazon from the savage space tribe. She has the great makings, but do not forget that this girl has great physical strength, fighting skills, and she despises men.
+ <font color="#cd0000">Difficulty: high</font>'
+ slave_type = 903
+END
+
+IF choice = 2:
+ *p '<div id = "bg"><img src="content\pic\demo\choose_princess.gif"></div>'
+ $text[1] = 'Little princess of a small kingdom of the highly-magical world. The combination of poor health, vulnerability and prohibitive defiance will make her training especially challenging. But her beauty is worth it.
+ <font color="#4B0082">Difficulty: normal</font>'
+ slave_type = 904
+END
+GS 'get_demo_slave'
+GS '$newloc'
+
+*p {<div id="choose_left"><a href = 'EXEC: choice = 2 & gt curloc'><img src = "content\pic\demo\click_field.gif"></a></div>}
+*p {<div id="choose_center"><a href = 'EXEC: choice = 1 & gt curloc'><img src = "content\pic\demo\click_field.gif"></a></div>}
+*p {<div id="choose_right"><a href = 'EXEC: choice = 0 & gt curloc'><img src = "content\pic\demo\click_field.gif"></a></div>}
+
+*p '<div id = "text"><<$text[txt]>></div>'
+
+*p '<div id = "interaction_stat_bar">
+<u>SUMMARY:</u>
+<<$beauty[seed_beauty[slave_type]]>> 
+<<$stamina[seed_stamina[slave_type]]>> 
+<<$exotic[seed_exotic[slave_type]]>> 
+<<$fat[seed_fat[slave_type]]>> 
+<<$sensitivity[seed_sensitivity[slave_type]]>> 
+<<$style[seed_style[slave_type]]>> 
+<<$intellect[seed_intellect[slave_type]]>> 
+<<$temper[seed_temper[slave_type]]>> 
+<<$ego[seed_ego[slave_type]]>> 
+<<$pride[seed_pride[slave_type]]>> 
+
+<u>TRAITS:</u>
+<<$features_list>>
+</div>'
+--- choose_the_girl ---------------------------------
+

@@ -1,0 +1,10369 @@
+# #CSS
+$STYLESHEET = '
+a:hover {
+text-decoration: underline;
+}
+
+#cell {
+position:absolute;
+}
+
+#ava_choice_1_1 {
+position:absolute;
+left:300px;
+top:150px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_1_1_1 {
+position:absolute;
+left:300px;
+top:120px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_1_2 {
+position:absolute;
+left:300px;
+top:325px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_1_3 {
+position:absolute;
+left:300px;
+top:500px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_2_1 {
+position:absolute;
+left:475px;
+top:150px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_2_2 {
+position:absolute;
+left:475px;
+top:325px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_2_3 {
+position:absolute;
+left:475px;
+top:500px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_3_1 {
+position:absolute;
+left:650px;
+top:150px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_3_2 {
+position:absolute;
+left:650px;
+top:325px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_3_3 {
+position:absolute;
+left:650px;
+top:500px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_4_1 {
+position:absolute;
+left:825px;
+top:150px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_4_2 {
+position:absolute;
+left:825px;
+top:325px;
+width:150px;
+height:150px;
+}
+
+#ava_choice_4_3 {
+position:absolute;
+left:825px;
+top:500px;
+width:150px;
+height:150px;
+}
+
+#stat_desc {
+position:absolute;
+left:300px;
+top:290px;
+width:225px;
+height:475px;
+}
+
+#hero_title {
+position:absolute;
+left:475px;
+top:120px;
+width:500px;
+height:100px;
+font-size:70px;
+font-family:Victoriana;
+text-align:center;
+}
+
+#hero_diff {
+position:absolute;
+left:475px;
+top:190px;
+width:500px;
+height:50px;
+font-size:50px;
+font-family:Victoriana;
+text-align:center;
+}
+
+#hero_desc {
+position:absolute;
+left:505px;
+top:290px;
+width:515px;
+height:475px;
+color:#191970;
+font-family:"Segoe Print";
+}
+
+#confirm_box_large {
+position:absolute;
+left:625px;
+top:550px;
+width:150px;
+height:150px;
+}
+
+#confirm_box {
+position:absolute;
+left:600px;
+top:715px;
+width:50px;
+height:50px;
+}
+
+#scroll_forward {
+position:absolute;
+left:975px;
+top:715px;
+width:50px;
+height:50px;
+}
+
+#scroll_back {
+position:absolute;
+left:250px;
+top:715px;
+width:50px;
+height:50px;
+}
+
+#ink {
+color:#191970;
+font-family:"Segoe Print";
+}
+
+#plain_text {
+font-size:20px;
+font-family:Consolas;
+}
+
+#title_large {
+color:#FFD700;
+font-size:100px;
+font-family:Victoriana;
+text-align:center;
+}
+
+#title_small {
+color:#FFD700;
+font-size:40px;
+font-family:Victoriana;
+text-align:center;
+}
+
+#title_fix {
+color:#ff5700;
+font-size:30px;
+font-family:Victoriana;
+text-align:center;
+}
+
+#title {
+position:absolute;
+left:40px;
+top:20px;
+width:490px;
+height:300px;
+}
+
+#title_menu {
+position:absolute;
+left:820px;
+top:420px;
+width:450px;
+height:350px;
+text-align:center;
+}
+
+#title_scroll {
+position:absolute;
+left:240px;
+top:25px;
+width:800px;
+height:750px;
+}
+
+#title_scroll_left {
+position:absolute;
+left:40px;
+top:25px;
+width:800px;
+height:750px;
+}
+
+#close_scroll {
+position:absolute;
+left:1000px;
+top:30px;
+width:30px;
+height:30px;
+}
+
+#title_scroll_text {
+position:absolute;
+left:290px;
+top:110px;
+width:710px;
+height:580px;
+color:#191970;
+font-family:"Segoe Print";
+}
+
+#title_scroll_text_left {
+position:absolute;
+left:290px;
+top:110px;
+width:350px;
+height:580px;
+color:#191970;
+font-size:16px;
+font-family:"Segoe Print";
+}
+
+#title_scroll_text_right {
+position:absolute;
+left:660px;
+top:110px;
+width:330px;
+height:280px;
+font-size:45px;
+font-family:Victoriana;
+}
+
+#title_scroll_text_rightmid {
+position:absolute;
+left:750px;
+top:290px;
+width:280px;
+height:280px;
+font-family:"Segoe Print";
+}
+
+#chekbox_1md {
+position:absolute;
+left:450px;
+top:300px;
+width:25px;
+height:25px;
+}
+
+#chekbox_2md {
+position:absolute;
+left:450px;
+top:330px;
+width:25px;
+height:25px;
+}
+
+#title_scroll_text_rightlow {
+position:absolute;
+left:710px;
+top:440px;
+width:300px;
+height:280px;
+font-family:"Segoe Print";
+}
+
+#close_scroll_left {
+position:absolute;
+left:800px;
+top:30px;
+width:30px;
+height:30px;
+}
+
+#sparks_display {
+position:absolute;
+left:10px;
+top:10px;
+color:#FFD700;
+font-size:30px;
+width:90px;
+height:30px;
+padding:3px 3px 0px 5px;
+font-family:Victoriana;
+background-image:url(content/pic/money_counter.png);
+}
+
+#clear {
+position:absolute;
+top:-4px;
+}
+
+#clear_knob {
+position:absolute;
+width:64px;
+height:64px;
+}
+
+#under {
+position:relative;
+color:#FFD700;
+font-size:30px;
+width:400px;
+height:40px;
+font-family:Victoriana;
+background-image:url(content/pic/menu_button.png);
+}
+
+#under_gray {
+position:relative;
+color:#C0C0C0;
+font-size:30px;
+width:400px;
+height:40px;
+font-family:Victoriana;
+background-image:url(content/pic/menu_button.png);
+}
+
+#intensity_05 {
+position:absolute;
+left:25px;
+top:50px;
+width:100px;
+height:100px;
+}
+
+#intensity_04 {
+position:absolute;
+left:25px;
+top:150px;
+width:100px;
+height:100px;
+}
+
+#intensity_03 {
+position:absolute;
+left:25px;
+top:250px;
+width:100px;
+height:100px;
+}
+
+#intensity_02 {
+position:absolute;
+left:25px;
+top:350px;
+width:100px;
+height:100px;
+}
+
+#intensity_01 {
+position:absolute;
+left:25px;
+top:450px;
+width:100px;
+height:100px;
+}
+
+#bg {
+position:absolute;
+left:4px;
+top:3px;
+width:795px;
+height:595px;
+color:#FFD700;
+font-size:40px;
+text-align:center;
+font-family:Victoriana;
+}
+
+#bg_blue {
+position:absolute;
+left:30px;
+top:20px;
+width:770px;
+height:575px;
+color:#0000CD;
+font-size:30px;
+font-family:Victoriana;
+}
+
+#text {
+position:absolute;
+left:30px;
+top:615px;
+width:740px;
+height:185px;
+font-size:20px;
+}
+
+#bg_blue_script {
+position:absolute;
+left:30px;
+top:20px;
+width:770px;
+height:575px;
+font-size:20px;
+font-family:"Segoe Print";
+color:#191970;
+}
+
+#bg_blue_script_right {
+position:absolute;
+left:260px;
+top:28px;
+width:765px;
+height:570px;
+font-size:16px;
+font-family:"Segoe Print";
+color:#191970;
+}
+
+#bg_blue_script_add {
+position:absolute;
+left:450px;
+top:190px;
+width:350px;
+height:345px;
+font-size:20px;
+font-family:"Segoe Print";
+color:#191970;
+}
+
+#evaluate {
+position:absolute;
+left:300px;
+top:630px;
+width:150px;
+height:150px;
+}
+
+#approve {
+position:absolute;
+left:50px;
+top:300px;
+width:150px;
+height:150px;
+}
+
+#approve_low {
+position:absolute;
+left:315px;
+top:550px;
+width:150px;
+height:150px;
+}
+
+#deny {
+position:absolute;
+left:600px;
+top:300px;
+width:150px;
+height:150px;
+}
+
+#deny_low {
+position:absolute;
+left:850px;
+top:550px;
+width:150px;
+height:150px;
+}
+
+#upper {
+position:absolute;
+left:15px;
+top:1px;
+width:1000px;
+height:20px;
+font-size:25px;
+font-family:Victoriana;
+}
+
+#side_panel {
+position:absolute;
+left:815px;
+top:1px;
+width:450px;
+height:790px;
+}
+
+#side_panel_main {
+position:absolute;
+left:815px;
+top:10px;
+width:450px;
+height:790px;
+font-size:30px;
+font-family:Victoriana;
+}
+
+#side_panel_text {
+position:absolute;
+left:835px;
+top:200px;
+width:410px;
+height:790px;
+font-size:20px;
+font-family:"Segoe Print";
+color:#191970;
+}
+
+#master_short_ava {
+position:absolute;
+left:1075px;
+top:30px;
+width:150px;
+height:150px;
+text-align:center;
+}
+
+#cryo_button {
+position:absolute;
+left:1230px;
+top:40px;
+width:26px;
+height:30px;
+}
+
+#active_spell {
+position:absolute;
+left:1018px;
+top:35px;
+font-size:28px;
+font-family:Victoriana;
+font-weight:bold;
+color:#191970;
+}
+
+#master_short_stat {
+position:absolute;
+left:1030px;
+top:180px;
+width:240px;
+height:80px;
+font-size:13px;
+font-family:"Segoe Print";
+text-align:center;
+}
+
+#slave_short_ava {
+position:absolute;
+left:1075px;
+top:280px;
+width:150px;
+height:150px;
+text-align:center;
+}
+
+#slave_short_stat {
+position:absolute;
+left:1030px;
+top:435px;
+width:240px;
+height:80px;
+font-size:13px;
+font-family:"Segoe Print";
+text-align:center;
+}
+
+#assistant_short_ava {
+position:absolute;
+left:1075px;
+top:530px;
+width:150px;
+height:150px;
+text-align:center;
+}
+
+#assistant_short_stat {
+position:absolute;
+left:1030px;
+top:685px;
+width:240px;
+height:80px;
+font-size:13px;
+font-family:"Segoe Print";
+text-align:center;
+}
+
+#main_screen {
+position:absolute;
+left:1px;
+top:150px;
+width:1024px;
+height:768px;
+text-align:center;
+}
+
+#settings {
+position:absolute;
+left:30px;
+top:80px;
+text-align:center;
+}
+
+#settings_2r {
+position:absolute;
+left:570px;
+top:80px;
+text-align:center;
+}
+
+#settings_ex {
+position:absolute;
+left:100px;
+top:720px;
+text-align:center;
+}
+
+#settings_ex2 {
+position:absolute;
+left:505px;
+top:720px;
+text-align:center;
+}
+
+#info {
+position:absolute;
+left:265px;
+top:643px;
+width:760px;
+height:150px;
+text-align:left;
+font-size:18px;
+}
+
+#center_image {
+position:absolute;
+left:245px;
+top:35px;
+width:795px;
+height:595px;
+}
+
+#center_text {
+position:absolute;
+left:280px;
+top:40px;
+width:745px;
+height:585px;
+color:#0000CD;
+font-family:"Segoe Print";
+}
+
+#center_text_compact_blue {
+position:absolute;
+left:280px;
+top:40px;
+width:745px;
+height:585px;
+color:#0000CD;
+font-size:18px;
+font-family:Philosopher;
+}
+
+#center_text_compact {
+position:absolute;
+left:280px;
+top:40px;
+width:745px;
+height:585px;
+}
+
+#center_text_column_1 {
+position:absolute;
+left:303px;
+top:83px;
+width:400px;
+height:585px;
+font-family:"Segoe Print";
+}
+
+#center_text_column_2 {
+position:absolute;
+left:700px;
+top:83px;
+width:300px;
+height:585px;
+font-family:"Segoe Print";
+}
+
+#center_text_column_4 {
+position:absolute;
+left:362px;
+top:95px;
+width:580px;
+height:585px;
+font-family: Segoe Print;
+}
+
+#left_padding {
+position:absolute;
+left:245px;
+top:35px;
+width:230px;
+height:596px;
+color:#FFD700;
+font-family:"Segoe Print";
+background-image:url(content/pic/padding.png);
+}
+
+#right_padding {
+position:absolute;
+left:840px;
+top:35px;
+width:200px;
+height:596px;
+color:#FFD700;
+font-family:"Segoe Print";
+background-image:url(content/pic/padding.png);
+text-align:right;
+}
+
+#left_rules {
+position:absolute;
+left:275px;
+top:35px;
+width:230px;
+height:596px;
+color:#FFD700;
+font-family:"Segoe Print";
+}
+
+#right_rules {
+position:absolute;
+left:780px;
+top:35px;
+width:230px;
+height:596px;
+color:#FFD700;
+font-family:"Segoe Print";
+text-align:right;
+}
+
+#a_apperiance {
+position:absolute;
+left:780px;
+top:315px;
+width:230px;
+height:200px;
+color:#FFD700;
+font-family:"Segoe Print";
+text-align:right;
+}
+
+#solo_rules {
+position:absolute;
+left:530px;
+top:15px;
+width:230px;
+height:596px;
+color:#FFD700;
+font-family:"Segoe Print";
+text-align:right;
+}
+
+#upper_image {
+position:absolute;
+left:260px;
+top:50px;
+width:500px;
+height:290px;
+}
+
+#upper_text {
+position:absolute;
+left:270px;
+top:290px;
+width:350px;
+height:290px;
+color:#0000CD;
+font-family:"Segoe Print";
+}
+
+#lower_image {
+position:absolute;
+left:655px;
+top:50px;
+width:500px;
+height:290px;
+}
+
+#lower_text {
+position:absolute;
+left:665px;
+top:290px;
+width:350px;
+height:290px;
+text-align:right;
+color:#0000CD;
+font-family:"Segoe Print";
+}
+
+#stat_text {
+position:absolute;
+left:360px;
+top:460px;
+text-align:center;
+color:#0000CD;
+font-size: 82%;
+font-family:"Segoe Print";
+}
+
+#left_text {
+position:absolute;
+left:270px;
+top:40px;
+width:330px;
+height:580px;
+text-align:left;
+color:#0000CD;
+font-family:"Segoe Print";
+}
+
+#left_text_teach {
+position:absolute;
+left:270px;
+top:70px;
+width:330px;
+height:500px;
+text-align:left;
+color:#0000CD;
+font-family: Segoe Print;
+}
+
+#left_text_heading {
+position:absolute;
+left:270px;
+top:40px;
+text-align:center;
+font-family: Segoe Print;
+}
+
+#middle_text {
+position:absolute;
+left:545px;
+top:40px;
+width:260px;
+height:580px;
+text-align:left;
+color:#0000CD;
+font-family:"Segoe Print";
+}
+
+#middle_text_1 {
+position:absolute;
+left:600px;
+top:70px;
+text-align:left;
+color:#0000CD;
+font-family: Segoe Print;
+}
+
+#middle_text_2 {
+position:absolute;
+left:900px;
+top:70px;
+text-align:right;
+color:#0000CD;
+font-family: Segoe Print;
+}
+
+#middle_text_3 {
+position:absolute;
+left:600px;
+top:210px;
+text-align:left;
+color:#0000CD;
+font-family: Segoe Print;
+}
+
+#middle_text_4 {
+position:absolute;
+left:835px;
+top:210px;
+text-align:right;
+color:#0000CD;
+font-family: Segoe Print;
+}
+
+#middle_text_5 {
+position:absolute;
+left:600px;
+top:379px;
+text-align:left;
+color:#0000CD;
+font-family: Segoe Print;
+}
+
+#middle_text_6 {
+position:absolute;
+left:875px;
+top:379px;
+text-align:right;
+color:#0000CD;
+font-family: Segoe Print;
+}
+
+#middle_text_7 {
+position:absolute;
+left:675px;
+top:545px;
+text-align:left;
+color:#0000CD;
+font-family: Segoe Print;
+}
+
+#middle_text_8 {
+position:absolute;
+left:835px;
+top:545px;
+text-align:right;
+color:#0000CD;
+font-family: Segoe Print;
+}
+
+#right_text {
+position:absolute;
+left:810px;
+top:40px;
+width:230px;
+height:580px;
+text-align:left;
+color:#0000CD;
+font-family:"Segoe Print";
+}
+
+#right_text_heading{
+position:absolute;
+left:602px;
+top:40px;
+text-align:center;
+font-family: Segoe Print;
+}
+
+#left_column {
+position:absolute;
+left:5px;
+top:5px;
+width:240px;
+height:790px;
+font-family:"Segoe Print";
+}
+
+#right_column {
+position:absolute;
+left:1063px;
+top:5px;
+width:210px;
+height:790px;
+text-align:right;
+font-family:"Segoe Print";
+}
+
+#right_column_a {
+position:absolute;
+left:1060px;
+top:5px;
+width:180px;
+height:790px;
+text-align:right;
+font-family:"Segoe Print";
+}
+
+#large_image {
+position:absolute;
+left:1px;
+top:45px;
+width:1000px;
+height:750px;
+}
+
+#close {
+position:absolute;
+left:1005px;
+top:1px;
+width:40px;
+height:30px;
+}
+
+#close_left {
+position:absolute;
+left:750px;
+top:10px;
+width:40px;
+height:30px;
+}
+
+#close_far {
+position:absolute;
+left:750px;
+top:550px;
+width:30px;
+height:30px;
+}
+
+#bookmark_one {
+position:absolute;
+left:260px;
+top:1px;
+width:120px;
+height:30px;
+text-align:center;
+}
+
+#mark_one {
+position:absolute;
+left:387px;
+top:3px;
+width:40px;
+height:30px;
+}
+
+#bookmark_two {
+position:absolute;
+left:430px;
+top:1px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#mark_two {
+position:absolute;
+left:570px;
+top:3px;
+width:40px;
+height:30px;
+}
+
+#bookmark_three {
+position:absolute;
+left:620px;
+top:1px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#mark_three {
+position:absolute;
+left:760px;
+top:3px;
+width:40px;
+height:30px;
+}
+
+#bookmark_four {
+position:absolute;
+left:805px;
+top:1px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#mark_four {
+position:absolute;
+left:940px;
+top:3px;
+width:40px;
+height:30px;
+}
+
+#forward {
+position:absolute;
+left:800px;
+top:720px;
+width:40px;
+height:40px;
+}
+
+#interaction_stat_bar {
+position:absolute;
+left:850px;
+top:10px;
+width:400px;
+height:780px;
+font-family:"Segoe Print";
+}
+
+#sound_icon {
+position:absolute;
+left:960px;
+top:0px;
+width:30px;
+height:30px;
+}
+
+#options_icon {
+position:absolute;
+left:920px;
+top:0px;
+width:30px;
+height:30px;
+}
+
+#choose_left {
+position:absolute;
+left:1px;
+top:1px;
+width:250px;
+height:796px;
+}
+
+#choose_center {
+position:absolute;
+left:270px;
+top:1px;
+width:250px;
+height:796px;
+}
+
+#choose_right {
+position:absolute;
+left:540px;
+top:1px;
+width:250px;
+height:796px;
+}
+
+#chekbox_1s {
+position:absolute;
+left:762px;
+top:51px;
+width:25px;
+height:25px;
+}
+
+#chekbox_2s {
+position:absolute;
+left:762px;
+top:83px;
+width:25px;
+height:25px;
+}
+
+#chekbox_3s {
+position:absolute;
+left:762px;
+top:115px;
+width:25px;
+height:25px;
+}
+
+#chekbox_1l {
+position:absolute;
+left:250px;
+top:70px;
+width:25px;
+height:25px;
+}
+
+#chekbox_2l {
+position:absolute;
+left:250px;
+top:102px;
+width:25px;
+height:25px;
+}
+
+#chekbox_3l {
+position:absolute;
+left:250px;
+top:134px;
+width:25px;
+height:25px;
+}
+
+#chekbox_4l {
+position:absolute;
+left:250px;
+top:166px;
+width:25px;
+height:25px;
+}
+
+#chekbox_5l {
+position:absolute;
+left:250px;
+top:198px;
+width:25px;
+height:25px;
+}
+
+#chekbox_6l {
+position:absolute;
+left:250px;
+top:258px;
+width:25px;
+height:25px;
+}
+
+#chekbox_6l_a {
+position:absolute;
+left:250px;
+top:320px;
+width:25px;
+height:25px;
+}
+
+#chekbox_7l {
+position:absolute;
+left:250px;
+top:289px;
+width:25px;
+height:25px;
+}
+
+#chekbox_7l_a {
+position:absolute;
+left:250px;
+top:350px;
+width:25px;
+height:25px;
+}
+
+#chekbox_8l {
+position:absolute;
+left:250px;
+top:320px;
+width:25px;
+height:25px;
+}
+
+#chekbox_8l_a {
+position:absolute;
+left:250px;
+top:380px;
+width:25px;
+height:25px;
+}
+
+#chekbox_9l {
+position:absolute;
+left:250px;
+top:351px;
+width:25px;
+height:25px;
+}
+
+#chekbox_10l {
+position:absolute;
+left:250px;
+top:412px;
+width:25px;
+height:25px;
+}
+
+#chekbox_10l_a {
+position:absolute;
+left:250px;
+top:470px;
+width:25px;
+height:25px;
+}
+
+#chekbox_11l {
+position:absolute;
+left:250px;
+top:443px;
+width:25px;
+height:25px;
+}
+
+#chekbox_11l_a {
+position:absolute;
+left:250px;
+top:500px;
+width:25px;
+height:25px;
+}
+
+#chekbox_12l {
+position:absolute;
+left:250px;
+top:473px;
+width:25px;
+height:25px;
+}
+
+#chekbox_13l {
+position:absolute;
+left:250px;
+top:504px;
+width:25px;
+height:25px;
+}
+
+#chekbox_14l {
+position:absolute;
+left:250px;
+top:535px;
+width:25px;
+height:25px;
+}
+
+#chekbox_133l {
+position:absolute;
+left:250px;
+top:598px;
+width:25px;
+height:25px;
+}
+
+#chekbox_1r {
+position:absolute;
+left:1012px;
+top:71px;
+width:25px;
+height:25px;
+}
+
+#chekbox_2r {
+position:absolute;
+left:1012px;
+top:103px;
+width:25px;
+height:25px;
+}
+
+#chekbox_3r {
+position:absolute;
+left:1012px;
+top:135px;
+width:25px;
+height:25px;
+}
+
+#chekbox_4r {
+position:absolute;
+left:1012px;
+top:166px;
+width:25px;
+height:25px;
+}
+
+#chekbox_5r {
+position:absolute;
+left:1012px;
+top:195px;
+width:25px;
+height:25px;
+}
+
+#chekbox_6r {
+position:absolute;
+left:1012px;
+top:227px;
+width:25px;
+height:25px;
+}
+
+#chekbox_7r {
+position:absolute;
+left:1012px;
+top:259px;
+width:25px;
+height:25px;
+}
+
+#chekbox_8r {
+position:absolute;
+left:1012px;
+top:292px;
+width:25px;
+height:25px;
+}
+
+#chekbox_9r {
+position:absolute;
+left:1012px;
+top:320px;
+width:25px;
+height:25px;
+}
+
+#chekbox_9_5r {
+position:absolute;
+left:1012px;
+top:351px;
+width:25px;
+height:25px;
+}
+
+#chekbox_10r {
+position:absolute;
+left:1012px;
+top:382px;
+width:25px;
+height:25px;
+}
+
+#chekbox_11r {
+position:absolute;
+left:1012px;
+top:413px;
+width:25px;
+height:25px;
+}
+
+#chekbox_12r {
+position:absolute;
+left:1012px;
+top:444px;
+width:25px;
+height:25px;
+}
+
+#chekbox_13r {
+position:absolute;
+left:1012px;
+top:475px;
+width:25px;
+height:25px;
+}
+
+#chekbox_14r {
+position:absolute;
+left:1012px;
+top:506px;
+width:25px;
+height:25px;
+}
+
+#chekbox_15r {
+position:absolute;
+left:1012px;
+top:537px;
+width:25px;
+height:25px;
+}
+
+#chekbox_16r {
+position:absolute;
+left:1012px;
+top:568px;
+width:25px;
+height:25px;
+}
+
+#chekbox_17r_1 {
+position:absolute;
+left:848px;
+top:599px;
+width:25px;
+height:25px;
+}
+
+#chekbox_17r_2 {
+position:absolute;
+left:889px;
+top:599px;
+width:25px;
+height:25px;
+}
+
+#chekbox_17r_3 {
+position:absolute;
+left:930px;
+top:599px;
+width:25px;
+height:25px;
+}
+
+#chekbox_17r_4 {
+position:absolute;
+left:971px;
+top:599px;
+width:25px;
+height:25px;
+}
+
+#chekbox_17r {
+position:absolute;
+left:1012px;
+top:599px;
+width:25px;
+height:25px;
+}
+
+#study_1 {
+position:absolute;
+left:1250px;
+top:73px;
+width:25px;
+height:25px;
+}
+
+#study_2 {
+position:absolute;
+left:1250px;
+top:104px;
+width:25px;
+height:25px;
+}
+
+#study_3 {
+position:absolute;
+left:1250px;
+top:135px;
+width:25px;
+height:25px;
+}
+
+#study_4 {
+position:absolute;
+left:1250px;
+top:166px;
+width:25px;
+height:25px;
+}
+
+#study_5 {
+position:absolute;
+left:1250px;
+top:197px;
+width:25px;
+height:25px;
+}
+
+#study_6 {
+position:absolute;
+left:1250px;
+top:228px;
+width:25px;
+height:25px;
+}
+
+#study_7 {
+position:absolute;
+left:1250px;
+top:259px;
+width:25px;
+height:25px;
+}
+
+#study_8 {
+position:absolute;
+left:1250px;
+top:290px;
+width:25px;
+height:25px;
+}
+
+#study_9 {
+position:absolute;
+left:1250px;
+top:321px;
+width:25px;
+height:25px;
+}
+
+#study_10 {
+position:absolute;
+left:1250px;
+top:352px;
+width:25px;
+height:25px;
+}
+
+#study_11 {
+position:absolute;
+left:1250px;
+top:383px;
+width:25px;
+height:25px;
+}
+
+#study_12 {
+position:absolute;
+left:1250px;
+top:414px;
+width:25px;
+height:25px;
+}
+
+#fast_sex {
+position:absolute;
+left:1230px;
+top:228px;
+width:21px;
+height:21px;
+}
+
+#fast_wash_master {
+position:absolute;
+left:1230px;
+top:252px;
+width:21px;
+height:21px;
+}
+
+#fast_redeem {
+position:absolute;
+left:1235px;
+top:485px;
+width:21px;
+height:21px;
+}
+
+#fast_redeem_1 {
+position:absolute;
+left:1213px;
+top:485px;
+width:21px;
+height:21px;
+}
+
+#fast_redeem_2 {
+position:absolute;
+left:1235px;
+top:485px;
+width:21px;
+height:21px;
+}
+
+#fast_wash_slave {
+position:absolute;
+left:1230px;
+top:508px;
+width:21px;
+height:21px;
+}
+
+#fast_clean {
+position:absolute;
+left:1230px;
+top:689px;
+width:21px;
+height:21px;
+}
+
+#fast_cook {
+position:absolute;
+left:1230px;
+top:712px;
+width:21px;
+height:21px;
+}
+
+#fast_tentacle {
+position:absolute;
+left:1230px;
+top:758px;
+width:21px;
+height:21px;
+}
+
+#fast_question {
+position:absolute;
+left:1020px;
+top:280px;
+width:48px;
+height:48px;
+}
+
+#fast_influence {
+position:absolute;
+left:1020px;
+top:330px;
+width:48px;
+height:48px;
+}
+
+#fast_chat {
+position:absolute;
+left:1020px;
+top:380px;
+width:48px;
+height:48px;
+}
+
+#exchange {
+position:absolute;
+left:1020px;
+top:455px;
+width:48px;
+height:48px;
+}
+
+#auction_rise_up {
+position:absolute;
+left:555px;
+top:535px;
+width:50px;
+height:50px;
+}
+
+#auction_price {
+position:absolute;
+left:605px;
+top:540px;
+width:250px;
+height:100px;
+font-size:35px;
+color:#FFD700;
+font-family:Victoriana;
+}
+
+#auction_next {
+position:absolute;
+left:725px;
+top:15px;
+width:50px;
+height:50px;
+}
+
+#cage {
+position:absolute;
+left:820px;
+top:340px;
+width:155px;
+height:155px;
+}
+
+#stasis {
+position:absolute;
+left:820px;
+top:500px;
+width:155px;
+height:155px;
+}
+
+#teach {
+position:absolute;
+left:850px;
+top:80px;
+width:100px;
+height:100px;
+}
+
+#teach_r {
+position:absolute;
+left:857px;
+top:183px;
+width:26px;
+height:30px;
+}
+
+#teach_s {
+position:absolute;
+left:887px;
+top:183px;
+width:26px;
+height:30px;
+}
+
+#teach_a {
+position:absolute;
+left:917px;
+top:183px;
+width:26px;
+height:30px;
+}
+
+#teach_r_noa {
+position:absolute;
+left:857px;
+top:183px;
+width:26px;
+height:30px;
+}
+
+#teach_s_noa {
+position:absolute;
+left:917px;
+top:183px;
+width:26px;
+height:30px;
+}
+
+#lab {
+position:absolute;
+left:850px;
+top:230px;
+width:100px;
+height:100px;
+}
+
+#back_home {
+position:absolute;
+left:850px;
+top:650px;
+width:100px;
+height:100px;
+}
+
+#shield_1 {
+position:absolute;
+left:300px;
+top:40px;
+width:200px;
+height:260px;
+}
+
+#shield_2 {
+position:absolute;
+left:750px;
+top:40px;
+width:200px;
+height:260px;
+}
+
+#shield_3 {
+position:absolute;
+left:300px;
+top:350px;
+width:200px;
+height:260px;
+}
+
+#shield_4 {
+position:absolute;
+left:750px;
+top:350px;
+width:200px;
+height:260px;
+}
+
+#shield_5 {
+position:absolute;
+left:520px;
+top:170px;
+width:200px;
+height:260px;
+}
+
+#fight_bg {
+position:absolute;
+left:242px;
+top:1px;
+width:796px;
+height:597px;
+text-align:center;
+}
+
+#ride_bg {
+position:absolute;
+left:240px;
+top:1px;
+width:796px;
+height:597px;
+text-align:center;
+}
+
+#fight_txt {
+position:absolute;
+left:300px;
+top:50px;
+width:680px;
+height:480px;
+color:#f2e8c9;
+text-align:center;
+background-image:url(content/pic/padding.png);
+}
+
+#fight_options {
+position:absolute;
+left:250px;
+top:610px;
+width:340px;
+height:180px;
+text-align:center;
+}
+
+#fight_options_ui2 {
+position:absolute;
+left:240px;
+top:610px;
+width:340px;
+height:180px;
+text-align:center;
+}
+
+#ride_options {
+position:absolute;
+left:270px;
+top:610px;
+width:340px;
+height:180px;
+text-align:center;
+}
+
+#ride_options_ui2 {
+position:absolute;
+left:270px;
+top:610px;
+width:340px;
+height:180px;
+text-align:center;
+font-size:17px;
+}
+
+#fight_subtions {
+position:absolute;
+left:610px;
+top:610px;
+width:420px;
+height:180px;
+text-align:center;
+}
+
+#ride_subtions {
+position:absolute;
+left:620px;
+top:610px;
+width:420px;
+height:180px;
+text-align:center;
+}
+
+#ride_subtions_ui2 {
+position:absolute;
+left:645px;
+top:610px;
+width:420px;
+height:180px;
+text-align:center;
+}
+
+#rider1_pic {
+position:absolute;
+left:40px;
+top:50px;
+width:150px;
+height:150px;
+text-align:center;
+background-image:url(content/a.jpg);
+}
+
+#rider2_pic {
+position:absolute;
+left:40px;
+top:300px;
+width:150px;
+height:150px;
+text-align:center;
+background-image:url(content/a.jpg);
+}
+
+#rider3_pic {
+position:absolute;
+left:40px;
+top:555px;
+width:150px;
+height:150px;
+text-align:center;
+background-image:url(content/a.jpg);
+}
+
+#rider4_pic {
+position:absolute;
+left:1090px;
+top:50px;
+width:150px;
+height:150px;
+text-align:center;
+background-image:url(content/a.jpg);
+}
+
+#rider5_pic {
+position:absolute;
+left:1090px;
+top:300px;
+width:150px;
+height:150px;
+text-align:center;
+background-image:url(content/a.jpg);
+}
+
+#rider6_pic {
+position:absolute;
+left:1090px;
+top:555px;
+width:150px;
+height:150px;
+text-align:center;
+background-image:url(content/a.jpg);
+}
+
+#rider1_name {
+position:absolute;
+left:40px;
+top:15px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider2_name {
+position:absolute;
+left:40px;
+top:265px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider3_name {
+position:absolute;
+left:40px;
+top:520px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider4_name {
+position:absolute;
+left:1090px;
+top:15px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider5_name {
+position:absolute;
+left:1090px;
+top:265px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider6_name {
+position:absolute;
+left:1090px;
+top:520px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider1_score {
+position:absolute;
+left:40px;
+top:210px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider2_score {
+position:absolute;
+left:40px;
+top:460px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider3_score {
+position:absolute;
+left:40px;
+top:710px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider4_score {
+position:absolute;
+left:1090px;
+top:210px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider5_score {
+position:absolute;
+left:1090px;
+top:460px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#rider6_score {
+position:absolute;
+left:1090px;
+top:710px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#ally_pic {
+position:absolute;
+left:1090px;
+top:50px;
+width:150px;
+height:150px;
+text-align:center;
+background-image:url(content/a.jpg);
+}
+
+#enemy_pic {
+position:absolute;
+left:40px;
+top:50px;
+width:150px;
+height:150px;
+text-align:center;
+background-image:url(content/a.jpg);
+}
+
+#ally_name {
+position:absolute;
+left:1075px;
+top:15px;
+width:180px;
+height:30px;
+text-align:center;
+}
+
+#enemy_name {
+position:absolute;
+left:40px;
+top:15px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#next_enemy {
+position:absolute;
+left:190px;
+top:17px;
+width:30px;
+height:30px;
+text-align:center;
+}
+
+#prev_enemy {
+position:absolute;
+left:10px;
+top:17px;
+width:30px;
+height:30px;
+text-align:center;
+}
+
+#next_def {
+position:absolute;
+left:1240px;
+top:207px;
+width:32px;
+height:32px;
+text-align:center;
+}
+
+#prev_def {
+position:absolute;
+left:1060px;
+top:212px;
+width:30px;
+height:30px;
+text-align:center;
+}
+
+#ally_def {
+position:absolute;
+left:1090px;
+top:210px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#enemy_def {
+position:absolute;
+left:40px;
+top:210px;
+width:150px;
+height:30px;
+text-align:center;
+}
+
+#ally_health {
+position:absolute;
+left:1085px;
+top:250px;
+width:40px;
+height:40px;
+text-align:center;
+background-image:url(content/pic/hart_red.png);
+}
+
+#ally_stamina {
+position:absolute;
+left:1145px;
+top:250px;
+width:40px;
+height:40px;
+text-align:center;
+background-image:url(content/pic/hart_green.png);
+}
+
+#ally_will {
+position:absolute;
+left:1205px;
+top:250px;
+width:40px;
+height:40px;
+text-align:center;
+background-image:url(content/pic/hart_purple.png);
+}
+
+#enemy_health {
+position:absolute;
+left:35px;
+top:250px;
+width:40px;
+height:40px;
+text-align:center;
+background-image:url(content/pic/hart_red.png);
+}
+
+#enemy_stamina {
+position:absolute;
+left:95px;
+top:250px;
+width:40px;
+height:40px;
+text-align:center;
+background-image:url(content/pic/hart_green.png);
+}
+
+#enemy_will {
+position:absolute;
+left:155px;
+top:250px;
+width:40px;
+height:40px;
+text-align:center;
+background-image:url(content/pic/hart_purple.png);
+}
+
+#ally_conditions {
+position:absolute;
+left:1055px;
+top:300px;
+width:220px;
+height:450px;
+text-align:center;
+font-size:17px;
+}
+
+#enemy_conditions {
+position:absolute;
+left:5px;
+top:300px;
+width:220px;
+height:450px;
+text-align:center;
+}
+
+#side_stats_up {
+position:absolute;
+left:1020px;
+top:70px;
+width:250px;
+height:400px;
+font-size:30px;
+font-family:Victoriana;
+}
+
+#side_ava_up {
+position:absolute;
+left:850px;
+top:80px;
+width:150px;
+height:150px;
+}
+
+#side_stats_down {
+position:absolute;
+left:1020px;
+top:320px;
+width:250px;
+height:400px;
+font-size:30px;
+font-family:Victoriana;
+}
+
+#side_ava_down {
+position:absolute;
+left:850px;
+top:360px;
+width:150px;
+height:150px;
+}
+
+#side_panel_down {
+position:absolute;
+left:815px;
+top:270px;
+width:450px;
+height:790px;
+font-size:30px;
+font-family:Victoriana;
+}
+
+#side_stats_master_var {
+position:absolute;
+left:1180px;
+top:72px;
+font-size:30px;
+font-family:Victoriana;
+}
+
+#side_stats_slave_var {
+position:absolute;
+left:1180px;
+top:322px;
+font-size:30px;
+font-family:Victoriana;
+}
+
+#side_sound_icon {
+position:absolute;
+left:760px;
+top:5px;
+width:30px;
+height:30px;
+}
+
+#side_options_icon {
+position:absolute;
+left:720px;
+top:5px;
+width:30px;
+height:30px;
+}
+
+#prison_stat_bar {
+position:absolute;
+left:850px;
+top:170px;
+width:400px;
+height:780px;
+font-family:"Segoe Print";
+}
+
+#prison_ava {
+position:absolute;
+left:850px;
+top:40px;
+width:150px;
+height:150px;
+}
+
+#prison_short_stat {
+position:absolute;
+left:1010px;
+top:50px;
+width:240px;
+height:80px;
+font-family:"Segoe Print";
+}
+
+#cryo_ava_1 {
+position:absolute;
+left:850px;
+top:170px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_2 {
+position:absolute;
+left:850px;
+top:360px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_3 {
+position:absolute;
+left:850px;
+top:550px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_4 {
+position:absolute;
+left:1080px;
+top:170px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_5 {
+position:absolute;
+left:1080px;
+top:360px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#cryo_ava_6 {
+position:absolute;
+left:1080px;
+top:550px;
+width:150px;
+height:150px;
+font-size:30px;
+font-family:"Victoriana";
+color:#191970;
+}
+
+#a {
+position:absolute;
+left:100px;
+top:550px;
+width:1000px;
+height:200px;
+text-align:center;
+background-color:#FFFF00;
+}
+
+#rank_help {
+position:absolute;
+left:160px;
+top:35px;
+font-family:"Segoe Print";
+}
+
+.inventory_item {
+text-align:left;
+margin:0;
+}
+
+
+[tooltip-data] {
+    position: relative;
+    cursor: pointer;
+}
+
+[tooltip-data]:after {
+  visibility: hidden;
+    pointer-events: none;
+}
+
+[tooltip-data]:hover:after {
+    visibility: visible;
+}
+
+[tooltip-data]:after {
+  position: absolute;
+  z-index: 1000;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  border-radius:         3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(tooltip-data);
+  text-align: center;
+  line-height: 1.2;
+}
+
+[tooltip-data]:after,
+.tooltip-top:after {
+  bottom: 100%;
+  left: 50%;
+}
+
+[tooltip-data]:after,
+.tooltip-top:after {
+  margin-left: -80px;
+}
+
+[tooltip-data]:hover:after,
+[tooltip-data]:focus:after,
+.tooltip-top:hover:after,
+.tooltip-top:focus:after {
+  -webkit-transform: translateY(-12px);
+  transform:         translateY(-12px); 
+}
+
+.tooltip-bottom:after {
+  top: 100%;
+  bottom: auto;
+  left: 50%;
+}
+
+.tooltip-left:after {
+  right: 100%;
+  bottom: 50%;
+  left: auto;
+}
+
+.tooltip-right:after {
+  bottom: 50%;
+  left: 100%;
+}
+
+.tooltip-left:after,
+.tooltip-right:after {
+  margin-left: 0;
+  margin-bottom: -16px;
+}
+
+.tooltip-left:hover:after,
+.tooltip-left:focus:after {
+  -webkit-transform: translateX(-12px);
+  transform:         translateX(-12px); 
+}
+
+.tooltip-right:hover:after,
+.tooltip-right:focus:after {
+  -webkit-transform: translateX(12px);
+  transform:         translateX(12px); 
+}
+
+.wide:after {
+  width: 240px;
+  margin-left: -120px;
+}
+
+.plain:after {
+font-family:Consolas;
+font-size:18px;
+}
+
+.segoe_print:after {
+font-family:"Segoe Print";
+font-size:18px;
+}
+
+.victoriana:after {
+font-family: Victoriana;
+font-weight: 500;
+font-size: 25px;
+color: #ffff00;
+}
+
+#leave_quarter {
+position:absolute;
+left:45px;
+top:650px;
+width:100px;
+height:100px;
+}
+
+[tooltip-data] {
+    position: relative;
+    cursor: pointer;
+}
+
+[tooltip-data]:after {
+  visibility: hidden;
+    pointer-events: none;
+}
+
+[tooltip-data]:hover:after {
+    visibility: visible;
+}
+
+[tooltip-data]:after {
+  position: absolute;
+  z-index: 1000;
+  padding: 7px;
+  width: 350px;
+  -webkit-border-radius: 3px;
+  border-radius:         3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(tooltip-data);
+  text-align: center;
+  line-height: 1.2;
+}
+
+[tooltip-data]:after,
+.tooltip-top:after {
+  bottom: 100%;
+  left: 50%;
+}
+
+[tooltip-data]:after,
+.tooltip-top:after {
+  margin-left: -80px;
+}
+
+[tooltip-data]:hover:after,
+[tooltip-data]:focus:after,
+.tooltip-top:hover:after,
+.tooltip-top:focus:after {
+  -webkit-transform: translateY(-12px);
+  transform:         translateY(-12px); 
+}
+
+.tooltip-bottom:after {
+  top: 100%;
+  bottom: auto;
+  left: 50%;
+}
+
+.tooltip-left:after {
+  right: 100%;
+  bottom: 50%;
+  left: auto;
+}
+
+.tooltip-right:after {
+  bottom: 30%;
+  left: 100%;
+}
+
+.tooltip-left:after,
+.tooltip-right:after {
+  margin-left: 0;
+  margin-bottom: -16px;
+}
+
+.tooltip-left:hover:after,
+.tooltip-left:focus:after {
+  -webkit-transform: translateX(-12px);
+  transform:         translateX(-12px); 
+}
+
+.tooltip-right:hover:after,
+.tooltip-right:focus:after {
+  -webkit-transform: translateX(12px);
+  transform:         translateX(12px); 
+}
+
+.icon:after {
+font-family: Victoriana;
+font-weight: 500;
+font-size: 30px;
+color: #ffff00;
+}
+
+.wide:after {
+  width: 240px;
+  margin-left: -120px;
+}
+
+.plain:after {
+font-family:Consolas;
+font-size:18px;
+}
+
+.segoe_print:after {
+font-family:"Segoe Print";
+font-size:18px;
+}
+
+.victoriana:after {
+font-family: Victoriana;
+font-weight: 500;
+font-size: 25px;
+color: #ffff00;
+}
+
+#tooltip1 {
+position:absolute;
+left:30px;
+top:43px;
+width:20px;
+height:20px;
+}
+
+#tooltip2 {
+position:absolute;
+left:30px;
+top:105px;
+width:20px;
+height:20px;
+}
+
+#tooltip3 {
+position:absolute;
+left:30px;
+top:167px;
+width:20px;
+height:20px;
+}
+
+#tooltip4 {
+position:absolute;
+left:30px;
+top:229px;
+width:20px;
+height:20px;
+}
+
+#tooltip5 {
+position:absolute;
+left:30px;
+top:291px;
+width:20px;
+height:20px;
+}
+
+#tooltip6 {
+position:absolute;
+left:30px;
+top:353px;
+width:20px;
+height:20px;
+}
+
+#tooltip7 {
+position:absolute;
+left:30px;
+top:415px;
+width:20px;
+height:20px;
+}
+
+#tooltip8 {
+position:absolute;
+left:30px;
+top:477px;
+width:20px;
+height:20px;
+}
+
+#tooltip81 {
+position:absolute;
+left:30px;
+top:539px;
+width:20px;
+height:20px;
+}
+
+#tooltip9 {
+position:absolute;
+left:202px;
+top:43px;
+width:20px;
+height:20px;
+}
+
+#tooltip10 {
+position:absolute;
+left:202px;
+top:105px;
+width:20px;
+height:20px;
+}
+
+#tooltip11 {
+position:absolute;
+left:202px;
+top:167px;
+width:20px;
+height:20px;
+}
+
+#tooltip12 {
+position:absolute;
+left:202px;
+top:229px;
+width:20px;
+height:20px;
+}
+
+#tooltip13 {
+position:absolute;
+left:202px;
+top:291px;
+width:20px;
+height:20px;
+}
+
+#tooltip14 {
+position:absolute;
+left:202px;
+top:353px;
+width:20px;
+height:20px;
+}
+
+#tooltip15 {
+position:absolute;
+left:202px;
+top:415px;
+width:20px;
+height:20px;
+}
+
+#tooltip16 {
+position:absolute;
+left:202px;
+top:477px;
+width:20px;
+height:20px;
+}
+
+#slave_activity {
+position:absolute;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+left:28px;
+top:0px;
+width:300px;
+height:66px;
+}
+
+#slave_activity_gray {
+position:absolute;
+left:28px;
+top:0px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Leave_the_house {
+position:absolute;
+left:28px;
+top:62px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Domestic_issues {
+position:absolute;
+left:28px;
+top:124px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cast_a_spell {
+position:absolute;
+left:28px;
+top:186px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cast_a_spell_gray {
+position:absolute;
+left:28px;
+top:186px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Assistant_assignments {
+position:absolute;
+left:28px;
+top:248px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Appoint_assistant {
+position:absolute;
+left:28px;
+top:248px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Appoint_assistant_gray {
+position:absolute;
+left:28px;
+top:248px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Slave_assignments {
+position:absolute;
+left:28px;
+top:310px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Train_assistant {
+position:absolute;
+left:28px;
+top:310px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Slave_assignments_gray {
+position:absolute;
+left:28px;
+top:310px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#End_of_the_day {
+position:absolute;
+left:28px;
+top:372px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_talk {
+position:absolute;
+left:28px;
+top:0px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_sex {
+position:absolute;
+left:28px;
+top:62px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_sex_gray {
+position:absolute;
+left:28px;
+top:62px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Conduct_a_lesson {
+position:absolute;
+left:28px;
+top:124px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Conduct_a_lesson_gray {
+position:absolute;
+left:28px;
+top:124px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sex_education {
+position:absolute;
+left:28px;
+top:186px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sex_education_gray {
+position:absolute;
+left:28px;
+top:186px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Invite_a_tutor {
+position:absolute;
+left:28px;
+top:248px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Invite_a_tutor_gray {
+position:absolute;
+left:28px;
+top:248px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Reward {
+position:absolute;
+left:28px;
+top:310px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Punish {
+position:absolute;
+left:28px;
+top:372px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Punish_gray {
+position:absolute;
+left:28px;
+top:372px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Get_rid_of_her {
+position:absolute;
+left:28px;
+top:434px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_activities {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+#take_bath {
+position:absolute;
+left:28px;
+top:0px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#take_bath_gray {
+position:absolute;
+left:28px;
+top:0px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Prepare_a_meal {
+position:absolute;
+left:28px;
+top:62px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Prepare_a_meal_gray {
+position:absolute;
+left:28px;
+top:62px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tidy_up_the_house {
+position:absolute;
+left:28px;
+top:124px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tidy_up_the_house_gray {
+position:absolute;
+left:28px;
+top:124px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Take_a_drug {
+position:absolute;
+left:28px;
+top:186px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Drink_a_potion {
+position:absolute;
+left:28px;
+top:248px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Accounting {
+position:absolute;
+left:28px;
+top:310px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Business {
+position:absolute;
+left:28px;
+top:372px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Domestic {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Conduct_a_lesson_S-A {
+position:absolute;
+left:28px;
+top:0px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Conduct_a_lesson_S-A_gray {
+position:absolute;
+left:28px;
+top:0px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tidy_up_house-A {
+position:absolute;
+left:28px;
+top:62px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tidy_up_house-A_gray {
+position:absolute;
+left:28px;
+top:62px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#cook-A {
+position:absolute;
+left:28px;
+top:124px;
+width:300px;
+height:66px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#cook-A_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Milk_the_fiend-A {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Milk_the_fiend-A_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Active_sex_A {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Relaxed_vaginal_sex_A {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Relaxed_Anal_sex_A {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Assistant_assignments {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Attend_classes_S {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Attend_classes_S_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#gymnastics_S {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#gymnastics_S_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tidy_up_the_house_S {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tidy_up_the_house_S_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Prepare_dinner_S {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Prepare_dinner_S_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Take_a_bath_S {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Take_a_bath_S_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Milk_the_fiend_S {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Milk_the_fiend_S_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Serve_me_S {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Take_a_drug_S {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Drink_a_potion_S {
+position:absolute;
+left:28px;
+top:496px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Slave_assignments {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Spellbook {
+position:absolute;
+left:28px;
+top:0px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Auspex {
+position:absolute;
+left:28px;
+top:62px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Auspex_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cruciato {
+position:absolute;
+left:28px;
+top:124px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cruciato_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+
+#Delikacia {
+position:absolute;
+left:28px;
+top:186px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Delikacia_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sententia_veritas {
+position:absolute;
+left:28px;
+top:248px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sententia_veritas_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Magna_Magnifika {
+position:absolute;
+left:28px;
+top:310px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Magna_Magnifika_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tremedio {
+position:absolute;
+left:28px;
+top:372px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tremedio_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Domini_Dictum {
+position:absolute;
+left:28px;
+top:434px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Domini_Dictum_gray {
+position:absolute;
+left:28px;
+top:434px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Adverto_Servili {
+position:absolute;
+left:28px;
+top:496px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Adverto_Servili_gray {
+position:absolute;
+left:28px;
+top:496px;
+font-size:30px;
+font-family:Victoriana;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_cast {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#ask_S {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#affect_S {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_slave_activities_talk {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+#Cancel_slave_activities_talk {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Applied_skills_S {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Applied_skills_S_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Physical_development_S {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Physical_development_S_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Creative_development_S {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Creative_development_S_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Special_skills_S {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Special_skills_S_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Conduct_lesson {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#cancel_Conduct_lesson {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Petting_S {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Oral_techniques_S {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Penetration_S {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Demonstration_S {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Group_sex_S {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Fetishism_S {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Xenophily_S {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Sexed {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#cancel_Sexed {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Psychological_pressure {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Battering {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Battering_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flagellation {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flagellation_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Torture_instruments {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Torture_instruments_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Torture_units {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Torture_units_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Bondage {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Bondage_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Shaming {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Shaming_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Example_of_punishment {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Example_of_punishment_gray {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Punish {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#cancel_Punish {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#Moral_encouragement {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Spend_time_together {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Spend_time_together_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Give_free_time {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Give_free_time_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Erotic_reward {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Make_gift {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sweet_treat {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Reward {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#cancel_Reward {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Relaxed_vaginal_sex_slave {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Relaxed_vaginal_sex_slave_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Relaxed_anal_sex_slave {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Relaxed_anal_sex_slave_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Active_sex {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Active_sex_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Threesome_sex {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Threesome_sex_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rape {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rape_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Oral_rape {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Oral_rape_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Anal_rape {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Anal_rape_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_sex {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#cancel_sex {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+
+#Housekeeping_tutor {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Housekeeping_tutor_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cookery_tutor {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cookery_tutor_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Medicine_tutor {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Medicine_tutor_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Clerical_tutor {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Clerical_tutor_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gymnastics_tutor {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gymnastics_tutor_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Choreography_tutor {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Choreography_tutor_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Martialarts_tutor {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Martialarts_tutor_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dressage_tutor {
+position:absolute;
+left:200px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dressage_tutor_gray {
+position:absolute;
+left:200px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Taming_tutor {
+position:absolute;
+left:200px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Taming_tutor_gray {
+position:absolute;
+left:200px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Etiquette_tutor {
+position:absolute;
+left:200px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Etiquette_tutor_gray {
+position:absolute;
+left:200px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Musical_tutor {
+position:absolute;
+left:200px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Musical_tutor_gray {
+position:absolute;
+left:200px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vocal_tutor {
+position:absolute;
+left:200px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vocal_tutor_gray {
+position:absolute;
+left:200px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Witchcraft_tutor {
+position:absolute;
+left:200px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Witchcraft_tutor_gray {
+position:absolute;
+left:200px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_tutor {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#cancel_tutor {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Drive_out_the_house {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Hang {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Decapitate {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Impale {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Drown {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Roast_alive {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Give_to_monster {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Getridofher {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#cancel_Getridofher {
+position:absolute;
+left:0px;
+top:496px;
+width:25px;
+height:66px;
+}
+
+#The_Barn {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Reports {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Business {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Business {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#Drink_camra {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Drink_camra_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Take_datura {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Take_datura_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Drink_alcohol {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Drink_alcohol_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Smell_pollen {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Smell_pollen_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dive_into_oblivion {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dive_into_oblivion_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Take_drug {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Take_drug {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Bacchic_nectar {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Bacchic_nectar_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tonic_elixir {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tonic_elixir_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Miracle_Balm {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Miracle_Balm_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Aphrodisiac {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Aphrodisiac_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Powerful_aphrodisiac {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Powerful_aphrodisiac_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Philtre {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Philtre_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Water_of_Lethe {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Water_of_Lethe_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Drink_potion {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Drink_potion {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Applied_skills {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Physical_development {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Physical_development_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Creative_development {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Special_skills {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Conduct_A_lesson {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+
+#Cancel_Conduct_A_lesson {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Housekeeping_lesson {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Housekeeping_lesson_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cookery_classes {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cookery_classes_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Nursing_courses {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Nursing_courses_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Clerical_lesson {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Clerical_lesson_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sport_class {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sport_class_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Choreography_class {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Choreography_class_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Martial_arts {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Martial_arts_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dressage {
+position:absolute;
+left:200px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dressage_gray {
+position:absolute;
+left:200px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Taming {
+position:absolute;
+left:200px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Taming_gray {
+position:absolute;
+left:200px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rhetorics_class {
+position:absolute;
+left:200px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rhetorics_class_gray {
+position:absolute;
+left:200px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Music_class {
+position:absolute;
+left:200px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Music_class_gray {
+position:absolute;
+left:200px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vocal_class {
+position:absolute;
+left:200px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vocal_class_gray {
+position:absolute;
+left:200px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Potions_lesson {
+position:absolute;
+left:200px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Potions_lesson_gray {
+position:absolute;
+left:200px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Attend_classes {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Attend_classes {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Drink_camra_S {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Drink_camra_S_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Datura_S {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Datura_S_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Alcohol_S {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Alcohol_S_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Smell_pollen_S {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Smell_pollen_S_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Your_dose_of_happiness {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Your_dose_of_happiness_gray {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Take_S_drug {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Take_S_drug {
+position:absolute;
+left:0px;
+top:496px;
+width:25px;
+height:66px;
+}
+
+#Bacchic_nectar_S {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Bacchic_nectar_S_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tonic_elixir_S {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tonic_elixir_S_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Miracle_Balm_S {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Miracle_Balm_S_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Aphrodisiac_S {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Aphrodisiac_S_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Powerful_Aphrodisiac_S {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Powerful_Aphrodisiac_S_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Philtre_S {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Philtre_S_gray {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Water_of_Lethe_S {
+position:absolute;
+left:28px;
+top:496px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Water_of_Lethe_S_gray {
+position:absolute;
+left:28px;
+top:496px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Drink_S_potion {
+position:absolute;
+left:0px;
+top:496px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Drink_S_potion {
+position:absolute;
+left:0px;
+top:558px;
+width:25px;
+height:66px;
+}
+
+#slave_past {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_feelings {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_thoughts {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_requests {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_need {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_fear {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_ask {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+#Cancel_ask {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Explain_her_position {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Encourage {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Encourage_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Threaten {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Threaten_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Put_in_place {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Put_in_place_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Give_a_new_name {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Affect {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Affect {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Housekeeping_Slave {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Housekeeping_Slave_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cookery_Slave {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cookery_Slave_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Medicine_Slave {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Clerical_Slave {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Applied_skills {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Applied_skills {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Gymnastics_Slave {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Choreography_Slave {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Martial_arts_Slave {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dressage_Slave {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dressage_Slave_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Harness_Slave {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Harness_Slave_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Physical_development {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Physical_development {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Etiquette_slave {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Acting_slave {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Musical_slave {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vocal_slave {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Creative_development {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Creative_development {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Domestication_slave {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Taming_slave {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Alchemy_slave {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Alchemy_slave_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Special_skills {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Special_skills {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Piano {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Piano_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cello {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cello_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Violin {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Violin_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Block_flute {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Block_flute_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Guitar {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Guitar_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Musical_instruments {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Musical_instruments {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Handjob {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Handjob_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Footjob {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Footjob_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+
+#Rubbing {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rubbing_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Paizuri {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Paizuri_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Petting {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Petting {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Kissing {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Kissing_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Licking {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Licking_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Blowjob {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Blowjob_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Deepthroat {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Deepthroat_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rimming {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rimming_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Oral {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Oral {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Vaginal_sex {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vaginal_sex_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Anal_sex {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Anal_sex_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Fisting {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Fisting_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Anal_fisting {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Anal_fisting_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Penetration {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Penetration {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Threesome {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Threesome_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Double_penetration {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Double_penetration_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Triple_penetration {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Triple_penetration_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gangbang {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gangbang_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Bukkake {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Bukkake_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Group_sex {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Group_sex {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Dog {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dog_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Boar {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Boar_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Stallion {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Stallion_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Fiend_of_the_Fogs {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Fiend_of_the_Fogs_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Spider {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Spider_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#sea_tentacle {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#sea_tentacle_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Xenophily {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Xenophily {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#Enema {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Enema_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Masochism {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Masochism_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Self_torture {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Self_torture_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Golden_shower {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Golden_shower_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Scat {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Scat_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Fetishism {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Fetishism {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Seduction {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Masturbation {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Dildo {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Exhibitionism {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Worship_and_humiliation {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Demonstration {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Demonstration {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Strictly_chastise {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Roughly_scold {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Threaten_tortures {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Threaten_sale {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Threaten_death {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_pressure {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+#Cancel_pressure {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#spank {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Slap {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Tear_the_ear {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Hit_in_the_stomach {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Beat_brutally {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Battering {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Battering {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Spank_slipper {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flog_belt {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flog_cane {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flog_cane_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flog_lash {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flog_lash_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flog_whip {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flog_whip_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Flagellation {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Flagellation {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Hot_wax {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Burning_ointment {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Crocodiles {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Acetic_infusion {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Finger_vices {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Pricking {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Water_torture {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cauterization {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Torture_instruments {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Torture_instruments {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Presentation {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Demonstration {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Application {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Torture_units {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Torture_units {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Wooden_horse {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Manual_rack {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Water_barrel {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Molten_swing {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Iron_maiden {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Infested_pit {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_unitsPresentation {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Cancel_unitsPresentation {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Back_unitsDemonstration {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Cancel_unitsDemonstration {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Back_unitsApplication {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Cancel_unitsApplication {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Put_corner {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Put_peas {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rope_saddle {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Hang_legs {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rope_rack {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rope_saddle_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Hang_legs_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rope_rack_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Deprivation {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Deprivation_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Erotic_bondage {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Erotic_bondage_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Painful_bondage {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Bondage {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Bondage {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Naked_walk {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Shameful_podium {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Living_canvas {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Public_use {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Public_toilet {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Shaming {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Shaming {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#Threaten_prisoner {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Flog_prisoner {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Beat_prisoner {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Torture_prisoner {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Execute_prisoner {
+position:absolute;
+left:28px;
+top:434px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Example {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Example {
+position:absolute;
+left:0px;
+top:496px;
+width:25px;
+height:66px;
+}
+
+#Stroll_roof {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Walk_city {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Go_beach {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Go_beach_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Go_theater {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Go_theater_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Go_restaurant {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Go_restaurant_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Spend_time {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Spend_time {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#hour_of_rest {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#hour_of_rest_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#hour_of_fun {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#hour_of_fun_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rest_till_evening {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Rest_till_evening_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Fun_till_evening {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Fun_till_evening_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Garden_of_Gethsemane {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Garden_of_Gethsemane_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Hot_springs {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Hot_springs_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Golden_cage {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Golden_cage_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_free_time {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Cancel_free_time {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Gentle_hug {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gentle_hug_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sensual_massage {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sensual_massage_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Petting {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Petting_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vibes {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vibes_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cunnilingus {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cunnilingus_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Erotic_reward {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Erotic_reward {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Bouquet_flowers {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Bouquet_flowers_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Perfume {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Perfume_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Warm_plaid {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Warm_plaid_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Plush_toy {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Plush_toy_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Mini_pony {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Mini_pony_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Jewelry {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Clothes {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_gift {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Cancel_gift {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Headband {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Headband_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sparkly_earrings {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sparkly_earrings_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#ring_gem {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#ring_gem_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sparkling_necklace {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sparkling_necklace_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Precious_tiara {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Precious_tiara_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Jewelry {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Jewelry {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Soft_slippers {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Soft_slippers_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sundress {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Sundress_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gown {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gown_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gorgeous_dress {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gorgeous_dress_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Wedding_dress {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Wedding_dress_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Clothes {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Clothes {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#Chocolate {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Chocolate_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cream_cake {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cream_cake_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Banana_sundae {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Banana_sundae_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Euphorijelly {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Euphorijelly_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vesturian_ambrosia {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vesturian_ambrosia_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_treat {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Cancel_treat {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Sparingly_approve {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Praise {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Weighty_compliment {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Promise_Promotion {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Promise_gift {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_encouragement {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+#Cancel_encouragement {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Housekeeping {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Housekeeping_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cookery {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Cookery_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Medicine {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Medicine_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Clerical_work {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Clerical_work_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_AssistantApplied {
+position:absolute;
+left:0px;
+top:0px;
+width:25px;
+height:66px;
+}
+
+#Cancel_AssistantApplied {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Gymnastics {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Gymnastics_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Choreography {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Choreography_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Martial_arts_A {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Martial_arts_A_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Physicaldevelopment {
+position:absolute;
+left:0px;
+top:62px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Physicaldevelopment {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Expression {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Expression_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Music {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Music_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vocal {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Vocal_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Creativedevelopment {
+position:absolute;
+left:0px;
+top:124px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Creativedevelopment {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Petplay {
+position:absolute;
+left:28px;
+top:62px;
+width:300px;
+height:66px;
+}
+
+#Petplay_gray {
+position:absolute;
+left:28px;
+top:62px;
+width:300px;
+height:66px;
+}
+
+#Dressage_A {
+position:absolute;
+left:28px;
+top:124px;
+width:300px;
+height:66px;
+}
+
+#Dressage_A_gray {
+position:absolute;
+left:28px;
+top:124px;
+width:300px;
+height:66px;
+}
+
+#Esoterictheory {
+position:absolute;
+left:28px;
+top:186px;
+width:300px;
+height:66px;
+}
+
+#Esoterictheory_gray {
+position:absolute;
+left:28px;
+top:186px;
+width:300px;
+height:66px;
+}
+
+#Back_Specialskills {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Specialskills {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Wash_me {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Wash_me_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Make_massage {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Entertain_me {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Relaxed_vaginal_S {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Relaxed_anal_S {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Active_sex_S {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Serveme {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Serveme {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#Concert {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Acrobatics {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Striptease {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Erotical_show {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Lesbian_show {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Lesbian_show_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Entertain {
+position:absolute;
+left:0px;
+top:186px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Entertain {
+position:absolute;
+left:0px;
+top:248px;
+width:25px;
+height:66px;
+}
+
+#Make_farmhand {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Make_farmhand_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Retrieve_farmhand {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Retrieve_farmhand_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Make_cow {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Make_cow_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Retrieve_cow {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Retrieve_cow_gray {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Make_egglayer {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Make_egglayer_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Retrieve_egglayer {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Retrieve_egglayer_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Make_pig {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Make_pig_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Retrieve_pig {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Retrieve_pig_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Farmhand_orders {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Farmhand_orders_gray {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#How_work {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_thebarn {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Cancel_thebarn {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Fatten_animals {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Stop_animals {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slaughter_pigs {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#not_pigs {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Farmhandorders {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Farmhandorders {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Barn_accounts {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Barn_accounts_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Businessreports {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Businessreports {
+position:absolute;
+left:0px;
+top:434px;
+width:25px;
+height:66px;
+}
+
+#Financial_report {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Financial_report_gray {
+position:absolute;
+left:28px;
+top:0px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Impoverished {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Poor {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Basic {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Comfortable {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Respectable {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Luxurious {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Extravagant {
+position:absolute;
+left:28px;
+top:62px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Increase {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Decrease {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#Increase_gray {
+position:absolute;
+left:28px;
+top:124px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Decrease_gray {
+position:absolute;
+left:28px;
+top:186px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Do_accounting {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#AccountantSelf {
+position:absolute;
+left:28px;
+top:248px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_accountant {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#slave_accountant_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#no_slave_accountant_gray {
+position:absolute;
+left:28px;
+top:310px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#assistant_accountant {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #ffff00;
+text-align: left;
+padding-top: 15px;
+}
+
+#assistant_accountant_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#no_assistant_accountant_gray {
+position:absolute;
+left:28px;
+top:372px;
+font-family: Victoriana;
+font-size: 30px;
+color: #8d8d8d;
+text-align: left;
+padding-top: 15px;
+}
+
+#Back_Accounting {
+position:absolute;
+left:0px;
+top:310px;
+width:25px;
+height:66px;
+}
+
+#Cancel_Accounting {
+position:absolute;
+left:0px;
+top:372px;
+width:25px;
+height:66px;
+}
+
+#center_image_home {
+position:absolute;
+left:250px;
+top:50px;
+width:795px;
+height:595px;
+}
+
+#go_market {
+position:absolute;
+left:350px;
+top:50px;
+}
+
+#go_market_yes {
+position:absolute;
+left:350px;
+top:180px;
+}
+
+#go_market_no {
+position:absolute;
+left:550px;
+top:180px;
+}
+
+#logo {
+position:absolute;
+left:825px;
+top:5px;
+}
+
+#Tutorial {
+left:550px;
+top:180px;
+}
+
+#Storyselect {
+left:550px;
+top:220px;
+}
+
+#Storycreate {
+left:550px;
+top:260px;
+}
+
+#Sandbox {
+left:550px;
+top:300px;
+}
+
+#Controls {
+left:550px;
+top:340px;
+}
+
+#Credits {
+left:550px;
+top:380px;
+}
+
+#Aboutfix {
+left:550px;
+top:420px;
+}
+
+#Moddedby {
+left:550px;
+top:600px;
+}
+
+'
+!Strec - jon_UIadds addition (begin)
+gs "#sjm_CSS_UIadds"
+$STYLESHEET += $sjm_CSS_UIadds
+!Strec - jon_UIadds addition (end)
+
+--- #CSS ---------------------------------
+

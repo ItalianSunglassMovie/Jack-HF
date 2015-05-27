@@ -1,0 +1,46 @@
+# _layout
+!layout of a main game screen
+INTEGRATED_ACTIONS = 0
+if ui_style = 1:$backimage = 'content/pic/ui/old/bg_old.jpg'
+if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg.jpg'
+if ui_style = 0:$backimage = 'content/pic/ui/classic/bg.jpg'
+
+SHOWOBJS 1
+SHOWSTAT 0
+SHOWACTS 0
+
+$onnewloc = '$newloc'
+
+LCOLOR = rgb(0,0,255)
+FCOLOR = rgb(0,0,0)
+
+$MAINDESC_BACKIMAGE = 'content/.png'
+MAINDESC_X = 1
+MAINDESC_Y = 1
+MAINDESC_W = 1278
+MAINDESC_H = 798
+
+$MSG_BACKIMAGE = 'content\pic\msg_bg.jpg'
+$MSG_OK_IMAGE = 'content/pic/buttons/ok-icon.png'
+$MSG_FORMAT = '<div id = "ink">%TEXT%</div>'
+MSG_TEXT_X = 80
+MSG_TEXT_Y = 50
+MSG_TEXT_W = 370
+MSG_TEXT_H = 400
+MSG_OK_X = 250
+MSG_OK_Y = 340
+MSG_X = 200
+
+$STATDESC_BACKIMAGE = 'content/.jpg'
+STATDESC_X = 810
+STATDESC_Y = 1
+STATDESC_W = 450
+STATDESC_H = 800
+
+$OBJECTS_BACKIMAGE = 'content/c.jpg'
+OBJECTS_X = 780
+OBJECTS_Y = 660	
+OBJECTS_W = 50	
+OBJECTS_H = 100
+--- _layout ---------------------------------
+

@@ -1,0 +1,90 @@
+# $objsel
+!Location handler objects
+
+IF selobj = '@':
+ !'
+ IF slave_fights_back = 1:
+  GT 'slave_fights_back'
+ END
+ '
+ IF txt < txt_count:
+  txt += 1
+  else
+  delobj '@'
+  if $msg_txt ! '' and txt_count = txt:
+   msg '<<$msg_txt>>'
+   $msg_txt = ''
+  END
+  GT 'menu_form'
+ END
+ unsel
+ GT curloc
+END
+
+
+IF selobj = '<img src = "content\pic\buttons\forward_button.png">':
+ IF txt < txt_count:
+  txt += 1
+  killobj 
+  else
+  killobj 
+  IF $msg_txt ! '' and txt_count = txt:
+   msg '<<$msg_txt>>'
+   $msg_txt = ''
+  END
+  GT '<<$return_lock>>'
+ END
+ unsel
+ GT curloc
+END
+
+IF selobj = '<img src = "content\pic\buttons\back_button.png">':
+ txt -= 1
+ killobj 
+ unsel
+ GT curloc
+END
+
+IF selobj = '<img src = "content\pic\buttons\demo_forward_button.png">':
+ IF txt < txt_count:
+  txt += 1
+  killobj 
+  else
+  killobj 
+  if $msg_txt ! '' and txt_count = txt:
+   msg '<<$msg_txt>>'
+   $msg_txt = ''
+  END
+  GT 'demo_menu_form'
+ END
+ unsel
+ GT curloc
+END
+
+IF selobj = '<img src = "content\pic\buttons\demo_back_button.png">':
+ txt -= 1
+ killobj 
+ unsel
+ GT curloc
+END
+
+IF selobj = '<img src = "content\pic\buttons\demo_forward.png">':
+ IF txt < txt_count:
+  txt += 1
+  killobj 
+  else
+  killobj 
+  lecture = 100
+  txt = 1
+ END
+ unsel
+ GT curloc
+END
+
+IF selobj = '<img src = "content\pic\buttons\auk_fwrd.png">':
+ killobj 
+ unsel
+ GT 'slave_auction_pass'
+END
+--- $objsel ---------------------------------
+

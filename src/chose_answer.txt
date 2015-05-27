@@ -1,0 +1,152 @@
+# chose_answer
+!The choice of answer to the question in the dialogue with slave
+
+IF interaction = 1113:
+ $text[1] = $no_need
+ if slave['obedience'] > 4: $text[1] = $no_need_gentle 
+ IF slave["passion_comfort"] = 1:
+  $text[1] = $comfort_need
+ END  
+ IF slave["passion_luxury"] = 1:
+  $text[1] = $luxury_need
+ END  
+ IF slave["passion_sweets"] = 1:
+  $text[1] = $sweets_need
+ END  
+ IF slave["passion_fame"] = 1:
+  $text[1] = $fame_need
+ END
+ IF slave["abuse_attitude"] = 2 and slave['custom'] > 1:
+  $text[1] = $abuse_need
+ END
+ IF slave["darkness_attitude"] = 2 and slave['custom'] > 1:
+  $text[1] = $darkness_need
+ END
+ IF slave["blood_attitude"] = 2 and slave['custom'] > 1:
+  $text[1] = $blood_need
+ END 
+ IF slave["fire_attitude"] = 2 and slave['custom'] > 1:
+  $text[1] = $fire_need
+ END  
+ IF slave["water_attitude"] = 2 and slave['custom'] > 1:
+  $text[1] = $water_need
+ END  
+ IF slave["vermin_attitude"] = 2 and slave['custom'] > 1:
+  $text[1] = $vermin_need
+ END  
+ IF slave["deprivation_attitude"] = 2 and slave['custom'] > 1:
+  $text[1] = $deprivation_need
+ END  
+ IF slave["nymphomania"] > 0 and slave['arousal'] > 1:
+  $text[1] = $nymphomania_need
+ END
+ IF slave["homosexualism"] = 2 and slave['arousal'] > 1:
+  $text[1] = $homosexualism_need
+ END
+ IF slave["exhibitionism"] = 2 and slave['arousal'] > 2:
+  $text[1] = $exhibitionism_need
+ END
+ IF slave["preversion"] = 2 and slave['arousal'] > 3:
+  $text[1] = $preversion_need
+ END    
+END
+
+IF interaction = 1114:
+ $text[1] = $no_like
+ if slave['obedience'] > 3: $text[1] = $no_like_gentle 
+ IF slave["sport_affinity"] = 2:
+  $text[1] = $sport_like
+ END  
+ IF slave["expression_affinity"] > 0:
+  $text[1] = $expression_like
+ END   
+ IF slave["pet_affinity"] > 0:
+  $text[1] = $pet_like
+ END  
+ IF slave["dressage_affinity"] > 0:
+  $text[1] = $dressage_like
+ END  
+ IF slave["nurse_affinity"] > 0:
+  $text[1] = $nurse_like
+ END  
+ IF slave["service_affinity"] > 0:
+  $text[1] = $service_like
+ END  
+ IF slave["cook_affinity"] > 0:
+  $text[1] = $cook_like
+ END  
+ IF slave["gladiatrix_affinity"] > 0:
+  $text[1] = $gladiatrix_like
+ END  
+ IF slave["enchanter_affinity"] > 0:
+  $text[1] = $enchanter_like
+ END  
+ IF slave["vocal_affinity"] > 0:
+  $text[1] = $vocal_like
+ END  
+ IF slave["music_affinity"] > 0:
+  $text[1] = $music_like
+ END  
+ IF slave["callisthenics_affinity"] > 0:
+  $text[1] = $callisthenics_like
+ END    
+ IF slave["secretary_affinity"] > 0:
+  $text[1] = $secretary_like
+ END    
+END
+
+IF interaction = 1115:
+ $text[1] = $hide_dislikes
+ if slave['obedience'] > 3: $text[1] = $no_dislike
+ IF slave["nymphomania"] < 0:
+  $text[1] = $nymphomania_dislike
+ END 
+ IF slave["passion_comfort"] = -1:
+  $text[1] = $comfort_dislike
+ END  
+ IF slave["passion_luxury"] = -1:
+  $text[1] = $luxury_dislike
+ END  
+ IF slave["passion_sweets"] = -1:
+  $text[1] = $sweets_dislike
+ END  
+ IF slave["passion_fame"] = -1:
+  $text[1] = $fame_dislike
+ END
+ IF slave["abuse_attitude"] = -1 and slave['instinct'] > 0:
+  $text[1] = $abuse_dislike
+ END
+ IF slave["darkness_attitude"] = -1 and slave['instinct'] > 0:
+  $text[1] = $darkness_dislike
+ END
+ IF slave["blood_attitude"] = -1 and slave['instinct'] > 0:
+  $text[1] = $blood_dislike
+ END 
+ IF slave["fire_attitude"] = -1 and slave['instinct'] > 0:
+  $text[1] = $fire_dislike
+ END  
+ IF slave["water_attitude"] = -1 and slave['instinct'] > 0:
+  $text[1] = $water_dislike
+ END  
+ IF slave["vermin_attitude"] = -1 and slave['instinct'] > 0:
+  $text[1] = $vermin_dislike
+ END  
+ IF slave["deprivation_attitude"] = -1 and slave['instinct'] > 0:
+  $text[1] = $deprivation_dislike
+ END  
+ IF slave["homosexualism"] = -1 and slave['arousal'] > 0:
+  $text[1] = $homosexualism_dislike
+ END
+ IF slave["exhibitionism"] = -1 and slave['arousal'] > 1:
+  $text[1] = $exhibitionism_dislike
+ END
+ IF slave["preversion"] = -1 and slave['arousal'] > 2:
+  $text[1] = $preversion_dislike
+ END    
+END
+
+
+
+
+--- chose_answer ---------------------------------
+

@@ -1,0 +1,83 @@
+# $moodlets_account
+!calculate the moodlets effect
+gs '#moodlet_base'
+!AddOn - makes no sense to reset on every $newloc trigger
+!master_mood_rate = 0
+master_mood = 0
+
+$master_mood_list = ''
+n = arrsize('$master_good_mood')
+i = 0
+:loop
+    i += 1
+    $curmod = $master_good_mood[i]
+
+    IF master_mood['<<$curmod>>'] > 0:
+        $master_mood_list += "   <<$mood_description['<<$curmod>>']>><br>"
+        master_mood += 1
+    END
+if i < n: jump 'loop'
+
+$master_mood_list += '<br>'
+n = arrsize('$master_bad_mood')
+i = 0
+:loop1
+    i += 1
+    $curmod = $master_bad_mood[i]
+
+    IF master_mood['<<$curmod>>'] > 0:
+		!debug
+		!msg 'master_mood[''<<$curmod>>''] = <<master_mood[$curmod]>>'
+        $master_mood_list += "   <<$mood_description['<<$curmod>>']>><br>"
+        master_mood -= 1
+    END
+if i < n: jump 'loop1'
+
+!slave part
+slave_rate['mood'] = 0
+slave['mood'] = 0
+
+killvar '$slave_mood_list'
+
+ndex = 0
+if $slave_psy_status = 'broken': jump 'loop_broken'
+n = arrsize('$slave_bad_mod')
+i = 0
+:loop3
+    i += 1
+    $curmod = $slave_bad_mod[i]
+
+    IF slave['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list[ndex] = "   <<$mood_description['<<$curmod>>']>>"
+        slave['mood'] -= 1
+    END
+if i < n: jump 'loop3'
+
+n = arrsize('$slave_good_mod')
+i = 0
+:loop4
+    i += 1
+    $curmod = $slave_good_mod[i]
+
+    IF slave['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list[ndex] = "   <<$mood_description['<<$curmod>>']>>"
+        slave['mood'] += 1
+    END
+if i < n: jump 'loop4'
+
+if ndex < 1: $slave_mood_list[1] = '   [<<$slave_name>>]
+- I''m all right. Nothing special...'
+
+:loop_broken
+if $slave_psy_status = 'broken': $slave_mood_list[1] = '   [<<$slave_name>>]
+- Nohow, I do not care.'
+
+if master_mood > 5:  master_mood = 5
+if master_mood < -5:  master_mood = -5
+if slave['mood'] > 5:  slave['mood'] = 5
+if slave['mood'] < -5:  slave['mood'] = -5
+ 
+--- $moodlets_account ---------------------------------
+

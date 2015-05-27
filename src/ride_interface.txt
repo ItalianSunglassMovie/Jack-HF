@@ -1,0 +1,251 @@
+# ride_interface
+!Chariot races
+!$current_ride += " (DIS<<charriot['maneurability_displayed']>>, <<charriot['inertion']>>, EF<<charriot['maneurability_effective']>>)"
+
+!Check for race completion
+IF boards = 0 or frame = 0:
+ $crush_text = $current_ride
+ GT '$ride_finish', 1
+END
+
+IF wheels = 0 or chasis = 0:
+ $crush_text = $current_ride 
+ GT '$ride_finish', 2
+END
+
+IF charriot['pony_health'] <= 0:
+ $crush_text = $current_ride 
+ GT '$ride_finish', 3
+END
+
+IF trace_segment > 12:
+ GT '$ride_finish', 4
+END
+
+!Determination of the order of riders
+killvar '$participant'
+
+i = 0
+j = 1
+n = arrsize('$rider')
+:loop
+IF rider_participates[$rider[i]] = 1:
+ $participant[j] = $rider[i]
+ j += 1
+END
+i +=1
+if i < n: jump 'loop'
+
+if $participant[2] = '': $participant[2] = 'crushed'
+if $participant[3] = '': $participant[3] = 'crushed'
+if $participant[4] = '': $participant[4] = 'crushed'
+if $participant[5] = '': $participant[5] = 'crushed'
+if $participant[6] = '': $participant[6] = 'crushed'
+
+e = 0
+:loop2
+i = 1
+:loop3
+s = i + 1
+if s > 6: s = 6
+
+IF speed_points[$participant[i]] < speed_points[$participant[i+1]]:
+ $temp = $participant[i]
+ $participant[i] = $participant[i+1]
+ $participant[i+1] = $temp
+END
+i +=1
+
+if i < 6-e : jump 'loop3'
+e +=1
+if e < n+1 : jump 'loop2'
+
+!Information about the latest actions of the player and opponents
+IF trace_segment = 1: 
+ $current_ride = ''
+ $future_ride = $trace_forward_description['ride_start']
+END
+
+IF trace_segment = 2: 
+ $current_ride = $trace_pass_description['ride_start']
+ $future_ride = $trace_forward_description[$trace[2]]
+END
+
+
+$ride_flow = ''
+$ride_flow += '<<$current_ride>><br><br>'
+
+IF trace_segment = 1:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[1]]>></font> -> '
+ else
+ $ride_flow += '<<$trace_name[$trace[1]]>> -> '
+END
+
+IF trace_segment = 2:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[2]]>></font> -> '
+ else
+ $ride_flow += '<<$trace_name[$trace[2]]>> -> '
+END
+
+IF trace_segment = 3:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[3]]>></font> -> '
+ else
+ $ride_flow += '<<$trace_name[$trace[3]]>> -> '
+END
+
+IF trace_segment = 4:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[4]]>></font> -> '
+ else
+ $ride_flow += '<<$trace_name[$trace[4]]>> -> '
+END
+
+IF trace_segment = 5:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[5]]>></font>  ->'
+ else
+ $ride_flow += '<<$trace_name[$trace[5]]>> -> '
+END
+
+IF trace_segment = 6:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[6]]>></font> -> '
+ else
+ $ride_flow += '<<$trace_name[$trace[6]]>> -> '
+END
+
+IF trace_segment = 7:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[7]]>></font> -> '
+ else
+ $ride_flow += '<<$trace_name[$trace[7]]>> -> '
+END
+
+IF trace_segment = 8:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[8]]>></font> -> '
+ else
+ $ride_flow += '<<$trace_name[$trace[8]]>> -> '
+END
+
+IF trace_segment = 9:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[9]]>></font> -> '
+ else
+ $ride_flow += '<<$trace_name[$trace[9]]>> -> '
+END
+
+IF trace_segment = 10:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[10]]>></font> -> '
+ else
+ $ride_flow += '<<$trace_name[$trace[10]]>> -> '
+END
+
+IF trace_segment = 11:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[11]]>></font> ->'
+ else
+ $ride_flow += '<<$trace_name[$trace[11]]>> -> '
+END
+
+IF trace_segment = 12:
+ $ride_flow += '<font color="#cd0000"><<$trace_name[$trace[12]]>></font>'
+ else
+ $ride_flow += '<<$trace_name[$trace[12]]>>'
+END
+
+$ride_flow += ' <br><br><<$future_ride>><br><br>'
+
+!new CSS for ride pic
+if nsfw = 0:*p '<div id = "ride_bg"><img src = "content\pic\bg\ride.jpg"></div>'
+*p '<div id = "fight_txt"><<$ride_flow>></div>'
+
+!new CSS for ride var
+IF ui_style = 2:
+  *p '<div id = "ride_options_ui2">SPEED: <<charriot["speed"]>> км/ч
+HANDLING: <<charriot["maneurability_displayed"]>> (I<<charriot["inertion"]>>)
+ENDURANCE: <<charriot["pony_health"]>>
+
+<<$frame[frame]>>
+<<$boards[boards]>>
+<<$chasis[chasis]>>
+<<$wheels[wheels]>>
+</div>'
+  else
+  *p '<div id = "ride_options">SPEED: <<charriot["speed"]>> км/ч
+HANDLING: <<charriot["maneurability_displayed"]>> (I<<charriot["inertion"]>>)
+ENDURANCE: <<charriot["pony_health"]>>
+
+<<$frame[frame]>>
+<<$boards[boards]>>
+<<$chasis[chasis]>>
+<<$wheels[wheels]>>
+</div>'
+END
+
+!new CSS for ride var
+IF trace_segment = 1:
+ IF ui_style = 2:
+  *p '<div id = "ride_subtions_ui2">
+<a href = "EXEC: gt ''ride_next'',1">Crack the whip</a>
+</div>'
+  else
+  *p '<div id = "ride_subtions">
+<a href = "EXEC: gt ''ride_next'',1">Crack the whip</a>
+</div>'
+ END
+ else
+ IF ui_style = 2:
+  *p '<div id = "ride_subtions_ui2">
+<a href = "EXEC: gt ''ride_next'',1">Whip lash</a>
+
+<a href = "EXEC: gt ''ride_next'',2">Manage the reins</a>
+
+<a href = "EXEC: gt ''ride_next'',3">Draw rein</a>
+</div>'
+  else
+  *p '<div id = "ride_subtions">
+<a href = "EXEC: gt ''ride_next'',1">Whip lash</a>
+
+<a href = "EXEC: gt ''ride_next'',2">Manage the reins</a>
+
+<a href = "EXEC: gt ''ride_next'',3">Draw rein</a>
+</div>'
+ END
+END
+
+*p '<div id = "rider1_pic"><a href = "EXEC: msg $rider_description[$participant[1]]"><img src = "<<$rider_ava[$participant[1]]>>"></a></div>'
+*p '<div id = "rider2_pic"><a href = "EXEC: msg $rider_description[$participant[2]]"><img src = "<<$rider_ava[$participant[2]]>>"></a></div>'
+*p '<div id = "rider3_pic"><a href = "EXEC: msg $rider_description[$participant[3]]"><img src = "<<$rider_ava[$participant[3]]>>"></a></div>'
+*p '<div id = "rider4_pic"><a href = "EXEC: msg $rider_description[$participant[4]]"><img src = "<<$rider_ava[$participant[4]]>>"></a></div>'
+*p '<div id = "rider5_pic"><a href = "EXEC: msg $rider_description[$participant[5]]"><img src = "<<$rider_ava[$participant[5]]>>"></a></div>'
+*p '<div id = "rider6_pic"><a href = "EXEC: msg $rider_description[$participant[6]]"><img src = "<<$rider_ava[$participant[6]]>>"></a></div>'
+
+*p '<div id = "rider1_name"><<$rider_name[$participant[1]]>> (<<rider_structure[$participant[1]]>>)</div>'
+*p '<div id = "rider2_name"><<$rider_name[$participant[2]]>> (<<rider_structure[$participant[2]]>>)</div>'
+*p '<div id = "rider3_name"><<$rider_name[$participant[3]]>> (<<rider_structure[$participant[3]]>>)</div>'
+*p '<div id = "rider4_name"><<$rider_name[$participant[4]]>> (<<rider_structure[$participant[4]]>>)</div>'
+*p '<div id = "rider5_name"><<$rider_name[$participant[5]]>> (<<rider_structure[$participant[5]]>>)</div>'
+*p '<div id = "rider6_name"><<$rider_name[$participant[6]]>> (<<rider_structure[$participant[6]]>>)</div>'
+
+*p '<div id = "rider1_score">Winning points: <<speed_points[$participant[1]]>></div>'
+*p '<div id = "rider2_score">Winning points: <<speed_points[$participant[2]]>></div>'
+*p '<div id = "rider3_score">Winning points: <<speed_points[$participant[3]]>></div>'
+*p '<div id = "rider4_score">Winning points: <<speed_points[$participant[4]]>></div>'
+*p '<div id = "rider5_score">Winning points: <<speed_points[$participant[5]]>></div>'
+*p '<div id = "rider6_score">Winning points: <<speed_points[$participant[6]]>></div>'
+
+IF $music_now ! $music['ride']:
+  close $music_now
+  $music_now = $music['ride']
+END
+if sound_on = 1: play $music_now, music_volume
+
+IF ui_style = 2:
+ IF sound_on = 1:
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_off.png"></a></div>'  
+ END
+ ELSE
+ IF sound_on = 1:
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
+  else
+  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
+ END
+END
+--- ride_interface ---------------------------------
+

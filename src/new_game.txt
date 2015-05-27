@@ -1,0 +1,8 @@
+# new_game
+!Начало новой игры с предысторией
+$onnewloc = '$newloc'
+
+gs '_layout'
+GT 'intro'
+--- new_game ---------------------------------
+

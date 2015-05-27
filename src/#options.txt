@@ -1,0 +1,2218 @@
+# #options
+!DIALOG OPTIONS DATABASE
+
+!empty location
+$blank_options[1] = {
+$text_display = '<br><br><br><br><br><br><br>'
+$text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$computer_options[1] = {
+$sp_text[1] = '   Database access occurs at the verbal level request and same the requested information. Although data may be print if necessary.'
+$text_display = '<br>'
+if nsfw = 1: not_safe = 1
+$text_display += {<br><div id="under">- Request. Aura. General information<div id = "clear"><a href = 'EXEC: interaction_city = 3331 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">- Request. Aura. Pattern structure<div id = "clear"><a href = 'EXEC: interaction_city = 3332 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Move away from the terminal<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!border of the fogs
+$edge_of_mists[6201] = {
+mem_skip = 6201
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$edge_of_mists[6202] = {
+mem_skip = 6202
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$edge_of_mists[6203] = {
+mem_skip = 6203
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$edge_of_mists[6204] = {
+mem_skip = 6204
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$edge_of_mists[6205] = {
+mem_skip = 6205
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$edge_of_mists[6206] = {
+mem_skip = 6206
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$edge_of_mists[6207] = {
+mem_skip = 6207
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$edge_of_mists[6208] = {
+mem_skip = 6208
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$edge_of_mists[6209] = {
+mem_skip = 6209
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$edge_of_mists[6210] = {
+mem_skip = 6210
+$text_display = '<br>'
+$text_display += {<br><br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Leave them alone<br><div id = "clear"><a href = 'EXEC: interaction_city = 621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!guild expert
+$expert_options[1] = {
+$sp_text[1] = '   You find one of the representatives of the experts department. These slavers specialize in the slaves evaluation and in finding exclusive options on the market.'
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Ask about services<br><div id = "clear"><a href = 'EXEC: interaction_city = 951 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF search['active'] = 0: $text_display += {<br><div id="under">Order slave selection<br><div id = "clear"><a href = 'EXEC: sp_txt = 11 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+IF search['active'] = 1: $text_display += {<br><div id="under">Cancel the job<br><div id = "clear"><a href = 'EXEC: interaction_city = 952 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF search['active'] = 3: $text_display += {<br><div id="under">Pick up the slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 953 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">End the conversation<br><div id = "clear"><a href = 'EXEC: gt "guild"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$expert_options[11] = {
+killvar 'search'
+$sp_text[11] = '   [MASTER SKUPS]
+   - Are there some suggestions for product age?'
+$text_display = '<br>'
+$text_display += {<br><div id="under">Not too old<br><div id = "clear"><a href = 'EXEC: search["age"] = 4 & search["cost"] += 1 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Not too young<br><div id = "clear"><a href = 'EXEC: search["age"] = 5 & search["cost"] += 1 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Mature<br><div id = "clear"><a href = 'EXEC: search["age"] = 1 & search["cost"] += 2 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Young<br><div id = "clear"><a href = 'EXEC: search["age"] = 2 & search["cost"] += 2 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Child<br><div id = "clear"><a href = 'EXEC: search["age"] = 3 & search["cost"] += 2 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Doesn`t matter<br><div id = "clear"><a href = 'EXEC: search["age"] = 0 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$expert_options[2] = {
+$sp_text[2] = '      [MASTER SKUPS]
+   - Beauty - is a key parameter, which in most cases determines the maximum potential of a slave in market. But beauties are rare. How attractive product do you need?'
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Exquisite<br><div id = "clear"><a href = 'EXEC: search["beauty"] = 5 & search["cost"] += 4 & sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Beautiful<br><div id = "clear"><a href = 'EXEC: search["beauty"] = 4 & search["cost"] += 2 & sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Pretty<br><div id = "clear"><a href = 'EXEC: search["beauty"] = 3 & search["cost"] += 1 & sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Doesn`t matter<br><div id = "clear"><a href = 'EXEC: search["beauty"] = 0 & sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$expert_options[3] = {
+$sp_text[3] = '      [MASTER SKUPS]
+   - Raising sick slaves - is a tough job, so that I can pick up healthier and hardy.'
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Enduring<br><div id = "clear"><a href = 'EXEC: search["stamina"] = 5 & search["cost"] += 4 & sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Tough<br><div id = "clear"><a href = 'EXEC: search["stamina"] = 4 & search["cost"] += 2 & sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Healthy<br><div id = "clear"><a href = 'EXEC: search["stamina"] = 3 & search["cost"] += 1 & sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Doesn`t matter<br><div id = "clear"><a href = 'EXEC: search["stamina"] = 0 & sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$expert_options[4] = {
+$sp_text[4] = '      [MASTER SKUPS]
+   - I have my own ways to estimate woman''s sensitivity. I guarantee reliability of this method, but mind you. It''s not only difficult to find a sissy, there also will be a lot of problems during training.'
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Nurturing<br><div id = "clear"><a href = 'EXEC: search["sensitivity"] = 5 & search["cost"] += 4 & sp_txt = 5 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Caring<br><div id = "clear"><a href = 'EXEC: search["sensitivity"] = 4 & search["cost"] += 2 & sp_txt = 5 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Sensitive<br><div id = "clear"><a href = 'EXEC: search["sensitivity"] = 3 & search["cost"] += 1 & sp_txt = 5 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Doesn`t matter<br><div id = "clear"><a href = 'EXEC: search["sensitivity"] = 0 & sp_txt = 5 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$expert_options[5] = {
+$sp_text[5] = '      [MASTER SKUPS]
+   - I can spend a separate time before the auction to check in advance the total intelligence of the product. Do not expect much, but if you need a girl capable of put two and two, I''ll make it.'
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Intelligent<br><div id = "clear"><a href = 'EXEC: search["intellect"] = 5 & search["cost"] += 4 & sp_txt = 6 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Clever<br><div id = "clear"><a href = 'EXEC: search["intellect"] = 4 & search["cost"] += 2 & sp_txt = 6 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Bright<br><div id = "clear"><a href = 'EXEC: search["intellect"] = 3 & search["cost"] += 1 & sp_txt = 6 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Doesn`t matter<br><div id = "clear"><a href = 'EXEC: search["intellect"] = 0 & sp_txt = 6 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$expert_options[6] = {
+$sp_text[6] = '      [MASTER SKUPS]
+   - Temperamental ones are often the source of problems, but they are popular among the buyers. So I can find hotter product for you, if it is necessary.'
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Passionate<br><div id = "clear"><a href = 'EXEC: search["temper"] = 5 & search["cost"] += 4 & sp_txt = 7 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Lively<br><div id = "clear"><a href = 'EXEC: search["temper"] = 4 & search["cost"] += 2 & sp_txt = 7 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Reactive<br><div id = "clear"><a href = 'EXEC: search["temper"] = 3 & search["cost"] += 1 & sp_txt = 7 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Doesn`t matter<br><div id = "clear"><a href = 'EXEC: search["temper"] = 0 & sp_txt = 7 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$expert_options[7] = {
+$sp_text[7] = '      [MASTER SKUPS]
+   - Character is much harder to recognize at once than other parameters of the product, but I have my own secrets. No wonder that I''m an expert. Just say what you want, and I''ll find a way to provide it.'
+interaction_city = 9511
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Willful<br><div id = "clear"><a href = 'EXEC: search["ego"] = 5 & search["cost"] += 4 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Determined<br><div id = "clear"><a href = 'EXEC: search["ego"] = 4 & search["cost"] += 2 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Independent<br><div id = "clear"><a href = 'EXEC: search["ego"] = 3 & search["cost"] += 1 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Doesn`t matter<br><div id = "clear"><a href = 'EXEC: search["ego"] = 0 & sp_txt = 3 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!HOSPITAL
+$hospital_options[1] = {
+$text_display = '<br><br>'
+IF sparks => 5:
+ $text_display += {<div id="under">Health checkup (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 3311 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Health checkup (5 sparks)<br></div>}  
+END
+IF slave_state > CONST_INT['no_slave'] and sparks => 5:
+ $text_display += {<div id="under">Examine slave (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 3312 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Examine slave (5 sparks)<br></div>}  
+END 
+IF assistant_state = 1 and sparks => 5:
+ $text_display += {<div id="under">Examine assistant (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 13312 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Examine assistant (5 sparks)<br></div>}  
+END
+IF slave['reabilitation'] < 1 and slave_state = CONST_INT['slave_exist']:
+ $text_display += {<div id="under">Augmentation slave surgery<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Augmentation slave surgery<br></div>} 
+END
+IF assistant['reabilitation'] < 1 and assistant_state = 1:
+ $text_display += {<div id="under">Augmentation assistant surgery<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Augmentation assistant surgery<br></div>}
+END
+$text_display += {<div id="under">Check the need for nurses<div id = "clear"><a href = 'EXEC: interaction_city = 3313 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<div id="under">Offer an employee<br><div id = "clear"><a href = 'EXEC: interaction_city = 3314 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Offer an employee<br></div>}
+END
+$text_display += {<br><div id="under">Leave medical center<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$hospital_options[11] = {
+    $text_display = '<br><br>'
+    if master_issues ! 0:
+        if master_wounds = 1 and sparks => 5: 
+			$text_display += {<br><div id="under">Wound treatment (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif master_wounds = 1 and sparks < 5: $text_display += {<div id="under_gray">Wound treatment (5 sparks)<br></div>} 
+			end
+        if master_wounds = 2 and sparks => 10: 
+			$text_display += {<br><div id="under">Wound treatment (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif master_wounds = 2 and sparks < 10: $text_display += {<div id="under_gray">Wound treatment (10 sparks)<br></div>} 
+			end
+        if master_wounds = 3 and sparks => 25: 
+			$text_display += {<br><div id="under">Wound treatment (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif master_wounds = 3 and sparks < 25: $text_display += {<div id="under_gray">Wound treatment (25 sparks)<br></div>} 
+			end
+        if master_wounds = 4 and sparks => 50: 
+			$text_display += {<br><div id="under">Wound treatment (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif master_wounds = 4 and sparks < 50: $text_display += {<div id="under_gray">Wound treatment (50 sparks)<br></div>} 
+			end
+        if master_wounds = 5 and sparks => 100: 
+			$text_display += {<br><div id="under">Wound treatment (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif master_wounds = 5 and sparks < 100: $text_display += {<div id="under_gray">Wound treatment (100 sparks)<br></div>} 
+			end
+        if cure_master_ill = 1 and sparks => 25: 
+			$text_display += {<br><div id="under">Disease treatment (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif cure_master_ill = 1 and sparks < 25: $text_display += {<div id="under_gray">Disease treatment (25 sparks)<br></div>}
+			end
+        $text_display += {<br><div id="under">Refuse services<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+    else:
+        interaction_city = 331
+        gt "interaction_city"
+    end
+}
+
+$hospital_options[12] = {
+    $text_display = '<br><br>'
+    if slave_issues = 6: $text_display = ''
+    if slave_issues ! 0:
+        if slave["wounds"] = 1 and sparks => 5: 
+			$text_display += {<br><div id="under">Wound treatment (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["wounds"] = 1 and sparks < 5: $text_display += {<br><div id="under_gray">Wound treatment (5 sparks)<br></div>} 
+			end
+        if slave["wounds"] = 2 and sparks => 10: 
+			$text_display += {<br><div id="under">Wound treatment (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["wounds"] = 2 and sparks < 10: $text_display += {<br><div id="under_gray">Wound treatment (10 sparks)<br></div>} 
+			end
+        if slave["wounds"] = 3 and sparks => 25: 
+			$text_display += {<br><div id="under">Wound treatment (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["wounds"] = 3 and sparks < 25: $text_display += {<br><div id="under_gray">Wound treatment (25 sparks)<br></div>} 
+			end
+        if slave["wounds"] = 4 and sparks => 50: 
+			$text_display += {<br><div id="under">Wound treatment (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["wounds"] = 4 and sparks < 50: $text_display += {<br><div id="under_gray">Wound treatment (50 sparks)<br></div>} 
+			end
+        if slave["wounds"] = 5 and sparks => 100: 
+			$text_display += {<br><div id="under">Wound treatment (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33121 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["wounds"] = 5 and sparks < 100: $text_display += {<br><div id="under_gray">Wound treatment (100 sparks)<br></div>} 
+			end
+        IF slave_stimulation = 1: 
+			if slave["res"] = 0 and sparks => 50: 
+				$text_display += {<br><div id="under">Reanimation (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+				elseif slave["res"] = 0 and sparks < 50: $text_display += {<br><div id="under_gray">Reanimation (50 sparks)<br></div>} 
+				end
+			if slave["res"] = 1 and sparks => 100: 
+				$text_display += {<br><div id="under">Reanimation (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+				elseif slave["res"] = 1 and sparks < 100: $text_display += {<br><div id="under_gray">Reanimation (100 sparks)<br></div>} 
+				end
+			if slave["res"] = 2 and sparks => 250: 
+				$text_display += {<br><div id="under">Reanimation (250 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+				elseif slave["res"] = 2 and sparks < 250: $text_display += {<br><div id="under_gray">Reanimation (250 sparks)<br></div>} 
+				end
+			if slave["res"] = 3 and sparks => 500: 
+				$text_display += {<br><div id="under">Reanimation (500 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+				elseif slave["res"] = 3 and sparks < 500: $text_display += {<br><div id="under_gray">Reanimation (500 sparks)<br></div>} 
+				end
+			if slave["res"] => 4 and sparks => 1000: 
+				$text_display += {<br><div id="under">Reanimation (1000 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33126 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+				elseif slave["res"] => 4 and sparks < 1000: $text_display += {<br><div id="under_gray">Reanimation (1000 sparks)<br></div>} 
+				end
+		END
+        if slave_abortion = 1 and sparks => 10: 
+			$text_display += {<br><div id="under">Abortion (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33124 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave_abortion = 1 and sparks < 10: $text_display += {<br><div id="under_gray">Abortion (10 sparks)<br></div>} 
+			end
+        if slave_insidous_abortion = 1 and sparks => 25: 
+			$text_display += {<br><div id="under">Xenoparasite extraction (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33125 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave_insidous_abortion = 1 and sparks < 25: $text_display += {<br><div id="under_gray">Xenoparasite extraction (25 sparks)<br></div>} 
+			end
+        if cure_slave_ill = 1 and sparks => 25: 
+			$text_display += {<br><div id="under">Disease treatment (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33122 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif cure_slave_ill = 1 and sparks < 25: $text_display += {<br><div id="under_gray">Disease treatment (25 sparks)<br></div>} 
+			end
+        if slave["scares"] = 1 and sparks => 5: 
+			$text_display += {<br><div id="under">Scar removal (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["scares"] = 1 and sparks < 5: $text_display += {<br><div id="under_gray">Scar removal (5 sparks)<br></div>} 
+			end
+        if slave["scares"] = 2 and sparks => 10: 
+			$text_display += {<br><div id="under">Scar removal (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["scares"] = 2 and sparks < 10: $text_display += {<br><div id="under_gray">Scar removal (10 sparks)<br></div>} 
+			end
+        if slave["scares"] = 3 and sparks => 25: 
+			$text_display += {<br><div id="under">Scar removal (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["scares"] = 3 and sparks < 25: $text_display += {<br><div id="under_gray">Scar removal (25 sparks)<br></div>} 
+			end
+        if slave["scares"] = 4 and sparks => 50: 
+			$text_display += {<br><div id="under">Scar removal (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["scares"] = 4 and sparks < 50: $text_display += {<br><div id="under_gray">Scar removal (50 sparks)<br></div>} 
+			end
+        if slave["scares"] = 5 and sparks => 100: 
+			$text_display += {<br><div id="under">Scar removal (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33123 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+			elseif slave["scares"] = 5 and sparks < 100: $text_display += {<br><div id="under_gray">Scar removal (100 sparks)<br></div>} 
+			end
+        $text_display += {<br><div id="under">Refuse services<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+    else:
+        interaction_city = 331
+        gt "interaction_city"
+    end
+}
+
+!assistant
+$hospital_options[13] = {
+    $text_display = '<br><br>'
+    if assistant_issues = 6: $text_display = ''
+    if assistant_issues ! 0:
+        if assistant["wounds"] = 1 and sparks => 5:
+                        $text_display += {<br><div id="under">Wound treatment (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["wounds"] = 1 and sparks < 5: $text_display += {<br><div id="under_gray">Wound treatment (5 sparks)<br></div>}
+                        end
+        if assistant["wounds"] = 2 and sparks => 10:
+                        $text_display += {<br><div id="under">Wound treatment (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["wounds"] = 2 and sparks < 10: $text_display += {<br><div id="under_gray">Wound treatment (10 sparks)<br></div>}
+                        end
+        if assistant["wounds"] = 3 and sparks => 25:
+                        $text_display += {<br><div id="under">Wound treatment (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["wounds"] = 3 and sparks < 25: $text_display += {<br><div id="under_gray">Wound treatment (25 sparks)<br></div>}
+                        end
+        if assistant["wounds"] = 4 and sparks => 50:
+                        $text_display += {<br><div id="under">Wound treatment (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["wounds"] = 4 and sparks < 50: $text_display += {<br><div id="under_gray">Wound treatment (50 sparks)<br></div>}
+                        end
+        if assistant["wounds"] = 5 and sparks => 100:
+                        $text_display += {<br><div id="under">Wound treatment (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["wounds"] = 5 and sparks < 100: $text_display += {<br><div id="under_gray">Wound treatment (100 sparks)<br></div>}
+                        end
+        IF assistant_stimulation = 1:
+                        if assistant["res"] = 0 and sparks => 50:
+                                $text_display += {<br><div id="under">Reanimation (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331261 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                                elseif assistant["res"] = 0 and sparks < 50: $text_display += {<br><div id="under_gray">Reanimation (50 sparks)<br></div>}
+                                end
+                        if assistant["res"] = 1 and sparks => 100:
+                                $text_display += {<br><div id="under">Reanimation (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331261 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                                elseif assistant["res"] = 1 and sparks < 100: $text_display += {<br><div id="under_gray">Reanimation (100 sparks)<br></div>}
+                                end
+                        if assistant["res"] = 2 and sparks => 250:
+                                $text_display += {<br><div id="under">Reanimation (250 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331261 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                                elseif assistant["res"] = 2 and sparks < 250: $text_display += {<br><div id="under_gray">Reanimation (250 sparks)<br></div>}
+                                end
+                        if assistant["res"] = 3 and sparks => 500:
+                                $text_display += {<br><div id="under">Reanimation (500 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331261 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                                elseif assistant["res"] = 3 and sparks < 500: $text_display += {<br><div id="under_gray">Reanimation (500 sparks)<br></div>}
+                                end
+                        if assistant["res"] => 4 and sparks => 1000:
+                                $text_display += {<br><div id="under">Reanimation (1000 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331261 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                                elseif assistant["res"] => 4 and sparks < 1000: $text_display += {<br><div id="under_gray">Reanimation (1000 sparks)<br></div>}
+                                end
+                END
+        if assistant_abortion = 1 and sparks => 10:
+                        $text_display += {<br><div id="under">Abortion (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331241 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant_abortion = 1 and sparks < 10: $text_display += {<br><div id="under_gray">Abortion (10 sparks)<br></div>}
+                        end
+        if assistant_insidous_abortion = 1 and sparks => 25:
+                        $text_display += {<br><div id="under">Xenoparasite extraction (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331251 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant_insidous_abortion = 1 and sparks < 25: $text_display += {<br><div id="under_gray">Xenoparasite extraction (25 sparks)<br></div>}
+                        end
+        if cure_assistant_ill = 1 and sparks => 25:
+                        $text_display += {<br><div id="under">Disease treatment (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331221 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif cure_assistant_ill = 1 and sparks < 25: $text_display += {<br><div id="under_gray">Disease treatment (25 sparks)<br></div>}
+                        end
+        if assistant["scares"] = 1 and sparks => 5:
+                        $text_display += {<br><div id="under">Scar removal (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["scares"] = 1 and sparks < 5: $text_display += {<br><div id="under_gray">Scar removal (5 sparks)<br></div>}
+                        end
+        if assistant["scares"] = 2 and sparks => 10:
+                        $text_display += {<br><div id="under">Scar removal (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["scares"] = 2 and sparks < 10: $text_display += {<br><div id="under_gray">Scar removal (10 sparks)<br></div>}
+                        end
+        if assistant["scares"] = 3 and sparks => 25:
+                        $text_display += {<br><div id="under">Scar removal (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["scares"] = 3 and sparks < 25: $text_display += {<br><div id="under_gray">Scar removal (25 sparks)<br></div>}
+                        end
+        if assistant["scares"] = 4 and sparks => 50:
+                        $text_display += {<br><div id="under">Scar removal (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["scares"] = 4 and sparks < 50: $text_display += {<br><div id="under_gray">Scar removal (50 sparks)<br></div>}
+                        end
+        if assistant["scares"] = 5 and sparks => 100:
+                        $text_display += {<br><div id="under">Scar removal (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 331231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+                        elseif assistant["scares"] = 5 and sparks < 100: $text_display += {<br><div id="under_gray">Scar removal (100 sparks)<br></div>}
+                        end
+        $text_display += {<br><div id="under">Refuse services<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+    else:
+        interaction_city = 331
+        gt "interaction_city"
+    end
+}
+
+$hospital_options[2] = {
+$text_display = '<br><br>'
+IF sparks => 5 and slave['pregnant'] = 0 and slave['fertility'] = 0:
+ $text_display += {<div id="under">Sterilization<div id = "clear"><a href = 'EXEC: interaction_city = 3321 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Sterilization<br></div>}
+END
+IF sparks => 50 and slave['fertility'] = -1:
+ $text_display += {<div id="under">Restore fertility<div id = "clear"><a href = 'EXEC: interaction_city = 33211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+END
+IF sparks => 25 and slave['breast_enchanced'] = 0:
+ $text_display += {<div id="under">Breast augmentation<div id = "clear"><a href = 'EXEC: interaction_city = 3322 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Breast augmentation<br></div>}
+END
+IF sparks => 25 and virginity = 2:
+ $text_display += {<div id="under">Virginity restoration<div id = "clear"><a href = 'EXEC: interaction_city = 3323 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Virginity restoration<br></div>}
+END
+IF sparks => 250 and slave['beauty_enchanced'] = 0 and slave_rate['beauty'] < 160:
+ $text_display += {<div id="under">Neoplasty<div id = "clear"><a href = 'EXEC: interaction_city = 3324 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Neoplasty<br></div>}
+END
+IF sparks => 25 and slave['lactation'] = 0 and slave['age'] ! CONST_INT['loli_age']:
+ $text_display += {<div id="under">Permanent lactation<div id = "clear"><a href = 'EXEC: interaction_city = 3325 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Permanent lactation<br></div>}
+END
+IF sparks => 50 and slave['fertility'] = 0:
+ $text_display += {<div id="under">Oviparity<div id = "clear"><a href = 'EXEC: interaction_city = 3326 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Oviparity<br></div>}
+END
+$text_display += {<br><div id="under">Other services<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!assistant
+$hospital_options[3] = {
+$text_display = '<br><br>'
+IF sparks => 5 and assistant['pregnant'] = 0 and assistant['fertility'] = 0:
+ $text_display += {<div id="under">Sterilization<div id = "clear"><a href = 'EXEC: interaction_city = 332112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Sterilization<br></div>}
+END
+IF sparks => 50 and assistant['fertility'] = -1:
+ $text_display += {<div id="under">Restore fertility<div id = "clear"><a href = 'EXEC: interaction_city = 332212 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+IF sparks => 25 and assistant['breast_enchanced'] = 0:
+ $text_display += {<div id="under">Breast augmentation<div id = "clear"><a href = 'EXEC: interaction_city = 33222 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Breast augmentation<br></div>}
+END
+IF sparks => 25 and assistant_virginity = 2:
+ $text_display += {<div id="under">Virginity restoration<div id = "clear"><a href = 'EXEC: interaction_city = 33231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Virginity restoration<br></div>}
+END
+IF sparks => 250 and assistant['beauty_enchanced'] = 0 and assistant_rate['beauty'] < 160:
+ $text_display += {<div id="under">Neoplasty<div id = "clear"><a href = 'EXEC: interaction_city = 33242 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Neoplasty<br></div>}
+END
+IF sparks => 25 and assistant['lactation'] = 0 and assistant['age'] ! CONST_INT['loli_age']:
+ $text_display += {<div id="under">Permanent lactation<div id = "clear"><a href = 'EXEC: interaction_city = 33251 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Permanent lactation<br></div>}
+END
+IF sparks => 50 and assistant['fertility'] = 0:
+ $text_display += {<div id="under">Oviparity<div id = "clear"><a href = 'EXEC: interaction_city = 33261 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Oviparity<br></div>}
+END
+$text_display += {<br><div id="under">Other services<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!cryostatic bank
+$stasis_options[1] = {
+$text_display = '<br><br><br>'
+$place = 'stasis_bank'
+if nsfw = 1: not_safe = 1
+cryo_intro = 1
+!дополнительная проверка чтобы выходил правильный пункт в меню
+IF sparks => 20:
+ IF stasis_tank = 0:
+  $text_display += {<br><div id="under">Rent home capsule<br><div id = "clear"><a href = 'EXEC: interaction_city = 33201 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Return home capsule<br><div id = "clear"><a href = 'EXEC: interaction_city = 332011 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ elseif stasis_tank = 1: $text_display += {<br><div id="under">Return home capsule<br><div id = "clear"><a href = 'EXEC: interaction_city = 332011 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Rent home capsule (20 sparks)<br></div>} 
+END
+ $text_display += {<br><div id="under">Check the cell<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$stasis_options[2] = {
+if cells_unlocked = 1: 
+ $text_display = ''
+ $sp_text[2] = "   In this place you can keep slaves in a stasis state in which they will remain as long as I have money to support the unit." 
+ else
+ $text_display = '<br>'
+ $sp_text[2] = "   In this place you can keep slaves in a stasis state in which they will remain as long as I have money to support the unit. For an extra fee you can get access to three more cells for storage." 
+end
+$place = 'stasis_bank_2'
+if nsfw = 1: not_safe = 1
+IF iced_1_state = 0:
+ $text_display += {<br><div id="under">Cell №1: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332012 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under">Cell №1: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332012 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+IF iced_2_state = 0:
+ $text_display += {<br><div id="under">Cell №2: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332013 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under">Cell №2: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332013 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+IF iced_3_state = 0:
+ $text_display += {<br><div id="under">Cell №3: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332014 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under">Cell №3: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332014 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+IF sparks => 300 and cells_unlocked ! 1:
+ $text_display += {<br><div id="under">Unlock new cells (300 Sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 33202 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ if sparks < 300 and cells_unlocked ! 1: $text_display += {<br><div id="under_gray">Unlock new cells (300 Sparks)<br></div>}
+END
+IF cells_unlocked = 1:
+ IF iced_4_state = 0:
+  $text_display += {<br><div id="under">Cell №4: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332015 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Cell №4: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332015 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF iced_5_state = 0:
+  $text_display += {<br><div id="under">Cell №5: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332016 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Cell №5: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332016 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF iced_6_state = 0:
+  $text_display += {<br><div id="under">Cell №6: rent (1/day)<br><div id = "clear"><a href = 'EXEC: interaction_city = 332017 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Cell №6: take out<br><div id = "clear"><a href = 'EXEC: interaction_city = 332017 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+END
+$text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: city_form = 33 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Real estate manager
+$realtor_options[1] = {
+$text_display = '<br>'
+IF npc_reveal['realtor'] = 0:
+ $text_display += {<br><div id="under">Speak to the manager<br><div id = "clear"><a href = 'EXEC: interaction_city = 1311 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under_gray">Interior design<br></div>}
+ $text_display += {<br><div id="under_gray">Extended rental<br></div>}
+ $text_display += {<br><div id="under_gray">Cancel the contract<br></div>}
+ else
+ IF $estate = 'slum_house': 
+  $text_display += {<br><div id="under">View available options<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under">Cancel the contract<br><div id = "clear"><a href = 'EXEC: interaction_city = 1315 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ if $estate = 'slum_house': $text_display += {<br><div id="under_gray">Interior design<br></div>}
+ if $estate ! 'slum_house': $text_display += {<br><div id="under">Interior design<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ if $estate = 'slum_house': $text_display += {<br><div id="under_gray">Extended rental<br></div>}
+ if $estate ! 'slum_house': $text_display += {<br><div id="under">Extended rental<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+  $text_display += {<br><div id="under">Offer an employee<br><div id = "clear"><a href = 'EXEC: interaction_city = 138 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Offer an employee<br></div>} 
+ END
+ $text_display += {<div id="under">Ask about the requirements<br><div id = "clear"><a href = 'EXEC: interaction_city = 139 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+$text_display += {<br><div id="under">Exit to the city<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[2] = {
+$text_display = '<br>'
+ IF sparks => 250 and brand_reputation > 2:
+ $text_display += {<br><div id="under">White town<br><div id = "clear"><a href = 'EXEC: interaction_city = 1321 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">White town<br></div>}  
+ END
+ IF sparks => 200 and faction_fame['korvus'] > 0:
+ $text_display += {<br><div id="under">Necropolis<br><div id = "clear"><a href = 'EXEC: interaction_city = 1322 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Necropolis<br></div>}  
+ END 
+ IF sparks => 150 and faction_fame['taurus'] > 0:
+  $text_display += {<br><div id="under">Quarter of the Bull<br><div id = "clear"><a href = 'EXEC: interaction_city = 1323 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Quarter of the Bull<br></div>}  
+ END
+ IF sparks => 75 and faction_fame['serpis'] > 0:
+  $text_display += {<br><div id="under">Serpentine quarter<br><div id = "clear"><a href = 'EXEC: interaction_city = 1324 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Serpentine quarter<br></div>}
+ END
+ IF sparks => 50 and faction_fame['kamira'] > 0:
+  $text_display += {<br><div id="under">Quarter of the Outcasts<br><div id = "clear"><a href = 'EXEC: interaction_city = 1325 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Quarter of the Outcasts<br></div>}
+ END
+ $text_display += {<br><div id="under">Change selection<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[3] = {
+$text_display = '<br><br>'
+if dungeon = 0:
+ if sparks => estate_cost_dungeon[$estate]: $text_display += {<br><div id="under">Rent a dungeon<br><div id = "clear"><a href = 'EXEC: interaction_city = 1331 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under">Abandon the dungeon<br><div id = "clear"><a href = 'EXEC: interaction_city = 1332 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+if bouduar = 0:
+ if sparks => estate_cost_bouduar[$estate]: $text_display += {<div id="under">Rent a boudoir<br><div id = "clear"><a href = 'EXEC: interaction_city = 1333 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under">Abandon the boudoir<br><div id = "clear"><a href = 'EXEC: interaction_city = 1334 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+if lab = 0:
+ if sparks => estate_cost_lab[$estate]: $text_display += {<div id="under">Rent a laboratory<br><div id = "clear"><a href = 'EXEC: interaction_city = 1335 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under">Abandon the laboratory<br><div id = "clear"><a href = 'EXEC: interaction_city = 1336 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+if pen = 0:
+  if sparks => 10: $text_display += {<div id="under">Rent a pen for fiend<br><div id = "clear"><a href = 'EXEC: interaction_city = 1337 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under">Abandon the pen<br><div id = "clear"><a href = 'EXEC: interaction_city = 1338 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+if barn = 0:
+  if sparks => 30: $text_display += {<div id="under">Rent a barn<br><div id = "clear"><a href = 'EXEC: interaction_city = 1339 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under">Abandon the barn<br><div id = "clear"><a href = 'EXEC: interaction_city = 1340 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+$text_display += {<br><br><div id="under">Leave as it is<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[4] = {
+$text_display = '<br><br><br>'
+$text_display += {<div id="under">Hall<br><div id = "clear"><a href = 'EXEC: sp_txt = 41 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Bedroom<br><div id = "clear"><a href = 'EXEC: sp_txt = 42 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Kitchen<br><div id = "clear"><a href = 'EXEC: sp_txt = 43 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Bathroom<br><div id = "clear"><a href = 'EXEC: sp_txt = 44 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+IF dungeon > 0:
+ $text_display += {<div id="under">Dungeon<br><div id = "clear"><a href = 'EXEC: sp_txt = 45 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Dungeon<br></div>} 
+END
+IF bouduar > 0:
+ $text_display += {<div id="under">Boudoir<br><div id = "clear"><a href = 'EXEC: sp_txt = 46 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Boudoir<br></div>}  
+END
+IF lab > 0:
+ $text_display += {<div id="under">Laboratory<br><div id = "clear"><a href = 'EXEC: sp_txt = 47 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Laboratory<br></div>}  
+END
+$text_display += {<br><div id="under">Leave as it is<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[41] = {
+$text_display = '<br>'
+if $study ! 'basic' and sparks => 0: $text_display += {<div id="under">Free<br><div id = "clear"><a href = 'EXEC: interaction_city = 13411 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'econom' and sparks => 25: $text_display += {<div id="under">Econom<br><div id = "clear"><a href = 'EXEC: interaction_city = 13412 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'japan' and sparks => 25: $text_display += {<div id="under">Japanese<br><div id = "clear"><a href = 'EXEC: interaction_city = 13413 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'comfy' and sparks => 25: $text_display += {<div id="under">Cozy<br><div id = "clear"><a href = 'EXEC: interaction_city = 13414 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'fort' and sparks => 50: $text_display += {<div id="under">Neo-medieval<br><div id = "clear"><a href = 'EXEC: interaction_city = 13415 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'modern' and sparks => 50: $text_display += {<div id="under">Modern<br><div id = "clear"><a href = 'EXEC: interaction_city = 13416 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'classic' and sparks => 50: $text_display += {<div id="under">Classical<br><div id = "clear"><a href = 'EXEC: interaction_city = 13417 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'victorian' and sparks => 100: $text_display += {<div id="under">Victorian<br><div id = "clear"><a href = 'EXEC: interaction_city = 13418 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'gothic' and sparks => 100: $text_display += {<div id="under">Necro-gothic<br><div id = "clear"><a href = 'EXEC: interaction_city = 13419 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'elite' and sparks => 100: $text_display += {<div id="under">Elite<br><div id = "clear"><a href = 'EXEC: interaction_city = 134110 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'slaver' and sparks => 150: $text_display += {<div id="under">Slaver<br><div id = "clear"><a href = 'EXEC: interaction_city = 134111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $study ! 'lux' and sparks => 200: $text_display += {<div id="under">Luxurious<br><div id = "clear"><a href = 'EXEC: interaction_city = 134112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[42] = {
+$text_display = '<br>'
+if $bed ! 'basic' and sparks => 0: $text_display += {<div id="under">Free<br><div id = "clear"><a href = 'EXEC: interaction_city = 13421 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'econom' and sparks => 15: $text_display += {<div id="under">Econom<br><div id = "clear"><a href = 'EXEC: interaction_city = 13422 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'japan' and sparks => 25: $text_display += {<div id="under">Japanese<br><div id = "clear"><a href = 'EXEC: interaction_city = 13423 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'comfy' and sparks => 25: $text_display += {<div id="under">Cozy<br><div id = "clear"><a href = 'EXEC: interaction_city = 13424 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'fort' and sparks => 30: $text_display += {<div id="under">Neo-medieval<br><div id = "clear"><a href = 'EXEC: interaction_city = 13425 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'modern' and sparks => 50: $text_display += {<div id="under">Modern<br><div id = "clear"><a href = 'EXEC: interaction_city = 13426 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'classic' and sparks => 100: $text_display += {<div id="under">Classical<br><div id = "clear"><a href = 'EXEC: interaction_city = 13427 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'slaver' and sparks => 100: $text_display += {<div id="under">Slaver<br><div id = "clear"><a href = 'EXEC: interaction_city = 13428 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'stylish' and sparks => 150: $text_display += {<div id="under">Style<br><div id = "clear"><a href = 'EXEC: interaction_city = 13429 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'gothic' and sparks => 150: $text_display += {<div id="under">Necro-gothic<br><div id = "clear"><a href = 'EXEC: interaction_city = 134210 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'elite' and sparks => 150: $text_display += {<div id="under">Elite<br><div id = "clear"><a href = 'EXEC: interaction_city = 134211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bed ! 'lux' and sparks => 200: $text_display += {<div id="under">Luxurious<br><div id = "clear"><a href = 'EXEC: interaction_city = 134212 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[43] = {
+$text_display = '<br><br>'
+if $kitchen ! 'basic' and sparks => 20: $text_display += {<br><div id="under">Rustic<br><div id = "clear"><a href = 'EXEC: interaction_city = 13431 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $kitchen ! 'econom' and sparks => 20: $text_display += {<br><div id="under">Econom<br><div id = "clear"><a href = 'EXEC: interaction_city = 13432 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $kitchen ! 'fort' and sparks => 20: $text_display += {<br><div id="under">Neo-medieval<br><div id = "clear"><a href = 'EXEC: interaction_city = 13433 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $kitchen ! 'gothic' and sparks => 50:$text_display += {<br><div id="under">Necro-gothic<br><div id = "clear"><a href = 'EXEC: interaction_city = 13434 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $kitchen ! 'elite' and sparks => 50:$text_display += {<br><div id="under">Elite<br><div id = "clear"><a href = 'EXEC: interaction_city = 13435 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[44] = {
+$text_display = '<br><br>'
+if $bath ! 'basic' and sparks => 0: $text_display += {<div id="under">Free<br><div id = "clear"><a href = 'EXEC: interaction_city = 13447 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bath ! 'econom' and sparks => 20: $text_display += {<div id="under">Econom<br><div id = "clear"><a href = 'EXEC: interaction_city = 13441 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bath ! 'fort' and sparks => 20: $text_display += {<div id="under">Neo-medieval<br><div id = "clear"><a href = 'EXEC: interaction_city = 13442 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bath ! 'classic' and sparks => 50:$text_display += {<div id="under">Classical<br><div id = "clear"><a href = 'EXEC: interaction_city = 13443 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bath ! 'japan' and sparks => 50:$text_display += {<div id="under">Japanese tub<br><div id = "clear"><a href = 'EXEC: interaction_city = 13444 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bath ! 'gothic' and sparks => 50:$text_display += {<div id="under">Necro-gothic<br><div id = "clear"><a href = 'EXEC: interaction_city = 13445 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bath ! 'elite' and sparks => 50:$text_display += {<div id="under">Elite<br><div id = "clear"><a href = 'EXEC: interaction_city = 13446 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bath ! 'lux' and sparks => 100:$text_display += {<div id="under">Luxurious<br><div id = "clear"><a href = 'EXEC: interaction_city = 13448 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[45] = {
+$text_display = '<br>'
+if $dungeon ! 'basic' and sparks => 0: $text_display += {<div id="under">Free<br><div id = "clear"><a href = 'EXEC: interaction_city = 13451 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'fort' and sparks => 10: $text_display += {<div id="under">Medieval<br><div id = "clear"><a href = 'EXEC: interaction_city = 13453 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'entomb' and sparks => 10: $text_display += {<div id="under">Stone sack<br><div id = "clear"><a href = 'EXEC: interaction_city = 13454 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'econom' and sparks => 20: $text_display += {<div id="under">Econom<br><div id = "clear"><a href = 'EXEC: interaction_city = 13452 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'classic' and sparks => 20: $text_display += {<div id="under">Classical<br><div id = "clear"><a href = 'EXEC: interaction_city = 13455 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'pastoral' and sparks => 20: $text_display += {<div id="under">Rustic<br><div id = "clear"><a href = 'EXEC: interaction_city = 13456 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'gothic' and sparks => 25: $text_display += {<div id="under">Necro-gothic<br><div id = "clear"><a href = 'EXEC: interaction_city = 13457 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'executor' and sparks => 25: $text_display += {<div id="under">Executioner<br><div id = "clear"><a href = 'EXEC: interaction_city = 13458 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'slaver' and sparks => 25: $text_display += {<div id="under">Slaver<br><div id = "clear"><a href = 'EXEC: interaction_city = 13459 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'victorian' and sparks => 50: $text_display += {<div id="under">Victorian<br><div id = "clear"><a href = 'EXEC: interaction_city = 134510 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'elite' and sparks => 50: $text_display += {<div id="under">Elite<br><div id = "clear"><a href = 'EXEC: interaction_city = 134511 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $dungeon ! 'lux' and sparks => 50: $text_display += {<div id="under">Luxurious<br><div id = "clear"><a href = 'EXEC: interaction_city = 134512 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[46] = {
+$text_display = '<br>'
+if $bouduar ! 'basic' and sparks => 0: $text_display += {<div id="under">Free<br><div id = "clear"><a href = 'EXEC: interaction_city = 13461 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'econom' and sparks => 10: $text_display += {<div id="under">Econom<br><div id = "clear"><a href = 'EXEC: interaction_city = 13462 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'modern' and sparks => 20: $text_display += {<div id="under">Modern<br><div id = "clear"><a href = 'EXEC: interaction_city = 13463 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'comfy' and sparks => 20: $text_display += {<div id="under">Comfy<br><div id = "clear"><a href = 'EXEC: interaction_city = 13464 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'magic' and sparks => 50: $text_display += {<div id="under">Witch<br><div id = "clear"><a href = 'EXEC: interaction_city = 13465 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'victorian' and sparks => 50: $text_display += {<div id="under">Victorian<br><div id = "clear"><a href = 'EXEC: interaction_city = 13466 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'slaver' and sparks => 50: $text_display += {<div id="under">Slaver<br><div id = "clear"><a href = 'EXEC: interaction_city = 13467 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'fort' and sparks => 100: $text_display += {<div id="under">Neo-medieval<br><div id = "clear"><a href = 'EXEC: interaction_city = 13468 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'elite' and sparks => 150: $text_display += {<div id="under">Elite<br><div id = "clear"><a href = 'EXEC: interaction_city = 13469 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'gothic' and sparks => 200: $text_display += {<div id="under">Necro-gothic<br><div id = "clear"><a href = 'EXEC: interaction_city = 134610 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $bouduar ! 'lux' and sparks => 250: $text_display += {<div id="under">Luxurious<br><div id = "clear"><a href = 'EXEC: interaction_city = 134611 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$realtor_options[47] = {
+$text_display = '<br><br>'
+if $lab ! 'econom' and sparks => 20: $text_display += {<div id="under">Professor<br><div id = "clear"><a href = 'EXEC: interaction_city = 13471 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $lab ! 'basic' and sparks => 20: $text_display += {<div id="under">Witch<br><div id = "clear"><a href = 'EXEC: interaction_city = 13472 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $lab ! 'fort' and sparks => 50: $text_display += {<div id="under">Alchemist<br><div id = "clear"><a href = 'EXEC: interaction_city = 13473 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $lab ! 'gothic' and sparks => 100: $text_display += {<div id="under">Necromancer<br><div id = "clear"><a href = 'EXEC: interaction_city = 13474 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $lab ! 'slaver' and sparks => 100: $text_display += {<div id="under">Slaver<br><div id = "clear"><a href = 'EXEC: interaction_city = 13475 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $lab ! 'victorian' and sparks => 100: $text_display += {<div id="under">Victorian<br><div id = "clear"><a href = 'EXEC: interaction_city = 13476 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if $lab ! 'elite' and sparks => 100: $text_display += {<div id="under">Elite<br><div id = "clear"><a href = 'EXEC: interaction_city = 13477 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+
+!Central forum
+$forum_options[1] = {
+$sp_text[1] = "   Central forum provides huge opportunities to a person of your profession. There you can advertise yourself a little and put sticks in the wheels of rivals, or to collect information about the best potential buyers for your slave. And of course you can just communicate with the others." 
+$text_display = '<br><br>'
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:
+ $text_display += {<br><div id="under">Find potential customers<br><div id = "clear"><a href = 'EXEC: interaction_city = 151 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Find potential customers<br></div>}  
+END
+$text_display += {<br><div id="under">Spread rumors<br><div id = "clear"><a href = 'EXEC: interaction_city = 152 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Special missions<br><div id = "clear"><a href = 'EXEC:  sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Leave the forum<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$forum_options[2] = {
+$sp_text[2] = "   At the forum you can periodically meet different interesting personalities who do not buy ordinary slaves, but are interested in special deals. Some of them offer some really interesting things." 
+$text_display = '<br><br>'
+if active[$quest[6]] < 2: $text_display += {<br><div id="under">Quartermaster Aramus<br><div id = "clear"><a href = 'EXEC: interaction_city = 1531 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if active[$quest[7]] < 2: $text_display += {<br><div id="under">Vujin the Wise<br><div id = "clear"><a href = 'EXEC: interaction_city = 1532 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if active[$quest[8]] < 2: $text_display += {<br><div id="under">Garsid the Inseminator<br><div id = "clear"><a href = 'EXEC: interaction_city = 1533 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if active[$quest[9]] < 2: $text_display += {<br><div id="under">Master Valios<br><div id = "clear"><a href = 'EXEC: interaction_city = 1534 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Look around<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Animal farm
+$farm_options[1] = {
+$sp_text[1] = '   Very long barrack filled with cramped stalls where contains interspersed people and animals. The smell here is very nasty. But business is business.'
+$text_display = '<br><br>'
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer merchandise<br><div id = "clear"><a href = 'EXEC: interaction_city = 442 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer merchandise<br></div>} 
+END
+$text_display += {<br><div id="under">Ask about the requirements<br><div id = "clear"><a href = 'EXEC: interaction_city = 441 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Leave the animal farm<br><div id = "clear"><a href = 'EXEC: city_form = 4 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Base camp
+$warcamp_options[1] = {
+$sp_text[1] = '   Places there are unsafe, but you can feel relatively safe behind a hastily built fence of base camp.'
+$text_display = '<br>'
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer an employee<br><div id = "clear"><a href = 'EXEC: interaction_city = 642 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer an employee<br></div>} 
+END
+$text_display += {<br><div id="under">Ask about the requirements<br><div id = "clear"><a href = 'EXEC: interaction_city = 641 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Leave the base camp<br><div id = "clear"><a href = 'EXEC: city_form = 6 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!anatomical theater
+$morgue_options[1] = {
+npc = 1
+$sp_text[1] = '   Considering the level of artists mortality, Malifistsent should always need a new girls. It is a good business opportunity!'
+$text_display = '<br><br><br>'
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer an artist<br><div id = "clear"><a href = 'EXEC: interaction_city = 532 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer an artist<br></div>} 
+END
+$text_display += {<br><div id="under">Ask about the requirements<br><div id = "clear"><a href = 'EXEC: interaction_city = 531 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Leave the theatre<br><div id = "clear"><a href = 'EXEC: city_form = 5 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!smugglers den
+$smugler_options[1] = {
+$sp_text[1] = '   On this dark street, few people can feel comfortable. But this is where you can set up a meeting to the right people who do not want to attract too much attention.'
+$text_display = '<br><br>'
+IF slave_state = CONST_INT['no_slave'] and sparks => 2000:
+ $text_display += {<br><div id="under">Order "parcel" (2000 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Order "parcel" (2000 sparks)<br></div>}  
+END
+IF helen = 0 and slave_state = CONST_INT['no_slave'] and sparks => 3000:
+ $text_display += {<br><div id="under">Buy "Helen" the milf (3000 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 6532 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ elseif helen = 0:
+ $text_display += {<br><div id="under_gray">Buy "Helen" the milf (3000 sparks)<br></div>}  
+END
+IF yasmin = 0 and slave_state = CONST_INT['no_slave'] and sparks => 3000:
+ $text_display += {<br><div id="under">Buy "Yasmin" the amazon (3000 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 6533 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ elseif yasmin = 0:
+ $text_display += {<br><div id="under_gray">Buy "Yasmin" the amazon (3000 sparks)<br></div>}  
+END
+IF pen > 0 and pet_tentacle = 0:
+ $text_display += {<br><div id="under">Buy a fog fiend (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction_city = 6530 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Buy a fog fiend (100 sparks)<br></div>} 
+END
+$text_display += {<br><div id="under">Ask about smuggling<br><div id = "clear"><a href = 'EXEC: interaction_city = 651 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Leave the lair<br><div id = "clear"><a href = 'EXEC: city_form = 6 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$smugler_options[2] = {
+$sp_text[2] = '   Training scheme for all our slaves are standard, appearance too. Clones, you know. But you can select the desired age category.'
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Choose mature<br><div id = "clear"><a href = 'EXEC: interaction_city = 6521 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Choose young<br><div id = "clear"><a href = 'EXEC: interaction_city = 6522 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Choose immature<br><div id = "clear"><a href = 'EXEC: interaction_city = 6523 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Change your mind<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+
+!white palace
+$palace_options[1] = {
+npc = 0
+$place = 'palace'
+$text_display = '<br><br><br>'
+IF faction_fame['taurus'] => 3:
+ $sp_text[1] = '   I was allowed to enter the White Palace. It remains only to choose whom offer my services.'
+ if npc_progress['bishop_molaru'] < 2: $text_display += {<br><div id="under">Audience with archbishop<br><div id = "clear"><a href = 'EXEC: interaction_city = 241 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if npc_progress['general_barabas'] < 2: $text_display += {<br><div id="under">Audience with general<br><div id = "clear"><a href = 'EXEC: interaction_city = 242 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if npc_progress['pretor_siegfrid'] < 2: $text_display += {<br><div id="under">Audience with praetor<br><div id = "clear"><a href = 'EXEC: interaction_city = 243 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $place = 'palace_gate'
+ $text_display += '<br><br><br><br>' 
+ $sp_text[1] = '   At the entrance of the White Palace watchful guards on duty. They will not allow strangers here.'
+END
+IF faction_fame['taurus'] => 4:
+ $sp_text[1] = '   I was allowed to see the King. I will need to meet with him and try to fulfill his assignment.'
+ if npc_progress['taurus_king'] < 2: $text_display += {<br><div id="under">Audience with King<br><div id = "clear"><a href = 'EXEC: interaction_city = 244 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+IF npc_progress['taurus_king'] = 2 and faction_fame['taurus'] = 4:
+ $sp_text[1] = '   King pleased with his order. Nevertheless, I can not become a patrician of Taurus House, because I''m already a patrician.'
+END
+IF faction_fame['taurus'] = 5 and npc_progress['taurus_king'] = 2 and noble_status = 1:
+ $sp_text[1] = '   Now I''m noble and patrician of Taurus House. If I need help, I can always rely on the King.'
+END
+$text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 2 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Administrative spires
+$spire_options[1] = {
+$place = 'spire'
+$text_display = '<br><br><br>'
+IF faction_fame['serpis'] => 3:
+ $sp_text[1] = '   So, I''m inside. It remains only to choose whom to offer my services.'
+ if npc_progress['bishop_porter'] < 2: $text_display += {<br><div id="under">Audience with archbishop<br><div id = "clear"><a href = 'EXEC: interaction_city = 341 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if npc_progress['general_drago'] < 2: $text_display += {<br><div id="under">Audience with general<br><div id = "clear"><a href = 'EXEC: interaction_city = 342 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if npc_progress['pretor_diabaz'] < 2: $text_display += {<br><div id="under">Audience with praetor<br><div id = "clear"><a href = 'EXEC: interaction_city = 343 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $place = 'spire_gate'
+ if nsfw = 1: not_safe = 1
+ $text_display += '<br><br><br><br>' 
+ $sp_text[1] = '   At the entrance of the Administrative Spires watchful guards on duty. They will not allow strangers here.'
+END
+IF faction_fame['serpis'] => 4:
+ $sp_text[1] = '   I was allowed to see the President. I will need to meet with him and try to fulfill his assignment.'
+ if npc_progress['serpis_prince_first'] < 2: $text_display += {<br><div id="under">Audience with President<br><div id = "clear"><a href = 'EXEC: interaction_city = 344 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+IF npc_progress['serpis_prince_first'] = 2 and faction_fame['taurus'] = 4:
+ $sp_text[1] = '   President pleased with his order. Nevertheless, I can not become a patrician of Serpis House, because I''m already a patrician.'
+END
+IF faction_fame['serpis'] = 5 and npc_progress['serpis_prince_first'] = 2 and noble_status = 1:
+ $sp_text[1] = '   Now I''m noble and patrician of Serpis House. If I need help, Mr. President will help me.'
+END
+$text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 3 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Tierra del Citadel
+$citadel_options[1] = {
+$place = 'citadel'
+$text_display = '<br><br><br>'
+IF faction_fame['kamira'] => 3:
+ $sp_text[1] = '   Beastmen allowed me to enter into the Tierra del Citadel. It remains only to choose whom to offer my services.'
+ if npc_progress['bishop_shaitana'] < 2: $text_display += {<br><div id="under">Audience with archbishop<br><div id = "clear"><a href = 'EXEC: interaction_city = 451 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if npc_progress['general_carnis'] < 2: $text_display += {<br><div id="under">Audience with general<br><div id = "clear"><a href = 'EXEC: interaction_city = 452 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if npc_progress['pretor_tifaret'] < 2: $text_display += {<br><div id="under">Audience with praetor<br><div id = "clear"><a href = 'EXEC: interaction_city = 453 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $place = 'citadel_gate'
+ $text_display += '<br><br><br><br>' 
+ $sp_text[1] = '   At the entrance to the Tierra del Citadel watchful guards on duty. They will not allow strangers here.'
+END
+IF faction_fame['kamira'] => 4:
+ $sp_text[1] = '   I was allowed to see Mistress. I will need to meet with her and try to fulfill her assignment.'
+ if npc_progress['tiamath'] < 2: $text_display += {<br><div id="under">Audience with Mistress<br><div id = "clear"><a href = 'EXEC: interaction_city = 454 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+IF npc_progress['tiamath'] = 2 and faction_fame['kamira'] = 4:
+ $sp_text[1] = '   Tiamat pleased with her order. Nevertheless, I can not become a patrician of Camira House, because I''m already a patrician.'
+END
+IF faction_fame['kamira'] = 5 and npc_progress['tiamath'] = 2 and noble_status = 1:
+ $sp_text[1] = '   Now I''m noble and patrician of Camira House. If I need help, Tiamat will not fail me.'
+END
+$text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 4 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Raven tower
+$tower_options[1] = {
+$place = 'tower'
+$text_display = '<br><br><br>'
+IF faction_fame['korvus'] => 3:
+ $sp_text[1] = '   Ghouls trust me. Now I can go into the Raven Tower. It remains only to choose whom to offer my services.'
+ if npc_progress['bishop_nerilis'] < 2: $text_display += {<br><div id="under">Audience with archbishop<br><div id = "clear"><a href = 'EXEC: interaction_city = 541 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if npc_progress['hand_of_the_knyaz'] < 2: $text_display += {<br><div id="under">Audience with the right hand<br><div id = "clear"><a href = 'EXEC: interaction_city = 542 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if npc_progress['pretor_kamael'] < 2: $text_display += {<br><div id="under">Audience with praetor<br><div id = "clear"><a href = 'EXEC: interaction_city = 543 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $place = 'tower_gate'
+ $sp_text[1] = '   Undead Knight stands unchallenged on Raven Tower guard. Try to pass him without invitation is tantamount to suicide.'
+ $text_display += '<br><br><br><br>' 
+END
+IF faction_fame['korvus'] => 4:
+ $sp_text[1] = '   I was allowed to see the Prince. I will need to meet with him and try to fulfill his assignment.'
+ if npc_progress['korvus_knyaz'] < 2: $text_display += {<br><div id="under">Audience with Prince<br><div id = "clear"><a href = 'EXEC: interaction_city = 544 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+IF npc_progress['korvus_knyaz'] = 2 and faction_fame['korvus'] = 4:
+ $sp_text[1] = '   Prince pleased with his order. Nevertheless, I can not become a patrician of Corvus House, because I''m already a patrician.'
+END
+IF faction_fame['korvus'] = 5 and npc_progress['korvus_knyaz'] = 2 and noble_status = 1:
+ $sp_text[1] = '   Now I''m noble and patrician of Corvus House. If I need help, Prince will support me.'
+END
+$text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 5 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Vatican
+$vatican_options[1] = {
+$place = 'vatican'
+$text_display = '<br><br><br>'
+IF brand_reputation => 5:
+ IF npc_progress['cardinal_de_mujlon'] < 2: 
+  $sp_text[1] = '   To get to the Pope, I need to perform a service for Cardinal.'
+  $text_display += {<br><div id="under">Audience with Cardinal<br><div id = "clear"><a href = 'EXEC: interaction_city = 161 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += '<br><br>' 
+ END
+ IF npc_progress['cardinal_de_mujlon'] = 2 and npc_progress['pope'] < 2:
+  $sp_text[1] = '   Now I can meet with the Pope. I will need to meet with him and try to fulfill his assignment.'
+  $text_display += {<br><div id="under">Audience with Pope<br><div id = "clear"><a href = 'EXEC: interaction_city = 162 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += '<br><br>' 
+ END
+ IF npc_progress['pope'] = 2 and noble_status = 1:
+  $sp_text[1] = '   Now I''m noble and patrician of White Town. If I need help, Pope will help me.'
+ END
+ else
+ $place = 'vatican_gate'
+ $sp_text[1] = '   Vatican gates are guarded very vigilant. To go there I need a special invitation.'
+ $text_display += '<br><br><br><br>'
+END
+$text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Gentleman`s club
+$club_options[1] = {
+$sp_text[1] = '   Sir Shelley''s Gentleman''s club provides great opportunities not only for leisure but also for business. Here you can find a lot of potential customers, or at least to sell slaves to owner himself.'
+$text_display = '<br><br>'
+if club_member = 0: $text_display += {<br><div id="under">Join the club<br><div id = "clear"><a href = 'EXEC: interaction_city = 231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+if club_member = 1: $text_display += {<br><div id="under">Visit the club<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer an employee<br><div id = "clear"><a href = 'EXEC: interaction_city = 232 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer an employee<br></div>} 
+END
+$text_display += {<br><div id="under">Ask about the requirements<br><div id = "clear"><a href = 'EXEC: interaction_city = 233 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Leave the club<br><div id = "clear"><a href = 'EXEC: city_form = 2 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$club_options[2] = {
+$sp_text[2] = '   You walk inside and surrenders to entertainment befitting a respectable gentleman. Alcohol, cigars, cards, conversations about politics and of course the lovely maids and actresses... But you must not forget about the business.'
+$text_display = '<br><br>'
+$text_display += {<div id="under">Don Karbolio<br><div id = "clear"><a href = 'EXEC: interaction_city = 2311 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Don Sigismund<br><div id = "clear"><a href = 'EXEC: interaction_city = 2312 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Don Sorino<br><div id = "clear"><a href = 'EXEC: interaction_city = 2313 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Don Bobrit<br><div id = "clear"><a href = 'EXEC: interaction_city = 2314 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Don Mladio<br><div id = "clear"><a href = 'EXEC: interaction_city = 2315 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Don Sedos<br><div id = "clear"><a href = 'EXEC: interaction_city = 2316 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Spread rumors<br><div id = "clear"><a href = 'EXEC: interaction_city = 2317 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Rest and relax<br><div id = "clear"><a href = 'EXEC: interaction_city = 2318 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Leave club<br><div id = "clear"><a href = 'EXEC: city_form = 2 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Isabella
+$isabella_options[1] = {
+$sp_text[1] = '     [Isabella]
+  - So, <<$master_name>>, we have an agreement, or what?'
+$text_display = '<br><br><br><br><br>'
+$text_display += {<div id="under">Lead Isabella to the Rome<br><div id = "clear"><a href = 'EXEC: interaction_city = 6011 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">She is too dangerous<br><div id = "clear"><a href = 'EXEC: city_form = 6 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Salon of Madame Jofre
+$brothel_options[1] = {
+$text_display = '<br>'
+IF sparks => 1 and master_energy > 0:
+ $text_display += {<br><div id="under">Fast service (1 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Fast service (1 sparks)<br></div>}  
+END
+IF sparks => 5 and master_energy > 0:
+ $text_display += {<br><div id="under">Standard service (5 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Standard service (5 sparks)<br></div>}  
+END
+IF sparks => 15 and master_energy > 0:
+ $text_display += {<br><div id="under">Elite service (15 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Elite service (15 sparks)<br></div>}  
+END
+$text_display += {<br><div id="under">Check preferences of the proprietress<div id = "clear"><a href = 'EXEC: interaction_city = 2251 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ !$text_display += {<div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2252 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2254 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Offer a slave<br></div>}
+END
+$text_display += {<br><div id="under">Leave the salon<br><div id = "clear"><a href = 'EXEC: city_form = 2 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$brothel_options[2] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Fast sex<br><div id = "clear"><a href = 'EXEC: interaction_city = 2221 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Anal sex<br><div id = "clear"><a href = 'EXEC: interaction_city = 2222 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Fast blowjob<br><div id = "clear"><a href = 'EXEC: interaction_city = 2223 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Fast pazuri<br><div id = "clear"><a href = 'EXEC: interaction_city = 2224 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Sex with lolita<br><div id = "clear"><a href = 'EXEC: interaction_city = 2225 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Change selection<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$brothel_options[3] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Twins<br><div id = "clear"><a href = 'EXEC: interaction_city = 2231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Three lolita<br><div id = "clear"><a href = 'EXEC: interaction_city = 2232 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Five girls<br><div id = "clear"><a href = 'EXEC: interaction_city = 2233 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Mistress and slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2234 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Exotic sex<br><div id = "clear"><a href = 'EXEC: interaction_city = 2235 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Change selection<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$brothel_options[4] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Mother and daughter<br><div id = "clear"><a href = 'EXEC: interaction_city = 2241 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Six lolitas<br><div id = "clear"><a href = 'EXEC: interaction_city = 2242 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Seven girls<br><div id = "clear"><a href = 'EXEC: interaction_city = 2243 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Double exotic<br><div id = "clear"><a href = 'EXEC: interaction_city = 2244 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Exotic twins<br><div id = "clear"><a href = 'EXEC: interaction_city = 2245 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Change selection<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$brothel_options[5] = {
+$text_display = '<br>'
+!$text_display += {<br><div id="under">Lesson for slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2251 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+!$text_display += {<br><div id="under">Personal lesson<br><div id = "clear"><a href = 'EXEC: interaction_city = 2252 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under_gray">Lesson for slave<br></div>}
+$text_display += {<br><div id="under_gray">Personal lesson<br></div>}
+$text_display += {<br><div id="under">Check preferences of the proprietress<div id = "clear"><a href = 'EXEC: interaction_city = 2253 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 2254 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Offer a slave<br></div>}
+END
+$text_display += {<br><div id="under">End conversation<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Boutique
+$boutic_options[1] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Menswear<div id = "clear"><a href = 'EXEC: sp_txt = 6 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state > CONST_INT['no_slave']:
+ $text_display += {<div id="under">Women`s uniform<div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Fashionable ladieswear<div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Gloves<div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">Shoes<div id = "clear"><a href = 'EXEC: sp_txt = 5 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Women`s uniform<br></div>}
+ $text_display += {<div id="under_gray">Fashionable ladieswear<br></div>}
+ $text_display += {<div id="under_gray">Gloves<br></div>}
+ $text_display += {<div id="under_gray">Shoes<br></div>}
+END
+$text_display += {<br><div id="under">Check preferences of the proprietress<div id = "clear"><a href = 'EXEC: interaction_city = 11361 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<div id="under">Offer an employee<br><div id = "clear"><a href = 'EXEC: interaction_city = 11362 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Offer an employee<br></div>}
+END
+$text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$boutic_options[2] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Frilly apron<div id = "clear"><a href = 'EXEC: interaction_city = 11311 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Maid outfit<div id = "clear"><a href = 'EXEC: interaction_city = 11312 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Nurse outfit<div id = "clear"><a href = 'EXEC: interaction_city = 11313 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Sorceress robes<div id = "clear"><a href = 'EXEC: interaction_city = 11314 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Athletic leotard<div id = "clear"><a href = 'EXEC: interaction_city = 11315 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Chainmail bikini<div id = "clear"><a href = 'EXEC: interaction_city = 11316 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Kimono-yukata<div id = "clear"><a href = 'EXEC: interaction_city = 11319 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">School uniform<div id = "clear"><a href = 'EXEC: interaction_city = 11318 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$boutic_options[3] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Light sundress<div id = "clear"><a href = 'EXEC: interaction_city = 11321 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Lace underwear<div id = "clear"><a href = 'EXEC: interaction_city = 11322 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Gown<div id = "clear"><a href = 'EXEC: interaction_city = 11323 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Latex dress<div id = "clear"><a href = 'EXEC: interaction_city = 11324 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Exotic outfit<div id = "clear"><a href = 'EXEC: interaction_city = 11325 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Leather corset<div id = "clear"><a href = 'EXEC: interaction_city = 11326 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Gorgeous dress<br><div id = "clear"><a href = 'EXEC: interaction_city = 11328 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Wedding dress<br><div id = "clear"><a href = 'EXEC: interaction_city = 11327 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$boutic_options[4] = {
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Rubber gloves<div id = "clear"><a href = 'EXEC: interaction_city = 11331 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Lace gloves<div id = "clear"><a href = 'EXEC: interaction_city = 11332 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Carbon fiber gloves<div id = "clear"><a href = 'EXEC: interaction_city = 11333 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Fluffy paws<div id = "clear"><a href = 'EXEC: interaction_city = 11334 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Leather gloves<br><div id = "clear"><a href = 'EXEC: interaction_city = 11335 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$boutic_options[5] = {
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Tabi socks<div id = "clear"><a href = 'EXEC: interaction_city = 11341 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Soft slippers<div id = "clear"><a href = 'EXEC: interaction_city = 11342 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Pointes<div id = "clear"><a href = 'EXEC: interaction_city = 11343 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Sneakers<div id = "clear"><a href = 'EXEC: interaction_city = 11344 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Heels<div id = "clear"><a href = 'EXEC: interaction_city = 11345 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Boots<br><div id = "clear"><a href = 'EXEC: interaction_city = 11346 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Other goods<div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$boutic_options[6] = {
+$text_display = '<br><br>'
+
+IF sparks => 10:
+ if formal_suit < 1 and $master_cloth ! "formal_suit":
+  $text_display += {<div id="under">Formal suit (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11351 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Formal suit (10 sparks)<br></div>}
+ end
+ if medic_robes < 1 and $master_cloth ! "medic_robes":
+  $text_display += {<div id="under">Medical gown (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11352 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Medical gown (10 sparks)<br></div>} 
+ end
+ if wizard_robes < 1 and $master_cloth ! "wizard_robes":
+  $text_display += {<div id="under">Wizard robes (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11353 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Wizard robes (10 sparks)<br></div>}
+ end
+ if comfy_robes < 1 and $master_cloth ! "comfy_robes":
+  $text_display += {<div id="under">Housecoat (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11354 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Housecoat (10 sparks)<br></div>} 
+ end
+ if fancy_suit < 1 and $master_cloth ! "fancy_suit":
+  $text_display += {<div id="under">Fashionable attire (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11355 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Fashionable attire (10 sparks)<br></div>}  
+ end
+ if aketon < 1 and $master_cloth ! "aketon":
+  $text_display += {<div id="under">Aketon (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11356 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Aketon (10 sparks)<br></div>}
+ end
+ if livery < 1 and $master_cloth ! "livery":
+  $text_display += {<div id="under">Livery (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11357 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Livery (10 sparks)<br></div>}
+ end
+ else
+ $text_display += {<div id="under_gray">Formal suit (10 sparks)<br></div>}  
+ $text_display += {<div id="under_gray">Medical gown (10 sparks)<br></div>}  
+ $text_display += {<div id="under_gray">Wizard robes (10 sparks)<br></div>}    
+ $text_display += {<div id="under_gray">Housecoat (10 sparks)<br></div>}  
+ $text_display += {<div id="under_gray">Fashionable attire (10 sparks)<br></div>}  
+ $text_display += {<div id="under_gray">Aketon (10 sparks)<br></div>}  
+ $text_display += {<div id="under_gray">Livery (10 sparks)<br></div>}    
+END
+IF sparks => 20:
+ if regal_suit < 1 and $master_cloth ! "regal_suit":
+  $text_display += {<div id="under">Noble regalia (20 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11358 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Noble regalia (20 sparks)<br></div>} 
+ end
+ else
+ $text_display += {<br><div id="under_gray">Noble regalia (20 sparks)<br></div>}  
+END
+$text_display += {<br><div id="under">Other goods<div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Jewelry store
+$jeweler_options[1] = {
+$text_display = '<br>'
+IF slave_state > CONST_INT['no_slave']:
+ $text_display += {<br><div id="under">Women`s jewelry<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Fashionable accessories<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Women`s jewelry<br></div>}
+ $text_display += {<br><div id="under_gray">Fashionable accessories<br></div>} 
+END
+!$text_display += {<br><div id="under">Men`s jewelry<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Check preferences of the proprietress<div id = "clear"><a href = 'EXEC: interaction_city = 11441 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer an employee<br><div id = "clear"><a href = 'EXEC: interaction_city = 11442 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer an employee<br></div>}
+END
+$text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$jeweler_options[2] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Elegant ring<div id = "clear"><a href = 'EXEC: interaction_city = 11411 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Shiny earrings<div id = "clear"><a href = 'EXEC: interaction_city = 11412 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Chain with pendant<div id = "clear"><a href = 'EXEC: interaction_city = 11413 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Ornamented diadem<div id = "clear"><a href = 'EXEC: interaction_city = 11414 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Gemstone ring<div id = "clear"><a href = 'EXEC: interaction_city = 11415 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Gemstone earrings<div id = "clear"><a href = 'EXEC: interaction_city = 11416 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Gemstone necklace<div id = "clear"><a href = 'EXEC: interaction_city = 11417 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Precious tiara<div id = "clear"><a href = 'EXEC: interaction_city = 11418 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!$jeweler_options[3] = {
+$text_display = '<br><br>'
+$text_display += {<br><div id="under">Other goods<div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$jeweler_options[4] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Headband<div id = "clear"><a href = 'EXEC: interaction_city = 11431 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Hijab<div id = "clear"><a href = 'EXEC: interaction_city = 11437 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Stylish glasses<div id = "clear"><a href = 'EXEC: interaction_city = 11432 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Cat ears<div id = "clear"><a href = 'EXEC: interaction_city = 11433 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Ornamented collar<div id = "clear"><a href = 'EXEC: interaction_city = 11434 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Hairnet<div id = "clear"><a href = 'EXEC: interaction_city = 11435 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Exotic wig<div id = "clear"><a href = 'EXEC: interaction_city = 11436 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!beauty salon
+$beauty_options[1] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Services for men<div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist']:
+ IF slave["massaged"] = 0: 
+  $text_display += {<div id="under">Spa and massage (3 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11611 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+  else
+  $text_display += {<div id="under_gray">Spa and massage</div>}
+ END
+ IF slave["hairstyle"] ! 7:
+  $text_display += {<div id="under">Fashionable hairstyle (3 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11612 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Fashionable hairstyle</div>} 
+ END
+ IF slave["epilation"] < 12:
+  $text_display += {<div id="under">Waxing (3 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11613 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Waxing</div>}
+ END
+ IF slave["manicure"] < 5:
+  $text_display += {<div id="under">Make-up and manicure (3 sparks) <div id = "clear"><a href = 'EXEC: interaction_city = 11614 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Make-up and manicure</div>} 
+ END
+ IF slave["manicure"] < 5 and slave["epilation"] < 12 and slave["hairstyle"] ! 7:
+  $text_display += {<div id="under">Full beauty treatment (9 sparks) <div id = "clear"><a href = 'EXEC: interaction_city = 11615 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ elseif slave["manicure"] < 5 and slave["epilation"] > 12 and slave["hairstyle"] ! 7:
+  $text_display += {<div id="under">Full beauty treatment (6 sparks) <div id = "clear"><a href = 'EXEC: interaction_city = 11615 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+  $text_display += {<div id="under_gray">Full beauty treatment</div>} 
+ END
+ else
+ $text_display += {<div id="under_gray">Spa and massage</div>} 
+ $text_display += {<div id="under_gray">Fashionable hairstyle</div>} 
+ $text_display += {<div id="under_gray">Waxing</div>} 
+ $text_display += {<div id="under_gray">Make-Up and manicure</div>}   
+ $text_display += {<div id="under_gray">Full beauty treatment</div>}  
+END
+$text_display += {<br><div id="under">Check preferences of the proprietress<div id = "clear"><a href = 'EXEC: interaction_city = 11631 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<div id="under">Offer an employee<br><div id = "clear"><a href = 'EXEC: interaction_city = 11632 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Offer an employee<br></div>}
+END
+$text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$beauty_options[2] = {
+$text_display = '<br>'
+IF master_haircut < 30 AND master_visage < 10 AND master_massaged = 0 AND master_errected = 0 AND master_spaed = 0:
+ $text_display += {<br><div id="under">Full Service (15 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11620 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Full Service</div>}
+END
+IF master_haircut < 30: 
+ $text_display += {<br><div id="under">Fashionable hairstyle (3 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11621 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Fashionable hairstyle</div>}
+END
+IF master_visage < 10: 
+ $text_display += {<br><div id="under">Cosmetic procedures (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11622 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Cosmetic procedures</div>}
+END
+IF master_massaged = 0: 
+ $text_display += {<br><div id="under">Invigorating massage (3 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11623 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Invigorating massage</div>}
+END
+IF master_erected = 0: 
+ $text_display += {<br><div id="under">Erotic massage (3 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11624 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Erotic massage</div>}
+END
+IF master_hygiene ! 0 or master_spaed = 0:
+ $text_display += {<br><div id="under">Aroma spa (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11625 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Aroma spa</div>}
+END
+$text_display += {<br><div id="under">Other services<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!grocery store
+$gastronom_options[1] = {
+!fix with the fridge overstocking 105\100, by Lyazar
+dynamic $get_frige_space
+$place = 'gastronom'
+$text_display = '<br>'
+$text_display += {<br><div id="under">Eggs and milk<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Groceries and alcohol<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Butchery<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Check preferences of the proprietress<div id = "clear"><a href = 'EXEC: interaction_city = 11591 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer an employee<br><div id = "clear"><a href = 'EXEC: interaction_city = 11592 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer an employee<br></div>}
+END
+$text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$gastronom_options[2] = {
+!fix with the fridge overstocking 105\100, by Lyazar
+dynamic $get_frige_space
+$text_display = '<br>'
+IF sparks => 10 and frige_space => 5:
+ $text_display += {<br><div id="under">Fresh eggs x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11521 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ $text_display += {<br><div id="under">Fresh milk x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11522 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Fresh eggs x5 (10 sparks)<br></div>}
+ $text_display += {<br><div id="under_gray">Fresh milk х5 (10 sparks) <br></div>}
+END
+IF sparks => 20 and frige_space => 5:
+ $text_display += {<br><div id="under">Double cream x5 (20 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11523 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Double cream х5 (20 sparks)<br></div>}
+END
+IF sparks => 5 and frige_space => 5:
+ $text_display += {<br><div id="under">Mature cheese x5 (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11524 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Mature cheese х5 (5 sparks) <br></div>}
+END
+$text_display += {<br><div id="under">Other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$gastronom_options[3] = {
+!fix with the fridge overstocking 105\100, by Lyazar
+dynamic $get_frige_space
+$text_display = '<br>'
+IF sparks => 5 and frige_space => 5:
+ $text_display += {<br><div id="under">Fresh vegetables x5 (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11531 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ $text_display += {<br><div id="under">Cereals and flour x5 (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11532 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ $text_display += {<br><div id="under">Herbs and spices x5 (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11533 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Fresh vegetables х5 (5 sparks)<br></div>}
+ $text_display += {<br><div id="under_gray">Cereals and flour х5 (5 sparks)<br></div>}
+ $text_display += {<br><div id="under_gray">Herbs and spices х5 (5 sparks)<br></div>}
+END
+!TODO: так и задумано, что алкоголь не занимает места? + фикс на деньги
+!IF sparks => 5:
+if sparks >= 10:
+    $text_display += {<br><div id="under">Strong alcohol x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11534 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+else
+    $text_display += {<br><div id="under_gray">Strong alcohol х5 (10 sparks)<br></div>}
+end
+$text_display += {<br><div id="under">Other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$gastronom_options[4] = {
+!fix with the fridge overstocking 105\100, by Lyazar
+dynamic $get_frige_space
+if nsfw = 1: not_safe = 1
+$place = 'slaughter'
+$text_display = '<br>'
+IF sparks => 7 and frige_space => 5:
+ $text_display += {<br><div id="under">Greasy mince x5 (7 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11541 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Greasy mince х5 (7 sparks)<br></div>} 
+END
+IF sparks => 20 and frige_space => 5:
+ $text_display += {<br><div id="under">Tender fillet x5 (20 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 11542 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Tender fillet х5 (20 sparks)<br></div>}
+END
+!$text_display += {<br><div id="under_gray">Ask about meat<br></div>}
+IF slave_state = CONST_INT['slave_exist'] or slave_state = CONST_INT['slave_faint']:
+ $text_display += {<br><div id="under">Slaughter slave for meat<div id = "clear"><a href = 'EXEC: interaction_city = 11544 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Slaughter slave for meat<br></div>}
+END
+IF sparks => 5 and slave_state ! CONST_INT['no_slave']:
+ $text_display += {<br><div id="under">Ask to butcher slave<div id = "clear"><a href = 'EXEC: interaction_city = 11545 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Ask to butcher slave<br></div>}
+END
+$text_display += {<br><div id="under">Return to shop<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!"virgin`s hip" pub
+$tabern_options[1] = {
+$place = 'tabern'
+$text_display = '<br><br>'
+IF sparks => 1:
+ $text_display += {<br><div id="under">Drink (1 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 32101 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Drink (1 sparks)<br></div>}
+END
+$text_display += {<br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 32221 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 32222 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer a slave<br></div>}
+END
+ $text_display += {<br><div id="under">Talk to the bartender<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Talk to the cook<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Leave the tavern<br><div id = "clear"><a href = 'EXEC: city_form = 3 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$tabern_options[2] = {
+$text_display = '<br>'
+!$text_display += {<br><div id="under_gray">Check out the news (1 sparks)<br></div>}
+$text_display += {<br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 32221 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 3223 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer a slave<br></div>}
+END
+$text_display += {<br><div id="under">End conversation<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$tabern_options[3] = {
+$place = 'tabern_kitchen'
+$text_display = '<br><br>'
+if nsfw = 1: not_safe = 1
+!$text_display += {<br><div id="under_gray">Personal lesson<br></div>}
+!$text_display += {<br><div id="under_gray">Lesson for slave<br></div>}
+$text_display += {<br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 3233 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 3234 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer a slave<br></div>}
+END
+$text_display += {<br><div id="under">End conversation<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!tattoo salon
+$bo_options[1] = {
+$text_display = '<br>'
+IF slave_state = CONST_INT['slave_exist'] and slave["tatoo_timeup"] = 0:
+ if slave["tatoo"] = 0: 
+  $text_display += {<br><div id="under">Small tattoo (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += '<br><br>'
+ end
+ if slave["tatoo"] < 2: $text_display += {<div id="under">Start tattoo (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4212 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if slave["tatoo"] = 2: $text_display += {<div id="under">Continue tattoo (25 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4213 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if slave["tatoo"] = 3: $text_display += {<div id="under">Expand tattoo (50 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4214 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if slave["tatoo"] = 4: $text_display += {<div id="under">Finish tattoo (100 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4215 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ if slave["tatoo"] = 5: $text_display += {<div id="under_gray">Large tattoo</div>}
+ if slave["makeup"] < 3: 
+  $text_display += {<div id="under">Permanent makeup (20 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4216 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Permanent makeup</div>}
+ end
+ IF slave["brand"] = 0: 
+  $text_display += {<div id="under">Brand-tattoo (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4217 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Brand-tattoo</div>}
+ END
+ IF slave["fiend_tattoo"] = 0: 
+  $text_display += {<div id="under">Fiend-tattoo (30 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4218 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Fiend-tattoo</div>}
+ END
+ else
+ $text_display += {<br><div id="under_gray">Small tattoo</div>} 
+ $text_display += {<div id="under_gray">Big tattoo</div>} 
+ $text_display += {<div id="under_gray">Brand-tattoo</div>} 
+ $text_display += {<div id="under_gray">Tattoo</div>}  
+ $text_display += {<div id="under_gray">Fiend-tattoo</div>}  
+END
+ $text_display += {<br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 421 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+  $text_display += {<div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 422 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Offer a slave<br></div>}
+ END
+$text_display += {<br><div id="under">Leave the workshop<br><div id = "clear"><a href = 'EXEC: city_form = 4 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!rarity of mystra
+$mistra_options[1] = {
+$sp_text[1] = '   <<$mystra_spd[mystra_spd]>>'
+$text_display = '<br><br>'
+IF sparks => 10:
+ $text_display += {<div id="under">Elysian datura x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4311 & mystra_spd = 1 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Elysian datura x5 (10 sparks)<br></div>} 
+END
+IF sparks => 10:
+ $text_display += {<div id="under">Kamrian resin x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4312 & mystra_spd = 2 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Kamrian resin x5 (10 sparks)<br></div>} 
+END
+IF sparks => 10:
+ $text_display += {<div id="under">Faeries` pollen x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4313 & mystra_spd = 3 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Faeries` pollen x5 (10 sparks)<br></div>} 
+END
+IF sparks => 10:
+ $text_display += {<div id="under">Essence of oblivion x5 (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 4314 & mystra_spd = 4 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<div id="under_gray">Essence of oblivion x5 (10 sparks)<br></div>} 
+END
+$text_display += {<br><div id="under">Talk to proprietress<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+if npc_progress['mystra'] ! 2: 
+ $text_display += {<div id="under">Offer an employee<br><div id = "clear"><a href = 'EXEC: interaction_city = 4113 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += '<br>'
+end
+$text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 4 & mystra_spd = 0 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$mistra_options[2] = {
+$sp_text[2] = '   Mystra knows a lot about alchemy and useful potions that can be made in the home laboratory, using ingredients purchased here. Asking her seems like a good idea.'
+$text_display = '<br>'
+$text_display += {<br><div id="under">Tell me about elixirs<div id = "clear"><a href = 'EXEC: interaction_city = 4327 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<br><div id="under">Bacchic nectar<div id = "clear"><a href = 'EXEC: interaction_city = 4321 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Tonic elixir<div id = "clear"><a href = 'EXEC: interaction_city = 4322 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Balm<div id = "clear"><a href = 'EXEC: interaction_city = 4323 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Aphrodisiac<div id = "clear"><a href = 'EXEC: interaction_city = 4324 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Water of Lethe<div id = "clear"><a href = 'EXEC: interaction_city = 4325 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Philtre<div id = "clear"><a href = 'EXEC: interaction_city = 4326 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<br><div id="under">End conversation<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!spellbook
+$spell_book[0] = {
+$sp_text[0] = '   You open an old worn book with a picture of spark on the cover. It seems you can learn here more about the spells effect. It would be nice to do it before you start to conjure.'
+$text_display = '<br>'
+$text_display += {<br><div id="under">Basics<div id = "clear"><a href = 'EXEC: interaction = 71 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<br><div id="under">Auspex<div id = "clear"><a href = 'EXEC: interaction = 72 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Cruciato<div id = "clear"><a href = 'EXEC: interaction = 73 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Delikacia<div id = "clear"><a href = 'EXEC: interaction = 74 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Sententia veritas<div id = "clear"><a href = 'EXEC: interaction = 75 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Magna Magnifika<div id = "clear"><a href = 'EXEC: interaction = 76 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Tremendio<div id = "clear"><a href = 'EXEC: interaction = 77 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Domini Dictum<div id = "clear"><a href = 'EXEC: interaction = 78 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+$text_display += {<div id="under">Adverto Servili<div id = "clear"><a href = 'EXEC: interaction = 79 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+IF exam_in_progress = 1:
+ $text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+}
+
+
+!own laboratory
+$lab_options[0] = {
+$potion_base = 'water'
+put_kanabis = 0
+put_koffe = 0
+put_meth = 0
+put_opium = 0
+$text_display = '<br>'
+$text_display += {<br><div id="under">Spring water<div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+IF frige["alcohol"] > 0:
+ $text_display += {<br><div id="under">Strong alcohol<div id = "clear"><a href = 'EXEC: $potion_base = "spirit" & frige["alcohol"] -= 1 & sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Strong alcohol<br></div>}
+END
+IF lab_store["slime"] > 0:
+ $text_display += {<br><div id="under">Fiend`s mucus<div id = "clear"><a href = 'EXEC: $potion_base = "slime" & lab_store["slime"] -= 1 & sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Fiend`s mucus<br></div>} 
+END
+$text_display += {<br><div id="under">Cancel brewing<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$lab_options[1] = {
+$text_display = '<br>'
+IF lab_store["kanabis"] > 0 and put_kanabis = 0:
+ $text_display += {<br><div id="under">Elysian datura<div id = "clear"><a href = 'EXEC: put_kanabis = 1 & lab_store["kanabis"] -= 1 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Elysian datura<br></div>} 
+END
+IF lab_store["koffe"] > 0 and put_koffe = 0:
+ $text_display += {<br><div id="under">Kamrian resin<div id = "clear"><a href = 'EXEC: put_koffe = 1 & lab_store["koffe"] -= 1 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Kamrian resin<br></div>} 
+END
+IF lab_store["meth"] > 0 and put_meth = 0:
+ $text_display += {<br><div id="under">Faeries'' pollen<div id = "clear"><a href = 'EXEC: put_meth = 1 & lab_store["meth"] -= 1 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Faeries'' pollen<br></div>} 
+END
+IF lab_store["opium"] > 0 and put_opium = 0:
+ $text_display += {<br><div id="under">Essence of oblivion<div id = "clear"><a href = 'EXEC: put_opium = 1 & lab_store["opium"] -= 1 & sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Essence of oblivion<br></div>} 
+END
+$text_display += {<br><div id="under">Cancel brewing<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$lab_options[2] = {
+$text_display = '<br>'
+IF lab_store["kanabis"] > 0 and put_kanabis = 0:
+ $text_display += {<br><div id="under">Elysian datura<div id = "clear"><a href = 'EXEC: put_kanabis = 1 & lab_store["kanabis"] -= 1 & sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Elysian datura<br></div>} 
+END
+IF lab_store["koffe"] > 0 and put_koffe = 0:
+ $text_display += {<br><div id="under">Kamrian resin<div id = "clear"><a href = 'EXEC: put_koffe = 1 & lab_store["koffe"] -= 1 & sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Kamrian resin<br></div>} 
+END
+IF lab_store["meth"] > 0 and put_meth = 0:
+ $text_display += {<br><div id="under">Faeries'' pollen<div id = "clear"><a href = 'EXEC: put_meth = 1 & lab_store["meth"] -= 1 & sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Faeries'' pollen<br></div>} 
+END
+IF lab_store["opium"] > 0 and put_opium = 0:
+ $text_display += {<br><div id="under">Essence of oblivion<div id = "clear"><a href = 'EXEC: put_opium = 1 & lab_store["opium"] -= 1 & sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Essence of oblivion<br></div>} 
+END
+$text_display += {<br><div id="under">Cancel brewing<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$lab_options[3] = {
+$text_display = '<br>'
+IF lab_store["kanabis"] > 0 and put_kanabis = 0:
+ $text_display += {<br><div id="under">Elysian datura<div id = "clear"><a href = 'EXEC: put_kanabis = 1 & lab_store["kanabis"] -= 1 & interaction = 22 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Elysian datura<br></div>} 
+END
+IF lab_store["koffe"] > 0 and put_koffe = 0:
+ $text_display += {<br><div id="under">Kamrian resin<div id = "clear"><a href = 'EXEC: put_koffe = 1 & lab_store["koffe"] -= 1 & interaction = 22 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Kamrian resin<br></div>} 
+END
+IF lab_store["meth"] > 0 and put_meth = 0:
+ $text_display += {<br><div id="under">Faeries'' pollen<div id = "clear"><a href = 'EXEC: put_meth = 1 & lab_store["meth"] -= 1 & interaction = 22 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Faeries'' pollen<br></div>} 
+END
+IF lab_store["opium"] > 0 and put_opium = 0:
+ $text_display += {<br><div id="under">Essence of oblivion<div id = "clear"><a href = 'EXEC: put_opium = 1 & lab_store["opium"] -= 1 & interaction = 22 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>} 
+ else
+ $text_display += {<br><div id="under_gray">Essence of oblivion<br></div>} 
+END
+$text_display += {<br><div id="under">Cancel brewing<br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+
+!piercing shop
+$piercing_options[1] = {
+$text_display = '<br>'
+IF slave_state = CONST_INT['slave_exist']:
+ $text_display += {<br><div id="under">Body modification<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">BDSM-paraphernalia<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Animal paraphernalia<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Body modification<br></div>} 
+ $text_display += {<br><div id="under_gray">BDSM-paraphernalia<br></div>} 
+ $text_display += {<br><div id="under_gray">Animal paraphernalia<br></div>} 
+END
+$text_display += {<br><div id="under">Fetish-paraphernalia<br><div id = "clear"><a href = 'EXEC: sp_txt = 5 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 521 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 522 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Offer a slave<br></div>}
+END
+$text_display += {<br><div id="under">Leave the studio<br><div id = "clear"><a href = 'EXEC: city_form = 5 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$piercing_options[2] = {
+$text_display = '<br>'
+if slave["full_piercing"] = 0:  
+ $text_display += {<div id="under">Mass piercing (35 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5220 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Piercing performed<br></div>}
+end
+if slave["niple_piercing"] = 0: 
+ $text_display += {<br><div id="under">Pierce nipples (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5211 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Nipples pierced<br></div>}
+end
+if slave["clit_piercing"] = 0:  
+ $text_display += {<div id="under">Pierce clitoris (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5212 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Clitoris pierced<br></div>}
+end
+if slave["ear_piercing"] = 0:  
+ $text_display += {<div id="under">Pierce ears (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5213 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Ears pirced<br></div>}
+end
+if slave["thongue_piercing"] = 0:  
+ $text_display += {<div id="under">Pierce tongue (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5214 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Tongue pierced<br></div>}
+end
+if slave["belly_piercing"] = 0:  
+ $text_display += {<div id="under">Pierce navel (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5215 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Navel pierced<br></div>}
+end
+if slave["nosdril_piercing"] = 0:  
+ $text_display += {<div id="under">Carnation in nose (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5216 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Nose pierced<br></div>}
+end
+if slave["nose_piercing"] = 0:  
+ $text_display += {<div id="under">Ring in the nose (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5217 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Ring Inserted<br></div>}
+end
+if slave["scarification"] = 0:  
+ $text_display += {<div id="under">Scarring (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5218 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Scarring performed<br></div>}
+end
+if slave["thongue_split"] = 0:  
+ $text_display += {<div id="under">Tongue splitting (25 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5219 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Tongue split<br></div>}
+end
+$text_display += {<br><div id="under">Other services<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$piercing_options[3] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Leather collar (3 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5221 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Steel collar (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5222 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Spiked collar (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5223 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Leather shackles (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5224 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Nipple chain (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5225 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Crown of thorns (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5226 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Other services<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$piercing_options[4] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">Collar and leash (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5231 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Anal tail (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5232 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Plumed bridle (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5233 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Hooved boots (25 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5234 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Pony harness (10 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5235 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<div id="under">Petsuit (25 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5236 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Other services<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$piercing_options[5] = {
+$text_display = '<br>'
+IF inventory['vaginal_balls'] = 0:
+ $text_display += {<br><div id="under">Vaginal beads (5 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5261 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Vaginal beads</div>}
+END
+IF inventory['anal_plug'] = 0:
+ $text_display += {<div id="under">Anal pear (20 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5262 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Anal pear</div>}
+END
+IF inventory['secure_gag'] = 0:
+ $text_display += {<div id="under">Reliable gag (20 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5263 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Reliable gag</div>}
+END
+IF inventory['chastity_belt'] = 0:
+ $text_display += {<div id="under">Chastity belt (30 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5264 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Chastity belt</div>}
+END
+IF inventory['deprivation_suit'] = 0:
+ $text_display += {<div id="under">Bondage suit (50 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5265 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Bondage suit</div>}
+END
+IF inventory['pissuar_stable'] = 0:
+ $text_display += {<div id="under">Urinal rack (100 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5266 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Urinal rack</div>}
+END
+IF inventory['toilet_stable'] = 0:
+ $text_display += {<div id="under">Toilet seat (250 sparks)<div id = "clear"><a href = 'EXEC: interaction_city = 5267 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<div id="under_gray">Toilet seat</div>}
+END
+$text_display += {<br><div id="under">Other services<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Coliseum
+!added $sp_text for the first and second options are so theres no sticky text about preparing for battle
+$colloseum_options[1] = { 
+ $sp_text[1] = '   You enter the service premises under the amphitheater. The guards passed you without problems - Slavers Guild is always the case in the school of gladiators and the stables. You only have to find the right person.' 
+ $text_display = '<br>'
+ $text_display += {<br><div id="under">Lanista<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Stableman<br><div id = "clear"><a href = 'EXEC: sp_txt = 22 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF ride_count ! 0: 
+  $text_display += '<br><div id="under_gray">Days to race: <<ride_count>><br></div>'
+  else
+  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 0:
+   $text_display += {<br><div id="under">Participate in the race<br><div id = "clear"><a href = 'EXEC: sp_txt = 23 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Watch the race<div id = "clear"><a href = 'EXEC: interaction_city = 1251 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+  END  
+ END
+ IF gladi_count ! 0: 
+  $text_display += '<br><div id="under_gray">Days to battle: <<gladi_count>><br></div>'
+  else
+  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 0:
+   $text_display += {<br><div id="under">Put gladiatrix<br><div id = "clear"><a href = 'EXEC: sp_txt = 24 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Watch the battle<div id = "clear"><a href = 'EXEC: interaction_city = 1252 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>} 
+  END  
+ END
+ $text_display += {<br><div id="under">Leave the Colosseum<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$colloseum_options[21] = { 
+ $text_display = '<br>'
+ IF master_energy > 0:
+  $text_display += {<br><div id="under">- Arrange me a sparring<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">- Arrange me a sparring<br></div>} 
+ END
+ IF slave_state = CONST_INT['slave_exist'] and slave["energy"] > 0:
+  $text_display += {<div id="under">- Arrange a sparring for my slave<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">- Arrange a sparring for my slave<br></div>}   
+ END
+ IF assistant_state = 1 and assistant["energy"] > 0: 
+  $text_display += {<div id="under">- Arrange a sparring for my assistant<br><div id = "clear"><a href = 'EXEC: sp_txt = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">- Arrange a sparring for my assistant<br></div>} 
+ END
+ IF spm_number < master_fighter and master_energy > 0:
+  $text_display += {<div id="under">- Teach me a special technique<br><div id = "clear"><a href = 'EXEC: sp_txt = 5 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">- Teach me a special technique<br></div>} 
+ END
+!$text_display += {<br><div id="under_gray">- Tell me about the art of combat<br></div>} 
+ $text_display += {<div id="under">- What slaves do you need?<div id = "clear"><a href = 'EXEC: interaction_city = 191 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+  $text_display += {<div id="under">- Look at my merchandise!<br><div id = "clear"><a href = 'EXEC: interaction_city = 192 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">- Look at my merchandise!<br></div>}
+ END
+ $text_display += {<br><div id="under">End conversation<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$colloseum_options[22] = {
+ $sp_text[22] = '   You find a beastman-stableman with a horse''s head, which is responsible for race. He can be a source of valuable information, especially when it is necessary to know what awaits you in the next race.'
+ $text_display = '<br>'
+ $text_display += {<br><div id="under">- Tell me about the next track<br><div id = "clear"><a href = 'EXEC: interaction_city = 1951 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- Tell me about a chariot race<br><div id = "clear"><a href = 'EXEC: interaction_city = 1952 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">End conversation<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+
+$colloseum_options[23] = { 
+ $sp_text[23] = '   While there is still time for race, you can order a variety of chariot modification. The more heavy elements are used, the less will be the speed and agility of your chariot, but it will lower the risk of the fact that it may fall apart in the middle of the race. Ignoring your own defense, you''re playing with death.'
+ IF heavy_frame = 1:
+  $text_display += {<br><br><div id="under">Pobedit frame<br><div id = "clear"><a href = 'EXEC: heavy_frame = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><br><div id="under">Carbon fiber frame<br><div id = "clear"><a href = 'EXEC: heavy_frame = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+ IF heavy_boards = 1:
+   $text_display += {<br><div id="under">Armored sides<br><div id = "clear"><a href = 'EXEC: heavy_boards = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Decorative sides<br><div id = "clear"><a href = 'EXEC: heavy_boards = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  END  
+  IF heavy_chasis = 1:
+   $text_display += {<br><div id="under">Reinforced suspension<br><div id = "clear"><a href = 'EXEC: heavy_chasis = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Lightweight suspension<br><div id = "clear"><a href = 'EXEC: heavy_chasis = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  END  
+  IF heavy_wheels = 1:
+   $text_display += {<br><div id="under">Alloy wheels<br><div id = "clear"><a href = 'EXEC: heavy_wheels = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Spoked wheels<br><div id = "clear"><a href = 'EXEC: heavy_wheels = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  END  
+  IF heavy_rider_armor = 1:
+   $text_display += {<br><div id="under">Heavy protection of charioteer<br><div id = "clear"><a href = 'EXEC: heavy_rider_armor = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $text_display += {<br><div id="under">Streamlined helmet of charioteer<br><div id = "clear"><a href = 'EXEC: heavy_rider_armor = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  END    
+ $text_display += {<br><div id="under">Start race<br><div id = "clear"><a href = 'EXEC: gt "$ride_start"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+
+$colloseum_options[24] = { 
+ IF $slave['trademark_style'] = '':
+  $sp_text[24] = '   Battles take place in the arena with a clear regulation of weapons and equipment. You need to choose a style that will fight <<$slave_name>> and appropriate outfit to this style.'
+  $text_display += {<br><br><div id="under">Net and trident<br><div id = "clear"><a href = 'EXEC: $g_type = "retiarius" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Armor and whipsaw<br><div id = "clear"><a href = 'EXEC: $g_type = "flagrius" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Dual wield<br><div id = "clear"><a href = 'EXEC: $g_type = "dimacherus" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Weapon and shield<br><div id = "clear"><a href = 'EXEC: $g_type = "hoplomachus" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>} 
+  $text_display += {<br><div id="under">Heavy weapons<br><div id = "clear"><a href = 'EXEC: $g_type = "kimerian" & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Refuse the fight<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  ELSE
+  $sp_text[24] = '   Recognized champion of the arena fights only in the most spectacular battles, which leads the audience the most. Usually this unusual fights that involves the champions opens and closes days in the arena.'
+  $text_display += {<br><br><div id="under">Challange the champion<br><div id = "clear"><a href = 'EXEC: $slave["trademark_style"] & challenge_type = 1 & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Group fight<br><div id = "clear"><a href = 'EXEC: $slave["trademark_style"] & challenge_type = 2 & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Battle against fiend<br><div id = "clear"><a href = 'EXEC: $slave["trademark_style"] & challenge_type = 3 & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
+  if slave['arena_level'] = 8: $text_display += {<br><div id="under">Challange the absolute champion<br><div id = "clear"><a href = 'EXEC: $g_type = $slave["trademark_style"] & challenge_type = 4 & gt "$gladiator_setup"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Refuse the fight<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ END
+}
+
+$colloseum_options[2] = { 
+ $sp_text[2] = ''
+ $text_display += {<br><br><div id="under">- Against unarmed slave<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against wardress<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against shinobi<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against amazon<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 4 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against ironclad<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 5 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+!$text_display += {<div id="under_gray">- Against you!<br></div>} 
+ $text_display += {<br><div id="under">- Albeit no, I`d rather...<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$colloseum_options[3] = { 
+ $text_display += {<br><br><div id="under">- Against unarmed slave<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 11 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against wardress<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 12 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against shinobi<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 13 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against amazon<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 14 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against ironclad<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 15 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+!$text_display += {<div id="under_gray">- Against you!<br></div>} 
+ $text_display += {<br><div id="under">- Albeit no, I`d rather...<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$colloseum_options[4] = { 
+ $text_display += {<br><br><div id="under">- Against unarmed slave<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 31 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against wardress<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 32 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against shinobi<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 33 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against amazon<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 34 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<div id="under">- Against ironclad<br><div id = "clear"><a href = 'EXEC: colloseum_fight = 35 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+!$text_display += {<div id="under_gray">- Against you!<br></div>} 
+ $text_display += {<br><div id="under">- Albeit no, I`d rather...<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$colloseum_options[5] = {
+ spm_mod = spm_number+1
+ spm_price = 10*spm_mod*spm_mod
+ $text_display = '<br>'
+ IF sparks => spm_price and $spm_learned['удар_с_разворота'] = 0:
+  $text_display += {<br><div id="under">Roundhouse kick<br><div id = "clear"><a href = 'EXEC: interaction_city = 1941 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Roundhouse kick<br></div>} 
+ END
+ IF sparks => spm_price and $spm_learned['рассечение'] = 0:
+  $text_display += {<div id="under">Swift blow<br><div id = "clear"><a href = 'EXEC: interaction_city = 1942 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Swift blow<br></div>} 
+ END 
+ IF sparks => spm_price and $spm_learned['воинственный_клич'] = 0:
+  $text_display += {<div id="under">Battle cry <br><div id = "clear"><a href = 'EXEC: interaction_city = 1943 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Battle cry<br></div>} 
+ END 
+ IF sparks => spm_price and $spm_learned['оглушение'] = 0:
+  $text_display += {<div id="under">Heavy blow <br><div id = "clear"><a href = 'EXEC: interaction_city = 1944 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Heavy blow <br></div>} 
+ END 
+ IF sparks => spm_price and $spm_learned['подрезка'] = 0:
+  $text_display += {<div id="under">Dashing blow <br><div id = "clear"><a href = 'EXEC: interaction_city = 1945 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Dashing blow <br></div>} 
+ END 
+ IF sparks => spm_price and $spm_learned['ослепление'] = 0:
+  $text_display += {<div id="under">Precise hit <br><div id = "clear"><a href = 'EXEC: interaction_city = 1946 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Precise hit <br></div>} 
+ END   
+ $text_display += {<br><div id="under">- Albeit no, I`d rather...<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Moneylender
+$moneylander_options[1] = {
+$text_display = '<br><br>'
+if nsfw = 1: not_safe = 1
+IF debt <= 0:
+ $text_display += {<br><div id="under">Borrow sparks<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ IF sparks => debt:
+  $text_display += {<br><div id="under">Repay the debt<br><div id = "clear"><a href = 'EXEC: interaction_city = 6331 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<div id="under_gray">Repay the debt<br></div>}   
+ END
+END
+!$text_display += {<br><div id="under_gray">Talk about buisness<br></div>}
+$text_display += {<br><div id="under">Check preferences<br><div id = "clear"><a href = 'EXEC: interaction_city = 631 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 632 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer a slave<br></div>}
+END
+$text_display += {<br><div id="under">End conversation<br><div id = "clear"><a href = 'EXEC: city_form = 6 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$moneylander_options[2] = {
+$text_display = '<br><br>'
+if nsfw = 1: not_safe = 1
+$text_display += {<br><div id="under">500$, repay 600$, 20 days<br><div id = "clear"><a href = 'EXEC: interaction_city = 6321 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+IF debt_history > 0:
+ $text_display += {<br><div id="under">1000$, repay 1250$, 30 days<br><div id = "clear"><a href = 'EXEC: interaction_city = 6322 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">1000$, repay 1250$, 30 days<br></div>} 
+END
+IF debt_history > 1:
+ $text_display += {<br><div id="under">2000$, repay 2500$, 75 days<br><div id = "clear"><a href = 'EXEC: interaction_city = 6323 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">2000$, repay 2500$, 75 days<br></div>} 
+END
+IF debt_history > 2:
+ $text_display += {<br><div id="under">5000$, repay 7000$, 100 days<br><div id = "clear"><a href = 'EXEC: interaction_city = 6324 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">5000$, repay 7000$, 100 days<br></div>} 
+END
+$text_display += {<br><div id="under">Change topic<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!Lao-Van house
+$laovan_options[1] = {
+$text_display = '<br>'
+IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+ $text_display += {<br><div id="under">Offer merchandise<br><div id = "clear"><a href = 'EXEC: interaction_city = 3111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ else
+ $text_display += {<br><div id="under_gray">Offer merchandise<br></div>}
+END
+$text_display += {<br><div id="under">Check preferences<br><div id = "clear"><a href = 'EXEC: interaction_city = 3112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under">Bid farewell and leave<br><div id = "clear"><a href = 'EXEC: city_form = 31 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!preparing for fight
+$get_weapon[1] = {
+$text_display = '<br>'
+IF $за_спиной!'':
+ $text_display += "<br><div id=""under"">Over the shoulder: <<$название_предмета[$за_спиной]>><br><div id = ""clear""><a href = 'EXEC: dynamic $взять_оружие_за_спиной & no_wpn[""за_спиной""] = 1 & sp_txt = 2 & gt ""shop_general""'><img src = ""content\pic\clear.gif""></a></div></div>"
+ else
+ $text_display += {<br><div id="under_gray">Nothing over the shoulder<br></div>}
+END
+IF $слева!'':
+ $text_display += "<br><div id=""under"">Left: <<$название_предмета[$слева]>><br><div id = ""clear""><a href = 'EXEC: dynamic $взять_оружие_слева & no_wpn[""слева""] = 1 & sp_txt = 2 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
+ else
+ $text_display += {<br><div id="under_gray">Nothing on the left side<br></div>}
+END
+IF $справа!'':
+ $text_display += "<br><div id=""under"">Right: <<$название_предмета[$справа]>><br><div id = ""clear""><a href = 'EXEC: dynamic $взять_оружие_справа & no_wpn[""справа""] = 1 & sp_txt = 2 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
+ else
+ $text_display += {<br><div id="under_gray">Nothing on the right side<br></div>}
+END
+IF $предплечье!'':
+ $text_display += "<br><div id=""under"">In a bracer: <<$название_предмета[$предплечье]>><br><div id = ""clear""><a href = 'EXEC: dynamic $взять_оружие_предплечье & no_wpn[""предплечье""] = 1 & sp_txt = 2 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
+ else
+ $text_display += {<br><div id="under_gray">Nothing in a bracer<br></div>}
+END
+IF $в_сапоге!'':
+ $text_display += "<br><div id=""under"">In a boot: <<$название_предмета[$в_сапоге]>><br><div id = ""clear""><a href = 'EXEC: dynamic $взять_оружие_в_сапоге & no_wpn[""в_сапоге""] = 1 & sp_txt = 2 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
+ else
+ $text_display += {<br><div id="under_gray">Nothing in a boot<br></div>}
+END
+$text_display += {<br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: nogoto = 0 & killvar "no_wpn" &  gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$get_weapon[2] = {
+if $класс_оружия[$за_спиной] = 'тяжелое_оружие': nogoto = 0 & killvar "no_wpn" &  gt "начать_бой"
+$text_display = '<br>'
+IF $за_спиной!'' and no_wpn["за_спиной"] = 0:
+ IF $класс_оружия[$за_спиной] ! 'оружие' and $класс_оружия[$за_спиной] ! 'тяжелое_оружие': 
+  $text_display += "<br><div id=""under"">Over the shoulder: <<$название_предмета[$за_спиной]>><br><div id = ""clear""><a href = 'EXEC: dynamic $взять_вторичный_за_спиной & nogoto = 0 & killvar ""no_wpn"" & gt ""начать_бой""'><img src = ""content\pic\clear.gif""></a></div></div>"
+  else
+  $text_display += "<br><div id=""under_gray"">Over the shoulder: <<$название_предмета[$за_спиной]>><br></div>"
+ END
+ else
+ $text_display += {<br><div id="under_gray">Nothing over the shoulder<br></div>}
+END
+IF $слева!'' and no_wpn["слева"] = 0:
+ IF $класс_оружия[$слева] ! 'оружие':
+  $text_display += '<br><div id="under">Left: <<$название_предмета[$слева]>><br><div id = "clear"><a href = ''EXEC: dynamic $взять_вторичный_слева & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+  else
+  $text_display += '<br><div id="under_gray">Left: <<$название_предмета[$слева]>><br></div>'
+ END
+ else
+ $text_display += {<br><div id="under_gray">Nothing on the left side<br></div>}
+END
+IF $справа!'' and no_wpn["справа"] = 0:
+ IF $класс_оружия[$справа] ! 'оружие':
+  $text_display += '<br><div id="under">Right: <<$название_предмета[$справа]>><br><div id = "clear"><a href = ''EXEC: dynamic $взять_вторичный_справа & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+  else
+  $text_display += '<br><div id="under_gray">Right: <<$название_предмета[$справа]>><br></div>' 
+ END
+ else
+ $text_display += {<br><div id="under_gray">Nothing on the right side<br></div>}
+END
+IF $предплечье!'' and no_wpn["предплечье"] = 0:
+ $text_display += '<br><div id="under">In a bracer: <<$название_предмета[$предплечье]>><br><div id = "clear"><a href = ''EXEC: dynamic $взять_вторичный_предплечье & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+ else
+ $text_display += {<br><div id="under_gray">Nothing in a bracer<br></div>}
+END
+IF $в_сапоге!'' and no_wpn["в_сапоге"] = 0:
+ $text_display += '<br><div id="under">In a boot: <<$название_предмета[$в_сапоге]>><br><div id = "clear"><a href = ''EXEC: dynamic $взять_вторичный_в_сапоге & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+ else
+ $text_display += {<br><div id="under_gray">Nothing in a boot<br></div>}
+END
+$text_display += {<br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: nogoto = 0 & killvar "no_wpn" & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+$get_weapon[3] = {
+$text_display = '<br><br><br>'
+$text_display += '<br><div id="under">Stool <br><div id = "clear"><a href = ''EXEC: $оружие = "табуретка" & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+$text_display += '<br><div id="under">Dagger <br><div id = "clear"><a href = ''EXEC: $оружие = "кинжал" & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+$text_display += {<br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: nogoto = 0 & killvar "no_wpn" & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+
+!$_options[] = {
+$text_display = '<br>'
+$text_display += {<br><div id="under">ActiveOption<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+$text_display += {<br><div id="under_gray">InactiveOption<br></div>}
+$text_display += {<br><div id="under">LeaveButton<br><div id = "clear"><a href = 'EXEC: city_form = 2 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+--- #options ---------------------------------
+

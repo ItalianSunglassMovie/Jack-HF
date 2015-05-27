@@ -1,0 +1,12 @@
+# slave_auction_sell_end
+slave_state = CONST_INT['no_slave']
+
+killvar 'slave'
+killvar '$slave' 
+killvar 'slave_rate'
+$slave_name = ''
+
+sparks += sell_price
+GT 'city_menu_form'
+--- slave_auction_sell_end ---------------------------------
+

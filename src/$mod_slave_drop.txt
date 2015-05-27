@@ -1,0 +1,13 @@
+# $mod_slave_drop
+!Decrease good moodlets of slave
+n = arrsize('$slave_good_mod')
+i = 0
+:loop
+i += 1
+$curmod = $slave_good_mod[i]
+slave['<<$curmod>>'] -= args
+
+if i < n: jump 'loop'
+
+--- $mod_slave_drop ---------------------------------
+

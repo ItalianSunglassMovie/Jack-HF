@@ -1,0 +1,29 @@
+# $check_load
+gs '#simple_npc'
+gs '#dynamic'
+gs '#npc_base'
+gs '#place_base'
+gs '#estate_base'
+gs '#txt'
+gs '#txt_2'
+gs '#CSS'
+gs '#var_base'
+gs '#variative'
+gs '#options'
+gs '#item_base'
+gs '#moodlet_base'
+gs '#food_base'
+gs '#charriots_base'
+gs '#masters_base'
+gs '#quest_base'
+gs '#help_msg'
+!тринити
+gs '#тексты_движка'
+gs '#противники'
+gs '#суперудары'
+gs '#боевые_предметы'
+!секси-тайм
+gs '#sex_texts'
+gs '#sex_options'
+--- $check_load ---------------------------------
+

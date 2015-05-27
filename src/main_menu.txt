@@ -1,0 +1,36 @@
+# main_menu
+!main menu of the game
+IF sound_on = 1 and achtung_pass = 1:
+ play 'content/snd/mainscreen.mp3', music_volume, 'only, loop'
+ else
+ close 'content/snd/mainscreen.mp3'
+end
+gs 'init_game'
+
+
+$backimage = 'content/pic/title10.jpg'
+MAINDESC_X = 1
+MAINDESC_Y = 1
+MAINDESC_W = 1278
+MAINDESC_H = 798
+
+!AddOn - changed text output to reflect version number
+
+'<div id="logo"><img src = "content\pic\UI overhaul\logo.png"></div>'
+'<div id = "title_menu"></div>'
+
+*p '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="Tutorial"><a href = ''EXEC: gt "demo_intro"''><img src = "content\pic\UI overhaul\Tutorial.png"></a></div>'
+*p '<div id="Storyselect"><a href = ''EXEC: gt "hero_customization"''><img src = "content\pic\UI overhaul\Story mode select.png"></a></div>'
+*p '<div id="Storycreate"><a href = ''EXEC: gs "init_custom_game" & gt "hero_creation"''><img src = "content\pic\UI overhaul\Story mode create.png"></a></div>'
+*p '<div id="Sandbox"><a href = ''EXEC: gt "hero_creation"''><img src = "content\pic\UI overhaul\Sandbox mode.png"></a></div>'
+*p '<div id="Controls"><a href = ''EXEC: gt "controls"''><img src = "content\pic\UI overhaul\Controls.png"></a></div>'
+*p '<div id="Credits"><a href = ''EXEC: gt "credits"''><img src = "content\pic\UI overhaul\Credits.png"></a></div>'
+*p '<div id="Aboutfix"><a href = ''EXEC: gt "anonfix"''><img src = "content\pic\UI overhaul\About fix.png"></a></div>'
+*p '<div id="Moddedby"><a href = ''EXEC: gt "modded_by"''><img src = "content\pic\UI overhaul\Modded by.png"></a></div>'
+
+!CLOSE ALL
+
+if achtung_pass = 0: gt 'achtung'
+--- main_menu ---------------------------------
+

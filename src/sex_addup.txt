@@ -1,0 +1,107 @@
+# sex_addup
+!reset
+sex["climax_force"] = 0
+
+!minimal
+IF sex['girl_energy'] < 1:
+ sex['girl_excitement'] -= 1
+ sex['girl_attention'] -= 1
+ sex['climax_buildup'] += sex['girl_energy']
+ sex['girl_energy'] = 0
+END
+IF sex['girl_openmind'] < 1: sex['girl_openmind'] = 1
+IF sex['girl_pain'] < 1: sex['girl_pain'] = 1
+IF sex['girl_attention'] < 1: sex['girl_attention'] = 1
+IF sex['girl_excitement'] < 1: sex['girl_excitement'] = 1
+
+if sex["climax_buildup"] < 0: sex["climax_buildup"] = 0
+if sex["cum_buildup"] < 0: sex["cum_buildup"] = 0   
+
+if sex['girl_newness'] < -10: sex['girl_newness'] = -10
+
+if sex["pc_excitement"] < -20: sex["pc_excitement"] = -20
+!maximal
+IF sex['girl_openmind'] > 5: sex['girl_openmind'] = 5
+IF sex['girl_pain'] > 5: sex['girl_pain'] = 5
+IF sex['girl_attention'] > 5: sex['girl_attention'] = 5
+IF sex['girl_excitement'] > 5: sex['girl_excitement'] = 5
+if sex['girl_newness'] > 20: sex['girl_newness'] = 20
+
+!Counting all modifiers
+sex["pc_excitement_state"] = 0
+if sex['pc_boner'] <= 0: sex["pc_excitement"] = 0
+if sex["pc_excitement"] => 5: sex["pc_excitement_state"] = 1
+if sex["pc_excitement"] => 10: sex["pc_excitement_state"] = 2
+if sex["pc_excitement"] => 25: sex["pc_excitement_state"] = 3
+if sex["pc_excitement"] => 50: sex["pc_excitement_state"] = 4
+if sex["pc_excitement"] => 100: sex["pc_excitement_state"] = 5
+
+sex["pc_energy_state"] = 0
+if sex["pc_energy"] => 5: sex["pc_energy_state"] = 1
+if sex["pc_energy"] => 10: sex["pc_energy_state"] = 2
+if sex["pc_energy"] => 25: sex["pc_energy_state"] = 3
+if sex["pc_energy"] => 50: sex["pc_energy_state"] = 4
+if sex["pc_energy"] => 100: sex["pc_energy_state"] = 5
+
+sex["pc_interest_state"] = 0
+if sex["pc_interest"] => 5: sex["pc_interest_state"] = 1
+if sex["pc_interest"] => 10: sex["pc_interest_state"] = 2
+if sex["pc_interest"] => 25: sex["pc_interest_state"] = 3
+if sex["pc_interest"] => 50: sex["pc_interest_state"] = 4
+if sex["pc_interest"] => 100: sex["pc_interest_state"] = 5
+
+sex["girl_energy_state"] = 0
+if sex["girl_energy"] => 5: sex["girl_energy_state"] = 1
+if sex["girl_energy"] => 10: sex["girl_energy_state"] = 2
+if sex["girl_energy"] => 25: sex["girl_energy_state"] = 3
+if sex["girl_energy"] => 50: sex["girl_energy_state"] = 4
+if sex["girl_energy"] => 100: sex["girl_energy_state"] = 5
+
+
+!climax treshold
+a = 10 + sex["girl_attention"] - sex['girl_sensitivity'] - slave['temper'] - sex["girl_openmind"]
+if sex['girl_excitement'] < 3: sex["climax_treshold"] = 100
+if sex['girl_excitement'] = 3: sex["climax_treshold"] = a*5
+if sex['girl_excitement'] = 4: sex["climax_treshold"] = a*3
+if sex['girl_excitement'] => 5: sex["climax_treshold"] = a*2
+if orgasm_prohibited > 0 and $sex['partner'] = '': sex["climax_treshold"] += slave["obedience"]
+
+
+IF sex["climax_buildup"] => sex["climax_treshold"]:
+!clitoral orgasm
+ IF clitoral_stimulation > 0:
+  sex["climax_force"] = 1
+  if sex["climax_count"] = 0: sex["climax_count"] = 1
+ END
+!deep orgasm
+ if sex['girl_excitement'] > 3 and sex['girl_orgasm_type'] > 0 and sex["girl_openmind"] > 3 and sex["girl_attention"] < 3: sex["climax_force"] = 2
+ IF sex['girl_excitement'] > 3 and sex['girl_orgasm_type'] = 0 and sex["girl_openmind"] > 3 and sex["girl_attention"] < 3: 
+  sex["climax_force"] = 2
+  sex['girl_orgasm_type_change'] = 1
+  sex['girl_orgasm_type'] = 1  
+ END
+!squirt
+ if sex['girl_excitement'] => 5 and sex['girl_orgasm_type'] = 2 and sex["girl_openmind"] > 3 and sex["girl_attention"] < 3: sex["climax_force"] = 3
+ IF sex['girl_excitement'] => 5 and sex['girl_orgasm_type'] < 2 and sex["girl_openmind"] => 5 and sex["girl_attention"] <= 1: 
+  sex["climax_force"] = 3
+  sex['girl_orgasm_type_change'] = 2  
+  sex['girl_orgasm_type'] = 2
+ END
+ if sex["climax_force"] = 0: sex["climax_buildup"] = sex["climax_treshold"] - 1
+END
+
+
+a = 3 + master_penetration - sex['pc_boner']
+if a < 1: a = 1
+sex["cum_treshold"] = 5 * a
+if sex["pc_excitement_state"] < 2: sex["cum_treshold"] += 20
+if sex["pc_excitement_state"] > 3: sex["cum_treshold"] = 4 * a
+if sex["pc_excitement_state"] > 4: sex["cum_treshold"] = 2 * a  
+
+b = sex['pc_excitement'] - sex['prev_pc_excitement']
+IF b > sex["cum_treshold"]:
+ sex_num = 9
+END
+sex['prev_pc_excitement'] = sex['pc_excitement']
+--- sex_addup ---------------------------------
+

@@ -1,0 +1,213 @@
+# stasis_cell_cryo
+!cryo chamber screen in cryostore
+$place = "stasis_cell"
+gs '_layout'
+
+IF cryonum = 1:
+if iced_1_state = 0: 
+ $text = '<<$cell_empty>>'
+ else
+ $text = '   <<$iced_1_name>> is suspended in stasis. She can stay like that unlimited time. Or as long as you spend a sparks to maintain operation of the apparatus.'
+END
+
+IF nsfw = 1:
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+if iced_1_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$iced_1["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+
+ $info_bar = '
+<u>SUMMARY</u>
+<<$beauty[iced_1["beauty"]]>> 
+<<$stamina[iced_1["stamina"]]>>  
+<<$exotic[iced_1["exotic"]]>> 
+<<$fat[iced_1["fat"]]>> 
+<<$sensitivity[iced_1["sensitivity"]]>>  
+<<$style[iced_1["style"]]>> 
+<<$intellect[iced_1["intellect"]]>> 
+<<$temper[iced_1["temper"]]>> 
+<<$ego[iced_1["ego"]]>> 
+<<$pride[iced_1["pride"]]>> 
+
+<u>TRAITS</u>
+<<$iced_1_features_list>>
+'
+END
+
+IF cryonum = 2:
+if iced_2_state = 0: 
+ $text = '<<$cell_empty>>'
+ else
+ $text = '   <<$iced_2_name>> is suspended in stasis. She can stay like that unlimited time. Or as long as you spend a sparks to maintain operation of the apparatus.'
+END
+
+IF nsfw = 1:
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+if iced_2_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$iced_2["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+
+ $info_bar = '
+<u>SUMMARY</u>
+<<$beauty[iced_2["beauty"]]>> 
+<<$stamina[iced_2["stamina"]]>>  
+<<$exotic[iced_2["exotic"]]>> 
+<<$fat[iced_2["fat"]]>> 
+<<$sensitivity[iced_2["sensitivity"]]>>  
+<<$style[iced_2["style"]]>> 
+<<$intellect[iced_2["intellect"]]>> 
+<<$temper[iced_2["temper"]]>> 
+<<$ego[iced_2["ego"]]>> 
+<<$pride[iced_2["pride"]]>> 
+
+<u>TRAITS</u>
+<<$iced_2_features_list>>
+'
+END
+
+IF cryonum = 3:
+if iced_3_state = 0: 
+ $text = '<<$cell_empty>>'
+ else
+ $text = '   <<$iced_3_name>> is suspended in stasis. She can stay like that unlimited time. Or as long as you spend a sparks to maintain operation of the apparatus.'
+END
+
+IF nsfw = 1:
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+if iced_3_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$iced_3["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+
+ $info_bar = '
+<u>SUMMARY</u>
+<<$beauty[iced_3["beauty"]]>> 
+<<$stamina[iced_3["stamina"]]>>  
+<<$exotic[iced_3["exotic"]]>> 
+<<$fat[iced_3["fat"]]>> 
+<<$sensitivity[iced_3["sensitivity"]]>>  
+<<$style[iced_3["style"]]>> 
+<<$intellect[iced_3["intellect"]]>> 
+<<$temper[iced_3["temper"]]>> 
+<<$ego[iced_3["ego"]]>> 
+<<$pride[iced_3["pride"]]>> 
+
+<u>TRAITS</u>
+<<$iced_3_features_list>>
+'
+END
+
+IF cryonum = 4:
+if iced_4_state = 0: 
+ $text = '<<$cell_empty>>'
+ else
+ $text = '   <<$iced_4_name>> is suspended in stasis. She can stay like that unlimited time. Or as long as you spend a sparks to maintain operation of the apparatus.'
+END
+
+IF nsfw = 1:
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+if iced_4_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$iced_4["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+
+ $info_bar = '
+<u>SUMMARY</u>
+<<$beauty[iced_4["beauty"]]>> 
+<<$stamina[iced_4["stamina"]]>>  
+<<$exotic[iced_4["exotic"]]>> 
+<<$fat[iced_4["fat"]]>> 
+<<$sensitivity[iced_4["sensitivity"]]>>  
+<<$style[iced_4["style"]]>> 
+<<$intellect[iced_4["intellect"]]>> 
+<<$temper[iced_4["temper"]]>> 
+<<$ego[iced_4["ego"]]>> 
+<<$pride[iced_4["pride"]]>> 
+
+<u>TRAITS</u>
+<<$iced_4_features_list>>
+'
+END
+
+IF cryonum = 5:
+if iced_5_state = 0: 
+ $text = '<<$cell_empty>>'
+ else
+ $text = '   <<$iced_5_name>> is suspended in stasis. She can stay like that unlimited time. Or as long as you spend a sparks to maintain operation of the apparatus.'
+END
+
+IF nsfw = 1:
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+if iced_5_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$iced_5["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+
+ $info_bar = '
+<u>SUMMARY</u>
+<<$beauty[iced_5["beauty"]]>> 
+<<$stamina[iced_5["stamina"]]>>  
+<<$exotic[iced_5["exotic"]]>> 
+<<$fat[iced_5["fat"]]>> 
+<<$sensitivity[iced_5["sensitivity"]]>>  
+<<$style[iced_5["style"]]>> 
+<<$intellect[iced_5["intellect"]]>> 
+<<$temper[iced_5["temper"]]>> 
+<<$ego[iced_5["ego"]]>> 
+<<$pride[iced_5["pride"]]>> 
+
+<u>TRAITS</u>
+<<$iced_5_features_list>>
+'
+END
+
+IF cryonum = 6:
+if iced_6_state = 0: 
+ $text = '<<$cell_empty>>'
+ else
+ $text = '   <<$iced_6_name>> is suspended in stasis. She can stay like that unlimited time. Or as long as you spend a sparks to maintain operation of the apparatus.'
+END
+
+IF nsfw = 1:
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+if iced_6_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$iced_6["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+
+ $info_bar = '
+<u>SUMMARY</u>
+<<$beauty[iced_6["beauty"]]>> 
+<<$stamina[iced_6["stamina"]]>>  
+<<$exotic[iced_6["exotic"]]>> 
+<<$fat[iced_6["fat"]]>> 
+<<$sensitivity[iced_6["sensitivity"]]>>  
+<<$style[iced_6["style"]]>> 
+<<$intellect[iced_6["intellect"]]>> 
+<<$temper[iced_6["temper"]]>> 
+<<$ego[iced_6["ego"]]>> 
+<<$pride[iced_6["pride"]]>> 
+
+<u>TRAITS</u>
+<<$iced_6_features_list>>
+'
+END
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+*p '<div id = "close_far"><a href = "EXEC: sp_txt = 2 & gt ''shop_general''"><img src = "content\pic\buttons\close_button.png"></a></div>'
+--- stasis_cell_cryo ---------------------------------
+

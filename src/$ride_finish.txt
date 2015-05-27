@@ -1,0 +1,80 @@
+# $ride_finish
+!end of the chariot race
+CLOSE ALL
+ride_count = 10
+sp_txt = 0
+
+!Creating a route to the next race
+$trace[1] = 'ride_start'
+i = 1
+:loop
+i += 1
+a = RAND (1,12)
+$trace[i] = $trace_type[a]
+if i < 11: jump 'loop'
+$trace[12] = 'ride_finish'
+
+!Racehorse injuries
+a = slave['stamina'] - charriot['pony_health']
+if a > 0: 
+ b = RAND (11,59)
+ slave_rate["wounds"] += b 
+END
+pony_dead = 0
+IF charriot['pony_health'] = 0:
+!CHECK: почему no_slave а не slave_dead?
+ slave_state = CONST_INT['no_slave']
+ pony_dead = 1 
+ sparks += 5
+END
+slave['energy'] = -3
+
+
+!1 =  chariot broke
+IF args = 1:
+ interaction_city = 121
+ gt 'interaction_city' 
+END
+
+!2 = wheel flew off
+IF args = 2:
+ interaction_city = 121
+ gt 'interaction_city' 
+END
+
+!3 = steed fell
+IF args = 3:
+ interaction_city = 123
+ gt 'interaction_city' 
+END
+
+!4 = reached the the finish line
+IF args = 4:
+ $race_winner = $participant[1]
+ interaction_city = 124
+ IF $race_winner = 'master':
+  race_win_ratio += 1
+  slave_rate['fame'] += 11
+  brand_rate += 5
+  master_mood['pos_master_winner'] = 1
+  slave['pos_slave_winner'] = slave['sensitivity']  
+  slave_rate['temper'] += 5
+  slave_rate['instinct'] += 5   
+  if slave['mood'] > 0: slave_rate['moral'] += 1 
+  slave_rate['pride'] -= 1
+  slave['has_ride_win'] = 1
+  else
+  race_win_ratio -= 1
+  slave_rate['fame'] += 1
+  brand_rate -= 1
+  master_mood['neg_master_loser'] = 1
+  slave_rate['temper'] += 5
+  slave['neg_slave_looser'] = slave['sensitivity']  
+  slave_rate['pride'] -= 5  
+  slave_rate['instinct'] += 2 
+ END 
+ gt 'interaction_city' 
+END
+
+--- $ride_finish ---------------------------------
+

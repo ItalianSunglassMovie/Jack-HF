@@ -1,0 +1,121 @@
+# #food_base
+!FOOD DATABASE
+
+!replacement for food copypaste, by Lyazar
+! $meal_id[] removed old code and use for food name, for food_choice working
+$fb_cycle = {
+    $_fb_meal_name = $args[0]
+    ! add to end of $meal_id[] food name
+    $meal_id[] = $_fb_meal_name
+    $meal_name[$_fb_meal_name] = $args[1]
+    $meal_first_ingridient[$_fb_meal_name] = $args[2]
+    $meal_second_ingridient[$_fb_meal_name] = $args[3]
+    $meal_third_ingridient[$_fb_meal_name] = $args[4]
+    $meal_forth_ingridient[$_fb_meal_name] = $args[5]
+    
+    killvar '$_fb_meal_name'
+}
+
+! example:
+!$meal_name['консервы'] = 'Canned food served on a plates [<<$rating[0]>>]'
+!$meal_first_ingridient['консервы'] = 'none'
+!$meal_second_ingridient['консервы'] = 'none'
+!$meal_third_ingridient['консервы'] = 'none'
+!$meal_forth_ingridient['консервы'] = 'none'
+
+! replaces to:
+!dynamic $fb_cycle, 'консервы', 'Canned food served on a plates [<<$rating[0]>>]', 'none', 'none', 'none', 'none'
+
+!-----replacement for food copypaste, by Lyazar-----
+
+!zero food level
+dynamic $fb_cycle, 'консервы', 'Canned food served on a plates [<<$rating[0]>>]', 'none', 'none', 'none', 'none'
+
+!1 food level
+dynamic $fb_cycle, 'картоха', 'Boiled potatoes in their skins with vegetable oil and salt [<<$rating[1]>>]', 'vegetables', 'none', 'none', 'none'
+dynamic $fb_cycle, 'тушеная_капуста', 'A large portion of stewed cabbage [<<$rating[1]>>]', 'vegetables', 'none', 'none', 'none'
+dynamic $fb_cycle, 'репа_пареная', 'Steamed turnip, sliced and sprinkled with salt [<<$rating[1]>>]', 'vegetables', 'none', 'none', 'none'
+dynamic $fb_cycle, 'овощной_салат', 'Vegetable salad tucked with vegetable oil [<<$rating[1]>>]', 'vegetables', 'none', 'none', 'none'
+dynamic $fb_cycle, 'рис_отварной', 'Boiled jasmine rice [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'каша_манная', 'Semolina with lumps like in kindergarten [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'каша_перловая', 'Robust barley porridge [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'каша_гречневая', 'Empty buckwheat porridge [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'каша_овсяная', 'Liquid oatmeal porridge "Berimor" [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'вареная_вермишель', 'Boiled noodles with salt [<<$rating[1]>>]', 'flower', 'none', 'none', 'none'
+dynamic $fb_cycle, 'яичница_болтунья', 'Slightly burnt scrambled eggs [<<$rating[1]>>]', 'eggs', 'none', 'none', 'none'
+dynamic $fb_cycle, 'шкварки', 'Crispy salty cracklings [<<$rating[1]>>]', 'mince', 'none', 'none', 'none'
+
+!2 food level
+dynamic $fb_cycle, 'мясная_похлебка', 'Thick meat pottage with tomatoes and beans [<<$rating[2]>>]', 'vegetables', 'mince', 'none', 'none'
+dynamic $fb_cycle, 'котлеты_с_макарошками', 'Homemade cutlets with boiled pasta [<<$rating[2]>>]', 'mince', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'тефтельки', 'Steamed meatballs from the minced cheese [<<$rating[2]>>]', 'mince', 'cheese', 'none', 'none'
+dynamic $fb_cycle, 'острый_рулет', 'Spicy meatloaf with jalapeños [<<$rating[2]>>]', 'mince', 'spice', 'none', 'none'
+dynamic $fb_cycle, 'глазунья_со_шкварками', 'Scrambled eggs with crispy salty bacon [<<$rating[2]>>]', 'mince', 'eggs', 'none', 'none'
+dynamic $fb_cycle, 'стейк', 'Thick steak with blood [<<$rating[2]>>]', 'meat', 'none', 'none', 'none'
+dynamic $fb_cycle, 'спагетти', 'Spaghetti with tomato sauce [<<$rating[2]>>]', 'vegetables', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'луковый_суп', 'Thick pottage of spiced onions with vegetables [<<$rating[2]>>]', 'vegetables', 'spice', 'none', 'none'
+dynamic $fb_cycle, 'пюрешечка', 'Delicate milky mashed potatoes and peas [<<$rating[2]>>]', 'milk', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'картошка_с_яйцом', 'Crispy fried potatoes with egg [<<$rating[2]>>]', 'vegetables', 'eggs', 'none', 'none'
+dynamic $fb_cycle, 'свекольник', 'Salad of boiled beets, grated with cheese [<<$rating[2]>>]', 'vegetables', 'cheese', 'none', 'none'
+dynamic $fb_cycle, 'суп_вермешелевый', 'Vermicelli soup with broth of chicken cubes [<<$rating[2]>>]', 'spice', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'пирог_с_яйцом', 'Rich pie with rice and egg [<<$rating[2]>>]', 'eggs', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'макароны_с_сыром', 'Pasta with grated cheese [<<$rating[2]>>]', 'cheese', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'молочная_каша', 'Sweet rice porridge on milk [<<$rating[2]>>]', 'milk', 'flower', 'none', 'none'
+
+!3 food level
+dynamic $fb_cycle, 'борщ', 'Meat soup with cabbage, potatoes and beets [<<$rating[3]>>]', 'vegetables', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'фаршированные_яйца', 'Eggs stuffed with meat salad [<<$rating[3]>>]', 'vegetables', 'mince', 'eggs', 'none'
+dynamic $fb_cycle, 'колбаски_с_пюре', 'Grilled sausages with milk mashed potatoes [<<$rating[3]>>]', 'vegetables', 'mince', 'milk', 'none'
+dynamic $fb_cycle, 'болоньезе', 'Spaghetti with bolognese meat sauce [<<$rating[3]>>]', 'vegetables', 'flower', 'mince', 'none'
+dynamic $fb_cycle, 'пирог_с_мясом', 'Rich pie with spicy meat filling [<<$rating[3]>>]', 'mince', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'острая_отбивная', 'Well fried steak under the spicy sauce [<<$rating[3]>>]', 'meat', 'spice', 'none', 'none'
+dynamic $fb_cycle, 'тушеное_мясо', 'Stew in a pot with vegetables [<<$rating[3]>>]', 'vegetables', 'meat', 'none', 'none'
+dynamic $fb_cycle, 'отбивная_с_рисом', 'Juicy steak with fried rice [<<$rating[3]>>]', 'meat', 'flower', 'none', 'none'
+dynamic $fb_cycle, 'глазунья_с_ветчиной', 'Juicy scrambled eggs with ham [<<$rating[3]>>]', 'meat', 'eggs', 'none', 'none'
+dynamic $fb_cycle, 'мясо_по_французски', 'French meat [<<$rating[3]>>]', 'meat', 'cheese', 'none', 'none'
+dynamic $fb_cycle, 'пирог_с_грибами', 'Pie with mushrooms and red onion [<<$rating[3]>>]', 'vegetables', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'пирог_с_картошкой', 'Pie with potatoes and cheese [<<$rating[3]>>]', 'vegetables', 'flower', 'cheese', 'none'
+dynamic $fb_cycle, 'пирог_с_яйцами', 'Pie with egg, rice and green onions [<<$rating[3]>>]', 'vegetables', 'flower', 'eggs', 'none'
+dynamic $fb_cycle, 'молочный_суп', 'Milk mushroom cream-soup [<<$rating[3]>>]', 'milk', 'vegetables', 'spice', 'none'
+dynamic $fb_cycle, 'овсяный_пуддинг', 'Oat pudding with honey and cinnamon [<<$rating[3]>>]', 'milk', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'сырное_пюре', 'Vegetable soup with cheese [<<$rating[3]>>]', 'vegetables', 'cheese', 'milk', 'none'
+
+!4 food level
+dynamic $fb_cycle, 'шашлык', 'Kebab with onions, tomatoes and herbs [<<$rating[4]>>]', 'vegetables', 'spice', 'meat', 'none'
+dynamic $fb_cycle, 'азу_с_рисом', 'Ase with spiced rice [<<$rating[4]>>]', 'spice', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'рагу_с_сыром', 'Beef stew with cheese sauce [<<$rating[4]>>]', 'vegetables', 'cheese', 'meat', 'none'
+dynamic $fb_cycle, 'стейк_с_макаронами', 'Steak with pasta in white sauce [<<$rating[4]>>]', 'milk', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'окрошка', 'Kefir okroshka with ham [<<$rating[4]>>]', 'vegetables', 'milk', 'meat', 'none'
+dynamic $fb_cycle, 'рулет_с_яйцом', 'Spicy meat loaf with egg [<<$rating[4]>>]', 'spice', 'eggs', 'meat', 'none'
+dynamic $fb_cycle, 'ветчина_с_сыром', 'Roast ham with cheese and basil [<<$rating[4]>>]', 'vegetables', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'суп_бальзамико', 'Meat cream-soup balsamico [<<$rating[4]>>]', 'alcohol', 'mince', 'milk', 'none'
+dynamic $fb_cycle, 'чебуреки', 'Juicy pasties under brandy [<<$rating[4]>>]', 'alcohol', 'flower', 'mince', 'none'
+dynamic $fb_cycle, 'котлеты_с_картошкой', 'Cutlet with boiled potatoes under brandy [<<$rating[4]>>]', 'vegetables', 'alcohol', 'mince', 'none'
+dynamic $fb_cycle, 'купаты', 'Fried sausages on charcoal with red wine [<<$rating[4]>>]', 'alcohol', 'mince', 'spice', 'none'
+dynamic $fb_cycle, 'ромовые_блинчики', 'Crispy rum pancakes [<<$rating[4]>>]', 'alcohol', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'вегетарианское_рагу', 'Vegetarian vegetable stew with cheese and spices [<<$rating[4]>>]', 'vegetables', 'flower', 'cheese', 'spice'
+dynamic $fb_cycle, 'зразы_с_яйцом', 'Zrazy with stuffed potato with onion and egg [<<$rating[4]>>]', 'vegetables', 'eggs', 'spice', 'milk'
+dynamic $fb_cycle, 'овощи_с_фасолью', 'Vegetables with beans stewed in calvados [<<$rating[4]>>]', 'vegetables', 'flower', 'alcohol', 'none'
+dynamic $fb_cycle, 'тушеная_чечевица', 'Lentil stewed with cheese and herbs [<<$rating[4]>>]', 'vegetables', 'flower', 'cheese', 'spice'
+
+!5 food level
+dynamic $fb_cycle, 'мясо_под_сливочным', 'Meat in a pot stewed with vegetables in a creamy sauce [<<$rating[5]>>]', 'vegetables', 'cream', 'meat', 'none'
+dynamic $fb_cycle, 'рагу_с_рисом', 'Stew with jasmine rice in a creamy sauce [<<$rating[5]>>]', 'cream', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'пряная_ветчина', 'Spicy creamy ham [<<$rating[5]>>]', 'cream', 'spice', 'meat', 'none'
+dynamic $fb_cycle, 'шашлык_с_вином', 'Kebab with fresh herbs and red wine [<<$rating[5]>>]', 'alcohol', 'spice', 'meat', 'none'
+dynamic $fb_cycle, 'ребрышки_гриль', 'Grilled ribs with spicy sauce and bourbon [<<$rating[5]>>]', 'alcohol', 'flower', 'meat', 'none'
+dynamic $fb_cycle, 'девчатина_с_макаронами', 'A chop from tenderest virgin meat with croûtons [<<$rating[5]>>]', 'cheese', 'flower', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'девчатина_с_картошкой', 'Juicy virgin meat steak with crispy potatoes [<<$rating[5]>>]', 'vegetables', 'spice', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'девчатина_с_бобами', 'Stewed virgin meat with beans under a red sauce [<<$rating[5]>>]', 'vegetables', 'flower', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'девчатина_с_сыром', 'Virgin meat ragout with vegetables and cheese [<<$rating[5]>>]', 'vegetables', 'cheese', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'пирог_из_девчатины', 'Puff pie with egg and virgin meat [<<$rating[5]>>]', 'eggs', 'flower', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'суп_из_девчатины', 'Virgin meat soup with dumplings [<<$rating[5]>>]', 'milk', 'flower', 'virgin_meat', 'none'
+dynamic $fb_cycle, 'круассаны', 'Air croissants with cream cheese [<<$rating[5]>>]', 'cream', 'flower', 'cheese', 'none'
+dynamic $fb_cycle, 'кексы', 'Vanilla cupcakes with homemade ice cream [<<$rating[5]>>]', 'spice', 'flower', 'cream', 'none'
+dynamic $fb_cycle, 'печенье', 'Chocolate cookies with amaretto liqueur [<<$rating[5]>>]', 'alcohol', 'flower', 'spice', 'none'
+dynamic $fb_cycle, 'лазанья_бешамель', 'Vegetable lasagna with béchamel sauce [<<$rating[5]>>]', 'vegetables', 'flower', 'cream', 'none'
+
+!EXAMPLE
+dynamic $fb_cycle, 'образец', ' [<<$rating[5]>>]', 'vegetables', 'flower', 'virgin_meat', 'spice'
+--- #food_base ---------------------------------
+

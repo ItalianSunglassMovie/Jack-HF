@@ -1,0 +1,392 @@
+# #addon_slave_base
+!905, Yasmin the amazon
+$seed_name[905] = 'Yasmin'
+
+seed_sub_hug[905] = 3
+seed_sub_kiss[905] = 3
+
+seed_gladiatrix[905] = 4
+
+seed_beauty[905] = 3
+seed_stamina[905] = 5
+seed_sensitivity[905] = 1
+seed_temper[905] = 5
+seed_ego[905] = 4
+seed_pride[905] = 4
+seed_intellect[905] = 3
+seed_exotic[905] = 2
+seed_fat[905] = 1
+
+$stock_world_description[905] = '   Previously, our universe ruled by the great empire of the Ancients. But it collapsed. Now there are many tribes that roam the space on a starship created by the Ancients. The more ships in the tribe, the more powerful it is. Everyone wants to grab a new ships, because no one knows how to build them.'
+$stock_family_description[905] = '   My tribe is very powerful - we have three destroyers of "Typhoon" type and two assault transport. Men like you we are keeping in bondage because they are stupid and unreliable. Only women are allowed to make decisions, as our mind is open to the Great Goddess.'
+$stock_occupation_description[905] = '   I''ve always been strong and quick, so I went into the boarding party as soon as I could pick up the assault blaster. We had a glorious fights. For my services Mother''s Council made me as the commander of the wing. And then I got into the damn fogs, when I got to hunt on the planet where we restock.'
+
+seed_virginity[905] = 0
+seed_metabolism[905] = 5
+seed_masohism[905] = 1
+seed_homosexualism[905] = 2
+seed_homosexualism_revealed[905] = 1
+seed_blood_attitude[905] = 2
+seed_courage[905] = 1
+
+seed_boobs[905] = 2
+$seed_boobs_img[905] = 'boobs_CC'
+$seed_pussy_img[905] = 'pussy_g3'
+$seed_psy_basic[905] = 'hateful'
+$seed_world[905] = ''
+
+$fullimage[905] = 'girls\full\yasmin'
+$fullmade[905] = 'girls\full\maid\red_long_red'
+$fullmistress[905] = 'girls\full\mistress\brown_blue'
+$fullsecretary[905] = 'girls\full\secretary\brown_red'
+$seed_ava[905] = 'content\pic\girls\face\yasmin_sepia'
+$seed_ava_gray[905] = 'content\pic\girls\face\yasmin_gray'
+$seed_ava_clear[905] = 'content\pic\girls\face\yasmin'
+seed_age[905] = 0
+
+$bathing_alone[905] = 'girls\scene\bath_general'
+$cello[905] = 'girls\scene\cello_general_long'
+$cleaning[905] = 'girls\scene\clean_pink_long_pinkeye'
+$cooking[905] = 'girls\scene\cook_general' 
+$dance[905] = 'girls\scene\dance_general'
+$desertag[905] = 'girls\scene\dessertag_general'
+$enchanting[905] = 'girls\scene\enchanting_general'
+$fighting[905] = 'girls\scene\fight_general'
+$flyte[905] = 'girls\scene\flute_general_long'
+$guitar[905] = 'girls\scene\guitar_general'
+$gymnastics[905] = 'girls\scene\gym_general'
+$lesbo_bath[905] = 'girls\scene\lesbath_general_girl'
+$nurse[905] = 'girls\scene\nurse_general' 
+$piano[905] = 'girls\scene\piano_general'
+$rest[905] = 'girls\scene\rest_general_long'
+$secretary[905] = 'girls\scene\secretary_general'  
+$student[905] = 'girls\scene\study_general'
+$singing[905] = 'girls\full\yasmin'
+$violin[905] = 'girls\scene\violin_general'
+$washing[905] = 'girls\scene\wash_general'
+
+$analfisting[905] = 'girls\sex\analfisting_general_girl'
+$analsex[905] = 'girls\sex\analsex_general_2'
+$bondage[905] = 'girls\sex\bdsm_general'
+$bdsm[905] = 'girls\sex\bdsm_general'
+$bj[905] = 'girls\sex\bj_red_long'
+$bukake[905] = 'girls\sex\buakake_red'  
+$disgrace[905] = 'girls\sex\exhibit_general_girl'
+$defloration[905] = 'girls\sex\defloration_general_girl'
+$deprivation_suit[905] = 'girls\sex\dsuit_general' 
+$dog_sex[905] = 'girls\sex\dog_general'
+$dildo[905] = 'girls\sex\dildo_general'
+$dt[905] = 'girls\sex\dt_general_girl'
+$enema[905] = 'girls\sex\enema_general'
+$exhibit[905] = 'girls\sex\exhibit_general_girl'
+$fisting[905] = 'girls\sex\fisting_general'
+$fj[905] = 'girls\sex\fj_general_girl'
+$gangbang[905] = 'girls\sex\gangbang_red'   
+$hj[905] = 'girls\sex\hj_general'
+$horse_sex[905] = 'girls\sex\horse_general_2'
+$hug[905] = 'girls\full\yasmin'
+$kiss[905] = 'girls\sex\kiss_general'
+$kopro[905] = 'girls\sex\oralfetish_general'
+$kuni[905] = 'girls\sex\exhibit_general_girl'
+$lesbian[905] = 'girls\sex\lesbo_reddarkeye_blondshortdarkeye_gg' 
+$masturbation[905] = 'girls\sex\masturbation_general_2'
+$pazuri[905] = 'girls\sex\pazuri_general'
+$petplay[905] = 'girls\sex\petplay_red_long_redeye' 
+$petting[905] = 'girls\sex\petting_general_girl_3'
+$pig_sex[905] = 'girls\sex\pig_red'
+$ponyplay[905] = 'girls\sex\ponyplay_general' 
+$rimming[905] = 'girls\sex\rimming_red_redeye'
+$seduce[905] = 'girls\sex\exhibit_general_girl'
+$sex_vaginal[905] = 'girls\sex\sex_red'
+$spider[905] = 'girls\sex\spider_general_girl' 
+$thongue[905] = 'girls\sex\oral_general'
+$tentacles[905] = 'girls\sex\tentacle_general' 
+$urine_drink[905] = 'girls\sex\urine_general'
+
+$branding[905] = 'girls\torture\branding_general_2'
+$cane[905] = 'girls\torture\cane_general_2'
+$ear_grab[905] = 'girls\torture\force_general'
+$ironmaiden[905] = 'girls\torture\ironmaiden_general_girl'  
+$fireswing[905] = 'girls\torture\fireswing_general_2'
+$fist_hit[905] = 'girls\torture\hit_general'
+$leash[905] = 'girls\torture\whip_general'
+$needle[905] = 'girls\torture\needle_general_girl'
+$pins[905] = 'girls\torture\pins_general_girl'
+$slap[905] = 'girls\torture\slap_general'
+$spank[905] = 'girls\torture\spank_general'
+$strappado[905] = 'girls\torture\strappado_general'
+$verminpit[905] = 'girls\torture\verminpit_general' 
+$water[905] = 'girls\torture\water_general'
+$wax[905] = 'girls\torture\wax_general'
+$woodenhorse[905] = 'girls\torture\woodenhorse_general_girl'
+$whip[905] = 'girls\torture\whip_general'
+$impaling[905] = 'girls\torture\impaling_general' 
+$decapitation[905] = 'girls\torture\decapitation_general' 
+$hanging[905] = 'girls\torture\hanging_general' 
+$throat_slit[905] = 'girls\torture\decapitation_general' 
+$cook_whole[905] = 'girls\torture\cooked_general' 
+
+!906, Wilhelmine the princess
+$seed_name[906] = 'Wilhelmine'
+
+seed_callisthenics[906] = 1
+seed_expression[906] = 2
+
+seed_beauty[906] = 5
+seed_stamina[906] = 2
+seed_sensitivity[906] = 5
+seed_temper[906] = 4
+seed_ego[906] = 5
+seed_pride[906] = 5
+seed_intellect[906] = 1
+seed_exotic[906] = 1
+seed_fat[906] = 0
+seed_spoil[906] = 3
+
+$stock_world_description[906] = '   In my world Bright Alliance leads a never-ending war against an ancient evil. Alliance includes all worthy nations: bright elves, dwarves and civilized people. Even the angels and unicorns fight on our side, but the enemy has dragons and trolls. He wants to enslave everyone so that Darkness reigned in the world.'
+$stock_family_description[906] = '   My dad - king of Arthuria. Arthuria - very proud kingdom with a big military history, although we own only a little land. Our paladins are known worldwide for they nobility and they strike fear in the enemy''s miserable henchmen with only their looks. And I had a pet unicorn. Oh, if only he was here...'
+
+seed_metabolism[906] = 1
+seed_virginity[906] = 0
+seed_nymphomania[906] = -1
+seed_masohism[906] = -1
+seed_exhibitionism[906] = -1
+seed_abuse_attitude[906] = -1
+seed_blood_attitude[906] = -1
+seed_passion_sweets[906] = 1
+
+$fullimage[906] = 'girls\full\025_pink_long_red'
+$fullmade[906] = 'girls\full\maid\25_maid'
+$fullmistress[906] = 'girls\full\mistress\25_mistress'
+$fullsecretary[906] = 'girls\full\secretary\25_secretary'
+$seed_ava[906] = 'content\pic\girls\face\025_sepia'
+$seed_ava_gray[906] = 'content\pic\girls\face\025_gray'
+$seed_ava_clear[906] = 'content\pic\girls\face\025'
+seed_age[906] = 1
+
+seed_boobs[906] = 1
+$seed_boobs_img[906] = 'boobs_BB'
+$seed_pussy_img[906] = 'pussy_l3'
+$seed_psy_basic[906] = 'arrogant'
+$seed_world[906] = ''
+
+$bathing_alone[906] = 'girls\scene\bath_25'
+$cello[906] = 'girls\scene\cello_general_loli'
+$cleaning[906] = 'girls\scene\clean_red_darkeye'  
+$cooking[906] = 'girls\scene\cook_pink_blueeye' 
+$dance[906] = 'girls\scene\dance_general'
+$desertag[906] = 'girls\scene\dessertag_general_loli'
+$enchanting[906] = 'girls\scene\enchanting_general'
+$fighting[906] = 'girls\scene\fight_red_darkeye' 
+$flyte[906] = 'girls\scene\flute_pink_short_blueye_loli' 
+$guitar[906] = 'girls\scene\guitar_pink_long'
+$gymnastics[906] = 'girls\scene\gym_pink_blueeye_loli'
+$lesbo_bath[906] = 'girls\scene\lesbath_black_pinklong_ml'
+$nurse[906] = 'girls\scene\nurse_general' 
+$piano[906] = 'girls\scene\piano_general_loli'
+$rest[906] = 'girls\scene\rest_25'
+$secretary[906] = 'girls\scene\secretary_general'  
+$student[906] = 'girls\scene\study_red_darkeye'
+$singing[906] = 'girls\full\025_pink_long_red'
+$violin[906] = 'girls\scene\violin_general_loli'
+$washing[906] = 'girls\scene\wash_pink_loli'
+
+$analfisting[906] = 'girls\sex\analfisting_general'
+$analsex[906] = 'girls\sex\analsex_pink_loli'
+$bondage[906] = 'girls\sex\bdsm_pink_loli'
+$bdsm[906] = 'girls\sex\bdsm_pink_loli'
+$bj[906] = 'girls\sex\bj_pink_loli'
+$bukake[906] = 'girls\sex\buakake_25'  
+$disgrace[906] = 'girls\sex\disgrace_25'
+$defloration[906] = 'girls\sex\defloration_25'
+$deprivation_suit[906] = 'girls\sex\dsuit_general_loli' 
+$dog_sex[906] = 'girls\sex\dog_pink_long_redeye_loli'
+$dildo[906] = 'girls\sex\dildo_general'
+$dt[906] = 'girls\sex\dt_red_short_redeye'
+$enema[906] = 'girls\sex\enema_general_loli'
+$exhibit[906] = 'girls\sex\exhibit_25'
+$fisting[906] = 'girls\sex\fisting_general'
+$fj[906] = 'girls\sex\fj_25'
+$gangbang[906] = 'girls\sex\gangbang_ping_redeye_loli'   
+$hj[906] = 'girls\sex\hj_brown_browneye_loli'
+$horse_sex[906] = 'girls\sex\horse_general_loli'
+$hug[906] = 'girls\sex\hug_25'
+$kiss[906] = 'girls\sex\kiss_general'
+$kopro[906] = 'girls\sex\oralfetish_red'
+$kuni[906] = 'girls\sex\kuni_25'
+$lesbian[906] = 'girls\sex\lesbo_pinkshortredeye_blondlong_ll' 
+$masturbation[906] = 'girls\sex\masturbation_25'
+$pazuri[906] = 'girls\sex\pazuri_general_loli'
+$petplay[906] = 'girls\sex\petplay_25' 
+$petting[906] = 'girls\sex\petting_pink_blueeye'
+$pig_sex[906] = 'girls\sex\pig_general_loli'
+$ponyplay[906] = 'girls\sex\ponyplay_general_loli' 
+$rimming[906] = 'girls\sex\rimming_pink_blueeye'
+$seduce[906] = 'girls\sex\seduce_25'
+$sex_vaginal[906] = 'girls\sex\sex_25'
+$spider[906] = 'girls\sex\spider_general_loli' 
+$thongue[906] = 'girls\sex\oral_general_loli'
+$tentacles[906] = 'girls\sex\tentacle_25'  
+$urine_drink[906] = 'girls\sex\urine_red_darkeye_loli'
+
+$branding[906] = 'girls\torture\branding_general_loli'
+$cane[906] = 'girls\torture\cane_general'
+$ear_grab[906] = 'girls\torture\force_loli'
+$ironmaiden[906] = 'girls\torture\ironmaiden_general'  
+$fireswing[906] = 'girls\torture\fireswing_general'
+$fist_hit[906] = 'girls\torture\hit_general'
+$leash[906] = 'girls\torture\cane_general'
+$needle[906] = 'girls\torture\needle_general_loli'
+$pins[906] = 'girls\torture\pins_general_loli'
+$slap[906] = 'girls\torture\slap_general'
+$spank[906] = 'girls\torture\spank_pink'
+$strappado[906] = 'girls\torture\strappado_general'
+$verminpit[906] = 'girls\torture\verminpit_general' 
+$water[906] = 'girls\torture\water_general'
+$wax[906] = 'girls\torture\wax_pink_short_loli'
+$woodenhorse[906] = 'girls\torture\woodenhorse_general'
+$whip[906] = 'girls\torture\cane_general'
+$impaling[906] = 'girls\torture\impaling_general_loli' 
+$decapitation[906] = 'girls\torture\decapitation_general_loli' 
+$hanging[906] = 'girls\torture\hanging_general' 
+$throat_slit[906] = 'girls\torture\decapitation_general_loli' 
+$cook_whole[906] = 'girls\torture\cooked_general_loli' 
+
+!907, Helen the milf (housewife)
+$seed_name[907] = 'Helen'
+
+seed_sub_hj[907] = 2
+seed_sub_hug[907] = 3
+seed_sub_kiss[907] = 3
+seed_sub_bj[907] = 2
+seed_sub_vaginal[907] = 3
+seed_anal_stretch[907] = 2
+seed_sub_seduce[907] = 1
+seed_sub_masturbation[907] = 2
+seed_sub_dildo[907] = 1
+seed_sub_exhibit[907] = 1
+seed_sub_humiliation[907] = 2
+seed_sub_mazo[907] = 2
+
+seed_secretary[907] = 1
+seed_cook[907] = 2
+seed_service[907] = 3
+seed_expression[907] = 1
+
+seed_beauty[907] = 2
+seed_stamina[907] = 4
+seed_sensitivity[907] = 3
+seed_temper[907] = 2
+seed_ego[907] = 2
+seed_pride[907] = 1
+seed_intellect[907] = 4
+seed_fat[907] = 2
+
+$stock_world_description[907] = '   My world is ruled by giant multinational corporations. Territorial governments have lost their power and do what the oligarchs dictate. It is difficult to find a good job, but those who work for corporation can rely on good earnings.'
+$stock_family_description[907] = '   My father was the manager of recruitment in Dynamical Pharmaceuticals, and my mother worked as a math tutor for rich kids. With the support of parents, I managed to get a good education and start a career in a company where my dad worked.'
+$stock_occupation_description[907] = '   Then I met Greg - he was a line manager at Vega Industries and had good views for the career. We got married and I quit my job to become a housewife, gave birth to a son. But once Greg fucked up and he was expelled from the service. Because of the debts we were deprived of civil rights and became the property of the bank.'
+
+seed_virginity[907] = 3
+seed_metabolism[907] = 3
+seed_masohism[907] = 2
+seed_nymphomania[907] = 1
+
+seed_boobs[907] = 4
+$seed_boobs_img[907] = 'boobs_EE'
+$seed_pussy_img[907] = 'pussy_m3'
+$seed_psy_basic[907] = 'soft'
+$seed_world[907] = ''
+
+$fullimage[907] = 'girls\full\helen'
+$fullmade[907] = ''
+$fullmistress[907] = 'girls\full\mistress\green_long_brown_milf'
+$fullsecretary[907] = 'girls\full\secretary\brown_blue_glasses_2'
+$seed_ava[907] = 'content\pic\girls\face\helen_sepia'
+$seed_ava_gray[907] = 'content\pic\girls\face\helen_gray'
+$seed_ava_clear[907] = 'content\pic\girls\face\helen'
+seed_age[907] = 2
+
+$bathing_alone[907] = 'girls\scene\bath_general_milf'
+$cello[907] = 'girls\scene\cello_general_milf'
+$cleaning[907] = 'girls\scene\clean_general_milf'
+$cooking[907] = 'girls\scene\cook_general_milf' 
+$dance[907] = 'girls\scene\dance_general'
+$desertag[907] = 'girls\scene\dessertag_general'
+$enchanting[907] = 'girls\scene\enchanting_general'
+$fighting[907] = 'girls\scene\fight_general_milf' 
+$flyte[907] = 'girls\scene\flute_general' 
+$guitar[907] = 'girls\scene\guitar_general_milf'
+$gymnastics[907] = 'girls\scene\gym_general_milf'
+$lesbo_bath[907] = 'girls\scene\lesbath_general_mg'
+$nurse[907] = 'girls\scene\nurse_general' 
+$piano[907] = 'girls\scene\piano_general_milf'
+$rest[907] = 'girls\scene\rest_general_milf'
+$secretary[907] = 'girls\scene\secretary_general'  
+$student[907] = 'girls\scene\study_general'
+$singing[907] = 'girls\full\helen'
+$violin[907] = 'girls\scene\violin_general'
+$washing[907] = 'girls\scene\wash_general_milf'
+
+$analfisting[907] = 'girls\sex\analfisting_general_xray'
+$analsex[907] = 'girls\sex\analsex_black'
+$bondage[907] = 'girls\sex\bdsm_black_darkeye_2'
+$bdsm[907] = 'girls\sex\bdsm_black_darkeye_2'
+$bj[907] = 'girls\sex\bj_purple_blackeye'
+$bukake[907] = 'girls\sex\buakake_black_purpleeye'  
+$disgrace[907] = 'girls\sex\exhibit_general_milf'
+$defloration[907] = 'girls\sex\defloration_general'
+$deprivation_suit[907] = 'girls\sex\dsuit_general_milf' 
+$dog_sex[907] = 'girls\sex\dog_general_milf'
+$dildo[907] = 'girls\sex\dildo_general_milf'
+$dt[907] = 'girls\sex\dt_black_blackeye'
+$enema[907] = 'girls\sex\enema_general_milf'
+$exhibit[907] = 'girls\sex\exhibit_general_milf'
+$fisting[907] = 'girls\sex\fisting_general_milf'
+$fj[907] = 'girls\sex\fj_general'
+$gangbang[907] = 'girls\sex\gangbang_black_browneye'
+$hj[907] = 'girls\sex\hj_general'
+$horse_sex[907] = 'girls\sex\horse_brown_browneye_milf'
+$hug[907] = 'girls\full\helen'
+$kiss[907] = 'girls\sex\kiss_black_purpleeye'
+$kopro[907] = 'girls\sex\oralfetish_brown_darkeye_milf'
+$kuni[907] = 'girls\sex\exhibit_general_milf'
+$lesbian[907] = 'girls\sex\lesbo_black_light_gg' 
+$masturbation[907] = 'girls\sex\masturbation_black'
+$pazuri[907] = 'girls\sex\pazuri_general_milf'
+$petplay[907] = 'girls\sex\petplay_purple_darkeye_milf' 
+$petting[907] = 'girls\sex\petting_general_milf'
+$pig_sex[907] = 'girls\sex\pig_general_milf'
+$ponyplay[907] = 'girls\sex\ponyplay_general_milf' 
+$rimming[907] = 'girls\sex\rimming_dark'
+$seduce[907] = 'girls\sex\exhibit_general_milf'
+$sex_vaginal[907] = 'girls\sex\sex_general_milf'
+$spider[907] = 'girls\sex\spider_general_milf' 
+$thongue[907] = 'girls\sex\oral_black_darkeye'
+$tentacles[907] = 'girls\sex\tentacle_general_milf_2' 
+$urine_drink[907] = 'girls\sex\urine_black_2'
+
+$branding[907] = 'girls\torture\branding_general_milf'
+$cane[907] = 'girls\torture\cane_general_milf'
+$ear_grab[907] = 'girls\torture\force_general'
+$ironmaiden[907] = 'girls\torture\ironmaiden_general'  
+$fireswing[907] = 'girls\torture\fireswing_general_milf'
+$fist_hit[907] = 'girls\torture\hit_general_milf'
+$leash[907] = 'girls\torture\cane_general_milf'
+$needle[907] = 'girls\torture\needle_general_milf'
+$pins[907] = 'girls\torture\pins_dark_darkeye'
+$slap[907] = 'girls\torture\slap_general'
+$spank[907] = 'girls\torture\spank_general_milf'
+$strappado[907] = 'girls\torture\strappado_general'
+$verminpit[907] = 'girls\torture\verminpit_general' 
+$water[907] = 'girls\torture\water_general'
+$wax[907] = 'girls\torture\wax_general_milf'
+$woodenhorse[907] = 'girls\torture\woodenhorse_general_milf'
+$whip[907] = 'girls\torture\whip_general_milf'
+$impaling[907] = 'girls\torture\impaling_general_milf' 
+$decapitation[907] = 'girls\torture\decapitation_general_milf' 
+$hanging[907] = 'girls\torture\hanging_general' 
+$throat_slit[907] = 'girls\torture\decapitation_general_milf' 
+$cook_whole[907] = 'girls\torture\cooked_general_milf' 
+
+--- #addon_slave_base ---------------------------------
+

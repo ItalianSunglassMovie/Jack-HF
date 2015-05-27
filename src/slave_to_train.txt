@@ -1,0 +1,44 @@
+# slave_to_train
+!Осмотр рабыни на обучение по контракту
+GS '_layout'
+
+:loop
+gs 'generate_stock'
+!if stock_base_price < contractor_demand['base_price']: jump 'loop'
+if stock["age"] = contractor_demand['refuse_age']: jump 'loop'
+IF contractor_demand['agree_age'] ! 0:
+ if stock["age"] ! contractor_demand['agree_age']: jump 'loop'
+END
+if stock["stamina"] < contractor_demand['min_stamina']: jump 'loop'
+if stock["sensitivity"] < contractor_demand['min_sensitivity']: jump 'loop'
+if stock["temper"] < contractor_demand['min_temper']: jump 'loop'
+if stock["beauty"] < contractor_demand['min_beauty']: jump 'loop'
+if stock_virginity > 1 and contractor_demand['virginity'] = 1: jump 'loop'
+if stock["temper"] > contractor_demand['max_temper']: jump 'loop'
+
+killvar 'contractor_demand'
+contractor_demand['refuse_age'] = 99
+contractor_demand['max_temper'] = 99
+
+*p '<div id = "bg"><img src="content\pic\bg\dungeon.jpg"></div>'
+*p '<div id = "bg"><img src="content\pic\<<$stock_fullimage>>.gif"></div>'
+*p '<div id = "text">    Вместе со своим потенциальным работодателем вы отправляетесь в центр передержки гильдии, чтобы осмотреть предмет контракта. После тщательной оценки рабыни, вы готовы принять решение о том браться ли за контракт или отказаться от него как от бесперспективного.</div>'
+
+ *p '<div id = "interaction_stat_bar">
+<u>SUMMARY</u>
+<<$beauty[stock["beauty"]]>> 
+<<$stamina[stock["stamina"]]>> 
+<<$exotic[stock["exotic"]]>> 
+<<$fat[stock["fat"]]>> 
+<<$sensitivity[stock["sensitivity"]]>> 
+<<$style[stock["style"]]>> 
+<<$temper[stock["temper"]]>> 
+
+<u>TRAITS</u>
+<<$stock_features_list>>
+</div>'
+
+*p {<div id = "approve"><a href = 'EXEC: gt "slave_to_train_get"'><img src="content\pic\buttons\approve.png"></a></div>}
+*p {<div id = "deny"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src="content\pic\buttons\deny.png"></a></div>}
+--- slave_to_train ---------------------------------
+

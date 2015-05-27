@@ -1,0 +1,26 @@
+# slave_free_time
+txt_count = 0
+ 
+IF free_time > 0:
+ IF bath > 0 and slave["hygiene"] > 1:
+  text_count += 1
+  free_time -= 1
+  slave["energy"] -= 1
+  slave_rate["mood"] += slave["hygiene"]
+  slave_rate["hygiene"] = 0
+  $special_bg[txt] = $bathing_alone[slave_type]  
+  $text[txt] = '<<$bathing_slave_alone>>'
+  txt += 1
+ END
+END
+
+IF txt = 0:
+ text_count = 1
+ $text[1] = $slave_rest
+ slave_well_rested += free_time
+ slave_rate["mood"] += free_time
+ slave["energy"] -= free_time
+ txt += 1
+END
+--- slave_free_time ---------------------------------
+
