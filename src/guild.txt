@@ -8,35 +8,56 @@ $text_display = '<br>'
 
 
 IF sp_txt = 1:
- IF contract['active'] = 1: $text_display += {<br><div id="under">Close contract<br><div id = "clear"><a href = 'EXEC: interaction_city = 142 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- if contract['active'] = 2: $text_display += {<br><div id="under_gray">Contract work<br></div>}     
- if contract['active'] = 0 and slave_state ! CONST_INT['no_slave']: $text_display += {<br><div id="under">Contract work<br><div id = "clear"><a href = 'EXEC: interaction_city = 1411 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: $text_display += {<br><div id="under">Contract work - D rank<br><div id = "clear"><a href = 'EXEC: interaction_city = 1412 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: $text_display += {<div id="under">Contract work - C rank<br><div id = "clear"><a href = 'EXEC: interaction_city = 1413 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
- if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: $text_display += {<div id="under">Contract work - B rank<br><div id = "clear"><a href = 'EXEC: interaction_city = 1414 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', '===BEGIN===', 'column_0')
+ IF contract['active'] = 1: FUNC('$menu', 'interaction_city', $menu_item_Close_contract, menu_Close_contract, 'Close contract')
+ if contract['active'] = 2: FUNC('$menu', 'location_gray', $menu_item_Close_contract_gray, empty, 'Contract work')
+ if contract['active'] = 0 and slave_state ! CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_Contract_work, menu_Contract_work, 'Contract work')
+ if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'exec_options', $menu_item_Contract_list, 'sp_txt = 2 & gt $curloc', 'Contracts List')
  IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:
-  $text_display += {<br><div id="under">Talk to subpurchaser<br><div id = "clear"><a href = 'EXEC: interaction_city = 94 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  FUNC('$menu', 'interaction_city', $menu_item_subpurchaser, menu_subpurchaser, 'Talk to subpurchaser')
   else
-  $text_display += {<br><div id="under_gray">Talk to subpurchaser<br></div>}     
+  FUNC('$menu', 'location_gray', $menu_item_subpurchaser_gray, empty, 'Talk to subpurchaser')
  END
- $text_display += {<br><div id="under">Talk to expert<br><div id = "clear"><a href = 'EXEC: interaction_city = 95 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'interaction_city', $menu_item_Talk_expert, menu_Talk_expert, 'Talk to expert')
  IF auction_count = 0: 
   IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and rating > 0:
-   $text_display += {<br><div id="under">Auction of branded slaves<br><div id = "clear"><a href = 'EXEC: interaction_city = 93 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+   FUNC('$menu', 'interaction_city', $menu_item_Auction_slaves, menu_Auction_slaves, 'Auction of branded slaves')
    else
-   $text_display += {<br><div id="under_gray">Auction of branded slaves<br></div>}      
+   FUNC('$menu', 'location_gray', $menu_item_Auction_slaves_gray, empty, 'Auction of branded slaves')
   END 
   else
-  $text_display += '<br><div id="under_gray">Days to auction: <<auction_count>><br></div>'   
+  FUNC('$menu', 'location_gray', $menu_item_Auction_slaves_gray, empty, 'Days to auction: <<auction_count>>')
  END
 	!Strec - jon_UIadds addition (begin)
 	if inventory['stethoscope']<1 and sparks>100:
 		inventory['stethoscope'] = 0
-		$text_display += {<div id="under">Buy a stethoscope for 100 sparks<br><div id = "clear"><a href = 'EXEC: gt "sjm_UI_UIadds_buystethoscope"'><img src = "content\pic\clear.gif"></a></div></div>}
+        FUNC('$menu', 'exec_options', $menu_item_buystethoscope, 'gt "sjm_UI_UIadds_buystethoscope"', 'Buy stethoscope (100$)')
 	end
 	!Strec - jon_UIadds addition (end)
- $text_display += {<br><div id="under">Leave<br><div id = "clear"><a href = 'EXEC: city_form = 1 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'city_form', $menu_item_Leaveguild, menu_Leaveguild, 'Leave')
+ FUNC('$menu', '===END===')
 END
+
+IF sp_txt = 2:
+ FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', '===BEGIN===', 'column_0')
+ if brand_reputation => 0 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_D1_rank, menu_D1_rank, 'Contract work - D- rank')
+ if brand_reputation => 1 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_D2_rank, menu_D2_rank, 'Contract work - D+ rank')
+ if brand_reputation => 2 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_C1_rank, menu_C1_rank, 'Contract work - C- rank')
+ if brand_reputation => 2 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_C2_rank, menu_C2_rank, 'Contract work - C+ rank')
+ if brand_reputation => 3 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_B1_rank, menu_B1_rank, 'Contract work - B- rank')
+ FUNC('$menu', 'exec_options', $menu_item_Contracts_back, 'sp_txt = 1 & gt $curloc', 'Back')
+ FUNC('$menu', '===END===')
+ FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', '===BEGIN===', 'column_1')
+ if brand_reputation => 3 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_B2_rank, menu_B2_rank, 'Contract work - B+ rank')
+ if brand_reputation => 4 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_A1_rank, menu_A1_rank, 'Contract work - A- rank')
+ if brand_reputation => 4 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_A2_rank, menu_A2_rank, 'Contract work - A+ rank')
+ if brand_reputation => 5 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_S1_rank, menu_S1_rank, 'Contract work - S- rank')
+ if brand_reputation => 5 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_S2_rank, menu_S2_rank, 'Contract work - S+ rank')
+ FUNC('$menu', '===END===')
+END
+
 
 $text[txt] = $guild[sp_txt]
 

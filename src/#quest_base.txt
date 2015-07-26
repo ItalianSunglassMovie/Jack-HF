@@ -29,7 +29,7 @@ $quest_description[3] = 'In Rome, there are five persons who are able to give me
    President of Serpis House can make me an honorary citizen if I earn the trust of Serpents. The main thing is not to be too close to the undead of the Corvus House.
    If Mistress of Camira House accept me into pack of her "dragons" I will be a big shot among nonhumans. I just need to remember about their feud with the Taurus House.
    Finally, I can turn to the Prince of Corvus House. A title of nobility from the undead is a very important acquisition, but then I should not get too close to the Serpis House.
-
+   
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
 
@@ -71,5 +71,6 @@ When ordering <<$rating[5]>>-rank: 500 days.
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
 !$quest[] = ''
+
 --- #quest_base ---------------------------------
 

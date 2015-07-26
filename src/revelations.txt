@@ -205,24 +205,25 @@ IF slave["compassion_revealed"] = 1:
 END
 
 IF slave["pregnant_revealed"] = 1:
- msg '<<$slave_name>> experiencing the effects of intoxication. Besides, she have not had menstruation for a long time. It looks like she''s pregnant!'
+ msg '<<$slave_name>> is experiencing morning sickness and has not menstruated for a long time. It looks like she''s pregnant!'
  slave["pregnant_revealed"] = 2
 END
 
 IF slave["pregnant_revealed"] = 2 and slave["pregnant"] = 0: slave["pregnant_revealed"] = 0
 
 IF assistant["pregnant_revealed"] = 1:
- msg '<<$assistant_name>> experiencing the effects of intoxication. Besides, she have not had menstruation for a long time. It looks like she''s pregnant!'
+ msg '<<$assistant_name>> is experiencing morning sickness and has not menstruated for a long time. It looks like she''s pregnant!'
  assistant["pregnant_revealed"] = 2
 END
 
 IF assistant["pregnant_revealed"] = 2 and assistant["pregnant"] = 0: assistant["pregnant_revealed"] = 0
 
 IF prisoner["pregnant_revealed"] = 1:
- msg '<<$prisoner_name>> experiencing the effects of intoxication. Besides, she have not had menstruation for a long time. It looks like she''s pregnant!'
+ msg '<<$prisoner_name>> is experiencing morning sickness and has not menstruated for a long time. It looks like she''s pregnant!'
  prisoner["pregnant_revealed"] = 2
 END
 
 IF prisoner["pregnant_revealed"] = 2 and prisoner["pregnant"] = 0: prisoner["pregnant_revealed"] = 0
+
 --- revelations ---------------------------------
 

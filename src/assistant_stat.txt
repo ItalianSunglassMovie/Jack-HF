@@ -3,7 +3,7 @@
 
 IF $assistant_info_text = '':
 	$assistant_info_text = '   [<<$assistant_name>>]
-  - Newcomer slaves can often try to escape or make any stupid moves. I will watch over them with my comprehension and devotion. But if you order me to supervise over them, then I''ll pay particular attention to this, having to use all my will and fighting skills in order to keep your goods.'
+  - Newcomer slaves will often try to escape or make stupid moves. I will watch over them with attention and devotion. But if you order me to supervise over them, then I''ll pay particular attention to this, having to use all my will and fighting skills in order to keep your goods.'
 	IF slave_state > CONST_INT['no_slave']:
 		gs '$slave_price'
 		$spec_list = 'laborer'
@@ -23,6 +23,7 @@ IF $assistant_info_text = '':
 		END
 	END
 END
+
 
 !reset equip choice menu
 if slot = 0: $equip_choice = ''
@@ -82,6 +83,7 @@ gs 'stats_layout'
 ОСОБЕННОСТИ:
 <<$assistant_features_list>>
 "
+*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & msg $rank_help_3 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !main tab
 !$assistant_info_text = ''&nbsp'' - info text will reset after switching
@@ -101,55 +103,58 @@ IF assistant_stat_screen = 0:
  *p '<div id="right_rules">
 Maid - 
 Cook - 
+Bath master - 
 Bath slave - 
 Accountant - 
 Supervise slave - 
 Alchemist - 
 Milkmaid - 
-<BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR>
 &nbsp&nbsp&nbsp<a style = "color: #FFD700;" href = "EXEC: dynamic $assistant_purge_rules & gt curloc"><u>Reset rules</u></a>
 </div>'  
 
  if sparks > 50: *p '<div id="left_padding">GROCERIES: <BR><BR><BR><BR><BR><BR><BR><BR>DERIVATIVES:<BR><BR><BR><BR><BR>MEAT:<BR><BR><BR><BR><BR></div>'  
  IF assistant_cleans_rule = 1:
-  slave_cleans_rule = 0
+
   *p '<div id="chekbox_1r"><a href = "EXEC: assistant_cleans_rule = 0 & $assistant_info_text = $assistant_cleans_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
   *p '<div id="chekbox_1r"><a href = "EXEC: assistant_cleans_rule = 1 & $assistant_info_text = $assistant_cleans_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END
  IF assistant_cooks_rule = 1:
-  slave_cooks_rule = 0 
+
   *p '<div id="chekbox_2r"><a href = "EXEC: assistant_cooks_rule = 0 & $assistant_info_text =  $assistant_cooks_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
   *p '<div id="chekbox_2r"><a href = "EXEC: assistant_cooks_rule = 1 & $assistant_info_text = $assistant_cooks_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END
  IF assistant_washes_rule = 1:
-  slave_washes_rule = 0
   *p '<div id="chekbox_3r"><a href = "EXEC: assistant_washes_rule = 0 & $assistant_info_text = $assistant_washes_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
   *p '<div id="chekbox_3r"><a href = "EXEC: assistant_washes_rule = 1 & $assistant_info_text = $assistant_washes_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END     
- IF assistant_account_rule = 1:
-  slave_account_rule = 0
-  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_account_rule = 0 & $assistant_info_text = $assistant_account_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+ IF assistant_washe_slave_rule = 1:
+  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_washe_slave_rule = 0 & $assistant_info_text = $assistant_washe_slave_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_account_rule = 1 & $assistant_info_text = $assistant_account_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_washe_slave_rule = 1 & $assistant_info_text = $assistant_washe_slave_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END     
+ IF assistant_account_rule = 1:
+  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_account_rule = 0 & $assistant_info_text = $assistant_account_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_account_rule = 1 & $assistant_info_text = $assistant_account_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END     
  IF assistant_supervise_rule = 1:
-  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_supervise_rule = 0 & $assistant_info_text = $assistant_supervise_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_supervise_rule = 0 & $assistant_info_text = $assistant_supervise_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_supervise_rule = 1 & $assistant_info_text = $assistant_supervise_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_supervise_rule = 1 & $assistant_info_text = $assistant_supervise_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END     
  IF assistant_alchemist_rule = 1:
-  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_alchemist_rule = 0 & $assistant_info_text = $assistant_alchemist_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_alchemist_rule = 0 & $assistant_info_text = $assistant_alchemist_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_alchemist_rule = 1 & $assistant_info_text = $assistant_alchemist_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_alchemist_rule = 1 & $assistant_info_text = $assistant_alchemist_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END   
  IF assistant_tentacle_rule = 1:
-  slave_tentacle_rule = 0
-  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_tentacle_rule = 0 & $assistant_info_text = $assistant_tentacle_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_8r"><a href = "EXEC: assistant_tentacle_rule = 0 & $assistant_info_text = $assistant_tentacle_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_tentacle_rule = 1 & $assistant_info_text = $assistant_tentacle_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_8r"><a href = "EXEC: assistant_tentacle_rule = 1 & $assistant_info_text = $assistant_tentacle_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END   
 
  if kitchen => 0 and sparks > 50: *p '<div id="left_rules">
@@ -444,7 +449,7 @@ IF slave_state = CONST_INT['slave_exist']:
   else
   *p '<div id="study_11"><img src = "content/pic/buttons/study_gray.png"></div>'  
  END    
- IF slave["stamina"] > 1 and assistant["dressage"] > slave["dressage"]:   
+ IF slave["stamina"] > 3 and assistant["dressage"] > slave["dressage"]:   
   *p '<div id="study_12"><a href = "EXEC: interaction = 4143 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
   else
   *p '<div id="study_12"><img src = "content/pic/buttons/study_gray.png"></div>'  
@@ -478,5 +483,6 @@ IF slave_state = CONST_INT['slave_exist']:
 END
 
 *p '<div id="info"><<$assistant_info_text>></div>'
+
 --- assistant_stat ---------------------------------
 

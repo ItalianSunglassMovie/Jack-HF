@@ -59,5 +59,6 @@ txt = 1
 gs 'init_demo_game'
 gs '$newloc'
 GT 'choose_the_girl'
+
 --- start_demo_game ---------------------------------
 

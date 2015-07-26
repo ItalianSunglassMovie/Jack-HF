@@ -50,6 +50,251 @@ IF interaction = 1113:
   $text[1] = $preversion_need
  END    
 END
+IF interaction = 11131:
+ $text[1] = $no_need
+ if slave_1['obedience'] > 4: $text[1] = $no_need_gentle 
+ IF slave_1["passion_comfort"] = 1:
+  $text[1] = $comfort_need
+ END  
+ IF slave_1["passion_luxury"] = 1:
+  $text[1] = $luxury_need
+ END  
+ IF slave_1["passion_sweets"] = 1:
+  $text[1] = $sweets_need
+ END  
+ IF slave_1["passion_fame"] = 1:
+  $text[1] = $fame_need
+ END
+ IF slave_1["abuse_attitude"] = 2 and slave_1['custom'] > 1:
+  $text[1] = $abuse_need
+ END
+ IF slave_1["darkness_attitude"] = 2 and slave_1['custom'] > 1:
+  $text[1] = $darkness_need
+ END
+ IF slave_1["blood_attitude"] = 2 and slave_1['custom'] > 1:
+  $text[1] = $blood_need
+ END 
+ IF slave_1["fire_attitude"] = 2 and slave_1['custom'] > 1:
+  $text[1] = $fire_need
+ END  
+ IF slave_1["water_attitude"] = 2 and slave_1['custom'] > 1:
+  $text[1] = $water_need
+ END  
+ IF slave_1["vermin_attitude"] = 2 and slave_1['custom'] > 1:
+  $text[1] = $vermin_need
+ END  
+ IF slave_1["deprivation_attitude"] = 2 and slave_1['custom'] > 1:
+  $text[1] = $deprivation_need
+ END  
+ IF slave_1["nymphomania"] > 0 and slave_1['arousal'] > 1:
+  $text[1] = $nymphomania_need
+ END
+ IF slave_1["homosexualism"] = 2 and slave_1['arousal'] > 1:
+  $text[1] = $homosexualism_need
+ END
+ IF slave_1["exhibitionism"] = 2 and slave_1['arousal'] > 2:
+  $text[1] = $exhibitionism_need
+ END
+ IF slave_1["preversion"] = 2 and slave_1['arousal'] > 3:
+  $text[1] = $preversion_need
+ END    
+END
+IF interaction = 11132:
+ $text[1] = $no_need
+ if slave_2['obedience'] > 4: $text[1] = $no_need_gentle 
+ IF slave_2["passion_comfort"] = 1:
+  $text[1] = $comfort_need
+ END  
+ IF slave_2["passion_luxury"] = 1:
+  $text[1] = $luxury_need
+ END  
+ IF slave_2["passion_sweets"] = 1:
+  $text[1] = $sweets_need
+ END  
+ IF slave_2["passion_fame"] = 1:
+  $text[1] = $fame_need
+ END
+ IF slave_2["abuse_attitude"] = 2 and slave_2['custom'] > 1:
+  $text[1] = $abuse_need
+ END
+ IF slave_2["darkness_attitude"] = 2 and slave_2['custom'] > 1:
+  $text[1] = $darkness_need
+ END
+ IF slave_2["blood_attitude"] = 2 and slave_2['custom'] > 1:
+  $text[1] = $blood_need
+ END 
+ IF slave_2["fire_attitude"] = 2 and slave_2['custom'] > 1:
+  $text[1] = $fire_need
+ END  
+ IF slave_2["water_attitude"] = 2 and slave_2['custom'] > 1:
+  $text[1] = $water_need
+ END  
+ IF slave_2["vermin_attitude"] = 2 and slave_2['custom'] > 1:
+  $text[1] = $vermin_need
+ END  
+ IF slave_2["deprivation_attitude"] = 2 and slave_2['custom'] > 1:
+  $text[1] = $deprivation_need
+ END  
+ IF slave_2["nymphomania"] > 0 and slave_2['arousal'] > 1:
+  $text[1] = $nymphomania_need
+ END
+ IF slave_2["homosexualism"] = 2 and slave_2['arousal'] > 1:
+  $text[1] = $homosexualism_need
+ END
+ IF slave_2["exhibitionism"] = 2 and slave_2['arousal'] > 2:
+  $text[1] = $exhibitionism_need
+ END
+ IF slave_2["preversion"] = 2 and slave_2['arousal'] > 3:
+  $text[1] = $preversion_need
+ END    
+END
+IF interaction = 11133:
+ $text[1] = $no_need
+ if slave_3['obedience'] > 4: $text[1] = $no_need_gentle 
+ IF slave_3["passion_comfort"] = 1:
+  $text[1] = $comfort_need
+ END  
+ IF slave_3["passion_luxury"] = 1:
+  $text[1] = $luxury_need
+ END  
+ IF slave_3["passion_sweets"] = 1:
+  $text[1] = $sweets_need
+ END  
+ IF slave_3["passion_fame"] = 1:
+  $text[1] = $fame_need
+ END
+ IF slave_3["abuse_attitude"] = 2 and slave_3['custom'] > 1:
+  $text[1] = $abuse_need
+ END
+ IF slave_3["darkness_attitude"] = 2 and slave_3['custom'] > 1:
+  $text[1] = $darkness_need
+ END
+ IF slave_3["blood_attitude"] = 2 and slave_3['custom'] > 1:
+  $text[1] = $blood_need
+ END 
+ IF slave_3["fire_attitude"] = 2 and slave_3['custom'] > 1:
+  $text[1] = $fire_need
+ END  
+ IF slave_3["water_attitude"] = 2 and slave_3['custom'] > 1:
+  $text[1] = $water_need
+ END  
+ IF slave_3["vermin_attitude"] = 2 and slave_3['custom'] > 1:
+  $text[1] = $vermin_need
+ END  
+ IF slave_3["deprivation_attitude"] = 2 and slave_3['custom'] > 1:
+  $text[1] = $deprivation_need
+ END  
+ IF slave_3["nymphomania"] > 0 and slave_3['arousal'] > 1:
+  $text[1] = $nymphomania_need
+ END
+ IF slave_3["homosexualism"] = 2 and slave_3['arousal'] > 1:
+  $text[1] = $homosexualism_need
+ END
+ IF slave_3["exhibitionism"] = 2 and slave_3['arousal'] > 2:
+  $text[1] = $exhibitionism_need
+ END
+ IF slave_3["preversion"] = 2 and slave_3['arousal'] > 3:
+  $text[1] = $preversion_need
+ END    
+END
+IF interaction = 11134:
+ $text[1] = $no_need
+ if slave_4['obedience'] > 4: $text[1] = $no_need_gentle 
+ IF slave_4["passion_comfort"] = 1:
+  $text[1] = $comfort_need
+ END  
+ IF slave_4["passion_luxury"] = 1:
+  $text[1] = $luxury_need
+ END  
+ IF slave_4["passion_sweets"] = 1:
+  $text[1] = $sweets_need
+ END  
+ IF slave_4["passion_fame"] = 1:
+  $text[1] = $fame_need
+ END
+ IF slave_4["abuse_attitude"] = 2 and slave_4['custom'] > 1:
+  $text[1] = $abuse_need
+ END
+ IF slave_4["darkness_attitude"] = 2 and slave_4['custom'] > 1:
+  $text[1] = $darkness_need
+ END
+ IF slave_4["blood_attitude"] = 2 and slave_4['custom'] > 1:
+  $text[1] = $blood_need
+ END 
+ IF slave_4["fire_attitude"] = 2 and slave_4['custom'] > 1:
+  $text[1] = $fire_need
+ END  
+ IF slave_4["water_attitude"] = 2 and slave_4['custom'] > 1:
+  $text[1] = $water_need
+ END  
+ IF slave_4["vermin_attitude"] = 2 and slave_4['custom'] > 1:
+  $text[1] = $vermin_need
+ END  
+ IF slave_4["deprivation_attitude"] = 2 and slave_4['custom'] > 1:
+  $text[1] = $deprivation_need
+ END  
+ IF slave_4["nymphomania"] > 0 and slave_4['arousal'] > 1:
+  $text[1] = $nymphomania_need
+ END
+ IF slave_4["homosexualism"] = 2 and slave_4['arousal'] > 1:
+  $text[1] = $homosexualism_need
+ END
+ IF slave_4["exhibitionism"] = 2 and slave_4['arousal'] > 2:
+  $text[1] = $exhibitionism_need
+ END
+ IF slave_4["preversion"] = 2 and slave_4['arousal'] > 3:
+  $text[1] = $preversion_need
+ END    
+END
+IF interaction = 11135:
+ $text[1] = $no_need
+ if slave_5['obedience'] > 4: $text[1] = $no_need_gentle 
+ IF slave_5["passion_comfort"] = 1:
+  $text[1] = $comfort_need
+ END  
+ IF slave_5["passion_luxury"] = 1:
+  $text[1] = $luxury_need
+ END  
+ IF slave_5["passion_sweets"] = 1:
+  $text[1] = $sweets_need
+ END  
+ IF slave_5["passion_fame"] = 1:
+  $text[1] = $fame_need
+ END
+ IF slave_5["abuse_attitude"] = 2 and slave_5['custom'] > 1:
+  $text[1] = $abuse_need
+ END
+ IF slave_5["darkness_attitude"] = 2 and slave_5['custom'] > 1:
+  $text[1] = $darkness_need
+ END
+ IF slave_5["blood_attitude"] = 2 and slave_5['custom'] > 1:
+  $text[1] = $blood_need
+ END 
+ IF slave_5["fire_attitude"] = 2 and slave_5['custom'] > 1:
+  $text[1] = $fire_need
+ END  
+ IF slave_5["water_attitude"] = 2 and slave_5['custom'] > 1:
+  $text[1] = $water_need
+ END  
+ IF slave_5["vermin_attitude"] = 2 and slave_5['custom'] > 1:
+  $text[1] = $vermin_need
+ END  
+ IF slave_5["deprivation_attitude"] = 2 and slave_5['custom'] > 1:
+  $text[1] = $deprivation_need
+ END  
+ IF slave_5["nymphomania"] > 0 and slave_5['arousal'] > 1:
+  $text[1] = $nymphomania_need
+ END
+ IF slave_5["homosexualism"] = 2 and slave_5['arousal'] > 1:
+  $text[1] = $homosexualism_need
+ END
+ IF slave_5["exhibitionism"] = 2 and slave_5['arousal'] > 2:
+  $text[1] = $exhibitionism_need
+ END
+ IF slave_5["preversion"] = 2 and slave_5['arousal'] > 3:
+  $text[1] = $preversion_need
+ END    
+END
 
 IF interaction = 1114:
  $text[1] = $no_like
@@ -91,6 +336,221 @@ IF interaction = 1114:
   $text[1] = $callisthenics_like
  END    
  IF slave["secretary_affinity"] > 0:
+  $text[1] = $secretary_like
+ END    
+END
+IF interaction = 11141:
+ $text[1] = $no_like
+ if slave_1['obedience'] > 3: $text[1] = $no_like_gentle 
+ IF slave_1["sport_affinity"] = 2:
+  $text[1] = $sport_like
+ END  
+ IF slave_1["expression_affinity"] > 0:
+  $text[1] = $expression_like
+ END   
+ IF slave_1["pet_affinity"] > 0:
+  $text[1] = $pet_like
+ END  
+ IF slave_1["dressage_affinity"] > 0:
+  $text[1] = $dressage_like
+ END  
+ IF slave_1["nurse_affinity"] > 0:
+  $text[1] = $nurse_like
+ END  
+ IF slave_1["service_affinity"] > 0:
+  $text[1] = $service_like
+ END  
+ IF slave_1["cook_affinity"] > 0:
+  $text[1] = $cook_like
+ END  
+ IF slave_1["gladiatrix_affinity"] > 0:
+  $text[1] = $gladiatrix_like
+ END  
+ IF slave_1["enchanter_affinity"] > 0:
+  $text[1] = $enchanter_like
+ END  
+ IF slave_1["vocal_affinity"] > 0:
+  $text[1] = $vocal_like
+ END  
+ IF slave_1["music_affinity"] > 0:
+  $text[1] = $music_like
+ END  
+ IF slave_1["callisthenics_affinity"] > 0:
+  $text[1] = $callisthenics_like
+ END    
+ IF slave_1["secretary_affinity"] > 0:
+  $text[1] = $secretary_like
+ END    
+END
+IF interaction = 11142:
+ $text[1] = $no_like
+ if slave_2['obedience'] > 3: $text[1] = $no_like_gentle 
+ IF slave_2["sport_affinity"] = 2:
+  $text[1] = $sport_like
+ END  
+ IF slave_2["expression_affinity"] > 0:
+  $text[1] = $expression_like
+ END   
+ IF slave_2["pet_affinity"] > 0:
+  $text[1] = $pet_like
+ END  
+ IF slave_2["dressage_affinity"] > 0:
+  $text[1] = $dressage_like
+ END  
+ IF slave_2["nurse_affinity"] > 0:
+  $text[1] = $nurse_like
+ END  
+ IF slave_2["service_affinity"] > 0:
+  $text[1] = $service_like
+ END  
+ IF slave_2["cook_affinity"] > 0:
+  $text[1] = $cook_like
+ END  
+ IF slave_2["gladiatrix_affinity"] > 0:
+  $text[1] = $gladiatrix_like
+ END  
+ IF slave_2["enchanter_affinity"] > 0:
+  $text[1] = $enchanter_like
+ END  
+ IF slave_2["vocal_affinity"] > 0:
+  $text[1] = $vocal_like
+ END  
+ IF slave_2["music_affinity"] > 0:
+  $text[1] = $music_like
+ END  
+ IF slave_2["callisthenics_affinity"] > 0:
+  $text[1] = $callisthenics_like
+ END    
+ IF slave_2["secretary_affinity"] > 0:
+  $text[1] = $secretary_like
+ END    
+END
+IF interaction = 11143:
+ $text[1] = $no_like
+ if slave_3['obedience'] > 3: $text[1] = $no_like_gentle 
+ IF slave_3["sport_affinity"] = 2:
+  $text[1] = $sport_like
+ END  
+ IF slave_3["expression_affinity"] > 0:
+  $text[1] = $expression_like
+ END   
+ IF slave_3["pet_affinity"] > 0:
+  $text[1] = $pet_like
+ END  
+ IF slave_3["dressage_affinity"] > 0:
+  $text[1] = $dressage_like
+ END  
+ IF slave_3["nurse_affinity"] > 0:
+  $text[1] = $nurse_like
+ END  
+ IF slave_3["service_affinity"] > 0:
+  $text[1] = $service_like
+ END  
+ IF slave_3["cook_affinity"] > 0:
+  $text[1] = $cook_like
+ END  
+ IF slave_3["gladiatrix_affinity"] > 0:
+  $text[1] = $gladiatrix_like
+ END  
+ IF slave_3["enchanter_affinity"] > 0:
+  $text[1] = $enchanter_like
+ END  
+ IF slave_3["vocal_affinity"] > 0:
+  $text[1] = $vocal_like
+ END  
+ IF slave_3["music_affinity"] > 0:
+  $text[1] = $music_like
+ END  
+ IF slave_3["callisthenics_affinity"] > 0:
+  $text[1] = $callisthenics_like
+ END    
+ IF slave_3["secretary_affinity"] > 0:
+  $text[1] = $secretary_like
+ END    
+END
+IF interaction = 11144:
+ $text[1] = $no_like
+ if slave_4['obedience'] > 3: $text[1] = $no_like_gentle 
+ IF slave_4["sport_affinity"] = 2:
+  $text[1] = $sport_like
+ END  
+ IF slave_4["expression_affinity"] > 0:
+  $text[1] = $expression_like
+ END   
+ IF slave_4["pet_affinity"] > 0:
+  $text[1] = $pet_like
+ END  
+ IF slave_4["dressage_affinity"] > 0:
+  $text[1] = $dressage_like
+ END  
+ IF slave_4["nurse_affinity"] > 0:
+  $text[1] = $nurse_like
+ END  
+ IF slave_4["service_affinity"] > 0:
+  $text[1] = $service_like
+ END  
+ IF slave_4["cook_affinity"] > 0:
+  $text[1] = $cook_like
+ END  
+ IF slave_4["gladiatrix_affinity"] > 0:
+  $text[1] = $gladiatrix_like
+ END  
+ IF slave_4["enchanter_affinity"] > 0:
+  $text[1] = $enchanter_like
+ END  
+ IF slave_4["vocal_affinity"] > 0:
+  $text[1] = $vocal_like
+ END  
+ IF slave_4["music_affinity"] > 0:
+  $text[1] = $music_like
+ END  
+ IF slave_4["callisthenics_affinity"] > 0:
+  $text[1] = $callisthenics_like
+ END    
+ IF slave_4["secretary_affinity"] > 0:
+  $text[1] = $secretary_like
+ END    
+END
+IF interaction = 11145:
+ $text[1] = $no_like
+ if slave_5['obedience'] > 3: $text[1] = $no_like_gentle 
+ IF slave_5["sport_affinity"] = 2:
+  $text[1] = $sport_like
+ END  
+ IF slave_5["expression_affinity"] > 0:
+  $text[1] = $expression_like
+ END   
+ IF slave_5["pet_affinity"] > 0:
+  $text[1] = $pet_like
+ END  
+ IF slave_5["dressage_affinity"] > 0:
+  $text[1] = $dressage_like
+ END  
+ IF slave_5["nurse_affinity"] > 0:
+  $text[1] = $nurse_like
+ END  
+ IF slave_5["service_affinity"] > 0:
+  $text[1] = $service_like
+ END  
+ IF slave_5["cook_affinity"] > 0:
+  $text[1] = $cook_like
+ END  
+ IF slave_5["gladiatrix_affinity"] > 0:
+  $text[1] = $gladiatrix_like
+ END  
+ IF slave_5["enchanter_affinity"] > 0:
+  $text[1] = $enchanter_like
+ END  
+ IF slave_5["vocal_affinity"] > 0:
+  $text[1] = $vocal_like
+ END  
+ IF slave_5["music_affinity"] > 0:
+  $text[1] = $music_like
+ END  
+ IF slave_5["callisthenics_affinity"] > 0:
+  $text[1] = $callisthenics_like
+ END    
+ IF slave_5["secretary_affinity"] > 0:
   $text[1] = $secretary_like
  END    
 END
@@ -141,6 +601,251 @@ IF interaction = 1115:
   $text[1] = $exhibitionism_dislike
  END
  IF slave["preversion"] = -1 and slave['arousal'] > 2:
+  $text[1] = $preversion_dislike
+ END    
+END
+IF interaction = 11151:
+ $text[1] = $hide_dislikes
+ if slave_1['obedience'] > 3: $text[1] = $no_dislike
+ IF slave_1["nymphomania"] < 0:
+  $text[1] = $nymphomania_dislike
+ END 
+ IF slave_1["passion_comfort"] = -1:
+  $text[1] = $comfort_dislike
+ END  
+ IF slave_1["passion_luxury"] = -1:
+  $text[1] = $luxury_dislike
+ END  
+ IF slave_1["passion_sweets"] = -1:
+  $text[1] = $sweets_dislike
+ END  
+ IF slave_1["passion_fame"] = -1:
+  $text[1] = $fame_dislike
+ END
+ IF slave_1["abuse_attitude"] = -1 and slave_1['instinct'] > 0:
+  $text[1] = $abuse_dislike
+ END
+ IF slave_1["darkness_attitude"] = -1 and slave_1['instinct'] > 0:
+  $text[1] = $darkness_dislike
+ END
+ IF slave_1["blood_attitude"] = -1 and slave_1['instinct'] > 0:
+  $text[1] = $blood_dislike
+ END 
+ IF slave_1["fire_attitude"] = -1 and slave_1['instinct'] > 0:
+  $text[1] = $fire_dislike
+ END  
+ IF slave_1["water_attitude"] = -1 and slave_1['instinct'] > 0:
+  $text[1] = $water_dislike
+ END  
+ IF slave_1["vermin_attitude"] = -1 and slave_1['instinct'] > 0:
+  $text[1] = $vermin_dislike
+ END  
+ IF slave_1["deprivation_attitude"] = -1 and slave_1['instinct'] > 0:
+  $text[1] = $deprivation_dislike
+ END  
+ IF slave_1["homosexualism"] = -1 and slave_1['arousal'] > 0:
+  $text[1] = $homosexualism_dislike
+ END
+ IF slave_1["exhibitionism"] = -1 and slave_1['arousal'] > 1:
+  $text[1] = $exhibitionism_dislike
+ END
+ IF slave_1["preversion"] = -1 and slave_1['arousal'] > 2:
+  $text[1] = $preversion_dislike
+ END    
+END
+IF interaction = 11152:
+ $text[1] = $hide_dislikes
+ if slave_2['obedience'] > 3: $text[1] = $no_dislike
+ IF slave_2["nymphomania"] < 0:
+  $text[1] = $nymphomania_dislike
+ END 
+ IF slave_2["passion_comfort"] = -1:
+  $text[1] = $comfort_dislike
+ END  
+ IF slave_2["passion_luxury"] = -1:
+  $text[1] = $luxury_dislike
+ END  
+ IF slave_2["passion_sweets"] = -1:
+  $text[1] = $sweets_dislike
+ END  
+ IF slave_2["passion_fame"] = -1:
+  $text[1] = $fame_dislike
+ END
+ IF slave_2["abuse_attitude"] = -1 and slave_2['instinct'] > 0:
+  $text[1] = $abuse_dislike
+ END
+ IF slave_2["darkness_attitude"] = -1 and slave_2['instinct'] > 0:
+  $text[1] = $darkness_dislike
+ END
+ IF slave_2["blood_attitude"] = -1 and slave_2['instinct'] > 0:
+  $text[1] = $blood_dislike
+ END 
+ IF slave_2["fire_attitude"] = -1 and slave_2['instinct'] > 0:
+  $text[1] = $fire_dislike
+ END  
+ IF slave_2["water_attitude"] = -1 and slave_2['instinct'] > 0:
+  $text[1] = $water_dislike
+ END  
+ IF slave_2["vermin_attitude"] = -1 and slave_2['instinct'] > 0:
+  $text[1] = $vermin_dislike
+ END  
+ IF slave_2["deprivation_attitude"] = -1 and slave_2['instinct'] > 0:
+  $text[1] = $deprivation_dislike
+ END  
+ IF slave_2["homosexualism"] = -1 and slave_2['arousal'] > 0:
+  $text[1] = $homosexualism_dislike
+ END
+ IF slave_2["exhibitionism"] = -1 and slave_2['arousal'] > 1:
+  $text[1] = $exhibitionism_dislike
+ END
+ IF slave_2["preversion"] = -1 and slave_2['arousal'] > 2:
+  $text[1] = $preversion_dislike
+ END    
+END
+IF interaction = 11153:
+ $text[1] = $hide_dislikes
+ if slave_3['obedience'] > 3: $text[1] = $no_dislike
+ IF slave_3["nymphomania"] < 0:
+  $text[1] = $nymphomania_dislike
+ END 
+ IF slave_3["passion_comfort"] = -1:
+  $text[1] = $comfort_dislike
+ END  
+ IF slave_3["passion_luxury"] = -1:
+  $text[1] = $luxury_dislike
+ END  
+ IF slave_3["passion_sweets"] = -1:
+  $text[1] = $sweets_dislike
+ END  
+ IF slave_3["passion_fame"] = -1:
+  $text[1] = $fame_dislike
+ END
+ IF slave_3["abuse_attitude"] = -1 and slave_3['instinct'] > 0:
+  $text[1] = $abuse_dislike
+ END
+ IF slave_3["darkness_attitude"] = -1 and slave_3['instinct'] > 0:
+  $text[1] = $darkness_dislike
+ END
+ IF slave_3["blood_attitude"] = -1 and slave_3['instinct'] > 0:
+  $text[1] = $blood_dislike
+ END 
+ IF slave_3["fire_attitude"] = -1 and slave_3['instinct'] > 0:
+  $text[1] = $fire_dislike
+ END  
+ IF slave_3["water_attitude"] = -1 and slave_3['instinct'] > 0:
+  $text[1] = $water_dislike
+ END  
+ IF slave_3["vermin_attitude"] = -1 and slave_3['instinct'] > 0:
+  $text[1] = $vermin_dislike
+ END  
+ IF slave_3["deprivation_attitude"] = -1 and slave_3['instinct'] > 0:
+  $text[1] = $deprivation_dislike
+ END  
+ IF slave_3["homosexualism"] = -1 and slave_3['arousal'] > 0:
+  $text[1] = $homosexualism_dislike
+ END
+ IF slave_3["exhibitionism"] = -1 and slave_3['arousal'] > 1:
+  $text[1] = $exhibitionism_dislike
+ END
+ IF slave_3["preversion"] = -1 and slave_3['arousal'] > 2:
+  $text[1] = $preversion_dislike
+ END    
+END
+IF interaction = 11154:
+ $text[1] = $hide_dislikes
+ if slave_4['obedience'] > 3: $text[1] = $no_dislike
+ IF slave_4["nymphomania"] < 0:
+  $text[1] = $nymphomania_dislike
+ END 
+ IF slave_4["passion_comfort"] = -1:
+  $text[1] = $comfort_dislike
+ END  
+ IF slave_4["passion_luxury"] = -1:
+  $text[1] = $luxury_dislike
+ END  
+ IF slave_4["passion_sweets"] = -1:
+  $text[1] = $sweets_dislike
+ END  
+ IF slave_4["passion_fame"] = -1:
+  $text[1] = $fame_dislike
+ END
+ IF slave_4["abuse_attitude"] = -1 and slave_4['instinct'] > 0:
+  $text[1] = $abuse_dislike
+ END
+ IF slave_4["darkness_attitude"] = -1 and slave_4['instinct'] > 0:
+  $text[1] = $darkness_dislike
+ END
+ IF slave_4["blood_attitude"] = -1 and slave_4['instinct'] > 0:
+  $text[1] = $blood_dislike
+ END 
+ IF slave_4["fire_attitude"] = -1 and slave_4['instinct'] > 0:
+  $text[1] = $fire_dislike
+ END  
+ IF slave_4["water_attitude"] = -1 and slave_4['instinct'] > 0:
+  $text[1] = $water_dislike
+ END  
+ IF slave_4["vermin_attitude"] = -1 and slave_4['instinct'] > 0:
+  $text[1] = $vermin_dislike
+ END  
+ IF slave_4["deprivation_attitude"] = -1 and slave_4['instinct'] > 0:
+  $text[1] = $deprivation_dislike
+ END  
+ IF slave_4["homosexualism"] = -1 and slave_4['arousal'] > 0:
+  $text[1] = $homosexualism_dislike
+ END
+ IF slave_4["exhibitionism"] = -1 and slave_4['arousal'] > 1:
+  $text[1] = $exhibitionism_dislike
+ END
+ IF slave_4["preversion"] = -1 and slave_4['arousal'] > 2:
+  $text[1] = $preversion_dislike
+ END    
+END
+IF interaction = 11155:
+ $text[1] = $hide_dislikes
+ if slave_5['obedience'] > 3: $text[1] = $no_dislike
+ IF slave_5["nymphomania"] < 0:
+  $text[1] = $nymphomania_dislike
+ END 
+ IF slave_5["passion_comfort"] = -1:
+  $text[1] = $comfort_dislike
+ END  
+ IF slave_5["passion_luxury"] = -1:
+  $text[1] = $luxury_dislike
+ END  
+ IF slave_5["passion_sweets"] = -1:
+  $text[1] = $sweets_dislike
+ END  
+ IF slave_5["passion_fame"] = -1:
+  $text[1] = $fame_dislike
+ END
+ IF slave_5["abuse_attitude"] = -1 and slave_5['instinct'] > 0:
+  $text[1] = $abuse_dislike
+ END
+ IF slave_5["darkness_attitude"] = -1 and slave_5['instinct'] > 0:
+  $text[1] = $darkness_dislike
+ END
+ IF slave_5["blood_attitude"] = -1 and slave_5['instinct'] > 0:
+  $text[1] = $blood_dislike
+ END 
+ IF slave_5["fire_attitude"] = -1 and slave_5['instinct'] > 0:
+  $text[1] = $fire_dislike
+ END  
+ IF slave_5["water_attitude"] = -1 and slave_5['instinct'] > 0:
+  $text[1] = $water_dislike
+ END  
+ IF slave_5["vermin_attitude"] = -1 and slave_5['instinct'] > 0:
+  $text[1] = $vermin_dislike
+ END  
+ IF slave_5["deprivation_attitude"] = -1 and slave_5['instinct'] > 0:
+  $text[1] = $deprivation_dislike
+ END  
+ IF slave_5["homosexualism"] = -1 and slave_5['arousal'] > 0:
+  $text[1] = $homosexualism_dislike
+ END
+ IF slave_5["exhibitionism"] = -1 and slave_5['arousal'] > 1:
+  $text[1] = $exhibitionism_dislike
+ END
+ IF slave_5["preversion"] = -1 and slave_5['arousal'] > 2:
   $text[1] = $preversion_dislike
  END    
 END

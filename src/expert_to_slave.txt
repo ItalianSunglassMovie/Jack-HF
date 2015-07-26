@@ -42,18 +42,33 @@ if slave["bruises"] = 2: slave_rate["bruises"] = 20
 if slave["bruises"] = 3: slave_rate["bruises"] = 40
 if slave["bruises"] = 4: slave_rate["bruises"] = 80
 if slave["bruises"] = 5: slave_rate["bruises"] = 160
+if slave["bruises"] = 6: slave_rate["bruises"] = 160
+if slave["bruises"] = 7: slave_rate["bruises"] = 160
+if slave["bruises"] = 8: slave_rate["bruises"] = 160
+if slave["bruises"] = 9: slave_rate["bruises"] = 160
+if slave["bruises"] = 10: slave_rate["bruises"] = 160
 
 if slave["scares"] = 1: slave_rate["scares"] = 10
 if slave["scares"] = 2: slave_rate["scares"] = 20
 if slave["scares"] = 3: slave_rate["scares"] = 40
 if slave["scares"] = 4: slave_rate["scares"] = 80
 if slave["scares"] = 5: slave_rate["scares"] = 160
+if slave["scares"] = 6: slave_rate["scares"] = 160
+if slave["scares"] = 7: slave_rate["scares"] = 160
+if slave["scares"] = 8: slave_rate["scares"] = 160
+if slave["scares"] = 9: slave_rate["scares"] = 160
+if slave["scares"] = 10: slave_rate["scares"] = 160
 
 if slave["hygiene"] = 1: slave_rate["hygiene"] = 10
 if slave["hygiene"] = 2: slave_rate["hygiene"] = 20
 if slave["hygiene"] = 3: slave_rate["hygiene"] = 40
 if slave["hygiene"] = 4: slave_rate["hygiene"] = 80
 if slave["hygiene"] = 5: slave_rate["hygiene"] = 160
+if slave["hygiene"] = 6: slave_rate["hygiene"] = 160
+if slave["hygiene"] = 7: slave_rate["hygiene"] = 160
+if slave["hygiene"] = 8: slave_rate["hygiene"] = 160
+if slave["hygiene"] = 9: slave_rate["hygiene"] = 160
+if slave["hygiene"] = 10: slave_rate["hygiene"] = 160
 
 master_mood['pos_new_slave'] = 6 - brand_reputation
 

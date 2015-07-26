@@ -16,6 +16,9 @@ END
 IF $picture_type = 'slave_picture':
  if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
 END
+IF $picture_type = 'assistant_picture':
+ if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>'
+END
 IF $picture_type = 'stock_picture':
  if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$fullimage[stock_type]>>.gif"></div>'
 END
@@ -52,12 +55,15 @@ IF npc = 9999:
   *p '<div id = "interaction_stat_bar">
 <u>SUMMARY</u>
 <<$beauty[stock["beauty"]]>> 
-<<$stamina[stock["stamina"]]>> 
+<<$stamina[stock["stamina"]]>>  
 <<$exotic[stock["exotic"]]>> 
 <<$fat[stock["fat"]]>> 
-<<$sensitivity[stock["sensitivity"]]>> 
+<<$sensitivity[stock["sensitivity"]]>>  
 <<$style[stock["style"]]>> 
+<<$intellect[stock["intellect"]]>> 
 <<$temper[stock["temper"]]>> 
+<<$ego[stock["ego"]]>> 
+<<$pride[stock["pride"]]>> 
 
 <u>TRAITS</u>
 <<$stock_features_list>>

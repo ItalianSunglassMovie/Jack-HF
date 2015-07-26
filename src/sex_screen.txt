@@ -78,13 +78,13 @@ END
 
 IF sex_num = 100:
  IF exam_in_progress = 1:
-  *p '<div style="position:absolute;top:176px;left:244px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:156px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3 & music_off = 1><img src="content/pic/buttons/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6 & sound_off = 1><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:196px;left:244px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
+  *p '<div style="position:absolute;top:176px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
   else
-  *p '<div style="position:absolute;top:376px;left:244px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
-  *p '<div style="position:absolute;top:356px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3 & music_off = 1><img src="content/pic/buttons/close_button.png"></a></TD></TR>
-<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6 & sound_off = 1><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
+  *p '<div style="position:absolute;top:396px;left:244px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
+  *p '<div style="position:absolute;top:376px;left:268px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+<TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
  END
 END
 
@@ -179,5 +179,6 @@ if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 Качество: <<quality>>
 Сложность: <<diff>>
 Баланс: <<balance>>" 
+
 --- sex_screen ---------------------------------
 

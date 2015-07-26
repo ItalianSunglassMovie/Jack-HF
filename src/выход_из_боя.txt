@@ -66,17 +66,17 @@ END
 !misc
 IF $враг[1] = 'воспитуемая':
  energy_max = slave["energy"]
- if выносливость_врага[1] < 5: slave["energy"] = -5
- if выносливость_врага[1] => 10: slave["energy"] = -4
- if выносливость_врага[1] => 20: slave["energy"] = -3
- if выносливость_врага[1] => 30: slave["energy"] = -2
- if выносливость_врага[1] => 40: slave["energy"] = -1
+ if выносливость_врага[1] < 5: slave["energy"] = -15
+ if выносливость_врага[1] => 10: slave["energy"] = -12
+ if выносливость_врага[1] => 20: slave["energy"] = -9
+ if выносливость_врага[1] => 30: slave["energy"] = -6
+ if выносливость_врага[1] => 40: slave["energy"] = -3
  if выносливость_врага[1] => 50: slave["energy"] = 0
- if выносливость_врага[1] => 55: slave["energy"] = 1
- if выносливость_врага[1] => 60: slave["energy"] = 2
- if выносливость_врага[1] => 65: slave["energy"] = 3
- if выносливость_врага[1] => 70: slave["energy"] = 4
- if выносливость_врага[1] => 75: slave["energy"] = 5
+ if выносливость_врага[1] => 55: slave["energy"] = 3
+ if выносливость_врага[1] => 60: slave["energy"] = 6
+ if выносливость_врага[1] => 65: slave["energy"] = 9
+ if выносливость_врага[1] => 70: slave["energy"] = 12
+ if выносливость_врага[1] => 75: slave["energy"] = 15
  if slave["energy"] > energy_max: slave["energy"] = energy_max
 
  bash_damage_done = базовая_выносливость['воспитуемая'] - выносливость_врага[1]
@@ -159,17 +159,17 @@ if master_wounds_rate > 0: master_mood['neg_wounded'] = 1
 
 IF combatant = 0:
  energy_max = master_energy 
- if выносливость_игрока < 5: master_energy = -5
- if выносливость_игрока => 10: master_energy = -4
- if выносливость_игрока => 20: master_energy = -3
- if выносливость_игрока => 30: master_energy = -2
- if выносливость_игрока => 40: master_energy = -1
+ if выносливость_игрока < 15: master_energy = -15
+ if выносливость_игрока => 10: master_energy = -12
+ if выносливость_игрока => 20: master_energy = -9
+ if выносливость_игрока => 30: master_energy = -7
+ if выносливость_игрока => 40: master_energy = -3
  if выносливость_игрока => 50: master_energy = 0
- if выносливость_игрока => 55: master_energy = 1
- if выносливость_игрока => 60: master_energy = 2
- if выносливость_игрока => 65: master_energy = 3
- if выносливость_игрока => 70: master_energy = 4
- if выносливость_игрока => 75: master_energy = 5
+ if выносливость_игрока => 55: master_energy = 3
+ if выносливость_игрока => 60: master_energy = 7
+ if выносливость_игрока => 65: master_energy = 9
+ if выносливость_игрока => 70: master_energy = 12
+ if выносливость_игрока => 75: master_energy = 15
  if master_energy > energy_max: master_energy = energy_max
 END 
 
@@ -186,14 +186,14 @@ IF get_girl = 1:
  gs 'generate_stock'
  won_slave_minimum_value -= 5
  IF stock_base_price < won_slave_minimum_value: jump 'won_slave_calc'
- IF won_slave_ill = 1:
+ IF won_slave['ill'] = 1:
   b = RAND (1,5)
   if stock['stamina'] < b: stock['ill'] = 1
  END
- IF won_slave_parasite = 1:
+ IF won_slave['parasite'] = 1:
   if stock['fertility'] => 0: stock['parasite'] = 1
  END
- IF won_slave_deflowered = 1:
+ IF won_slave['deflowered'] = 1:
   if stock_virginity < 2: stock_virginity = 2
  END
  IF slave_state = CONST_INT['no_slave']:
@@ -208,5 +208,6 @@ END
 
 
 gt 'hard_return'
+
 --- выход_из_боя ---------------------------------
 

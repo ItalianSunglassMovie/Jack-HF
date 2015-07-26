@@ -17,28 +17,37 @@ END
 IF sl_txt = 1:
  client_statisfaction = 1
  $text[1] = '   You honestly explain the abilities and qualities of your slave, as they perfectly meet the stated requirements. The average price of slaves with <<$rating[rating]>> rating on the market is about <<common_price[rating]>> sparks, but you can try to get more money.'
- $text_display += "<br><br><br><br><br><div id=""under""> Bargain<br><div id = ""clear""><a href = 'EXEC: sl_txt = 11 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += "<br><div id=""under""> Hold firm price<br><div id = ""clear""><a href = 'EXEC: sl_txt = 12 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += "<br><div id=""under""> Make a discount<br><div id = ""clear""><a href = 'EXEC: sl_txt = 13 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += {<br><div id="under"> Cancel the deal<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Bargain, 'sl_txt = 11 & gt $curloc', 'Bargain')
+ FUNC('$menu', 'exec_options', $menu_item_Hold_price, 'sl_txt = 12 & gt $curloc', 'Hold firm price')
+ FUNC('$menu', 'exec_options', $menu_item_Make_discount, 'sl_txt = 13 & gt $curloc', 'Make a discount')
+ FUNC('$menu', 'exec_options', $menu_item_Cancel_deal, 'gt "menu_form"', 'Cancel the deal')
+ FUNC('$menu', '===END===')
 END
 
 IF sl_txt = 2:
  client_statisfaction = 1 + rating - demand_rating[$npc_id]
  $text[1] = '   Base rating of your slave is even higher than customer expectations. Unfortunately this does not mean that the price will be better - payment is offered based on the rating <<$rating[demand_rating[$npc_id]]>>, price on the market for this rating is about <<common_price[demand_rating[$npc_id]]>> sparks. Maybe you can get a better price.'
- $text_display += "<br><br><br><br><br><div id=""under""> Bargain<br><div id = ""clear""><a href = 'EXEC: sl_txt = 11 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += "<br><div id=""under""> Hold firm price<br><div id = ""clear""><a href = 'EXEC: sl_txt = 12 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += "<br><div id=""under""> Make a discount<br><div id = ""clear""><a href = 'EXEC: sl_txt = 13 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += {<br><div id="under"> Cancel the deal<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Bargain, 'sl_txt = 11 & gt $curloc', 'Bargain')
+ FUNC('$menu', 'exec_options', $menu_item_Hold_price, 'sl_txt = 12 & gt $curloc', 'Hold firm price')
+ FUNC('$menu', 'exec_options', $menu_item_Make_discount, 'sl_txt = 13 & gt $curloc', 'Make a discount')
+ FUNC('$menu', 'exec_options', $menu_item_Cancel_deal, 'gt "menu_form"', 'Cancel the deal')
+ FUNC('$menu', '===END===')
 END
 
 IF sl_txt = 3:
  client_statisfaction = -2
  $text[1] = '   You slightly embellished slave''s skills, so she will fit the client''s requirements. Client ready to buy a slave with rating <<$rating[demand_rating[$npc_id]]>>, price on the market for this rating is about <<common_price[demand_rating[$npc_id]]>> sparks. But you can still grow insolent and bargain.' 
- $text_display += "<br><br><br><br><br><div id=""under""> Bargain<br><div id = ""clear""><a href = 'EXEC: sl_txt = 11 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += "<br><div id=""under""> Hold firm price<br><div id = ""clear""><a href = 'EXEC: sl_txt = 12 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += "<br><div id=""under""> Make a discount<br><div id = ""clear""><a href = 'EXEC: sl_txt = 13 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += {<br><div id="under"> Cancel the deal<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Bargain, 'sl_txt = 11 & gt $curloc', 'Bargain')
+ FUNC('$menu', 'exec_options', $menu_item_Hold_price, 'sl_txt = 12 & gt $curloc', 'Hold firm price')
+ FUNC('$menu', 'exec_options', $menu_item_Make_discount, 'sl_txt = 13 & gt $curloc', 'Make a discount')
+ FUNC('$menu', 'exec_options', $menu_item_Cancel_deal, 'gt "menu_form"', 'Cancel the deal')
+ FUNC('$menu', '===END===')
 END
 
 IF sl_txt = 11:
@@ -68,24 +77,36 @@ END
 
 IF sl_txt = 100:
  $text[1] = '  The client examines the slave and refuses without even listening to price bids. You must be attentive to the individual wishes and preferences of each customer.'
- $text_display += {<br><br><br><br><br><br><div id="under">- No deal<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 6)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Cancel_deal, 'gt "menu_form"', 'No deal')
+ FUNC('$menu', '===END===')
 END
 
 IF sl_txt = 101:
  $text[1] = '  The client examines the slave and refuses without even listening to price bids. In order to motivate such a customer, you have to raise the rating of your slave to no less than <<$rating[demand_rating[$npc_id]]>>.'
- $text_display += {<br><br><br><br><br><br><div id="under">- No deal<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 6)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Cancel_deal, 'gt "menu_form"', 'No deal')
+ FUNC('$menu', '===END===')
 END
 
 IF sl_txt = 102:
  $text[1] = '  Client interrogates you about the abilities of your slave to understand whether she is good enough. But only you know that she is not, but you can embellish a little...'
- $text_display += "<br><br><br><br><br><div id=""under""> Lie about slave abilities<br><div id = ""clear""><a href = 'EXEC: sl_txt = 3 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
- $text_display += {<br><div id="under"> Cancel the deal<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Lie_about_slave, 'sl_txt = 3 & gt $curloc', 'Lie about slave abilities')
+ FUNC('$menu', 'exec_options', $menu_item_Cancel_deal, 'gt "menu_form"', 'No deal')
+ FUNC('$menu', '===END===')
  if wizard_mode = 1: msg 'Disability: <<$flaw_msg>>'
 END
 
 IF sl_txt = 103:
  $text[1] = '  The client examines the slave and refuses without even listening to price bids. It''s not about the quality of training, the client just didn''t like something in her. Well, the customer has the right to be choosy..'
- $text_display += {<br><br><br><br><br><br><div id="under">- No deal<br><div id = "clear"><a href = 'EXEC: gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 6)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Cancel_deal, 'gt "menu_form"', 'No deal')
+ FUNC('$menu', '===END===')
 END
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
@@ -121,6 +142,6 @@ $slave_stats += '<<$charm_stat>><br>'
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
 *p '<div id = "bg"><<$text_display>></div>'
-
+m
 --- slave_sell ---------------------------------
 

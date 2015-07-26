@@ -1,12 +1,12 @@
 # init_custom_game
 get_initial_slave = 0
-hero_points = 600
+hero_points = 2600
 
 master_str = 1
 master_cha = 0
 master_style = 0
 master_libido = 0
-master_energy = 5
+master_energy = 8
 
 master_tutor = 0
 master_fighter = 0

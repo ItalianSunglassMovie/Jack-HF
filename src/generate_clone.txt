@@ -84,8 +84,8 @@ stock_virginity = 0
 display_psy_status = 1
 
 !BACKGROUND
-$stock_world_description = 'I know almost nothing about the world in which I was created, master. Theres highly developed technology, this I know. But I almost did not see anything, and remember much less.'
-$stock_family_description = 'I was swimming in a vat of liquid. From time to time people were walking around in white coats. On my face was a breathing mask and a feeding tube came right in the throat. And my body were connected to wires.'
+$stock_world_description = 'I know almost nothing about the world in which I was created, master. There`s highly developed technology, this I know. But I almost did not see anything, and remember much less.'
+$stock_family_description = 'I was swimming in a vat of liquid. From time to time people were walking around in white coats. On my face was a breathing mask and a feeding tube came right in my throat. And my body was connected to wires.'
 $stock_occupation_description = 'Mostly I remember the process of downloading data and ideomotor skills through neural interface. It is difficult to describe. Then I was taken out of the vat, pumped with sedatives and put in a box. And then I got here.'
 oin = RAND(101,998)
 dynamic "$stock_name = 'Object №<<oin>>'"
@@ -126,5 +126,6 @@ stock['newness'] = 1
 
 gs '#txt'
 gs '#txt_2'
+
 --- generate_clone ---------------------------------
 

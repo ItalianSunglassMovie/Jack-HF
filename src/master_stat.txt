@@ -18,6 +18,7 @@ IF exam_in_progress = 1:
  *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 END
 
+
 !'
  IF slave["stamina"] > 1:
   $middle_text_list += {<a href = 'EXEC: interaction = 1221 & gt "interaction"'>Гимнастика<BR></a>}
@@ -50,7 +51,7 @@ IF lab > 0:
 Fiend''s mucus х<<lab_store["slime"]>>
 Elysian datura х<<lab_store["kanabis"]>>
 Kamrian resin х<<lab_store["koffe"]>>
-Faeries'' pollen х<<lab_store["meth"]>>
+Faeries pollen х<<lab_store["meth"]>>
 Essence of oblivion х<<lab_store["opium"]>>
 
 Bacchic x<<вакхический_нектар>>
@@ -66,7 +67,7 @@ Water of Lethe x<<вода_леты>>
 Fiend''s mucus х<<lab_store["slime"]>>
 Elysian datura х<<lab_store["kanabis"]>>
 Kamrian resin х<<lab_store["koffe"]>>
-Faeries'' pollen х<<lab_store["meth"]>>
+Faeries pollen х<<lab_store["meth"]>>
 Essence of oblivion х<<lab_store["opium"]>>
 
 Bacchic x<<вакхический_нектар>>
@@ -101,13 +102,14 @@ END
 *p '<div id="left_column">
 <u>CHARACTERISTICS</u>
 <<$master_wounds[master_wounds]>>
-<a href="EXEC: msg $сила_справка & $info_text = $сила_совет & gt $curloc"><<$master_str[master_str]>></a>
-<a href="EXEC: msg $харизма_справка & $info_text = $харизма_совет & gt $curloc"><<$master_cha[master_cha]>></a>
-<a href="EXEC: msg $импозантность_справка & $info_text = $импозантность_совет & gt $curloc"><<$master_style[master_style]>></a> 
-<a href="EXEC: msg $клеймо_справка & $info_text = $клеймо_совет & gt $curloc"><<$brand[brand_reputation]>></a>
-<a href="EXEC: msg $богатство_справка & $info_text = $богатство_совет & gt $curloc"><<$master_wealth[master_wealth]>></a>
-<a href="EXEC: msg $гигиена_справка & $info_text = $гигиена_совет & gt $curloc"><<$boy_hygiene[master_hygiene]>></a>
-<a href="EXEC: msg $настроение_справка & $info_text = $настроение_совет & gt $curloc"><<$boy_mood[master_mood_plus]>></a>
+<a href="EXEC: msg $strength_chart & $info_text = $strength_help & gt $curloc"><<$master_str[master_str]>></a>
+<a href="EXEC: msg $charisma_chart & $info_text = $charisma_help & gt $curloc"><<$master_cha[master_cha]>></a>
+<a href="EXEC: msg $allure_chart & $info_text = $allure_help & gt $curloc"><<$master_style[master_style]>></a> 
+<a href="EXEC: msg $libido_chart & $info_text = $libido_help & gt $curloc"><<$master_libido[master_libido]>></a>
+<a href="EXEC: msg $brand_chart & $info_text = $brand_help & gt $curloc"><<$brand[brand_reputation]>></a>
+<a href="EXEC: msg $wealth_chart & $info_text = $wealth_help & gt $curloc"><<$master_wealth[master_wealth]>></a>
+<a href="EXEC: msg $hygiene_chart & $info_text = $hygiene_help & gt $curloc"><<$boy_hygiene[master_hygiene]>></a>
+<a href="EXEC: msg $mood_chart & $info_text = $mood_help & gt $curloc"><<$boy_mood[master_mood_plus]>></a>
 
 </div>'
 
@@ -131,6 +133,7 @@ END
 <<$master_fetish[master_fetish]>> 
 </div>'
 
+*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & msg $rank_help_3 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !OBJECTIVES TAB
 IF master_stat_screen = 1:
@@ -195,5 +198,6 @@ IF master_stat_screen = 3:
 END
 
 *p '<div id="info"><<$info_text>></div>'
+
 --- master_stat ---------------------------------
 

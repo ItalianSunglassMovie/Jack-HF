@@ -234,7 +234,12 @@ IF sex['girl_stamina'] = 1: sex['girl_energy'] = 10
 IF sex['girl_stamina'] = 2: sex['girl_energy'] = 25
 IF sex['girl_stamina'] = 3: sex['girl_energy'] = 50
 IF sex['girl_stamina'] = 4: sex['girl_energy'] = 65
-IF sex['girl_stamina'] => 5: sex['girl_energy'] = 75
+IF sex['girl_stamina'] = 5: sex['girl_energy'] = 75
+IF sex['girl_stamina'] = 6: sex['girl_energy'] = 90
+IF sex['girl_stamina'] = 7: sex['girl_energy'] = 100
+IF sex['girl_stamina'] = 8: sex['girl_energy'] = 140
+IF sex['girl_stamina'] = 9: sex['girl_energy'] = 175
+IF sex['girl_stamina'] = 10: sex['girl_energy'] = 200
 sex['girl_energy'] += sex['girl_energy_bonus'] * 5
 
 !OPENNESS
@@ -292,7 +297,12 @@ IF master_str = 1: sex['pc_energy'] = 10
 IF master_str = 2: sex['pc_energy'] = 25
 IF master_str = 3: sex['pc_energy'] = 50
 IF master_str = 4: sex['pc_energy'] = 65
-IF master_str => 5: sex['pc_energy'] = 75
+IF master_str = 5: sex['pc_energy'] = 75
+IF master_str = 6: sex['pc_energy'] = 90
+IF master_str = 7: sex['pc_energy'] = 100
+IF master_str = 8: sex['pc_energy'] = 140
+IF master_str = 9: sex['pc_energy'] = 175
+IF master_str = 10: sex['pc_energy'] = 200
 sex['pc_energy'] += master_energy * 5
 IF sex['pc_energy'] < 1: sex['pc_energy'] = 1
 
@@ -326,6 +336,11 @@ if sex['girl_beauty'] <= 1: sex['pc_interest'] -= 10
 if sex['girl_beauty'] => 3: sex['pc_interest'] += 5
 if sex['girl_beauty'] => 4: sex['pc_interest'] += 10
 if sex['girl_beauty'] => 5: sex['pc_interest'] += 25
+if sex['girl_beauty'] => 6: sex['pc_interest'] += 30
+if sex['girl_beauty'] => 7: sex['pc_interest'] += 35
+if sex['girl_beauty'] => 8: sex['pc_interest'] += 40
+if sex['girl_beauty'] => 9: sex['pc_interest'] += 45
+if sex['girl_beauty'] => 10: sex['pc_interest'] += 50
 
 if sex['girl_style'] <= 0: sex['pc_interest'] -= 10
 if sex['girl_style'] <= 1: sex['pc_interest'] -= 5

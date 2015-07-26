@@ -810,7 +810,7 @@ $название_предмета['штаны_и_рубаха'] = 'штаны �
 
 !_____________ARMOR_________________
 !Without armor ['без_брони']
-$описание_предмета['без_брони'] = 'You don''t have any protective equipment.'
+$описание_предмета['без_брони'] = 'You don`t have any protective equipment.'
 $название_предмета['без_брони'] = 'Without armor'
 $броня_надеть['без_брони'] = {}
 $броня_снять['без_брони'] = {}
@@ -852,7 +852,7 @@ $ключевое_слово_4['комбез'] = 'нет'
 $ключевое_слово_5['комбез'] = 'нет'
 
 !Leather armor ['кожан']
-$описание_предмета['кожан'] = 'This thick leather armor made of megalodon''s chemically treated skin. With a little weight, it has a very considerable durability and unlike metal armor, can reliably protect against fire, cold and electricity.'
+$описание_предмета['кожан'] = 'This thick leather armor made of megalodon`s chemically treated skin. With a little weight, it has a very considerable durability and unlike metal armor, can reliably protect against fire, cold and electricity.'
 $название_предмета['кожан'] = 'Leather armor'
 $броня_надеть['кожан'] = {
 модификатор_колющий -= 3
@@ -997,7 +997,7 @@ $применить['целительный_бальзам'] = {
 выносливость_игрока = макс_выносливость_игрока
 дух_игрока += 20
 боль = 0
-$действия_игрока = 'You smeared your wounds with healing balm and they instantly healed, you don''t feel pain or fatigue anymore.'
+$действия_игрока = 'You smeared your wounds with healing balm and they instantly healed, you don`t feel pain or fatigue anymore.'
 GT 'ход_противников'
 }
 

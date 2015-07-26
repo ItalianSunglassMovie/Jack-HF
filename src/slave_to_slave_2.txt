@@ -1,0 +1,227 @@
+# slave_to_slave_2
+!move slave an assistant or or vice versa
+
+temp = slave_state
+slave_state = slave_state_2
+slave_state_2 = temp
+
+temp = slave_type
+slave_type = slave_type_2
+slave_type_2 = temp
+
+$temp = $slave_type
+$slave_type = $slave_type_2
+$slave_type_2 = $temp
+
+$temp_name = $slave_name
+$slave_name = $slave_2_name
+$slave_2_name = $temp_name 
+v_balls_rule = 0
+rules_broken = 0
+
+killvar 'temp'
+killvar '$temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','slave_2'
+copyarr '$slave','$slave_2'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','slave_rate_2'
+
+killvar 'slave_2'
+killvar '$slave_2'
+copyarr 'slave_2','temp'
+copyarr '$slave_2','$temp'
+killvar 'slave_rate_2'
+copyarr 'slave_rate_2','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_curslave_2'
+killvar 'already_done_curslave_2'
+copyarr 'already_done_curslave_2','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_gain_virtue_2'
+killvar 'already_gain_virtue_2'
+copyarr 'already_gain_virtue_2','already_gain_virtue'
+killvar 'already_gain_virtue'
+copyarr 'already_gain_virtue','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_curslave_2'
+killvar 'already_sex_curslave_2'
+copyarr 'already_sex_curslave_2','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','slave_2_inventory'
+copyarr 'slave_2_inventory','temp'
+
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_psy_basic = $slave_psy_basic_2
+$slave_world_description = $slave_world_description_2
+$slave_family_description = $slave_family_description_2
+$slave_occupation_description = $slave_occupation_description_2
+$slave_psy_basic = $slave_psy_basic_2
+virginity = virginity_2
+
+$slave_psy_basic_2 = $temp_psy_basic
+$slave_world_description_2 = $temp_world_description
+$slave_family_description_2 = $temp_family_description
+$slave_occupation_description_2 = $temp_occupation_description
+$slave_psy_basic_2 = $temp_psy_basic 
+virginity_2 = temp_virginity
+
+tempo["mood"] = slave_prev["mood"]
+tempo["arousal"] = slave_prev["mood"]
+slave["mood"] = slave_2["mood"]
+slave["arousal"] = slave_2["arousal"]
+slave_prev["mood"] = tempo["mood"]
+slave_prev["arousal"] = tempo["mood"]
+
+tmp = prise_promised
+prise_promised = prise_promised_2
+prise_promised_2 = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_2
+gift_promised_2 = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_2
+prise_promised_2 = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_2
+abandon_treat_2 = tmp
+
+tmp = death_treat
+death_treat = death_treat_2
+death_treat_2 = tmp
+
+temp = slave_sleep_condition
+slave_sleep_condition = slave_sleep_condition_2
+slave_sleep_condition_2 = temp
+
+temp = slave_food_type
+slave_food_type = slave_food_type_2
+slave_food_type_2 = temp
+
+temp = slave_eats_remains
+slave_eats_remains = slave_eats_remains_2
+slave_eats_remains_2 = temp
+
+temp = slave_ration
+slave_ration = slave_ration_2
+slave_ration_2 = temp
+
+temp = slave_food_portion
+slave_food_portion = slave_food_portion_2
+slave_food_portion_2 = temp
+
+temp = vitamin
+vitamin = vitamin_2
+vitamin_2 = temp
+
+temp = silence_rule
+silence_rule = silence_rule_2
+silence_rule_2 = temp
+
+temp = master_rule
+master_rule = master_rule_2
+master_rule_2 = temp
+
+temp = orgasm_prohibited
+orgasm_prohibited = orgasm_prohibited_2
+orgasm_prohibited_2 = temp
+
+temp = shit_prohibited
+shit_prohibited = shit_prohibited_2
+shit_prohibited_2 = temp
+
+temp = pet_rule
+pet_rule = pet_rule_2
+pet_rule_2 = temp
+
+temp = blowjob_rule
+blowjob_rule = blowjob_rule_2
+blowjob_rule_2 = temp
+
+temp = pissuar_rule
+pissuar_rule = pissuar_rule_2
+pissuar_rule_2 = temp
+
+temp = toilet_rule
+toilet_rule = toilet_rule_2
+toilet_rule_2 = temp
+
+temp = slave_cleans_rule
+slave_cleans_rule = slave_cleans_rule_2
+slave_cleans_rule_2 = temp
+
+temp = slave_cooks_rule
+slave_cooks_rule = slave_cooks_rule_2
+slave_cooks_rule_2 = temp
+
+temp = slave_washes_rule
+slave_washes_rule = slave_washes_rule_2
+slave_washes_rule_2 = temp
+
+temp = slave_tentacle_rule
+slave_tentacle_rule = slave_tentacle_rule_2
+slave_tentacle_rule_2 = temp
+
+temp = v_balls_rule
+v_balls_rule = v_balls_rule_2
+v_balls_rule_2 = temp
+
+temp = rule_masturbation
+rule_masturbation = rule_masturbation_2
+rule_masturbation_2 = temp
+
+IF slave_2["bcheck"] = 0:
+ slave_2["bcheck"] = 1
+ if slave_2["beauty"] = 1: slave_rate_2["beauty"] = 10
+ if slave_2["beauty"] = 2: slave_rate_2["beauty"] = 20
+ if slave_2["beauty"] = 3: slave_rate_2["beauty"] = 40
+ if slave_2["beauty"] = 4: slave_rate_2["beauty"] = 60
+ if slave_2["beauty"] = 5: slave_rate_2["beauty"] = 80
+ if slave_2["beauty"] = 6: slave_rate_2["beauty"] = 120
+ if slave_2["beauty"] = 7: slave_rate_2["beauty"] = 140
+ if slave_2["beauty"] = 8: slave_rate_2["beauty"] = 160
+ if slave_2["beauty"] = 9: slave_rate_2["beauty"] = 180
+ if slave_2["beauty"] = 10: slave_rate_2["beauty"] = 200
+ if slave_rate_2["beauty"] => 10: slave_2["base_beauty"] = 1
+ if slave_rate_2["beauty"] => 20: slave_2["base_beauty"] = 2
+ if slave_rate_2["beauty"] => 40: slave_2["base_beauty"] = 3
+ if slave_rate_2["beauty"] => 60: slave_2["base_beauty"] = 4
+ if slave_rate_2["beauty"] => 80: slave_2["base_beauty"] = 5
+ if slave_rate_2["beauty"] => 120: slave_2["base_beauty"] = 6
+ if slave_rate_2["beauty"] => 140: slave_2["base_beauty"] = 7
+ if slave_rate_2["beauty"] => 160: slave_2["base_beauty"] = 8
+ if slave_rate_2["beauty"] => 180: slave_2["base_beauty"] = 9
+ if slave_rate_2["beauty"] => 200: slave_2["base_beauty"] = 10
+END
+
+gs '#txt'
+gs '#txt_2'
+gs '$newloc'
+GT 'slave_list'
+--- slave_to_slave_2 ---------------------------------
+

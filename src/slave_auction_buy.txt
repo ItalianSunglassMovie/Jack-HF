@@ -24,14 +24,14 @@ END
 IF auction_phase = 0:
 
  if stock_sold = 1: $text = '  [FARID]
-  -  Our first lot for today! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing first bid?
+  -  Our first lot for today! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing the first bid?
 '
 
  if stock_sold > 1: $text = '  [FARID]
-  -  Next lot! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing first bid?
+  -  Next lot! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing the first bid?
 '
  if stock_sold => stock_limit: $text = '  [FARID]
-  -  And last lot for today! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing first bid?
+  -  And last lot for today! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing the first bid?
 '
 END
 
@@ -89,12 +89,15 @@ IF stock_sold > 0 and auction_phase < 5:
  *p '<div id = "interaction_stat_bar">
 <u>SUMMARY</u>
 <<$beauty[stock["beauty"]]>> 
-<<$stamina[stock["stamina"]]>> 
+<<$stamina[stock["stamina"]]>>  
 <<$exotic[stock["exotic"]]>> 
 <<$fat[stock["fat"]]>> 
-<<$sensitivity[stock["sensitivity"]]>> 
+<<$sensitivity[stock["sensitivity"]]>>  
 <<$style[stock["style"]]>> 
+<<$intellect[stock["intellect"]]>> 
 <<$temper[stock["temper"]]>> 
+<<$ego[stock["ego"]]>> 
+<<$pride[stock["pride"]]>> 
 
 <u>TRAITS</u>
 <<$stock_features_list>>
@@ -108,5 +111,6 @@ IF stock_sold > 0 and auction_phase < 5:
  *p '<div id = "side_panel_text">  <<$place_info[$place]>>
  </div>'  
 END
+
 --- slave_auction_buy ---------------------------------
 

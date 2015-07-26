@@ -1,7 +1,7 @@
 # interaction_result_city
 !handling templates
-sp_txt = 1
- 
+if sp_txt_is_set_from_save = 0: sp_txt = 1 
+
 !interaction type - talk
 IF $interaction_type = 'standart':
  dynamic $special_part   
@@ -14,11 +14,11 @@ IF $interaction_type = 'byer_invitation':
  dynamic '$text[1] = $<<$npc_id>>_pref[1]'
  IF npc_progress[$npc_id] = 2: 
   $text[1] = '   [<<$npc_name[$npc_id]>>]
-   - I still do not need new slaves. But I said a word to friends, I am sure you will find buyers for such goods without difficulty.'
+   - I still do not need new slaves. But I said a word to some friends, I am sure you will find buyers for such goods without difficulty.'
   else
   IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:
    txt = 1
-   $yes = {$interaction_type = 'sell_slave_house'
+   $yes = {$interaction_type = 'sell_slave_simple'
    gt 'interaction_result_city'}
    $no = {
     if from_club = 1:
@@ -166,8 +166,8 @@ IF $interaction_type = 'sell_slave_complex':
   if noble_status = 0 and demand_rating[$npc_id] = 5: noble_status = 1
   else
   if sl_txt = 103: $text[1] = $refuse_charm_quote[$npc_id]  
-  if sl_txt = 102: $text[1] = $refuse_skill_quote[$npc_id] & slave[$npc_id] = 0  
-  if sl_txt = 101: $text[1] = $refuse_level_quote[$npc_id] & slave[$npc_id] = 0  
+  if sl_txt = 102: $text[1] = $refuse_skill_quote[$npc_id]  
+  if sl_txt = 101: $text[1] = $refuse_level_quote[$npc_id]  
   if sl_txt = 100: $text[1] = $refuse_special_quote[$npc_id]
  END
 END
@@ -180,7 +180,7 @@ IF $interaction_type = 'learn_spm':
  $npc_id = 'брина_рыжая' 
  txt_count = 2 
  $text[1] = '   [RED HAIR BRYN]
-   - C''mon! Stronger!! Faster!!! You fight worse than twelve year old girl, slaver. H-ha, take it! Do you feel it? That''s how it should be. This will feel your enemy! Arise, deadhead! Again. Stronger!! Faster!!!'
+   - C''mon! Stronger!! Faster!!! You fight worse than a twelve year old girl, slaver. H-ha, take it! Do you feel it? That''s how it should be. This will kill your enemy! Arise, deadhead! Again. Stronger!! Faster!!!'
  $text[2] = '   Bryn drives you through the training arena all day, and as a result you feel squeezed like a lemon. From strike demonstrations you get bruises all over your body. But she also takes a sparks for that! Well, at least now you know the new powerful technique. Now home. Time to relax...' 
  if $master_spm[1] = '': $master_spm[1] = $spm_to_learn & jump 'spm_loop'
  if $master_spm[2] = '': $master_spm[2] = $spm_to_learn & jump 'spm_loop'
@@ -232,7 +232,7 @@ IF $interaction_type = 'rental_demo':
  $special_action[3] = {
  $place = 'demo'
  $place_name['demo'] = 'Rooms inspection'
- $place_info['demo'] = '   It is necessary to carefully examine all the rooms, so I do not slipped with some garbage.' 
+ $place_info['demo'] = '   It is necessary to carefully examine all the rooms, so I do not get slipped with some garbage.' 
  $bg['demo'] = $interior_study['<<$demo_var>>']
 } 
  $special_action[5] = {npc = 0}
@@ -335,7 +335,7 @@ IF $interaction_type = 'moneylender':
  npc = 1
  txt_count = 1
  $text[1] = '  [MONEYLENDER]
-   - Here''s your sparks, slaver. If you bring back the debt on time, maybe I will increase the amount of your loan. Maybe. But if you can not manage this - I will shorten your life. And this will be for sure. I will waiting for you during <<debt_count>> days. Do not be late.'
+   - Here''s your sparks, slaver. If you bring back the debt on time, maybe I will increase the amount of your loan. Maybe. But if you can not manage this - I will shorten your life. And this will be for sure. I will be waiting <<debt_count>> days. Do not be late.'
  sparks += loan 
 END
 
@@ -375,9 +375,19 @@ END
 
 IF $interaction_type = 'buy_item_personal':
  if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume 
+ txt_count = 1
  $return_lock  = 'shop_general'  
+ $picture_type = 'pic_jpg'
+ if nsfw = 0: $special_bg  = "<<$item_demo[$item_id]>>"  
+ $text[1] = $item_description[$item_id]
+ IF sparks => item_price[$item_id]: 
+  $do_buy = {
  sparks -= item_price[$item_id]
- dynamic '<<$item_id>> += multiple' 
+ dynamic '<<$item_id>> += multiple'} 
+  gt 'item_buy' 
+  else
+  $text[1] = '   Price is <<item_price[$item_id]>> sparks, slightly more than you can afford at the moment, but this is easily remedied. You just have to sell a couple of slaves...'
+ END
  gt 'shop_general'
 END
 
@@ -418,7 +428,8 @@ END
 already_done_today[interaction_city] += 1 
 already_done_ever[interaction_city] += 1 
 
-txt = 1
+if txt_is_set_from_save = 0: txt = 1
 GT 'interaction_screen_city'
+
 --- interaction_result_city ---------------------------------
 

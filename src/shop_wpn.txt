@@ -9,32 +9,44 @@ $text_display = ''
 if sp_txt = 0: sp_txt = 1
 
 IF sp_txt = 1:
- $text_display += {<br><br><div id="under">Weapons<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Armor<br><div id = "clear"><a href = 'EXEC: sp_txt = 3 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><br><div id="under">Check preferences<div id = "clear"><a href = 'EXEC: interaction_city = 1111 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+
+ FUNC('$menu', 'exec_options', $menu_item_Weapons, 'sp_txt = 2 & gt $curloc', 'Weapons')
+ FUNC('$menu', 'exec_options', $menu_item_Armors, 'sp_txt = 3 & gt $curloc', 'Armor')
+ FUNC('$menu', 'interaction_city', $menu_item_preferencesarmory, menu_preferencesarmory, 'Check preferences')
  IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
-  $text_display += {<br><div id="under">Offer a slave<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+  FUNC('$menu', 'interaction_city', $menu_item_Offerarmory, menu_Offerarmory, 'Offer a slave')
   else
-  $text_display += {<br><div id="under_gray">Offer a slave<br></div>}
+  FUNC('$menu', 'location_gray', $menu_item_Offerarmory_gray, empty, 'Offer a slave')
  END 
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 2:
- $text_display += {<br><br><div id="under">Secondary<br><div id = "clear"><a href = 'EXEC: sp_txt = 11 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">One-handed<br><div id = "clear"><a href = 'EXEC: sp_txt = 12 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Two-handed<br><div id = "clear"><a href = 'EXEC: sp_txt = 13 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+
+ FUNC('$menu', 'exec_options', $menu_item_Secondary, 'sp_txt = 11 & gt $curloc', 'Secondary')
+ FUNC('$menu', 'exec_options', $menu_item_Onehanded, 'sp_txt = 12 & gt $curloc', 'One-handed')
+ FUNC('$menu', 'exec_options', $menu_item_Twohanded, 'sp_txt = 13 & gt $curloc', 'Two-handed')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 1 & gt $curloc', 'Other goods')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 11:
- $text_display += {<br><br><div id="under">Dagger (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 111 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Stiletto (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 112 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Brass knuckles (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 113 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Lash (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 114 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Stunner (10 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 115 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Butcher`s cleaver (20 sparks)<br><div id = "clear"><a href = 'EXEC: sp_txt = 116 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+  FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+
+ FUNC('$menu', 'exec_options', $menu_item_Daggerbuy, 'sp_txt = 111 & gt $curloc', 'Dagger (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_Stiletto, 'sp_txt = 112 & gt $curloc', 'Stiletto (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_knuckles, 'sp_txt = 113 & gt $curloc', 'Brass knuckles (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_Lashbuy, 'sp_txt = 114 & gt $curloc', 'Lash (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_Stunner, 'sp_txt = 115 & gt $curloc', 'Stunner (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_cleaver, 'sp_txt = 116 & gt $curloc', 'Butcher`s cleaver (20$)')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 111:
@@ -45,8 +57,11 @@ IF sp_txt = 111:
   else
   $shop_wpn[111] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 112:
@@ -57,8 +72,11 @@ IF sp_txt = 112:
   else
   $shop_wpn[112] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 113:
@@ -69,8 +87,11 @@ IF sp_txt = 113:
   else
   $shop_wpn[113] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 114:
@@ -81,8 +102,11 @@ IF sp_txt = 114:
   else
   $shop_wpn[114] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 115:
@@ -93,8 +117,11 @@ IF sp_txt = 115:
   else
   $shop_wpn[115] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 116:
@@ -105,21 +132,30 @@ IF sp_txt = 116:
   else
   $shop_wpn[116] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 12:
- $text_display += {<br><br><div id="under">Whip (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 121 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Épée (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 122 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Rapier (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 123 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Koncerz (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 124 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Gladius (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 125 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Bastard sword (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 126 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Machete (50$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 127 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Katana (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 128 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Baton (25$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 129 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Whipbuy, 'sp_txt = 121 & gt $curloc', 'Whip (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Epee, 'sp_txt = 122 & gt $curloc', 'Epee (50$')
+ FUNC('$menu', 'exec_options', $menu_item_Rapier, 'sp_txt = 123 & gt $curloc', 'Rapier (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Koncerz, 'sp_txt = 124 & gt $curloc', 'Koncerz (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
+ FUNC('$menu', '===END===')
+ FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_1') 
+ FUNC('$menu', 'exec_options', $menu_item_Gladius, 'sp_txt = 125 & gt $curloc', 'Gladius (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Bastardsword, 'sp_txt = 126 & gt $curloc', 'Bastard sword (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Machete, 'sp_txt = 127 & gt $curloc', 'Machete (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Katana, 'sp_txt = 128 & gt $curloc', 'Katana (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Baton, 'sp_txt = 129 & gt $curloc', 'Baton (25$)')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 121:
@@ -130,8 +166,11 @@ IF sp_txt = 121:
   else
   $shop_wpn[121] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 122:
@@ -142,8 +181,11 @@ IF sp_txt = 122:
   else
   $shop_wpn[122] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 123:
@@ -154,8 +196,11 @@ IF sp_txt = 123:
   else
   $shop_wpn[123] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 124:
@@ -166,8 +211,11 @@ IF sp_txt = 124:
   else
   $shop_wpn[124] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 125:
@@ -178,8 +226,11 @@ IF sp_txt = 125:
   else
   $shop_wpn[125] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 126:
@@ -190,8 +241,11 @@ IF sp_txt = 126:
   else
   $shop_wpn[126] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 127:
@@ -202,8 +256,11 @@ IF sp_txt = 127:
   else
   $shop_wpn[127] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 128:
@@ -214,8 +271,11 @@ IF sp_txt = 128:
   else
   $shop_wpn[128] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 129:
@@ -226,18 +286,24 @@ IF sp_txt = 129:
   else
   $shop_wpn[129] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 13:
- $text_display += {<br><br><div id="under">Flamberge (200$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 131 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Naginata (200$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 132 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Morningstar (150$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 133 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Greataxe (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 134 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Baseball bat (100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 135 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Cattle prod (150$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 136 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Back<br><div id = "clear"><a href = 'EXEC: sp_txt = 2 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Flamberge, 'sp_txt = 131 & gt $curloc', 'Flamberge (200$)')
+ FUNC('$menu', 'exec_options', $menu_item_Naginata, 'sp_txt = 132 & gt $curloc', 'Naginata (200$)')
+ FUNC('$menu', 'exec_options', $menu_item_Morningstar, 'sp_txt = 133 & gt $curloc', 'Morningstar (150$)')
+ FUNC('$menu', 'exec_options', $menu_item_Greataxe, 'sp_txt = 134 & gt $curloc', 'Greataxe (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Baseballbat, 'sp_txt = 135 & gt $curloc', 'Baseball bat (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Cattleprod, 'sp_txt = 136 & gt $curloc', 'Cattle prod (150$)')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 131:
@@ -248,8 +314,11 @@ IF sp_txt = 131:
   else
   $shop_wpn[131] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 132:
@@ -260,8 +329,11 @@ IF sp_txt = 132:
   else
   $shop_wpn[132] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 133:
@@ -272,8 +344,11 @@ IF sp_txt = 133:
   else
   $shop_wpn[133] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 134:
@@ -284,8 +359,11 @@ IF sp_txt = 134:
   else
   $shop_wpn[134] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 135:
@@ -296,8 +374,11 @@ IF sp_txt = 135:
   else
   $shop_wpn[135] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 136:
@@ -308,18 +389,24 @@ IF sp_txt = 136:
   else
   $shop_wpn[136] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 3:
- $text_display += {<br><br><div id="under">Aramid suit(100$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 21 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Leather armor(400$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 22 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Elven chainmail(250$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 23 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Yatserin mail(300$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 24 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Combined armor(800$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 25 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<div id="under">Gothic plate(1000$)<br><div id = "clear"><a href = 'EXEC: sp_txt = 26 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 1 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Aramid, 'sp_txt = 21 & gt $curloc', 'Aramid suit(100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Leather, 'sp_txt = 22 & gt $curloc', 'Leather armor(400$)')
+ FUNC('$menu', 'exec_options', $menu_item_Elven, 'sp_txt = 23 & gt $curloc', 'Elven chainmail(250$)')
+ FUNC('$menu', 'exec_options', $menu_item_Yatserin, 'sp_txt = 24 & gt $curloc', 'Yatserin mail(300$)')
+ FUNC('$menu', 'exec_options', $menu_item_Combined, 'sp_txt = 25 & gt $curloc', 'Combined armor(800$)')
+ FUNC('$menu', 'exec_options', $menu_item_Gothicbuy, 'sp_txt = 26 & gt $curloc', 'Gothic plate(1000$)')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 1 & gt $curloc', 'other goods')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 21:
@@ -330,8 +417,11 @@ IF sp_txt = 21:
   else
   $shop_wpn[21] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 22:
@@ -342,8 +432,11 @@ IF sp_txt = 22:
   else
   $shop_wpn[22] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 23:
@@ -354,8 +447,11 @@ IF sp_txt = 23:
   else
   $shop_wpn[23] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 24:
@@ -366,8 +462,11 @@ IF sp_txt = 24:
   else
   $shop_wpn[24] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 25:
@@ -378,8 +477,11 @@ IF sp_txt = 25:
   else
   $shop_wpn[25] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
 IF sp_txt = 26:
@@ -390,14 +492,17 @@ IF sp_txt = 26:
   else
   $shop_wpn[26] = $shop_wpn_deny 
  END
- $text_display += {<br><br><br><br><br><br><br><div id="under">Look at other goods<br><div id = "clear"><a href = 'EXEC: sp_txt = 0 & gt $curloc'><img src = "content\pic\clear.gif"></a></div></div>}
- $text_display += {<br><div id="under">Leave the shop<br><div id = "clear"><a href = 'EXEC: city_form = 11 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
 END
 
-IF sp_txt = 4:
+!'IF sp_txt = 4:
  $text_display += {<br><br><br><br><br><br><br><div id="under">- Look at my merchandise!<br><div id = "clear"><a href = 'EXEC: gt "slave_sell"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">- Tell me in detail what do you expect?<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
-END
+END'
 
 $text[txt] = $shop_wpn[sp_txt]
 
@@ -435,5 +540,6 @@ END
 
 
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
+
 --- shop_wpn ---------------------------------
 

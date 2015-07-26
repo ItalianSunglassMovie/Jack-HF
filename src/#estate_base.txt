@@ -1,10 +1,9 @@
 # #estate_base
 !Database of rental housing and interiors
-
 !housings
 !slum_house [slum_house]
 estate_prestige['slum_house'] = -1
-estate_size['slum_house'] = 100
+estate_size['slum_house'] = 50
 estate_cost_main['slum_house'] = 0
 estate_cost_bouduar['slum_house'] = 0
 estate_cost_dungeon['slum_house'] = 0
@@ -28,7 +27,7 @@ $estate_lab_location['slum_house'] = 'Shack'
 
 !kamira_house [kamira_house]
 estate_prestige['kamira_house'] = 0
-estate_size['kamira_house'] = 100
+estate_size['kamira_house'] = 70
 estate_cost_main['kamira_house'] = 50
 estate_cost_bouduar['kamira_house'] = 15
 estate_cost_dungeon['kamira_house'] = 15
@@ -52,7 +51,7 @@ $estate_lab_location['kamira_house'] = 'Quarter of the Outcasts'
 
 !serpis_house [serpis_house]
 estate_prestige['serpis_house'] = 1
-estate_size['serpis_house'] = 50
+estate_size['serpis_house'] = 100
 estate_cost_main['serpis_house'] = 50
 estate_cost_bouduar['serpis_house'] = 15
 estate_cost_dungeon['serpis_house'] = 15
@@ -76,7 +75,7 @@ $estate_lab_location['serpis_house'] = 'Anthill'
 
 !taurus_house [taurus_house]
 estate_prestige['taurus_house'] = 2
-estate_size['taurus_house'] = 100
+estate_size['taurus_house'] = 150
 estate_cost_main['taurus_house'] = 75
 estate_cost_bouduar['taurus_house'] = 25
 estate_cost_dungeon['taurus_house'] = 20
@@ -100,7 +99,7 @@ $estate_lab_location['taurus_house'] = 'Residences Area'
 
 !korvus_house [korvus_house]
 estate_prestige['korvus_house'] = 3
-estate_size['korvus_house'] = 150
+estate_size['korvus_house'] = 200
 estate_cost_main['korvus_house'] = 100
 estate_cost_bouduar['korvus_house'] = 25
 estate_cost_dungeon['korvus_house'] = 25
@@ -124,7 +123,7 @@ $estate_lab_location['korvus_house'] = 'District of Mortals'
 
 !white_house [white_house]
 estate_prestige['white_house'] = 4
-estate_size['white_house'] = 150
+estate_size['white_house'] = 250
 estate_cost_main['white_house'] = 150
 estate_cost_bouduar['white_house'] = 25
 estate_cost_dungeon['white_house'] = 25
@@ -162,19 +161,19 @@ $interior_bed['slum_house'] = 'interiors\slum_bed'
 $interior_bed_info['slum_house'] = '   You tried to equip your bed with maximum comfort. As far as possible in the old shack on the border of fog.'
 
 $interior_bath['slum_house'] = 'interiors\slum_bath'
-$interior_bath_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
+$interior_bath_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
 $interior_bouduar['slum_house'] = 'interiors\slum_bouduar'
-$interior_bouduar_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
+$interior_bouduar_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
 $interior_kitchen['slum_house'] = 'interiors\slum_kitchen'
-$interior_kitchen_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
+$interior_kitchen_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
 $interior_dungeon['slum_house'] = 'interiors\slum_dungeon'
-$interior_dungeon_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
+$interior_dungeon_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
 $interior_lab['slum_house'] = 'interiors\slum_lab'
-$interior_lab_info['slum_house'] = '   If you''re reading this, it means that there is something wrong...'
+$interior_lab_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
 
 !Базовый интерьер ['basic']
@@ -365,7 +364,7 @@ $interior_dungeon['pastoral'] = 'interiors\pastoral_dungeon'
 $interior_dungeon_info['pastoral'] = '   '
 
 !Японский набор ['japan']
-interior_prestige['japan'] = 1
+interior_prestige['japan'] = 0
 
 $interior_bg['japan'] = 'interiors\japan_large'
 $interior_study['japan'] = 'interiors\japan_study'
@@ -482,5 +481,14 @@ $interior_dungeon_info['basic'] = '   '
 
 $interior_lab['basic'] = 'interiors\_lab'
 $interior_lab_info['basic'] = '   ''
+if master_wealth = 6:
+ estate_size['slum_house'] = 50
+ estate_size['kamira_house'] = 50
+ estate_size['serpis_house'] = 50
+ estate_size['taurus_house'] = 50
+ estate_size['korvus_house'] = 50
+ estate_size['white_house'] = 50
+end
+
 --- #estate_base ---------------------------------
 

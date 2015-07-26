@@ -232,6 +232,13 @@ Neutrals'
 $npc_info['butcher'] = 'The only task of this big and dark servant - carve female carcasses at the chopping deck and sell the meat to customers.'
 npc_attitude['butcher'] = 10
 
+$npc_image['ester'] = 'ester'
+$npc_name['ester'] = 'Reverend Esther Blanchett'
+$npc_status['ester'] = 'Official of congregation
+Vatican'
+$npc_info['ester'] = 'The right hand of Cardinal Skartsone, executive secretary of the "Congregation for the obstetrics and orphans charity". She looks very lively and is always smiling. For some reason though, when you look at her, shivers run down your spine.'
+npc_attitude['ester'] = 31
+
 $npc_image['kerulis_veil'] = 'kerulis_veil'
 $npc_name['kerulis_veil'] = 'Kerulis Vale'
 demand_rating['kerulis_veil'] = 3
@@ -300,10 +307,10 @@ $jofre_pref[1] = '  [MADAME JOFRE]
 $jofre_pref[2] = '  [MADAME JOFRE]
    - Of course, giving handjobs and being able to service a man in a group is also helpful. Some customers love "special" treatment. However, all of that is not necessary - I can educate my workers myself.'
 $jofre_pref[3] = '  [MADAME JOFRE]
-   - Our customers expect to see <font color="#0000CD"><b>pretty</b></font> girls, so I will not take some scarecrow, even if she is a sex goddess. And of course, women should be <font color="#0000CD"><b>temperamental</b></font>. I do not own a sawmill, so I don''t need any logs. I hope your understand, mon cher.'
+   - Our customers expect to see pretty girls, so I will not take some scarecrow, even if she is a sex goddess. And of course, women should be temperamental. I do not own a sawmill, so I don`t need any logs. I hope your understand, mon cher.'
 $jofre_pref[4] = '  [MADAME JOFRE]
-   - Our girls <font color="#4B0082"><b>clean rooms</b></font> and <font color="#4B0082"><b>work in the kitchen</b></font> themselves, so at least some housekeeping skill is required. She needs to be <font color="#4B0082"><b>able to talk</b></font> to our customers in a empathetic way. I personally appreciate creative talent, although it is not necessary.'
-!$jofre_pref[5] = '  [MADAME JOFRE]
+   - Our girls clean rooms and work in the kitchen themselves, so at least some housekeeping skill is required. She needs to be able to talk to our customers in a empathetic way. I personally appreciate creative talent, although it is not necessary.'
+$jofre_pref[5] = '  [MADAME JOFRE]
    - If we sum up the requirements, I need women of <<$rating[1]>> rank or higher, trained as concubines. I am ready to pay 500 sparks per girl and buy as many as you want to sell.'
 $jofre_pref[5] = '  [MADAME JOFRE]
    - Ah, yes... Pure girls are in special demand, so i am ready to add some sparks if she is a virgin. I think it compensates for the complexity of training her without direct penetration. That should be all, as you can see the requirements are quite simple.'
@@ -314,7 +321,7 @@ $refuse_skill_quote['madame_jofre'] = '   [MADAME JOFRE]
 $refuse_level_quote['madame_jofre'] = '   [MADAME JOFRE]
    - Can you find a better girl? She is not worth the money.'
 $refuse_charm_quote['madame_jofre'] = '   [MADAME JOFRE]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['madame_jofre'] = '   [MADAME JOFRE]
    - Why do you bring her to me again? She does not fit! Bring someone else.'     
 $buyer_demand['madame_jofre'] = {
@@ -347,7 +354,7 @@ npc_bennies['brina'] = 100
 $brina_pref[1] = '  [RED HAIR BRYN]
    - The requirement is simple - the girl must be suitable for the arena. What is there to explain? She must be <font color="#0000CD"><b>healthful</b></font>, right? She must be able to take a beating and survive. Then she must be brisk, <font color="#4B0082"><b>with a twinkle</b></font>. The audience loves them fierce and bold.'
 $brina_pref[2] = '  [RED HAIR BRYN]
-   - Theres no time to think in the arena, so I don''t give a shit about her academic degrees. Crybabies won''t do in the arena. It would be nice if she had <font color="#4B0082"><b>catchy</b></font> appearance. Exotic girls are always cheered on, people love everything unusual.'
+   - Theres no time to think in the arena, so I don`t give a shit about her academic degrees. Crybabies won''t do in the arena. It would be nice if she had <font color="#4B0082"><b>catchy</b></font> appearance. Exotic girls are always cheered on, people love everything unusual.'
 $brina_pref[3] = '  [RED HAIR BRYN]
    - And of course she must know how to fight, but I can teach her myself if necessary. She should also know how to <font color="#0000CD"><b>move gracefully</b></font>, so teach them how to dance. And she needs a loud and beautiful voice so she can shout her cheers and cries of victory through the whole arena.'
 $brina_pref[4] = '  [RED HAIR BRYN]
@@ -361,7 +368,7 @@ $refuse_skill_quote['brina'] = '   [RED HAIR BRYN]
 $refuse_level_quote['brina'] = '   [RED HAIR BRYN]
    - Can you find a better girl? She is not worth the money.'
 $refuse_charm_quote['brina'] = '   [RED HAIR BRYN]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['brina'] = '   [RED HAIR BRYN]
    - I said that I would not take her! Are you deaf?'
 $buyer_demand['brina'] = {
@@ -380,7 +387,7 @@ $interesting_specialisation['sir_shelly'] = 'concubine'
 $sir_shelly_pref[1] = '  [Sir Shelly]
    - My club is known for it''s female workers, <<$master_name>>. I personally select the best slaves and only let them serve customers when I am convinced of their perfection.'
 $sir_shelly_pref[2] = '  [Sir Shelly]
-   - If you don''t want to waste my and your time, only deliver exceptionally well-trained and well-rounded girls. Of course, they should be able to please gentlemen, but other skills are also required.'
+   - If you don`t want to waste my and your time, only deliver exceptionally well-trained and well-rounded girls. Of course, they should be able to please gentlemen, but other skills are also required.'
 $sir_shelly_pref[3] = '  [Sir Shelly]
    - I do not like to haggle, so let''s just set a price. If I take a girl - then I''ll pay two and a half thousand sparks. I do not need cheap ones, but any more expensive and she won''t pay off.'
 $sir_shelly_pref[4] = '  [Sir Shelly]
@@ -395,7 +402,7 @@ $refuse_skill_quote['sir_shelly'] = '   [Sir Shelly]
 $refuse_level_quote['sir_shelly'] = '   [Sir Shelly]
    - Can you find a better girl? She is not worth the money.'
 $refuse_charm_quote['sir_shelly'] = '   [Sir Shelly]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['sir_shelly'] = '   [Sir Shelly]
    - No, I do not take her, I already said that.'
 	
@@ -425,7 +432,7 @@ $refuse_skill_quote['doctor'] = '   [Doctor]
 $refuse_level_quote['doctor'] = '   [Doctor]
    - Can you find a better product? This is not good enough for such money.'
 $refuse_charm_quote['doctor'] = '   [Doctor]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['doctor'] = '   [Doctor]
    - I did not like her. Bring another slave to me, and... do with her what you want, but I will not take it.'
    
@@ -456,7 +463,7 @@ $refuse_skill_quote['realtor'] = '   [GLORIA]
 $refuse_level_quote['realtor'] = '   [GLORIA]
    - Can you find a better product? This is not good enough for such money.'
 $refuse_charm_quote['realtor'] = '   [GLORIA]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['realtor'] = '   [GLORIA]
    - This does not suit me, bring another.'
    
@@ -470,7 +477,7 @@ demand_rating['jarik'] = 1
 $interesting_specialisation['jarik'] = 'pet'
 
 $jarik_pref[1] = '  [Jarik]
-   - Oh yes, <<$master_name>>, we buy all sorts of girls. They only need to be familiar with a stall and mating, I don''t care about other things. Cows, horses, cats, or dogs - everything will fit. We deal with them.'
+   - Oh yes, <<$master_name>>, we buy all sorts of girls. They only need to be familiar with a stall and mating, I don`t care about other things. Cows, horses, cats, or dogs - everything will fit. We deal with them.'
 $jarik_pref[2] = '  [Jarik]
    - Well, the main thing they need is for them to know their place. Because if they misbehave - I have to beat them. And then my master will be unpleased because they look so unpresen... unreas... beaten. So it''s better if they behave from the start.'
 $jarik_pref[3] = '  [Jarik]
@@ -499,7 +506,7 @@ $interesting_specialisation['malifiscent'] = 'artist'
 $malifiscent_pref[1] = '  [Malifistsent]
    - I do not expect you to understand our art, but I will try to convey the basic idea... a living, warm and breathing body - a source of fascination for all of the undead.'
 $malifiscent_pref[2] = '  [Malifistsent]
-   - Anyway, we all crave it, but we can''t reach it. But when by destroying lives we are able to take a fraction of that blessed heat that mortals have.'
+   - Anyway, we all crave it, but we can`t reach it. But when by destroying lives we are able to take a fraction of that blessed heat that mortals have.'
 $malifiscent_pref[3] = '  [Malifistsent]
    - However, my clients... my audience... They are the most demanding audience. Not some mindless ghoul that only has animalistic instincts. They need a special presentation!'
 $malifiscent_pref[4] = '  [Malifistsent]
@@ -514,7 +521,7 @@ $malifiscent_pref[7] = '  [Malifistsent]
 $buy_quote['malifiscent'] = '   [Malifistsent]
    - Yes! This is exactly what I need. Talent, grace, mystery. We will reveal her unbuttoned. The viewers will love it. Here''s your sparks, <<$master_name>>.'
 $refuse_skill_quote['malifiscent'] = '   [Malifistsent]
-   - Am I asking for too much? Dancing, singing, playing an instrument... I would agree to any talent. But I don''t see any talent in her. What can she show to the audience? This lady obviously needs more creative lessons before she will be worthy.'
+   - Am I asking for too much? Dancing, singing, playing an instrument... I would agree to any talent. But I don`t see any talent in her. What can she show to the audience? This lady obviously needs more creative lessons before she will be worthy.'
 $refuse_level_quote['malifiscent'] = '   [Malifistsent]
    - No. Not interested. She needs more teaching and learning so that she has grown to the performances in this abode of the Muses!'
 $refuse_charm_quote['malifiscent'] = '   [Malifistsent]
@@ -532,11 +539,11 @@ demand_rating['sergant'] = 1
 $interesting_specialisation['sergant'] = 'enchanter'
 
 $sergant_pref[1] = '  [SERGEANT]
-   - Slaves? Listen, <<$master_name>>, we''ve got a military camp and not a brothel. We do not have time for entertainment you know. We immediately evacuate the wounded, so we don''t need nurses either. But maybe...'
+   - Slaves? Listen, <<$master_name>>, we''ve got a military camp and not a brothel. We do not have time for entertainment you know. We immediately evacuate the wounded, so we don`t need nurses either. But maybe...'
 $sergant_pref[2] = '  [SERGEANT]
    - We never have enough combat elixirs. I would pay for someone who can brew needed elixirs right on the spot. Not out of my own pocket, of course, but we have a small allowance for mercenaries.'
 $sergant_pref[3] = '  [SERGEANT]
-   - I don''t care about her rank. Just deliver an obedient, hard-working girl who knows about alchemy and I will pay 500 sparks on the spot.'
+   - I don`t care about her rank. Just deliver an obedient, hard-working girl who knows about alchemy and I will pay 500 sparks on the spot.'
 
 $buy_quote['sergant'] = '   [SERGEANT]
    - Well, I take it. Here your 500 sparks, citizen, and I would recommend you to quickly return to the city. Here is unsafe.'
@@ -545,7 +552,7 @@ $refuse_skill_quote['sergant'] = '   [SERGEANT]
 $refuse_level_quote['sergant'] = '   [SERGEANT]
    - This girl does not please me, too ill-trained. Maybe 500 sparks is not the large money, but I need a fit product.'
 $refuse_charm_quote['sergant'] = '   [SERGEANT]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I need disciplined and seasoned people, and this one will fall into hysterics at the first fiend attack.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I need disciplined and seasoned people, and this one will fall into hysterics at the first fiend attack.'
 $refuse_again_quote['sergant'] = '   [SERGEANT]
    - You decide to waste my time, citizen? I will not accept this.'  
 
@@ -568,7 +575,7 @@ $refuse_skill_quote['sample'] = '   [BUYER]
 $refuse_level_quote['sample'] = '   [BUYER]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['sample'] = '   [BUYER]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 !dont forget about this
 $refuse_again_quote['sample'] = '   [BUYER]
    - No means no!' 
@@ -594,7 +601,7 @@ $buyer_demand['cardinal_de_mujlon'] = {
 $cardinal_de_mujlon_pref[1] = '  [Cardinal De Muzhlon]
    - So, <<$master_name>>, you want an audience with the pontiff and advertise your goods to him. I have no doubt that you are preparing a wonderful slave, but you must understand...'
 $cardinal_de_mujlon_pref[2] = '  [Cardinal De Muzhlon]
-   - Do you really think that the Pope has no more important things to do? I don''t know... An Elite Squad of nun-slaves who personally care about the pontiff does exist, but we already have distributors.'
+   - Do you really think that the Pope has no more important things to do? I don`t know... An Elite Squad of nun-slaves who personally care about the pontiff does exist, but we already have distributors.'
 $cardinal_de_mujlon_pref[3] = '  [Cardinal De Muzhlon]
    - Let''s do this. I''ll check the quality of your work in practice, and I will arrange a meeting with the Pope if I''m satisfied. I need a worker in <font color="#008000"><b>secretarial</b></font> service.'
 $cardinal_de_mujlon_pref[4] = '  [Cardinal De Muzhlon]
@@ -713,7 +720,7 @@ demand['min_exotic'] = 2
 $brina_pref[1] = '  [RED HAIR BRYN]
    - The requirement is simple - the girl must be suitable for the arena. What is there to explain? She must be <font color="#0000CD"><b>healthful</b></font>, right? She must be able to take a beating and survive. Then she must be brisk, <font color="#4B0082"><b>with a twinkle</b></font>. The audience loves them fierce and bold.'
 $brina_pref[2] = '  [RED HAIR BRYN]
-   - Theres no time to think in the arena, so I don''t give a shit about her academic degrees. Crybabies won''t do in the arena. It would be nice if she had <font color="#4B0082"><b>catchy</b></font> appearance. Exotic girls are always cheered on, people love everything unusual.'
+   - Theres no time to think in the arena, so I don`t give a shit about her academic degrees. Crybabies won''t do in the arena. It would be nice if she had <font color="#4B0082"><b>catchy</b></font> appearance. Exotic girls are always cheered on, people love everything unusual.'
 $brina_pref[3] = '  [RED HAIR BRYN]
    - And of course she must know how to fight, but I can teach her myself if necessary. She should also know how to <font color="#0000CD"><b>move gracefully</b></font>, so teach them how to dance. And she needs a loud and beautiful voice so she can shout her cheers and cries of victory through the whole arena.'
 $brina_pref[4] = '  [RED HAIR BRYN]
@@ -793,7 +800,7 @@ END
 }
 
 $npc_id = 'менхантер'
-$npc_image['менхантер'] = 'no_image'
+$npc_image['менхантер'] = 'Manhunter'
 $npc_name['менхантер'] = 'Manhunter'
 $npc_status['менхантер'] = 'Arms dealer
 Neutrals'
@@ -852,7 +859,7 @@ $manhunter_talk[6] = '  [Manhunter]
   - As for additional wishes, they are simple. For personal slaves, money is not enough all the time. It''s good to train the girl in keeping a household and make sure they are able to warm the bed for a man and sing or dance for fun. 
 '
 $manhunter_talk[7] = '  [Manhunter]
-  - In terms of what should be avoided: It''s all standard, you know. But remember that I will not pay for all perversions. I don''t give a damn if the slave is able to conjure, fuck with horses or do surgery on the open brain. I just need couriers.
+  - In terms of what should be avoided: It''s all standard, you know. But remember that I will not pay for all perversions. I don`t give a damn if the slave is able to conjure, fuck with horses or do surgery on the open brain. I just need couriers.
 '  
 $buyer_demand['менхантер'] = {
 demand['min_stamina'] = 2
@@ -885,11 +892,11 @@ $moneylender_pref[1] = '  [MONEYLENDER]
 $moneylender_pref[2] = '  [MONEYLENDER]
    - I do not have special requirements. Any talent is useful, any quality has a price.'
 $moneylender_pref[3] = '  [MONEYLENDER]
-   - Only one condition - <font color="#cd0000"><b>I don''t like witches</b></font>. I already have to be cautious not to get poisoned. I don''t want to fear my own slaves.'
+   - Only one condition - I do not like witches. I already have to be cautious not to get poisoned. I don`t want to fear my own slaves.'
 $moneylender_pref[4] = '  [MONEYLENDER]
    - <font color="#008080"><b>She should be able to suck perfectly</b></font>! I love when bitches know their place and work as they should.'
 $moneylender_pref[5] = '  [MONEYLENDER]
-   - But most importantly: Don''t try to sell low-quality goods to me. I mean her <font color="#4B0082"><b>rating</b></font> and <font color="#0000CD"><b>virginity</b></font>. I am willing to pay, but I''m not rich enough to buy overpriced bitches. I only want the finest girls to surround me.'
+   - But most importantly: don`t try to sell low-quality goods to me. I am willing to pay, but I''m not rich enough to buy overpriced bitches. I only want the finest girls to surround me.'
    
 
 $npc_image['kagami_san'] = 'kagami_san'
@@ -1004,7 +1011,7 @@ $azura_pref[2] = '  [ASHURA]
 $azura_pref[3] = '  [ASHURA]
   - Gemstone jewelry is often used for enchantments. Thus it would be very useful for her to know <font color="#4B0082"><b>sorcery</b></font> and alchemy. And of course, they will have to keep the shop and their own room in order.'
 $azura_pref[4] = '  [ASHURA]
-  - I kind of like exotic girls and I think a few piercings would be great, but they are not important. I don''t have any special requirements, just follow my instructions.'
+  - I kind of like exotic girls and I think a few piercings would be great, but they are not important. I don`t have any special requirements, just follow my instructions.'
 $azura_pref[5] = '  [ASHURA]
   - And one more thing... The Master has not been interested in me for years now, but I cannot sleep with other men, as that would disgrace me. I am often lonely and I really would appreciate workers who can help me <font color="#4B0082"><b>relieve stress</b></font>.'
    
@@ -1072,7 +1079,7 @@ $npc_name['estelindel'] = 'Estelindel'
 $npc_status['estelindel'] = 'Shop hostess
 Matron (Neutrals)'
 $npc_alignment['estelindel'] = 'neutral'
-$npc_info['estelindel'] = 'This kind of gentle blue-haired woman looks very young and naive. But don''t be fooled - she belongs to a race of high elves and may live more than a couple of hundred years. Evil tongues say that her beauty studio is not profitable and Estelindel is just having fun at the expense of her husband. But anyway, she has a lot of money and she sometimes buys girls as workers for the salon.'
+$npc_info['estelindel'] = 'This kind of gentle blue-haired woman looks very young and naive. But don`t be fooled - she belongs to a race of high elves and may live more than a couple of hundred years. Evil tongues say that her beauty studio is not profitable and Estelindel is just having fun at the expense of her husband. But anyway, she has a lot of money and she sometimes buys girls as workers for the salon.'
 demand_rating['estelindel'] = 1
 $interesting_specialisation['estelindel'] = 'refferent'
 $npc_preferences['estelindel'] = {
@@ -1154,7 +1161,7 @@ $taurus_king_pref[1] = '  [King Arboreus]
 $taurus_king_pref[2] = '  [King Arboreus]
    - Do not worry, I do not need anything fancy. I just need the BEST girl. Pick up and teach the most gorgeous concubine for me.'
 $taurus_king_pref[3] = '  [King Arboreus]
-   - Of course, she should be <font color="#008000"><b>good in bed</b></font> and know how to work with her <font color="#008000"><b>hands</b></font> and <font color="#008000"><b>mouth</b></font>. Well, you know that better than me, of course. But I don''t just want a concubine.'
+   - Of course, she should be <font color="#008000"><b>good in bed</b></font> and know how to work with her <font color="#008000"><b>hands</b></font> and <font color="#008000"><b>mouth</b></font>. Well, you know that better than me, of course. But I don`t just want a concubine.'
 $taurus_king_pref[4] = '  [King Arboreus]
    - I need a woman that can hold a <font color="#008080"><b>conversation</b></font> and can show her <font color="#0000CD"><b>character</b></font>. A real woman, you know, with <font color="#0000CD"><b>brains</b></font>, not just a mindless slave. Of course, she needs to know her place as well.'
 $taurus_king_pref[5] = '  [King Arboreus]
@@ -1209,7 +1216,7 @@ $refuse_level_quote['general_barabas'] = '   [General Barabas]
 $refuse_charm_quote['general_barabas'] = '   [General Barabas]
    - Eh.. I told you - CURLY HAIR! And a dress like a doll. She is meant as a partner for my son. She should look like a doll, an angel. This is not what I wanted. I will not take her.'
 $refuse_special_quote['general_barabas'] = '   [General Barabas]
-   - It''s not what I ordered at all! Are you tired of your live? Better get out of here before I forget myself. And don''t come back unless you have the proper girl!!!'
+   - It''s not what I ordered at all! Are you tired of your live? Better get out of here before I forget myself. And don`t come back unless you have the proper girl!!!'
 
 $npc_image['pretor_siegfrid'] = 'pretor_siegfrid'
 $npc_name['pretor_siegfrid'] = 'Siegfrid'
@@ -1247,7 +1254,7 @@ $refuse_skill_quote['pretor_siegfrid'] = '   [Praetor Siegfrid]
 $refuse_level_quote['pretor_siegfrid'] = '   [Praetor Siegfrid]
    - So, you have decided that a slave for a horse can be second-rate? I need first-class goods. "A" rating and not any lower! Get out!'
 $refuse_charm_quote['pretor_siegfrid'] = '   [Praetor Siegfrid]
-   - The girl is pretty good, but you see, Bucephalus turns his muzzle away from her. Maybe she does not smell right or maybe he doesn''t like her appearance. I don''t know. But if Bucephalus doesn''t liked her, then neither will I!'
+   - The girl is pretty good, but you see, Bucephalus turns his muzzle away from her. Maybe she does not smell right or maybe he doesn`t like her appearance. I don`t know. But if Bucephalus doesn`t liked her, then neither will I!'
 $refuse_special_quote['pretor_siegfrid'] = '   [Praetor Siegfrid]
    - And what about my specific requirements? Sell her to someone else and try with another. Another!'
 
@@ -1309,7 +1316,7 @@ $refuse_skill_quote['don_bobrit'] = '   [Don Bobrit]
 $refuse_level_quote['don_bobrit'] = '   [Don Bobrit]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['don_bobrit'] = '   [Don Bobrit]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['don_bobrit'] = '   [Don Bobrit]
    - No means no!'
 
@@ -1331,7 +1338,7 @@ $refuse_skill_quote['don_castilio'] = '   [Don Castille]
 $refuse_level_quote['don_castilio'] = '   [Don Castille]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['don_castilio'] = '   [Don Castille]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['don_castilio'] = '   [Don Castille]
    - No means no!' 
 
@@ -1353,7 +1360,7 @@ $refuse_skill_quote['don_diego'] = '   [Don Diego]
 $refuse_level_quote['don_diego'] = '   [Don Diego]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['don_diego'] = '   [Don Diego]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['don_diego'] = '   [Don Diego]
    - No means no!'
 
@@ -1375,7 +1382,7 @@ $refuse_skill_quote['don_karbolio'] = '   [Don Karbolio]
 $refuse_level_quote['don_karbolio'] = '   [Don Karbolio]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['don_karbolio'] = '   [Don Karbolio]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['don_karbolio'] = '   [Don Karbolio]
    - No means no!'
 
@@ -1397,7 +1404,7 @@ $refuse_skill_quote['don_mladio'] = '   [Don Mladio]
 $refuse_level_quote['don_mladio'] = '   [Don Mladio]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['don_mladio'] = '   [Don Mladio]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['don_mladio'] = '   [Don Mladio]
    - No means no!'
 
@@ -1419,7 +1426,7 @@ $refuse_skill_quote['don_sedos'] = '   [Don Sedos]
 $refuse_level_quote['don_sedos'] = '   [Don Sedos]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['don_sedos'] = '   [Don Sedos]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['don_sedos'] = '   [Don Sedos]
    - No means no!'
 
@@ -1441,7 +1448,7 @@ $refuse_skill_quote['don_sigismund'] = '   [Don Sigismund]
 $refuse_level_quote['don_sigismund'] = '   [Don Sigismund]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['don_sigismund'] = '   [Don Sigismund]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['don_sigismund'] = '   [Don Sigismund]
    - No means no!'
 
@@ -1463,7 +1470,7 @@ $refuse_skill_quote['don_sorino'] = '   [Don Sorino]
 $refuse_level_quote['don_sorino'] = '   [Don Sorino]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['don_sorino'] = '   [Don Sorino]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['don_sorino'] = '   [Don Sorino]
    - No means no!'
   
@@ -1485,7 +1492,7 @@ $refuse_skill_quote['lady_edna'] = '   [Lady Edna]
 $refuse_level_quote['lady_edna'] = '   [Lady Edna]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['lady_edna'] = '   [Lady Edna]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['lady_edna'] = '   [Lady Edna]
    - No means no!'
 
@@ -1507,7 +1514,7 @@ $refuse_skill_quote['lady_suinton'] = '   [Lady Suinton]
 $refuse_level_quote['lady_suinton'] = '   [Lady Suinton]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['lady_suinton'] = '   [Lady Suinton]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['lady_suinton'] = '   [Lady Suinton]
    - No means no!'
 
@@ -1529,7 +1536,7 @@ $refuse_skill_quote['magister_gilmeritus'] = '   [Master Gilmeritus]
 $refuse_level_quote['magister_gilmeritus'] = '   [Master Gilmeritus]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['magister_gilmeritus'] = '   [Master Gilmeritus]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['magister_gilmeritus'] = '   [Master Gilmeritus]
    - No means no!'
 
@@ -1551,7 +1558,7 @@ $refuse_skill_quote['sir_toughbar'] = '   [Sire Toughbar]
 $refuse_level_quote['sir_toughbar'] = '   [Sire Toughbar]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['sir_toughbar'] = '   [Sire Toughbar]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['sir_toughbar'] = '   [Sire Toughbar]
    - No means no!'
 
@@ -1625,13 +1632,13 @@ $pretor_diabaz_pref[5] = '  [Praetor Diabaz]
 $buy_quote['pretor_diabaz'] = '   [Praetor Diabaz]
    - Yeesss. This is what I need. Her individuality shines bright and she looks impressive. Even threatening. If she fights like you said, there is nothing more to wish for. Here''s your sparks.'
 $refuse_skill_quote['pretor_diabaz'] = '   [Praetor Diabaz]
-   - No. Her skills are not enough. I''m don''t think she can handle it, at least not in a critical situation. I have to rely on her without questions. She need more training.'
+   - No. Her skills are not enough. I''m don`t think she can handle it, at least not in a critical situation. I have to rely on her without questions. She need more training.'
 $refuse_level_quote['pretor_diabaz'] = '   [Praetor Diabaz]
    - She''s wonderful, of course, but is she is worth the money? I was promised something special. She is not very impressive.'
 $refuse_charm_quote['pretor_diabaz'] = '   [Praetor Diabaz]
    - Not exactly the image I need. She will look silly next to me. As I explained - our image is our best defense. Find me another. Someone more impressive than her.'
 $refuse_special_quote['pretor_diabaz'] = '   [Praetor Diabaz]
-   - She does not fit me. She doesn''t meet the special requirements. Case closed, <<$master_name>>.'
+   - She does not fit me. She doesn`t meet the special requirements. Case closed, <<$master_name>>.'
    
 $npc_image['bishop_porter'] = 'bishop_porter'
 $npc_name['bishop_porter'] = 'Reverend Porter'
@@ -1699,7 +1706,7 @@ $general_drago_pref[1] = '  [General Drago]
 $general_drago_pref[2] = '  [General Drago]
    - And soldiers - what makes them different from ordinary guys? What makes me different? So how do we increase their devotion? With good wine and a caring woman. Such simple means are enough to make them follow me.'
 $general_drago_pref[3] = '  [General Drago]
-   - I promised one of my more.. disgusting platoons that they would get a woman even the pope would dream of. Can you do this? Don''t worry about sparks, I know how to reward.'
+   - I promised one of my more.. disgusting platoons that they would get a woman even the pope would dream of. Can you do this? don`t worry about sparks, I know how to reward.'
 $general_drago_pref[4] = '  [General Drago]
    - The girl must be properly trained in various arts though. She must to know how to serve a full <font color="#008000"><b>platoon</b></font> of soldiers so no one feels out of place. She should also be able to do some of the more.. "exotic" acts to entertain them. Maybe sex with a <font color="#0000CD"><b>horse or dog</b></font> or some other <font color="#0000CD"><b>unusual</b></font> thing.'
 $general_drago_pref[5] = '  [General Drago]
@@ -1734,7 +1741,7 @@ $refuse_skill_quote['archmage_zephiros'] = '   [Zefyros]
 $refuse_level_quote['archmage_zephiros'] = '   [Zefyros]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['archmage_zephiros'] = '   [Zefyros]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['archmage_zephiros'] = '   [Zefyros]
    - No means no!'
 
@@ -1756,7 +1763,7 @@ $refuse_skill_quote['avek_plesir'] = '   [Avec Plaisir]
 $refuse_level_quote['avek_plesir'] = '   [Avec Plaisir]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['avek_plesir'] = '   [Avec Plaisir]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['avek_plesir'] = '   [Avec Plaisir]
    - No means no!'
 
@@ -1768,7 +1775,7 @@ $npc_alignment['dofine_tutti'] = 'serpis'
 $npc_info['dofine_tutti'] = '   '
 demand_rating['dofine_tutti'] = 3
 $interesting_specialisation['dofine_tutti'] = 'nurse'
-$diary_mark['dofine_tutti'] = "   <<$npc_name['dofine_tutti']>>. His palace is next to an Anthill in a Serpentine quarter."
+$diary_mark['dofine_tutti'] = "   <<$npc_name['dofine_tutti']>>. His palace is next to an ant hill in a Serpentine quarter."
 $dofine_tutti_pref[1] = "  [TUTTI]
    - I need <<$slave_type_name[$interesting_specialisation['dofine_tutti']]>> of rank <<$rating[demand_rating['dofine_tutti']]>> or higher. I'll pay <<common_price[demand_rating['dofine_tutti']]>> sparks."
 $buy_quote['dofine_tutti'] = '   [TUTTI]
@@ -1778,7 +1785,7 @@ $refuse_skill_quote['dofine_tutti'] = '   [TUTTI]
 $refuse_level_quote['dofine_tutti'] = '   [TUTTI]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['dofine_tutti'] = '   [TUTTI]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['dofine_tutti'] = '   [TUTTI]
    - No means no!'
 
@@ -1800,7 +1807,7 @@ $refuse_skill_quote['earl_gray'] = '   [Earl Grey]
 $refuse_level_quote['earl_gray'] = '   [Earl Grey]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['earl_gray'] = '   [Earl Grey]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['earl_gray'] = '   [Earl Grey]
    - No means no!'
 
@@ -1822,7 +1829,7 @@ $refuse_skill_quote['frogger'] = '   [Frogler]
 $refuse_level_quote['frogger'] = '   [Frogler]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['frogger'] = '   [Frogler]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['frogger'] = '   [Frogler]
    - No means no!'
 
@@ -1844,7 +1851,7 @@ $refuse_skill_quote['green_mamba'] = '   [Green Mamba]
 $refuse_level_quote['green_mamba'] = '   [Green Mamba]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['green_mamba'] = '   [Green Mamba]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['green_mamba'] = '   [Green Mamba]
    - No means no!'
 
@@ -1866,7 +1873,7 @@ $refuse_skill_quote['krull'] = '   [KRULL]
 $refuse_level_quote['krull'] = '   [KRULL]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['krull'] = '   [KRULL]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['krull'] = '   [KRULL]
    - No means no!'
 
@@ -1888,7 +1895,7 @@ $refuse_skill_quote['leonid_alexandriatos'] = '   [Leonid]
 $refuse_level_quote['leonid_alexandriatos'] = '   [Leonid]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['leonid_alexandriatos'] = '   [Leonid]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['leonid_alexandriatos'] = '   [Leonid]
    - No means no!'
 
@@ -1910,7 +1917,7 @@ $refuse_skill_quote['lucius_patricius'] = '   [LUCIUS]
 $refuse_level_quote['lucius_patricius'] = '   [LUCIUS]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['lucius_patricius'] = '   [LUCIUS]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['lucius_patricius'] = '   [LUCIUS]
    - No means no!'
 
@@ -1932,7 +1939,7 @@ $refuse_skill_quote['mister_grease'] = '   [Mr. Grease]
 $refuse_level_quote['mister_grease'] = '   [Mr. Grease]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['mister_grease'] = '   [Mr. Grease]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['mister_grease'] = '   [Mr. Grease]
    - No means no!'
 
@@ -1954,7 +1961,7 @@ $refuse_skill_quote['piter_viabu'] = '   [Peter Viaboo]
 $refuse_level_quote['piter_viabu'] = '   [Peter Viaboo]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['piter_viabu'] = '   [Peter Viaboo]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['piter_viabu'] = '   [Peter Viaboo]
    - No means no!'
 
@@ -1976,7 +1983,7 @@ $refuse_skill_quote['singh_khan'] = '   [Singh-Khan]
 $refuse_level_quote['singh_khan'] = '   [Singh-Khan]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['singh_khan'] = '   [Singh-Khan]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['singh_khan'] = '   [Singh-Khan]
    - No means no!'
 
@@ -1998,7 +2005,7 @@ $refuse_skill_quote['mister_lardbag'] = '   [Mister Lardbag]
 $refuse_level_quote['mister_lardbag'] = '   [Mister Lardbag]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['mister_lardbag'] = '   [Mister Lardbag]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
  $refuse_again_quote['mister_lardbag'] = '   [Mister Lardbag]
    - No means no!'
   
@@ -2051,13 +2058,13 @@ demand['min_stamina'] = 2
 demand['min_beauty'] = 2
 }
 $barman_pref[1] = '  [JOCK]
-   - Listen here, <<$master_name>>. First things first, the two main requirements: to work in the "Hip" girl should be <font color="#4B0082"><b>strong</b></font> and <font color="#4B0082"><b>cute</b></font>. But we do not need shirkers who turn up their noses from all, faint, and fall. No uglies either.'
+   - Listen here, <<$master_name>>. I always need waitresses, but I will not pay more than 500 sparks. But we do not need shirkers who turn up their noses from all, faint, and fall. No uglies either.'
 $barman_pref[2] = '  [JOCK]
-   - It is important that the customer be satisfied, so she should be able <font color="#0000CD"><b>to communicate</b></font> courteously and <font color="#0000CD"><b>quickly carry, wash, and clean</b></font>. This is important. But more important is for her to know <font color="#4B0082"><b>how to read</b></font>, we''re not doing charity work - sparks need to be accounted for.'
+   - It is important that the customer be satisfied, so she should be able to communicate courteously and quickly carry, wash, and clean. This is important. But more important is for her to know how to read, we''re not doing charity work - sparks need to be accounted for.'
 $barman_pref[3] = '  [JOCK]
    - If the waitress is not serving customers, she must not mess around but entertain guests instead. As a highlight of the program we have stripteases. But she can also sing a song there, or play the piano, you know. Oh, and she needs to understand the food so that she will not confuse meals.'
 $barman_pref[4] = '  [JOCK]
-   - We''ve certainly not got a brothel, but if the client pays an additional fee, then the waitress should be able <font color="#4B0082"><b>to do blowjobs</b></font>, right under the table. And rub with their tits when dancing - it''s called a lap dance.'
+   - We''ve certainly not got a brothel, but if the client pays an additional fee, then the waitress should be able to do blowjobs, right under the table. And rub with their tits when dancing - it''s called a lap dance.'
 $barman_pref[5] = '  [JOCK]
    - Important customers sometimes rent from us the whole hall for the events and so she will not pass by with just blowjobs then. When customers need to lose some pressure when drunk, then the waitress must take on this task. So she should be able to serve the crowd at once. Here''s the whole story, <<$master_name>>.'
 $buy_quote['barman'] = '   [JOCK]
@@ -2067,20 +2074,50 @@ $refuse_skill_quote['barman'] = '   [JOCK]
 $refuse_level_quote['barman'] = '   [JOCK]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['barman'] = '   [JOCK]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['barman'] = '   [JOCK]
    - No means no!'
 
-$npc_image['chief'] = ''
+$npc_image['chief'] = 'chief'
 $npc_name['chief'] = 'Chef'
 $npc_status['chief'] = 'The Cook
 Serpis House (Renegades)'
 $npc_alignment['chief'] = 'serpis'
 $npc_info['chief'] = 'The kitchen is the nucleus of the tavern, and the chef is the king and god of the kitchen. It would be good to maintain good relations with him for two reasons. Firstly, the chef in charge of buying pig class slaves. Secondly, he can give a couple of excellent lessons in cooking, for a fee, of course. '
 $npc_preferences['chief'] = {
+stat_importance['stamina'] = 4
+stat_importance['sensitivity'] = 0
+stat_importance['temper'] = 0
+stat_importance['intellect'] = 0
+stat_importance['ego'] = 0
+stat_importance['exotic'] = 1
+stat_importance['fat'] = 0
+
+stat_importance['obedience'] = 2
+stat_importance['custom'] = 1
+stat_importance['pride'] = 0
+stat_importance['spoil'] = 0
+
+stat_importance['expression'] = 0
 stat_importance['pet'] = 3
+stat_importance['dressage'] = 0
+stat_importance['nurse'] = 0
+stat_importance['service'] = 0
 stat_importance['cook'] = 2
+stat_importance['roleplay'] = 0
+stat_importance['gladiatrix'] = 0
+stat_importance['enchanter'] = 0
+stat_importance['callisthenics'] = 0
+stat_importance['vocal'] = 0
+stat_importance['music'] = 0
+stat_importance['secretary'] = 0
+
+stat_importance['oral'] = 2
+stat_importance['penetration'] = 2
+stat_importance['petting'] = 1
 stat_importance['orgy'] = 2
+stat_importance['xenophily'] = 2
+stat_importance['fetishism'] = 0
 }
 npc_attitude['chief'] = 10
 npc_reveal['chief'] = 0
@@ -2092,6 +2129,7 @@ buying_temp['chief'] = 25
 $buyer_demand['chief'] = {
 demand['min_stamina'] = 4
 demand['min_fat'] = 2
+demand['virginity'] = 2
 }
 
 !lillimerge: google translated, could be improved
@@ -2124,7 +2162,7 @@ $refuse_skill_quote['lao_van'] = '   [Master Lao-Van]
 $refuse_level_quote['lao_van'] = '   [Master Lao-Van]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['lao_van'] = '   [Master Lao-Van]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['lao_van'] = '   [Master Lao-Van]
    - No means no!'
 
@@ -2190,7 +2228,7 @@ demand['min_stamina'] = 5
 $pretor_tifaret_pref[1] = '  [Praetor Tifaret]
    - It is said that you handle even difficult tasks. Do you see my size, <<$master_name>>? It''s hard to find a woman who can stand my love but will not look like a hairy ogre.'
 $pretor_tifaret_pref[2] = '  [Praetor Tifaret]
-   - But you better try. I need some variety, stay out of boredom. I have nothing to do, I can''t even really fight anyone. Only female affection can save me.'
+   - But you better try. I need some variety, stay out of boredom. I have nothing to do, I can`t even really fight anyone. Only female affection can save me.'
 $pretor_tifaret_pref[3] = '  [Praetor Tifaret]
    - Try to check the slave that you prepare for me on a horse. If she <font color="#008080"><b>coincides with the stallion</b></font>, then maybe she can stand beneath me. And the most important thing - she needs to be <font color="#008000"><b>healthy</b></font> and strong. But also beautiful.'
 $pretor_tifaret_pref[4] = '  [Praetor Tifaret]
@@ -2200,7 +2238,7 @@ $pretor_tifaret_pref[5] = '  [Praetor Tifaret]
 $buy_quote['pretor_tifaret'] = '   [Praetor Tifaret]
    - Looks like she is fit. She will not collapse from one hit and has a cute face. I''ll take her, so be it. Here''s your sparks.'
 $refuse_skill_quote['pretor_tifaret'] = '   [Praetor Tifaret]
-   - No. Bad. Your girl can''t do anything. Teach her better.'
+   - No. Bad. Your girl can`t do anything. Teach her better.'
 $refuse_level_quote['pretor_tifaret'] = '   [Praetor Tifaret]
    - In general she is not good with this level. Train her better.'
 $refuse_charm_quote['pretor_tifaret'] = '   [Praetor Tifaret]
@@ -2283,7 +2321,7 @@ $refuse_skill_quote['general_carnis'] = '   [General Carneys]
 $refuse_level_quote['general_carnis'] = '   [General Carneys]
    - It is not bad, but I would like to see a decent overall level. This is called "A" rank in your guild, I believe?'
 $refuse_charm_quote['general_carnis'] = '   [General Carneys]
-   - Maybe she has convinced you, my friend, but she did not outwit me. In these eyes there is no real spark of a mind. I don''t think she will be interesting.'
+   - Maybe she has convinced you, my friend, but she did not outwit me. In these eyes there is no real spark of a mind. I don`t think she will be interesting.'
 $refuse_special_quote['general_carnis'] = '   [General Carneys]
    - Since the last time I had seen this lady, her mind''s reflexion has not increased in her eyes. And is unlikely to do so in the future.'
    
@@ -2307,7 +2345,7 @@ $refuse_skill_quote['mystra'] = '   [MYSTRA]
 $refuse_level_quote['mystra'] = '   [MYSTRA]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['mystra'] = '   [MYSTRA]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['mystra'] = '   [MYSTRA]
    - No means no!'
 
@@ -2334,7 +2372,7 @@ $refuse_skill_quote['arbue'] = '   [ARBUE]
 $refuse_level_quote['arbue'] = '   [ARBUE]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['arbue'] = '   [ARBUE]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['arbue'] = '   [ARBUE]
    - No means no!'
 
@@ -2356,7 +2394,7 @@ $refuse_skill_quote['bullhorn'] = '   [BULLHORN]
 $refuse_level_quote['bullhorn'] = '   [BULLHORN]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['bullhorn'] = '   [BULLHORN]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['bullhorn'] = '   [BULLHORN]
    - No means no!'
 
@@ -2378,7 +2416,7 @@ $refuse_skill_quote['countess_bathory'] = '   [Countess Batory]
 $refuse_level_quote['countess_bathory'] = '   [Countess Batory]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['countess_bathory'] = '   [Countess Batory]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['countess_bathory'] = '   [Countess Batory]
    - No means no!'
 
@@ -2400,7 +2438,7 @@ $refuse_skill_quote['gloth_prisonguard'] = '   [GLOT]
 $refuse_level_quote['gloth_prisonguard'] = '   [GLOT]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['gloth_prisonguard'] = '   [GLOT]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['gloth_prisonguard'] = '   [GLOT]
    - No means no!'
 
@@ -2422,7 +2460,7 @@ $refuse_skill_quote['kratos'] = '   [KRATOS]
 $refuse_level_quote['kratos'] = '   [KRATOS]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['kratos'] = '   [KRATOS]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['kratos'] = '   [KRATOS]
    - No means no!'
 
@@ -2444,7 +2482,7 @@ $refuse_skill_quote['kurfilinn'] = '   [Kurfilinn]
 $refuse_level_quote['kurfilinn'] = '   [Kurfilinn]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['kurfilinn'] = '   [Kurfilinn]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['kurfilinn'] = '   [Kurfilinn]
    - No means no!'
 
@@ -2466,7 +2504,7 @@ $refuse_skill_quote['lady_mordhulla'] = '   [Lady Mordhulla]
 $refuse_level_quote['lady_mordhulla'] = '   [Lady Mordhulla]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['lady_mordhulla'] = '   [Lady Mordhulla]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['lady_mordhulla'] = '   [Lady Mordhulla]
    - No means no!'
 
@@ -2488,7 +2526,7 @@ $refuse_skill_quote['lord_pira'] = '   [Lord Pyra]
 $refuse_level_quote['lord_pira'] = '   [Lord Pyra]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['lord_pira'] = '   [Lord Pyra]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['lord_pira'] = '   [Lord Pyra]
    - No means no!'
 
@@ -2510,7 +2548,7 @@ $refuse_skill_quote['magnaga'] = '   [MAGNAGA]
 $refuse_level_quote['magnaga'] = '   [MAGNAGA]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['magnaga'] = '   [MAGNAGA]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['magnaga'] = '   [MAGNAGA]
    - No means no!'
 
@@ -2532,7 +2570,7 @@ $refuse_skill_quote['mikkey'] = '   [Merry Mickey]
 $refuse_level_quote['mikkey'] = '   [Merry Mickey]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['mikkey'] = '   [Merry Mickey]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['mikkey'] = '   [Merry Mickey]
    - No means no!'
 
@@ -2554,7 +2592,7 @@ $refuse_skill_quote['prince_charming'] = '   [Prince Charming]
 $refuse_level_quote['prince_charming'] = '   [Prince Charming]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['prince_charming'] = '   [Prince Charming]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['prince_charming'] = '   [Prince Charming]
    - No means no!'
 
@@ -2576,7 +2614,7 @@ $refuse_skill_quote['sfinga'] = '   [SPHINGY]
 $refuse_level_quote['sfinga'] = '   [SPHINGY]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['sfinga'] = '   [SPHINGY]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['sfinga'] = '   [SPHINGY]
    - No means no!'
 
@@ -2599,7 +2637,7 @@ $refuse_skill_quote['sample'] = '   [BUYER]
 $refuse_level_quote['sample'] = '   [BUYER]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['sample'] = '   [BUYER]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['sample'] = '   [BUYER]
    - No means no!'
    
@@ -2673,7 +2711,7 @@ $npc_name['korvus_knyaz'] = 'Prince'
 $npc_status['korvus_knyaz'] = 'The Overlord
 Corvus House (Damned)'
 $npc_alignment['korvus_knyaz'] = 'korvus'
-$npc_info['korvus_knyaz'] = 'You don''t know the name of this ancient vampire. Everyone calls him Prince. Is he the full-fledged leader of the Corvus House or just playing this role? But his yard is lush and is known for his splendid formal parties.'
+$npc_info['korvus_knyaz'] = 'You don`t know the name of this ancient vampire. Everyone calls him Prince. Is he the full-fledged leader of the Corvus House or just playing this role? But his yard is lush and is known for his splendid formal parties.'
 demand_rating['korvus_knyaz'] = 5
 $interesting_specialisation['korvus_knyaz'] = 'artist'
 
@@ -2714,7 +2752,7 @@ $npc_name['hand_of_the_knyaz'] = 'The Hand of the Prince'
 $npc_status['hand_of_the_knyaz'] = 'Advisor
 Corvus House (Damned)'
 $npc_alignment['hand_of_the_knyaz'] = 'korvus'
-$npc_info['hand_of_the_knyaz'] = 'Corvus House doesn''t have an army. At all. But, nevertheless, they are coping well. They give the name ''Hand of the Prince'' to whoever can solve their external problems. By any means.'
+$npc_info['hand_of_the_knyaz'] = 'Corvus House doesn`t have an army. At all. But, nevertheless, they are coping well. They give the name ''Hand of the Prince'' to whoever can solve their external problems. By any means.'
 demand_rating['hand_of_the_knyaz'] = 4
 $interesting_specialisation['hand_of_the_knyaz'] = 'artist'
 $npc_preferences['hand_of_the_knyaz'] = {
@@ -2846,7 +2884,7 @@ $refuse_skill_quote['baron_imladis'] = '   [Baron Imladis]
 $refuse_level_quote['baron_imladis'] = '   [Baron Imladis]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['baron_imladis'] = '   [Baron Imladis]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['baron_imladis'] = '   [Baron Imladis]
    - No means no!'
 
@@ -2868,7 +2906,7 @@ $refuse_skill_quote['donna_venturi'] = '   [Donna Venturi]
 $refuse_level_quote['donna_venturi'] = '   [Donna Venturi]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['donna_venturi'] = '   [Donna Venturi]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['donna_venturi'] = '   [Donna Venturi]
    - No means no!'
 
@@ -2890,7 +2928,7 @@ $refuse_skill_quote['faceless'] = '   [FACELESS]
 $refuse_level_quote['faceless'] = '   [FACELESS]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['faceless'] = '   [FACELESS]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['faceless'] = '   [FACELESS]
    - No means no!'
 
@@ -2912,7 +2950,7 @@ $refuse_skill_quote['lady_yasmenia'] = '   [Lady Yasmania]
 $refuse_level_quote['lady_yasmenia'] = '   [Lady Yasmania]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['lady_yasmenia'] = '   [Lady Yasmania]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['lady_yasmenia'] = '   [Lady Yasmania]
    - No means no!'
 
@@ -2934,7 +2972,7 @@ $refuse_skill_quote['mad_baron'] = '   [Mad Baron]
 $refuse_level_quote['mad_baron'] = '   [Mad Baron]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['mad_baron'] = '   [Mad Baron]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['mad_baron'] = '   [Mad Baron]
    - No means no!'
 
@@ -2956,7 +2994,7 @@ $refuse_skill_quote['paral_itch'] = '   [Para Lysis]
 $refuse_level_quote['paral_itch'] = '   [Para Lysis]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['paral_itch'] = '   [Para Lysis]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['paral_itch'] = '   [Para Lysis]
    - No means no!'
 
@@ -2978,7 +3016,7 @@ $refuse_skill_quote['wight'] = '   [SLEW]
 $refuse_level_quote['wight'] = '   [SLEW]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['wight'] = '   [SLEW]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['wight'] = '   [SLEW]
    - No means no!'
 
@@ -3000,7 +3038,7 @@ $refuse_skill_quote['draugr'] = '   [DRAUGR]
 $refuse_level_quote['draugr'] = '   [DRAUGR]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['draugr'] = '   [DRAUGR]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['draugr'] = '   [DRAUGR]
    - No means no!'
 
@@ -3022,7 +3060,7 @@ $refuse_skill_quote['lestor'] = '   [LESTOR]
 $refuse_level_quote['lestor'] = '   [LESTOR]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['lestor'] = '   [LESTOR]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['lestor'] = '   [LESTOR]
    - No means no!'
 
@@ -3044,7 +3082,7 @@ $refuse_skill_quote['scarlet'] = '   [SCARLET]
 $refuse_level_quote['scarlet'] = '   [SCARLET]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['scarlet'] = '   [SCARLET]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['scarlet'] = '   [SCARLET]
    - No means no!'
 
@@ -3066,7 +3104,7 @@ $refuse_skill_quote['count_yagellon'] = '   [Count Jagellon]
 $refuse_level_quote['count_yagellon'] = '   [Count Jagellon]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['count_yagellon'] = '   [Count Jagellon]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['count_yagellon'] = '   [Count Jagellon]
    - No means no!'
 
@@ -3088,7 +3126,7 @@ $refuse_skill_quote['sample'] = '   [BUYER]
 $refuse_level_quote['sample'] = '   [BUYER]
    - Can you find a better girl? She is too expensive, considering her rank.'
 $refuse_charm_quote['sample'] = '   [BUYER]
-   - Uhhmm.... I don''t know. Formally, she fits, but she looks unpresentable. I don''t like it.'
+   - Uhhmm.... I don`t know. Formally, she fits, but she looks unpresentable. I don`t like it.'
 $refuse_again_quote['sample'] = '   [BUYER]
    - No means no!'
 
@@ -3164,9 +3202,9 @@ $npc_flirt['poison'] = {
 $poison_pref[1] = '  [POISON]
    - My requirements for a slave? Well, listen. Firstly, excellent <font color="#0000CD"><b>health</b></font> and endurance. Believe me, she will have to go through a lot and I want her to live a little longer. I already have to change them too often.'
 $poison_pref[2] = '  [POISON]
-   - Second, but no less important, is <font color="#0000CD"><b>sensitivity</b></font>. I don''t need a log that is not able to feel all the different shades of pain. Plus, a minimum intelligence to serve as an assistant. Temperament and self-sufficiency do not worry me.'
+   - Second, but no less important, is <font color="#0000CD"><b>sensitivity</b></font>. I don`t need a log that is not able to feel all the different shades of pain. Plus, a minimum intelligence to serve as an assistant. Temperament and self-sufficiency do not worry me.'
 $poison_pref[3] = '  [POISON]
-   - And do not stick me with some exotic one, especially with one that I have already worked on. I want to have a blank canvas to work with. With my design and craftsmanship, I can make an ordinary person into a new, incredible creature. And I don''t need children - they are too weak.'
+   - And do not stick me with some exotic one, especially with one that I have already worked on. I want to have a blank canvas to work with. With my design and craftsmanship, I can make an ordinary person into a new, incredible creature. And I don`t need children - they are too weak.'
 $poison_pref[4] = '  [POISON]
    - Of course, she will not mess around, so she needs some skills to help around in the studio. The ability to work with documents and politely communicate with customers is welcomed. It is also important to know how <font color="#4B0082"><b>to handle wounds</b></font> and <font color="#4B0082"><b>restore order</b></font> after a working day.'
 $poison_pref[5] = '  [POISON]
@@ -3285,5 +3323,6 @@ $sample_pref[2] = '  <font color="#0000CD"><b>профессионализм</b>
 $sample_pref[3] = '  <font color="#008080"><b>экспертиза</b></font>'
 $sample_pref[4] = '  '
 $sample_pref[5] = '  '"
+
 --- #npc_base ---------------------------------
 

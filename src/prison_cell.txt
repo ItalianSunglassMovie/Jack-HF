@@ -93,9 +93,10 @@ if prisoner_state ! 0: *p '<div id = "prison_stat_bar"><<$info_bar>></div>'
 
 IF pstarvation_varning = 1:
  pstarvation_varning = 0
- msg '    You notice signs of starvation on prisoner. It seems that the food you are giving her is not enough. Maybe you even have to pull her out of the dungeon and fed her to satiety.'
+ msg '    You notice signs of starvation on your prisoner. It seems that the food you are giving her is not enough. Maybe you even have to pull her out of the dungeon and feed her to satiety.'
 END
 
 *p '<div id = "close_far"><a href = "EXEC: $prisoner_info_text = '''' & menu_form = 0 & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
+
 --- prison_cell ---------------------------------
 

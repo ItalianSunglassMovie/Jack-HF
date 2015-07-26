@@ -60,6 +60,7 @@ $hero_con[2] = 'mess'
 $hero_con[3] = 'wounds'
 $hero_con[4] = 'str'
 $hero_con[5] = 'cha'
+$hero_con[6] = 'libido'
 
 !Discrete, field dependence
 $hero_dep[0] = 'none'
@@ -77,5 +78,6 @@ $hero_dep[11] = 'domination'
 $hero_dep[12] = 'flagelation'
 $hero_dep[13] = 'torture'
 $hero_dep[14] = 'bondage'
+
 --- #variative ---------------------------------
 

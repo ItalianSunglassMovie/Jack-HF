@@ -64,12 +64,15 @@ jump 'second_point'
 $info_bar = '
 <u>SUMMARY</u>
 <<$beauty[stock["beauty"]]>> 
-<<$stamina[stock["stamina"]]>> 
+<<$stamina[stock["stamina"]]>>  
 <<$exotic[stock["exotic"]]>> 
 <<$fat[stock["fat"]]>> 
-<<$sensitivity[stock["sensitivity"]]>> 
+<<$sensitivity[stock["sensitivity"]]>>  
 <<$style[stock["style"]]>> 
+<<$intellect[stock["intellect"]]>> 
 <<$temper[stock["temper"]]>> 
+<<$ego[stock["ego"]]>> 
+<<$pride[stock["pride"]]>> 
 
 <u>TRAITS</u>
 <<$stock_features_list>>' 

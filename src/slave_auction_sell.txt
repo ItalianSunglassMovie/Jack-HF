@@ -33,12 +33,12 @@ IF slave['brand'] = 0:
   <font color="#660000">- Оh! The girl is branded! Not quite my profile, but for you I will find way to sell her, my dear. Tell me what you taught her? How she behaves?
 </font>'
  if brand_reputation <= 3: $text[3] = '[FARID]
-  <font color="#660000">- Well, this is bad... Girl is branded! Not my profile. I cannot take her, my dear. Would be happy to, but I can''t. Guild will pull the skin out of me for such things.
+  <font color="#660000">- Well, this is bad... The girl is branded! Not my profile. I cannot take her, my dear. Would be happy to, but I can`t. The Guild would pull the skin off of me for such things.
 </font>' & text_count = 3
 END
 
 $text[4] = '[FARID]
-  <font color="#660000">- Yeah... Yeah... Well, I see. Not to be left without a penny, I''ll give you for her <<sell_price>> sparks. More sparks? No, my dear, I can''t.
+  <font color="#660000">- Yeah... Yeah... Well, I see. Not to be left without a penny, I''ll give you <<sell_price>> sparks for her. More sparks? No, my dear, I can`t.
 </font>'
 
 $text[5] = '  <a href = ''EXEC: gt "slave_auction_sell_end"''><font color="#228B22">- Robbing in broad daylight, Farid. Oh well... deal!

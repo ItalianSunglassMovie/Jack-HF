@@ -2,18 +2,22 @@
 !Various technical variables and arrays
 
 !Replacement for font copypaste
-$_font_col_rep[0] = '<font color="#cd0000">'
-$_font_col_rep[1] = '<font color="#C71585">'
-$_font_col_rep[2] = '<font color="#4B0082">'
-$_font_col_rep[3] = '<font color="#0000CD">'
-$_font_col_rep[4] = '<font color="#008080">'
-$_font_col_rep[5] = '<font color="#008000">'
+$_font_col_rep[0] = '<font color="#ff0000">'
+$_font_col_rep[1] = '<font color="#ff004c">'
+$_font_col_rep[2] = '<font color="#ff00a2">'
+$_font_col_rep[3] = '<font color="#d805ff">'
+$_font_col_rep[4] = '<font color="#9100ff">'
+$_font_col_rep[5] = '<font color="#0205ff">'
+$_font_col_rep[6] = '<font color="#05a1f6">'
+$_font_col_rep[7] = '<font color="#23b4c4">'
+$_font_col_rep[8] = '<font color="#15db64">'
+$_font_col_rep[9] = '<font color="#c2e713">'
+$_font_col_rep[10] = '<font color="#008000">'
 ! grey color
-$_font_col_rep[6] = '<font color="#C0C0C0">'
+$_font_col_rep[11] = '<font color="#C0C0C0">'
 ! for stats that higher than 5
-$_font_col_rep[7] = '<font color="#556832">'
+$_font_col_rep[12] = '<font color="#548756">'
 $_font_closer = '</font>'
-!TODO: добить замены во всем файле
 $vb_cycle = {
     $result = $_font_col_rep[args[0]] + $args[1] + $_font_closer
 }
@@ -45,20 +49,17 @@ $vb_full_cycle = {
 
 ! Constants table that replace the magic numbers
 !Replacement for slave\assistant age etc.
-!TODO: заменить в коде числа [0-2] на CONST_INT[?]
 CONST_INT['young_age'] = 0
 CONST_INT['loli_age']  = 1
 CONST_INT['milf_age']  = 2
 
 !Replacement for slave\assistant status (slave_state)
-!TODO: заменить в коде числа [0-3] на CONST_INT[?]
 CONST_INT['no_slave'] = 0
 CONST_INT['slave_exist'] = 1
 CONST_INT['slave_faint'] = 2
 CONST_INT['slave_dead'] = 3
 
 !MAIN CODE
-!Оставлена старая замена, пока лень ковырять
 age_code['young'] = CONST_INT['young_age']
 age_code['loli']  = CONST_INT['loli_age']
 age_code['milf']  = CONST_INT['milf_age']
@@ -110,13 +111,12 @@ tentacle_death[4] = -25
 $tentacle_state[0] = ''
 $tentacle_state[1] = $_font_col_rep[0] + ' crave' + $_font_closer
 $tentacle_state[2] = $_font_col_rep[5] + ' satisfied' + $_font_closer
-
-!lillimerge: added fiend names
+ 
 $tentacle_name[0] = $_font_col_rep[1] + 'Rear gripper' + $_font_closer
-$tentacle_name[1] = $_font_col_rep[2] + 'Dark juvenile' + $_font_closer
-$tentacle_name[2] = $_font_col_rep[3] + 'Tentacle beast' + $_font_closer
-$tentacle_name[3] = $_font_col_rep[4] + 'Kraken' + $_font_closer
-$tentacle_name[4] = $_font_col_rep[5] + 'Leviathan' + $_font_closer
+$tentacle_name[1] = $_font_col_rep[3] + 'Dark juvenile' + $_font_closer
+$tentacle_name[2] = $_font_col_rep[5] + 'Tentacle beast' + $_font_closer
+$tentacle_name[3] = $_font_col_rep[7] + 'Kraken' + $_font_closer
+$tentacle_name[4] = $_font_col_rep[10] + 'Leviathan' + $_font_closer
 
 !training cost
 $couch_price[0] = '5 sparks'
@@ -125,6 +125,11 @@ $couch_price[2] = '10 sparks'
 $couch_price[3] = '15 sparks'
 $couch_price[4] = '20 sparks'
 $couch_price[5] = '25 sparks'
+$couch_price[6] = '30 sparks'
+$couch_price[7] = '35 sparks'
+$couch_price[8] = '40 sparks'
+$couch_price[9] = '45 sparks'
+$couch_price[10] = '50 sparks'
 
 couch_price[0] = 5
 couch_price[1] = 5
@@ -132,35 +137,60 @@ couch_price[2] = 10
 couch_price[3] = 15
 couch_price[4] = 20
 couch_price[5] = 25
+couch_price[6] = 30
+couch_price[7] = 35
+couch_price[8] = 40
+couch_price[9] = 45
+couch_price[10] = 50
 
 $school_price[0] = '1 spark'
 $school_price[1] = '2 sparks'
 $school_price[2] = '4 sparks'
-$school_price[3] = '8 sparks'
-$school_price[4] = '12 sparks'
-$school_price[5] = '16 sparks'
+$school_price[3] = '6 sparks'
+$school_price[4] = '8 sparks'
+$school_price[5] = '10 sparks'
+$school_price[6] = '12 sparks'
+$school_price[7] = '14 sparks'
+$school_price[8] = '16 sparks'
+$school_price[9] = '18 sparks'
+$school_price[10] = '20 sparks'
 
 school_price[0] = 1
 school_price[1] = 2
 school_price[2] = 4
-school_price[3] = 8
-school_price[4] = 12
-school_price[5] = 16
+school_price[3] = 6
+school_price[4] = 8
+school_price[5] = 10
+school_price[6] = 12
+school_price[7] = 14
+school_price[8] = 16
+school_price[9] = 18
+school_price[10] = 20
 
 !prepay for guild contracts
-prepay[0] = 200
-prepay[1] = 200
-prepay[2] = 300
-prepay[3] = 300
-prepay[4] = 500
-prepay[5] = 500
+prepay[0] = 50
+prepay[1] = 100
+prepay[2] = 150
+prepay[3] = 500
+prepay[4] = 700
+prepay[5] = 1000
+prepay[6] = 1200
+prepay[7] = 3000
+prepay[8] = 3000
+prepay[9] = 8000
+prepay[10] = 10000
 
-contract_level[0] = 1
+contract_level[0] = 0
 contract_level[1] = 1
 contract_level[2] = 2
-contract_level[3] = 2
-contract_level[4] = 3
-contract_level[5] = 3
+contract_level[3] = 3
+contract_level[4] = 4
+contract_level[5] = 5
+contract_level[6] = 6
+contract_level[7] = 7
+contract_level[8] = 8
+contract_level[9] = 9
+contract_level[10] = 10
 
 $specialisation[0] = 'none'
 $specialisation[1] = 'refferent'
@@ -882,38 +912,63 @@ $slave_type_name_sk['artist'] = 'an artist'
 $slave_type_name_sk['concubine'] = 'a concubine'
 
 $rating[0] = dyneval($vb_cycle, 0, '<b>F-</b>')
-$rating[1] = dyneval($vb_cycle, 1, '<b>D</b>')
-$rating[2] = dyneval($vb_cycle, 2, '<b>C</b>')
-$rating[3] = dyneval($vb_cycle, 3, '<b>B</b>')
-$rating[4] = dyneval($vb_cycle, 4, '<b>A</b>')
-$rating[5] = dyneval($vb_cycle, 5, '<b>S+</b>')
+$rating[1] = dyneval($vb_cycle, 1, '<b>D-</b>')
+$rating[2] = dyneval($vb_cycle, 2, '<b>D+</b>')
+$rating[3] = dyneval($vb_cycle, 3, '<b>C-</b>')
+$rating[4] = dyneval($vb_cycle, 4, '<b>C+</b>')
+$rating[5] = dyneval($vb_cycle, 5, '<b>B-</b>')
+$rating[6] = dyneval($vb_cycle, 6, '<b>B+</b>')
+$rating[7] = dyneval($vb_cycle, 7, '<b>A-</b>')
+$rating[8] = dyneval($vb_cycle, 8, '<b>A+</b>')
+$rating[9] = dyneval($vb_cycle, 9, '<b>S-</b>')
+$rating[10] = dyneval($vb_cycle, 10, '<b>S+</b>')
 
 common_price[0] = 5
-common_price[1] = 500
-common_price[2] = 1000
-common_price[3] = 2500
-common_price[4] = 5000
-common_price[5] = 10000
+common_price[1] = 300
+common_price[2] = 800
+common_price[3] = 1500
+common_price[4] = 2500
+common_price[5] = 3500
+common_price[6] = 6000
+common_price[7] = 10000
+common_price[8] = 15000
+common_price[9] = 25000
+common_price[10] = 40000
 
 discount_price[0] = 1
 discount_price[1] = 300
 discount_price[2] = 600
 discount_price[3] = 1500
-discount_price[4] = 3000
-discount_price[5] = 6000
+discount_price[4] = 2000
+discount_price[5] = 4000
+discount_price[6] = 6500
+discount_price[7] = 8000
+discount_price[8] = 15000
+discount_price[9] = 20000
+discount_price[10] = 30000
 
 auction_price[0] = 5
 auction_price[1] = 250
 auction_price[2] = 500
 auction_price[3] = 1200
 auction_price[4] = 2500
-auction_price[5] = 5000
+auction_price[5] = 5500
+auction_price[6] = 8500
+auction_price[7] = 15000
+auction_price[8] = 25000
+auction_price[9] = 30000
+auction_price[10] = 40000
 
 auction_increment[1] = 25
 auction_increment[2] = 50
 auction_increment[3] = 100
 auction_increment[4] = 250
 auction_increment[5] = 500
+auction_increment[6] = 600
+auction_increment[7] = 800
+auction_increment[8] = 1000
+auction_increment[9] = 1200
+auction_increment[10] = 1400
 
 base_charm[0] = 0
 base_charm[1] = 10
@@ -921,70 +976,119 @@ base_charm[2] = 11
 base_charm[3] = 12
 base_charm[4] = 13
 base_charm[5] = 14
+base_charm[6] = 15
+base_charm[7] = 16
+base_charm[8] = 17
+base_charm[9] = 18
+base_charm[10] = 19
 
 $orgasm_type[0] = 'clitoral'
 $orgasm_type[1] = 'deep'
 $orgasm_type[2] = 'squirt'
 
-$stars[10] = dyneval($vb_cycle, 0, '*****')
-$stars[9] = '<font color="#D3D3D3">*</font><font color="#cd0000">****' + $_font_closer
-$stars[8] = '<font color="#D3D3D3">**</font><font color="#cd0000">***' + $_font_closer
-$stars[7] = '<font color="#D3D3D3">***</font><font color="#cd0000">**' + $_font_closer
-$stars[6] = '<font color="#D3D3D3">****</font><font color="#cd0000">*' + $_font_closer
+$stars[30] = dyneval($vb_cycle, 0, '***************')
+$stars[29] = '<font color="#D3D3D3">*</font><font color="#cd0000">**************' + $_font_closer
+$stars[28] = '<font color="#D3D3D3">**</font><font color="#cd0000">*************' + $_font_closer
+$stars[27] = '<font color="#D3D3D3">***</font><font color="#cd0000">************' + $_font_closer
+$stars[26] = '<font color="#D3D3D3">****</font><font color="#cd0000">***********' + $_font_closer
+$stars[25] = '<font color="#D3D3D3">*****</font><font color="#cd0000">**********' + $_font_closer
+$stars[24] = '<font color="#D3D3D3">******</font><font color="#cd0000">*********' + $_font_closer
+$stars[23] = '<font color="#D3D3D3">*******</font><font color="#cd0000">********' + $_font_closer
+$stars[22] = '<font color="#D3D3D3">********</font><font color="#cd0000">*******' + $_font_closer
+$stars[21] = '<font color="#D3D3D3">*********</font><font color="#cd0000">******' + $_font_closer
+$stars[20] = '<font color="#D3D3D3">**********</font><font color="#cd0000">*****' + $_font_closer
+$stars[19] = '<font color="#D3D3D3">***********</font><font color="#cd0000">****' + $_font_closer
+$stars[18] = '<font color="#D3D3D3">************</font><font color="#cd0000">***' + $_font_closer
+$stars[17] = '<font color="#D3D3D3">*************</font><font color="#cd0000">**' + $_font_closer
+$stars[16] = '<font color="#D3D3D3">**************</font><font color="#cd0000">*' + $_font_closer
 $stars[0] = '-'
-$stars[1] = $_font_col_rep[5] + '*</font><font color="#D3D3D3">****' + $_font_closer
-$stars[2] = $_font_col_rep[5] + '**</font><font color="#D3D3D3">***' + $_font_closer
-$stars[3] = $_font_col_rep[5] + '***</font><font color="#D3D3D3">**' + $_font_closer
-$stars[4] = $_font_col_rep[5] + '****</font><font color="#D3D3D3">*' + $_font_closer
-$stars[5] = $_font_col_rep[5] + '*****' + $_font_closer
+$stars[1] = $_font_col_rep[1] + '*</font><font color="#D3D3D3">**************' + $_font_closer
+$stars[2] = $_font_col_rep[2] + '**</font><font color="#D3D3D3">*************' + $_font_closer
+$stars[3] = $_font_col_rep[3] + '***</font><font color="#D3D3D3">************' + $_font_closer
+$stars[4] = $_font_col_rep[4] + '****</font><font color="#D3D3D3">***********' + $_font_closer
+$stars[5] = $_font_col_rep[5] + '*****</font><font color="#D3D3D3">**********' + $_font_closer
+$stars[6] = $_font_col_rep[6] + '******</font><font color="#D3D3D3">*********' + $_font_closer
+$stars[7] = $_font_col_rep[7] + '*******</font><font color="#D3D3D3">********' + $_font_closer
+$stars[8] = $_font_col_rep[8] + '********</font><font color="#D3D3D3">*******' + $_font_closer
+$stars[9] = $_font_col_rep[9] + '*********</font><font color="#D3D3D3">******' + $_font_closer
+$stars[10] = $_font_col_rep[10] + '**********</font><font color="#D3D3D3">*****' + $_font_closer
+$stars[11] = $_font_col_rep[10] + '***********</font><font color="#D3D3D3">****' + $_font_closer
+$stars[12] = $_font_col_rep[10] + '************</font><font color="#D3D3D3">***' + $_font_closer
+$stars[13] = $_font_col_rep[10] + '*************</font><font color="#D3D3D3">**' + $_font_closer
+$stars[14] = $_font_col_rep[10] + '**************</font><font color="#D3D3D3">*' + $_font_closer
+$stars[15] = $_font_col_rep[10] + '***************' + $_font_closer
 
 $boy_mood[10] = dyneval($vb_cycle, 0, 'Severely depressed')
-$boy_mood[9] = dyneval($vb_cycle, 0, 'Depressed')
-$boy_mood[8] = dyneval($vb_cycle, 0, 'Melancholic')
-$boy_mood[7] = dyneval($vb_cycle, 0, 'Pessimistic')
-$boy_mood[6] = dyneval($vb_cycle, 0, 'Unhappy')
+$boy_mood[9] = dyneval($vb_cycle, 1, 'Depressed')
+$boy_mood[8] = dyneval($vb_cycle, 2, 'Melancholic')
+$boy_mood[7] = dyneval($vb_cycle, 3, 'Pessimistic')
+$boy_mood[6] = dyneval($vb_cycle, 4, 'Unhappy')
 $boy_mood[0] = 'Calm'
 $boy_mood[1] = dyneval($vb_cycle, 5, 'Cheerful')
-$boy_mood[2] = dyneval($vb_cycle, 5, 'Optimistic')
-$boy_mood[3] = dyneval($vb_cycle, 5, 'Pleased')
-$boy_mood[4] = dyneval($vb_cycle, 5, 'Happy')
-$boy_mood[5] = dyneval($vb_cycle, 5, 'Ecstatic')
+$boy_mood[2] = dyneval($vb_cycle, 6, 'Optimistic')
+$boy_mood[3] = dyneval($vb_cycle, 7, 'Pleased')
+$boy_mood[4] = dyneval($vb_cycle, 8, 'Happy')
+$boy_mood[5] = dyneval($vb_cycle, 10, 'Ecstatic')
 
 $girl_mood[10] = dyneval($vb_cycle, 0, 'Severely depressed')
-$girl_mood[9] = dyneval($vb_cycle, 0, 'Depressed')
-$girl_mood[8] = dyneval($vb_cycle, 0, 'Melancholic')
-$girl_mood[7] = dyneval($vb_cycle, 0, 'Pessimistic')
-$girl_mood[6] = dyneval($vb_cycle, 0, 'Unhappy')
+$girl_mood[9] = dyneval($vb_cycle, 1, 'Depressed')
+$girl_mood[8] = dyneval($vb_cycle, 2, 'Melancholic')
+$girl_mood[7] = dyneval($vb_cycle, 3, 'Pessimistic')
+$girl_mood[6] = dyneval($vb_cycle, 4, 'Unhappy')
 $girl_mood[0] = 'Calm'
 $girl_mood[1] = dyneval($vb_cycle, 5, 'Cheerful')
-$girl_mood[2] = dyneval($vb_cycle, 5, 'Optimistic')
-$girl_mood[3] = dyneval($vb_cycle, 5, 'Pleased')
-$girl_mood[4] = dyneval($vb_cycle, 5, 'Happy')
-$girl_mood[5] = dyneval($vb_cycle, 5, 'Ecstatic')
+$girl_mood[2] = dyneval($vb_cycle, 6, 'Optimistic')
+$girl_mood[3] = dyneval($vb_cycle, 7, 'Pleased')
+$girl_mood[4] = dyneval($vb_cycle, 8, 'Happy')
+$girl_mood[5] = dyneval($vb_cycle, 10, 'Ecstatic')
+
+$girl_mood_1[10] = dyneval($vb_cycle, 0, 'Severely depressed')
+$girl_mood_1[9] = dyneval($vb_cycle, 1, 'Depressed')
+$girl_mood_1[8] = dyneval($vb_cycle, 2, 'Melancholic')
+$girl_mood_1[7] = dyneval($vb_cycle, 3, 'Pessimistic')
+$girl_mood_1[6] = dyneval($vb_cycle, 4, 'Unhappy')
+$girl_mood_1[0] = 'Calm'
+$girl_mood_1[1] = dyneval($vb_cycle, 5, 'Cheerful')
+$girl_mood_1[2] = dyneval($vb_cycle, 6, 'Optimistic')
+$girl_mood_1[3] = dyneval($vb_cycle, 7, 'Pleased')
+$girl_mood_1[4] = dyneval($vb_cycle, 8, 'Happy')
+$girl_mood_1[5] = dyneval($vb_cycle, 10, 'Ecstatic')
+
+$girl_mood_2[10] = dyneval($vb_cycle, 0, 'Severely depressed')
+$girl_mood_2[9] = dyneval($vb_cycle, 1, 'Depressed')
+$girl_mood_2[8] = dyneval($vb_cycle, 2, 'Melancholic')
+$girl_mood_2[7] = dyneval($vb_cycle, 3, 'Pessimistic')
+$girl_mood_2[6] = dyneval($vb_cycle, 4, 'Unhappy')
+$girl_mood_2[0] = 'Calm'
+$girl_mood_2[1] = dyneval($vb_cycle, 5, 'Cheerful')
+$girl_mood_2[2] = dyneval($vb_cycle, 6, 'Optimistic')
+$girl_mood_2[3] = dyneval($vb_cycle, 7, 'Pleased')
+$girl_mood_2[4] = dyneval($vb_cycle, 8, 'Happy')
+$girl_mood_2[5] = dyneval($vb_cycle, 10, 'Ecstatic')
 
 $excitement[10] = dyneval($vb_cycle, 0, 'Hanging')
-$excitement[9] = dyneval($vb_cycle, 0, 'Flaccid')
-$excitement[8] = dyneval($vb_cycle, 0, 'Overfucked')
-$excitement[7] = dyneval($vb_cycle, 0, 'Sated')
-$excitement[6] = dyneval($vb_cycle, 0, 'Cold')
+$excitement[9] = dyneval($vb_cycle, 1, 'Flaccid')
+$excitement[8] = dyneval($vb_cycle, 2, 'Overfucked')
+$excitement[7] = dyneval($vb_cycle, 3, 'Sated')
+$excitement[6] = dyneval($vb_cycle, 4, 'Cold')
 $excitement[0] = 'Contented'
 $excitement[1] = dyneval($vb_cycle, 5, 'Hardon')
-$excitement[2] = dyneval($vb_cycle, 5, 'Mighty hardon')
-$excitement[3] = dyneval($vb_cycle, 5, 'Rock hardon')
-$excitement[4] = dyneval($vb_cycle, 5, 'Stallion')
-$excitement[5] = dyneval($vb_cycle, 5, 'Wild stallion')
+$excitement[2] = dyneval($vb_cycle, 6, 'Mighty hardon')
+$excitement[3] = dyneval($vb_cycle, 7, 'Rock hardon')
+$excitement[4] = dyneval($vb_cycle, 8, 'Stallion')
+$excitement[5] = dyneval($vb_cycle, 10, 'Wild stallion')
 
 $behavior_evaluation[10] = dyneval($vb_cycle, 0, 'Guilty [5]')
-$behavior_evaluation[9] = dyneval($vb_cycle, 0, 'Guilty [4]')
-$behavior_evaluation[8] = dyneval($vb_cycle, 0, 'Guilty [3]')
-$behavior_evaluation[7] = dyneval($vb_cycle, 0, 'Guilty [2]')
-$behavior_evaluation[6] = dyneval($vb_cycle, 0, 'Guilty [1]')
+$behavior_evaluation[9] = dyneval($vb_cycle, 1, 'Guilty [4]')
+$behavior_evaluation[8] = dyneval($vb_cycle, 2, 'Guilty [3]')
+$behavior_evaluation[7] = dyneval($vb_cycle, 3, 'Guilty [2]')
+$behavior_evaluation[6] = dyneval($vb_cycle, 4, 'Guilty [1]')
 $behavior_evaluation[0] = 'No achievements'
 $behavior_evaluation[1] = dyneval($vb_cycle, 5, 'Excelled [1]')
-$behavior_evaluation[2] = dyneval($vb_cycle, 5, 'Excelled [2]')
-$behavior_evaluation[3] = dyneval($vb_cycle, 5, 'Excelled [3]')
-$behavior_evaluation[4] = dyneval($vb_cycle, 5, 'Excelled [4]')
-$behavior_evaluation[5] = dyneval($vb_cycle, 5, 'Excelled [5]')
+$behavior_evaluation[2] = dyneval($vb_cycle, 6, 'Excelled [2]')
+$behavior_evaluation[3] = dyneval($vb_cycle, 7, 'Excelled [3]')
+$behavior_evaluation[4] = dyneval($vb_cycle, 8, 'Excelled [4]')
+$behavior_evaluation[5] = dyneval($vb_cycle, 10, 'Excelled [5]')
 
 $girl_hygiene[0] = $_font_col_rep[5] + 'Clean' + $_font_closer
 $girl_hygiene[1] = $_font_col_rep[4] + 'Scruffy' + $_font_closer
@@ -992,6 +1096,11 @@ $girl_hygiene[2] = $_font_col_rep[3] + 'Unclean' + $_font_closer
 $girl_hygiene[3] = $_font_col_rep[2] + 'Dirty' + $_font_closer
 $girl_hygiene[4] = $_font_col_rep[1] + 'Filthy' + $_font_closer
 $girl_hygiene[5] = $_font_col_rep[0] + 'Disgusting' + $_font_closer
+$girl_hygiene[6] = $_font_col_rep[0] + 'Disgusting-' + $_font_closer
+$girl_hygiene[7] = $_font_col_rep[0] + 'Disgusting--' + $_font_closer
+$girl_hygiene[8] = $_font_col_rep[0] + 'Disgusting+' + $_font_closer
+$girl_hygiene[9] = $_font_col_rep[0] + 'Disgusting++' + $_font_closer
+$girl_hygiene[10] = $_font_col_rep[0] + 'Disgusting+++' + $_font_closer
 
 $boy_hygiene[0] = $_font_col_rep[5] + 'Fresh and clean' + $_font_closer
 $boy_hygiene[1] = $_font_col_rep[4] + 'Scruffy' + $_font_closer
@@ -999,181 +1108,306 @@ $boy_hygiene[2] = $_font_col_rep[3] + 'Unclean' + $_font_closer
 $boy_hygiene[3] = $_font_col_rep[2] + 'Dirty' + $_font_closer
 $boy_hygiene[4] = $_font_col_rep[1] + 'Filthy' + $_font_closer
 $boy_hygiene[5] = $_font_col_rep[0] + 'Disgusting' + $_font_closer
+$boy_hygiene[6] = $_font_col_rep[0] + 'Disgusting-' + $_font_closer
+$boy_hygiene[7] = $_font_col_rep[0] + 'Disgusting--' + $_font_closer
+$boy_hygiene[8] = $_font_col_rep[0] + 'Disgusting+' + $_font_closer
+$boy_hygiene[9] = $_font_col_rep[0] + 'Disgusting++' + $_font_closer
+$boy_hygiene[10] = $_font_col_rep[0] + 'Disgusting+++' + $_font_closer
 
 $girl_fame[0] = $_font_col_rep[0] + 'Unknown' + $_font_closer
 $girl_fame[1] = $_font_col_rep[1] + 'Obscure' + $_font_closer
 $girl_fame[2] = $_font_col_rep[2] + 'Rumored' + $_font_closer
 $girl_fame[3] = $_font_col_rep[3] + 'Recognized' + $_font_closer
 $girl_fame[4] = $_font_col_rep[4] + 'Famous' + $_font_closer
-$girl_fame[5] = $_font_col_rep[5] + 'Legendary' + $_font_closer
+$girl_fame[5] = $_font_col_rep[5] + 'Legendary-I' + $_font_closer
+$girl_fame[6] = $_font_col_rep[6] + 'Legendary-II' + $_font_closer
+$girl_fame[7] = $_font_col_rep[7] + 'Legendary-III' + $_font_closer
+$girl_fame[8] = $_font_col_rep[8] + 'Legendary-IV' + $_font_closer
+$girl_fame[9] = $_font_col_rep[9] + 'Legendary-V' + $_font_closer
+$girl_fame[10] = $_font_col_rep[10] + 'Legendary-VI' + $_font_closer
 
 $stamina[0] = $_font_col_rep[0] + 'Dying' + $_font_closer
 $stamina[1] = $_font_col_rep[1] + 'Feeble' + $_font_closer
 $stamina[2] = $_font_col_rep[2] + 'Weakened' + $_font_closer
 $stamina[3] = $_font_col_rep[3] + 'Healthy' + $_font_closer
-$stamina[4] = $_font_col_rep[4] + 'Tough' + $_font_closer
-$stamina[5] = $_font_col_rep[5] + 'Enduring' + $_font_closer
+$stamina[4] = $_font_col_rep[4] + 'Firm' + $_font_closer
+$stamina[5] = $_font_col_rep[5] + 'Tough' + $_font_closer
+$stamina[6] = $_font_col_rep[6] + 'Enduring' + $_font_closer
+$stamina[7] = $_font_col_rep[7] + 'Mighty' + $_font_closer
+$stamina[8] = $_font_col_rep[8] + 'Vigorous' + $_font_closer
+$stamina[9] = $_font_col_rep[9] + 'Withstanding' + $_font_closer
+$stamina[10] = $_font_col_rep[10] + 'Unbreakable' + $_font_closer
 
 $beauty[0] = $_font_col_rep[0] + 'Ugly' + $_font_closer
 $beauty[1] = $_font_col_rep[1] + 'Plain' + $_font_closer
 $beauty[2] = $_font_col_rep[2] + 'Cute' + $_font_closer
 $beauty[3] = $_font_col_rep[3] + 'Pretty' + $_font_closer
-$beauty[4] = $_font_col_rep[4] + 'Beautiful' + $_font_closer
-$beauty[5] = $_font_col_rep[5] + 'Exquisite' + $_font_closer
+$beauty[4] = $_font_col_rep[4] + 'Attractive' + $_font_closer
+$beauty[5] = $_font_col_rep[5] + 'Beautiful' + $_font_closer
+$beauty[6] = $_font_col_rep[6] + 'Stunning' + $_font_closer
+$beauty[7] = $_font_col_rep[7] + 'Exquisite' + $_font_closer
+$beauty[8] = $_font_col_rep[8] + 'Gorgeous' + $_font_closer
+$beauty[9] = $_font_col_rep[9] + 'Marvelous' + $_font_closer
+$beauty[10] = $_font_col_rep[10] + 'Goddess' + $_font_closer
 
-$intellect[0] = $_font_col_rep[0] + 'Retarded' + $_font_closer
-$intellect[1] = $_font_col_rep[1] + 'Stupid' + $_font_closer
-$intellect[2] = $_font_col_rep[2] + 'Dimwitted' + $_font_closer
-$intellect[3] = $_font_col_rep[3] + 'Bright' + $_font_closer
-$intellect[4] = $_font_col_rep[4] + 'Clever' + $_font_closer
-$intellect[5] = $_font_col_rep[5] + 'Intelligent' + $_font_closer
+$intellect[0] = $_font_col_rep[0] + 'Brainless' + $_font_closer
+$intellect[1] = $_font_col_rep[1] + 'Retarded' + $_font_closer
+$intellect[2] = $_font_col_rep[2] + 'Stupid' + $_font_closer
+$intellect[3] = $_font_col_rep[3] + 'Dimwitted' + $_font_closer
+$intellect[4] = $_font_col_rep[4] + 'Bright' + $_font_closer
+$intellect[5] = $_font_col_rep[5] + 'Thinker' + $_font_closer
+$intellect[6] = $_font_col_rep[6] + 'Clever' + $_font_closer
+$intellect[7] = $_font_col_rep[7] + 'Intelligent' + $_font_closer
+$intellect[8] = $_font_col_rep[8] + 'Genius' + $_font_closer
+$intellect[9] = $_font_col_rep[9] + 'Sage' + $_font_closer
+$intellect[10] = $_font_col_rep[10] + 'Mastermind' + $_font_closer
 
-$exotic[0] = $_font_col_rep[0] + 'Ordinary' + $_font_closer
-$exotic[1] = $_font_col_rep[1] + 'Quirky' + $_font_closer
-$exotic[2] = $_font_col_rep[2] + 'Mysterious' + $_font_closer
-$exotic[3] = $_font_col_rep[3] + 'Enigmatic' + $_font_closer
-$exotic[4] = $_font_col_rep[4] + 'Exotic' + $_font_closer
-$exotic[5] = $_font_col_rep[5] + 'Mystical' + $_font_closer
+$exotic[0] = $_font_col_rep[0] + 'Freak' + $_font_closer
+$exotic[1] = $_font_col_rep[1] + 'Common' + $_font_closer
+$exotic[2] = $_font_col_rep[2] + 'Ordinary' + $_font_closer
+$exotic[3] = $_font_col_rep[3] + 'Quirky' + $_font_closer
+$exotic[4] = $_font_col_rep[4] + 'Mysterious' + $_font_closer
+$exotic[5] = $_font_col_rep[5] + 'Enigmatic' + $_font_closer
+$exotic[6] = $_font_col_rep[6] + 'Exotic' + $_font_closer
+$exotic[7] = $_font_col_rep[7] + 'Mystical' + $_font_closer
+$exotic[8] = $_font_col_rep[8] + 'Sexy' + $_font_closer
+$exotic[9] = $_font_col_rep[9] + 'Extraordinary' + $_font_closer
+$exotic[10] = $_font_col_rep[10] + 'Glamorous' + $_font_closer
 
-$fat[5] = $_font_col_rep[0] + 'Obese' + $_font_closer
-$fat[4] = $_font_col_rep[1] + 'Overweight' + $_font_closer
-$fat[3] = $_font_col_rep[2] + 'Plump' + $_font_closer
-$fat[0] = $_font_col_rep[3] + 'Underweight' + $_font_closer
-$fat[2] = $_font_col_rep[4] + 'Voluptuous' + $_font_closer
-$fat[1] = $_font_col_rep[5] + 'Healthy weight' + $_font_closer
+$fat[10] = $_font_col_rep[0] + 'Obese' + $_font_closer
+$fat[9] = $_font_col_rep[1] + 'Overweight' + $_font_closer
+$fat[8] = $_font_col_rep[2] + 'Chunky' + $_font_closer
+$fat[7] = $_font_col_rep[3] + 'Plump' + $_font_closer
+$fat[6] = $_font_col_rep[4] + 'Meaty' + $_font_closer
+$fat[5] = $_font_col_rep[5] + 'Weighty' + $_font_closer
+$fat[0] = $_font_col_rep[6] + 'Underweight' + $_font_closer
+$fat[4] = $_font_col_rep[7] + 'Voluptuous' + $_font_closer
+$fat[3] = $_font_col_rep[8] + 'Healthy weight' + $_font_closer
+$fat[2] = $_font_col_rep[9] + 'Slim' + $_font_closer
+$fat[1] = $_font_col_rep[10] + 'Slender' + $_font_closer
 
 $sensitivity[0] = $_font_col_rep[0] + 'Uncaring' + $_font_closer
 $sensitivity[1] = $_font_col_rep[1] + 'Callous' + $_font_closer
-$sensitivity[2] = $_font_col_rep[2] + 'Insensitive' + $_font_closer
-$sensitivity[3] = $_font_col_rep[3] + 'Sensitive' + $_font_closer
-$sensitivity[4] = $_font_col_rep[4] + 'Caring' + $_font_closer
-$sensitivity[5] = $_font_col_rep[5] + 'Nurturing' + $_font_closer
+$sensitivity[2] = $_font_col_rep[2] + 'reactive' + $_font_closer
+$sensitivity[3] = $_font_col_rep[3] + 'Insensitive' + $_font_closer
+$sensitivity[4] = $_font_col_rep[4] + 'reactive' + $_font_closer
+$sensitivity[5] = $_font_col_rep[5] + 'Sensitive' + $_font_closer
+$sensitivity[6] = $_font_col_rep[6] + 'Hypersensitive' + $_font_closer
+$sensitivity[7] = $_font_col_rep[7] + 'Caring' + $_font_closer
+$sensitivity[8] = $_font_col_rep[8] + 'Emotional' + $_font_closer
+$sensitivity[9] = $_font_col_rep[9] + 'Nurturing' + $_font_closer
+$sensitivity[10] = $_font_col_rep[10] + 'Sensorial' + $_font_closer
 
 $style[0] = $_font_col_rep[0] + 'Unfashionable' + $_font_closer
 $style[1] = $_font_col_rep[1] + 'Unremarkable' + $_font_closer
 $style[2] = $_font_col_rep[2] + 'Common' + $_font_closer
-$style[3] = $_font_col_rep[3] + 'Stylish' + $_font_closer
-$style[4] = $_font_col_rep[4] + 'Refined' + $_font_closer
-$style[5] = $_font_col_rep[5] + 'Graceful' + $_font_closer
+$style[3] = $_font_col_rep[3] + 'remarkable' + $_font_closer
+$style[4] = $_font_col_rep[4] + 'Common' + $_font_closer
+$style[5] = $_font_col_rep[5] + 'Stylish' + $_font_closer
+$style[6] = $_font_col_rep[6] + 'Refined' + $_font_closer
+$style[7] = $_font_col_rep[7] + 'Delicate' + $_font_closer
+$style[8] = $_font_col_rep[8] + 'Hot' + $_font_closer
+$style[9] = $_font_col_rep[9] + 'Graceful' + $_font_closer
+$style[10] = $_font_col_rep[10] + 'Angel' + $_font_closer
 
 $temper[0] = $_font_col_rep[0] + 'Apathetic' + $_font_closer
 $temper[1] = $_font_col_rep[1] + 'Cold' + $_font_closer
-$temper[2] = $_font_col_rep[2] + 'Reserved' + $_font_closer
-$temper[3] = $_font_col_rep[3] + 'Reactive' + $_font_closer
-$temper[4] = $_font_col_rep[4] + 'Lively' + $_font_closer
-$temper[5] = $_font_col_rep[5] + 'Passionate' + $_font_closer
+$temper[2] = $_font_col_rep[2] + 'Stoic' + $_font_closer
+$temper[3] = $_font_col_rep[3] + 'Reserved' + $_font_closer
+$temper[4] = $_font_col_rep[4] + 'Distant' + $_font_closer
+$temper[5] = $_font_col_rep[5] + 'Reactive' + $_font_closer
+$temper[6] = $_font_col_rep[6] + 'Warm' + $_font_closer
+$temper[7] = $_font_col_rep[7] + 'Lively' + $_font_closer
+$temper[8] = $_font_col_rep[8] + 'Frisky' + $_font_closer
+$temper[9] = $_font_col_rep[9] + 'Passionate' + $_font_closer
+$temper[10] = $_font_col_rep[10] + 'Romantic' + $_font_closer
 
 $ego[0] = $_font_col_rep[0] + 'Spineless' + $_font_closer
 $ego[1] = $_font_col_rep[1] + 'Cowardly' + $_font_closer
-$ego[2] = $_font_col_rep[2] + 'Uncertain' + $_font_closer
-$ego[3] = $_font_col_rep[3] + 'Independent' + $_font_closer
-$ego[4] = $_font_col_rep[4] + 'Determined' + $_font_closer
-$ego[5] = $_font_col_rep[5] + 'Willful' + $_font_closer
+$ego[2] = $_font_col_rep[2] + 'Anxious' + $_font_closer
+$ego[3] = $_font_col_rep[3] + 'Uncertain' + $_font_closer
+$ego[4] = $_font_col_rep[4] + 'Hesitant' + $_font_closer
+$ego[5] = $_font_col_rep[5] + 'Independent' + $_font_closer
+$ego[6] = $_font_col_rep[6] + 'Resolute' + $_font_closer
+$ego[7] = $_font_col_rep[7] + 'Determined' + $_font_closer
+$ego[8] = $_font_col_rep[8] + 'Driven' + $_font_closer
+$ego[9] = $_font_col_rep[9] + 'Willful' + $_font_closer
+$ego[10] = $_font_col_rep[10] + 'Sovereign' + $_font_closer
 
-$pride[0] = $_font_col_rep[5] + 'Unashamed' + $_font_closer
-$pride[1] = $_font_col_rep[4] + 'Open' + $_font_closer
-$pride[2] = $_font_col_rep[3] + 'Fastidious' + $_font_closer
-$pride[3] = $_font_col_rep[2] + 'Proud' + $_font_closer
-$pride[4] = $_font_col_rep[1] + 'Haughty' + $_font_closer
-$pride[5] = $_font_col_rep[0] + 'Arrogant' + $_font_closer
+$pride[0] = $_font_col_rep[10] + 'Lewd' + $_font_closer
+$pride[1] = $_font_col_rep[9] + 'Unashamed' + $_font_closer
+$pride[2] = $_font_col_rep[8] + 'Bold' + $_font_closer
+$pride[3] = $_font_col_rep[7] + 'Open' + $_font_closer
+$pride[4] = $_font_col_rep[6] + 'Timid' + $_font_closer
+$pride[5] = $_font_col_rep[5] + 'Fastidious' + $_font_closer
+$pride[6] = $_font_col_rep[4] + 'Proud' + $_font_closer
+$pride[7] = $_font_col_rep[3] + 'Haughty' + $_font_closer
+$pride[8] = $_font_col_rep[2] + 'cocky' + $_font_closer
+$pride[9] = $_font_col_rep[1] + 'Conceited' + $_font_closer
+$pride[0] = $_font_col_rep[0] + 'Arrogant' + $_font_closer
 
 $slave_service[0] = dyneval($vb_cycle, 0, 'Not a maid')
-$slave_service[1] = dyneval($vb_cycle, 1, 'Maid')
-$slave_service[2] = dyneval($vb_cycle, 2, 'Maid')
-$slave_service[3] = dyneval($vb_cycle, 3, 'Maid')
-$slave_service[4] = dyneval($vb_cycle, 4, 'Maid')
-$slave_service[5] = dyneval($vb_cycle, 5, 'Maid')
+$slave_service[1] = dyneval($vb_cycle, 1, 'Maid D-')
+$slave_service[2] = dyneval($vb_cycle, 2, 'Maid D+')
+$slave_service[3] = dyneval($vb_cycle, 3, 'Maid C-')
+$slave_service[4] = dyneval($vb_cycle, 4, 'Maid C+')
+$slave_service[5] = dyneval($vb_cycle, 5, 'Maid B-')
+$slave_service[6] = dyneval($vb_cycle, 6, 'Maid B+')
+$slave_service[7] = dyneval($vb_cycle, 7, 'Maid A-')
+$slave_service[8] = dyneval($vb_cycle, 8, 'Maid A+')
+$slave_service[9] = dyneval($vb_cycle, 9, 'Maid S-')
+$slave_service[10] = dyneval($vb_cycle, 10, 'Maid S+')
 
 $slave_cook[0] = dyneval($vb_cycle, 0, 'Not a cook')
-$slave_cook[1] = dyneval($vb_cycle, 1, 'Cook')
-$slave_cook[2] = dyneval($vb_cycle, 2, 'Cook')
-$slave_cook[3] = dyneval($vb_cycle, 3, 'Cook')
-$slave_cook[4] = dyneval($vb_cycle, 4, 'Cook')
-$slave_cook[5] = dyneval($vb_cycle, 5, 'Cook')
+$slave_cook[1] = dyneval($vb_cycle, 1, 'Cook D-')
+$slave_cook[2] = dyneval($vb_cycle, 2, 'Cook D+')
+$slave_cook[3] = dyneval($vb_cycle, 3, 'Cook C-')
+$slave_cook[4] = dyneval($vb_cycle, 4, 'Cook C+')
+$slave_cook[5] = dyneval($vb_cycle, 5, 'Cook B-')
+$slave_cook[6] = dyneval($vb_cycle, 6, 'Cook B+')
+$slave_cook[7] = dyneval($vb_cycle, 7, 'Cook A-')
+$slave_cook[8] = dyneval($vb_cycle, 8, 'Cook A+')
+$slave_cook[9] = dyneval($vb_cycle, 9, 'Cook S-')
+$slave_cook[10] = dyneval($vb_cycle, 10, 'Cook S+')
 
 $slave_nurse[0] = $_font_col_rep[0] + 'Not a nurse' + $_font_closer
-$slave_nurse[1] = $_font_col_rep[1] + 'Nurse' + $_font_closer
-$slave_nurse[2] = $_font_col_rep[2] + 'Nurse' + $_font_closer
-$slave_nurse[3] = $_font_col_rep[3] + 'Nurse' + $_font_closer
-$slave_nurse[4] = $_font_col_rep[4] + 'Nurse' + $_font_closer
-$slave_nurse[5] = $_font_col_rep[5] + 'Nurse' + $_font_closer
+$slave_nurse[1] = $_font_col_rep[1] + 'Nurse D-' + $_font_closer
+$slave_nurse[2] = $_font_col_rep[2] + 'Nurse D+' + $_font_closer
+$slave_nurse[3] = $_font_col_rep[3] + 'Nurse C-' + $_font_closer
+$slave_nurse[4] = $_font_col_rep[4] + 'Nurse C+' + $_font_closer
+$slave_nurse[5] = $_font_col_rep[5] + 'Nurse B-' + $_font_closer
+$slave_nurse[6] = $_font_col_rep[6] + 'Nurse B+' + $_font_closer
+$slave_nurse[7] = $_font_col_rep[7] + 'Nurse A-' + $_font_closer
+$slave_nurse[8] = $_font_col_rep[8] + 'Nurse A+' + $_font_closer
+$slave_nurse[9] = $_font_col_rep[9] + 'Nurse S-' + $_font_closer
+$slave_nurse[10] = $_font_col_rep[10] + 'Nurse S+' + $_font_closer
 
 $slave_secretary[0] = $_font_col_rep[0] + 'Not a secretary' + $_font_closer
-$slave_secretary[1] = $_font_col_rep[1] + 'Secretary' + $_font_closer
-$slave_secretary[2] = $_font_col_rep[2] + 'Secretary' + $_font_closer
-$slave_secretary[3] = $_font_col_rep[3] + 'Secretary' + $_font_closer
-$slave_secretary[4] = $_font_col_rep[4] + 'Secretary' + $_font_closer
-$slave_secretary[5] = $_font_col_rep[5] + 'Secretary' + $_font_closer
+$slave_secretary[1] = $_font_col_rep[1] + 'Secretary D-' + $_font_closer
+$slave_secretary[2] = $_font_col_rep[2] + 'Secretary D+' + $_font_closer
+$slave_secretary[3] = $_font_col_rep[3] + 'Secretary C-' + $_font_closer
+$slave_secretary[4] = $_font_col_rep[4] + 'Secretary C+' + $_font_closer
+$slave_secretary[5] = $_font_col_rep[5] + 'Secretary B-' + $_font_closer
+$slave_secretary[6] = $_font_col_rep[6] + 'Secretary B+' + $_font_closer
+$slave_secretary[7] = $_font_col_rep[7] + 'Secretary A-' + $_font_closer
+$slave_secretary[8] = $_font_col_rep[8] + 'Secretary A+' + $_font_closer
+$slave_secretary[9] = $_font_col_rep[9] + 'Secretary S-' + $_font_closer
+$slave_secretary[10] = $_font_col_rep[10] + 'Secretary S+' + $_font_closer
 
 $slave_gladiatrix[0] = $_font_col_rep[0] + 'Not a gladiatrix' + $_font_closer
-$slave_gladiatrix[1] = $_font_col_rep[1] + 'Gladiatrix' + $_font_closer
-$slave_gladiatrix[2] = $_font_col_rep[2] + 'Gladiatrix' + $_font_closer
-$slave_gladiatrix[3] = $_font_col_rep[3] + 'Gladiatrix' + $_font_closer
-$slave_gladiatrix[4] = $_font_col_rep[4] + 'Gladiatrix' + $_font_closer
-$slave_gladiatrix[5] = $_font_col_rep[5] + 'Gladiatrix' + $_font_closer
+$slave_gladiatrix[1] = $_font_col_rep[1] + 'Gladiatrix D-' + $_font_closer
+$slave_gladiatrix[2] = $_font_col_rep[2] + 'Gladiatrix D+' + $_font_closer
+$slave_gladiatrix[3] = $_font_col_rep[3] + 'Gladiatrix C-' + $_font_closer
+$slave_gladiatrix[4] = $_font_col_rep[4] + 'Gladiatrix C+' + $_font_closer
+$slave_gladiatrix[5] = $_font_col_rep[5] + 'Gladiatrix B-' + $_font_closer
+$slave_gladiatrix[6] = $_font_col_rep[6] + 'Gladiatrix B+' + $_font_closer
+$slave_gladiatrix[7] = $_font_col_rep[7] + 'Gladiatrix A-' + $_font_closer
+$slave_gladiatrix[8] = $_font_col_rep[8] + 'Gladiatrix A+' + $_font_closer
+$slave_gladiatrix[9] = $_font_col_rep[9] + 'Gladiatrix S-' + $_font_closer
+$slave_gladiatrix[10] = $_font_col_rep[10] + 'Gladiatrix S+' + $_font_closer
 
 $slave_enchanter[0] = $_font_col_rep[0] + 'Not an enchantress' + $_font_closer
-$slave_enchanter[1] = $_font_col_rep[1] + 'Enchantress' + $_font_closer
-$slave_enchanter[2] = $_font_col_rep[2] + 'Enchantress' + $_font_closer
-$slave_enchanter[3] = $_font_col_rep[3] + 'Enchantress' + $_font_closer
-$slave_enchanter[4] = $_font_col_rep[4] + 'Enchantress' + $_font_closer
-$slave_enchanter[5] = $_font_col_rep[5] + 'Enchantress' + $_font_closer
+$slave_enchanter[1] = $_font_col_rep[1] + 'Enchantress D-' + $_font_closer
+$slave_enchanter[2] = $_font_col_rep[2] + 'Enchantress D+' + $_font_closer
+$slave_enchanter[3] = $_font_col_rep[3] + 'Enchantress C-' + $_font_closer
+$slave_enchanter[4] = $_font_col_rep[4] + 'Enchantress C+' + $_font_closer
+$slave_enchanter[5] = $_font_col_rep[5] + 'Enchantress B-' + $_font_closer
+$slave_enchanter[6] = $_font_col_rep[6] + 'Enchantress B+' + $_font_closer
+$slave_enchanter[7] = $_font_col_rep[7] + 'Enchantress A-' + $_font_closer
+$slave_enchanter[8] = $_font_col_rep[8] + 'Enchantress A+' + $_font_closer
+$slave_enchanter[9] = $_font_col_rep[9] + 'Enchantress S-' + $_font_closer
+$slave_enchanter[10] = $_font_col_rep[10] + 'Enchantress S+' + $_font_closer
 
 $slave_expression[0] = $_font_col_rep[0] + 'Not a escort' + $_font_closer
-$slave_expression[1] = $_font_col_rep[1] + 'Escort' + $_font_closer
-$slave_expression[2] = $_font_col_rep[2] + 'Escort' + $_font_closer
-$slave_expression[3] = $_font_col_rep[3] + 'Escort' + $_font_closer
-$slave_expression[4] = $_font_col_rep[4] + 'Escort' + $_font_closer
-$slave_expression[5] = $_font_col_rep[5] + 'Escort' + $_font_closer
+$slave_expression[1] = $_font_col_rep[1] + 'Escort D-' + $_font_closer
+$slave_expression[2] = $_font_col_rep[2] + 'Escort D+' + $_font_closer
+$slave_expression[3] = $_font_col_rep[3] + 'Escort C-' + $_font_closer
+$slave_expression[4] = $_font_col_rep[4] + 'Escort C+' + $_font_closer
+$slave_expression[5] = $_font_col_rep[5] + 'Escort B-' + $_font_closer
+$slave_expression[6] = $_font_col_rep[6] + 'Escort B+' + $_font_closer
+$slave_expression[7] = $_font_col_rep[7] + 'Escort A-' + $_font_closer
+$slave_expression[8] = $_font_col_rep[8] + 'Escort A+' + $_font_closer
+$slave_expression[9] = $_font_col_rep[9] + 'Escort S-' + $_font_closer
+$slave_expression[10] = $_font_col_rep[10] + 'Escort S+' + $_font_closer
 
 $slave_callisthenics[0] = $_font_col_rep[0] + 'Not a dancer' + $_font_closer
-$slave_callisthenics[1] = $_font_col_rep[1] + 'Dancer' + $_font_closer
-$slave_callisthenics[2] = $_font_col_rep[2] + 'Dancer' + $_font_closer
-$slave_callisthenics[3] = $_font_col_rep[3] + 'Dancer' + $_font_closer
-$slave_callisthenics[4] = $_font_col_rep[4] + 'Dancer' + $_font_closer
-$slave_callisthenics[5] = $_font_col_rep[5] + 'Dancer' + $_font_closer
+$slave_callisthenics[1] = $_font_col_rep[1] + 'Dancer D-' + $_font_closer
+$slave_callisthenics[2] = $_font_col_rep[2] + 'Dancer D+' + $_font_closer
+$slave_callisthenics[3] = $_font_col_rep[3] + 'Dancer C-' + $_font_closer
+$slave_callisthenics[4] = $_font_col_rep[4] + 'Dancer C+' + $_font_closer
+$slave_callisthenics[5] = $_font_col_rep[5] + 'Dancer B-' + $_font_closer
+$slave_callisthenics[6] = $_font_col_rep[6] + 'Dancer B+' + $_font_closer
+$slave_callisthenics[7] = $_font_col_rep[7] + 'Dancer A-' + $_font_closer
+$slave_callisthenics[8] = $_font_col_rep[8] + 'Dancer A+' + $_font_closer
+$slave_callisthenics[9] = $_font_col_rep[9] + 'Dancer S-' + $_font_closer
+$slave_callisthenics[10] = $_font_col_rep[10] + 'Dancer S+' + $_font_closer
 
 $slave_music[0] = $_font_col_rep[0] + 'Not a musician' + $_font_closer
-$slave_music[1] = $_font_col_rep[1] + 'Flutist' + $_font_closer
-$slave_music[2] = $_font_col_rep[2] + 'Guitarist' + $_font_closer
-$slave_music[3] = $_font_col_rep[3] + 'Cellist' + $_font_closer
-$slave_music[4] = $_font_col_rep[4] + 'Violinist' + $_font_closer
-$slave_music[5] = $_font_col_rep[5] + 'Pianist' + $_font_closer
+$slave_music[1] = $_font_col_rep[1] + 'Flutist D-' + $_font_closer
+$slave_music[2] = $_font_col_rep[2] + 'Flutist D+' + $_font_closer
+$slave_music[3] = $_font_col_rep[3] + 'Guitarist C-' + $_font_closer
+$slave_music[4] = $_font_col_rep[4] + 'Guitarist C+' + $_font_closer
+$slave_music[5] = $_font_col_rep[5] + 'Cellist B-' + $_font_closer
+$slave_music[6] = $_font_col_rep[6] + 'Cellist B+' + $_font_closer
+$slave_music[7] = $_font_col_rep[7] + 'Violinist A-' + $_font_closer
+$slave_music[8] = $_font_col_rep[8] + 'Violinist A+' + $_font_closer
+$slave_music[9] = $_font_col_rep[9] + 'Pianist S-' + $_font_closer
+$slave_music[10] = $_font_col_rep[10] + 'Pianist S+' + $_font_closer
 
 $slave_vocal[0] = $_font_col_rep[0] + 'Not a singer' + $_font_closer
-$slave_vocal[1] = $_font_col_rep[1] + 'Singer' + $_font_closer
-$slave_vocal[2] = $_font_col_rep[2] + 'Singer' + $_font_closer
-$slave_vocal[3] = $_font_col_rep[3] + 'Singer' + $_font_closer
-$slave_vocal[4] = $_font_col_rep[4] + 'Singer' + $_font_closer
-$slave_vocal[5] = $_font_col_rep[5] + 'Singer' + $_font_closer
+$slave_vocal[1] = $_font_col_rep[1] + 'Singer D-' + $_font_closer
+$slave_vocal[2] = $_font_col_rep[2] + 'Singer D+' + $_font_closer
+$slave_vocal[3] = $_font_col_rep[3] + 'Singer C-' + $_font_closer
+$slave_vocal[4] = $_font_col_rep[4] + 'Singer C+' + $_font_closer
+$slave_vocal[5] = $_font_col_rep[5] + 'Singer B-' + $_font_closer
+$slave_vocal[6] = $_font_col_rep[6] + 'Singer B+' + $_font_closer
+$slave_vocal[7] = $_font_col_rep[7] + 'Singer A-' + $_font_closer
+$slave_vocal[8] = $_font_col_rep[8] + 'Singer A+' + $_font_closer
+$slave_vocal[9] = $_font_col_rep[9] + 'Singer S-' + $_font_closer
+$slave_vocal[10] = $_font_col_rep[10] + 'Singer S+' + $_font_closer
 
 $slave_pet[0] = $_font_col_rep[0] + 'Not a pet' + $_font_closer
-$slave_pet[1] = $_font_col_rep[1] + 'Pet' + $_font_closer
-$slave_pet[2] = $_font_col_rep[2] + 'Pet' + $_font_closer
-$slave_pet[3] = $_font_col_rep[3] + 'Pet' + $_font_closer
-$slave_pet[4] = $_font_col_rep[4] + 'Pet' + $_font_closer
-$slave_pet[5] = $_font_col_rep[5] + 'Pet' + $_font_closer
+$slave_pet[1] = $_font_col_rep[1] + 'Pet D-' + $_font_closer
+$slave_pet[2] = $_font_col_rep[2] + 'Pet D+' + $_font_closer
+$slave_pet[3] = $_font_col_rep[3] + 'Pet C-' + $_font_closer
+$slave_pet[4] = $_font_col_rep[4] + 'Pet C+' + $_font_closer
+$slave_pet[5] = $_font_col_rep[5] + 'Pet B-' + $_font_closer
+$slave_pet[6] = $_font_col_rep[5] + 'Pet B+' + $_font_closer
+$slave_pet[7] = $_font_col_rep[7] + 'Pet A-' + $_font_closer
+$slave_pet[8] = $_font_col_rep[8] + 'Pet A+' + $_font_closer
+$slave_pet[9] = $_font_col_rep[9] + 'Pet S-' + $_font_closer
+$slave_pet[10] = $_font_col_rep[10] + 'Pet S+' + $_font_closer
 
 $slave_dressage[0] = $_font_col_rep[0] + 'Not a horse' + $_font_closer
-$slave_dressage[1] = $_font_col_rep[1] + 'Horse' + $_font_closer
-$slave_dressage[2] = $_font_col_rep[2] + 'Horse' + $_font_closer
-$slave_dressage[3] = $_font_col_rep[3] + 'Horse' + $_font_closer
-$slave_dressage[4] = $_font_col_rep[4] + 'Horse' + $_font_closer
-$slave_dressage[5] = $_font_col_rep[5] + 'Horse' + $_font_closer
+$slave_dressage[1] = $_font_col_rep[1] + 'Horse D-' + $_font_closer
+$slave_dressage[2] = $_font_col_rep[2] + 'Horse D+' + $_font_closer
+$slave_dressage[3] = $_font_col_rep[3] + 'Horse C-' + $_font_closer
+$slave_dressage[4] = $_font_col_rep[4] + 'Horse C+' + $_font_closer
+$slave_dressage[5] = $_font_col_rep[5] + 'Horse B-' + $_font_closer
+$slave_dressage[6] = $_font_col_rep[6] + 'Horse B+' + $_font_closer
+$slave_dressage[7] = $_font_col_rep[7] + 'Horse A-' + $_font_closer
+$slave_dressage[8] = $_font_col_rep[8] + 'Horse A+' + $_font_closer
+$slave_dressage[9] = $_font_col_rep[9] + 'Horse S-' + $_font_closer
+$slave_dressage[10] = $_font_col_rep[10] + 'Horse S+' + $_font_closer
 
-dynamic $vb_full_cycle, '$slave_petting', 5, 'Petting'
-dynamic $vb_full_cycle, '$slave_penetration', 5, 'Penetration'
-dynamic $vb_full_cycle, '$slave_oral', 5, 'Oral pleasure'
-dynamic $vb_full_cycle, '$slave_orgy', 5, 'Group sex'
-dynamic $vb_full_cycle, '$slave_xenophily', 5, 'Xenophily'
-dynamic $vb_full_cycle, '$slave_fetishism', 5, 'Fetishism'
-dynamic $vb_full_cycle, '$slave_roleplay', 5, 'Demonstration'
+dynamic $vb_full_cycle, '$slave_petting', 10, 'Petting'
+dynamic $vb_full_cycle, '$slave_penetration', 10, 'Penetration'
+dynamic $vb_full_cycle, '$slave_oral', 10, 'Oral pleasure'
+dynamic $vb_full_cycle, '$slave_orgy', 10, 'Group sex'
+dynamic $vb_full_cycle, '$slave_xenophily', 10, 'Xenophily'
+dynamic $vb_full_cycle, '$slave_fetishism', 10, 'Fetishism'
+dynamic $vb_full_cycle, '$slave_roleplay', 10, 'Demonstration'
 
 $slave_wounds[1] = $_font_col_rep[2] + 'Lightly injured' + $_font_closer 
 $slave_wounds[2] = $_font_col_rep[1] + 'Injured' + $_font_closer 
 $slave_wounds[3] = $_font_col_rep[0] + 'Seriously injured' + $_font_closer 
 $slave_wounds[4] = $_font_col_rep[0] + 'Badly wounded' + $_font_closer 
 $slave_wounds[5] = $_font_col_rep[0] + 'Mortally wounded' + $_font_closer 
+$slave_wounds[6] = $_font_col_rep[0] + 'Mortally wounded-' + $_font_closer 
+$slave_wounds[7] = $_font_col_rep[0] + 'Mortally wounded--' + $_font_closer 
+$slave_wounds[8] = $_font_col_rep[0] + 'Mortally wounded+' + $_font_closer 
+$slave_wounds[9] = $_font_col_rep[0] + 'Mortally wounded++' + $_font_closer 
+$slave_wounds[10] = $_font_col_rep[0] + 'Mortally wounded+++' + $_font_closer 
 
 $master_wounds[0] = $_font_col_rep[5] + 'Safe and unharmed' + $_font_closer  
 $master_wounds[1] = $_font_col_rep[2] + 'Lightly injured' + $_font_closer 
@@ -1181,18 +1415,33 @@ $master_wounds[2] = $_font_col_rep[1] + 'Injured' + $_font_closer
 $master_wounds[3] = $_font_col_rep[0] + 'Seriously injured' + $_font_closer 
 $master_wounds[4] = $_font_col_rep[0] + 'Badly wounded' + $_font_closer 
 $master_wounds[5] = $_font_col_rep[0] + 'Mortally wounded' + $_font_closer 
+$master_wounds[6] = $_font_col_rep[0] + 'Mortally wounded-' + $_font_closer 
+$master_wounds[7] = $_font_col_rep[0] + 'Mortally wounded--' + $_font_closer 
+$master_wounds[8] = $_font_col_rep[0] + 'Mortally wounded+' + $_font_closer 
+$master_wounds[9] = $_font_col_rep[0] + 'Mortally wounded++' + $_font_closer 
+$master_wounds[10] = $_font_col_rep[0] + 'Mortally wounded+++' + $_font_closer 
 
 $slave_scares[1] = $_font_col_rep[2] + 'Small scar' + $_font_closer 
 $slave_scares[2] = $_font_col_rep[1] + 'Scar' + $_font_closer 
 $slave_scares[3] = $_font_col_rep[0] + 'Scars' + $_font_closer 
 $slave_scares[4] = $_font_col_rep[0] + 'Terrible scars' + $_font_closer 
 $slave_scares[5] = $_font_col_rep[0] + 'Ugly scars' + $_font_closer 
+$slave_scares[6] = $_font_col_rep[0] + 'Ugly scars-' + $_font_closer 
+$slave_scares[7] = $_font_col_rep[0] + 'Ugly scars--' + $_font_closer 
+$slave_scares[8] = $_font_col_rep[0] + 'Ugly scars+' + $_font_closer 
+$slave_scares[9] = $_font_col_rep[0] + 'Ugly scars++' + $_font_closer 
+$slave_scares[10] = $_font_col_rep[0] + 'Ugly scars+++' + $_font_closer 
 
 $slave_bruises[1] = $_font_col_rep[2] + 'Bruise' + $_font_closer 
 $slave_bruises[2] = $_font_col_rep[1] + 'Bruises' + $_font_closer 
 $slave_bruises[3] = $_font_col_rep[0] + 'Traces of beatings' + $_font_closer 
-$slave_bruises[4] = $_font_col_rep[0] + 'Traces of beatings+' + $_font_closer 
-$slave_bruises[5] = $_font_col_rep[0] + 'Traces of beatings++' + $_font_closer 
+$slave_bruises[4] = $_font_col_rep[0] + 'Traces of beatings-' + $_font_closer 
+$slave_bruises[5] = $_font_col_rep[0] + 'Traces of beatings--' + $_font_closer 
+$slave_bruises[6] = $_font_col_rep[0] + 'Traces of beatings---' + $_font_closer 
+$slave_bruises[7] = $_font_col_rep[0] + 'Traces of beatings+' + $_font_closer 
+$slave_bruises[8] = $_font_col_rep[0] + 'Traces of beatings++' + $_font_closer 
+$slave_bruises[9] = $_font_col_rep[0] + 'Traces of beatings+++' + $_font_closer 
+$slave_bruises[10] = $_font_col_rep[0] + 'Traces of beatings++++' + $_font_closer 
 
 !starvation
 if slave["starvation"] => 5: $slave_starvation = $_font_col_rep[2] + 'Slight starvation' + $_font_closer
@@ -1208,177 +1457,272 @@ if prisoner["starvation"] => 25: $prisoner_starvation = $_font_col_rep[0] + 'Sev
 if prisoner["starvation"] => 35: $prisoner_starvation = $_font_col_rep[0] + 'Heavy starvation' + $_font_closer
 if prisoner["starvation"] => 50: $prisoner_starvation = $_font_col_rep[0] + 'Lethal starvation' + $_font_closer
 
-!SANITY
-if sanity < 3: $slave_sanity = '<a style = "color: #cd0000;" href="EXEC: $info_text = $sanity_broken & gt $curloc">Sanity</a>'
-if sanity <= 5 and sanity > 2: $slave_sanity = '<a style = "color: #C71585;" href="EXEC: $info_text = $sanity_low & gt $curloc">Sanity</a>'
+!sanity
+if sanity < 3: $slave_sanity = '<a style = "color: #cd0000;" href="EXEC: $info_text = $sanity_broken & gt $curloc">Broken</a>'
+if sanity < 5 and sanity > 2: $slave_sanity = '<a style = "color: #C71585;" href="EXEC: $info_text = $sanity_low & gt $curloc">Mentally fragile</a>'
 
-$master_str[0] = dyneval($vb_cycle, 0, 'Helpless')
-$master_str[1] = dyneval($vb_cycle, 1, 'Weak')
-$master_str[2] = dyneval($vb_cycle, 2, 'Unfit')
-$master_str[3] = dyneval($vb_cycle, 3, 'Strong')
-$master_str[4] = dyneval($vb_cycle, 4, 'Conditioned')
-$master_str[5] = dyneval($vb_cycle, 5, 'Herculean')
+$master_str[0] = dyneval($vb_cycle, 0, 'Powerless')
+$master_str[1] = dyneval($vb_cycle, 1, 'Helpless')
+$master_str[2] = dyneval($vb_cycle, 2, 'Weak')
+$master_str[3] = dyneval($vb_cycle, 3, 'Feeble')
+$master_str[4] = dyneval($vb_cycle, 4, 'Unfit')
+$master_str[5] = dyneval($vb_cycle, 5, 'Strong')
+$master_str[6] = dyneval($vb_cycle, 6, 'Energetic')
+$master_str[7] = dyneval($vb_cycle, 7, 'Conditioned')
+$master_str[8] = dyneval($vb_cycle, 8, 'Courageous')
+$master_str[9] = dyneval($vb_cycle, 9, 'Herculean')
+$master_str[10] = dyneval($vb_cycle, 10, 'Colossal')
 
 $master_cha[0] = dyneval($vb_cycle, 0, 'Boring')
-$master_cha[1] = dyneval($vb_cycle, 1, 'Coward')
-$master_cha[2] = dyneval($vb_cycle, 2, 'Loser')
-$master_cha[3] = dyneval($vb_cycle, 3, 'Driven')
-$master_cha[4] = dyneval($vb_cycle, 4, 'Ambitious')
-$master_cha[5] = dyneval($vb_cycle, 5, 'Leader')
+$master_cha[1] = dyneval($vb_cycle, 1, 'Wimp')
+$master_cha[2] = dyneval($vb_cycle, 2, 'Coward')
+$master_cha[3] = dyneval($vb_cycle, 3, 'Failure')
+$master_cha[4] = dyneval($vb_cycle, 4, 'Loser')
+$master_cha[5] = dyneval($vb_cycle, 5, 'Allure')
+$master_cha[6] = dyneval($vb_cycle, 6, 'Driven')
+$master_cha[7] = dyneval($vb_cycle, 7, 'Sharp')
+$master_cha[8] = dyneval($vb_cycle, 8, 'Ambitious')
+$master_cha[9] = dyneval($vb_cycle, 9, 'Glamour')
+$master_cha[10] = dyneval($vb_cycle, 10, 'Leader')
 
 $master_style[0] = dyneval($vb_cycle, 0, 'Repulsive')
-$master_style[1] = dyneval($vb_cycle, 1, 'Unpleasant')
-$master_style[2] = dyneval($vb_cycle, 2, 'Unmemorable')
-$master_style[3] = dyneval($vb_cycle, 3, 'Charming')
-$master_style[4] = dyneval($vb_cycle, 4, 'Memorable')
-$master_style[5] = dyneval($vb_cycle, 5, 'Irresistible')
+$master_style[1] = dyneval($vb_cycle, 1, 'Creepy')
+$master_style[2] = dyneval($vb_cycle, 2, 'Unpleasant')
+$master_style[3] = dyneval($vb_cycle, 3, 'vile')
+$master_style[4] = dyneval($vb_cycle, 4, 'Unmemorable')
+$master_style[5] = dyneval($vb_cycle, 5, 'Charming')
+$master_style[6] = dyneval($vb_cycle, 6, 'Pleasant')
+$master_style[7] = dyneval($vb_cycle, 7, 'Memorable')
+$master_style[8] = dyneval($vb_cycle, 8, 'Graceful')
+$master_style[9] = dyneval($vb_cycle, 9, 'Elegant')
+$master_style[10] = dyneval($vb_cycle, 10, 'Irresistible')
 
 $brand[0] = dyneval($vb_cycle, 0, 'Unknown')
-$brand[1] = dyneval($vb_cycle, 1, 'Obscure')
-$brand[2] = dyneval($vb_cycle, 2, 'Rumoured')
-$brand[3] = dyneval($vb_cycle, 3, 'Recognised')
-$brand[4] = dyneval($vb_cycle, 4, 'Famous')
-$brand[5] = dyneval($vb_cycle, 5, 'Legendary')
+$brand[1] = dyneval($vb_cycle, 2, 'Obscure')
+$brand[2] = dyneval($vb_cycle, 4, 'Rumoured')
+$brand[3] = dyneval($vb_cycle, 6, 'Recognised')
+$brand[4] = dyneval($vb_cycle, 8, 'Famous')
+$brand[5] = dyneval($vb_cycle, 10, 'Legendary')
 
 $master_wealth[0] = dyneval($vb_cycle, 0, 'Impoverished')
-$master_wealth[1] = dyneval($vb_cycle, 1, 'Poor')
-$master_wealth[2] = dyneval($vb_cycle, 2, 'Basic')
-$master_wealth[3] = dyneval($vb_cycle, 3, 'Comfortable')
-$master_wealth[4] = dyneval($vb_cycle, 4, 'Respectable')
-$master_wealth[5] = dyneval($vb_cycle, 5, 'Luxurious')
-$master_wealth[6] = dyneval($vb_cycle, 7, 'Extravagant')
+$master_wealth[1] = dyneval($vb_cycle, 2, 'Poor')
+$master_wealth[2] = dyneval($vb_cycle, 3, 'Basic')
+$master_wealth[3] = dyneval($vb_cycle, 4, 'Comfortable')
+$master_wealth[4] = dyneval($vb_cycle, 6, 'Respectable')
+$master_wealth[5] = dyneval($vb_cycle, 8, 'Luxurious')
+$master_wealth[6] = dyneval($vb_cycle, 10, 'Extravagant')
 
 base_expense[0] = 0
-base_expense[1] = 25
-base_expense[2] = 50
-base_expense[3] = 100
-base_expense[4] = 250
-base_expense[5] = 500
-base_expense[6] = 1000
+base_expense[1] = 20
+base_expense[2] = 40
+base_expense[3] = 80
+base_expense[4] = 200
+base_expense[5] = 400
+base_expense[6] = 800
 
-$master_tutor[0] = dyneval($vb_cycle, 0, 'Unskilled teacher')
-$master_tutor[1] = dyneval($vb_cycle, 1, 'Poor teacher')
-$master_tutor[2] = dyneval($vb_cycle, 2, 'Average teacher')
-$master_tutor[3] = dyneval($vb_cycle, 3, 'Good teacher')
-$master_tutor[4] = dyneval($vb_cycle, 4, 'Excellent teacher')
-$master_tutor[5] = dyneval($vb_cycle, 5, 'Master educator')
+$master_tutor[0] = dyneval($vb_cycle, 0, 'Unskilled teacher F-')
+$master_tutor[1] = dyneval($vb_cycle, 1, 'Poor teacher D-')
+$master_tutor[2] = dyneval($vb_cycle, 2, 'Poor teacher D+')
+$master_tutor[3] = dyneval($vb_cycle, 3, 'Average teacher C-')
+$master_tutor[4] = dyneval($vb_cycle, 4, 'Average teacher C+')
+$master_tutor[5] = dyneval($vb_cycle, 5, 'Good teacher B-')
+$master_tutor[6] = dyneval($vb_cycle, 6, 'Good teacher B+')
+$master_tutor[7] = dyneval($vb_cycle, 7, 'Excellent teacher A-')
+$master_tutor[8] = dyneval($vb_cycle, 8, 'Excellent teacher A+')
+$master_tutor[9] = dyneval($vb_cycle, 9, 'Master educator S-')
+$master_tutor[10] = dyneval($vb_cycle, 10, 'Master educator S+')
 
-$master_butler[0] = dyneval($vb_cycle, 0, 'Foppish')
-$master_butler[1] = dyneval($vb_cycle, 1, 'Limited housekeeping')
-$master_butler[2] = dyneval($vb_cycle, 2, 'Basic housekeeping')
-$master_butler[3] = dyneval($vb_cycle, 3, 'Housekeeper')
-$master_butler[4] = dyneval($vb_cycle, 4, 'Steward')
-$master_butler[5] = dyneval($vb_cycle, 5, 'Master steward')
-$master_butler[6] = dyneval($vb_cycle, 7, 'Master steward')
+$master_butler[0] = dyneval($vb_cycle, 0, 'Foppish F-')
+$master_butler[1] = dyneval($vb_cycle, 1, 'Limited housekeeping D-')
+$master_butler[2] = dyneval($vb_cycle, 2, 'Limited housekeeping D+')
+$master_butler[3] = dyneval($vb_cycle, 3, 'Basic housekeeping C-')
+$master_butler[4] = dyneval($vb_cycle, 4, 'Basic housekeeping C+')
+$master_butler[5] = dyneval($vb_cycle, 5, 'Housekeeper B-')
+$master_butler[6] = dyneval($vb_cycle, 6, 'Housekeeper B+')
+$master_butler[7] = dyneval($vb_cycle, 7, 'Steward A-')
+$master_butler[8] = dyneval($vb_cycle, 8, 'Steward A+')
+$master_butler[9] = dyneval($vb_cycle, 9, 'Master steward S-')
+$master_butler[10] = dyneval($vb_cycle, 10, 'Master steward S+')
 
-$master_artdirector[0] = dyneval($vb_cycle, 0, 'Vulgar')
-$master_artdirector[1] = dyneval($vb_cycle, 1, 'Tasteless')
-$master_artdirector[2] = dyneval($vb_cycle, 2, 'Uncultured')
-$master_artdirector[3] = dyneval($vb_cycle, 3, 'Cultured')
-$master_artdirector[4] = dyneval($vb_cycle, 4, 'Artist')
-$master_artdirector[5] = dyneval($vb_cycle, 5, 'Master artist')
-$master_artdirector[6] = dyneval($vb_cycle, 7, 'Master artist')
+$master_artdirector[0] = dyneval($vb_cycle, 0, 'Vulgar F-')
+$master_artdirector[1] = dyneval($vb_cycle, 1, 'Tasteless D-')
+$master_artdirector[2] = dyneval($vb_cycle, 2, 'Tasteless D+')
+$master_artdirector[3] = dyneval($vb_cycle, 3, 'Uncultured C-')
+$master_artdirector[4] = dyneval($vb_cycle, 4, 'Uncultured C+')
+$master_artdirector[5] = dyneval($vb_cycle, 5, 'Cultured B-')
+$master_artdirector[6] = dyneval($vb_cycle, 6, 'Cultured B+')
+$master_artdirector[7] = dyneval($vb_cycle, 7, 'Artist A-')
+$master_artdirector[8] = dyneval($vb_cycle, 8, 'Artist A+')
+$master_artdirector[9] = dyneval($vb_cycle, 9, 'Master artist S-')
+$master_artdirector[10] = dyneval($vb_cycle, 10, 'Master artist S+')
 
-$master_medic[0] = dyneval($vb_cycle, 0, 'Homeopath')
-$master_medic[1] = dyneval($vb_cycle, 1, 'Vaccine denier')
-$master_medic[2] = dyneval($vb_cycle, 2, 'Hospitaler')
-$master_medic[3] = dyneval($vb_cycle, 3, 'Doctor')
-$master_medic[4] = dyneval($vb_cycle, 4, 'Physician')
-$master_medic[5] = dyneval($vb_cycle, 5, 'Surgeon')
-$master_medic[6] = dyneval($vb_cycle, 7, 'Surgeon')
+$master_medic[0] = dyneval($vb_cycle, 0, 'Homeopath F-')
+$master_medic[1] = dyneval($vb_cycle, 1, 'Vaccine denier D-')
+$master_medic[2] = dyneval($vb_cycle, 2, 'Vaccine denier D+')
+$master_medic[3] = dyneval($vb_cycle, 3, 'Hospitaler C-')
+$master_medic[4] = dyneval($vb_cycle, 4, 'Hospitaler C+')
+$master_medic[5] = dyneval($vb_cycle, 5, 'Doctor B-')
+$master_medic[6] = dyneval($vb_cycle, 6, 'Doctor B+')
+$master_medic[7] = dyneval($vb_cycle, 7, 'Physician A-')
+$master_medic[8] = dyneval($vb_cycle, 8, 'Physician A+')
+$master_medic[9] = dyneval($vb_cycle, 9, 'Surgeon S-')
+$master_medic[10] = dyneval($vb_cycle, 10, 'Surgeon S+')
 
-$master_fighter[0] = dyneval($vb_cycle, 0, 'Non-combatant')
-$master_fighter[1] = dyneval($vb_cycle, 1, 'Weak fighter')
-$master_fighter[2] = dyneval($vb_cycle, 2, 'Fighter')
-$master_fighter[3] = dyneval($vb_cycle, 3, 'Soldier')
-$master_fighter[4] = dyneval($vb_cycle, 4, 'Warrior')
-$master_fighter[5] = dyneval($vb_cycle, 5, 'Master swordsman')
-$master_fighter[6] = dyneval($vb_cycle, 7, 'Master swordsman')
+$master_fighter[0] = dyneval($vb_cycle, 0, 'Non-combatant F-')
+$master_fighter[1] = dyneval($vb_cycle, 1, 'Weak fighter D-')
+$master_fighter[2] = dyneval($vb_cycle, 2, 'Weak fighter D+')
+$master_fighter[3] = dyneval($vb_cycle, 3, 'Fighter C-')
+$master_fighter[4] = dyneval($vb_cycle, 4, 'Fighter C+')
+$master_fighter[5] = dyneval($vb_cycle, 5, 'Soldier B-')
+$master_fighter[6] = dyneval($vb_cycle, 6, 'Soldier B+')
+$master_fighter[7] = dyneval($vb_cycle, 7, 'Warrior A-')
+$master_fighter[8] = dyneval($vb_cycle, 8, 'Warrior A+')
+$master_fighter[9] = dyneval($vb_cycle, 9, 'Master swordsman S-')
+$master_fighter[10] = dyneval($vb_cycle, 10, 'Master swordsman S+')
 
-$master_mage[0] = dyneval($vb_cycle, 0, 'Mundane')
-$master_mage[1] = dyneval($vb_cycle, 1, 'Apprentice')
-$master_mage[2] = dyneval($vb_cycle, 2, 'Journeyman')
-$master_mage[3] = dyneval($vb_cycle, 3, 'Mage')
-$master_mage[4] = dyneval($vb_cycle, 4, 'Magister')
-$master_mage[5] = dyneval($vb_cycle, 5, 'Archmage')
-$master_mage[6] = dyneval($vb_cycle, 7, 'Archmage')
+$master_mage[0] = dyneval($vb_cycle, 0, 'Mundane F-')
+$master_mage[1] = dyneval($vb_cycle, 1, 'Apprentice D-')
+$master_mage[2] = dyneval($vb_cycle, 2, 'Apprentice D+')
+$master_mage[3] = dyneval($vb_cycle, 3, 'Journeyman C-')
+$master_mage[4] = dyneval($vb_cycle, 4, 'Journeyman C+')
+$master_mage[5] = dyneval($vb_cycle, 5, 'Mage B-')
+$master_mage[6] = dyneval($vb_cycle, 6, 'Mage B+')
+$master_mage[7] = dyneval($vb_cycle, 7, 'Magister A-')
+$master_mage[8] = dyneval($vb_cycle, 8, 'Magister A+')
+$master_mage[9] = dyneval($vb_cycle, 9, 'Archmage S-')
+$master_mage[10] = dyneval($vb_cycle, 10, 'Archmage S+')
 
-$master_domination[0] = dyneval($vb_cycle, 0, 'Passive')
-$master_domination[1] = dyneval($vb_cycle, 1, 'Submissive')
-$master_domination[2] = dyneval($vb_cycle, 2, 'Dominant')
-$master_domination[3] = dyneval($vb_cycle, 3, 'Unbending')
-$master_domination[4] = dyneval($vb_cycle, 4, 'Unyielding')
-$master_domination[5] = dyneval($vb_cycle, 5, 'Indomitable')
+$master_domination[0] = dyneval($vb_cycle, 0, 'Passive F-')
+$master_domination[1] = dyneval($vb_cycle, 1, 'Submissive D-')
+$master_domination[2] = dyneval($vb_cycle, 2, 'Submissive D+')
+$master_domination[3] = dyneval($vb_cycle, 3, 'Dominant C-')
+$master_domination[4] = dyneval($vb_cycle, 4, 'Dominant C+')
+$master_domination[5] = dyneval($vb_cycle, 5, 'Unbending B-')
+$master_domination[6] = dyneval($vb_cycle, 6, 'Unbending B+')
+$master_domination[7] = dyneval($vb_cycle, 7, 'Unyielding A-')
+$master_domination[8] = dyneval($vb_cycle, 8, 'Unyielding A+')
+$master_domination[9] = dyneval($vb_cycle, 9, 'Indomitable S-')
+$master_domination[10] = dyneval($vb_cycle, 10, 'Indomitable S+')
 
-$master_flagelation[0] = dyneval($vb_cycle, 0, 'Cannot whip')
-$master_flagelation[1] = dyneval($vb_cycle, 1, 'Basic whip skill')
-$master_flagelation[2] = dyneval($vb_cycle, 2, 'Average whip skill')
-$master_flagelation[3] = dyneval($vb_cycle, 3, 'Good whip skills')
-$master_flagelation[4] = dyneval($vb_cycle, 4, 'Whip expert')
-$master_flagelation[5] = dyneval($vb_cycle, 5, 'Master of the whip')
+$master_flagelation[0] = dyneval($vb_cycle, 0, 'Cannot whip F-')
+$master_flagelation[1] = dyneval($vb_cycle, 1, 'Basic whip skill D-')
+$master_flagelation[2] = dyneval($vb_cycle, 2, 'Basic whip skill D+')
+$master_flagelation[3] = dyneval($vb_cycle, 3, 'Average whip skill C-')
+$master_flagelation[4] = dyneval($vb_cycle, 4, 'Average whip skill C+')
+$master_flagelation[5] = dyneval($vb_cycle, 5, 'Good whip skills B-')
+$master_flagelation[6] = dyneval($vb_cycle, 6, 'Good whip skills B+')
+$master_flagelation[7] = dyneval($vb_cycle, 7, 'Whip expert A-')
+$master_flagelation[8] = dyneval($vb_cycle, 8, 'Whip expert A+')
+$master_flagelation[9] = dyneval($vb_cycle, 9, 'Master of the whip S-')
+$master_flagelation[10] = dyneval($vb_cycle, 10, 'Master of the whip S+')
 
-$master_torture[0] = dyneval($vb_cycle, 0, 'Not a torturer')
-$master_torture[1] = dyneval($vb_cycle, 1, 'Basic torture')
-$master_torture[2] = dyneval($vb_cycle, 2, 'Torturer')
-$master_torture[3] = dyneval($vb_cycle, 3, 'Skilled torturer')
-$master_torture[4] = dyneval($vb_cycle, 4, 'Inquisitor')
-$master_torture[5] = dyneval($vb_cycle, 5, 'Master inquisitor')
+$master_torture[0] = dyneval($vb_cycle, 0, 'Not a torturer F-')
+$master_torture[1] = dyneval($vb_cycle, 1, 'Basic torture D-')
+$master_torture[2] = dyneval($vb_cycle, 2, 'Basic torture D+')
+$master_torture[3] = dyneval($vb_cycle, 3, 'Torturer C-')
+$master_torture[4] = dyneval($vb_cycle, 4, 'Torturer C+')
+$master_torture[5] = dyneval($vb_cycle, 5, 'Skilled torturer B-')
+$master_torture[6] = dyneval($vb_cycle, 6, 'Skilled torturer B+')
+$master_torture[7] = dyneval($vb_cycle, 7, 'Inquisitor A-')
+$master_torture[8] = dyneval($vb_cycle, 8, 'Inquisitor A+')
+$master_torture[9] = dyneval($vb_cycle, 9, 'Master inquisitor S-')
+$master_torture[10] = dyneval($vb_cycle, 10, 'Master inquisitor S+')
 
-$master_bondage[0] = dyneval($vb_cycle, 0, 'Unskilled with rope')
-$master_bondage[1] = dyneval($vb_cycle, 1, 'Novice rope binding')
-$master_bondage[2] = dyneval($vb_cycle, 2, 'Binds correctly')
-$master_bondage[3] = dyneval($vb_cycle, 3, 'Binds skillfully')
-$master_bondage[4] = dyneval($vb_cycle, 4, 'Binds effectively')
-$master_bondage[5] = dyneval($vb_cycle, 5, 'Master of rope')
+$master_bondage[0] = dyneval($vb_cycle, 0, 'Unskilled with rope F-')
+$master_bondage[1] = dyneval($vb_cycle, 1, 'Novice rope binding D-')
+$master_bondage[2] = dyneval($vb_cycle, 2, 'Novice rope binding D+')
+$master_bondage[3] = dyneval($vb_cycle, 3, 'Binds correctly C-')
+$master_bondage[4] = dyneval($vb_cycle, 4, 'Binds correctly C+')
+$master_bondage[5] = dyneval($vb_cycle, 5, 'Binds skillfully B-')
+$master_bondage[6] = dyneval($vb_cycle, 6, 'Binds skillfully B+')
+$master_bondage[7] = dyneval($vb_cycle, 7, 'Binds effectively A-')
+$master_bondage[8] = dyneval($vb_cycle, 8, 'Binds effectively A+')
+$master_bondage[9] = dyneval($vb_cycle, 9, 'Master of rope S-')
+$master_bondage[10] = dyneval($vb_cycle, 10, 'Master of rope S+')
 
-$master_petting[0] = dyneval($vb_cycle, 0, 'Clumsy')
-$master_petting[1] = dyneval($vb_cycle, 1, 'Petting')
-$master_petting[2] = dyneval($vb_cycle, 2, 'Petting')
-$master_petting[3] = dyneval($vb_cycle, 3, 'Petting')
-$master_petting[4] = dyneval($vb_cycle, 4, 'Petting')
-$master_petting[5] = dyneval($vb_cycle, 5, 'Petting')
+$master_petting[0] = dyneval($vb_cycle, 0, 'Clumsy F-')
+$master_petting[1] = dyneval($vb_cycle, 1, 'Petting D-')
+$master_petting[2] = dyneval($vb_cycle, 2, 'Petting D+')
+$master_petting[3] = dyneval($vb_cycle, 3, 'Petting C-')
+$master_petting[4] = dyneval($vb_cycle, 4, 'Petting C+')
+$master_petting[5] = dyneval($vb_cycle, 5, 'Petting B-')
+$master_petting[6] = dyneval($vb_cycle, 6, 'Petting B+')
+$master_petting[7] = dyneval($vb_cycle, 7, 'Petting A-')
+$master_petting[8] = dyneval($vb_cycle, 8, 'Petting A+')
+$master_petting[9] = dyneval($vb_cycle, 9, 'Petting S-')
+$master_petting[10] = dyneval($vb_cycle, 10, 'Petting S+')
 
-$master_penetration[0] = dyneval($vb_cycle, 0, 'Virgin')
-$master_penetration[1] = dyneval($vb_cycle, 1, 'Penetration')
-$master_penetration[2] = dyneval($vb_cycle, 2, 'Penetration')
-$master_penetration[3] = dyneval($vb_cycle, 3, 'Penetration')
-$master_penetration[4] = dyneval($vb_cycle, 4, 'Penetration')
-$master_penetration[5] = dyneval($vb_cycle, 5, 'Penetration')
+$master_penetration[0] = dyneval($vb_cycle, 0, 'Virgin F-')
+$master_penetration[1] = dyneval($vb_cycle, 1, 'Penetration D-')
+$master_penetration[2] = dyneval($vb_cycle, 2, 'Penetration D+')
+$master_penetration[3] = dyneval($vb_cycle, 3, 'Penetration C-')
+$master_penetration[4] = dyneval($vb_cycle, 4, 'Penetration C+')
+$master_penetration[5] = dyneval($vb_cycle, 5, 'Penetration B-')
+$master_penetration[6] = dyneval($vb_cycle, 6, 'Penetration B+')
+$master_penetration[7] = dyneval($vb_cycle, 7, 'Penetration A-')
+$master_penetration[8] = dyneval($vb_cycle, 8, 'Penetration A+')
+$master_penetration[9] = dyneval($vb_cycle, 9, 'Penetration S-')
+$master_penetration[10] = dyneval($vb_cycle, 10, 'Penetration S+')
 
-$master_oral[0] = dyneval($vb_cycle, 0, 'Never kissed')
-$master_oral[1] = dyneval($vb_cycle, 1, 'Oral sex')
-$master_oral[2] = dyneval($vb_cycle, 2, 'Oral sex')
-$master_oral[3] = dyneval($vb_cycle, 3, 'Oral sex')
-$master_oral[4] = dyneval($vb_cycle, 4, 'Oral sex')
-$master_oral[5] = dyneval($vb_cycle, 5, 'Oral sex')
+$master_oral[0] = dyneval($vb_cycle, 0, 'Never kissed F-')
+$master_oral[1] = dyneval($vb_cycle, 1, 'Oral sex D-')
+$master_oral[2] = dyneval($vb_cycle, 2, 'Oral sex D+')
+$master_oral[3] = dyneval($vb_cycle, 3, 'Oral sex C-')
+$master_oral[4] = dyneval($vb_cycle, 4, 'Oral sex C+')
+$master_oral[5] = dyneval($vb_cycle, 5, 'Oral sex B-')
+$master_oral[6] = dyneval($vb_cycle, 6, 'Oral sex B+')
+$master_oral[7] = dyneval($vb_cycle, 7, 'Oral sex A-')
+$master_oral[8] = dyneval($vb_cycle, 8, 'Oral sex A+')
+$master_oral[9] = dyneval($vb_cycle, 9, 'Oral sex S-')
+$master_oral[10] = dyneval($vb_cycle, 10, 'Oral sex S+')
 
-$master_fetish[0] = dyneval($vb_cycle, 0, 'Fetishism')
-$master_fetish[1] = dyneval($vb_cycle, 1, 'Fetishism')
-$master_fetish[2] = dyneval($vb_cycle, 2, 'Fetishism')
-$master_fetish[3] = dyneval($vb_cycle, 3, 'Fetishism')
-$master_fetish[4] = dyneval($vb_cycle, 4, 'Fetishism')
-$master_fetish[5] = dyneval($vb_cycle, 5, 'Worst of perverts')
+$master_fetish[0] = dyneval($vb_cycle, 0, 'Fetishism F-')
+$master_fetish[1] = dyneval($vb_cycle, 1, 'Fetishism D-')
+$master_fetish[2] = dyneval($vb_cycle, 2, 'Fetishism D+')
+$master_fetish[3] = dyneval($vb_cycle, 3, 'Fetishism C-')
+$master_fetish[4] = dyneval($vb_cycle, 4, 'Fetishism C+')
+$master_fetish[5] = dyneval($vb_cycle, 5, 'Fetishism B-')
+$master_fetish[6] = dyneval($vb_cycle, 6, 'Fetishism B+')
+$master_fetish[7] = dyneval($vb_cycle, 7, 'Fetishism A-')
+$master_fetish[8] = dyneval($vb_cycle, 8, 'Fetishism A+')
+$master_fetish[9] = dyneval($vb_cycle, 9, 'Worst of perverts S-')
+$master_fetish[10] = dyneval($vb_cycle, 10, 'Worst of perverts S+')
 
-$master_libido[0] = dyneval($vb_cycle, 0, 'Impotent')
-$master_libido[1] = dyneval($vb_cycle, 1, 'Flaccid')
-$master_libido[2] = dyneval($vb_cycle, 2, 'Sexual')
-$master_libido[3] = dyneval($vb_cycle, 3, 'Passionate')
-$master_libido[4] = dyneval($vb_cycle, 4, 'Stallion')
-$master_libido[5] = dyneval($vb_cycle, 5, 'Wild stallion')
+$master_libido[0] = dyneval($vb_cycle, 0, 'Impotent F-')
+$master_libido[1] = dyneval($vb_cycle, 1, 'Flaccid D-')
+$master_libido[2] = dyneval($vb_cycle, 2, 'Flaccid D+')
+$master_libido[3] = dyneval($vb_cycle, 3, 'Sexual C-')
+$master_libido[4] = dyneval($vb_cycle, 4, 'Sexual C+')
+$master_libido[5] = dyneval($vb_cycle, 5, 'Passionate B-')
+$master_libido[6] = dyneval($vb_cycle, 6, 'Passionate B+')
+$master_libido[7] = dyneval($vb_cycle, 7, 'Stallion A-')
+$master_libido[8] = dyneval($vb_cycle, 8, 'Stallion A+')
+$master_libido[9] = dyneval($vb_cycle, 9, 'Wild stallion S-')
+$master_libido[10] = dyneval($vb_cycle, 10, 'Wild stallion S+')
 
-$house_mess[0] = $_font_col_rep[5] + 'Spotless' + $_font_closer 
-$house_mess[1] = $_font_col_rep[4] + 'Tidy' + $_font_closer 
-$house_mess[2] = $_font_col_rep[3] + 'Untidy' + $_font_closer 
-$house_mess[3] = $_font_col_rep[2] + 'Messy' + $_font_closer 
+$house_mess[0] = $_font_col_rep[10] + 'Spotless' + $_font_closer 
+$house_mess[1] = $_font_col_rep[8] + 'Tidy' + $_font_closer 
+$house_mess[2] = $_font_col_rep[6] + 'Untidy' + $_font_closer 
+$house_mess[3] = $_font_col_rep[4] + 'Messy' + $_font_closer 
 $house_mess[4] = $_font_col_rep[1] + 'Dirty' + $_font_closer 
 $house_mess[5] = $_font_col_rep[0] + 'Filthy' + $_font_closer 
+$house_mess[6] = $_font_col_rep[0] + 'Filthy' + $_font_closer 
+$house_mess[7] = $_font_col_rep[0] + 'Filthy' + $_font_closer 
+$house_mess[8] = $_font_col_rep[0] + 'Filthy' + $_font_closer 
+$house_mess[9] = $_font_col_rep[0] + 'Filthy' + $_font_closer 
+$house_mess[10] = $_font_col_rep[0] + 'Filthy' + $_font_closer 
 
 $cooked_food[0] = $_font_col_rep[0] + 'Food not ready' + $_font_closer 
 $cooked_food[1] = $_font_col_rep[1] + 'Simple meal' + $_font_closer 
-$cooked_food[2] = $_font_col_rep[2] + 'Full meal' + $_font_closer
-$cooked_food[3] = $_font_col_rep[3] + 'Full meal' + $_font_closer
-$cooked_food[4] = $_font_col_rep[4] + 'Full meal' + $_font_closer
-$cooked_food[5] = $_font_col_rep[5] + 'Full meal' + $_font_closer
+$cooked_food[2] = $_font_col_rep[3] + 'Full meal' + $_font_closer
+$cooked_food[3] = $_font_col_rep[5] + 'Full meal' + $_font_closer
+$cooked_food[4] = $_font_col_rep[7] + 'Full meal' + $_font_closer
+$cooked_food[5] = $_font_col_rep[10] + 'Full meal' + $_font_closer
+$cooked_food[6] = $_font_col_rep[10] + 'Full meal' + $_font_closer
+$cooked_food[7] = $_font_col_rep[10] + 'Full meal' + $_font_closer
+$cooked_food[8] = $_font_col_rep[10] + 'Full meal' + $_font_closer
+$cooked_food[9] = $_font_col_rep[10] + 'Full meal' + $_font_closer
+$cooked_food[10] = $_font_col_rep[10] + 'Full meal' + $_font_closer
 
 !костыль для состояния волос, волософикс ~the_vm
 !неделя слишком дохуя, надо дорабатывать
@@ -1387,33 +1731,33 @@ $hair_style[0] = $_font_col_rep[0] + 'disheveled hair' + $_font_closer
 $hair_style[1] = $_font_col_rep[1] + 'combed hair' + $_font_closer
 $hair_style[2] = $_font_col_rep[2] + 'rumpled hairstyle' + $_font_closer
 $hair_style[3] = $_font_col_rep[3] + 'smooth hairstyle' + $_font_closer
-$hair_style[4] = $_font_col_rep[3] + 'smooth hairstyle' + $_font_closer
-$hair_style[5] = $_font_col_rep[4] + 'neat hairstyle' + $_font_closer
-$hair_style[6] = $_font_col_rep[4] + 'neat hairstyle' + $_font_closer
-$hair_style[7] = $_font_col_rep[5] + 'stylish hairstyle' + $_font_closer
+$hair_style[4] = $_font_col_rep[4] + 'smooth hairstyle' + $_font_closer
+$hair_style[5] = $_font_col_rep[6] + 'neat hairstyle' + $_font_closer
+$hair_style[6] = $_font_col_rep[8] + 'neat hairstyle' + $_font_closer
+$hair_style[7] = $_font_col_rep[10] + 'stylish hairstyle' + $_font_closer
 
 $slave_makeup[0] = $_font_col_rep[0] + 'no makeup' + $_font_closer 
-$slave_makeup[1] = $_font_col_rep[3] + 'stylish makeup' + $_font_closer 
-$slave_makeup[2] = $_font_col_rep[5] + 'natural beauty' + $_font_closer 
+$slave_makeup[1] = $_font_col_rep[5] + 'stylish makeup' + $_font_closer 
+$slave_makeup[2] = $_font_col_rep[10] + 'natural beauty' + $_font_closer 
 $slave_makeup[3] = $_font_col_rep[7] + 'tattoos' + $_font_closer 
 
 $slave_boobs[0] = $_font_col_rep[0] + 'Flat chested' + $_font_closer 
 $slave_boobs[1] = $_font_col_rep[1] + 'Small breasts' + $_font_closer 
 $slave_boobs[2] = $_font_col_rep[2] + 'Average breasts' + $_font_closer 
-$slave_boobs[3] = $_font_col_rep[3] + 'Big boobs' + $_font_closer 
-$slave_boobs[4] = $_font_col_rep[4] + 'Huge boobs' + $_font_closer 
-$slave_boobs[5] = $_font_col_rep[5] + 'Gigantic udders' + $_font_closer 
-$slave_boobs[6] = $_font_col_rep[7] + 'Hanging to the floor chest' + $_font_closer
+$slave_boobs[3] = $_font_col_rep[4] + 'Big boobs' + $_font_closer 
+$slave_boobs[4] = $_font_col_rep[6] + 'Huge boobs' + $_font_closer 
+$slave_boobs[5] = $_font_col_rep[8] + 'Gigantic udders' + $_font_closer 
+$slave_boobs[6] = $_font_col_rep[10] + 'Hanging to the floor chest' + $_font_closer
 
 $niple_piercing[0] = dyneval($vb_cycle, 0, 'Nipples not pierced')
-$niple_piercing[1] = dyneval($vb_cycle, 5, 'Nipples pierced')
+$niple_piercing[1] = dyneval($vb_cycle, 10, 'Nipples pierced')
 
 $slave_lactation[0] = $_font_col_rep[0] + 'No lactation' + $_font_closer 
-$slave_lactation[1] = $_font_col_rep[1] + 'Minimal lactation' + $_font_closer 
-$slave_lactation[2] = $_font_col_rep[2] + 'Lactation' + $_font_closer 
-$slave_lactation[3] = $_font_col_rep[3] + 'Good lactation' + $_font_closer 
-$slave_lactation[4] = $_font_col_rep[4] + 'Excellent lactation' + $_font_closer 
-$slave_lactation[5] = $_font_col_rep[5] + 'Milk farm' + $_font_closer 
+$slave_lactation[1] = $_font_col_rep[2] + 'Minimal lactation' + $_font_closer 
+$slave_lactation[2] = $_font_col_rep[4] + 'Lactation' + $_font_closer 
+$slave_lactation[3] = $_font_col_rep[6] + 'Good lactation' + $_font_closer 
+$slave_lactation[4] = $_font_col_rep[8] + 'Excellent lactation' + $_font_closer 
+$slave_lactation[5] = $_font_col_rep[10] + 'Milk farm' + $_font_closer 
 
 $boobs_modification[0] = 'No breast modifications'
 $boobs_modification[1] = 'Breasts enlarged'
@@ -1421,32 +1765,32 @@ $boobs_modification[2] = 'Breast vaginas'
 $boobs_modification[3] = 'Nipples-mouths'
 
 $virginity[3] = $_font_col_rep[0] + 'Given birth' + $_font_closer 
-$virginity[2] = $_font_col_rep[3] + 'Firm vagina' + $_font_closer 
-$virginity[1] = $_font_col_rep[4] + 'Restore hymen' + $_font_closer 
-$virginity[0] = $_font_col_rep[5] + 'Virgin' + $_font_closer
+$virginity[2] = $_font_col_rep[5] + 'Firm vagina' + $_font_closer 
+$virginity[1] = $_font_col_rep[7] + 'Restore hymen' + $_font_closer 
+$virginity[0] = $_font_col_rep[10] + 'Virgin' + $_font_closer
 
 $clit_piercing[0] = dyneval($vb_cycle, 0, 'Clitoris not pierced')
-$clit_piercing[1] = dyneval($vb_cycle, 5, 'Clitoris pierced')
+$clit_piercing[1] = dyneval($vb_cycle, 10, 'Clitoris pierced')
 
 $slave_anal_description[0] = $_font_col_rep[0] + 'Tight anus' + $_font_closer 
-$slave_anal_description[1] = $_font_col_rep[1] + 'Stiff anus' + $_font_closer 
-$slave_anal_description[2] = $_font_col_rep[2] + 'Firm anus' + $_font_closer 
-$slave_anal_description[3] = $_font_col_rep[3] + 'Developed anus' + $_font_closer 
-$slave_anal_description[4] = $_font_col_rep[4] + 'Relaxed anus' + $_font_closer 
-$slave_anal_description[5] = $_font_col_rep[5] + 'Loose anus' + $_font_closer 
+$slave_anal_description[1] = $_font_col_rep[2] + 'Stiff anus' + $_font_closer 
+$slave_anal_description[2] = $_font_col_rep[4] + 'Firm anus' + $_font_closer 
+$slave_anal_description[3] = $_font_col_rep[6] + 'Developed anus' + $_font_closer 
+$slave_anal_description[4] = $_font_col_rep[8] + 'Relaxed anus' + $_font_closer 
+$slave_anal_description[5] = $_font_col_rep[10] + 'Loose anus' + $_font_closer 
 
 $slave_tatoo[0] = $_font_col_rep[0] + 'no tattoos' + $_font_closer
-$slave_tatoo[1] = $_font_col_rep[1] + 'small tattoo' + $_font_closer
-$slave_tatoo[2] = $_font_col_rep[2] + 'tattoo outline' + $_font_closer
-$slave_tatoo[3] = $_font_col_rep[3] + 'colorful tattoo' + $_font_closer
-$slave_tatoo[4] = $_font_col_rep[4] + 'traced body' + $_font_closer
-$slave_tatoo[5] = $_font_col_rep[5] + 'adorned body' + $_font_closer
+$slave_tatoo[1] = $_font_col_rep[2] + 'small tattoo' + $_font_closer
+$slave_tatoo[2] = $_font_col_rep[4] + 'tattoo outline' + $_font_closer
+$slave_tatoo[3] = $_font_col_rep[6] + 'colorful tattoo' + $_font_closer
+$slave_tatoo[4] = $_font_col_rep[8] + 'traced body' + $_font_closer
+$slave_tatoo[5] = $_font_col_rep[10] + 'adorned body' + $_font_closer
 
 $slave_brand[0] = '<a href = "EXEC: interaction = 1811 & gt ''interaction''"><font color="#cd0000">No brand</font></a>'
-$slave_brand[1] = $_font_col_rep[3] + 'Branded' + $_font_closer 
-$slave_brand[2] = $_font_col_rep[3] + 'Slave brand' + $_font_closer 
-$slave_brand[3] = $_font_col_rep[5] + 'Magical brand' + $_font_closer 
-$slave_brand[4] = $_font_col_rep[2] + 'Stranger brand' + $_font_closer 
+$slave_brand[1] = $_font_col_rep[7] + 'Branded' + $_font_closer 
+$slave_brand[2] = $_font_col_rep[6] + 'Slave brand' + $_font_closer 
+$slave_brand[3] = $_font_col_rep[10] + 'Magical brand' + $_font_closer 
+$slave_brand[4] = $_font_col_rep[6] + 'Stranger brand' + $_font_closer 
 
 $vaginal_modification[0] = 'No vagina modifications'
 $vaginal_modification[1] = 'Vaginal ball implants'
@@ -1455,80 +1799,82 @@ $vaginal_modification[3] = 'Vagina tongue'
 $vaginal_modification[4] = 'Egg birthing'
 
 !for formulas
-dynamic $vb_full_cycle, '$красота', 5, 'Beauty'
-dynamic $vb_full_cycle, '$природная_красота', 5, 'natural beauty'
+dynamic $vb_full_cycle, '$красота', 10, 'Beauty'
+dynamic $vb_full_cycle, '$природная_красота', 10, 'natural beauty'
 $пластика[0] = $_font_col_rep[0] + 'neoplasty' + $_font_closer
-$пластика[1] = $_font_col_rep[5] + 'neoplasty' + $_font_closer
-dynamic $vb_full_cycle, '$шрамы', 5, 'scars'
-dynamic $vb_full_cycle, '$синяки', 5, 'bruises'
+$пластика[1] = $_font_col_rep[3] + 'neoplasty' + $_font_closer
+$пластика[2] = $_font_col_rep[5] + 'neoplasty' + $_font_closer
+$пластика[3] = $_font_col_rep[10] + 'neoplasty' + $_font_closer
+dynamic $vb_full_cycle, '$шрамы', 10, 'scars'
+dynamic $vb_full_cycle, '$синяки', 10, 'bruises'
 
-dynamic $vb_full_cycle, '$экзотика', 5, 'Exoticism'
-dynamic $vb_full_cycle, '$природная_экзотика', 5, 'natural exoticism'
-dynamic $vb_full_cycle, '$пирсинг', 5, 'piercing'
-dynamic $vb_full_cycle, '$wear', 5, 'clothes'
+dynamic $vb_full_cycle, '$экзотика', 10, 'Exoticism'
+dynamic $vb_full_cycle, '$природная_экзотика', 10, 'natural exoticism'
+dynamic $vb_full_cycle, '$пирсинг', 10, 'piercing'
+dynamic $vb_full_cycle, '$wear', 10, 'clothes'
 
-dynamic $vb_full_cycle, '$стиль', 5, 'Style'
+dynamic $vb_full_cycle, '$стиль', 10, 'Style'
 $грация[0] = $_font_col_rep[0] + 'grace' + $_font_closer
-$грация[1] = $_font_col_rep[5] + 'grace' + $_font_closer
+$грация[1] = $_font_col_rep[10] + 'grace' + $_font_closer
 $грация[2] = $_font_col_rep[0] + 'grace' + $_font_closer
-$гигиена[0] = $_font_col_rep[5] + 'hygiene' + $_font_closer
-$гигиена[1] = $_font_col_rep[4] + 'hygiene' + $_font_closer
-$гигиена[2] = $_font_col_rep[3] + 'hygiene' + $_font_closer
-$гигиена[3] = $_font_col_rep[2] + 'hygiene' + $_font_closer
-$гигиена[4] = $_font_col_rep[1] + 'hygiene' + $_font_closer
+$гигиена[0] = $_font_col_rep[10] + 'hygiene' + $_font_closer
+$гигиена[1] = $_font_col_rep[8] + 'hygiene' + $_font_closer
+$гигиена[2] = $_font_col_rep[6] + 'hygiene' + $_font_closer
+$гигиена[3] = $_font_col_rep[4] + 'hygiene' + $_font_closer
+$гигиена[4] = $_font_col_rep[2] + 'hygiene' + $_font_closer
 $гигиена[5] = $_font_col_rep[0] + 'hygiene' + $_font_closer
 dynamic $vb_full_cycle, '$мейкап', 3, 'makeup'
 !end of section for formulas
 
-dynamic $vb_full_cycle, '$service_lesson', 6, 'Housekeeping lesson'
-dynamic $vb_full_cycle, '$cook_lesson', 6, 'Cookery lesson'
-dynamic $vb_full_cycle, '$nurse_lesson', 6, 'Nurse training'
-dynamic $vb_full_cycle, '$dance_lesson', 6, 'Dance lesson'
-dynamic $vb_full_cycle, '$vocal_lesson', 6, 'Singing lesson'
-dynamic $vb_full_cycle, '$secretary_lesson', 6, 'Clerical work'
-dynamic $vb_full_cycle, '$exprtession_lesson', 6, 'Etiquette lesson'
-dynamic $vb_full_cycle, '$fight_lesson', 6, 'Martial arts'
-dynamic $vb_full_cycle, '$gym_lesson', 6, 'Fitness training'
+dynamic $vb_full_cycle, '$service_lesson', 10, 'Housekeeping lesson'
+dynamic $vb_full_cycle, '$cook_lesson', 10, 'Cookery lesson'
+dynamic $vb_full_cycle, '$nurse_lesson', 10, 'Nurse training'
+dynamic $vb_full_cycle, '$dance_lesson', 10, 'Dance lesson'
+dynamic $vb_full_cycle, '$vocal_lesson', 10, 'Singing lesson'
+dynamic $vb_full_cycle, '$secretary_lesson', 10, 'Clerical work'
+dynamic $vb_full_cycle, '$exprtession_lesson', 10, 'Etiquette lesson'
+dynamic $vb_full_cycle, '$fight_lesson', 10, 'Martial arts'
+dynamic $vb_full_cycle, '$gym_lesson', 10, 'Fitness training'
 
-dynamic $vb_full_cycle, '$slave_sub_kiss', 5, 'Kissing'
-dynamic $vb_full_cycle, '$slave_sub_thongue', 5, 'Licking'
-dynamic $vb_full_cycle, '$slave_sub_bj', 5, 'Blowjob'
-dynamic $vb_full_cycle, '$slave_sub_dt', 5, 'Deep throat'
-dynamic $vb_full_cycle, '$slave_sub_asslik', 5, 'Rimming'
-dynamic $vb_full_cycle, '$slave_sub_hj', 5, 'Handjob'
-dynamic $vb_full_cycle, '$slave_sub_fj', 5, 'Footjob'
-dynamic $vb_full_cycle, '$slave_sub_hug', 5, 'Rubbing'
-dynamic $vb_full_cycle, '$slave_sub_pazuri', 5, 'Titjob'
-dynamic $vb_full_cycle, '$slave_sub_vaginal', 5, 'Sex'
-dynamic $vb_full_cycle, '$slave_sub_anal', 5, 'Anal sex'
-dynamic $vb_full_cycle, '$slave_sub_fisting', 5, 'Fisting'
-dynamic $vb_full_cycle, '$slave_anal_stretch', 5, 'Anal fisting'
-dynamic $vb_full_cycle, '$slave_sub_seduce', 5, 'Seduction'
-dynamic $vb_full_cycle, '$slave_sub_masturbation', 5, 'Masturbation'
-dynamic $vb_full_cycle, '$slave_sub_dildo', 5, 'Dildo'
-dynamic $vb_full_cycle, '$slave_sub_exhibit', 5, 'Exhibitionism'
-dynamic $vb_full_cycle, '$slave_sub_humiliation', 5, 'Humiliation'
-dynamic $vb_full_cycle, '$slave_sub_enema', 5, 'Enema'
-dynamic $vb_full_cycle, '$slave_sub_mazo', 5, 'Masochism'
-dynamic $vb_full_cycle, '$slave_sub_selfpain', 5, 'Self-torture'
-dynamic $vb_full_cycle, '$slave_sub_piss', 5, 'Golden shower'
-dynamic $vb_full_cycle, '$slave_sub_kopro', 5, 'Scatology'
+dynamic $vb_full_cycle, '$slave_sub_kiss', 10, 'Kissing'
+dynamic $vb_full_cycle, '$slave_sub_thongue', 10, 'Licking'
+dynamic $vb_full_cycle, '$slave_sub_bj', 10, 'Blowjob'
+dynamic $vb_full_cycle, '$slave_sub_dt', 10, 'Deep throat'
+dynamic $vb_full_cycle, '$slave_sub_asslik', 10, 'Rimming'
+dynamic $vb_full_cycle, '$slave_sub_hj', 10, 'Handjob'
+dynamic $vb_full_cycle, '$slave_sub_fj', 10, 'Footjob'
+dynamic $vb_full_cycle, '$slave_sub_hug', 10, 'Rubbing'
+dynamic $vb_full_cycle, '$slave_sub_pazuri', 10, 'Titjob'
+dynamic $vb_full_cycle, '$slave_sub_vaginal', 10, 'Sex'
+dynamic $vb_full_cycle, '$slave_sub_anal', 10, 'Anal sex'
+dynamic $vb_full_cycle, '$slave_sub_fisting', 10, 'Fisting'
+dynamic $vb_full_cycle, '$slave_anal_stretch', 10, 'Anal fisting'
+dynamic $vb_full_cycle, '$slave_sub_seduce', 10, 'Seduction'
+dynamic $vb_full_cycle, '$slave_sub_masturbation', 10, 'Masturbation'
+dynamic $vb_full_cycle, '$slave_sub_dildo', 10, 'Dildo'
+dynamic $vb_full_cycle, '$slave_sub_exhibit', 10, 'Exhibitionism'
+dynamic $vb_full_cycle, '$slave_sub_humiliation', 10, 'Humiliation'
+dynamic $vb_full_cycle, '$slave_sub_enema', 10, 'Enema'
+dynamic $vb_full_cycle, '$slave_sub_mazo', 10, 'Masochism'
+dynamic $vb_full_cycle, '$slave_sub_selfpain', 10, 'Self-torture'
+dynamic $vb_full_cycle, '$slave_sub_piss', 10, 'Golden shower'
+dynamic $vb_full_cycle, '$slave_sub_kopro', 10, 'Scatology'
 
-dynamic $vb_full_cycle, '$slave_sub_threesome', 6, 'Threesome'
+dynamic $vb_full_cycle, '$slave_sub_threesome', 10, 'Threesome'
 
-dynamic $vb_full_cycle, '$slave_sub_dp', 5, 'Double penetration'
-dynamic $vb_full_cycle, '$slave_sub_tp', 5, 'Triple penetration'
-dynamic $vb_full_cycle, '$slave_sub_gangbang', 5, 'Gangbang'
-dynamic $vb_full_cycle, '$slave_sub_bukake', 5, 'Bukkake'
+dynamic $vb_full_cycle, '$slave_sub_dp', 10, 'Double penetration'
+dynamic $vb_full_cycle, '$slave_sub_tp', 10, 'Triple penetration'
+dynamic $vb_full_cycle, '$slave_sub_gangbang', 10, 'Gangbang'
+dynamic $vb_full_cycle, '$slave_sub_bukake', 10, 'Bukkake'
 
-dynamic $vb_full_cycle, '$slave_sub_zoosex', 6, 'Dog mating'
-dynamic $vb_full_cycle, '$slave_svinesex', 6, 'Pig mating'
-dynamic $vb_full_cycle, '$slave_horsesex', 6, 'Horse mating'
-dynamic $vb_full_cycle, '$slave_tentacle', 6, 'Fiend mating'
-dynamic $vb_full_cycle, '$slave_arachnidSpider', 6, 'Spider mating'
-dynamic $vb_full_cycle, '$slave_polypusvermin', 6, 'Sea tentacle mating'
-dynamic $vb_full_cycle, '$music_lesson', 6, 'Music lesson'
-dynamic $vb_full_cycle, '$alchemy_lesson', 6, 'Alchemy'
+dynamic $vb_full_cycle, '$slave_sub_zoosex', 10, 'Dog mating'
+dynamic $vb_full_cycle, '$slave_svinesex', 10, 'Pig mating'
+dynamic $vb_full_cycle, '$slave_horsesex', 10, 'Horse mating'
+dynamic $vb_full_cycle, '$slave_tentacle', 10, 'Fiend mating'
+dynamic $vb_full_cycle, '$slave_arachnidSpider', 10, 'Spider mating'
+dynamic $vb_full_cycle, '$slave_polypusvermin', 10, 'Sea tentacle mating'
+dynamic $vb_full_cycle, '$music_lesson', 10, 'Music lesson'
+dynamic $vb_full_cycle, '$alchemy_lesson', 10, 'Alchemy'
 
 !"$enchant_lesson[0] = dyneval($vb_cycle, 0, 'Enchanting')
 $enchant_lesson[1] = dyneval($vb_cycle, 1, 'Enchanting')
@@ -1537,10 +1883,10 @@ $enchant_lesson[3] = dyneval($vb_cycle, 3, 'Enchanting')
 $enchant_lesson[4] = dyneval($vb_cycle, 4, 'Enchanting')
 $enchant_lesson[5] = dyneval($vb_cycle, 5, 'Enchanting')"
 
-dynamic $vb_full_cycle, '$domestik_lesson', 6, 'Domestication'
-dynamic $vb_full_cycle, '$dressur_lesson', 6, 'Pet training'
-dynamic $vb_full_cycle, '$dressage_lesson', 6, 'Pony training'
-dynamic $vb_full_cycle, '$draft_lesson', 6, 'Harness training'
+dynamic $vb_full_cycle, '$domestik_lesson', 10, 'Domestication'
+dynamic $vb_full_cycle, '$dressur_lesson', 10, 'Pet training'
+dynamic $vb_full_cycle, '$dressage_lesson', 10, 'Pony training'
+dynamic $vb_full_cycle, '$draft_lesson', 10, 'Harness training'
 
 !"$tantra_lesson[0] = dyneval($vb_cycle, 0, 'Tantra-yoga')
 $tantra_lesson[1] = dyneval($vb_cycle, 1, 'Tantra-yoga')
@@ -1549,7 +1895,7 @@ $tantra_lesson[3] = dyneval($vb_cycle, 3, 'Tantra-yoga')
 $tantra_lesson[4] = dyneval($vb_cycle, 4, 'Tantra-yoga')
 $tantra_lesson[5] = dyneval($vb_cycle, 5, 'Tantra-yoga')"
 
-dynamic $vb_full_cycle, '$_lesson', 5, 'Lesson'
+dynamic $vb_full_cycle, '$_lesson', 10, 'Lesson'
 
 $fff[0] = ''
 $fff[1] = ''
@@ -1557,6 +1903,11 @@ $fff[2] = ''
 $fff[3] = ''
 $fff[4] = ''
 $fff[5] = ''
+$fff[6] = ''
+$fff[7] = ''
+$fff[8] = ''
+$fff[9] = ''
+$fff[10] = ''
 
 --- #var_base ---------------------------------
 

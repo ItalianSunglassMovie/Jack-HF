@@ -12,8 +12,6 @@ $item_property_off[0] = {
 }
 
 !TODO: replace price hardcode in the description to a variable
-!TODO: допилить замены до конца
-!TODO: проверить соответствие цены в тексте и цены
 !replacement for item copypaste, by Lyazar
 $ib_cycle = {
     $_ib_cycle_name = $args[0]
@@ -51,10 +49,8 @@ master_mood['pos_master_cloth'] = 0
 }
 
 !["comfy_robes"]
-$item_name['comfy_robes'] = 'Housecoat'
-item_price['comfy_robes'] = 10
+dynamic $ib_cycle, 'comfy_robes', 'Housecoat', 10, '   Price: 10 sparks. <br>   Comfortable and soft housecoat. Does not look very nice, but very convenient and comfortable to wear. Just what you need to relax!', 'scene\item\item_Housecoat'
 item_size['comfy_robes'] = 0
-$item_description['comfy_robes'] = '   Comfortable and soft housecoat. Does not look very nice, but very convenient and comfortable to wear. Just what you need to relax!'
 style_modifer['comfy_robes'] = -1
 comfort_modifer['comfy_robes'] = 1
 $item_property['comfy_robes'] = {
@@ -63,11 +59,9 @@ master_mood['neg_master_cloth'] = 0
 }
 
 !["regal_suit"]
-$item_name['regal_suit'] = 'Noble regalia'
-item_price['regal_suit'] = 20
+dynamic $ib_cycle, 'regal_suit', 'Noble regalia', 20, '   Price: 20 sparks. <br>   This heavy clothing is richly decorated with precious inserts and decorative elements, making you look bigger and grander. Beautiful and impressive, of course, but very impractical.', 'scene\item\item_Noble_regalia'
 item_size['regal_suit'] = 0
-$item_description['regal_suit'] = '   This heavy clothing is richly decorated with precious inserts and decorative elements, making you look bigger and grander. Beautiful and impressive, of course, but very impractical.'
-style_modifer['regal_suit'] = 2
+style_modifer['regal_suit'] = 1
 comfort_modifer['regal_suit'] = -1
 $item_property['regal_suit'] = {
 master_mood['pos_master_cloth'] = 0
@@ -75,10 +69,9 @@ master_mood['neg_master_cloth'] = 0
 }
 
 !["fancy_suit"]
-$item_name['fancy_suit'] = 'Fashionable attire'
-item_price['fancy_suit'] = 10
+dynamic $ib_cycle, 'fancy_suit', 'Fashionable attire', 10, '   Price: 10 sparks. <br>   Keeping track of Eternal Rome fashion is almost impossible, but many are trying. In any case, this outfit is a perfect compromise between luxury and convenience.', 'scene\item\item_Fashionable_attire'
 item_size['fancy_suit'] = 0
-$item_description['fancy_suit'] = '   Keeping track of Eternal Rome fashion is almost impossible, but many are trying. In any case, this outfit is a perfect compromise between luxury and convenience.'
+$item_description['fancy_suit'] = '   '
 style_modifer['fancy_suit'] = 1
 comfort_modifer['fancy_suit'] = 0
 $item_property['fancy_suit'] = {
@@ -87,10 +80,8 @@ master_mood['neg_master_cloth'] = 0
 }
 
 !["formal_suit"]
-$item_name['formal_suit'] = 'Formal suit'
-item_price['formal_suit'] = 10
+dynamic $ib_cycle, 'Formal_suit', 'Formal suit', 10, '   Price: 10 sparks. <br>   Very formal clothing. Looks old-fashioned and does not look very charming, but at least you will be taken seriously. It is perfect for the impresario or for an entertainer.', 'scene\item\item_Formal_suit'
 item_size['formal_suit'] = 0
-$item_description['formal_suit'] = '   Very formal clothing. Looks old-fashioned and does not look very charming, but at least you will be taken seriously. It is perfect for the impresario or for an entertainer.'
 style_modifer['formal_suit'] = 0
 comfort_modifer['formal_suit'] = 0
 $item_property['formal_suit'] = {
@@ -100,10 +91,8 @@ master_mood['neg_master_cloth'] = 0
 }
 
 !["aketon"]
-$item_name['aketon'] = 'Aketon'
-item_price['aketon'] = 10
+dynamic $ib_cycle, 'aketon', 'Aketon', 10, '   Price: 10 sparks. <br>   Quilted armor jacket, light enough to be used as everyday wear. Great outfit for a warrior.', 'scene\item\item_Aketon'
 item_size['aketon'] = 0
-$item_description['aketon'] = '   Quilted armor jacket, light enough to be used as everyday wear. Great outfit for a warrior.'
 style_modifer['aketon'] = 0
 comfort_modifer['aketon'] = 0
 $item_property['aketon'] = {
@@ -113,10 +102,8 @@ master_mood['neg_master_cloth'] = 0
 }
 
 !["livery"]
-$item_name['livery'] = 'Livery'
-item_price['livery'] = 10
+dynamic $ib_cycle, 'livery', 'Livery', 10, '   Price: 10 sparks. <br>   Ornate livery of a senior butler. In this dress you immediately feel like the sole ruler over this household.', 'scene\item\item_Livery'
 item_size['livery'] = 0
-$item_description['livery'] = '   Ornate livery of a senior butler. In this dress you immediately feel like the sole ruler over this household.'
 style_modifer['livery'] = 0
 comfort_modifer['livery'] = 0
 $item_property['livery'] = {
@@ -126,10 +113,8 @@ master_mood['neg_master_cloth'] = 0
 }
 
 !["medic_robes"]
-$item_name['medic_robes'] = 'Medical gown'
-item_price['medic_robes'] = 10
+dynamic $ib_cycle, 'medic_robes', 'Medical gown', 10, '   Price: 10 sparks. <br>   Very comfortable and practical clothing for the healthcare worker. Immediately makes you a qualified doctor - even if only due to self-hypnosis.', 'scene\item\item_Medical_gown'
 item_size['medic_robes'] = 0
-$item_description['medic_robes'] = '   Very comfortable and practical clothing for the healthcare worker. Immediately makes you a qualified doctor - even if only due to self-hypnosis.'
 style_modifer['medic_robes'] = 0
 comfort_modifer['medic_robes'] = 0
 $item_property['medic_robes'] = {
@@ -139,10 +124,8 @@ master_mood['neg_master_cloth'] = 0
 }
 
 !["wizard_robes"]
-$item_name['wizard_robes'] = 'Wizard robes'
-item_price['wizard_robes'] = 10
+dynamic $ib_cycle, 'wizard_robes', 'Wizard robes', 10, '   Price: 10 sparks. <br>   This ritual costume is rovered with magical runes - Increases your magical power!', 'scene\item\item_Wizard robes'
 item_size['wizard_robes'] = 0
-$item_description['wizard_robes'] = '   This ritual costume is rovered with magical runes - Increases your magical power!'
 style_modifer['wizard_robes'] = 0
 comfort_modifer['wizard_robes'] = 0
 $item_property['wizard_robes'] = {
@@ -160,7 +143,7 @@ $fancy_suit_help = '   This heavy clothing is richly decorated with precious ins
 
 $regal_suit_help = '   Keeping track of Eternal Rome fashion is almost impossible, but many are trying. In any case, this outfit is a perfect compromise between luxury and convenience.'
 
-$formal_suit_help = '   Very formal clothing. Looks old-fashioned and does not look very charming, but at least you will be taken seriously. It is perfect for the impresario or for an entertainer.'
+$formal_suit_help = '   Very comfortable and practical clothing for the healthcare worker. Immediately makes you a qualified doctor - even if only due to self-hypnosis.'
 
 $aketon_help = '   Quilted armor jacket, light enough to be used as everyday wear. Great outfit for a warrior.'
 
@@ -240,9 +223,9 @@ $item_property["голая"] = {
 }
 
 !Фартук ['apron']
-dynamic $ib_cycle, 'apron', 'Frilly apron', 5, '   Price: 5 sparks. <br>   Aprons are most useful in the kitchen. This apron is worn without any other clothing, leaving plenty of opportunities to enjoy the sight of your woman working in the kitchen.', 'scene\item\item_apron'
+dynamic $ib_cycle, 'Frilly_apron1', 'Frilly apron', 5, '   Price: 5 sparks. <br>   Aprons are most useful in the kitchen. This apron is worn without any other clothing, leaving plenty of opportunities to enjoy the sight of your woman working in the kitchen. <br><br>   bonus cookry learning 1.', 'scene\item\item_apron1'
 
-$item_property["apron"] = {
+$item_property["common_apron1"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
      assistant["st_plus"] += 1
@@ -251,11 +234,44 @@ $item_property["apron"] = {
     learn_bonus["cook"] += 1
     slave["st_plus"] += 1
 }
+dynamic $ib_cycle, 'Frilly_apron2', 'Frilly apron', 10, '   Price: 10 sparks. <br>   Aprons are most useful in the kitchen. This apron is worn without any other clothing, leaving plenty of opportunities to enjoy the sight of your woman working in the kitchen. <br><br>   bonus cookry learning 2.', 'scene\item\item_apron2'
+
+$item_property["common_apron2"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 2
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 2
+    learn_bonus["cook"] += 2
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'Frilly_apron3', 'Frilly apron', 15, '   Price: 15 sparks. <br>   Aprons are most useful in the kitchen. This apron is worn without any other clothing, leaving plenty of opportunities to enjoy the sight of your woman working in the kitchen. <br><br>   bonus cookry learning 4.', 'scene\item\item_apron3'
+
+$item_property["common_apron3"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 3
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 3
+    learn_bonus["cook"] += 4
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'Frilly_apron4', 'Frilly apron', 20, '   Price: 20 sparks. <br>   Aprons are most useful in the kitchen. This apron is worn without any other clothing, leaving plenty of opportunities to enjoy the sight of your woman working in the kitchen. <br><br>   bonus cookry learning 6.', 'scene\item\item_apron4'
+
+$item_property["common_apron4"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 4
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 4
+    learn_bonus["cook"] += 6
+    slave["st_plus"] += 1
+}
 
 !Платье горничной ["maid_dress"]
-dynamic $ib_cycle, 'maid_dress', 'Maid outfit', 5, '   Price: 5 sparks.  <br>   Classic French maid uniform. Many parts of the uniform have been left out in order to preserve fabric. Most customers actually like this design.', 'scene\item\item_maido'
+dynamic $ib_cycle, 'maid_dress1', 'Maid outfit', 5, '   Price: 5 sparks.  <br>   Classic French maid uniform. Many parts of the uniform have been left out in order to preserve fabric. Most customers actually like this design. <br><br>   bonus housekeeping learning by 1.', 'scene\item\item_maido1'
 
-$item_property["maid_dress"] = {
+$item_property["maid_dress1"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
      assistant["st_plus"] += 1
@@ -264,11 +280,44 @@ $item_property["maid_dress"] = {
     learn_bonus["service"] += 1
     slave["st_plus"] += 1
 }
+dynamic $ib_cycle, 'maid_dress2', 'Maid outfit', 10, '   Price: 10 sparks.  <br>   Classic French maid uniform. Many parts of the uniform have been left out in order to preserve fabric. Most customers actually like this design. <br><br>   bonus housekeeping learning by 2.', 'scene\item\item_maido2'
+
+$item_property["maid_dress2"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 2
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 2
+    learn_bonus["service"] += 2
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'maid_dress3', 'Maid outfit', 15, '   Price: 15 sparks.  <br>   Classic French maid uniform. Many parts of the uniform have been left out in order to preserve fabric. Most customers actually like this design. <br><br>   bonus housekeeping learning by 4.', 'scene\item\item_maido3'
+
+$item_property["maid_dress3"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 3
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 3
+    learn_bonus["service"] += 4
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'maid_dress4', 'Maid outfit', 20, '   Price: 20 sparks.  <br>   Classic French maid uniform. Many parts of the uniform have been left out in order to preserve fabric. Most customers actually like this design. <br><br>   bonus housekeeping learning by 6.', 'scene\item\item_maido4'
+
+$item_property["maid_dress4"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 4
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 4
+    learn_bonus["service"] += 6
+    slave["st_plus"] += 1
+}
 
 !Платье медсестры ["nurse_dress"]
-dynamic $ib_cycle, 'nurse_dress', 'Nurse outfit', 5, '   Price: 5 sparks.  <br>   A flashy pink and white nurse dress. This is what you need to lift the spirit of any patient.', 'scene\item\item_nurse'
+dynamic $ib_cycle, 'nurse_dress1', 'Nurse outfit', 5, '   Price: 5 sparks.  <br>   A flashy pink and white nurse dress. This is what you need to lift the spirit of any patient. <br><br>   bonus nursing learning by 1.', 'scene\item\item_nurse1'
 
-$item_property["nurse_dress"] = {
+$item_property["nurse_dress1"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
      assistant["st_plus"] += 1
@@ -277,11 +326,200 @@ $item_property["nurse_dress"] = {
     slave_rate["style"] += 1
     slave["st_plus"] += 1
 }
+dynamic $ib_cycle, 'nurse_dress2', 'Nurse outfit', 10, '   Price: 10 sparks.  <br>   A flashy pink and white nurse dress. This is what you need to lift the spirit of any patient. <br><br>   bonus nursing learning by 2.', 'scene\item\item_nurse2'
+
+$item_property["nurse_dress2"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 2
+     assistant["st_plus"] += 1
+    end
+    learn_bonus["nurse"] += 2
+    slave_rate["style"] += 2
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'nurse_dress3', 'Nurse outfit', 15, '   Price: 15 sparks.  <br>   A flashy pink and white nurse dress. This is what you need to lift the spirit of any patient. <br><br>   bonus nursing learning by 4.', 'scene\item\item_nurse3'
+
+$item_property["nurse_dress3"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 3
+     assistant["st_plus"] += 1
+    end
+    learn_bonus["nurse"] += 3
+    slave_rate["style"] += 4
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'nurse_dress4', 'Nurse outfit', 20, '   Price: 20 sparks.  <br>   A flashy pink and white nurse dress. This is what you need to lift the spirit of any patient. <br><br>   bonus nursing learning by 6.', 'scene\item\item_nurse4'
+
+$item_property["nurse_dress4"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 4
+     assistant["st_plus"] += 1
+    end
+    learn_bonus["nurse"] += 4
+    slave_rate["style"] += 6
+    slave["st_plus"] += 1
+}
+
+!["enchanter_robe"]
+dynamic $ib_cycle, 'enchanter_robe1', 'Sorceress robes', 5, '   Price: 5 sparks  <br>   Made of a very light but opaque fabric - this arcane robe with a hood completely hides the shape of your slave. Not very sexy, but very mysterious and helps to tune in to a mystical way. <br><br>   bonus alchemy learning by 1.', 'scene\item\item_robe1'
+
+$item_property["enchanter_robe1"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 0
+    end
+    slave_rate["style"] += 0
+    learn_bonus["enchanter"] += 2
+}
+dynamic $ib_cycle, 'enchanter_robe2', 'Sorceress robes', 10, '   Price: 10 sparks  <br>   Made of a very light but opaque fabric - this arcane robe with a hood completely hides the shape of your slave. Not very sexy, but very mysterious and helps to tune in to a mystical way. <br><br>   bonus alchemy learning by 2.', 'scene\item\item_robe2'
+
+$item_property["enchanter_robe2"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 0
+    end
+    slave_rate["style"] += 0
+    learn_bonus["enchanter"] += 3
+}
+dynamic $ib_cycle, 'enchanter_robe3', 'Sorceress robes', 15, '   Price: 15 sparks  <br>   Made of a very light but opaque fabric - this arcane robe with a hood completely hides the shape of your slave. Not very sexy, but very mysterious and helps to tune in to a mystical way. <br><br>   bonus alchemy learning by 4.', 'scene\item\item_robe3'
+
+$item_property["enchanter_robe3"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 0
+    end
+    slave_rate["style"] += 0
+    learn_bonus["enchanter"] += 4
+}
+dynamic $ib_cycle, 'enchanter_robe4', 'Sorceress robes', 20, '   Price: 20 sparks  <br>   Made of a very light but opaque fabric - this arcane robe with a hood completely hides the shape of your slave. Not very sexy, but very mysterious and helps to tune in to a mystical way. <br><br>   bonus alchemy learning by 6.', 'scene\item\item_robe4'
+
+$item_property["enchanter_robe4"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 0
+    end
+    slave_rate["style"] += 0
+    learn_bonus["enchanter"] += 6
+}
+
+!["leotard"]
+dynamic $ib_cycle, 'leotard1', 'Athletic leotard', 5, '   Price: 5 sparks  <br>   A tight leotard which emphasizes the shape of your slave while not hampering her movements. Perfect for any sports activity, except for battles. <br><br>   bonus fitness and dancing learning by 1.', 'scene\item\item_leotard1'
+
+$item_property["leotard1"] = {
+    learn_bonus["stamina"] += 1
+    learn_bonus["callisthenics"] += 1
+}
+dynamic $ib_cycle, 'leotard2', 'Athletic leotard', 10, '   Price: 10 sparks  <br>   A tight leotard which emphasizes the shape of your slave while not hampering her movements. Perfect for any sports activity, except for battles. <br><br>   boosts fitness and dancing learning by 2.', 'scene\item\item_leotard2'
+
+$item_property["leotard2"] = {
+    learn_bonus["stamina"] += 2
+    learn_bonus["callisthenics"] += 2
+}
+dynamic $ib_cycle, 'leotard3', 'Athletic leotard', 15, '   Price: 15 sparks  <br>   A tight leotard which emphasizes the shape of your slave while not hampering her movements. Perfect for any sports activity, except for battles. <br><br>   boosts fitness and dancing learning by 4.', 'scene\item\item_leotard3'
+
+$item_property["leotard3"] = {
+    learn_bonus["stamina"] += 4
+    learn_bonus["callisthenics"] += 4
+}
+dynamic $ib_cycle, 'leotard4', 'Athletic leotard', 20, '   Price: 20 sparks  <br>   A tight leotard which emphasizes the shape of your slave while not hampering her movements. Perfect for any sports activity, except for battles. <br><br>   boosts fitness and dancing learning by 6.', 'scene\item\item_leotard4'
+
+$item_property["leotard4"] = {
+    learn_bonus["stamina"] += 6
+    learn_bonus["callisthenics"] += 6
+}
+
+!["chainmail_bikini"]
+dynamic $ib_cycle, 'chainmail_bikini1', 'Chainmail bikini', 5, '   Price: 5 sparks  <br>   Classic gladiatrix clothing. I repeat - clothing. It''s not an armor, it''s a stage props, made ​​of light and gleaming anodized aluminum. The cut is so minimal that it almost hides nothing. <br><br>   boosts Martial arts learning by 1.', 'scene\item\item_chainmail_bikini1'
+
+$item_property["chainmail_bikini1"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 1
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 1
+    learn_bonus["gladiatrix"] += 1
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'chainmail_bikini2', 'Chainmail bikini', 10, '   Price: 10 sparks  <br>   Classic gladiatrix clothing. I repeat - clothing. It''s not an armor, it''s a stage props, made ​​of light and gleaming anodized aluminum. The cut is so minimal that it almost hides nothing. <br><br>   boosts Martial arts learning by 2.', 'scene\item\item_chainmail_bikini2'
+
+$item_property["chainmail_bikini2"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 1
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 2
+    learn_bonus["gladiatrix"] += 2
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'chainmail_bikini3', 'Chainmail bikini', 15, '   Price: 15 sparks  <br>   Classic gladiatrix clothing. I repeat - clothing. It''s not an armor, it''s a stage props, made ​​of light and gleaming anodized aluminum. The cut is so minimal that it almost hides nothing. <br><br>   boosts Martial arts learning by 4.', 'scene\item\item_chainmail_bikini3'
+
+$item_property["chainmail_bikini3"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 1
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 3
+    learn_bonus["gladiatrix"] += 4
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'chainmail_bikini4', 'Chainmail bikini', 20, '   Price: 20 sparks  <br>   Classic gladiatrix clothing. I repeat - clothing. It''s not an armor, it''s a stage props, made ​​of light and gleaming anodized aluminum. The cut is so minimal that it almost hides nothing. <br><br>   boosts Martial arts learning by 6.', 'scene\item\item_chainmail_bikini4'
+
+$item_property["chainmail_bikini4"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 1
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 4
+    learn_bonus["gladiatrix"] += 6
+    slave["st_plus"] += 1
+}
+
+!["ukata"]
+dynamic $ib_cycle, 'ukata1', 'Kimono-yukata', 20, '   Price: 20 sparks  <br>   Beautiful but strict japanese clothes - the choice of a Geisha. Bright fabric colors and a lush wide belt will help to emphasize the beauty of the dress, and the strict cut will complement formal communication in any elite company. <br><br>   boosts etiquette learning by 1.', 'scene\item\item_ukata1'
+
+$item_property["ukata1"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 2
+     assistant["st_plus"] += 2
+    end
+    slave_rate["style"] += 2
+    learn_bonus["expression"] += 1
+    slave["st_plus"] += 2
+}
+dynamic $ib_cycle, 'ukata2', 'Kimono-yukata', 25, '   Price: 25 sparks  <br>   Beautiful but strict japanese clothes - the choice of a Geisha. Bright fabric colors and a lush wide belt will help to emphasize the beauty of the dress, and the strict cut will complement formal communication in any elite company. <br><br>   boosts etiquette learning by 2.', 'scene\item\item_ukata2'
+
+$item_property["ukata2"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 2
+     assistant["st_plus"] += 2
+    end
+    slave_rate["style"] += 3
+    learn_bonus["expression"] += 2
+    slave["st_plus"] += 2
+}
+dynamic $ib_cycle, 'ukata3', 'Kimono-yukata', 30, '   Price: 30 sparks  <br>   Beautiful but strict japanese clothes - the choice of a Geisha. Bright fabric colors and a lush wide belt will help to emphasize the beauty of the dress, and the strict cut will complement formal communication in any elite company. <br><br>   boosts etiquette learning by 4.', 'scene\item\item_ukata3'
+
+$item_property["ukata3"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 2
+     assistant["st_plus"] += 2
+    end
+    slave_rate["style"] += 4
+    learn_bonus["expression"] += 4
+    slave["st_plus"] += 2
+}
+dynamic $ib_cycle, 'ukata4', 'Kimono-yukata', 35, '   Price: 35 sparks  <br>   Beautiful but strict japanese clothes - the choice of a Geisha. Bright fabric colors and a lush wide belt will help to emphasize the beauty of the dress, and the strict cut will complement formal communication in any elite company. <br><br>   boosts etiquette learning by 6.', 'scene\item\item_ukata4'
+
+$item_property["ukata4"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 2
+     assistant["st_plus"] += 2
+    end
+    slave_rate["style"] += 6
+    learn_bonus["expression"] += 6
+    slave["st_plus"] += 2
+}
 
 !["sailor_foku"]
-dynamic $ib_cycle, 'sailor_foku', 'School uniform', 10, '   Price: 10 sparks  <br>   Uniform of the Academy of St. Peter. If your slave will ever attend classes there, this dress will make her feel at home. In any case, what can be more charming and naive than young schoolgirl?', 'scene\item\item_sailor'
+dynamic $ib_cycle, 'sailor_foku1', 'School uniform', 10, '   Price: 10 sparks  <br>   Uniform of the Academy of St. Peter. If your slave will ever attend classes there, this dress will make her feel at home. In any case, what can be more charming and naive than young schoolgirl? <br><br>   boosts clerical work and school learning by 1.', 'scene\item\item_sailor1'
 
-$item_property["sailor_foku"] = {
+$item_property["sailor_foku1"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
      assistant["st_plus"] += 1
@@ -291,36 +529,40 @@ $item_property["sailor_foku"] = {
     learn_bonus["academy"] += 1
     slave["st_plus"] += 1
 }
+dynamic $ib_cycle, 'sailor_foku2', 'School uniform', 15, '   Price: 15 sparks  <br>   Uniform of the Academy of St. Peter. If your slave will ever attend classes there, this dress will make her feel at home. In any case, what can be more charming and naive than young schoolgirl? <br><br>   boosts clerical work and school learning by 2.', 'scene\item\item_sailor2'
 
-!["enchanter_robe"]
-dynamic $ib_cycle, 'enchanter_robe', 'Sorceress robes', 5, '   Price: 5 sparks  <br>   Made of a very light but opaque fabric - this arcane robe with a hood completely hides the shape of your slave. Not very sexy, but very mysterious and helps to tune in to a mystical way.', 'scene\item\item_robe'
-
-$item_property["enchanter_robe"] = {
-    if assistant_item = 1:
-     assistant_rate["style"] += 0
-    end
-    slave_rate["style"] += 0
-    learn_bonus["enchanter"] += 2
-}
-
-!["leotard"]
-dynamic $ib_cycle, 'leotard', 'Athletic leotard', 5, '   Price: 5 sparks  <br>   A tight leotard which emphasizes the shape of your slave while not hampering her movements. Perfect for any sports activity, except for battles.', 'scene\item\item_leotard'
-
-$item_property["leotard"] = {
-    learn_bonus["stamina"] += 1
-    learn_bonus["callisthenics"] += 1
-}
-
-!["chainmail_bikini"]
-dynamic $ib_cycle, 'chainmail_bikini', 'Chainmail bikini', 5, '   Price: 5 sparks  <br>   Classic gladiatrix clothing. I repeat - clothing. It''s not an armor, it''s a stage props, made ​​of light and gleaming anodized aluminum. The cut is so minimal that it almost hides nothing.', 'scene\item\item_chainmail_bikini'
-
-$item_property["chainmail_bikini"] = {
+$item_property["sailor_foku2"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
      assistant["st_plus"] += 1
     end
-    slave_rate["style"] += 1
-    learn_bonus["gladiatrix"] += 1
+    slave_rate["style"] += 2
+    learn_bonus["secretary"] += 2
+    learn_bonus["academy"] += 2
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'sailor_foku3', 'School uniform', 25, '   Price: 25 sparks  <br>   Uniform of the Academy of St. Peter. If your slave will ever attend classes there, this dress will make her feel at home. In any case, what can be more charming and naive than young schoolgirl? <br><br>   boosts clerical work and school learning by 4.', 'scene\item\item_sailor3'
+
+$item_property["sailor_foku3"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 1
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 3
+    learn_bonus["secretary"] += 4
+    learn_bonus["academy"] += 4
+    slave["st_plus"] += 1
+}
+dynamic $ib_cycle, 'sailor_foku4', 'School uniform', 30, '   Price: 30 sparks  <br>   Uniform of the Academy of St. Peter. If your slave will ever attend classes there, this dress will make her feel at home. In any case, what can be more charming and naive than young schoolgirl? <br><br>   boosts clerical work and school learning by 6.', 'scene\item\item_sailor4'
+
+$item_property["sailor_foku4"] = {
+    if assistant_item = 1:
+     assistant_rate["style"] += 1
+     assistant["st_plus"] += 1
+    end
+    slave_rate["style"] += 4
+    learn_bonus["secretary"] += 6
+    learn_bonus["academy"] += 6
     slave["st_plus"] += 1
 }
 
@@ -390,19 +632,6 @@ $item_property["bellydance"] = {
     slave_rate["exotic_bonus"] += 15 
     learn_bonus["callisthenics"] += 1
     slave["ex_plus"] += 2
-    slave["st_plus"] += 2
-}
-
-!["ukata"]
-dynamic $ib_cycle, 'ukata', 'Kimono-yukata', 20, '   Price: 20 sparks  <br>   Beautiful but strict japanese clothes - the choice of a Geisha. Bright fabric colors and a lush wide belt will help to emphasize the beauty of the dress, and the strict cut will complement formal communication in any elite company.', 'scene\item\item_ukata'
-
-$item_property["ukata"] = {
-    if assistant_item = 1:
-     assistant_rate["style"] += 2
-     assistant["st_plus"] += 2
-    end
-    slave_rate["style"] += 2
-    learn_bonus["expression"] += 1
     slave["st_plus"] += 2
 }
 
@@ -979,5 +1208,6 @@ $item_description[""] = ''
 $item_demo[""] = 'scene\item\item_'
 
 $item_property[""] = {}'
+
 --- #item_base ---------------------------------
 

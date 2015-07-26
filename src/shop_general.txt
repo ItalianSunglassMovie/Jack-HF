@@ -112,5 +112,6 @@ END
 *p '<div id = "sparks_display"><<sparks>>$</div>'
 
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
+
 --- shop_general ---------------------------------
 

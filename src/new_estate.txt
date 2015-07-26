@@ -9,10 +9,10 @@ IF $estate = 'slum_house':
   kitchen = 1
 END
 
-dungeon = 0
-bouduar = 0
-lab = 0
-library = 0
+dungeon = 1
+bouduar = 1
+lab = 1
+library = 1
 
 $study = $interior
 $bed = $interior

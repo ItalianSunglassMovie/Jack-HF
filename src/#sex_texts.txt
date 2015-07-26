@@ -226,7 +226,7 @@ $sex_manual_extra[5] = '   Without stopping moving with hips, you slide your han
 $sex_abuse_extra[1] = '   - Do you feel me inside? Oh, I see what you feel, your pussy flows and flows. I am your master, and I will fuck you as much as I want!'
 $sex_abuse_extra[2] = '   - You like it when you get fucked with such a big and strong dick? Speak! I can see how you flow from pleasure!'
 $sex_abuse_extra[3] = '   - Here, slut, take it! You are my slave and you will fulfill everything that I say. You just a litter. Case for my penis and you certainly like it, bitch!'
-$sex_abuse_extra[4] = '   - Try better, you slut. You''re not worthy of me to fuck you, you vile, dirty whore! Beg me!'
+$sex_abuse_extra[4] = '   - Try better, you slut. you`re not worthy of me to fuck you, you vile, dirty whore! Beg me!'
 $sex_abuse_extra[5] = '   - I will strangle you, bitch! Or maybe better to fuck you with a knife? Do you want to get it in your dirty hole instead of my penis? I''ll cut you and throw to the dogs!'
 
 $sex_slap_extra[1] = '   You loudly slap her ass several times. It almost did not hurt, but it will cause a rush of blood to her pelvis and increase the pleasure.'

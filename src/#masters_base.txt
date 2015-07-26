@@ -10,31 +10,31 @@ $hero_description[1] = '   Aristocrat with a great education, with experience in
 
 Faction: Taurus Great House'
 $master_version_stats[1] = {
-master_str = 4
-master_cha = 4
+master_str = 7
+master_cha = 7
 master_style = 0
-master_libido = 2 
+master_libido = 4 
 
-master_tutor = 2
-master_fighter = 4
-master_butler = 2
-master_artdirector = 3
-master_medic = 2
+master_tutor = 4
+master_fighter = 8
+master_butler = 4
+master_artdirector = 5
+master_medic = 4
 master_mage = 0
-master_torture = 3
-master_domination = 4
+master_torture = 7
+master_domination = 8
 master_bondage = 0
-master_flagelation = 4
+master_flagelation = 8
 
-master_petting = 3
-master_oral = 2
-master_penetration = 4
-master_fetish = 3
+master_petting = 6
+master_oral = 5
+master_penetration = 8
+master_fetish = 6
 
 $master_armor = 'эльчуга'
 $master_cloth = 'regal_suit'
 $master_right_wpn = 'шпага'
-sparks = 2000
+sparks = 5000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -49,31 +49,31 @@ $hero_description[2] = '   Once upon a time he was a soldier and fought for the 
 Faction: Taurus Great House'
 $hero_difficulty[2] = '<font color="#0000CD">normal difficulty</font>'
 $master_version_stats[2] = {
-master_str = 5
-master_cha = 1
+master_str = 10
+master_cha = 3
 master_style = 0
-master_libido = 3
+master_libido = 6
 
 master_tutor = 0
-master_fighter = 3
-master_butler = 1
+master_fighter = 6
+master_butler = 3
 master_artdirector = 0
-master_medic = 3
+master_medic = 6
 master_mage = 0
-master_torture = 5
-master_domination = 3
-master_bondage = 5
-master_flagelation = 5
+master_torture = 7
+master_domination = 6
+master_bondage = 10
+master_flagelation = 10
 
-master_petting = 2
-master_oral = 2
-master_penetration = 4
-master_fetish = 4
+master_petting = 4
+master_oral = 4
+master_penetration = 8
+master_fetish = 8
 
 $master_armor = 'без_брони'
 $master_cloth = 'man_rugs'
 $master_right_wpn = 'кнут'
-sparks = 1000
+sparks = 4500
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -87,31 +87,31 @@ $hero_description[3] = '   In a harsh world, where he was born - a congenital ph
 Faction: Taurus Great House'
 $hero_difficulty[3] = '<font color="#0000CD">normal difficulty</font>'
 $master_version_stats[3] = {
-master_str = 5
-master_cha = 2
+master_str = 10
+master_cha = 4
 master_style = 0
-master_libido = 3
+master_libido = 6
 
-master_tutor = 1
-master_fighter = 5
-master_butler = 1
+master_tutor = 3
+master_fighter = 10
+master_butler = 3
 master_artdirector = 0
-master_medic = 2
+master_medic = 4
 master_mage = 0
-master_torture = 2
-master_domination = 3
-master_bondage = 2
-master_flagelation = 2
+master_torture = 4
+master_domination = 6
+master_bondage = 4
+master_flagelation = 4
 
-master_petting = 2
-master_oral = 2
-master_penetration = 4
-master_fetish = 2
+master_petting = 4
+master_oral = 4
+master_penetration = 8
+master_fetish = 4
 
 $master_armor = 'ячуга'
 $master_cloth = 'aketon'
 $master_right_wpn = 'бастард'
-sparks = 1000
+sparks = 4000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -125,31 +125,31 @@ $hero_description[4] = '   Everyone has his own idea of success. For the guys li
 Faction: Serpis Great House'
 $hero_difficulty[4] = '<font color="#0000CD">normal difficulty</font>'
 $master_version_stats[4] = {
-master_str = 3
-master_cha = 4
+master_str = 6
+master_cha = 8
 master_style = 0
-master_libido = 3
+master_libido = 6
 
-master_tutor = 3
-master_fighter = 1
-master_butler = 2
-master_artdirector = 2
-master_medic = 1
+master_tutor = 6
+master_fighter = 3
+master_butler = 4
+master_artdirector = 4
+master_medic = 3
 master_mage = 0
-master_torture = 2
-master_domination = 4
-master_bondage = 2
+master_torture = 4
+master_domination = 8
+master_bondage = 4
 master_flagelation = 0
 
-master_petting = 4
-master_oral = 4
-master_penetration = 5
-master_fetish = 5
+master_petting = 8
+master_oral = 8
+master_penetration = 10
+master_fetish = 10
 
 $master_armor = 'без_брони'
 $master_cloth = 'fancy_suit'
 $master_right_wpn = 'кастет'
-sparks = 1000
+sparks = 3500
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -158,36 +158,36 @@ faction_fame['taurus'] = 0
 $sepia_ava_path[5] = 'content\pic\master\master_butler_sepia.jpg'
 $clear_ava_path[5] = 'content\pic\master\master_butler.jpg'
 $master_base_name[5] = 'Butler'
-$hero_description[5] = '   Once in the Eternal Rome, he found himself in a delicate situation. Of course, an experienced servant is useful everywhere, but he doesn''t feel like being as slave. Butler put a lot of effort to get the status of a slaver. After all, training maids - is a work which nobody can handle better than a butler.
+$hero_description[5] = '   Once in the Eternal Rome, he found himself in a delicate situation. Of course, an experienced servant is useful everywhere, but he doesn`t feel like being as slave. Butler put a lot of effort to get the status of a slaver. After all, training maids - is a work which nobody can handle better than a butler.
 
 Faction: Taurus Great House'
 $hero_difficulty[5] = '<font color="#4B0082">high difficulty</font>'
 $master_version_stats[5] = {
-master_str = 3
-master_cha = 3
+master_str = 6
+master_cha = 6
 master_style = 0
-master_libido = 2
+master_libido = 7
 
-master_tutor = 3
+master_tutor = 6
 master_fighter = 0
-master_butler = 5
-master_artdirector = 1
-master_medic = 1
+master_butler = 10
+master_artdirector = 3
+master_medic = 3
 master_mage = 0
 master_torture = 0
-master_domination = 3
+master_domination = 6
 master_bondage = 0
-master_flagelation = 2
+master_flagelation = 4
 
-master_petting = 3
-master_oral = 1
-master_penetration = 3
+master_petting = 6
+master_oral = 3
+master_penetration = 6
 master_fetish = 0
 
 $master_armor = 'без_брони'
 $master_cloth = 'livery'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 3000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -201,32 +201,32 @@ $hero_description[6] = '   He was a very ordinary school teacher, nothing specia
 Faction: Serpis Great House'
 $hero_difficulty[6] = '<font color="#4B0082">high difficulty</font>'
 $master_version_stats[6] = {
-master_str = 3
-master_cha = 3
+master_str = 6
+master_cha = 6
 master_style = 0
-master_libido = 2
-master_energy = 5
+master_libido = 4
+master_energy = 10
 
-master_tutor = 5
+master_tutor = 10
 master_fighter = 0
-master_butler = 2
-master_artdirector = 2
-master_medic = 1
+master_butler = 4
+master_artdirector = 4
+master_medic = 3
 master_mage = 0
 master_torture = 0
-master_domination = 3
+master_domination = 6
 master_bondage = 0
-master_flagelation = 3
+master_flagelation = 6
 
-master_petting = 2
-master_oral = 1
-master_penetration = 3
+master_petting = 4
+master_oral = 3
+master_penetration = 6
 master_fetish = 0
 
 $master_armor = 'без_брони'
 $master_cloth = 'formal_suit'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 2500
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -240,31 +240,31 @@ $hero_description[7] = '   He was always a very good doctor, and career went uph
 Faction: Serpis Great House'
 $hero_difficulty[7] = '<font color="#4B0082">high difficulty</font>'
 $master_version_stats[7] = {
-master_str = 3
-master_cha = 3
+master_str = 6
+master_cha = 6
 master_style = 0
-master_libido = 2
+master_libido = 4
 
-master_tutor = 2
+master_tutor = 4
 master_fighter = 0
-master_butler = 1
+master_butler = 3
 master_artdirector = 0
-master_medic = 5
-master_mage = 2
-master_torture = 3
-master_domination = 2
+master_medic = 10
+master_mage = 4
+master_torture = 6
+master_domination = 4
 master_bondage = 0
 master_flagelation = 0
 
-master_petting = 2
-master_oral = 1
-master_penetration = 3
+master_petting = 4
+master_oral = 3
+master_penetration = 6
 master_fetish = 0
 
 $master_armor = 'без_брони'
 $master_cloth = 'medic_robes'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 2000
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -278,31 +278,31 @@ $hero_description[8] = '   If he was younger, he would have just brilliant prosp
 Faction: Taurus Great House'
 $hero_difficulty[8] = '<font color="#4B0082">high difficulty</font>'
 $master_version_stats[8] = {
-master_str = 2
-master_cha = 4
+master_str = 4
+master_cha = 8
 master_style = 0
-master_libido = 1
+master_libido = 3
 
-master_tutor = 3
+master_tutor = 6
 master_fighter = 0
-master_butler = 1
-master_artdirector = 5
+master_butler = 3
+master_artdirector = 10
 master_medic = 0
-master_mage = 2
+master_mage = 4
 master_torture = 0
-master_domination = 3
+master_domination = 6
 master_bondage = 0
 master_flagelation = 0
 
-master_petting = 4
-master_oral = 2
-master_penetration = 3
-master_fetish = 1
+master_petting = 8
+master_oral = 4
+master_penetration = 6
+master_fetish = 3
 
 $master_armor = 'без_брони'
 $master_cloth = 'formal_suit'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 1500
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -311,30 +311,30 @@ faction_fame['serpis'] = 0
 $sepia_ava_path[9] = 'content\pic\master\master_granpa_sepia.jpg'
 $clear_ava_path[9] = 'content\pic\master\master_granpa.jpg'
 $master_base_name[9] = 'Uncle Tom'
-$hero_description[9] = '   More than anybody, who do not want to get into the Fogs - was an ordinary retiree, worked all his life in the factory and looking to live a quiet life. But Eternal Rome chooses a guest itself. By an amazing coincidence, the only hope for a decent life for grandpa was the work in a Slavers Guild. It will not be easy, but he must try - in the Eternal Rome don''t exist such thing as a retirement!
+$hero_description[9] = '   More than anybody, who do not want to get into the Fogs - was an ordinary retiree, worked all his life in the factory and looking to live a quiet life. But Eternal Rome chooses a guest itself. By an amazing coincidence, the only hope for a decent life for grandpa was the work in a Slavers Guild. It will not be easy, but he must try - in the Eternal Rome don`t exist such thing as a retirement!
 
 Faction: Serpis Great House'
 $hero_difficulty[9] = '<font color="#C71585">very high difficulty</font>'
 $master_version_stats[9] = {
-master_str = 2
-master_cha = 3
+master_str = 4
+master_cha = 6
 master_style = 0
 master_libido = 0
 
-master_tutor = 2
+master_tutor = 4
 master_fighter = 0
-master_butler = 2
-master_artdirector = 1
-master_medic = 1
-master_mage = 1
+master_butler = 4
+master_artdirector = 3
+master_medic = 3
+master_mage = 3
 master_torture = 0
-master_domination = 1
+master_domination = 3
 master_bondage = 0
-master_flagelation = 2
+master_flagelation = 4
 
-master_petting = 2
-master_oral = 1
-master_penetration = 2
+master_petting = 4
+master_oral = 3
+master_penetration = 4
 master_fetish = 0
 
 $master_armor = 'без_брони'
@@ -354,10 +354,10 @@ Faction: Serpis Great House'
 $hero_difficulty[10] = '<font color="#cd0000">maximal difficulty</font>'
 $master_base_name[10] = 'Johny'
 $master_version_stats[10] = {
-master_str = 1
-master_cha = 1
+master_str = 3
+master_cha = 3
 master_style = 0
-master_libido = 5
+master_libido = 10
 
 master_tutor = 0
 master_fighter = 0
@@ -373,12 +373,12 @@ master_flagelation = 0
 master_petting = 0
 master_oral = 0
 master_penetration = 0
-master_fetish = 5
+master_fetish = 10
 
 $master_armor = 'без_брони'
 $master_cloth = 'man_rugs'
 $master_right_wpn = ''
-sparks = 200
+sparks = 500
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -393,18 +393,18 @@ $hero_difficulty[11] = '<font color="#cd0000">magical difficulty</font>'
 $master_base_name[11] = 'Saruman'
 $master_version_stats[11] = {
 
-master_str = 2
-master_cha = 2
+master_str = 4
+master_cha = 4
 master_style = 0
-master_libido = 2
-master_energy = 2
+master_libido = 4
+master_energy = 4
 
 master_tutor = 0
 master_fighter = 0
 master_butler = 0
 master_artdirector = 0
-master_medic = 2
-master_mage = 4
+master_medic = 4
+master_mage = 8
 master_torture = 0
 master_domination = 0
 master_bondage = 0
@@ -418,7 +418,7 @@ master_fetish = 0
 $master_armor = 'без_брони'
 $master_cloth = 'wizard_robes'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 2500
 
 faction_fame['serpis'] = 1
 } 
@@ -427,27 +427,32 @@ $sepia_ava_path[12] = 'content\pic\master\master_werwolf_sepia.jpg'
 $clear_ava_path[12] = 'content\pic\master\master_werwolf.jpg'
 $master_base_name[12] = '???'
 $master_version_stats[12] = {
-master_str = 4
-master_cha = 3
-master_style = 3
-master_libido = 3
-master_energy = 5
+master_str = 8
+master_cha = 6
+master_style = 6
+master_libido = 6
+master_energy = 10
 
-master_tutor = 3
-master_fighter = 3
-master_butler = 3
-master_artdirector = 3
-master_medic = 3
-master_mage = 3
-master_torture = 3
-master_domination = 3
-master_bondage = 3
-master_flagelation = 3
+master_tutor = 6
+master_fighter = 6
+master_butler = 6
+master_artdirector = 6
+master_medic = 6
+master_mage = 6
+master_torture = 6
+master_domination = 6
+master_bondage = 6
+master_flagelation = 6
 
-master_petting = 3
-master_oral = 3
-master_penetration = 3
-master_fetish = 3
+master_petting = 6
+master_oral = 6
+master_penetration = 6
+master_fetish = 6
+
+$master_armor = 'без_брони'
+$master_cloth = 'man_rugs'
+$master_right_wpn = ''
+sparks = 2500
 
 faction_fame['kamira'] = 1
 } 
@@ -494,7 +499,8 @@ $npc_name['госпожа_ангелика'] = 'Mistress Angelika'
 $npc_status['госпожа_ангелика'] = 'Slavers Guild Master 
 Neutrals'
 $npc_image['госпожа_ангелика'] = 'mistress_angelika'
-$npc_info['госпожа_ангелика'] = '   Your old friend teacher. I think she bluff in communication, but on the other hand what else to expect from a professional dominant mistress... This work spoils character. She''s quite nice actually.'
+$npc_info['госпожа_ангелика'] = 'It seems from this lady depends on the final decision about my entry into the guild. Most likely, this is just a formality, but it is necessary to remain vigilant. She looks like a person who does not forgive weakness and enjoys suffering neighbors...
+   What the hell?! She looks like a complete bitch, though sexy.'
 npc_attitude['госпожа_ангелика'] = 11
 
 $npc_image['mistress_angelika'] = 'mistress_angelika'
@@ -502,8 +508,7 @@ $npc_name['mistress_angelika'] = 'Mistress Angelika'
 $npc_status['mistress_angelika'] = 'Guild Master 
 Slavers (Neutrals)'
 $npc_alignment['mistress_angelika'] = 'нейтралы'
-$npc_info['mistress_angelika'] = 'It seems from this lady depends on the final decision about my entry into the guild. Most likely, this is just a formality, but it is necessary to remain vigilant. She looks like a person who does not forgive weakness and enjoys suffering neighbors...
-   What the hell?! She looks like a complete bitch, though sexy.'
+$npc_info['mistress_angelika'] = '   Your old friend teacher. I think she bluff in communication, but on the other hand what else to expect from a professional dominant mistress... This work spoils character. She''s quite nice actually.'
 npc_attitude['mistress_angelika'] = 11
 npc_reveal['mistress_angelika'] = 0
 
@@ -699,5 +704,6 @@ trainer_gladiatrix_rating['sheepherd'] = 2
 trainer_enchanter_rating['sheepherd'] = 0
 trainer_artist_rating['sheepherd'] = 0
 trainer_concubine_rating['sheepherd'] = 2
+
 --- #masters_base ---------------------------------
 

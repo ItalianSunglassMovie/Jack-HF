@@ -167,13 +167,9 @@ if sbros = 1:
  gt 'city_menu_form'
 END
 
-IF city_form ! 1000 and city_form ! 1010 and city_form ! 1011 :
- IF city_form = 1 or city_form = 2 or city_form = 3 or city_form = 4 or city_form = 5 :
-  *p '<div id = "leave_quarter"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-right" tooltip-data="Leave the quarter" href = "EXEC: city_form = 0 & gt ''city_menu_form''"><img src="content\pic\buttons\leave_quarter.png"></a></div>'
- ELSEIF city_form = 6 :
-  *p '<div id = "leave_quarter"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-right" tooltip-data="Walk to the city" href = "EXEC: city_form = 0 & gt ''city_menu_form''"><img src="content\pic\buttons\walk_city.png"></a></div>'
- END
+IF city_form ! 1000 :
  *p '<div id = "back_home"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-left" tooltip-data="Go home" href = "EXEC: menu_form = 0 & city_form = 0 & gt ''menu_form''"><img src="content\pic\buttons\home_button.png"></a></div>'
 END
+
 --- city_screen ---------------------------------
 

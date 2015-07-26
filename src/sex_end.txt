@@ -76,5 +76,6 @@ killvar 'sex'
 sex_num = 0
 gs '$newloc'
 GT '<<$return_lock>>'
+
 --- sex_end ---------------------------------
 

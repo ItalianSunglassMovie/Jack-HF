@@ -103,5 +103,6 @@ IF b > sex["cum_treshold"]:
  sex_num = 9
 END
 sex['prev_pc_excitement'] = sex['pc_excitement']
+
 --- sex_addup ---------------------------------
 

@@ -134,34 +134,50 @@ ACT '6':
  gt curloc
 END
 
-!lillimerge: added fiend name
-IF pet_tentacle = 0:
- IF assistant_state = 1:
- *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
- *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+!TODO: Delete if the new version below works
+!IF assistant_state = 1:
+! *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
+! *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
  <<$cooked_food[cooked_food_plus]>>
  Energy <<$stars[assistant_energy_plus]>>
  <<$tentacle_state[tentacle_state]>>
 </div>'
- else
- *p '<div id = "assistant_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
- *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+! else
+! *p '<div id = "assistant_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
+! *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+ <<$cooked_food[cooked_food_plus]>>
+ 
+ <<$tentacle_state[tentacle_state]>>
+</div>'
+!END
+
+IF pet_tentacle = 0:
+ IF assistant_state = 1:
+  *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
+  *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+ <<$cooked_food[cooked_food_plus]>>
+ Energy <<$stars[assistant_energy_plus]>>
+ <<$tentacle_state[tentacle_state]>>
+</div>'
+  else
+  *p '<div id = "assistant_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
+  *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
  <<$cooked_food[cooked_food_plus]>>
  
  <<$tentacle_state[tentacle_state]>>
 </div>'
  END
  ELSE
- IF assistant_state = 1:
- *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
- *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+  IF assistant_state = 1:
+  *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
+  *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
  <<$cooked_food[cooked_food_plus]>>
  Energy <<$stars[assistant_energy_plus]>>
  <<$tentacle_name[tentacle_size]>> <<$tentacle_state[tentacle_state]>>
 </div>'
- else
- *p '<div id = "assistant_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
- *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
+  else
+  *p '<div id = "assistant_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
+  *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
  <<$cooked_food[cooked_food_plus]>>
  
  <<$tentacle_name[tentacle_size]>> <<$tentacle_state[tentacle_state]>>
@@ -196,6 +212,53 @@ IF house_mess > 1:
  END
 END
 
+
+IF slave["hygiene"] > 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 52 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+
+
+*p '<div id = "master_short_ava"><a href = "EXEC: gt ''master_stat''"><img src = "<<$master_ava>>"></a></div>'
+
+!fast cryo button
+IF cryo_intro = 1:
+ IF $estate = 'serpis_house':
+  IF ui_style = 2:
+   *p '<div id = "cryobutton"><a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
+   else
+   *p '<div id = "cryobutton"><a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
+  END
+  ELSE
+  if ui_style = 2:
+   *p '<div id = "cryobutton"><a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
+   else
+   *p '<div id = "cryobutton"><a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
+  END
+ END
+END
+
+IF master_hygiene > 1 and slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: 
+ *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}   
+ else
+ if master_hygiene > 1 and bath > 0: *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 34 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+END
+
+IF master_excitement > 0: 
+ IF slave_state = CONST_INT['slave_exist']:
+  IF exam_in_progress = 1:
+   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+   else
+   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+  END
+ END
+ IF slave_state ! CONST_INT['slave_exist'] and assistant_state = 1:
+  *p {<div id="fast_sex"><a href = "EXEC: menu_form = 4 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+ END
+END
+
+!exchange button for the slave with assistant
+IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3 and assistant_state = 1: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3 and assistant_state = 0: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+IF slave_state = CONST_INT['no_slave'] and assistant_state = 1: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+
 IF slave_state = CONST_INT['slave_dead']:
  *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava_gray'']>>.jpg"></a></div>'
  *p '<div id = "slave_short_stat">Died
@@ -218,14 +281,14 @@ IF slave_state = CONST_INT['slave_exist']:
 </div>'
  !*p '<div id="fast_chat"><img src="content\pic\buttons\chat.png"></div>' 
  IF exam_in_progress = 1:
-  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'demo_menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
-  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'demo_menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
+  *p  {<div id="fast_influences"><a href = "EXEC: menu_form = 112 & gt 'demo_menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
+  *p  {<div id="fast_questions"><a href = "EXEC: menu_form = 111 & gt 'demo_menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
   elseif ui_style = 2 and exam_in_progress = 0:
-  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\influence.png"></a></div>}   
-  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\question.png"></a></div>}
+  *p  {<div id="fast_influences"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\influence.png"></a></div>}   
+  *p  {<div id="fast_questions"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\question.png"></a></div>}
   else
-  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
-  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
+  *p  {<div id="fast_influences"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
+  *p  {<div id="fast_questions"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
  END
 END
 
@@ -239,56 +302,16 @@ IF slave["hygiene"] > 1 and slave_state = CONST_INT['slave_exist'] and bath > 0:
 
 IF slave_state = CONST_INT['slave_exist']:
  IF exam_in_progress = 1:
-  if slave["sin"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
-  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
-  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+  if slave["sin"] > 0: *p {<div id="fast_redeems"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
+  if slave["virtue"] > 0: *p {<div id="fast_redeems"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeems1"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeems2"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
   else
-  if slave["sin"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
-  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
-  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+  if slave["sin"] > 0: *p {<div id="fast_redeems"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
+  if slave["virtue"] > 0: *p {<div id="fast_redeems"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeems1"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeems2"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
  END
 END
 
-*p '<div id = "master_short_ava"><a href = "EXEC: gt ''master_stat''"><img src = "<<$master_ava>>"></a></div>'
-
-!fast cryo button
-IF cryo_intro = 1:
- IF $estate = 'serpis_house':
-	if ui_style = 2:
-		*p '<div id = "cryo_button"><a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
-		else
-		*p '<div id = "cryo_button"><a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
-	end
-  ELSE
-	if ui_style = 2:
-		*p '<div id = "cryo_button"><a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
-		else
-		*p '<div id = "cryo_button"><a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
-	end
- END
-END
-
-IF slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: 
- *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}   
- else
- if bath > 0: *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 34 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
-END
-
-IF master_excitement > 0: 
- IF slave_state = CONST_INT['slave_exist']:
-  IF exam_in_progress = 1:
-   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
-   else
-   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
-  END
- END
- IF slave_state ! CONST_INT['slave_exist'] and assistant_state = 1:
-  *p {<div id="fast_sex"><a href = "EXEC: menu_form = 4 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
- END
-END
-
-!exchange button for the slave with assistant
-IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3 and assistant_state = 1:*p  {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
 
 !showing spell state 
 $active_spell = ''
@@ -304,6 +327,21 @@ if slave['domini_dictum'] = 1: $active_spell += 'DOMI<br>'
 *p '<div id = "settings"><<$setting_display>></div>'
 *p '<div id = "settings_ex"><<$setting_display_c>></div>'
 *p '<div id = "settings_ex2"><<$setting_display_c2>></div>'
+if ride_count = 0:
+ *p '<div id = "ride_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Races are held today!" href = "EXEC: interaction_city = 12 & gt ''interaction_city''"><img src="content\pic\ui overhaul\watch the race.png"></a></div>'
+ else
+ *p '<div id = "ride_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="The race will begin in <<ride_count>> days"><img src="content\pic\ui overhaul\watch the race_gray.png"></a></div>'
+end
+if gladi_count = 0:
+ *p '<div id = "gladi_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Fights are held today!" href = "EXEC: interaction_city = 12 & gt ''interaction_city''"><img src="content\pic\ui overhaul\watch the battle.png"></a></div>'
+ else
+ *p '<div id = "gladi_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Fights in the Coliseum will start in <<gladi_count>> days"><img src="content\pic\ui overhaul\watch the battle_gray.png"></a></div>'
+end
+if auction_count = 0:
+ *p '<div id = "auction_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Auction begins today!" href =  "EXEC: interaction_city = 112 & gt ''interaction_city''"><img src="content\pic\ui overhaul\auction.png"></a></div>'
+ else
+ *p '<div id = "auction_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Auction begins in <<auction_count>> days"><img src="content\pic\ui overhaul\auction_gray.png"></a></div>'
+end
 *p '<div id = "settings_2r"><<$setting_display_r>></div>'
 
 !icons disabled in option menu
@@ -366,6 +404,7 @@ IF lab > 0:
  END
 END
 END
+
 
 IF menu_form ! 2000 and menu_form ! 2020 and menu_form ! 2022 and exam_in_progress = 0 : *p '<div id = "back_home"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-left" tooltip-data="Leave the house" href = "EXEC: city_form = estate_location[$estate] & gt ''city_menu_form''"><img src="content\pic\buttons\home_button.png"></a></div>'
 
@@ -442,7 +481,7 @@ IF autosave_decade = 1:
 END
 !Strec - jon_UIadds addition (begin)
 $quick_move_action = "show"
-gs 'sjm_UI_UIadds'
+gs 'sjm_UI_UIadds1'
 !Strec - jon_UIadds addition (end)
 
 --- main_screen ---------------------------------
