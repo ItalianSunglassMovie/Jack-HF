@@ -1,4 +1,4 @@
-# teach_screen
+﻿# teach_screen
 
 
 !SLAVE TEACH STATS SCREEN
@@ -79,7 +79,7 @@ $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'fame')
 <<$features_list>>
 </div>'
 
-*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & msg $rank_help_3 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
+*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 *p '<div id="right_column">
 <u>SKILLS</u>

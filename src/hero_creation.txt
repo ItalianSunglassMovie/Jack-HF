@@ -1,4 +1,4 @@
-# hero_creation
+﻿# hero_creation
 !hero creation screen
 !for msg
 $MSG_BACKIMAGE = 'content\pic\msg_bg.jpg'
@@ -7,9 +7,9 @@ $MSG_FORMAT = '<div id = "ink">%TEXT%</div>'
 MSG_TEXT_X = 80
 MSG_TEXT_Y = 50
 MSG_TEXT_W = 380
-MSG_TEXT_H = 400
+MSG_TEXT_H = 420
 MSG_OK_X = 250
-MSG_OK_Y = 340
+MSG_OK_Y = 430
 MSG_X = 200
 !init vars
 if hero_choice = 0: hero_choice = 1

@@ -1,4 +1,4 @@
-# #var_base
+﻿# #var_base
 !Various technical variables and arrays
 
 !Replacement for font copypaste
@@ -1180,11 +1180,11 @@ $fat[8] = $_font_col_rep[2] + 'Chunky' + $_font_closer
 $fat[7] = $_font_col_rep[3] + 'Plump' + $_font_closer
 $fat[6] = $_font_col_rep[4] + 'Meaty' + $_font_closer
 $fat[5] = $_font_col_rep[5] + 'Weighty' + $_font_closer
-$fat[0] = $_font_col_rep[6] + 'Underweight' + $_font_closer
-$fat[4] = $_font_col_rep[7] + 'Voluptuous' + $_font_closer
+$fat[4] = $_font_col_rep[8] + 'Voluptuous' + $_font_closer
 $fat[3] = $_font_col_rep[8] + 'Healthy weight' + $_font_closer
 $fat[2] = $_font_col_rep[9] + 'Slim' + $_font_closer
 $fat[1] = $_font_col_rep[10] + 'Slender' + $_font_closer
+$fat[0] = $_font_col_rep[0] + 'Underweight' + $_font_closer
 
 $sensitivity[0] = $_font_col_rep[0] + 'Uncaring' + $_font_closer
 $sensitivity[1] = $_font_col_rep[1] + 'Callous' + $_font_closer

@@ -1,4 +1,4 @@
-# slave_stat_1
+﻿# slave_stat_1
 !SLAVE STAT SCREEN
 IF $info_text = '':
  $info_text = $psy_status_1[$slave_psy_status_1]
@@ -83,7 +83,7 @@ $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
 <<$features_list_slave_1>>
 </div>'
 
-*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & msg $rank_help_3 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
+*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !calculation the food cost
 food_cost_1 = 0

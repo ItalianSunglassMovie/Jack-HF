@@ -1,4 +1,4 @@
-# #help_msg
+﻿# #help_msg
 !TODO: Нужен var_base для vb_cycle вставок, + придумать нормальную замену by Lyazar
 !help messages
 $красота_справка = '<center>BEAUTY<br>
@@ -38,10 +38,15 @@ $экзотичность_совет = "   [EXOTICISM TIPS]
 $жыр_справка = '<center>PHYSIQUE<br>
 <font color="#cd0000">Obese</font>
 <font color="#C71585">Overweight</font>
+<font color="#C71585">Chunky</font>
 <font color="#4B0082">Plump</font>
-<font color="#0000CD">Underweight</font>
-<font color="#008080">Voluptuous</font>
-<font color="#008000">Healthy weight</font></center>'
+<font color="#4B0082">Meaty</font>
+<font color="#4B0082">Weighty</font>
+<font color="#0000CD">Voluptuous</font>
+<font color="#0000CD">Healthy weight</font>
+<font color="#008000">Slim</font>
+<font color="#008000">Slender</font>
+<font color="#cd0000">Underweight</font></center>'
 $жыр_справка_2 = "  You can get more mince from fat slaves but they are not attractive. Weedy starvelings aren't attractive as well, but you can't get a lot meat from them either. It's better to keep your slave slim, but not skinny."
 $жыр_совет = "   [PHYSIQUE TIPS]
 <div style='font-size: 95%;'>   Extra weight is generally harmful, as well as a lack of it. To keep your slave slim you need to balance her nutrition that way that it is sufficient, but not excessive. The more your slave works and the more endurant she is - the more food she needs. Physical exercises don't decrease weight directly but are a good way to burn extra calories. Actively involved in sports slave should be well fed slave.</div>"
@@ -339,16 +344,12 @@ $rank_help_2 = '<center><u>COLOR EXPLANATION:</u>
 <font color="#d805ff">skill level</font> = 3
 <font color="#9100ff">skill level</font> = 4
 <font color="#0205ff">skill level</font> = 5
-</center>'
-$rank_help_3 = '<center><u>COLOR EXPLANATION:</u>
-(For stats and skill levels)
 <font color="#05a1f6">skill level</font> = 6
 <font color="#23b4c4">skill level</font> = 7
 <font color="#15db64">skill level</font> = 8
 <font color="#c2e713">skill level</font> = 9
 <font color="#008000">skill level</font> = 10
-<font color="#C0C0C0">skill unavailable</font>
-</center>'
+<font color="#C0C0C0">skill unavailable</font></center>'
 
 $specialisation_help = '<div style="font-size: 90%;"><center>Assistant - Clerical work or Etiquette
 Maid - Housekeeping or Cooking

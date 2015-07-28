@@ -1,4 +1,4 @@
-# assistant_stat
+﻿# assistant_stat
 !rewritten a piece of code with assistant infotext, now its all in one file, removed some from main_screen
 
 IF $assistant_info_text = '':
@@ -83,7 +83,7 @@ gs 'stats_layout'
 ОСОБЕННОСТИ:
 <<$assistant_features_list>>
 "
-*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & msg $rank_help_3 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
+*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !main tab
 !$assistant_info_text = ''&nbsp'' - info text will reset after switching
