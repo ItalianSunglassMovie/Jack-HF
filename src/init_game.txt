@@ -1,4 +1,4 @@
-# init_game
+﻿# init_game
 !settings for master stats for a sandbox mode
 $master_ava = 'content\pic\master\master_noble_sepia.jpg'
 $master_ava_color = 'content\pic\master\master_noble.jpg'
@@ -91,7 +91,7 @@ faction_fame['kamira'] = 0
 vibrator = 1
 get_initial_slave = 1
 
-brand_rate = 80
+brand_rate = 0
 
 $preset_name[1] = 'Preset 1'
 $preset_name[2] = 'Preset 2'
