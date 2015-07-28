@@ -1,4 +1,4 @@
-# generate_stock
+﻿# generate_stock
 stock_pending = 1
 killvar 'stock'
 killvar 'stock_rate'
@@ -1381,7 +1381,7 @@ if stock["beauty"] > 7: stock_base_price += 46
 if stock["beauty"] > 8: stock_base_price += 48
 if stock["beauty"] > 9: stock_base_price += 50
 if stock["fat"] = 1: stock_base_price += 25
-if stock["fat"] > 2: stock_base_price += 20
+if stock["fat"] => 2: stock_base_price += 20
 if stock["fat"] > 3: stock_base_price += 10
 if stock["fat"] > 4: stock_base_price += 5
 if stock["fat"] > 5: stock_base_price -= 5
