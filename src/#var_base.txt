@@ -2,16 +2,16 @@
 !Various technical variables and arrays
 
 !Replacement for font copypaste
-$_font_col_rep[0] = '<font color="#ff0000">'
+$_font_col_rep[0] = '<font color="#CD0000">'
 $_font_col_rep[1] = '<font color="#ff004c">'
 $_font_col_rep[2] = '<font color="#ff00a2">'
 $_font_col_rep[3] = '<font color="#d805ff">'
 $_font_col_rep[4] = '<font color="#9100ff">'
 $_font_col_rep[5] = '<font color="#0205ff">'
-$_font_col_rep[6] = '<font color="#05a1f6">'
-$_font_col_rep[7] = '<font color="#23b4c4">'
-$_font_col_rep[8] = '<font color="#15db64">'
-$_font_col_rep[9] = '<font color="#c2e713">'
+$_font_col_rep[6] = '<font color="#0205ff">'
+$_font_col_rep[7] = '<font color="#23B4C4">'
+$_font_col_rep[8] = '<font color="#008080">'
+$_font_col_rep[9] = '<font color="#2E8B57">'
 $_font_col_rep[10] = '<font color="#008000">'
 ! grey color
 $_font_col_rep[11] = '<font color="#C0C0C0">'
@@ -1179,9 +1179,9 @@ $fat[9] = $_font_col_rep[1] + 'Overweight' + $_font_closer
 $fat[8] = $_font_col_rep[2] + 'Chunky' + $_font_closer
 $fat[7] = $_font_col_rep[3] + 'Plump' + $_font_closer
 $fat[6] = $_font_col_rep[4] + 'Meaty' + $_font_closer
-$fat[5] = $_font_col_rep[5] + 'Weighty' + $_font_closer
-$fat[4] = $_font_col_rep[8] + 'Voluptuous' + $_font_closer
-$fat[3] = $_font_col_rep[8] + 'Healthy weight' + $_font_closer
+$fat[5] = $_font_col_rep[4] + 'Weighty' + $_font_closer
+$fat[4] = $_font_col_rep[5] + 'Voluptuous' + $_font_closer
+$fat[3] = $_font_col_rep[6] + 'Healthy weight' + $_font_closer
 $fat[2] = $_font_col_rep[9] + 'Slim' + $_font_closer
 $fat[1] = $_font_col_rep[10] + 'Slender' + $_font_closer
 $fat[0] = $_font_col_rep[0] + 'Underweight' + $_font_closer
@@ -1234,17 +1234,17 @@ $ego[8] = $_font_col_rep[8] + 'Driven' + $_font_closer
 $ego[9] = $_font_col_rep[9] + 'Willful' + $_font_closer
 $ego[10] = $_font_col_rep[10] + 'Sovereign' + $_font_closer
 
-$pride[0] = $_font_col_rep[10] + 'Lewd' + $_font_closer
-$pride[1] = $_font_col_rep[9] + 'Unashamed' + $_font_closer
-$pride[2] = $_font_col_rep[8] + 'Bold' + $_font_closer
-$pride[3] = $_font_col_rep[7] + 'Open' + $_font_closer
-$pride[4] = $_font_col_rep[6] + 'Timid' + $_font_closer
-$pride[5] = $_font_col_rep[5] + 'Fastidious' + $_font_closer
-$pride[6] = $_font_col_rep[4] + 'Proud' + $_font_closer
-$pride[7] = $_font_col_rep[3] + 'Haughty' + $_font_closer
-$pride[8] = $_font_col_rep[2] + 'cocky' + $_font_closer
+$pride[10] = $_font_col_rep[0] + 'Arrogant' + $_font_closer
 $pride[9] = $_font_col_rep[1] + 'Conceited' + $_font_closer
-$pride[0] = $_font_col_rep[0] + 'Arrogant' + $_font_closer
+$pride[8] = $_font_col_rep[2] + 'Cocky' + $_font_closer
+$pride[7] = $_font_col_rep[3] + 'Haughty' + $_font_closer
+$pride[6] = $_font_col_rep[4] + 'Proud' + $_font_closer
+$pride[5] = $_font_col_rep[5] + 'Fastidious' + $_font_closer
+$pride[4] = $_font_col_rep[6] + 'Timid' + $_font_closer
+$pride[3] = $_font_col_rep[7] + 'Open' + $_font_closer
+$pride[2] = $_font_col_rep[8] + 'Bold' + $_font_closer
+$pride[1] = $_font_col_rep[9] + 'Unashamed' + $_font_closer
+$pride[0] = $_font_col_rep[10] + 'Lewd' + $_font_closer
 
 $slave_service[0] = dyneval($vb_cycle, 0, 'Not a maid')
 $slave_service[1] = dyneval($vb_cycle, 1, 'Maid D-')
