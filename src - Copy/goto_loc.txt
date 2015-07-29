@@ -1,5 +1,0 @@
-# goto_loc
-interaction_city = 331
-gt 'interaction_city'
---- goto_loc ---------------------------------
-
