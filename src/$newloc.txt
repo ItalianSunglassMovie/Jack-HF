@@ -1,4 +1,4 @@
-# $newloc
+﻿# $newloc
 !Location handler transitions.
 if $rating[0] = '': gs '#var_base'
 !AddOnn - disabled wizard_mode check to enable in story mode via options menu
@@ -2980,10 +2980,10 @@ END
 IF slave_1["selfesteem"] < 0:
  if slave_1["selfesteem_revealed"] > 0: $features_list_slave_1 += '<a href="EXEC: msg $Комплекс_вины">Guilt complex</a><BR>' 
 END
-IF slave_1["compassion"] = 2:
+IF slave_1["compassion"] > 0:
  if slave_1["compassion_revealed"] > 0: $features_list_slave_1 += '<a href="EXEC: msg $Милосердная">Merciful</a><BR>'
 END
-IF slave_1["compassion"] = -1:
+IF slave_1["compassion"] < 0:
  if slave_1["compassion_revealed"] > 0: $features_list_slave_1 += '<a href="EXEC: msg $Садистка">Sadist</a><BR>' 
 END
 $features_list_slave_2 = ''
@@ -3203,10 +3203,10 @@ END
 IF slave_2["selfesteem"] < 0:
  if slave_2["selfesteem_revealed"] > 0: $features_list_slave_2 += '<a href="EXEC: msg $Комплекс_вины">Guilt complex</a><BR>' 
 END
-IF slave_2["compassion"] = 2:
+IF slave_2["compassion"] > 0:
  if slave_2["compassion_revealed"] > 0: $features_list_slave_2 += '<a href="EXEC: msg $Милосердная">Merciful</a><BR>'
 END
-IF slave_2["compassion"] = -1:
+IF slave_2["compassion"] < 0:
  if slave_2["compassion_revealed"] > 0: $features_list_slave_2 += '<a href="EXEC: msg $Садистка">Sadist</a><BR>' 
 END
 $features_list_slave_3 = ''
@@ -3426,10 +3426,10 @@ END
 IF slave_3["selfesteem"] < 0:
  if slave_3["selfesteem_revealed"] > 0: $features_list_slave_3 += '<a href="EXEC: msg $Комплекс_вины">Guilt complex</a><BR>' 
 END
-IF slave_3["compassion"] = 2:
+IF slave_3["compassion"] > 0:
  if slave_3["compassion_revealed"] > 0: $features_list_slave_3 += '<a href="EXEC: msg $Милосердная">Merciful</a><BR>'
 END
-IF slave_3["compassion"] = -1:
+IF slave_3["compassion"] < 0:
  if slave_3["compassion_revealed"] > 0: $features_list_slave_3 += '<a href="EXEC: msg $Садистка">Sadist</a><BR>' 
 END
 $features_list_slave_4 = ''
@@ -3649,10 +3649,10 @@ END
 IF slave_4["selfesteem"] < 0:
  if slave_4["selfesteem_revealed"] > 0: $features_list_slave_4 += '<a href="EXEC: msg $Комплекс_вины">Guilt complex</a><BR>' 
 END
-IF slave_4["compassion"] = 2:
+IF slave_4["compassion"] > 0:
  if slave_4["compassion_revealed"] > 0: $features_list_slave_4 += '<a href="EXEC: msg $Милосердная">Merciful</a><BR>'
 END
-IF slave_4["compassion"] = -1:
+IF slave_4["compassion"] < 0:
  if slave_4["compassion_revealed"] > 0: $features_list_slave_4 += '<a href="EXEC: msg $Садистка">Sadist</a><BR>' 
 END
 $features_list_slave_5 = ''
@@ -3872,10 +3872,10 @@ END
 IF slave_5["selfesteem"] < 0:
  if slave_5["selfesteem_revealed"] > 0: $features_list_slave_5 += '<a href="EXEC: msg $Комплекс_вины">Guilt complex</a><BR>' 
 END
-IF slave_5["compassion"] = 2:
+IF slave_5["compassion"] > 0:
  if slave_5["compassion_revealed"] > 0: $features_list_slave_5 += '<a href="EXEC: msg $Милосердная">Merciful</a><BR>'
 END
-IF slave_5["compassion"] = -1:
+IF slave_5["compassion"] < 0:
  if slave_5["compassion_revealed"] > 0: $features_list_slave_5 += '<a href="EXEC: msg $Садистка">Sadist</a><BR>' 
 END
 

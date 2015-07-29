@@ -66,7 +66,7 @@ i = 0
     dynamic '<<$stockatr[i]>> = atribute'
 if i < stat_count: jump 'loop'
 
-stock["fat"] = RAND (0,2)
+stock["fat"] = RAND (0,4)
 stock["metabolism"] = 3
 
 !TRAITS
@@ -970,7 +970,7 @@ IF $stock_occupation = 'model':
  if stock["callisthenics"] < 8: stock["callisthenics"] += 2 
  if stock["pride"] < 10: stock["pride"] += 1    
  if stock["dressage"] < 10: stock["dressage"] += 1 
- if stock["fat"] > 0: stock["fat"] = 0      
+ if stock["fat"] > 0: stock["fat"] = 1      
  $stock_occupation_auk = 'photomodel'
 END
 IF $stock_occupation = 'hacker':
@@ -1221,7 +1221,7 @@ END
 
 IF a = 20:
  chance = RAND (1,2)
- stock["metabolism"] = IIF(chance = 1, 1, 5)
+ stock["metabolism"] = IIF(chance = 1, 5, 5)
 END
 
 IF a = 21:
@@ -1257,7 +1257,7 @@ END
 
 IF a = 32:
  chance = RAND (1,2)
- stock["meekness"] = IIF(chance = 1, -2, 2)
+ stock["meekness"] = IIF(chance = 2, -2, 2)
 END
 
 IF a = 33:
@@ -1272,7 +1272,7 @@ END
 
 IF a = 35:
  chance = RAND (1,2)
- stock["compassion"] = IIF(chance = 1, -1, 2)
+ stock["compassion"] = IIF(chance = 2, -1, 2)
 END
 
 if i < 10: jump 'loop10'
@@ -1280,7 +1280,7 @@ if i < 10: jump 'loop10'
 
 !characteristics alignment
 stock["energy"] = RAND (0,3)
-stock["hygiene"] = RAND (1,3)
+stock["hygiene"] = RAND (0,4)
 if stock["beauty"] > 10: stock["beauty"] = 10
 if stock["beauty"] < 1: stock["beauty"] = 1
 if stock["stamina"] > 10: stock["stamina"] = 10
@@ -1288,13 +1288,20 @@ if stock["stamina"] < 1: stock["stamina"] = 1
 if stock["sensitivity"] > 10: stock["sensitivity"] = 10
 if stock["sensitivity"] < 1: stock["sensitivity"] = 1
 if stock["pride"] > 10: stock["pride"] = 10
-if stock["pride"] < 1: stock["pride"] = 1
+if stock["pride"] < 0: stock["pride"] = 0
 if stock["ego"] > 10: stock["ego"] = 10
 if stock["ego"] < 1: stock["ego"] = 1
 if stock["intellect"] > 10: stock["intellect"] = 10
 if stock["intellect"] < 1: stock["intellect"] = 1
 if stock["style"] > 10: stock["style"] = 10
 if stock["style"] < 0: stock["style"] = 0
+
+! For future use so seed_exotic can be used in the slave files - crushboss
+if stock["exotic"] = 1: stock_rate["exotic"] = 15
+if stock["exotic"] = 2: stock_rate["exotic"] = 30
+if stock["exotic"] = 3: stock_rate["exotic"] = 60
+if stock["exotic"] = 4: stock_rate["exotic"] = 120
+if stock["exotic"] = 5: stock_rate["exotic"] = 240
 
 if stock_rate["exotic"] => 10: stock["exotic"] = 1
 if stock_rate["exotic"] => 20: stock["exotic"] = 2
@@ -1323,7 +1330,7 @@ if a = 2: $stock_psy_basic = 'soft'
 if a = 3: $stock_psy_basic = 'optimistic'
 if stock["sensitivity"] => 8: $stock_psy_basic = 'lachrymose'
 a = stock["ego"] + stock["temper"] + stock["pride"]
-IF a > 10:
+IF a > 20:
  if stock["ego"] => 8: $stock_psy_basic = 'resistant'
  if stock["temper"] => 8: $stock_psy_basic = 'hateful'
  if stock["pride"] => 8: $stock_psy_basic = 'arrogant'
@@ -1381,7 +1388,7 @@ if stock["beauty"] > 7: stock_base_price += 46
 if stock["beauty"] > 8: stock_base_price += 48
 if stock["beauty"] > 9: stock_base_price += 50
 if stock["fat"] = 1: stock_base_price += 25
-if stock["fat"] => 2: stock_base_price += 20
+if stock["fat"] > 1: stock_base_price += 20
 if stock["fat"] > 3: stock_base_price += 10
 if stock["fat"] > 4: stock_base_price += 5
 if stock["fat"] > 5: stock_base_price -= 5
@@ -1449,7 +1456,7 @@ if stock["ego"] > 7: stock_base_price += 13
 if stock["ego"] > 8: stock_base_price += 15
 if stock["ego"] > 9: stock_base_price += 17
 if stock["pride"] < 1: stock_base_price += 14
-if stock["pride"] < 2: stock_base_price += 12
+if stock["pride"] < 4: stock_base_price += 12
 if stock["pride"] > 3: stock_base_price += 10
 if stock["pride"] > 4: stock_base_price += 5
 if stock["pride"] > 5: stock_base_price -= 5
