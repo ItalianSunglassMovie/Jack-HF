@@ -1,0 +1,52 @@
+# stock_to_expert
+!expert stashes a matched slave for a master
+selected_type = stock_type
+$selected_type = $stock_type
+stock['age'] = seed_age[stock_type]
+
+killvar 'selected' 
+killvar 'selected_rate' 
+copyarr 'selected','stock'
+copyarr '$selected','$stock'
+
+$selected_name = $stock_name
+$selected_psy_basic = $stock_psy_basic
+$selected_world_description = $stock_world_description
+$selected_family_description = $stock_family_description
+$selected_occupation_description = $stock_occupation_description
+
+$selected_psy_basic = $stock_psy_basic 
+$selected['fullimage'] = $fullimage[stock_type]
+$selected['ava'] = $seed_ava[stock_type]
+$selected['ava_gray'] = $seed_ava_gray[stock_type]
+$selected['ava_clear'] = $seed_ava_clear[stock_type]
+
+$selected['boobs_img'] = $seed_boobs_img[stock_type]
+$selected['pussy_img'] = $seed_pussy_img[stock_type]
+
+selected_virginity = stock_virginity
+
+$selected["cloth"] = "голая"
+
+if selected["bruises"] = 1: selected_rate["bruises"] = 10
+if selected["bruises"] = 2: selected_rate["bruises"] = 20
+if selected["bruises"] = 3: selected_rate["bruises"] = 40
+if selected["bruises"] = 4: selected_rate["bruises"] = 80
+if selected["bruises"] = 5: selected_rate["bruises"] = 160
+
+if selected["scares"] = 1: selected_rate["scares"] = 10
+if selected["scares"] = 2: selected_rate["scares"] = 20
+if selected["scares"] = 3: selected_rate["scares"] = 40
+if selected["scares"] = 4: selected_rate["scares"] = 80
+if selected["scares"] = 5: selected_rate["scares"] = 160
+
+if selected["hygiene"] = 1: selected_rate["hygiene"] = 10
+if selected["hygiene"] = 2: selected_rate["hygiene"] = 20
+if selected["hygiene"] = 3: selected_rate["hygiene"] = 40
+if selected["hygiene"] = 4: selected_rate["hygiene"] = 80
+if selected["hygiene"] = 5: selected_rate["hygiene"] = 160
+
+gs '#txt'
+gs '#txt_2'
+--- stock_to_expert ---------------------------------
+

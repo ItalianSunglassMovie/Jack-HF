@@ -1,0 +1,213 @@
+# выход_из_боя
+!CALCULATION OF COMBAT RESULTS
+!turns off all sounds after the fight
+CLOSE ALL
+
+!for arena fight
+IF $fight_return = 'Start':
+ $fight_return = ''
+ dynamic $master_energy_drop
+ slave["energy"] = -3
+ IF $итог_боя = 'убит':
+  a = RAND (1,6)
+  if a > slave['stamina']: interaction_city = 1291 & gt 'interaction_city'
+  slave_rate["wounds"] += RAND(80,100)
+ END
+ IF $итог_боя = 'бегство' or $итог_боя = 'вырубился' or $итог_боя = 'убит':
+  slave['winning_series'] = 0 
+  if slave['arena_level'] > 0: slave['arena_level'] -= 1
+  b = RAND(0,3)
+  gladiator_valor = slave['temper'] - slave['loser_rating']
+  IF b > gladiator_valor:
+   interaction_city = 1292
+   else
+   interaction_city = 1293
+   slave_rate["wounds"] += RAND(40,80)
+  END
+ END
+ IF $итог_боя = 'вырубился':
+  slave['loser_rating'] += 100
+ END
+ IF $итог_боя = 'победа':
+  slave['winning_series'] += 1 
+  slave_rate["wounds"] += RAND(11,25)
+  interaction_city = 1294
+  IF slave['arena_level'] < 5:
+   slave['arena_level'] += 1
+   IF slave['arena_level'] = 5:
+    $slave['trademark_style'] = $g_type
+   END
+   IF slave['arena_level'] = 5:
+    IF slave['loser_rating'] = 0:
+     interaction_city = 1295
+     else
+     interaction_city = 1294
+    END
+    else
+    interaction_city = 1294
+   END
+  END
+ END
+ gt 'interaction_city'
+END
+
+!for arena training
+IF colloseum_fight > 0:
+ if combatant = 0: dynamic $master_energy_drop
+ if combatant = 1: dynamic $slave_energy_drop
+ if combatant = 2: dynamic $assistant_energy_drop 
+ combatant = 0 
+ colloseum_fight = 0
+ sp_txt = 1
+ copyarr '$display_options', '$colloseum_options' 
+ gt 'shop_general'
+END
+
+!misc
+IF $враг[1] = 'воспитуемая':
+ energy_max = slave["energy"]
+ if выносливость_врага[1] < 5: slave["energy"] = -15
+ if выносливость_врага[1] => 10: slave["energy"] = -12
+ if выносливость_врага[1] => 20: slave["energy"] = -9
+ if выносливость_врага[1] => 30: slave["energy"] = -6
+ if выносливость_врага[1] => 40: slave["energy"] = -3
+ if выносливость_врага[1] => 50: slave["energy"] = 0
+ if выносливость_врага[1] => 55: slave["energy"] = 3
+ if выносливость_врага[1] => 60: slave["energy"] = 6
+ if выносливость_врага[1] => 65: slave["energy"] = 9
+ if выносливость_врага[1] => 70: slave["energy"] = 12
+ if выносливость_врага[1] => 75: slave["energy"] = 15
+ if slave["energy"] > energy_max: slave["energy"] = energy_max
+
+ bash_damage_done = базовая_выносливость['воспитуемая'] - выносливость_врага[1]
+ house_mess_rate += bash_damage_done
+ slave_rate["hygiene"] += bash_damage_done
+ master_hygiene_rate += bash_damage_done
+
+ lethal_damage_done = базовое_здоровье['воспитуемая'] - здоровье_врага[1]
+ if lethal_damage_done > 0: slave_rate["wounds"] += 10
+ if lethal_damage_done > базовое_здоровье['воспитуемая']/4: slave_rate["wounds"] += 10 
+ if lethal_damage_done > базовое_здоровье['воспитуемая']/3: slave_rate["wounds"] += 20 
+ if lethal_damage_done > базовое_здоровье['воспитуемая']/2: slave_rate["wounds"] += 40 
+ if lethal_damage_done > базовое_здоровье['воспитуемая'] - 2: slave_rate["wounds"] += 80   
+
+ if lethal_damage_done > slave["stamina"]: slave_rate["stamina"] -= 100000
+
+ psy_damage_done = базовый_дух['воспитуемая'] - дух_врага[1]
+ slave_rate["mood"] -= psy_damage_done*2
+
+ pure_bashing_damage = bash_damage_done - lethal_damage_done
+ if pure_bashing_damage < 0: pure_bashing_damage = 0
+ slave_rate["bruises"] += pure_bashing_damage*2
+ slave_rate["stamina"] -= pure_bashing_damage
+END
+
+!additional results of the battle for the opponents
+IF $итог_боя = 'бегство' and $враг[1] = 'воспитуемая':
+ interaction_city = 143 
+ gt "interaction_city"
+END
+IF $итог_боя = 'вырубился' and $враг[1] = 'воспитуемая':
+	dynamic $death, 'Unable to cope with the punches of your slave, you fall on your knees. Seeing this, slave with a smile approaching you<br>and hits you in the face with her leg, sending you to a knockout. Unfortunately, you never woke up after that...'
+END
+IF $итог_боя = 'убит' and $враг[1] = 'воспитуемая':
+	dynamic $death, 'Seriously wounded, you fall to the floor, bleeding.<br>Seriously wounded, you fall to the floor, bleeding.<br>Last thing you saw - that your ex slave runs out into the street...'
+END
+
+!general results
+IF $итог_боя = 'бегство':
+	dynamic $death, 'You have escaped from the battle.'
+END
+IF $итог_боя = 'вырубился':
+	dynamic $death, 'You lost consciousness and you have finished.'
+END
+IF $итог_боя = 'убит':
+	dynamic $death, 'You were killed.'
+END
+IF $итог_боя = 'победа':
+ IF fighting_expirience > 0:
+  master_fighter_rate += fighting_expirience
+  fighting_expirience = 0
+ END
+END
+
+
+IF $враг[1] = 'воспитуемая':
+ slave["beaten"] = 1
+ slave["beaten_ever"] += 1
+ slave_rate["fear"] += 10
+ slave_rate["instinct"] += 5
+ 
+ if выносливость_врага[1] <= 0: slave_state = CONST_INT['slave_faint']
+ if здоровье_врага[1] <= 0: dynamic $slave_killed
+END
+
+letal_damage_recived = макс_здоровье_игрока - здоровье_игрока
+bash_damage_recived = макс_выносливость_игрока - выносливость_игрока
+IF дух_игрока < норм_дух_игрока:
+psy_damage_recived = норм_дух_игрока - дух_игрока
+END
+
+master_mood_rate -= psy_damage_recived
+
+if letal_damage_recived > master_str_rate: master_wounds_rate += 10
+if letal_damage_recived > макс_здоровье_игрока/4: master_wounds_rate += 10 
+if letal_damage_recived > макс_здоровье_игрока/3: master_wounds_rate += 20 
+if letal_damage_recived > макс_здоровье_игрока/2: master_wounds_rate += 40 
+if letal_damage_recived > макс_здоровье_игрока - 2: master_wounds_rate += 80  
+if master_wounds_rate > 0: master_mood['neg_wounded'] = 1
+
+IF combatant = 0:
+ energy_max = master_energy 
+ if выносливость_игрока < 15: master_energy = -15
+ if выносливость_игрока => 10: master_energy = -12
+ if выносливость_игрока => 20: master_energy = -9
+ if выносливость_игрока => 30: master_energy = -7
+ if выносливость_игрока => 40: master_energy = -3
+ if выносливость_игрока => 50: master_energy = 0
+ if выносливость_игрока => 55: master_energy = 3
+ if выносливость_игрока => 60: master_energy = 7
+ if выносливость_игрока => 65: master_energy = 9
+ if выносливость_игрока => 70: master_energy = 12
+ if выносливость_игрока => 75: master_energy = 15
+ if master_energy > energy_max: master_energy = energy_max
+END 
+
+menu_form = 0
+
+IF $fight_return ! '':
+ $return_lock = $fight_return
+ $fight_return = ''
+END
+
+IF get_girl = 1:
+ get_girl = 0
+ :won_slave_calc
+ gs 'generate_stock'
+ won_slave_minimum_value -= 5
+ IF stock_base_price < won_slave_minimum_value: jump 'won_slave_calc'
+ IF won_slave['ill'] = 1:
+  b = RAND (1,5)
+  if stock['stamina'] < b: stock['ill'] = 1
+ END
+ IF won_slave['parasite'] = 1:
+  if stock['fertility'] => 0: stock['parasite'] = 1
+ END
+ IF won_slave['deflowered'] = 1:
+  if stock_virginity < 2: stock_virginity = 2
+ END
+ IF slave_state = CONST_INT['no_slave']:
+  msg '   You bind a trophy girl you''ve got and make her your slave.'
+  gs 'stock_to_slave'
+  else
+  $return_lock = 'interaction_city'
+  interaction_city = 119
+ END
+END
+
+
+
+gt 'hard_return'
+
+--- выход_из_боя ---------------------------------
+

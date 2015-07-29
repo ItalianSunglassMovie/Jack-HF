@@ -1,0 +1,47 @@
+# hero_description
+*p '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
+
+$master_name = $master_base_name[hero_choice]
+$master_ava = $sepia_ava_path[hero_choice]
+$master_ava_color = $clear_ava_path[hero_choice]
+dynamic $master_version_stats[hero_choice]
+master_energy = master_str + 1
+if master_energy > 15: master_energy = 15
+get_initial_slave = 0
+
+$secondary_stt = ''
+$secondary_stt += '<<$master_tutor[master_tutor]>><br>'
+$secondary_stt += '<<$master_butler[master_butler]>><br>'
+$secondary_stt += '<<$master_artdirector[master_artdirector]>><br>'
+$secondary_stt += '<<$master_medic[master_medic]>><br>'
+$secondary_stt += '<<$master_fighter[master_fighter]>><br>'
+$secondary_stt += '<<$master_mage[master_mage]>><br>'
+$secondary_stt += '<<$master_domination[master_domination]>><br>'
+$secondary_stt += '<<$master_flagelation[master_flagelation]>><br>'
+$secondary_stt += '<<$master_torture[master_torture]>><br>'
+$secondary_stt += '<<$master_bondage[master_bondage]>><br>'
+$secondary_stt += '<<$master_petting[master_petting]>><br>'
+$secondary_stt += '<<$master_penetration[master_penetration]>><br>'
+$secondary_stt += '<<$master_oral[master_oral]>><br>'
+$secondary_stt += '<<$master_fetish[master_fetish]>><br>'
+
+*p '<div id = "stat_desc"><<$master_str[master_str]>>
+<<$master_cha[master_cha]>>
+<<$master_libido[master_libido]>>
+
+<<$secondary_stt>>
+</div>'
+
+*p '<div id = "hero_title"><<$master_name>></div>'
+*p '<div id = "hero_diff"><<$hero_difficulty[hero_choice]>></div>'
+*p '<div id = "hero_desc"><<$hero_description[hero_choice]>></div>'
+
+*p '<div id = "ava_choice_1_1_1"><img src = "<<$master_ava>>"></div>'
+*p {<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
+
+*p '<div id = "confirm_box"><a href = ''EXEC: dynamic $name_and_start''><img src = "content\pic\buttons\approve_small.png"></a></div>'
+
+*p '<div id = "scroll_forward"><a href = ''EXEC: dynamic $scroll_heroes''><img src = "content\pic\buttons\forward_button.png"></a></div>'
+*p '<div id = "scroll_back"><a href = ''EXEC: dynamic $scroll_heroes_back''><img src = "content\pic\buttons\back_button.png"></a></div>'
+--- hero_description ---------------------------------
+

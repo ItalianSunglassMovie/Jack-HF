@@ -1,0 +1,29 @@
+# main_layout
+!layout for a main game screen
+INTEGRATED_ACTIONS = 0
+if ui_style = 1:$backimage = 'content/pic/ui/old/bg_main_old.jpg'
+if ui_style = 2:$backimage = 'content/pic/ui/grimdark/bg_main.jpg'
+if ui_style = 0:$backimage = 'content/pic/ui/classic/bg_main.jpg'
+
+SHOWOBJS 0
+SHOWSTAT 0
+SHOWACTS 0
+
+$onnewloc = '$newloc'
+
+LCOLOR = rgb(0,0,255)
+FCOLOR = rgb(0,0,0)
+
+$MAINDESC_BACKIMAGE = 'content/.png'
+MAINDESC_X = 1
+MAINDESC_Y = 1
+MAINDESC_W = 1278
+MAINDESC_H = 798
+
+$STATDESC_BACKIMAGE = 'content/.jpg'
+STATDESC_X = 810
+STATDESC_Y = 1
+STATDESC_W = 450
+STATDESC_H = 800
+--- main_layout ---------------------------------
+

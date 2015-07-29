@@ -1,0 +1,196 @@
+# slave_to_cage
+!move slave to prisoner
+temp = slave_state
+slave_state = prisoner_state
+prisoner_state = temp
+
+temp = slave_type
+slave_type = prisoner_type
+prisoner_type = temp
+
+$temp = $slave_type
+$slave_type = $prisoner_type
+$prisoner_type = $temp
+
+killvar 'temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','prisoner'
+copyarr '$slave','$prisoner'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','prisoner_rate'
+
+killvar 'prisoner'
+killvar '$prisoner'
+copyarr 'prisoner','temp'
+copyarr '$prisoner','$temp'
+killvar 'prisoner_rate'
+copyarr 'prisoner_rate','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_prisoner'
+killvar 'already_done_prisoner'
+copyarr 'already_done_prisoner','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_gain_prisoner'
+killvar 'already_gain_prisoner'
+copyarr 'already_gain_prisoner','already_gain_virtue'
+killvar 'already_gain_virtue'
+copyarr 'already_gain_virtue','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_prisoner'
+killvar 'already_sex_prisoner'
+copyarr 'already_sex_prisoner','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','prisoner_inventory'
+copyarr 'prisoner_inventory','temp'
+
+$temp_name = $slave_name
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_name = $prisoner_name
+$slave_psy_basic = $prisoner_psy_basic
+$slave_world_description = $prisoner_world_description
+$slave_family_description = $prisoner_family_description
+$slave_occupation_description = $prisoner_occupation_description
+$slave_psy_basic = $prisoner_psy_basic 
+virginity = prisoner_virginity
+
+$prisoner_name = $temp_name
+$prisoner_psy_basic = $temp_psy_basic
+$prisoner_world_description = $temp_world_description
+$prisoner_family_description = $temp_family_description
+$prisoner_occupation_description = $temp_occupation_description
+$prisoner_psy_basic = $temp_psy_basic 
+prisoner_virginity = temp_virginity
+
+tmp = prise_promised
+prise_promised = prise_promised_prisoner
+prise_promised_prisoner = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_prisoner
+gift_promised_prisoner = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_prisoner
+prise_promised_prisoner = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_prisoner
+abandon_treat_prisoner = tmp
+
+tmp = death_treat
+death_treat = death_treat_prisoner
+death_treat_prisoner = tmp
+
+temp = slave_sleep_condition
+slave_sleep_condition = prisoner_slave_sleep_condition
+prisoner_slave_sleep_condition = temp
+
+temp = slave_food_type
+slave_food_type = prisoner_slave_food_type
+prisoner_slave_food_type = temp
+
+temp = slave_eats_remains
+slave_eats_remains = prisoner_slave_eats_remains
+prisoner_slave_eats_remains = temp
+
+temp = slave_ration
+slave_ration = prisoner_slave_ration
+prisoner_slave_ration = temp
+
+temp = slave_food_portion
+slave_food_portion = prisoner_slave_food_portion
+prisoner_slave_food_portion = temp
+
+temp = vitamin
+vitamin = prisoner_vitamin
+prisoner_vitamin = temp
+
+temp = silence_rule
+silence_rule = prisoner_silence_rule
+prisoner_silence_rule = temp
+
+temp = master_rule
+master_rule = prisoner_master_rule
+prisoner_master_rule = temp
+
+temp = orgasm_prohibited
+orgasm_prohibited = prisoner_orgasm_prohibited
+prisoner_orgasm_prohibited = temp
+
+temp = shit_prohibited
+shit_prohibited = prisoner_shit_prohibited
+prisoner_shit_prohibited = temp
+
+temp = pet_rule
+pet_rule = prisoner_pet_rule
+prisoner_pet_rule = temp
+
+temp = blowjob_rule
+blowjob_rule = prisoner_blowjob_rule
+prisoner_blowjob_rule = temp
+
+temp = pissuar_rule
+pissuar_rule = prisoner_pissuar_rule
+prisoner_pissuar_rule = temp
+
+temp = toilet_rule
+toilet_rule = prisoner_toilet_rule
+prisoner_toilet_rule = temp
+
+temp = slave_cleans_rule
+slave_cleans_rule = prisoner_slave_cleans_rule
+prisoner_slave_cleans_rule = temp
+
+temp = slave_cooks_rule
+slave_cooks_rule = prisoner_slave_cooks_rule
+prisoner_slave_cooks_rule = temp
+
+temp = slave_washes_rule
+slave_washes_rule = prisoner_slave_washes_rule
+prisoner_slave_washes_rule = temp
+
+temp = slave_tentacle_rule
+slave_tentacle_rule = prisoner_slave_tentacle_rule
+prisoner_slave_tentacle_rule = temp
+
+temp = v_balls_rule
+v_balls_rule = prisoner_v_balls_rule
+prisoner_v_balls_rule = temp
+
+temp = rule_masturbation
+rule_masturbation = prisoner_rule_masturbation
+prisoner_rule_masturbation = temp
+
+rules_broken = 0
+prisoner_ration = 0
+
+gs '#txt'
+gs '#txt_2'
+gs '$newloc'
+if prisoner_state = 1: $prisoner_info_text = '<<$ppsy_status[$prisoner_psy_status]>>'
+if prisoner_state = 2: $prisoner_info_text = '   <<$prisoner_name>> is exhausted and moans quietly. She is clearly in a very bad condition. You have to give her a rest or even medical assistance.'
+GT 'prison_cell'
+--- slave_to_cage ---------------------------------
+

@@ -1,0 +1,275 @@
+# $moodlets_account
+!calculate the moodlets effect
+gs '#moodlet_base'
+!AddOn - makes no sense to reset on every $newloc trigger
+master_mood_rate = 0
+master_mood = 0
+
+$master_mood_list = ''
+n = arrsize('$master_good_mood')
+i = 0
+:loop
+    i += 1
+    $curmod = $master_good_mood[i]
+
+    IF master_mood['<<$curmod>>'] > 0:
+        $master_mood_list += "   <<$mood_description['<<$curmod>>']>><br>"
+        master_mood += 1
+    END
+if i < n: jump 'loop'
+
+$master_mood_list += '<br>'
+n = arrsize('$master_bad_mood')
+i = 0
+:loop1
+    i += 1
+    $curmod = $master_bad_mood[i]
+
+    IF master_mood['<<$curmod>>'] > 0:
+		!debug
+		!msg 'master_mood[''<<$curmod>>''] = <<master_mood[$curmod]>>'
+        $master_mood_list += "   <<$mood_description['<<$curmod>>']>><br>"
+        master_mood -= 1
+    END
+if i < n: jump 'loop1'
+
+!slave part - primary slave
+slave_rate['mood'] = 0
+slave['mood'] = 0
+killvar '$slave_mood_list'
+
+ndex = 0
+if $slave_psy_status = 'broken': jump 'loop_broken'
+n = arrsize('$slave_bad_mod')
+i = 0
+:loop3
+    i += 1
+    $curmod = $slave_bad_mod[i]
+
+    IF slave['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list[ndex] = "   <<$mood_description['<<$curmod>>']>>"
+        slave['mood'] -= 1
+    END
+if i < n: jump 'loop3'
+
+n = arrsize('$slave_good_mod')
+i = 0
+:loop4
+    i += 1
+    $curmod = $slave_good_mod[i]
+
+    IF slave['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list[ndex] = "   <<$mood_description['<<$curmod>>']>>"
+        slave['mood'] += 1
+    END
+if i < n: jump 'loop4'
+if ndex < 1: $slave_mood_list[1] = '   [<<$slave_name>>]
+- I''m all right. Nothing special...'
+:loop_broken
+if $slave_psy_status = 'broken': $slave_mood_list[1] = '   [<<$slave_name>>]
+- Nohow, I do not care.'
+
+!slave part - sub slave_1
+slave_rate_1['mood'] = 0
+slave_1['mood'] = 0
+killvar '$slave_mood_list_1'
+ndex = 0
+if $slave_psy_status_1 = 'broken': jump 'loop_broken_1'
+n = arrsize('$slave_bad_mod')
+i = 0
+:loop31
+    i += 1
+    $curmod = $slave_bad_mod[i]
+
+    IF slave_1['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_1[ndex] = "   <<$mood_description_1['<<$curmod>>']>>"
+        slave_1['mood'] -= 1
+    END
+if i < n: jump 'loop31'
+
+n = arrsize('$slave_good_mod')
+i = 0
+:loop41
+    i += 1
+    $curmod = $slave_good_mod[i]
+
+    IF slave_1['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_1[ndex] = "   <<$mood_description_1['<<$curmod>>']>>"
+        slave_1['mood'] += 1
+    END
+if i < n: jump 'loop41'
+if ndex < 1: $slave_mood_list_1[1] = '   [<<$slave_1_name>>]
+- I''m all right. Nothing special...'
+:loop_broken_1
+if $slave_psy_status_1 = 'broken': $slave_mood_list_1[1] = '   [<<$slave_1_name>>]
+- Nohow, I do not care.'
+
+!slave part - sub slave_2
+slave_rate_2['mood'] = 0
+slave_2['mood'] = 0
+killvar '$slave_mood_list_2'
+ndex = 0
+if $slave_psy_status_2 = 'broken': jump 'loop_broken_2'
+n = arrsize('$slave_bad_mod')
+i = 0
+:loop32
+    i += 1
+    $curmod = $slave_bad_mod[i]
+
+    IF slave_2['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_2[ndex] = "   <<$mood_description_2['<<$curmod>>']>>"
+        slave_2['mood'] -= 1
+    END
+if i < n: jump 'loop32'
+
+n = arrsize('$slave_good_mod')
+i = 0
+:loop42
+    i += 1
+    $curmod = $slave_good_mod[i]
+
+    IF slave_2['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_2[ndex] = "   <<$mood_description_2['<<$curmod>>']>>"
+        slave_2['mood'] += 1
+    END
+if i < n: jump 'loop42'
+if ndex < 1: $slave_mood_list_2[1] = '   [<<$slave_2_name>>]
+- I''m all right. Nothing special...'
+:loop_broken_2
+if $slave_psy_status_2 = 'broken': $slave_mood_list_2[1] = '   [<<$slave_2_name>>]
+- Nohow, I do not care.'
+
+!slave part - sub slave_3
+slave_rate_3['mood'] = 0
+slave_3['mood'] = 0
+killvar '$slave_mood_list_3'
+ndex = 0
+if $slave_psy_status_3 = 'broken': jump 'loop_broken_3'
+n = arrsize('$slave_bad_mod')
+i = 0
+:loop33
+    i += 1
+    $curmod = $slave_bad_mod[i]
+
+    IF slave_3['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_3[ndex] = "   <<$mood_description_3['<<$curmod>>']>>"
+        slave_3['mood'] -= 1
+    END
+if i < n: jump 'loop33'
+
+n = arrsize('$slave_good_mod')
+i = 0
+:loop43
+    i += 1
+    $curmod = $slave_good_mod[i]
+
+    IF slave_3['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_3[ndex] = "   <<$mood_description_3['<<$curmod>>']>>"
+        slave_3['mood'] += 1
+    END
+if i < n: jump 'loop43'
+if ndex < 1: $slave_mood_list_3[1] = '   [<<$slave_3_name>>]
+- I''m all right. Nothing special...'
+:loop_broken_3
+if $slave_psy_status_3 = 'broken': $slave_mood_list_3[1] = '   [<<$slave_3_name>>]
+- Nohow, I do not care.'
+
+!slave part - sub slave_4
+slave_rate_4['mood'] = 0
+slave_4['mood'] = 0
+killvar '$slave_mood_list_4'
+ndex = 0
+if $slave_psy_status_4 = 'broken': jump 'loop_broken_4'
+n = arrsize('$slave_bad_mod')
+i = 0
+:loop34
+    i += 1
+    $curmod = $slave_bad_mod[i]
+
+    IF slave_4['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_4[ndex] = "   <<$mood_description_4['<<$curmod>>']>>"
+        slave_4['mood'] -= 1
+    END
+if i < n: jump 'loop34'
+
+n = arrsize('$slave_good_mod')
+i = 0
+:loop44
+    i += 1
+    $curmod = $slave_good_mod[i]
+
+    IF slave_4['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_4[ndex] = "   <<$mood_description_4['<<$curmod>>']>>"
+        slave_4['mood'] += 1
+    END
+if i < n: jump 'loop44'
+if ndex < 1: $slave_mood_list_4[1] = '   [<<$slave_4_name>>]
+- I''m all right. Nothing special...'
+:loop_broken_4
+if $slave_psy_status_4 = 'broken': $slave_mood_list_4[1] = '   [<<$slave_4_name>>]
+- Nohow, I do not care.'
+
+!slave part - sub slave_5
+slave_rate_5['mood'] = 0
+slave_5['mood'] = 0
+killvar '$slave_mood_list_5'
+ndex = 0
+if $slave_psy_status_5 = 'broken': jump 'loop_broken_5'
+n = arrsize('$slave_bad_mod')
+i = 0
+:loop35
+    i += 1
+    $curmod = $slave_bad_mod[i]
+
+    IF slave_5['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_5[ndex] = "   <<$mood_description_5['<<$curmod>>']>>"
+        slave_5['mood'] -= 1
+    END
+if i < n: jump 'loop35'
+
+n = arrsize('$slave_good_mod')
+i = 0
+:loop45
+    i += 1
+    $curmod = $slave_good_mod[i]
+
+    IF slave_5['<<$curmod>>'] > 0:
+        ndex += 1
+        $slave_mood_list_5[ndex] = "   <<$mood_description_5['<<$curmod>>']>>"
+        slave_5['mood'] += 1
+    END
+if i < n: jump 'loop45'
+if ndex < 1: $slave_mood_list_5[1] = '   [<<$slave_5_name>>]
+- I''m all right. Nothing special...'
+:loop_broken_5
+if $slave_psy_status_5 = 'broken': $slave_mood_list_5[1] = '   [<<$slave_5_name>>]
+- Nohow, I do not care.'
+
+if master_mood > 5:  master_mood = 5
+if master_mood < -5:  master_mood = -5
+if slave['mood'] > 5:  slave['mood'] = 5
+if slave['mood'] < -5:  slave['mood'] = -5
+if slave_1['mood'] > 5:  slave_1['mood'] = 5
+if slave_1['mood'] < -5:  slave_1['mood'] = -5
+if slave_2['mood'] > 5:  slave_2['mood'] = 5
+if slave_2['mood'] < -5:  slave_2['mood'] = -5
+if slave_3['mood'] > 5:  slave_3['mood'] = 5
+if slave_3['mood'] < -5:  slave_3['mood'] = -5
+if slave_4['mood'] > 5:  slave_4['mood'] = 5
+if slave_4['mood'] < -5:  slave_4['mood'] = -5
+if slave_5['mood'] > 5:  slave_5['mood'] = 5
+if slave_5['mood'] < -5:  slave_5['mood'] = -5
+
+--- $moodlets_account ---------------------------------
+

@@ -1,0 +1,31 @@
+# slave_sell_done
+!ЗАВЕРШЕНИЕ СДЕЛКИ ПО ПРОДАЖЕ КЛЕЙМЛЕНОЙ РАБЫНИ ЧАСТНОМУ ЛИЦУ
+npc_money[$npc_id] -= sell_price
+sparks += sell_price
+
+IF price => npc_worth[$npc_id] and npc_bennies[$npc_id] > 0: 
+ npc_bennies[$npc_id] -= 1
+ npc_relations[$npc_id] += 1
+ if slave['brand'] ! 4: brand_rate += 1 
+ if personal_relations[$npc_id] > 3: brand_rate += 1 
+END
+
+IF price > sell_price and npc_bennies[$npc_id] > 0: 
+ personal_relations[$npc_id] += 2 
+END
+
+IF price < sell_price and npc_bennies[$npc_id] > 0: 
+ npc_bennies[$npc_id] -= 1
+ personal_relations[$npc_id] -= 2
+ if slave['brand'] ! 4: brand_rate -= 1 
+END
+
+slave_state = CONST_INT['no_slave']
+killvar 'slave'
+killvar '$slave' 
+killvar 'slave_rate'
+$slave_name = ''
+
+gt '<<$return_lock>>'
+--- slave_sell_done ---------------------------------
+

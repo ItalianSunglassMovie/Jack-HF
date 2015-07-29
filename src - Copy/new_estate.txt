@@ -1,0 +1,62 @@
+# new_estate
+!Initializes a new home or interior
+
+IF $estate = 'slum_house':
+  bath = 0
+  kitchen = 0
+ else
+  bath = 1
+  kitchen = 1
+END
+
+dungeon = 1
+bouduar = 1
+lab = 1
+library = 1
+
+$study = $interior
+$bed = $interior
+$bath = $interior
+$kitchen = $interior
+$bouduar = $interior
+$lab = $interior
+$dungeon = $interior
+
+$bg['home_lux'] = $interior_bg[$interior]
+
+$bg['study'] = $interior_study[$interior]
+$place_name['study'] = $estate_study_name[$estate]
+$place_location['study'] = $estate_study_location[$estate]
+$place_info['study'] = $interior_study_info[$interior]
+
+$bg['bedroom'] = $interior_bed[$interior]
+$place_name['bedroom'] = $estate_bed_name[$estate]
+$place_location['bedroom'] = $estate_bed_location[$estate]
+$place_info['bedroom'] = $interior_bed_info[$interior]
+
+$bg['bathroom'] = $interior_bath[$interior]
+$place_name['bathroom'] = $estate_bath_name[$estate]
+$place_location['bathroom'] = $estate_bath_location[$estate]
+$place_info['bathroom'] = $interior_bath_info[$interior]
+
+$bg['dungeon'] = $interior_dungeon[$interior]
+$place_name['dungeon'] = $estate_dungeon_name[$estate]
+$place_location['dungeon'] = $estate_dungeon_location[$estate]
+$place_info['dungeon'] = $interior_dungeon_info[$interior]
+
+$bg['kitchen'] = $interior_kitchen[$interior]
+$place_name['kitchen'] = $estate_kitchen_name[$estate]
+$place_location['kitchen'] = $estate_kitchen_location[$estate]
+$place_info['kitchen'] = $interior_kitchen_info[$interior]
+
+$bg['lab'] = $interior_lab[$interior]
+$place_name['lab'] = $estate_lab_name[$estate]
+$place_location['lab'] = $estate_lab_location[$estate]
+$place_info['lab'] = $interior_lab_info[$interior]
+
+$bg['bouduar'] = $interior_bouduar[$interior]
+$place_name['bouduar'] = $estate_bouduar_name[$estate]
+$place_location['bouduar'] = $estate_bouduar_location[$estate]
+$place_info['bouduar'] = $interior_bouduar_info[$interior]
+--- new_estate ---------------------------------
+

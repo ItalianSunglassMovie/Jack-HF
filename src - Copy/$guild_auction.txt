@@ -1,0 +1,111 @@
+# $guild_auction
+!Auction of branded slaves
+auction_count = 10
+killvar '$auction_flow'
+u = 2
+
+
+!Determination of the bidders
+killvar '$auction_participant'
+n = arrsize('$auction_buyer')
+i = 0
+e = 0
+:auction_participation_loop
+i += 1
+IF npc_participation_chance[$auction_buyer[i]] > 0:
+ e += 1
+ $auction_participant[e] = $auction_buyer[i]
+END
+
+if i < n-1: jump 'auction_participation_loop'
+
+n = arrsize ('$auction_participant')
+n -= 1
+i = 0
+:interest_loop
+i += 1
+
+IF slave_specialisation[$interesting_specialisation[$auction_participant[i]]] = 1:
+ a = RAND(0,15)
+ a += demand_rating[$auction_participant[i]]
+ participant_interest[$auction_participant[i]] = charm - a
+ IF demand_rating[$auction_participant[i]] <= rating:
+  rises = participant_interest[$auction_participant[i]] + rating - demand_rating[$auction_participant[i]]
+  b = auction_increment[demand_rating[$auction_participant[i]]] * rises 
+  cap_summ[$auction_participant[i]] = common_price[demand_rating[$auction_participant[i]]] + b
+ END
+ IF demand_rating[$auction_participant[i]] > rating and participant_interest[$auction_participant[i]] > 0:
+  rises = participant_interest[$auction_participant[i]]
+  r = demand_rating[$auction_participant[i]] - rating
+  if r > 0: rises += 1
+  if r > 1: rises += 2
+  if r > 2: rises += 4
+  if r > 3: rises += 8 
+  b = auction_increment[rating] * rises 
+  cap_summ[$auction_participant[i]] = auction_price[rating] + b
+ END
+END
+
+!$auction_flow[i] = '<<$npc_name[$auction_participant[i]]>>. Интересует <<$interesting_specialisation[$auction_participant[i]]>> ранга <<demand_rating[$auction_participant[i]]>>. Максимум <<cap_summ[$auction_participant[i]]>> за этот лот.'  
+if i < n: jump 'interest_loop'
+
+bank_size = 100 * rating
+$auction_flow[1] = '
+   Middleman offers starting bid of <<bank_size>> sparks. If noone bids more, <<$slave_name>> goes to him at that price.'
+$auc_winner = 'Перекупщик'
+bet_size = auction_increment[rating]
+y = 0
+i = 0
+a = 0
+x = 1
+:torg_loop
+i += 1
+
+IF bank_size < cap_summ[$auction_participant[i]] and i ! y:
+ bet_multipler = 0
+ :bet_multipler 
+ a = RAND(1,3)
+ IF a = 1: 
+  bet_multipler += 1
+  jump 'bet_multipler'
+ END
+ IF demand_rating[$auction_participant[i]] > rating:
+  bet_size = auction_increment[demand_rating[$auction_participant[i]]] * bet_multipler
+  else
+  bet_size = auction_increment[rating] * bet_multipler
+ END
+ IF bet_size > 0:
+  bank_size += bet_size
+  $auction_flow[u] = '
+   <<$npc_name[$auction_participant[i]]>> bets <<bet_size>> more and increases bet to <<bank_size>>'
+  $auc_winner = $npc_name[$auction_participant[i]]
+  y = i
+  x = 1
+  u += 1
+  i = 0
+  jump 'torg_loop'  
+ END
+END
+
+if i < n: jump 'torg_loop'
+
+$auction_hammer[1] = '   [AUCTIONEER]
+   - <<bank_size>> sparks, one!'
+$auction_hammer[2] = '   [AUCTIONEER]
+   - <<bank_size>> sparks, two! Perhaps this is the final price?'
+$auction_hammer[3] = '   [AUCTIONEER]
+   - <<bank_size>> sparks, three! Sold!!! Final price: <<bank_size>>. Buyer: <<$auc_winner>>.'
+$auction_flow[u] = $auction_hammer[x]
+i = 0
+u += 1
+IF x < 3: 
+ x += 1
+ jump 'torg_loop'
+END
+sparks_get = bank_size
+master_mood['pos_deal'] = 1
+
+interaction_city = 931
+gt 'interaction_city'
+--- $guild_auction ---------------------------------
+

@@ -1,0 +1,545 @@
+# shop_wpn
+GS '_layout'
+npc = 0
+$npc_id = 'менхантер'
+$text_display = ''
+	!Strec - jon_UIadds addition
+	sjm_weaponshopsparksbegin = sparks
+
+if sp_txt = 0: sp_txt = 1
+
+IF sp_txt = 1:
+  FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+
+ FUNC('$menu', 'exec_options', $menu_item_Weapons, 'sp_txt = 2 & gt $curloc', 'Weapons')
+ FUNC('$menu', 'exec_options', $menu_item_Armors, 'sp_txt = 3 & gt $curloc', 'Armor')
+ FUNC('$menu', 'interaction_city', $menu_item_preferencesarmory, menu_preferencesarmory, 'Check preferences')
+ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
+  FUNC('$menu', 'interaction_city', $menu_item_Offerarmory, menu_Offerarmory, 'Offer a slave')
+  else
+  FUNC('$menu', 'location_gray', $menu_item_Offerarmory_gray, empty, 'Offer a slave')
+ END 
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 2:
+  FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+
+ FUNC('$menu', 'exec_options', $menu_item_Secondary, 'sp_txt = 11 & gt $curloc', 'Secondary')
+ FUNC('$menu', 'exec_options', $menu_item_Onehanded, 'sp_txt = 12 & gt $curloc', 'One-handed')
+ FUNC('$menu', 'exec_options', $menu_item_Twohanded, 'sp_txt = 13 & gt $curloc', 'Two-handed')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 1 & gt $curloc', 'Other goods')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 11:
+  FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+
+ FUNC('$menu', 'exec_options', $menu_item_Daggerbuy, 'sp_txt = 111 & gt $curloc', 'Dagger (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_Stiletto, 'sp_txt = 112 & gt $curloc', 'Stiletto (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_knuckles, 'sp_txt = 113 & gt $curloc', 'Brass knuckles (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_Lashbuy, 'sp_txt = 114 & gt $curloc', 'Lash (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_Stunner, 'sp_txt = 115 & gt $curloc', 'Stunner (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_cleaver, 'sp_txt = 116 & gt $curloc', 'Butcher`s cleaver (20$)')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 111:
+ IF sparks => 10: 
+  sparks -= 10
+  кинжал += 1
+  $shop_wpn[111] = $shop_wpn_accept
+  else
+  $shop_wpn[111] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 112:
+ IF sparks => 10: 
+  sparks -= 10
+  стилет += 1
+  $shop_wpn[112] = $shop_wpn_accept
+  else
+  $shop_wpn[112] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 113:
+ IF sparks => 10: 
+  sparks -= 10
+  кастет += 1
+  $shop_wpn[113] = $shop_wpn_accept
+  else
+  $shop_wpn[113] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 114:
+ IF sparks => 10: 
+  sparks -= 10
+  нагайка += 1
+  $shop_wpn[114] = $shop_wpn_accept
+  else
+  $shop_wpn[114] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 115:
+ IF sparks => 10: 
+  sparks -= 10
+  глушилка += 1
+  $shop_wpn[115] = $shop_wpn_accept
+  else
+  $shop_wpn[115] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 116:
+ IF sparks => 20: 
+  sparks -= 20
+  тесак += 1
+  $shop_wpn[116] = $shop_wpn_accept
+  else
+  $shop_wpn[116] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 12:
+ FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Whipbuy, 'sp_txt = 121 & gt $curloc', 'Whip (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Epee, 'sp_txt = 122 & gt $curloc', 'Epee (50$')
+ FUNC('$menu', 'exec_options', $menu_item_Rapier, 'sp_txt = 123 & gt $curloc', 'Rapier (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Koncerz, 'sp_txt = 124 & gt $curloc', 'Koncerz (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
+ FUNC('$menu', '===END===')
+ FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_1') 
+ FUNC('$menu', 'exec_options', $menu_item_Gladius, 'sp_txt = 125 & gt $curloc', 'Gladius (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Bastardsword, 'sp_txt = 126 & gt $curloc', 'Bastard sword (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Machete, 'sp_txt = 127 & gt $curloc', 'Machete (50$)')
+ FUNC('$menu', 'exec_options', $menu_item_Katana, 'sp_txt = 128 & gt $curloc', 'Katana (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Baton, 'sp_txt = 129 & gt $curloc', 'Baton (25$)')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 121:
+ IF sparks => 50: 
+  sparks -= 50
+  кнут += 1
+  $shop_wpn[121] = $shop_wpn_accept
+  else
+  $shop_wpn[121] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 122:
+ IF sparks => 50: 
+  sparks -= 50
+  шпага += 1
+  $shop_wpn[122] = $shop_wpn_accept
+  else
+  $shop_wpn[122] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 123:
+ IF sparks => 50: 
+  sparks -= 50
+  рапира += 1
+  $shop_wpn[123] = $shop_wpn_accept
+  else
+  $shop_wpn[123] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 124:
+ IF sparks => 50: 
+  sparks -= 50
+  кончар += 1
+  $shop_wpn[124] = $shop_wpn_accept
+  else
+  $shop_wpn[124] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 125:
+ IF sparks => 50: 
+  sparks -= 50
+  гладиус += 1
+  $shop_wpn[125] = $shop_wpn_accept
+  else
+  $shop_wpn[125] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 126:
+ IF sparks => 100: 
+  sparks -= 100
+  бастард += 1
+  $shop_wpn[126] = $shop_wpn_accept
+  else
+  $shop_wpn[126] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 127:
+ IF sparks => 50: 
+  sparks -= 50
+  мачете += 1
+  $shop_wpn[127] = $shop_wpn_accept
+  else
+  $shop_wpn[127] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 128:
+ IF sparks => 100: 
+  sparks -= 100
+  катана += 1
+  $shop_wpn[128] = $shop_wpn_accept
+  else
+  $shop_wpn[128] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 129:
+ IF sparks => 25: 
+  sparks -= 25
+  демократизатор += 1
+  $shop_wpn[129] = $shop_wpn_accept
+  else
+  $shop_wpn[129] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 13:
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Flamberge, 'sp_txt = 131 & gt $curloc', 'Flamberge (200$)')
+ FUNC('$menu', 'exec_options', $menu_item_Naginata, 'sp_txt = 132 & gt $curloc', 'Naginata (200$)')
+ FUNC('$menu', 'exec_options', $menu_item_Morningstar, 'sp_txt = 133 & gt $curloc', 'Morningstar (150$)')
+ FUNC('$menu', 'exec_options', $menu_item_Greataxe, 'sp_txt = 134 & gt $curloc', 'Greataxe (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Baseballbat, 'sp_txt = 135 & gt $curloc', 'Baseball bat (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Cattleprod, 'sp_txt = 136 & gt $curloc', 'Cattle prod (150$)')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 131:
+ IF sparks => 200: 
+  sparks -= 200
+  фламберг += 1
+  $shop_wpn[131] = $shop_wpn_accept
+  else
+  $shop_wpn[131] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 132:
+ IF sparks => 200: 
+  sparks -= 200
+  нагината += 1
+  $shop_wpn[132] = $shop_wpn_accept
+  else
+  $shop_wpn[132] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 133:
+ IF sparks => 150: 
+  sparks -= 150
+  моргенштерн += 1
+  $shop_wpn[133] = $shop_wpn_accept
+  else
+  $shop_wpn[133] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 134:
+ IF sparks => 100: 
+  sparks -= 100
+  грейтекс += 1
+  $shop_wpn[134] = $shop_wpn_accept
+  else
+  $shop_wpn[134] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 135:
+ IF sparks => 100: 
+  sparks -= 100
+  бита += 1
+  $shop_wpn[135] = $shop_wpn_accept
+  else
+  $shop_wpn[135] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 136:
+ IF sparks => 150: 
+  sparks -= 150
+  скотобой += 1
+  $shop_wpn[136] = $shop_wpn_accept
+  else
+  $shop_wpn[136] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 3:
+ FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Aramid, 'sp_txt = 21 & gt $curloc', 'Aramid suit(100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Leather, 'sp_txt = 22 & gt $curloc', 'Leather armor(400$)')
+ FUNC('$menu', 'exec_options', $menu_item_Elven, 'sp_txt = 23 & gt $curloc', 'Elven chainmail(250$)')
+ FUNC('$menu', 'exec_options', $menu_item_Yatserin, 'sp_txt = 24 & gt $curloc', 'Yatserin mail(300$)')
+ FUNC('$menu', 'exec_options', $menu_item_Combined, 'sp_txt = 25 & gt $curloc', 'Combined armor(800$)')
+ FUNC('$menu', 'exec_options', $menu_item_Gothicbuy, 'sp_txt = 26 & gt $curloc', 'Gothic plate(1000$)')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 1 & gt $curloc', 'other goods')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 21:
+ IF sparks => 100: 
+  sparks -= 100
+  комбез += 1
+  $shop_wpn[21] = $shop_wpn_accept
+  else
+  $shop_wpn[21] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 22:
+ IF sparks => 400: 
+  sparks -= 400
+  кожан += 1
+  $shop_wpn[22] = $shop_wpn_accept
+  else
+  $shop_wpn[22] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 23:
+ IF sparks => 250: 
+  sparks -= 250
+  эльчуга += 1
+  $shop_wpn[23] = $shop_wpn_accept
+  else
+  $shop_wpn[23] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 24:
+ IF sparks => 300: 
+  sparks -= 300
+  ячуга += 1
+  $shop_wpn[24] = $shop_wpn_accept
+  else
+  $shop_wpn[24] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 25:
+ IF sparks => 800: 
+  sparks -= 800
+  полудоспех += 1
+  $shop_wpn[25] = $shop_wpn_accept
+  else
+  $shop_wpn[25] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 26:
+ IF sparks => 1000: 
+  sparks -= 1000
+  плейт += 1
+  $shop_wpn[26] = $shop_wpn_accept
+  else
+  $shop_wpn[26] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+!'IF sp_txt = 4:
+ $text_display += {<br><br><br><br><br><br><br><div id="under">- Look at my merchandise!<br><div id = "clear"><a href = 'EXEC: gt "slave_sell"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- Tell me in detail what do you expect?<br><div id = "clear"><a href = 'EXEC: interaction_city = 1112 & gt "interaction_city"'><img src = "content\pic\clear.gif"></a></div></div>}
+END'
+
+$text[txt] = $shop_wpn[sp_txt]
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+*p '<div id = "bg"><<$text_display>></div>'
+*p '<div id = "sparks_display"><<sparks>>$</div>'
+
+IF $interaction_type = 'special':
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+if npc = 0:
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div><<$place_location[$place]>>
+
+ Information for consideration:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+ else
+ $info_bar = '' 
+ *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>' 
+ *p '<div id = "side_panel_main"><center><font size = 50%><<$npc_name[$npc_id]>></font><<$npc_status[$npc_id]>>
+
+Information for consideration:
+</center></div>'
+ *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+ <<$npc_info[$npc_id]>>
+</div>'
+END
+	!Strec - jon_UIadds addition	
+	if sjm_weaponshopsparksbegin ! sparks and sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
+
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
+
+--- shop_wpn ---------------------------------
+

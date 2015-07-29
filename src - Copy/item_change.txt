@@ -1,0 +1,129 @@
+# item_change
+!change item in the selected slot
+IF slot = 1:
+ if $master_armor ! 'без_брони': dynamic '<<$master_armor>> += 1'
+ $master_armor = $new_item
+END
+
+IF slot = 2:
+ if $master_back_wpn ! '': dynamic '<<$master_back_wpn>> += 1'
+ $master_back_wpn = $new_item
+END
+
+IF slot = 3:
+ if $master_left_wpn ! '': dynamic '<<$master_left_wpn>> += 1'
+ $master_left_wpn = $new_item
+END
+
+IF slot = 4:
+ if $master_right_wpn ! '': dynamic '<<$master_right_wpn>> += 1'
+ $master_right_wpn = $new_item
+END
+
+IF slot = 5:
+ if $master_arm_wpn ! '': dynamic '<<$master_arm_wpn>> += 1'
+ $master_arm_wpn = $new_item
+END
+
+IF slot = 6:
+ if $master_leg_wpn ! '': dynamic '<<$master_leg_wpn>> += 1'
+ $master_leg_wpn = $new_item
+END
+
+IF slot = 7:
+ dynamic '<<$master_cloth>> += 1'
+ $master_cloth = $new_item
+ dynamic $item_property[$master_cloth]
+END
+
+IF slot = 8:
+ dynamic $item_property_off[$master_head_gear]
+ dynamic '<<$master_head_gear>> += 1'
+ $master_head_gear = $new_item
+ dynamic $item_property[$master_head_gear]
+END
+
+IF slot = 9:
+ dynamic $item_property_off[$master_earring]
+ dynamic '<<$master_earring>> += 1'
+ $master_earring = $new_item
+ dynamic $item_property[$master_earring]
+END
+
+IF slot = 10:
+ dynamic $item_property_off[$master_amulet]
+ dynamic '<<$master_amulet>> += 1'
+ $master_amulet = $new_item
+ dynamic $item_property[$master_amulet]
+END
+
+IF slot = 11:
+ dynamic $item_property_off[$master_ring]
+ dynamic '<<$master_ring>> += 1'
+ $master_ring = $new_item
+ dynamic $item_property[$master_ring]
+END
+
+IF slot = 20:
+ if $slave["armor"] ! 'без_брони': dynamic '<<$slave["armor"]>> += 1'
+ $slave["armor"] = $new_item
+END
+
+IF slot = 21:
+ if $slave["back_wpn"] ! '': dynamic '<<$slave["back_wpn"]>> += 1'
+ $slave["back_wpn"] = $new_item
+END
+
+IF slot = 22:
+ if $slave["left_wpn"] ! '': dynamic '<<$slave["left_wpn"]>> += 1'
+ $slave["left_wpn"] = $new_item
+END
+
+IF slot = 23:
+ if $slave["right_wpn"] ! '': dynamic '<<$slave["right_wpn"]>> += 1'
+ $slave["right_wpn"] = $new_item
+END
+
+IF slot = 40:
+ if $assistant["armor"] ! 'без_брони': dynamic '<<$assistant["armor"]>> += 1'
+ $assistant["armor"] = $new_item
+END
+
+IF slot = 41:
+ if $assistant["back_wpn"] ! '': dynamic '<<$assistant["back_wpn"]>> += 1'
+ $assistant["back_wpn"] = $new_item
+END
+
+IF slot = 42:
+ if $assistant["left_wpn"] ! '': dynamic '<<$assistant["left_wpn"]>> += 1'
+ $assistant["left_wpn"] = $new_item
+END
+
+IF slot = 43:
+ if $assistant["right_wpn"] ! '': dynamic '<<$assistant["right_wpn"]>> += 1'
+ $assistant["right_wpn"] = $new_item
+END
+
+dynamic '<<$new_item>> -= 1'
+
+IF slot > 0 and slot < 20: 
+ $equip_choice = ''
+ gs '$newloc'
+ gt 'master_stat'
+END
+
+IF slot => 20 and slot < 40: 
+ $equip_choice = ''
+ gs '$newloc'
+ gt 'slave_stat'
+END
+
+IF slot => 40 and slot < 60: 
+ $equip_choice = ''
+ gs '$newloc'
+ gt 'assistant_stat'
+END
+
+gt curloc
+--- item_change ---------------------------------
+

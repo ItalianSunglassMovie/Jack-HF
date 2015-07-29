@@ -1,0 +1,115 @@
+# $guild_auction_auto
+!Аукцион клейменых рабынь
+auction_count = 10
+
+!'Определение тренеров выставляющих рабынь на аукцион
+u = 1
+killvar '$trader'
+n = arrsize('$trainer_id')
+i = 0
+e = 0
+:trainers_for_auction
+i += 1
+
+IF trainer_slave_training_count[$trainer_id[i]] = 0:
+ e += 1
+ $trader[e] = $trainer_id[i]
+ trainer_slave_training_count[$trainer_id[i]] = -1
+END
+
+if i < n: jump 'trainers_for_auction'
+
+!Определение участников аукциона
+kn = arrsize('$trader')
+kn -= 2
+k = 0
+:new_npc_auction_turn
+k += 1
+killvar '$auction_participant'
+n = arrsize('$auction_buyer')
+i = 0
+e = 0
+:auction_participation_loop
+i += 1
+IF npc_participation_chance[$auction_buyer[i]] > 0:
+ e += 1
+ $auction_participant[e] = $auction_buyer[i]
+END
+
+if i < n: jump 'auction_participation_loop'
+
+
+killvar 'auction_leader'
+y = 0
+$auction_participant[0] = 'ПЕРЕКУПЩИК'
+slave_specialisation[$trainer_slave_type[$trader[k]]] = 1
+charm = 10 + trainer_slave_rank[$trader[k]] + trainer_rating[$trader[k]]
+rating = trainer_slave_rank[$trader[k]]
+
+n = arrsize ('$auction_participant')
+i = 0
+:interest_loop_auto
+i += 1
+
+IF slave_specialisation[$interesting_specialisation[$auction_participant[i]]] = 1:
+ a = RAND(0,10)
+ a += demand_rating[$auction_participant[i]]
+ participant_interest[$auction_participant[i]] = charm - a
+ IF participant_interest[$auction_participant[i]] > 0 and rating <= demand_rating[$auction_participant[i]]:
+  rises = participant_interest[$auction_participant[i]]
+  r = demand_rating[$auction_participant[i]] - rating
+  if r > 0: rises += 1
+  if r > 1: rises += 2
+  if r > 2: rises += 4
+  if r > 3: rises += 8 
+  b = auction_increment[rating] * rises 
+  cap_summ[$auction_participant[i]] = auction_price[rating] + b
+  ELSE
+  cap_summ[$auction_participant[i]] = 0
+ END
+END
+
+if i < n: jump 'interest_loop_auto'
+
+
+bank_size = auction_price[rating]
+bet_size = auction_increment[rating]
+x = 1
+i = 0
+a = 0
+:torg_loop_auto
+i += 1
+
+IF bank_size < cap_summ[$auction_participant[i]] and i ! y:
+ a = RAND(1,9)
+ IF a > 4 and a < 9:
+  bank_size += bet_size
+ END
+ IF a = 9:
+  double = bet_size * 2
+  bank_size += double
+ END
+ IF a > 4:
+  y = i
+  x = 1
+  i = 0
+  jump 'torg_loop_auto'
+ END 
+END
+
+if i < n: jump 'torg_loop_auto'
+
+i = 0
+e += 1
+IF x < 3: 
+ x += 1
+ jump 'torg_loop_auto'
+ else
+ npc_participation_chance[$auction_participant[y]] = 0
+ $auction_monitoring[u] = '   <<$npc_name[$trader[k]]>> выставляет <<$slave_type_name_sk[$trainer_slave_type[$trader[k]]]>> ранга <<$rating[rating]>>. По итогам торгов товар приобретает <<$auction_participant[y]>>. Финальная цена составила <<bank_size>> искр.'
+ u += 1
+END
+
+if k < kn: jump 'new_npc_auction_turn''
+--- $guild_auction_auto ---------------------------------
+

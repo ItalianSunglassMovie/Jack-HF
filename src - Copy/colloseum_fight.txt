@@ -1,0 +1,55 @@
+# colloseum_fight
+количество_врагов = 1
+
+IF colloseum_fight = 1 or colloseum_fight = 11 or colloseum_fight = 21 or colloseum_fight = 31:
+ g = RAND(1,3)
+ if g = 1:$силуэт_моба['голая_рабыня'] = "content/pic/mob/glad_naked.gif" & $аватара_моба['голая_рабыня'] = "content/pic/mob/glad_naked_ava.jpg"
+ if g = 2:$силуэт_моба['голая_рабыня'] = "content/pic/mob/glad_naked_2.gif" & $аватара_моба['голая_рабыня'] = "content/pic/mob/glad_naked_ava_2.jpg"
+ if g = 3:$силуэт_моба['голая_рабыня'] = "content/pic/mob/glad_naked_3.gif" & $аватара_моба['голая_рабыня'] = "content/pic/mob/glad_naked_ava_3.jpg"
+ $враг[1] = 'голая_рабыня'
+END
+
+IF colloseum_fight = 2 or colloseum_fight = 12 or colloseum_fight = 22 or colloseum_fight = 32:
+ g = RAND(1,3)
+ if g = 1:$силуэт_моба['госпожа'] = "content/pic/characters/mistress_morrigan.gif" & $аватара_моба['госпожа'] = "content/pic/characters/mistress_ava.jpg"
+ if g = 2:$силуэт_моба['госпожа'] = "content/pic/mob/glad_mistress_2.gif" & $аватара_моба['госпожа'] = "content/pic/mob/glad_mistress_ava_2.jpg"
+ if g = 3:$силуэт_моба['госпожа'] = "content/pic/mob/glad_mistress_3.gif" & $аватара_моба['госпожа'] = "content/pic/mob/glad_mistress_ava_3.jpg"
+ $враг[1] = 'госпожа'
+END
+
+IF colloseum_fight = 3 or colloseum_fight = 13 or colloseum_fight = 23 or colloseum_fight = 33:
+ g = RAND(1,3)
+ if g = 1:$силуэт_моба['шиноби'] = "content/pic/mob/glad_shinobi.gif" & $аватара_моба['шиноби'] = "content/pic/mob/glad_shinobi_ava.jpg"
+ if g = 2:$силуэт_моба['шиноби'] = "content/pic/mob/glad_shinobi_2.gif" & $аватара_моба['шиноби'] = "content/pic/mob/glad_shinobi_ava_2.jpg"
+ if g = 3:$силуэт_моба['шиноби'] = "content/pic/mob/glad_shinobi_3.gif" & $аватара_моба['шиноби'] = "content/pic/mob/glad_shinobi_ava_3.jpg"
+ $враг[1] = 'шиноби'
+END
+
+IF colloseum_fight = 4 or colloseum_fight = 14 or colloseum_fight = 24 or colloseum_fight = 34:
+ g = RAND(1,2)
+ if g = 1:$силуэт_моба['амазонка'] = "content/pic/mob/glad_amason.gif" & $аватара_моба['амазонка'] = "content/pic/mob/glad_amason_ava.jpg"
+ if g = 2:$силуэт_моба['амазонка'] = "content/pic/mob/glad_amason_2.gif" & $аватара_моба['амазонка'] = "content/pic/mob/glad_amason_ava_2.jpg"
+ $враг[1] = 'амазонка'
+END
+
+IF colloseum_fight = 5 or colloseum_fight = 15 or colloseum_fight = 25 or colloseum_fight = 35:
+ g = RAND(1,3)
+ if g = 1:$силуэт_моба['латница'] = "content/pic/mob/glad_armored.gif" & $аватара_моба['латница'] = "content/pic/mob/glad_armored_ava.jpg"
+ if g = 2:$силуэт_моба['латница'] = "content/pic/mob/glad_armored_2.gif" & $аватара_моба['латница'] = "content/pic/mob/glad_armored_ava_2.jpg"
+ if g = 3:$силуэт_моба['латница'] = "content/pic/mob/glad_armored_3.gif" & $аватара_моба['латница'] = "content/pic/mob/glad_armored_ava_3.jpg"
+ $враг[1] = 'латница'
+END
+
+IF colloseum_fight > 10:
+combatant = 1
+END
+
+IF colloseum_fight > 20:
+combatant = 2
+END
+
+interaction_city = 199
+gt 'interaction_city'
+!gt 'начать_бой'
+--- colloseum_fight ---------------------------------
+

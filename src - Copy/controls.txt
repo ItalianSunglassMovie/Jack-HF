@@ -1,0 +1,14 @@
+# controls
+!controls hint
+
+'<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
+'<div id = "title_scroll_text">    Controls in this game are carried out solely with the help of the mouse. Interactive elements will turn your cursor into the hand, so that you know that they are clickable.
+    Almost all actions are available from the central menu, but there are shortcuts for most common ones. Specifically, orders for cooking, cleaning, cooking, sex, milking and punishments and rewards as well can be issued with quick buttons under the characters portraits (when corresponding actions are needed). You can set who will be doing cleaning and cooking with rules on your slave/assistant tab. Besides, full list of training courses is available if you click on the big button with the image of academic cap - using it a lot faster than searching required command in the menu.
+    Some choices are colored gray. It means that they are unavailable. The reason for this may be not meeting the requirements. Recheck it.
+
+    Have a nice game!
+</div>'
+
+{<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
+--- controls ---------------------------------
+

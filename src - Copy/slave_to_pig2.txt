@@ -1,0 +1,191 @@
+# slave_to_pig2
+!move slave to pig_2
+temp = slave_state
+slave_state = pig_2_state
+pig_2_state = temp
+
+temp = slave_type
+slave_type = pig_2_type
+pig_2_type = temp
+
+$temp = $slave_type
+$slave_type = $pig_2_type
+$pig_2_type = $temp
+
+$temp_name = $slave_name
+$slave_name = $pig_2_name
+$pig_2_name = $temp_name 
+v_balls_rule = 0
+rules_broken = 0
+
+killvar 'temp'
+killvar '$temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','pig_2'
+copyarr '$slave','$pig_2'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','pig_2_rate'
+
+killvar 'pig_2'
+killvar '$pig_2'
+copyarr 'pig_2','temp'
+copyarr '$pig_2','$temp'
+killvar 'pig_2_rate'
+copyarr 'pig_2_rate','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_pig_2'
+killvar 'already_done_pig_2'
+copyarr 'already_done_pig_2','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_pig_2'
+killvar 'already_sex_pig_2'
+copyarr 'already_sex_pig_2','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','pig_2_inventory'
+copyarr 'pig_2_inventory','temp'
+
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_psy_basic = $pig_2_psy_basic
+$slave_world_description = $pig_2_world_description
+$slave_family_description = $pig_2_family_description
+$slave_occupation_description = $pig_2_occupation_description
+$slave_psy_basic = $pig_2_psy_basic 
+virginity = pig_2_virginity
+
+$pig_2_psy_basic = $temp_psy_basic
+$pig_2_world_description = $temp_world_description
+$pig_2_family_description = $temp_family_description
+$pig_2_occupation_description = $temp_occupation_description
+$pig_2_psy_basic = $temp_psy_basic 
+pig_2_virginity = temp_virginity
+
+tempo["mood"] = slave_prev["mood"]
+tempo["arousal"] = slave_prev["mood"]
+slave["mood"] = pig_2_prev["mood"]
+slave["arousal"] = pig_2_prev["arousal"]
+pig_2["mood"] = tempo["mood"]
+pig_2["arousal"] = tempo["mood"]
+
+tmp = prise_promised
+prise_promised = prise_promised_pig_2
+prise_promised_pig_2 = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_pig_2
+gift_promised_pig_2 = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_pig_2
+prise_promised_pig_2 = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_pig_2
+abandon_treat_pig_2 = tmp
+
+tmp = death_treat
+death_treat = death_treat_pig_2
+death_treat_pig_2 = tmp
+
+temp = slave_sleep_condition
+slave_sleep_condition = pig_2_slave_sleep_condition
+pig_2_slave_sleep_condition = temp
+
+temp = slave_food_type
+slave_food_type = pig_2_slave_food_type
+pig_2_slave_food_type = temp
+
+temp = slave_eats_remains
+slave_eats_remains = pig_2_slave_eats_remains
+pig_2_slave_eats_remains = temp
+
+temp = slave_ration
+slave_ration = pig_2_slave_ration
+pig_2_slave_ration = temp
+
+temp = slave_food_portion
+slave_food_portion = pig_2_slave_food_portion
+pig_2_slave_food_portion = temp
+
+temp = vitamin
+vitamin = pig_2_vitamin
+pig_2_vitamin = temp
+
+temp = silence_rule
+silence_rule = pig_2_silence_rule
+pig_2_silence_rule = temp
+
+temp = master_rule
+master_rule = pig_2_master_rule
+pig_2_master_rule = temp
+
+temp = orgasm_prohibited
+orgasm_prohibited = pig_2_orgasm_prohibited
+pig_2_orgasm_prohibited = temp
+
+temp = shit_prohibited
+shit_prohibited = pig_2_shit_prohibited
+pig_2_shit_prohibited = temp
+
+temp = pet_rule
+pet_rule = pig_2_pet_rule
+pig_2_pet_rule = temp
+
+temp = blowjob_rule
+blowjob_rule = pig_2_blowjob_rule
+pig_2_blowjob_rule = temp
+
+temp = pissuar_rule
+pissuar_rule = pig_2_pissuar_rule
+pig_2_pissuar_rule = temp
+
+temp = toilet_rule
+toilet_rule = pig_2_toilet_rule
+pig_2_toilet_rule = temp
+
+temp = slave_cleans_rule
+slave_cleans_rule = pig_2_slave_cleans_rule
+pig_2_slave_cleans_rule = temp
+
+temp = slave_cooks_rule
+slave_cooks_rule = pig_2_slave_cooks_rule
+pig_2_slave_cooks_rule = temp
+
+temp = slave_washes_rule
+slave_washes_rule = pig_2_slave_washes_rule
+pig_2_slave_washes_rule = temp
+
+temp = slave_tentacle_rule
+slave_tentacle_rule = pig_2_slave_tentacle_rule
+pig_2_slave_tentacle_rule = temp
+
+temp = v_balls_rule
+v_balls_rule = pig_2_v_balls_rule
+pig_2_v_balls_rule = temp
+
+temp = rule_masturbation
+rule_masturbation = pig_2_rule_masturbation
+pig_2_rule_masturbation = temp
+
+--- slave_to_pig2 ---------------------------------
+

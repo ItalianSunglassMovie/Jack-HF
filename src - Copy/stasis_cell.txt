@@ -1,0 +1,64 @@
+# stasis_cell
+$place = "stasis_cell"
+gs '_layout'
+
+if iced_state = 0: 
+ $text = '<<$cell_empty>>'
+ else
+ $text = '   <<$iced_name>> is resting in a stasis state. She can stay like that for unlimited time. Or as long as you spend sparks to maintain operation of the apparatus.'
+END
+
+IF nsfw = 1:
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+if iced_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$iced["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+IF iced_state > 0 and slave_state = CONST_INT['no_slave']:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced''"><img src="content\pic\buttons\release.png"></a></div>'
+END
+
+IF iced_state = 0 and slave_state > CONST_INT['no_slave']:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced''"><img src="content\pic\buttons\imprison.png"></a></div>'
+END
+
+IF iced_state > 0 and slave_state > CONST_INT['no_slave']:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced''"><img src="content\pic\buttons\cell_exchange.png"></a></div>'
+END
+
+IF iced_state > 0:
+ $info_bar = '
+<u>SUMMARY</u>
+<<$beauty[iced["beauty"]]>> 
+<<$stamina[iced["stamina"]]>>  
+<<$exotic[iced["exotic"]]>> 
+<<$fat[iced["fat"]]>> 
+<<$sensitivity[iced["sensitivity"]]>>  
+<<$style[iced["style"]]>> 
+<<$intellect[iced["intellect"]]>> 
+<<$temper[iced["temper"]]>> 
+<<$ego[iced["ego"]]>> 
+<<$pride[iced["pride"]]>> 
+
+<u>TRAITS</u>
+<<$iced_features_list>>
+'
+
+ else
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div>
+<<$place_location[$place]>>
+
+ Information for consideration:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+END
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+*p '<div id = "close_far"><a href = "EXEC: menu_form = 0 & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
+
+--- stasis_cell ---------------------------------
+

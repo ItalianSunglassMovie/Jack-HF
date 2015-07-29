@@ -1,0 +1,85 @@
+# sjm_UI_UIadds_2
+if inventory['stethoscope']<1:
+	inventory['stethoscope'] = 0
+end
+if $quick_move_action = "show" :
+	!-------------------------------------------- Slave Management - Start ------------------------------------------------------
+	if slave_state_2 ! CONST_INT['no_slave']:
+		$tmp = ''
+		if slave_2["age"] = CONST_INT['milf_age']:
+			$tmp += '<div class = "slinfo_mature tooltip-left segoe_print" tooltip-data="Mature woman"><img src="content\pic\ui\jon-UIadds\info_mature.png"></div>'
+		elseif slave_2['fertility'] = -2: 
+			$tmp += '<div class = "slinfo_mature tooltip-left segoe_print" tooltip-data="Lolita"><img src="content\pic\ui\jon-UIadds\info_immature.png"></div>'
+		else:
+			$tmp += '<div class = "slinfo_mature tooltip-left segoe_print" tooltip-data="Young girl"><img src="content\pic\ui\jon-UIadds\info_young.png"></div>'
+		end
+		IF virginity_2 < 2:
+			$tmp += '<div id = "slinfo_virgin" class="tooltip-left segoe_print" tooltip-data="Virgin"><img src="content\pic\ui\jon-UIadds\info_virgin.png"></div>'
+		else
+			$tmp += '<div id = "slinfo_virgin" class="tooltip-left segoe_print" tooltip-data="Not virgin"><img src="content\pic\ui\jon-UIadds\info_virginnot.png"></div>'
+		end	
+		IF slave_2["fertility"] <0: 
+			if slave_2["fertility_revealed"] > 0 or slave_2["fertility"] = -2: 
+				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Not fertile"><img src="content\pic\ui\jon-UIadds\info_fertilenot.png"></div>'
+			else:
+				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Fertile"><img src="content\pic\ui\jon-UIadds\info_fertile.png"></div>'
+			end
+		elseif slave_2["fertility"] = 1: 
+			if slave_2["fertility_revealed"] > 0:
+				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Egglayer"><img src="content\pic\ui\jon-UIadds\info_egglayer.png"></div>'
+			else:
+				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Fertile"><img src="content\pic\ui\jon-UIadds\info_fertile.png"></div>'
+			end
+		else:
+			$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Fertile"><img src="content\pic\ui\jon-UIadds\info_fertile.png"></div>'
+		END
+		$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Future use"><img src="content\pic\ui\jon-UIadds\transparent.png"></div>'
+		$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Future use"><img src="content\pic\ui\jon-UIadds\transparent.png"></div>'
+		IF slave_2["brand"] = 3: 
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Magical brand"><img src="content\pic\ui\jon-UIadds\info_brand_magic.png"></div>'
+		elseif slave_2["brand"] = 2: 
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Tatoo brand"><img src="content\pic\ui\jon-UIadds\info_brand_tatoo.png"></div>'
+		elseif slave_2["brand"] = 1: 
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Branded"><img src="content\pic\ui\jon-UIadds\info_brand.png"></div>'
+		else
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Not branded"><img src="content\pic\ui\jon-UIadds\info_nobrand.png"></div>'
+		END
+		*p '<div id = "slinfo_block_2"><<$tmp>></div>' 
+		!----------------------- Cautious : the goal is just to inform the player of a risk, not more here
+		IF inventory['stethoscope'] ! 0:
+			IF slave_2['parasite'] > 0:
+				if master_medic > 3 or assistant['nurse'] > 3:
+					*p '<div id = "slinfo_pregnant_risk_2" class="tooltip-left segoe_print" tooltip-data="It seems there is a risk that this slave is pregnant!"><img src="content\pic\ui\jon-UIadds\info_slave_pregnantrisk.png"></div>'
+				end
+			else
+				IF slave_2["pregnant"] > 0: 
+					if slave_2["pregnant_revealed"] > 0: 
+						*p '<div id = "slinfo_pregnant_risk_2" class="tooltip-left segoe_print" tooltip-data="It seems there is a risk that this slave is pregnant!"><img src="content\pic\ui\jon-UIadds\info_slave_pregnantrisk.png"></div>'
+					end
+				END
+			end
+			if slave_2['ill'] ! 0:
+				if master['medic'] > 2 or assistant['nurse'] > 2:
+					*p '<div id = "slinfo_pregnant_risk_2" class="tooltip-left segoe_print" tooltip-data="It seems this slave is ill!"><img src="content\pic\ui\jon-UIadds\info_master_ill.png"></div>'
+				end
+			end
+		end
+		*p '<div id = "slinfo_rank_2" class="tooltip-left segoe_print" tooltip-data="Click to know the requirement of next rank"><a href="EXEC: msg $rating_help"><<$rating[rating_2]>></a></div>'
+	end
+	!-------------------------------------------- Slave Management - End ------------------------------------------------------
+	!-------------------------------------------- Master Management - Start ------------------------------------------------------
+	if master_wounds ! 0:
+		if master_medic > 2 or assistant['nurse'] > 2:
+			*p '<div id = "master_info_wounds" class="tooltip-left segoe_print" tooltip-data="It seems master is wounded!"><img src="content\pic\ui\jon-UIadds\info_master_wounded.png"></div>'
+		end
+	end
+	if master_ill ! 0:
+		if master['medic'] > 2 or assistant['nurse'] > 2:
+			*p '<div id = "master_info_wounds" class="tooltip-left segoe_print" tooltip-data="It seems master is ill!"><img src="content\pic\ui\jon-UIadds\info_master_ill.png"></div>'
+		end
+	end
+	!-------------------------------------------- Slave Management - end ------------------------------------------------------
+end
+
+--- sjm_UI_UIadds_2 ---------------------------------
+

@@ -1,0 +1,87 @@
+﻿# hero_creation
+!hero creation screen
+!for msg
+$MSG_BACKIMAGE = 'content\pic\msg_bg.jpg'
+$MSG_OK_IMAGE = 'content/pic/buttons/ok-icon.png'
+$MSG_FORMAT = '<div id = "ink">%TEXT%</div>'
+MSG_TEXT_X = 80
+MSG_TEXT_Y = 50
+MSG_TEXT_W = 380
+MSG_TEXT_H = 420
+MSG_OK_X = 250
+MSG_OK_Y = 430
+MSG_X = 200
+!init vars
+if hero_choice = 0: hero_choice = 1
+$master_ava = $sepia_ava_path[hero_choice]
+$master_ava_color = $clear_ava_path[hero_choice]
+
+*p '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
+
+*p '<div id = "title_scroll_text_left">
+<a href = "EXEC: dynamic $rise_rep & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_rep & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $rep_message & gt $curloc"><<$starting_area>></a>
+<a href = "EXEC: dynamic $rise_str & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_str & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $сила_с_справка & gt $curloc"><<$master_str[master_str]>></a>
+<a href = "EXEC: dynamic $rise_cha & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_cha & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $харизма_с_справка & gt $curloc"><<$master_cha[master_cha]>></a>
+<a href = "EXEC: dynamic $rise_libido & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_libido & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $возбуждение_с_справка & gt $curloc"><<$master_libido[master_libido]>></a> 
+<u>SKILLS:</u>
+<a href = "EXEC: dynamic $rise_tutor & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_tutor & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $учитель_с_справка & gt $curloc"><<$master_tutor[master_tutor]>></a> 
+<a href = "EXEC: dynamic $rise_butler & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_butler & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $дворецкий_с_справка & gt $curloc"><<$master_butler[master_butler]>></a>
+<a href = "EXEC: dynamic $rise_artdirector & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_artdirector & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $артдиректор_с_справка & gt $curloc"><<$master_artdirector[master_artdirector]>></a>
+<a href = "EXEC: dynamic $rise_medic & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_medic & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $медик_с_справка & gt $curloc"><<$master_medic[master_medic]>></a>
+<a href = "EXEC: dynamic $rise_fighter & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_fighter & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $боец_с_справка & gt $curloc"><<$master_fighter[master_fighter]>></a>
+<a href = "EXEC: dynamic $rise_mage & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_mage & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $маг_с_справка & gt $curloc"><<$master_mage[master_mage]>></a>
+<a href = "EXEC: dynamic $rise_domination & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_domination & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $доминирование_с_справка & gt $curloc"><<$master_domination[master_domination]>></a>
+<a href = "EXEC: dynamic $rise_flagelation & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_flagelation & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $флагеляция_с_справка & gt $curloc"><<$master_flagelation[master_flagelation]>></a>
+<a href = "EXEC: dynamic $rise_torture & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_torture & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $палач_с_справка & gt $curloc"><<$master_torture[master_torture]>></a>
+<a href = "EXEC: dynamic $rise_bondage & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_bondage & gt curloc ">[-]</a>&nbsp<a href="EXEC: msg $бондаж_с_справка & gt $curloc"><<$master_bondage[master_bondage]>></a>
+<u><a style = "color: #191970;" href="EXEC: msg $секс_техники_с_справка & gt $curloc">SEX TECHNIQUES:</a></u>
+<a href = "EXEC: dynamic $rise_petting & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_petting & gt curloc ">[-]</a>&nbsp<<$master_petting[master_petting]>>
+<a href = "EXEC: dynamic $rise_penetration & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_penetration & gt curloc ">[-]</a>&nbsp<<$master_penetration[master_penetration]>>
+<a href = "EXEC: dynamic $rise_oral & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_oral & gt curloc ">[-]</a>&nbsp<<$master_oral[master_oral]>>
+<a href = "EXEC: dynamic $rise_fetish & gt curloc ">[+]</a>/<a href = "EXEC: dynamic $lower_fetish & gt curloc ">[-]</a>&nbsp<<$master_fetish[master_fetish]>>
+</div>'
+
+!отдельный класс чтобы блок не съезжал при длинном имени
+*p '<div style="position:absolute;top:110px;left:290px;width:420px;font-family:Segoe Print;color:#191970;font-size:16px;">Name: <<$master_name>> <a href = "EXEC: dynamic $name_type">[change]</a></div>'
+
+*p '<div id = "title_scroll_text_right"><center>Free points
+<<hero_points>>
+<a href = "EXEC: dynamic $scroll_ava_back & gt curloc"><img src = "content\pic\buttons\back_button.png"></a> APPEARANCE <a href = "EXEC: dynamic $scroll_ava & gt curloc"><img src = "content\pic\buttons\forward_button.png"></a>
+</center>
+</div>'
+
+*p '<div id = "title_scroll_text_rightmid"><img src = "<<$master_ava>>"></div>'
+
+*p '<div id = "title_scroll_text_rightlow">
+<u>COLOR EXPLANATION:</u>
+<font color="#008000">Awesome</font>
+<font color="#008080">Good</font>
+<font color="#0000CD">Normal</font>
+<font color="#4B0082">Poor</font>
+<font color="#C71585">Bad</font>
+<font color="#cd0000">Awful</font>
+</div>'
+
+*p '<div style="position:absolute;top:440px;left:855px;font-family:Segoe Print;"><br>
+<font color="#008000">80 pnts</font>
+<font color="#008080">40 pnts</font>
+<font color="#0000CD">20 pnts</font>
+<font color="#4B0082">10 pnts</font>
+<font color="#C71585">10 pnts</font></div>'
+
+
+*p '<div style="position:absolute;top:715px;left:580px;font-family:Victoriana;font-size:36px;"><a style = "color: black;" href = ''EXEC: gt "start_game"''>{ Start }</a></div>'
+
+IF patrician_mode_off = 0:
+ *p '<div style="position:absolute;top:445px;left:755px;font-family:Segoe Print;"><a style = "color: black;" href = ''EXEC: msg $patrician_mode_help & gt $curloc''>Patrician</a></div>'
+
+ IF get_initial_slave = 1:
+  *p '<div style="position:absolute;top:448px;left:870px;"><a href = "EXEC: get_initial_slave = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>' 
+  else
+  *p '<div style="position:absolute;top:451px;left:870px;"><a href = "EXEC: get_initial_slave = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+END
+
+*p {<div id = "close_scroll"><a href = 'EXEC: hero_points = 0 & gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
+--- hero_creation ---------------------------------
+

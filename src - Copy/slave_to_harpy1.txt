@@ -1,0 +1,190 @@
+# slave_to_harpy1
+!move slave to harpy_1
+temp = slave_state
+slave_state = harpy_1_state
+harpy_1_state = temp
+
+temp = slave_type
+slave_type = harpy_1_type
+harpy_1_type = temp
+
+$temp = $slave_type
+$slave_type = $harpy_1_type
+$harpy_1_type = $temp
+
+$temp_name = $slave_name
+$slave_name = $harpy_1_name
+$harpy_1_name = $temp_name 
+v_balls_rule = 0
+rules_broken = 0
+
+killvar 'temp'
+killvar '$temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','harpy_1'
+copyarr '$slave','$harpy_1'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','harpy_1_rate'
+
+killvar 'harpy_1'
+killvar '$harpy_1'
+copyarr 'harpy_1','temp'
+copyarr '$harpy_1','$temp'
+killvar 'harpy_1_rate'
+copyarr 'harpy_1_rate','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_harpy_1'
+killvar 'already_done_harpy_1'
+copyarr 'already_done_harpy_1','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_harpy_1'
+killvar 'already_sex_harpy_1'
+copyarr 'already_sex_harpy_1','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','harpy_1_inventory'
+copyarr 'harpy_1_inventory','temp'
+
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_psy_basic = $harpy_1_psy_basic
+$slave_world_description = $harpy_1_world_description
+$slave_family_description = $harpy_1_family_description
+$slave_occupation_description = $harpy_1_occupation_description
+$slave_psy_basic = $harpy_1_psy_basic 
+virginity = harpy_1_virginity
+
+$harpy_1_psy_basic = $temp_psy_basic
+$harpy_1_world_description = $temp_world_description
+$harpy_1_family_description = $temp_family_description
+$harpy_1_occupation_description = $temp_occupation_description
+$harpy_1_psy_basic = $temp_psy_basic 
+harpy_1_virginity = temp_virginity
+
+tempo["mood"] = slave_prev["mood"]
+tempo["arousal"] = slave_prev["mood"]
+slave["mood"] = harpy_1_prev["mood"]
+slave["arousal"] = harpy_1_prev["arousal"]
+harpy_1["mood"] = tempo["mood"]
+harpy_1["arousal"] = tempo["mood"]
+
+tmp = prise_promised
+prise_promised = prise_promised_harpy_1
+prise_promised_harpy_1 = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_harpy_1
+gift_promised_harpy_1 = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_harpy_1
+prise_promised_harpy_1 = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_harpy_1
+abandon_treat_harpy_1 = tmp
+
+tmp = death_treat
+death_treat = death_treat_harpy_1
+death_treat_harpy_1 = tmp
+
+temp = slave_sleep_condition
+slave_sleep_condition = harpy_1_slave_sleep_condition
+harpy_1_slave_sleep_condition = temp
+
+temp = slave_food_type
+slave_food_type = harpy_1_slave_food_type
+harpy_1_slave_food_type = temp
+
+temp = slave_eats_remains
+slave_eats_remains = harpy_1_slave_eats_remains
+harpy_1_slave_eats_remains = temp
+
+temp = slave_ration
+slave_ration = harpy_1_slave_ration
+harpy_1_slave_ration = temp
+
+temp = slave_food_portion
+slave_food_portion = harpy_1_slave_food_portion
+harpy_1_slave_food_portion = temp
+
+temp = vitamin
+vitamin = harpy_1_vitamin
+harpy_1_vitamin = temp
+
+temp = silence_rule
+silence_rule = harpy_1_silence_rule
+harpy_1_silence_rule = temp
+
+temp = master_rule
+master_rule = harpy_1_master_rule
+harpy_1_master_rule = temp
+
+temp = orgasm_prohibited
+orgasm_prohibited = harpy_1_orgasm_prohibited
+harpy_1_orgasm_prohibited = temp
+
+temp = shit_prohibited
+shit_prohibited = harpy_1_shit_prohibited
+harpy_1_shit_prohibited = temp
+
+temp = pet_rule
+pet_rule = harpy_1_pet_rule
+harpy_1_pet_rule = temp
+
+temp = blowjob_rule
+blowjob_rule = harpy_1_blowjob_rule
+harpy_1_blowjob_rule = temp
+
+temp = pissuar_rule
+pissuar_rule = harpy_1_pissuar_rule
+harpy_1_pissuar_rule = temp
+
+temp = toilet_rule
+toilet_rule = harpy_1_toilet_rule
+harpy_1_toilet_rule = temp
+
+temp = slave_cleans_rule
+slave_cleans_rule = harpy_1_slave_cleans_rule
+harpy_1_slave_cleans_rule = temp
+
+temp = slave_cooks_rule
+slave_cooks_rule = harpy_1_slave_cooks_rule
+harpy_1_slave_cooks_rule = temp
+
+temp = slave_washes_rule
+slave_washes_rule = harpy_1_slave_washes_rule
+harpy_1_slave_washes_rule = temp
+
+temp = slave_tentacle_rule
+slave_tentacle_rule = harpy_1_slave_tentacle_rule
+harpy_1_slave_tentacle_rule = temp
+
+temp = v_balls_rule
+v_balls_rule = harpy_1_v_balls_rule
+harpy_1_v_balls_rule = temp
+
+temp = rule_masturbation
+rule_masturbation = harpy_1_rule_masturbation
+harpy_1_rule_masturbation = temp
+--- slave_to_harpy1 ---------------------------------
+

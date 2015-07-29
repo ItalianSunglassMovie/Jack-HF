@@ -1,0 +1,20 @@
+# credits
+!about the game
+
+'<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
+
+'<div id = "title_scroll_text">Author of this mess: <a href="http://www.blogger.com/profile/07866533522635117580">Old Huntsman</a>
+Mail for contact: <a href="mailto:old_huntsman@yahoo.com">old_huntsman@yahoo.com</a>
+Game is built on <a href="http://qsp.su">AERO QSP</a> platform and designed for use with FastQSP player by Graylor (bundled with the game). Using another QSP players may lead to incorrect performance of the program.
+You can check <a href="http://oldhuntergames.blogspot.ru/">author''s blog</a> for other games (untranslated) from this author. 
+If you want to support author in creating new games or just thank for this one, don`t be shy to send your donations via Yandex-money or PayPal, 
+all necessary information is available for this in blog.
+
+I want to express special gratitude to <a href="mailto:graylor@yandex.ru">Graylor</a> for creating non-obstructive player specially for this game.
+Thanks to the_vm, to the anon who made awesome grimdark interface and the rest of enthusiasts who make the current fixes and continue to develop the game.
+Also big thanks to those who helped out with creation interface decoration, text editing and beta-testing. I would not be able to do it alone.
+</div>'
+
+{<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
+--- credits ---------------------------------
+

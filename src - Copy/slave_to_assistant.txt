@@ -1,0 +1,227 @@
+# slave_to_assistant
+!move slave an assistant or or vice versa
+
+temp = slave_state
+slave_state = assistant_state
+assistant_state = temp
+
+temp = slave_type
+slave_type = assistant_type
+assistant_type = temp
+
+$temp = $slave_type
+$slave_type = $assistant_type
+$assistant_type = $temp
+
+$temp_name = $slave_name
+$slave_name = $assistant_name
+$assistant_name = $temp_name 
+v_balls_rule = 0
+rules_broken = 0
+
+killvar 'temp'
+killvar '$temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','assistant'
+copyarr '$slave','$assistant'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','assistant_rate'
+
+killvar 'assistant'
+killvar '$assistant'
+copyarr 'assistant','temp'
+copyarr '$assistant','$temp'
+killvar 'assistant_rate'
+copyarr 'assistant_rate','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_assistant'
+killvar 'already_done_assistant'
+copyarr 'already_done_assistant','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_gain_assistant'
+killvar 'already_gain_assistant'
+copyarr 'already_gain_assistant','already_gain_virtue'
+killvar 'already_gain_virtue'
+copyarr 'already_gain_virtue','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_assistant'
+killvar 'already_sex_assistant'
+copyarr 'already_sex_assistant','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','assistant_inventory'
+copyarr 'assistant_inventory','temp'
+
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_psy_basic = $assistant_psy_basic
+$slave_world_description = $assistant_world_description
+$slave_family_description = $assistant_family_description
+$slave_occupation_description = $assistant_occupation_description
+$slave_psy_basic = $assistant_psy_basic 
+virginity = assistant_virginity
+
+$assistant_psy_basic = $temp_psy_basic
+$assistant_world_description = $temp_world_description
+$assistant_family_description = $temp_family_description
+$assistant_occupation_description = $temp_occupation_description
+$assistant_psy_basic = $temp_psy_basic 
+assistant_virginity = temp_virginity
+
+tempo["mood"] = slave_prev["mood"]
+tempo["arousal"] = slave_prev["mood"]
+slave["mood"] = assistant_prev["mood"]
+slave["arousal"] = assistant_prev["arousal"]
+assistant["mood"] = tempo["mood"]
+assistant["arousal"] = tempo["mood"]
+
+tmp = prise_promised
+prise_promised = prise_promised_assistant
+prise_promised_assistant = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_assistant
+gift_promised_assistant = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_assistant
+prise_promised_assistant = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_assistant
+abandon_treat_assistant = tmp
+
+tmp = death_treat
+death_treat = death_treat_assistant
+death_treat_assistant = tmp
+
+temp = slave_sleep_condition
+slave_sleep_condition = assistant_slave_sleep_condition
+assistant_slave_sleep_condition = temp
+
+temp = slave_food_type
+slave_food_type = assistant_slave_food_type
+assistant_slave_food_type = temp
+
+temp = slave_eats_remains
+slave_eats_remains = assistant_slave_eats_remains
+assistant_slave_eats_remains = temp
+
+temp = slave_ration
+slave_ration = assistant_slave_ration
+assistant_slave_ration = temp
+
+temp = slave_food_portion
+slave_food_portion = assistant_slave_food_portion
+assistant_slave_food_portion = temp
+
+temp = vitamin
+vitamin = assistant_vitamin
+assistant_vitamin = temp
+
+temp = silence_rule
+silence_rule = assistant_silence_rule
+assistant_silence_rule = temp
+
+temp = master_rule
+master_rule = assistant_master_rule
+assistant_master_rule = temp
+
+temp = orgasm_prohibited
+orgasm_prohibited = assistant_orgasm_prohibited
+assistant_orgasm_prohibited = temp
+
+temp = shit_prohibited
+shit_prohibited = assistant_shit_prohibited
+assistant_shit_prohibited = temp
+
+temp = pet_rule
+pet_rule = assistant_pet_rule
+assistant_pet_rule = temp
+
+temp = blowjob_rule
+blowjob_rule = assistant_blowjob_rule
+assistant_blowjob_rule = temp
+
+temp = pissuar_rule
+pissuar_rule = assistant_pissuar_rule
+assistant_pissuar_rule = temp
+
+temp = toilet_rule
+toilet_rule = assistant_toilet_rule
+assistant_toilet_rule = temp
+
+temp = slave_cleans_rule
+slave_cleans_rule = assistant_slave_cleans_rule
+assistant_slave_cleans_rule = temp
+
+temp = slave_cooks_rule
+slave_cooks_rule = assistant_slave_cooks_rule
+assistant_slave_cooks_rule = temp
+
+temp = slave_washes_rule
+slave_washes_rule = assistant_slave_washes_rule
+assistant_slave_washes_rule = temp
+
+temp = slave_tentacle_rule
+slave_tentacle_rule = assistant_slave_tentacle_rule
+assistant_slave_tentacle_rule = temp
+
+temp = v_balls_rule
+v_balls_rule = assistant_v_balls_rule
+assistant_v_balls_rule = temp
+
+temp = rule_masturbation
+rule_masturbation = assistant_rule_masturbation
+assistant_rule_masturbation = temp
+
+IF assistant["bcheck"] = 0:
+ assistant["bcheck"] = 1
+ if assistant["beauty"] = 1: assistant_rate["beauty"] = 10
+ if assistant["beauty"] = 2: assistant_rate["beauty"] = 20
+ if assistant["beauty"] = 3: assistant_rate["beauty"] = 40
+ if assistant["beauty"] = 4: assistant_rate["beauty"] = 60
+ if assistant["beauty"] = 5: assistant_rate["beauty"] = 80
+ if assistant["beauty"] = 6: assistant_rate["beauty"] = 120
+ if assistant["beauty"] = 7: assistant_rate["beauty"] = 140
+ if assistant["beauty"] = 8: assistant_rate["beauty"] = 160
+ if assistant["beauty"] = 9: assistant_rate["beauty"] = 180
+ if assistant["beauty"] = 10: assistant_rate["beauty"] = 200
+ if assistant_rate["beauty"] => 10: assistant["base_beauty"] = 1
+ if assistant_rate["beauty"] => 20: assistant["base_beauty"] = 2
+ if assistant_rate["beauty"] => 40: assistant["base_beauty"] = 3
+ if assistant_rate["beauty"] => 60: assistant["base_beauty"] = 4
+ if assistant_rate["beauty"] => 80: assistant["base_beauty"] = 5
+ if assistant_rate["beauty"] => 120: assistant["base_beauty"] = 6
+ if assistant_rate["beauty"] => 140: assistant["base_beauty"] = 7
+ if assistant_rate["beauty"] => 160: assistant["base_beauty"] = 8
+ if assistant_rate["beauty"] => 180: assistant["base_beauty"] = 9
+ if assistant_rate["beauty"] => 200: assistant["base_beauty"] = 10
+END
+
+gs '#txt'
+gs '#txt_2'
+gs '$newloc'
+GT 'menu_form'
+--- slave_to_assistant ---------------------------------
+

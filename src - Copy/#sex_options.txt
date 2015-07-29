@@ -1,0 +1,204 @@
+# #sex_options
+!MAIN MENU FOR ACTIVE SEX
+
+killvar '$play_sound'  
+$play_sound[1] = ''
+
+!main options
+$sex_options[0] = {
+    FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 1)
+    IF strip = 0:
+        FUNC('$menu', 'sex_interaction', $menu_item_sexStriptease, menu_sexStriptease, 'Striptease')
+    else
+        FUNC('$menu', 'sex_interaction', $menu_item_sexSeduce, menu_sexSeduce, 'Seduce')
+    END
+    FUNC('$menu', 'sex_interaction', $menu_item_sexKiss, menu_sexKiss, 'Kiss')
+    FUNC('$menu', 'sex_interaction', $menu_item_Caressme, menu_Caressme, 'Caress me <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Massageher, menu_Massageher, 'Massage her <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Arouseher, menu_Arouseher, 'Arouse her <<$intensity[intensity]>>')
+    IF sex['pc_boner'] > 0:
+        FUNC('$menu', 'exec_sex_options', $menu_item_Startsex, 'sex_num = 1 & gt $curloc', 'Start sex')
+    END
+    FUNC('$menu', 'exec_sex_options', $menu_item_Perverse, 'sex_num = 2 & gt $curloc', 'Perverse games')
+    FUNC('$menu', 'exec_sex_options', $menu_item_Exitsex, 'sex_num = 0 & gt "sex_end"', 'Exit')
+    FUNC('$menu', '===SEX_END===')
+}
+
+$sex_options[1] = {
+    FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 3)
+    if lube = 0: FUNC('$menu', 'sex_interaction', $menu_item_Lubricant, menu_Lubricant, 'Lubricant')
+    IF sex['girl_virgin'] = 1:
+        FUNC('$menu', 'exec_sex_options', $menu_item_Defloration, 'sex_num = 11 & sex_interaction = 11 & gt "sex_interaction"', 'Defloration')
+    else
+        FUNC('$menu', 'exec_sex_options', $menu_item_activeVaginal, 'sex_num = 11 &  sex_interaction = 12 & gt "sex_interaction"', 'Vaginal sex')
+    END
+    FUNC('$menu', 'exec_sex_options', $menu_item_activeAnal, 'sex_num = 12 & sex_interaction = 13 & gt "sex_interaction"', 'Anal sex')
+    FUNC('$menu', 'exec_sex_options', $menu_item_minet, 'sex_num = 13 & sex_interaction = 14 & gt "sex_interaction"', '<<$minet[intensity]>>')
+    FUNC('$menu', 'exec_sex_options', $menu_item_frottage, 'sex_num = 14 & sex_interaction = 15 & gt "sex_interaction"', '<<$frottage[intensity]>>')
+    FUNC('$menu', 'exec_sex_options', $menu_item_Prelude, 'sex_num = 0 & gt $curloc', 'Prelude')
+    FUNC('$menu', '===SEX_END===')
+}
+
+$sex_options[11] = {
+    FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 1)
+    IF sex['girl_virgin'] = 1:
+        FUNC('$menu', 'sex_interaction', $menu_item_Continuezvirgin, menu_Continuezvirgin, 'Continue <<$intensity[intensity]>>')
+    else
+        FUNC('$menu', 'sex_interaction', $menu_item_Continuexvirgin, menu_Continuexvirgin, 'Continue <<$intensity[intensity]>>')
+    END
+    IF sex["pc_excitement_state"] > 2:
+        FUNC('$menu', 'exec_sex_options', $menu_item_Cum, 'sex_num = 9 & gt $curloc', 'Cum')
+    else
+        FUNC('$menu', 'sex_location_gray', $menu_item_Cum_gray, empty, 'Cum')
+    END
+    FUNC('$menu', 'sex_interaction', $menu_item_Caress_mouth, menu_Caress_mouth, 'Caress with mouth <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Caress_hands, menu_Caress_hands, 'Caress with hands <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_sex_comment, menu_sex_comment, '<<$sex_comment[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_sex_hit, menu_sex_hit, '<<$sex_hit[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Bite, menu_Bite, 'Bite <<$intensity[intensity]>>')
+    !$sex_menu += "<div id=""under"">Strangle <<$intensity[intensity]>> <br><div id = ""clear""><a href = 'EXEC: sex_interaction = 166 & gt ""sex_interaction""'><img src = ""content\pic\clear.gif""></a></div></div>"
+    FUNC('$menu', 'exec_sex_options', $menu_item_Stopsex, 'sex_num = 0 & gt $curloc', 'Stop it')
+    FUNC('$menu', '===SEX_END===')
+}
+
+$sex_options[12] = {
+    FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 1)
+        FUNC('$menu', 'sex_interaction', $menu_item_Continuexvirgin, menu_Continuesex1, 'Continue <<$intensity[intensity]>>')
+    IF sex["pc_excitement_state"] > 2:
+        FUNC('$menu', 'exec_sex_options', $menu_item_Cum, 'sex_num = 9 & gt $curloc', 'Cum')
+    else
+        FUNC('$menu', 'sex_location_gray', $menu_item_Cum_gray, empty, 'Cum')
+    END
+    FUNC('$menu', 'sex_interaction', $menu_item_Caress_mouth, menu_Caress_mouth, 'Caress with mouth <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Caress_hands, menu_Caress_hands, 'Caress with hands <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_sex_comment, menu_sex_comment, '<<$sex_comment[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_sex_hit, menu_sex_hit, '<<$sex_hit[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Bite, menu_Bite, 'Bite <<$intensity[intensity]>>')
+    !$sex_menu += "<div id=""under"">Strangle <<$intensity[intensity]>> <br><div id = ""clear""><a href = 'EXEC: sex_interaction = 166 & gt ""sex_interaction""'><img src = ""content\pic\clear.gif""></a></div></div>"
+    FUNC('$menu', 'exec_sex_options', $menu_item_Stopsex, 'sex_num = 0 & gt $curloc', 'Stop it')
+    FUNC('$menu', '===SEX_END===')
+}
+
+$sex_options[13] = {
+    FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 1)
+        FUNC('$menu', 'sex_interaction', $menu_item_Continuexvirgin, menu_Continuesex2, 'Continue <<$intensity[intensity]>>')
+    IF sex["pc_excitement_state"] > 2:
+        FUNC('$menu', 'exec_sex_options', $menu_item_Cum, 'sex_num = 9 & gt $curloc', 'Cum')
+    else
+        FUNC('$menu', 'sex_location_gray', $menu_item_Cum_gray, empty, 'Cum')
+    END
+    FUNC('$menu', 'sex_interaction', $menu_item_Caress_mouth, menu_Caress_mouth, 'Caress with mouth <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Caress_hands, menu_Caress_hands, 'Caress with hands <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_sex_comment, menu_sex_comment, '<<$sex_comment[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_sex_hit, menu_sex_hit, '<<$sex_hit[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Bite, menu_Bite, 'Bite <<$intensity[intensity]>>')
+    !$sex_menu += "<div id=""under"">Strangle <<$intensity[intensity]>> <br><div id = ""clear""><a href = 'EXEC: sex_interaction = 166 & gt ""sex_interaction""'><img src = ""content\pic\clear.gif""></a></div></div>"
+    FUNC('$menu', 'exec_sex_options', $menu_item_Stopsex, 'sex_num = 0 & gt $curloc', 'Stop it')
+    FUNC('$menu', '===SEX_END===')
+}
+
+$sex_options[14] = {
+    FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 1)
+        FUNC('$menu', 'sex_interaction', $menu_item_Continuexvirgin, menu_Continuesex3, 'Continue <<$intensity[intensity]>>')
+    IF sex["pc_excitement_state"] > 2:
+        FUNC('$menu', 'exec_sex_options', $menu_item_Cum, 'sex_num = 9 & gt $curloc', 'Cum')
+    else
+        FUNC('$menu', 'sex_location_gray', $menu_item_Cum_gray, empty, 'Cum')
+    END
+    FUNC('$menu', 'sex_interaction', $menu_item_Caress_mouth, menu_Caress_mouth, 'Caress with mouth <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Caress_hands, menu_Caress_hands, 'Caress with hands <<$intensity[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_sex_comment, menu_sex_comment, '<<$sex_comment[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_sex_hit, menu_sex_hit, '<<$sex_hit[intensity]>>')
+    FUNC('$menu', 'sex_interaction', $menu_item_Bite, menu_Bite, 'Bite <<$intensity[intensity]>>')
+    !$sex_menu += "<div id=""under"">Strangle <<$intensity[intensity]>> <br><div id = ""clear""><a href = 'EXEC: sex_interaction = 166 & gt ""sex_interaction""'><img src = ""content\pic\clear.gif""></a></div></div>"
+    FUNC('$menu', 'exec_sex_options', $menu_item_Stopsex, 'sex_num = 0 & gt $curloc', 'Stop it')
+    FUNC('$menu', '===SEX_END===')
+}
+
+
+$sex_options[2] = {
+    FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    IF sex["eyes_bound"] = 0: 
+        FUNC('$menu', 'sex_interaction', $menu_item_Blindfold_her, menu_Blindfold_her, 'Blindfold her')
+    else
+        FUNC('$menu', 'sex_interaction', $menu_item_Remove_blindfold, menu_Remove_blindfold, 'Remove blindfold')
+    END 
+    IF sex['bondage'] = 0: 
+        FUNC('$menu', 'sex_interaction', $menu_item_Tie_her, menu_Tie_her, 'Tie her')
+    else
+        FUNC('$menu', 'sex_interaction', $menu_item_Untie_her, menu_Untie_her, 'Untie her')
+    END
+    IF sex['clamps'] = 0:
+        FUNC('$menu', 'sex_interaction', $menu_item_Nipple_clamps, menu_Nipple_clamps, 'Nipple clamps')
+    ELSE
+        FUNC('$menu', 'sex_interaction', $menu_item_Remove_clamps, menu_Remove_clamps, 'Remove clamps')
+    END
+        FUNC('$menu', 'sex_interaction', $menu_item_Tickle_dagger, menu_Tickle_dagger, 'Tickle with the dagger')
+        FUNC('$menu', 'sex_interaction', $menu_item_Hot_wax, menu_Hot_wax, 'Hot wax')
+    IF sex['enema'] = 0:
+        FUNC('$menu', 'sex_interaction', $menu_item_Put_enema, menu_Put_enema, 'Put an enema')
+    else
+        FUNC('$menu', 'sex_interaction', $menu_item_Release_water, menu_Release_water, 'Release water')
+    END
+    FUNC('$menu', 'sex_interaction', $menu_item_Golden_shower, menu_Golden_shower, 'Golden shower')
+    FUNC('$menu', 'sex_interaction', $menu_item_Fistingactive, menu_Fistingactive, 'Fisting')
+    FUNC('$menu', 'exec_sex_options', $menu_item_Prelude, 'sex_num = 0 & gt $curloc', 'Prelude')
+    FUNC('$menu', '===SEX_END===')
+}
+
+$sex_options[9] = {
+    FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 2)
+    IF $insertion = 'anal' or $insertion = 'vaginal':
+        FUNC('$menu', 'exec_sex_options', $menu_item_Cum_inside, 'sex_num = 0 & sex_interaction = 91 & gt "sex_interaction"', 'Cum inside')
+    END
+    FUNC('$menu', 'exec_sex_options', $menu_item_Cum_mouth, 'sex_num = 0 & sex_interaction = 92 & gt "sex_interaction"', 'Cum in mouth')
+    FUNC('$menu', 'exec_sex_options', $menu_item_cum_Bukkake, 'sex_num = 0 & sex_interaction = 93 & gt "sex_interaction"', 'Bukkake')
+    IF $insertion = 'anal':
+        FUNC('$menu', 'exec_sex_options', $menu_item_on_ass, 'sex_num = 0 & sex_interaction = 94 & gt "sex_interaction"', 'Cum on ass')
+    else
+        FUNC('$menu', 'exec_sex_options', $menu_item_on_breasts, 'sex_num = 0 & sex_interaction = 94 & gt "sex_interaction"', 'Cum on breasts')
+    END
+    FUNC('$menu', 'exec_sex_options', $menu_item_on_floor, 'sex_num = 0 & sex_interaction = 95 & gt "sex_interaction"', 'Cum on the floor')
+    FUNC('$menu', '===SEX_END===')
+}
+
+!настройки
+$sex_options[100] = {
+  $sex_menu = '<br>'
+ IF exam_in_progress ! 1:
+  $sex_menu += {<div id="under_gray">{ { { UI } } }<br></div>}
+  IF ui_style ! 1:
+   $sex_menu += {<br><div id="under">Old<br><div id = "clear"><a href = 'EXEC: ui_style = 1 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $sex_menu += {<br><div id="under_gray">Old<br></div>}
+  END
+  IF ui_style ! 0:
+   $sex_menu += {<div id="under">Classic<br><div id = "clear"><a href = 'EXEC: ui_style = 0 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $sex_menu += {<div id="under_gray">Classic<br></div>}
+  END
+  IF ui_style ! 2:
+   $sex_menu += {<div id="under">Grimdark<br><div id = "clear"><a href = 'EXEC: ui_style = 2 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $sex_menu += {<div id="under_gray">Grimdark<br></div>}
+  END
+ END
+  
+  $sex_menu += {<br><div id="under_gray">{ { { NSFW } } }<br></div>}
+  IF nsfw ! 1:
+   $sex_menu += {<div id="under">On<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $sex_menu += {<div id="under">Off<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>} 
+  END
+  
+  $sex_menu += {<br><br><br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: sex_num = 0 & gt curloc'><img src = "content\pic\clear.gif"></a></div></div>}
+}
+--- #sex_options ---------------------------------
+

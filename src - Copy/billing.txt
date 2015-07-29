@@ -1,0 +1,195 @@
+# billing
+!Billing on the basis of the decade
+
+rental_cost = estate_cost_main[$estate]
+if dungeon > 0: rental_cost += estate_cost_dungeon[$estate]
+if bouduar > 0: rental_cost += estate_cost_bouduar[$estate]
+if lab > 0: rental_cost += estate_cost_lab[$estate]
+if pen > 0: rental_cost += 10
+
+food_bill = total_food_cost
+total_food_cost = 0
+
+master_wealth = master_wealth_target
+
+if master_wealth = 0: other_bills = 0
+if master_wealth = 1: other_bills = RAND (20,30)
+if master_wealth = 1 and day = 10: other_bills = 0
+if master_wealth = 2: other_bills = RAND (40,60)
+if master_wealth = 2 and day = 10: other_bills = 0
+if master_wealth = 3: other_bills = RAND (80,120)
+if master_wealth = 3 and day = 10: other_bills = 0
+if master_wealth = 4: other_bills = RAND (200,300)
+if master_wealth = 4 and day = 10: other_bills = 0
+if master_wealth = 5: other_bills = RAND (400,600)
+if master_wealth = 5 and day = 10: other_bills = 0
+if master_wealth = 6: other_bills = RAND (800,1200)
+if master_wealth = 6 and day = 10: other_bills = 0
+
+if stasis_tank > 0: other_bills += 20
+if iced_1_state > 0: other_bills += 10
+if iced_2_state > 0: other_bills += 10
+if iced_3_state > 0: other_bills += 10
+
+other_bills += autobuy_cost
+autobuy_cost = 0
+
+revised_payment = food_bill + other_bills
+
+IF assistant_account_rule = 1:
+ assistant_rate["intellect"] += 3
+ assistant_rate["secretary"] += 15
+ account_skill = assistant["secretary"] + assistant["intellect"]
+ IF assistant["secretary_affinity"] > 0:
+  account_skill += 2
+ END
+ IF assistant["secretary_affinity"] < 0:
+  account_skill -= 2
+ END  
+END
+
+IF slave_account_rule = 1:
+ slave_rate["intellect"] += 3
+ slave_rate["secretary"] += 15
+ account_skill = slave["secretary"] + slave["intellect"]
+ if slave["obedience"] < 0: account_skill += slave["obedience"]
+ IF slave["secretary_affinity"] > 0:
+  account_skill += 2
+  if slave["pos_job"] < 3: slave["pos_job"] = 3
+ END
+ IF slave["secretary_affinity"] < 0:
+  account_skill -= 2
+  if slave["neg_job"] < 3: slave["neg_job"] = 3
+ END 
+END
+
+fine = 0
+discount = 0
+
+IF slave_account_rule + assistant_account_rule > 0:
+ percent = revised_payment/20
+ fine_chance = RAND (2,10)
+ IF slave["secretary"] + slave["intellect"] < 4: fine_chance += 5
+ IF assistant["secretary"] + assistant["intellect"] < 4: fine_chance += 5
+ a = fine_chance - account_skill
+ if a > 0: fine = a*percent
+ discount_chance = RAND (2,10)
+ IF slave["secretary"] + slave["intellect"] < 4: fine_chance -= 5
+ IF assistant["secretary"] + assistant["intellect"] < 4: fine_chance -= 5
+ a = account_skill - discount_chance
+ if a > 0: discount = a*percent 
+ else
+ master_mood[neg_accounts] = 1 + brand_reputation
+END
+
+final_payment = rental_cost + revised_payment + fine - discount
+
+barn_report_cow_profit = barn_milk_1_profit + barn_milk_2_profit + barn_milk_3_profit + barn_milk_4_profit + barn_milk_5_profit + barn_milk_6_profit + barn_milk_7_profit + barn_milk_8_profit + barn_milk_9_profit + barn_milk_10_profit + barn_milk_11_profit + barn_milk_12_profit + barn_cream_1_profit + barn_cream_2_profit + barn_cream_3_profit + barn_cream_4_profit + barn_cream_5_profit + barn_cream_6_profit + barn_cream_7_profit + barn_cream_8_profit + barn_cream_9_profit + barn_cream_10_profit + barn_cream_11_profit + barn_cream_12_profit
+barn_report_egg_profit = barn_egg_1_profit + barn_egg_2_profit + barn_egg_3_profit + barn_egg_4_profit + barn_egg_5_profit + barn_egg_6_profit + barn_egg_7_profit + barn_egg_8_profit + barn_egg_9_profit + barn_egg_10_profit + barn_egg_11_profit + barn_egg_12_profit
+barn_report_pig_profit = barn_pig_1_profit + barn_pig_2_profit + barn_pig_3_profit + barn_pig_4_profit + barn_pig_5_profit + barn_pig_6_profit + barn_pig_7_profit + barn_pig_8_profit + barn_pig_9_profit + barn_pig_10_profit + barn_pig_11_profit + barn_pig_12_profit
+barn_report_food_cost = barn_cow_1_food + barn_cow_2_food + barn_cow_3_food + barn_cow_4_food + barn_cow_5_food + barn_cow_6_food + barn_cow_7_food + barn_cow_8_food + barn_cow_9_food + barn_cow_10_food + barn_cow_11_food + barn_cow_12_food + barn_harpy_1_food + barn_harpy_2_food + barn_harpy_3_food + barn_harpy_4_food + barn_harpy_5_food + barn_harpy_6_food + barn_harpy_7_food + barn_harpy_8_food + barn_harpy_9_food + barn_harpy_10_food + barn_harpy_11_food + barn_harpy_12_food + barn_pig_1_food + barn_pig_2_food + barn_pig_3_food + barn_pig_4_food + barn_pig_5_food + barn_pig_6_food + barn_pig_7_food + barn_pig_8_food + barn_pig_9_food + barn_pig_10_food + barn_pig_11_food + barn_pig_12_food
+barn_cow_1_food = 0
+barn_cow_2_food = 0
+barn_cow_3_food = 0
+barn_cow_4_food = 0
+barn_cow_5_food = 0
+barn_cow_6_food = 0
+barn_cow_7_food = 0
+barn_cow_8_food = 0
+barn_cow_9_food = 0
+barn_cow_10_food = 0
+barn_cow_11_food = 0
+barn_cow_12_food = 0
+barn_harpy_1_food = 0
+barn_harpy_2_food = 0
+barn_harpy_3_food = 0
+barn_harpy_4_food = 0
+barn_harpy_5_food = 0
+barn_harpy_6_food = 0
+barn_harpy_7_food = 0
+barn_harpy_8_food = 0
+barn_harpy_9_food = 0
+barn_harpy_10_food = 0
+barn_harpy_11_food = 0
+barn_harpy_12_food = 0
+barn_pig_1_food = 0
+barn_pig_2_food = 0
+barn_pig_3_food = 0
+barn_pig_4_food = 0
+barn_pig_5_food = 0
+barn_pig_6_food = 0
+barn_pig_7_food = 0
+barn_pig_8_food = 0
+barn_pig_9_food = 0
+barn_pig_10_food = 0
+barn_pig_11_food = 0
+barn_pig_12_food = 0
+barn_milk_1_profit = 0
+barn_milk_2_profit = 0
+barn_milk_3_profit = 0
+barn_milk_4_profit = 0
+barn_milk_5_profit = 0
+barn_milk_6_profit = 0
+barn_milk_7_profit = 0
+barn_milk_8_profit = 0
+barn_milk_9_profit = 0
+barn_milk_10_profit = 0
+barn_milk_11_profit = 0
+barn_milk_12_profit = 0
+barn_cream_1_profit = 0
+barn_cream_2_profit = 0
+barn_cream_3_profit = 0
+barn_cream_4_profit = 0
+barn_cream_5_profit = 0
+barn_cream_6_profit = 0
+barn_cream_7_profit = 0
+barn_cream_8_profit = 0
+barn_cream_9_profit = 0
+barn_cream_10_profit = 0
+barn_cream_11_profit = 0
+barn_cream_12_profit = 0
+barn_egg_1_profit = 0
+barn_egg_2_profit = 0
+barn_egg_3_profit = 0
+barn_egg_4_profit = 0
+barn_egg_5_profit = 0
+barn_egg_6_profit = 0
+barn_egg_7_profit = 0
+barn_egg_8_profit = 0
+barn_egg_9_profit = 0
+barn_egg_10_profit = 0
+barn_egg_11_profit = 0
+barn_egg_12_profit = 0
+barn_pig_1_profit = 0
+barn_pig_2_profit = 0
+barn_pig_3_profit = 0
+barn_pig_4_profit = 0
+barn_pig_5_profit = 0
+barn_pig_6_profit = 0
+barn_pig_7_profit = 0
+barn_pig_8_profit = 0
+barn_pig_9_profit = 0
+barn_pig_10_profit = 0
+barn_pig_11_profit = 0
+barn_pig_12_profit = 0
+barn_total_profit = barn_report_cow_profit + barn_report_egg_profit + barn_report_pig_profit - barn_report_food_cost
+
+$bill_message = '<center>BILLS TO PAY</center>
+Rental cost: <<rental_cost>> sparks
+Food bills: <<food_bill>> sparks
+Other expenses: <<other_bills>> sparks
+Discount: <<discount>> sparks
+Fines: <<fine>> sparks 
+--------------------------
+       Total: <<final_payment>> sparks'
+
+$barn_accounts = '<center>BARN ACCOUNTS</center>
+Cow Income: <<barn_report_cow_profit>> sparks
+Egglayer Income: <<barn_report_egg_profit>> sparks
+Pig Income: <<barn_report_pig_profit>> sparks
+Food costs: <<barn_report_food_cost>> sparks
+--------------------------
+       Profit: <<barn_total_profit>> sparks'
+
+--- billing ---------------------------------
+

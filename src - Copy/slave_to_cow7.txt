@@ -1,0 +1,190 @@
+# slave_to_cow7
+!move slave to cow_7
+temp = slave_state
+slave_state = cow_7_state
+cow_7_state = temp
+
+temp = slave_type
+slave_type = cow_7_type
+cow_7_type = temp
+
+$temp = $slave_type
+$slave_type = $cow_7_type
+$cow_7_type = $temp
+
+$temp_name = $slave_name
+$slave_name = $cow_7_name
+$cow_7_name = $temp_name 
+v_balls_rule = 0
+rules_broken = 0
+
+killvar 'temp'
+killvar '$temp'
+copyarr 'temp','slave'
+copyarr '$temp','$slave'
+killvar 'slave' 
+killvar '$slave' 
+copyarr 'slave','cow_7'
+copyarr '$slave','$cow_7'
+
+killvar 'temp_rate'
+copyarr 'temp_rate','slave_rate'
+killvar 'slave_rate' 
+copyarr 'slave_rate','cow_7_rate'
+
+killvar 'cow_7'
+killvar '$cow_7'
+copyarr 'cow_7','temp'
+copyarr '$cow_7','$temp'
+killvar 'cow_7_rate'
+copyarr 'cow_7_rate','temp_rate'
+
+killvar 'temp'
+copyarr 'temp','already_done_cow_7'
+killvar 'already_done_cow_7'
+copyarr 'already_done_cow_7','already_done_curslave'
+killvar 'already_done_curslave'
+copyarr 'already_done_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','already_sex_cow_7'
+killvar 'already_sex_cow_7'
+copyarr 'already_sex_cow_7','already_sex_curslave'
+killvar 'already_sex_curslave'
+copyarr 'already_sex_curslave','temp'
+
+killvar 'temp'
+copyarr 'temp','slave_inventory'
+killvar 'slave_inventory' 
+copyarr 'slave_inventory','cow_7_inventory'
+copyarr 'cow_7_inventory','temp'
+
+$temp_psy_basic = $slave_psy_basic
+$temp_world_description = $slave_world_description
+$temp_family_description = $slave_family_description
+$temp_occupation_description = $slave_occupation_description
+$temp_psy_basic = $slave_psy_basic 
+temp_virginity = virginity
+
+$slave_psy_basic = $cow_7_psy_basic
+$slave_world_description = $cow_7_world_description
+$slave_family_description = $cow_7_family_description
+$slave_occupation_description = $cow_7_occupation_description
+$slave_psy_basic = $cow_7_psy_basic 
+virginity = cow_7_virginity
+
+$cow_7_psy_basic = $temp_psy_basic
+$cow_7_world_description = $temp_world_description
+$cow_7_family_description = $temp_family_description
+$cow_7_occupation_description = $temp_occupation_description
+$cow_7_psy_basic = $temp_psy_basic 
+cow_7_virginity = temp_virginity
+
+tempo["mood"] = slave_prev["mood"]
+tempo["arousal"] = slave_prev["mood"]
+slave["mood"] = cow_7_prev["mood"]
+slave["arousal"] = cow_7_prev["arousal"]
+cow_7["mood"] = tempo["mood"]
+cow_7["arousal"] = tempo["mood"]
+
+tmp = prise_promised
+prise_promised = prise_promised_cow_7
+prise_promised_cow_7 = tmp
+
+tmp = gift_promised
+gift_promised = gift_promised_cow_7
+gift_promised_cow_7 = tmp
+
+tmp = prise_promised
+prise_promised = prise_promised_cow_7
+prise_promised_cow_7 = tmp
+
+tmp = abandon_treat
+abandon_treat = abandon_treat_cow_7
+abandon_treat_cow_7 = tmp
+
+tmp = death_treat
+death_treat = death_treat_cow_7
+death_treat_cow_7 = tmp
+
+temp = slave_sleep_condition
+slave_sleep_condition = cow_7_slave_sleep_condition
+cow_7_slave_sleep_condition = temp
+
+temp = slave_food_type
+slave_food_type = cow_7_slave_food_type
+cow_7_slave_food_type = temp
+
+temp = slave_eats_remains
+slave_eats_remains = cow_7_slave_eats_remains
+cow_7_slave_eats_remains = temp
+
+temp = slave_ration
+slave_ration = cow_7_slave_ration
+cow_7_slave_ration = temp
+
+temp = slave_food_portion
+slave_food_portion = cow_7_slave_food_portion
+cow_7_slave_food_portion = temp
+
+temp = vitamin
+vitamin = cow_7_vitamin
+cow_7_vitamin = temp
+
+temp = silence_rule
+silence_rule = cow_7_silence_rule
+cow_7_silence_rule = temp
+
+temp = master_rule
+master_rule = cow_7_master_rule
+cow_7_master_rule = temp
+
+temp = orgasm_prohibited
+orgasm_prohibited = cow_7_orgasm_prohibited
+cow_7_orgasm_prohibited = temp
+
+temp = shit_prohibited
+shit_prohibited = cow_7_shit_prohibited
+cow_7_shit_prohibited = temp
+
+temp = pet_rule
+pet_rule = cow_7_pet_rule
+cow_7_pet_rule = temp
+
+temp = blowjob_rule
+blowjob_rule = cow_7_blowjob_rule
+cow_7_blowjob_rule = temp
+
+temp = pissuar_rule
+pissuar_rule = cow_7_pissuar_rule
+cow_7_pissuar_rule = temp
+
+temp = toilet_rule
+toilet_rule = cow_7_toilet_rule
+cow_7_toilet_rule = temp
+
+temp = slave_cleans_rule
+slave_cleans_rule = cow_7_slave_cleans_rule
+cow_7_slave_cleans_rule = temp
+
+temp = slave_cooks_rule
+slave_cooks_rule = cow_7_slave_cooks_rule
+cow_7_slave_cooks_rule = temp
+
+temp = slave_washes_rule
+slave_washes_rule = cow_7_slave_washes_rule
+cow_7_slave_washes_rule = temp
+
+temp = slave_tentacle_rule
+slave_tentacle_rule = cow_7_slave_tentacle_rule
+cow_7_slave_tentacle_rule = temp
+
+temp = v_balls_rule
+v_balls_rule = cow_7_v_balls_rule
+cow_7_v_balls_rule = temp
+
+temp = rule_masturbation
+rule_masturbation = cow_7_rule_masturbation
+cow_7_rule_masturbation = temp
+--- slave_to_cow7 ---------------------------------
+
