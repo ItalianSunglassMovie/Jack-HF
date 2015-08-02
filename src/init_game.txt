@@ -1,41 +1,40 @@
-﻿# init_game
+# init_game
 !settings for master stats for a sandbox mode
 $master_ava = 'content\pic\master\master_noble_sepia.jpg'
 $master_ava_color = 'content\pic\master\master_noble.jpg'
 $master_name = 'Jack'
 hero_choice = 1
 
-master_str = 10
-master_cha = 10
-master_style = 10
-master_libido = 10
-master_energy = 10
+master_str = 4
+master_cha = 4
+master_style = 4
+master_libido = 4
+master_energy = 5
 
-master_tutor = 10
-master_fighter = 10
-master_butler = 10
-master_artdirector = 10
-master_medic = 10
-master_mage = 10
-master_torture = 10
-master_domination = 10
-master_bondage = 10
-master_flagelation = 10
+master_tutor = 0
+master_fighter = 3
+master_butler = 3
+master_artdirector = 3
+master_medic = 3
+master_mage = 3
+master_torture = 3
+master_domination = 3
+master_bondage = 3
+master_flagelation = 3
 
-master_petting = 10
-master_oral = 10
-master_penetration = 10
-master_fetish = 10
+master_petting = 3
+master_oral = 3
+master_penetration = 3
+master_fetish = 3
 
 !other settings
-stock_limit = 15
+stock_limit = 300
 
 bath = 1
 kitchen = 1
 dungeon = 1
 lab = 1
 library = 1
-barn = 1
 
 flute = 1
 guitar = 1

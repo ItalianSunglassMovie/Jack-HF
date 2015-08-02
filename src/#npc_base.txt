@@ -753,7 +753,7 @@ IF npc_reveal[$npc_id] = 0:
 </font>'
  $text[5] = '  [RED HAIR BRYN]
    - Лесть тебе не поможет,  <<$master_name>> - плевать я хотела на весь этот подхалимаж. А вот от бренди не откажусь. Давай его сюда и колись, зачем пришел.'
- IF master_cha => 3 and relations['брина_рыжая'] => 0:
+ IF master_cha >= 3 and relations['брина_рыжая'] >= 0:
   $text[6] = $agree[1]
   $text[7] = $agree[2]
   $text[8] = $agree[3]
@@ -777,7 +777,7 @@ IF npc_reveal[$npc_id] = 0:
  $text[2] = '   [<<$master_name>>]<font color="#191970">
    - Gaudete, Брина! Снова грустишь? Огненный бренди спешит на помощь!
 </font>'
- IF master_cha => 3 and relations['брина_рыжая'] => 0:
+ IF master_cha >= 3 and relations['брина_рыжая'] >= 0:
   $text[3] = $agree[1]
   $text[4] = $agree[2]
   $text[5] = $agree[3]

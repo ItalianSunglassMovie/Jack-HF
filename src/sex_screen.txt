@@ -141,7 +141,7 @@ $info_bar = ''
 *p '<div id = "side_stats_slave_var"><<$sex_slave_var>></div>'  
 
 !intensity buttons
-IF sex_num => 0:
+IF sex_num >= 0:
  IF intensity = 1:
    *p {<div id = "intensity_01"><img src = "content\pic\buttons\01.gif"></div>}
   else

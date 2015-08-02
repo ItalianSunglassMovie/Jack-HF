@@ -2,7 +2,7 @@
 killall
 
 usehtml = 1
-debug = 0
+debug = 1
 !debug = 1
 sound_on = 1
 music_volume = 100

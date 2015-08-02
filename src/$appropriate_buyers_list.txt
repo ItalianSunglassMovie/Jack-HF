@@ -11,7 +11,7 @@ z = 0
 :loop
 i += 1
 
-IF rating => demand_rating[$basic_buyer[i]] and slave_specialisation[$interesting_specialisation[$basic_buyer[i]]] > 0 and npc_progress[$basic_buyer[i]] < 2:
+IF rating >= demand_rating[$basic_buyer[i]] and slave_specialisation[$interesting_specialisation[$basic_buyer[i]]] > 0 and npc_progress[$basic_buyer[i]] < 2:
  IF z < 15:
 	$appropriate_buyers_list += '<div align="left" style="font-size: 85%;"><<$diary_mark[$basic_buyer[i]]>><br></div>'
 	z += 1

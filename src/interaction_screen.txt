@@ -8,21 +8,6 @@ npc = 0
 IF $interaction_type = 'talk':
  if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
 END
-IF $interaction_type = 'talk_1':
- if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave_1["fullimage"]>>.gif"></div>'
-END
-IF $interaction_type = 'talk_2':
- if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave_2["fullimage"]>>.gif"></div>'
-END
-IF $interaction_type = 'talk_3':
- if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave_3["fullimage"]>>.gif"></div>'
-END
-IF $interaction_type = 'talk_4':
- if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave_4["fullimage"]>>.gif"></div>'
-END
-IF $interaction_type = 'talk_5':
- if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave_5["fullimage"]>>.gif"></div>'
-END
 
 IF $interaction_type = 'talk_assistant':
  npc = 1

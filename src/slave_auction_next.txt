@@ -1,7 +1,7 @@
 # slave_auction_next
 !Skip auction lot
 
-IF stock_sold => stock_limit:
+IF stock_sold >= stock_limit:
   auction_phase = 5
   haggling_stage = 0
  else

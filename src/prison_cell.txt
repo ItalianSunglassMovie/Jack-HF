@@ -66,7 +66,7 @@ END
 
 IF prisoner_state = 1:
  *p '<div id = "prison_ava"><img src = "<<$prisoner[''ava'']>>.jpg"></div>'
- IF master_medic => 2:
+ IF master_medic >= 2:
   *p '<div id = "prison_short_stat">Energy <<$stars[prisoner_energy_plus]>>
 <<$girl_mood[prisoner_mood_plus]>>
 <<$girl_hygiene[prisoner["hygiene"]]>>

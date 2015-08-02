@@ -12,6 +12,7 @@ $sp_text[1] = '   Database access occurs at the verbal level request and same th
 $text_display = '<br>'
 if nsfw = 1: not_safe = 1
 FUNC('$menu', 'spacer', 4)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction_city', $menu_item_Aura_information, menu_Aura_information, 'Request. Aura. General information')
 FUNC('$menu', 'interaction_city', $menu_item_Aura_Pattern, menu_Aura_Pattern, 'Request. Aura. Pattern structure')
@@ -23,7 +24,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6201] = {
 mem_skip = 6201
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -33,7 +35,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6202] = {
 mem_skip = 6202
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -43,7 +46,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6203] = {
 mem_skip = 6203
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -53,7 +57,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6204] = {
 mem_skip = 6204
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -63,7 +68,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6205] = {
 mem_skip = 6205
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -73,7 +79,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6206] = {
 mem_skip = 6206
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -83,7 +90,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6207] = {
 mem_skip = 6207
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -93,7 +101,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6208] = {
 mem_skip = 6208
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -103,7 +112,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6209] = {
 mem_skip = 6209
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -113,7 +123,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6210] = {
 mem_skip = 6210
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -124,7 +135,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6211] = {
 mem_skip = 6211
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -135,7 +147,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6212] = {
 mem_skip = 6212
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -146,7 +159,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6213] = {
 mem_skip = 6213
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -157,7 +171,8 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6214] = {
 mem_skip = 6214
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 4)
+FUNC('$menu', 'spacer', 7)
+
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
@@ -169,6 +184,7 @@ $expert_options[1] = {
 $sp_text[1] = '   You find one of the representatives of the experts department. These slavers specialize in the slaves evaluation and in finding exclusive options on the market.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 FUNC('$menu', 'interaction_city', $menu_item_services, menu_services, 'Ask about services')
 IF search['active'] = 0: FUNC('$menu', 'exec_options', $menu_item_Order_slave, 'sp_txt = 11 & gt $curloc', 'Order slave selection')
@@ -184,6 +200,7 @@ $sp_text[11] = '   [MASTER SKUPS]
    - Are there some suggestions for product age?'
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 FUNC('$menu', 'exec_options', $menu_item_Not_old, 'search["age"] = 4 & search["cost"] += 1 & sp_txt = 2 & gt $curloc', 'Not too old')
 FUNC('$menu', 'exec_options', $menu_item_Not_young, 'search["age"] = 5 & search["cost"] += 1 & sp_txt = 2 & gt $curloc', 'Not too young')
@@ -199,10 +216,11 @@ $sp_text[2] = '      [MASTER SKUPS]
    - Beauty - is a key parameter, which in most cases determines the maximum potential of a slave in market. But beauties are rare. How attractive product do you need?'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-FUNC('$menu', 'exec_options', $menu_item_Order_Exquisite, 'search["beauty"] = 10 & search["cost"] += 8 & sp_txt = 3 & gt $curloc', 'Goddess')
-FUNC('$menu', 'exec_options', $menu_item_Order_Beautiful, 'search["beauty"] = 8 & search["cost"] += 4 & sp_txt = 3 & gt $curloc', 'Gorgeous')
-FUNC('$menu', 'exec_options', $menu_item_Order_Pretty, 'search["beauty"] = 6 & search["cost"] += 1 2 sp_txt = 3 & gt $curloc', 'Stunning')
+FUNC('$menu', 'exec_options', $menu_item_Order_Exquisite, 'search["beauty"] = 5 & search["cost"] += 4 & sp_txt = 3 & gt $curloc', 'Exquisite')
+FUNC('$menu', 'exec_options', $menu_item_Order_Beautiful, 'search["beauty"] = 4 & search["cost"] += 2 & sp_txt = 3 & gt $curloc', 'Beautiful')
+FUNC('$menu', 'exec_options', $menu_item_Order_Pretty, 'search["beauty"] = 3 & search["cost"] += 1 & sp_txt = 3 & gt $curloc', 'Pretty')
 FUNC('$menu', 'exec_options', $menu_item_beauty_Not_matter, 'search["beauty"] = 0 & sp_txt = 3 & gt $curloc', 'Doesn`t matter')
 FUNC('$menu', '===END===')
 }
@@ -212,10 +230,11 @@ $sp_text[3] = '      [MASTER SKUPS]
    - Raising sick slaves - is a tough job, so that I can pick up healthier and hardy.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-FUNC('$menu', 'exec_options', $menu_item_Order_Enduring, 'search["stamina"] = 10 & search["cost"] += 8 & sp_txt = 4 & gt $curloc', 'Unbreakable')
-FUNC('$menu', 'exec_options', $menu_item_Order_Tough, 'search["stamina"] = 8 & search["cost"] += 4 & sp_txt = 4 & gt $curloc', 'Vigorous')
-FUNC('$menu', 'exec_options', $menu_item_Order_Healthy, 'search["stamina"] = 6 & search["cost"] += 2 & sp_txt = 4 & gt $curloc', 'Enduring')
+FUNC('$menu', 'exec_options', $menu_item_Order_Enduring, 'search["stamina"] = 5 & search["cost"] += 4 & sp_txt = 4 & gt $curloc', 'Enduring')
+FUNC('$menu', 'exec_options', $menu_item_Order_Tough, 'search["stamina"] = 4 & search["cost"] += 2 & sp_txt = 4 & gt $curloc', 'Tough')
+FUNC('$menu', 'exec_options', $menu_item_Order_Healthy, 'search["stamina"] = 3 & search["cost"] += 1 & sp_txt = 4 & gt $curloc', 'Healthy')
 FUNC('$menu', 'exec_options', $menu_item_stamina_Not_matter, 'search["stamina"] = 0 & sp_txt = 4 & gt $curloc', 'Doesn`t matter')
 FUNC('$menu', '===END===')
 }
@@ -225,10 +244,11 @@ $sp_text[4] = '      [MASTER SKUPS]
    - I have my own ways to estimate woman''s sensitivity. I guarantee reliability of this method, but mind you. It''s not only difficult to find a sissy, there also will be a lot of problems during training.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-FUNC('$menu', 'exec_options', $menu_item_Order_Nurturing, 'search["sensitivity"] = 10 & search["cost"] += 8 & sp_txt = 5 & gt $curloc', 'Sensorial')
-FUNC('$menu', 'exec_options', $menu_item_Order_Caring, 'search["sensitivity"] = 8 & search["cost"] += 4 & sp_txt = 5 & gt $curloc', 'Emotional')
-FUNC('$menu', 'exec_options', $menu_item_Order_Sensitive, 'search["sensitivity"] = 6 & search["cost"] += 2 & sp_txt = 5 & gt $curloc', 'Hypersensitive')
+FUNC('$menu', 'exec_options', $menu_item_Order_Nurturing, 'search["sensitivity"] = 5 & search["cost"] += 4 & sp_txt = 5 & gt $curloc', 'Nurturing')
+FUNC('$menu', 'exec_options', $menu_item_Order_Caring, 'search["sensitivity"] = 4 & search["cost"] += 2 & sp_txt = 5 & gt $curloc', 'Caring')
+FUNC('$menu', 'exec_options', $menu_item_Order_Sensitive, 'search["sensitivity"] = 3 & search["cost"] += 1 & sp_txt = 5 & gt $curloc', 'Sensitive')
 FUNC('$menu', 'exec_options', $menu_item_sensitivity_Not_matter, 'search["sensitivity"] = 0 & sp_txt = 5 & gt $curloc', 'Doesn`t matter')
 FUNC('$menu', '===END===')
 }
@@ -238,10 +258,11 @@ $sp_text[5] = '      [MASTER SKUPS]
    - I can spend a separate time before the auction to check in advance the total intelligence of the product. Do not expect much, but if you need a girl capable of put two and two, I''ll make it.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-FUNC('$menu', 'exec_options', $menu_item_Order_Intelligent, 'search["intellect"] = 10 & search["cost"] += 8 & sp_txt = 6 & gt $curloc', 'Mastermind')
-FUNC('$menu', 'exec_options', $menu_item_Order_Clever, 'search["intellect"] = 8 & search["cost"] += 4 & sp_txt = 6 & gt $curloc', 'Genius')
-FUNC('$menu', 'exec_options', $menu_item_Order_Bright, 'search["intellect"] = 6 & search["cost"] += 2 & sp_txt = 6 & gt $curloc', 'Clever')
+FUNC('$menu', 'exec_options', $menu_item_Order_Intelligent, 'search["intellect"] = 5 & search["cost"] += 4 & sp_txt = 6 & gt $curloc', 'Intelligent')
+FUNC('$menu', 'exec_options', $menu_item_Order_Clever, 'search["intellect"] = 4 & search["cost"] += 2 & sp_txt = 6 & gt $curloc', 'Clever')
+FUNC('$menu', 'exec_options', $menu_item_Order_Bright, 'search["intellect"] = 3 & search["cost"] += 1 & sp_txt = 6 & gt $curloc', 'Bright')
 FUNC('$menu', 'exec_options', $menu_item_intellect_Not_matter, 'search["intellect"] = 0 & sp_txt = 6 & gt $curloc', 'Doesn`t matter')
 FUNC('$menu', '===END===')
 }
@@ -251,10 +272,11 @@ $sp_text[6] = '      [MASTER SKUPS]
    - Temperamental ones are often the source of problems, but they are popular among the buyers. So I can find hotter product for you, if it is necessary.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-FUNC('$menu', 'exec_options', $menu_item_Order_Passionate, 'search["temper"] = 10 & search["cost"] += 8 & sp_txt = 7 & gt $curloc', 'Romantic')
-FUNC('$menu', 'exec_options', $menu_item_Order_Lively, 'search["temper"] = 8 & search["cost"] += 4 & sp_txt = 7 & gt $curloc', 'Frisky')
-FUNC('$menu', 'exec_options', $menu_item_Order_Reactive, 'search["temper"] = 6 & search["cost"] += 2 & sp_txt = 7 & gt $curloc', 'Warm')
+FUNC('$menu', 'exec_options', $menu_item_Order_Passionate, 'search["temper"] = 5 & search["cost"] += 4 & sp_txt = 7 & gt $curloc', 'Passionate')
+FUNC('$menu', 'exec_options', $menu_item_Order_Lively, 'search["temper"] = 4 & search["cost"] += 2 & sp_txt = 7 & gt $curloc', 'Lively')
+FUNC('$menu', 'exec_options', $menu_item_Order_Reactive, 'search["temper"] = 3 & search["cost"] += 1 & sp_txt = 7 & gt $curloc', 'Reactive')
 FUNC('$menu', 'exec_options', $menu_item_temper_Not_matter, 'search["temper"] = 0 & sp_txt = 7 & gt $curloc', 'Doesn`t matter')
 FUNC('$menu', '===END===')
 }
@@ -265,10 +287,11 @@ $sp_text[7] = '      [MASTER SKUPS]
 interaction_city = 9511
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-FUNC('$menu', 'exec_options', $menu_item_Order_Willful, 'search["ego"] = 10 & search["cost"] += 8 & gt "interaction_city"', 'Sovereign')
-FUNC('$menu', 'exec_options', $menu_item_Order_Determined, 'search["ego"] = 8 & search["cost"] += 4 & gt "interaction_city"', 'Driven')
-FUNC('$menu', 'exec_options', $menu_item_Order_Independent, 'search["ego"] = 6 & search["cost"] += 2 & gt "interaction_city"', 'Resolute')
+FUNC('$menu', 'exec_options', $menu_item_Order_Willful, 'search["ego"] = 5 & search["cost"] += 4 & gt "interaction_city"', 'Willful')
+FUNC('$menu', 'exec_options', $menu_item_Order_Determined, 'search["ego"] = 4 & search["cost"] += 2 & gt "interaction_city"', 'Determined')
+FUNC('$menu', 'exec_options', $menu_item_Order_Independent, 'search["ego"] = 3 & search["cost"] += 1 & gt "interaction_city"', 'Independent')
 FUNC('$menu', 'exec_options', $menu_item_ego_Not_matter, 'search["ego"] = 0 & sp_txt = 3 & gt "interaction_city"', 'Doesn`t matter')
 FUNC('$menu', '===END===')
 }
@@ -277,17 +300,17 @@ FUNC('$menu', '===END===')
 $hospital_options[1] = {
 $text_display = '<br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF sparks => 5:
+IF sparks >= 5:
   FUNC('$menu', 'interaction_city', $menu_item_M_checkup, menu_M_checkup, 'Health checkup')
 ELSE
   FUNC('$menu', 'location_gray', $menu_item_M_checkup_gray, empty, 'Health checkup')
 END
-IF slave_state > CONST_INT['no_slave'] and sparks => 5:
+IF slave_state > CONST_INT['no_slave'] and sparks >= 5:
   FUNC('$menu', 'interaction_city', $menu_item_S_checkup, menu_S_checkup, 'Examine slave')
 ELSE
   FUNC('$menu', 'location_gray', $menu_item_S_checkup_gray, empty, 'Examine slave')
 END
-IF assistant_state = 1 and sparks => 5:
+IF assistant_state = 1 and sparks >= 5:
   FUNC('$menu', 'interaction_city', $menu_item_A_checkup, menu_A_checkup, 'Examine assistant')
 ELSE
   FUNC('$menu', 'location_gray', $menu_item_A_checkup_gray, empty, 'Examine assistant')
@@ -318,47 +341,27 @@ $hospital_options[11] = {
 
     FUNC('$menu', '===BEGIN===', 'column_0') 
     if master_issues ! 0:
-        if master_wounds = 1 and sparks => 5: 
+        if master_wounds = 1 and sparks >= 5: 
             FUNC('$menu', 'interaction_city', $menu_item_MWound1, menu_MWound1, 'Wound treatment (5$)')
 			elseif master_wounds = 1 and sparks < 5: FUNC('$menu', 'location_gray', $menu_item_MWound1_gray, 'Wound treatment (5$)')
 			end
-        if master_wounds = 2 and sparks => 10: 
+        if master_wounds = 2 and sparks >= 10: 
             FUNC('$menu', 'interaction_city', $menu_item_MWound2, menu_MWound2, 'Wound treatment (10$)')
 			elseif master_wounds = 2 and sparks < 10: FUNC('$menu', 'location_gray', $menu_item_MWound2_gray, 'Wound treatment (10$)') 
 			end
-        if master_wounds = 3 and sparks => 25: 
+        if master_wounds = 3 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_MWound3, menu_MWound3, 'Wound treatment (25$)')
 			elseif master_wounds = 3 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_MWound3_gray, 'Wound treatment (25$)') 
 			end
-        if master_wounds = 4 and sparks => 50: 
+        if master_wounds = 4 and sparks >= 50: 
             FUNC('$menu', 'interaction_city', $menu_item_MWound4, menu_MWound4, 'Wound treatment (50$)')
 			elseif master_wounds = 4 and sparks < 50: FUNC('$menu', 'location_gray', $menu_item_MWound4_gray, 'Wound treatment (50$)') 
 			end
-        if master_wounds = 5 and sparks => 100: 
+        if master_wounds = 5 and sparks >= 100: 
             FUNC('$menu', 'interaction_city', $menu_item_MWound5, menu_MWound5, 'Wound treatment (100$)')
 			elseif master_wounds = 5 and sparks < 100: FUNC('$menu', 'location_gray', $menu_item_MWound5_gray, 'Wound treatment (100$)') 
 			end
-        if master_wounds = 6 and sparks => 150: 
-            FUNC('$menu', 'interaction_city', $menu_item_MWound6, menu_MWound6, 'Wound treatment (150$)')
-			elseif master_wounds = 6 and sparks < 150: FUNC('$menu', 'location_gray', $menu_item_MWound6_gray, 'Wound treatment (100$)') 
-			end
-        if master_wounds = 7 and sparks => 200: 
-            FUNC('$menu', 'interaction_city', $menu_item_MWound7, menu_MWound7, 'Wound treatment (200$)')
-			elseif master_wounds = 7 and sparks < 200: FUNC('$menu', 'location_gray', $menu_item_MWound7_gray, 'Wound treatment (100$)') 
-			end
-        if master_wounds = 8 and sparks => 250: 
-            FUNC('$menu', 'interaction_city', $menu_item_MWound8, menu_MWound8, 'Wound treatment (250$)')
-			elseif master_wounds = 8 and sparks < 250: FUNC('$menu', 'location_gray', $menu_item_MWound8_gray, 'Wound treatment (100$)') 
-			end
-        if master_wounds = 9 and sparks => 300: 
-            FUNC('$menu', 'interaction_city', $menu_item_MWound9, menu_MWound9, 'Wound treatment (250$)')
-			elseif master_wounds = 9 and sparks < 300: FUNC('$menu', 'location_gray', $menu_item_MWound9_gray, 'Wound treatment (100$)') 
-			end
-        if master_wounds = 10 and sparks => 350: 
-            FUNC('$menu', 'interaction_city', $menu_item_MWound10, menu_MWound10, 'Wound treatment (350$)')
-			elseif master_wounds = 10 and sparks < 350: FUNC('$menu', 'location_gray', $menu_item_MWound10_gray, 'Wound treatment (100$)') 
-			end
-        if cure_master_ill = 1 and sparks => 25: 
+        if cure_master_ill = 1 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_MDisease, menu_MDisease, 'Disease treatment (25$)')
 			elseif cure_master_ill = 1 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_MDisease_gray, 'Disease treatment (25$)')
 			end
@@ -377,119 +380,79 @@ $hospital_options[12] = {
     FUNC('$menu', '===BEGIN===', 'column_0') 
     if slave_issues = 6: $text_display = ''
     if slave_issues ! 0:
-        if slave["wounds"] = 1 and sparks => 5: 
+        if slave["wounds"] = 1 and sparks >= 5: 
             FUNC('$menu', 'interaction_city', $menu_item_SWound1, menu_SWound1, 'Wound treatment (5$)')
 			elseif slave["wounds"] = 1 and sparks < 5: FUNC('$menu', 'location_gray', $menu_item_SWound1_gray, empty, 'Wound treatment (5$)')
 			end
-        if slave["wounds"] = 2 and sparks => 10: 
+        if slave["wounds"] = 2 and sparks >= 10: 
             FUNC('$menu', 'interaction_city', $menu_item_SWound2, menu_SWound2, 'Wound treatment (10$)')
 			elseif slave["wounds"] = 2 and sparks < 10: FUNC('$menu', 'location_gray', $menu_item_SWound2_gray, empty, 'Wound treatment (10$)')
 			end
-        if slave["wounds"] = 3 and sparks => 25: 
+        if slave["wounds"] = 3 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_SWound3, menu_SWound3, 'Wound treatment (25$)')
 			elseif slave["wounds"] = 3 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_SWound3_gray, empty, 'Wound treatment (25$)')
 			end
-        if slave["wounds"] = 4 and sparks => 50: 
+        if slave["wounds"] = 4 and sparks >= 50: 
             FUNC('$menu', 'interaction_city', $menu_item_SWound4, menu_SWound4, 'Wound treatment (50$)')
 			elseif slave["wounds"] = 4 and sparks < 50: FUNC('$menu', 'location_gray', $menu_item_SWound4_gray, empty, 'Wound treatment (50$)')
 			end
-        if slave["wounds"] = 5 and sparks => 100: 
+        if slave["wounds"] = 5 and sparks >= 100: 
             FUNC('$menu', 'interaction_city', $menu_item_SWound5, menu_SWound5, 'Wound treatment (100$)')
 			elseif slave["wounds"] = 5 and sparks < 100: FUNC('$menu', 'location_gray', $menu_item_SWound5_gray, empty, 'Wound treatment (100$)')
 			end
-        if slave["wounds"] = 6 and sparks => 150: 
-            FUNC('$menu', 'interaction_city', $menu_item_SWound6, menu_SWound6, 'Wound treatment (150$)')
-			elseif slave["wounds"] = 6 and sparks < 150: FUNC('$menu', 'location_gray', $menu_item_SWound6_gray, empty, 'Wound treatment (100$)')
-			end
-        if slave["wounds"] = 7 and sparks => 200: 
-            FUNC('$menu', 'interaction_city', $menu_item_SWound7, menu_SWound7, 'Wound treatment (200$)')
-			elseif slave["wounds"] = 7 and sparks < 200: FUNC('$menu', 'location_gray', $menu_item_SWound7_gray, empty, 'Wound treatment (100$)')
-			end
-        if slave["wounds"] = 8 and sparks => 250: 
-            FUNC('$menu', 'interaction_city', $menu_item_SWound8, menu_SWound8, 'Wound treatment (250$)')
-			elseif slave["wounds"] = 8 and sparks < 250: FUNC('$menu', 'location_gray', $menu_item_SWound8_gray, empty, 'Wound treatment (100$)')
-			end
-        if slave["wounds"] = 9 and sparks => 300: 
-            FUNC('$menu', 'interaction_city', $menu_item_SWound9, menu_SWound9, 'Wound treatment (300$)')
-			elseif slave["wounds"] = 9 and sparks < 300: FUNC('$menu', 'location_gray', $menu_item_SWound9_gray, empty, 'Wound treatment (100$)')
-			end
-        if slave["wounds"] = 10 and sparks => 350: 
-            FUNC('$menu', 'interaction_city', $menu_item_SWound10, menu_SWound10, 'Wound treatment (350$)')
-			elseif slave["wounds"] = 10 and sparks < 350: FUNC('$menu', 'location_gray', $menu_item_SWound10_gray, empty, 'Wound treatment (100$)')
-			end
         IF slave_stimulation = 1: 
-			if slave["res"] = 0 and sparks => 50: 
+			if slave["res"] = 0 and sparks >= 50: 
                 FUNC('$menu', 'interaction_city', $menu_item_SReanimation0, menu_SReanimation0, 'Reanimation (50$)')
 				elseif slave["res"] = 0 and sparks < 50: FUNC('$menu', 'location_gray', $menu_item_SReanimation0_gray, empty, 'Reanimation (50$)')
 				end
-			if slave["res"] = 1 and sparks => 100: 
+			if slave["res"] = 1 and sparks >= 100: 
                 FUNC('$menu', 'interaction_city', $menu_item_SReanimation1, menu_SReanimation1, 'Reanimation (100$)')
 				elseif slave["res"] = 1 and sparks < 100: FUNC('$menu', 'location_gray', $menu_item_SReanimation1_gray, empty, 'Reanimation (100$)')
 				end
-			if slave["res"] = 2 and sparks => 250: 
+			if slave["res"] = 2 and sparks >= 250: 
                 FUNC('$menu', 'interaction_city', $menu_item_SReanimation2, menu_SReanimation2, 'Reanimation (250$)')
 				elseif slave["res"] = 2 and sparks < 250: FUNC('$menu', 'location_gray', $menu_item_SReanimation2_gray, empty, 'Reanimation (250$)')
 				end
-			if slave["res"] = 3 and sparks => 500: 
+			if slave["res"] = 3 and sparks >= 500: 
                 FUNC('$menu', 'interaction_city', $menu_item_SReanimation3, menu_SReanimation3, 'Reanimation (500$)')
 				elseif slave["res"] = 3 and sparks < 500: FUNC('$menu', 'location_gray', $menu_item_SReanimation3_gray, empty, 'Reanimation (500$)')
 				end
-			if slave["res"] => 4 and sparks => 1000: 
+			if slave["res"] >= 4 and sparks >= 1000: 
                 FUNC('$menu', 'interaction_city', $menu_item_SReanimation4, menu_SReanimation4, 'Reanimation (1000$)')
-				elseif slave["res"] => 4 and sparks < 1000: FUNC('$menu', 'location_gray', $menu_item_SReanimation4_gray, empty, 'Reanimation (1000$)')
+				elseif slave["res"] >= 4 and sparks < 1000: FUNC('$menu', 'location_gray', $menu_item_SReanimation4_gray, empty, 'Reanimation (1000$)')
 				end
 		END
-        if slave_abortion = 1 and sparks => 10: 
+        if slave_abortion = 1 and sparks >= 10: 
             FUNC('$menu', 'interaction_city', $menu_item_SAbortion, menu_SAbortion, 'Abortion (10$)')
 			elseif slave_abortion = 1 and sparks < 10: FUNC('$menu', 'location_gray', $menu_item_SAbortion_gray, empty, 'Abortion (10$)') 
 			end
-        if slave_insidous_abortion = 1 and sparks => 25: 
+        if slave_insidous_abortion = 1 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_SXenoparasite, menu_SXenoparasite, 'Xenoparasite extraction (25$)')
-			elseif slave_insidous_abortion = 1 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_SXenoparasite_gray, empty, 'Xenoparasite extraction (25$)') 
+			elseif slave_insidous_abortion = 1 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_SXenoparasite_gray, empty, 'parasite abortion(25$)') 
 			end
-        if cure_slave_ill = 1 and sparks => 25: 
+        if cure_slave_ill = 1 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_SDisease, menu_SDisease, 'Disease treatment (25$)')
 			elseif cure_slave_ill = 1 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_SDisease_gray, empty, 'Disease treatment (25$)') 
 			end
-        if slave["scares"] = 1 and sparks => 5: 
+        if slave["scares"] = 1 and sparks >= 5: 
             FUNC('$menu', 'interaction_city', $menu_item_SScar1, menu_SScar1, 'Scar removal (5$)')
 			elseif slave["scares"] = 1 and sparks < 5: FUNC('$menu', 'location_gray', $menu_item_SScar1_gray, empty, 'Scar removal (5$)') 
 			end
-        if slave["scares"] = 2 and sparks => 10: 
+        if slave["scares"] = 2 and sparks >= 10: 
             FUNC('$menu', 'interaction_city', $menu_item_SScar2, menu_SScar2, 'Scar removal (10$)')
 			elseif slave["scares"] = 2 and sparks < 10: FUNC('$menu', 'location_gray', $menu_item_SScar2_gray, empty, 'Scar removal (10$)') 
 			end
-        if slave["scares"] = 3 and sparks => 25: 
+        if slave["scares"] = 3 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_SScar3, menu_SScar3, 'Scar removal (25$)')
 			elseif slave["scares"] = 3 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_SScar3_gray, empty, 'Scar removal (25$)') 
 			end
-        if slave["scares"] = 4 and sparks => 50: 
+        if slave["scares"] = 4 and sparks >= 50: 
             FUNC('$menu', 'interaction_city', $menu_item_SScar4, menu_SScar4, 'Scar removal (50$)')
 			elseif slave["scares"] = 4 and sparks < 50: FUNC('$menu', 'location_gray', $menu_item_SScar4_gray, empty, 'Scar removal (50$)') 
 			end
-        if slave["scares"] = 5 and sparks => 100: 
+        if slave["scares"] = 5 and sparks >= 100: 
             FUNC('$menu', 'interaction_city', $menu_item_SScar5, menu_SScar5, 'Scar removal (100$)')
 			elseif slave["scares"] = 5 and sparks < 100: FUNC('$menu', 'location_gray', $menu_item_SScar5_gray, empty, 'Scar removal (100$)') 
-			end
-        if slave["scares"] = 6 and sparks => 150: 
-            FUNC('$menu', 'interaction_city', $menu_item_SScar6, menu_SScar6, 'Scar removal (150$)')
-			elseif slave["scares"] = 6 and sparks < 150: FUNC('$menu', 'location_gray', $menu_item_SScar6_gray, empty, 'Scar removal (100$)') 
-			end
-        if slave["scares"] = 7 and sparks => 200: 
-            FUNC('$menu', 'interaction_city', $menu_item_SScar7, menu_SScar7, 'Scar removal (200$)')
-			elseif slave["scares"] = 7 and sparks < 200: FUNC('$menu', 'location_gray', $menu_item_SScar7_gray, empty, 'Scar removal (100$)') 
-			end
-        if slave["scares"] = 8 and sparks => 250: 
-            FUNC('$menu', 'interaction_city', $menu_item_SScar8, menu_SScar8, 'Scar removal (250$)')
-			elseif slave["scares"] = 8 and sparks < 250: FUNC('$menu', 'location_gray', $menu_item_SScar8_gray, empty, 'Scar removal (100$)') 
-			end
-        if slave["scares"] = 9 and sparks => 300: 
-            FUNC('$menu', 'interaction_city', $menu_item_SScar9, menu_SScar9, 'Scar removal (300$)')
-			elseif slave["scares"] = 9 and sparks < 300: FUNC('$menu', 'location_gray', $menu_item_SScar9_gray, empty, 'Scar removal (100$)') 
-			end
-        if slave["scares"] = 10 and sparks => 350: 
-            FUNC('$menu', 'interaction_city', $menu_item_SScar10, menu_SScar10, 'Scar removal (350$)')
-			elseif slave["scares"] = 10 and sparks < 350: FUNC('$menu', 'location_gray', $menu_item_SScar10_gray, empty, 'Scar removal (100$)') 
 			end
         FUNC('$menu', 'city_form', $menu_item_Refuse_Sservices, menu_Refuse_Sservices, 'Refuse services')
     else:
@@ -502,122 +465,83 @@ $hospital_options[12] = {
 $hospital_options[13] = {
     $text_display = '<br><br>'
     FUNC('$menu', 'spacer', 2)
+
     FUNC('$menu', '===BEGIN===', 'column_0') 
     if assistant_issues = 6: $text_display = ''
     if assistant_issues ! 0:
-        if assistant["wounds"] = 1 and sparks => 5: 
+        if assistant["wounds"] = 1 and sparks >= 5: 
             FUNC('$menu', 'interaction_city', $menu_item_AWound1, menu_AWound1, 'Wound treatment (5$)')
 			elseif assistant["wounds"] = 1 and sparks < 5: FUNC('$menu', 'location_gray', $menu_item_AWound1_gray, empty, 'Wound treatment (5$)')
 			end
-        if assistant["wounds"] = 2 and sparks => 10: 
+        if assistant["wounds"] = 2 and sparks >= 10: 
             FUNC('$menu', 'interaction_city', $menu_item_AWound2, menu_AWound2, 'Wound treatment (10$)')
 			elseif assistant["wounds"] = 2 and sparks < 10: FUNC('$menu', 'location_gray', $menu_item_AWound2_gray, empty, 'Wound treatment (10$)')
 			end
-        if assistant["wounds"] = 3 and sparks => 25: 
+        if assistant["wounds"] = 3 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_AWound3, menu_AWound3, 'Wound treatment (25$)')
 			elseif assistant["wounds"] = 3 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_AWound3_gray, empty, 'Wound treatment (25$)')
 			end
-        if assistant["wounds"] = 4 and sparks => 50: 
+        if assistant["wounds"] = 4 and sparks >= 50: 
             FUNC('$menu', 'interaction_city', $menu_item_AWound4, menu_AWound4, 'Wound treatment (50$)')
 			elseif assistant["wounds"] = 4 and sparks < 50: FUNC('$menu', 'location_gray', $menu_item_AWound4_gray, empty, 'Wound treatment (50$)')
 			end
-        if assistant["wounds"] = 5 and sparks => 100: 
+        if assistant["wounds"] = 5 and sparks >= 100: 
             FUNC('$menu', 'interaction_city', $menu_item_AWound5, menu_AWound5, 'Wound treatment (100$)')
 			elseif assistant["wounds"] = 5 and sparks < 100: FUNC('$menu', 'location_gray', $menu_item_AWound5_gray, empty, 'Wound treatment (100$)')
 			end
-        if assistant["wounds"] = 6 and sparks => 150: 
-            FUNC('$menu', 'interaction_city', $menu_item_AWound6, menu_AWound6, 'Wound treatment (150$)')
-			elseif assistant["wounds"] = 6 and sparks < 150: FUNC('$menu', 'location_gray', $menu_item_AWound6_gray, empty, 'Wound treatment (100$)')
-			end
-        if assistant["wounds"] = 7 and sparks => 200: 
-            FUNC('$menu', 'interaction_city', $menu_item_AWound7, menu_AWound7, 'Wound treatment (200$)')
-			elseif assistant["wounds"] = 7 and sparks < 200: FUNC('$menu', 'location_gray', $menu_item_AWound7_gray, empty, 'Wound treatment (100$)')
-			end
-        if assistant["wounds"] = 8 and sparks => 250: 
-            FUNC('$menu', 'interaction_city', $menu_item_AWound8, menu_AWound8, 'Wound treatment (250$)')
-			elseif assistant["wounds"] = 8 and sparks < 250: FUNC('$menu', 'location_gray', $menu_item_AWound8_gray, empty, 'Wound treatment (100$)')
-			end
-        if assistant["wounds"] = 9 and sparks => 300: 
-            FUNC('$menu', 'interaction_city', $menu_item_AWound9, menu_AWound9, 'Wound treatment (300$)')
-			elseif assistant["wounds"] = 9 and sparks < 300: FUNC('$menu', 'location_gray', $menu_item_AWound9_gray, empty, 'Wound treatment (100$)')
-			end
-        if assistant["wounds"] = 10 and sparks => 350: 
-            FUNC('$menu', 'interaction_city', $menu_item_AWound10, menu_AWound10, 'Wound treatment (350$)')
-			elseif assistant["wounds"] = 10 and sparks < 350: FUNC('$menu', 'location_gray', $menu_item_AWound10_gray, empty, 'Wound treatment (100$)')
-			end
         IF assistant_stimulation = 1: 
-			if assistant["res"] = 0 and sparks => 50: 
+			if assistant["res"] = 0 and sparks >= 50: 
                 FUNC('$menu', 'interaction_city', $menu_item_AReanimation0, menu_AReanimation0, 'Reanimation (50$)')
 				elseif assistant["res"] = 0 and sparks < 50: FUNC('$menu', 'location_gray', $menu_item_AReanimation0_gray, empty, 'Reanimation (50$)')
 				end
-			if assistant["res"] = 1 and sparks => 100: 
+			if assistant["res"] = 1 and sparks >= 100: 
                 FUNC('$menu', 'interaction_city', $menu_item_AReanimation1, menu_AReanimation1, 'Reanimation (100$)')
 				elseif assistant["res"] = 1 and sparks < 100: FUNC('$menu', 'location_gray', $menu_item_AReanimation1_gray, empty, 'Reanimation (100$)')
 				end
-			if assistant["res"] = 2 and sparks => 250: 
+			if assistant["res"] = 2 and sparks >= 250: 
                 FUNC('$menu', 'interaction_city', $menu_item_AReanimation2, menu_AReanimation2, 'Reanimation (250$)')
 				elseif assistant["res"] = 2 and sparks < 250: FUNC('$menu', 'location_gray', $menu_item_AReanimation2_gray, empty, 'Reanimation (250$)')
 				end
-			if assistant["res"] = 3 and sparks => 500: 
+			if assistant["res"] = 3 and sparks >= 500: 
                 FUNC('$menu', 'interaction_city', $menu_item_AReanimation3, menu_AReanimation3, 'Reanimation (500$)')
 				elseif assistant["res"] = 3 and sparks < 500: FUNC('$menu', 'location_gray', $menu_item_AReanimation3_gray, empty, 'Reanimation (500$)')
 				end
-			if assistant["res"] => 4 and sparks => 1000: 
+			if assistant["res"] >= 4 and sparks >= 1000: 
                 FUNC('$menu', 'interaction_city', $menu_item_AReanimation4, menu_AReanimation4, 'Reanimation (1000$)')
-				elseif assistant["res"] => 4 and sparks < 1000: FUNC('$menu', 'location_gray', $menu_item_AReanimation4_gray, empty, 'Reanimation (1000$)')
+				elseif assistant["res"] >= 4 and sparks < 1000: FUNC('$menu', 'location_gray', $menu_item_AReanimation4_gray, empty, 'Reanimation (1000$)')
 				end
 		END
-        if assistant_abortion = 1 and sparks => 10: 
+        if assistant_abortion = 1 and sparks >= 10: 
             FUNC('$menu', 'interaction_city', $menu_item_AAbortion, menu_AAbortion, 'Abortion (10$)')
 			elseif assistant_abortion = 1 and sparks < 10: FUNC('$menu', 'location_gray', $menu_item_AAbortion_gray, empty, 'Abortion (10$)') 
 			end
-        if assistant_insidous_abortion = 1 and sparks => 25: 
+        if assistant_insidous_abortion = 1 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_AXenoparasite, menu_AXenoparasite, 'Xenoparasite extraction (25$)')
 			elseif assistant_insidous_abortion = 1 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_AXenoparasite_gray, empty, 'Xenoparasite extraction (25$)') 
 			end
-        if cure_assistant_ill = 1 and sparks => 25: 
+        if cure_assistant_ill = 1 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_ADisease, menu_ADisease, 'Disease treatment (25$)')
 			elseif cure_assistant_ill = 1 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_ADisease_gray, empty, 'Disease treatment (25$)') 
 			end
-        if assistant["scares"] = 1 and sparks => 5: 
+        if assistant["scares"] = 1 and sparks >= 5: 
             FUNC('$menu', 'interaction_city', $menu_item_AScar1, menu_AScar1, 'Scar removal (5$)')
 			elseif assistant["scares"] = 1 and sparks < 5: FUNC('$menu', 'location_gray', $menu_item_AScar1_gray, empty, 'Scar removal (5$)') 
 			end
-        if assistant["scares"] = 2 and sparks => 10: 
+        if assistant["scares"] = 2 and sparks >= 10: 
             FUNC('$menu', 'interaction_city', $menu_item_AScar2, menu_AScar2, 'Scar removal (10$)')
 			elseif assistant["scares"] = 2 and sparks < 10: FUNC('$menu', 'location_gray', $menu_item_AScar2_gray, empty, 'Scar removal (10$)') 
 			end
-        if assistant["scares"] = 3 and sparks => 25: 
+        if assistant["scares"] = 3 and sparks >= 25: 
             FUNC('$menu', 'interaction_city', $menu_item_AScar3, menu_AScar3, 'Scar removal (25$)')
 			elseif assistant["scares"] = 3 and sparks < 25: FUNC('$menu', 'location_gray', $menu_item_AScar3_gray, empty, 'Scar removal (25$)') 
 			end
-        if assistant["scares"] = 4 and sparks => 50: 
+        if assistant["scares"] = 4 and sparks >= 50: 
             FUNC('$menu', 'interaction_city', $menu_item_AScar4, menu_AScar4, 'Scar removal (50$)')
 			elseif assistant["scares"] = 4 and sparks < 50: FUNC('$menu', 'location_gray', $menu_item_AScar4_gray, empty, 'Scar removal (50$)') 
 			end
-        if assistant["scares"] = 5 and sparks => 100: 
+        if assistant["scares"] = 5 and sparks >= 100: 
             FUNC('$menu', 'interaction_city', $menu_item_AScar5, menu_AScar5, 'Scar removal (100$)')
 			elseif assistant["scares"] = 5 and sparks < 100: FUNC('$menu', 'location_gray', $menu_item_AScar5_gray, empty, 'Scar removal (100$)') 
-			end
-        if assistant["scares"] = 6 and sparks => 150: 
-            FUNC('$menu', 'interaction_city', $menu_item_AScar6, menu_AScar6, 'Scar removal (150$)')
-			elseif assistant["scares"] = 6 and sparks < 150: FUNC('$menu', 'location_gray', $menu_item_AScar6_gray, empty, 'Scar removal (100$)') 
-			end
-        if assistant["scares"] = 7 and sparks => 200: 
-            FUNC('$menu', 'interaction_city', $menu_item_AScar7, menu_AScar7, 'Scar removal (200$)')
-			elseif assistant["scares"] = 7 and sparks < 200: FUNC('$menu', 'location_gray', $menu_item_AScar7_gray, empty, 'Scar removal (100$)') 
-			end
-        if assistant["scares"] = 8 and sparks => 250: 
-            FUNC('$menu', 'interaction_city', $menu_item_AScar8, menu_AScar8, 'Scar removal (250$)')
-			elseif assistant["scares"] = 8 and sparks < 250: FUNC('$menu', 'location_gray', $menu_item_AScar8_gray, empty, 'Scar removal (100$)') 
-			end
-        if assistant["scares"] = 9 and sparks => 300: 
-            FUNC('$menu', 'interaction_city', $menu_item_AScar9, menu_AScar9, 'Scar removal (300$)')
-			elseif assistant["scares"] = 9 and sparks < 300: FUNC('$menu', 'location_gray', $menu_item_AScar9_gray, empty, 'Scar removal (100$)') 
-			end
-        if assistant["scares"] = 10 and sparks => 350: 
-            FUNC('$menu', 'interaction_city', $menu_item_AScar10, menu_AScar10, 'Scar removal (350$)')
-			elseif assistant["scares"] = 10 and sparks < 350: FUNC('$menu', 'location_gray', $menu_item_AScar10_gray, empty, 'Scar removal (100$)') 
 			end
         FUNC('$menu', 'city_form', $menu_item_Refuse_Aservices, menu_Refuse_Aservices, 'Refuse services')
     else:
@@ -630,41 +554,37 @@ $hospital_options[13] = {
 $hospital_options[2] = {
 $text_display = '<br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF sparks => 5 and slave['pregnant'] = 0 and slave['fertility'] = 0:
+IF sparks >= 5 and slave['pregnant'] = 0 and slave['fertility'] = 0:
  FUNC('$menu', 'interaction_city', $menu_item_SSterilization, menu_SSterilization, 'Sterilization')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SSterilization_gray, empty, 'Sterilization')
 END
-IF sparks => 50 and slave['fertility'] = -1:
+IF sparks >= 50 and slave['fertility'] = -1:
  FUNC('$menu', 'interaction_city', $menu_item_Sfertility, menu_Sfertility, 'Restore fertility')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Sfertility_gray, empty, 'Restore fertility')
 END
-IF sparks => 25 and slave['breast_enchanced'] = 0:
+IF sparks >= 25 and slave['breast_enchanced'] = 0:
  FUNC('$menu', 'interaction_city', $menu_item_SBreast_augmentation, menu_SBreast_augmentation, 'Breast augmentation')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SBreast_augmentation_gray, empty, 'Breast augmentation')
 END
-IF sparks => 25 and virginity = 2:
+IF sparks >= 25 and virginity = 2:
  FUNC('$menu', 'interaction_city', $menu_item_SVirginity_restoration, menu_SVirginity_restoration, 'Virginity restoration')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SVirginity_restoration_gray, empty, 'Virginity restoration')
 END
-IF sparks => 250 and slave['beauty_enchanced'] = 0 and slave_rate['beauty'] < 180:
- FUNC('$menu', 'interaction_city', $menu_item_SNeoplasty, menu_SNeoplasty1, 'Neoplasty')
+IF sparks >= 250 and slave['beauty_enchanced'] = 0 and slave_rate['beauty'] < 160:
+ FUNC('$menu', 'interaction_city', $menu_item_SNeoplasty, menu_SNeoplasty, 'Neoplasty')
+ ELSE
+ FUNC('$menu', 'location_gray', $menu_item_SNeoplasty_gray, empty, 'Neoplasty')
 END
-IF sparks => 250 and slave['beauty_enchanced'] = 1 and slave_rate['beauty'] < 180:
- FUNC('$menu', 'interaction_city', $menu_item_SNeoplasty, menu_SNeoplasty2, 'Neoplasty')
-END
-IF sparks => 250 and slave['beauty_enchanced'] = 2 and slave_rate['beauty'] < 180:
- FUNC('$menu', 'interaction_city', $menu_item_SNeoplasty, menu_SNeoplasty3, 'Neoplasty')
-END
-IF sparks => 25 and slave['lactation'] = 0 and slave['age'] ! CONST_INT['loli_age']:
+IF sparks >= 25 and slave['lactation'] = 0 and slave['age'] ! CONST_INT['loli_age']:
  FUNC('$menu', 'interaction_city', $menu_item_SPermanent_lactation, menu_SPermanent_lactation, 'Permanent lactation')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SPermanent_lactation_gray, empty, 'Permanent lactation')
 END
-IF sparks => 50 and slave['fertility'] = 0:
+IF sparks >= 50 and slave['fertility'] = 0:
  FUNC('$menu', 'interaction_city', $menu_item_SOviparity, menu_SOviparity, 'Oviparity')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SOviparity_gray, empty, 'Oviparity')
@@ -676,41 +596,37 @@ FUNC('$menu', '===END===')
 $hospital_options[3] = {
 $text_display = '<br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF sparks => 5 and assistant['pregnant'] = 0 and assistant['fertility'] = 0:
+IF sparks >= 5 and assistant['pregnant'] = 0 and assistant['fertility'] = 0:
  FUNC('$menu', 'interaction_city', $menu_item_ASterilization, menu_ASterilization, 'Sterilization')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_ASterilization_gray, empty, 'Sterilization')
 END
-IF sparks => 50 and assistant['fertility'] = -1:
+IF sparks >= 50 and assistant['fertility'] = -1:
  FUNC('$menu', 'interaction_city', $menu_item_Afertility, menu_Afertility, 'Restore fertility')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Afertility_gray, empty, 'Restore fertility')
 END
-IF sparks => 25 and assistant['breast_enchanced'] = 0:
+IF sparks >= 25 and assistant['breast_enchanced'] = 0:
  FUNC('$menu', 'interaction_city', $menu_item_ABreast_augmentation, menu_ABreast_augmentation, 'Breast augmentation')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_ABreast_augmentation_gray, empty, 'Breast augmentation')
 END
-IF sparks => 25 and virginity = 2:
+IF sparks >= 25 and virginity = 2:
  FUNC('$menu', 'interaction_city', $menu_item_AVirginity_restoration, menu_AVirginity_restoration, 'Virginity restoration')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_AVirginity_restoration_gray, empty, 'Virginity restoration')
 END
-IF sparks => 250 and assistant['beauty_enchanced'] = 0 and assistant_rate['beauty'] < 180:
- FUNC('$menu', 'interaction_city', $menu_item_ANeoplasty, menu_ANeoplasty1, 'Neoplasty')
+IF sparks >= 250 and assistant['beauty_enchanced'] = 0 and assistant_rate['beauty'] < 160:
+ FUNC('$menu', 'interaction_city', $menu_item_ANeoplasty, menu_ANeoplasty, 'Neoplasty')
+ ELSE
+ FUNC('$menu', 'location_gray', $menu_item_ANeoplasty_gray, empty, 'Neoplasty')
 END
-IF sparks => 250 and assistant['beauty_enchanced'] = 1 and assistant_rate['beauty'] < 180:
- FUNC('$menu', 'interaction_city', $menu_item_ANeoplasty, menu_ANeoplasty2, 'Neoplasty')
-END
-IF sparks => 250 and assistant['beauty_enchanced'] = 2 and assistant_rate['beauty'] < 180:
- FUNC('$menu', 'interaction_city', $menu_item_ANeoplasty, menu_ANeoplasty3, 'Neoplasty')
-END
-IF sparks => 25 and assistant['lactation'] = 0 and assistant['age'] ! CONST_INT['loli_age']:
+IF sparks >= 25 and assistant['lactation'] = 0 and assistant['age'] ! CONST_INT['loli_age']:
  FUNC('$menu', 'interaction_city', $menu_item_APermanent_lactation, menu_APermanent_lactation, 'Permanent lactation')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_APermanent_lactation_gray, empty, 'Permanent lactation')
 END
-IF sparks => 50 and assistant['fertility'] = 0:
+IF sparks >= 50 and assistant['fertility'] = 0:
  FUNC('$menu', 'interaction_city', $menu_item_AOviparity, menu_AOviparity, 'Oviparity')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_AOviparity_gray, empty, 'Oviparity')
@@ -723,12 +639,13 @@ FUNC('$menu', '===END===')
 $stasis_options[1] = {
 $text_display = '<br><br><br>'
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 $place = 'stasis_bank'
 if nsfw = 1: not_safe = 1
 cryo_intro = 1
 !дополнительная проверка чтобы выходил правильный пункт в меню
-IF sparks => 20:
+IF sparks >= 20:
  IF stasis_tank = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Rentcapsule, menu_Rentcapsule, 'Rent home capsule')
   ELSE
@@ -752,6 +669,7 @@ if cells_unlocked = 1:
  $sp_text[2] = "   In this place you can keep slaves in a stasis state in which they will remain as long as I have money to support the unit. For an extra fee you can get access to three more cells for storage." 
 end
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 $place = 'stasis_bank_2'
 if nsfw = 1: not_safe = 1
@@ -770,7 +688,7 @@ IF iced_3_state = 0:
  ELSE
  FUNC('$menu', 'interaction_city', $menu_item_Cell3RE, menu_Cell3, 'Cell №3: take out')
 END
-IF sparks => 300 and cells_unlocked ! 1:
+IF sparks >= 300 and cells_unlocked ! 1:
  FUNC('$menu', 'interaction_city', $menu_item_Unlockcells, menu_Unlockcells, 'Unlock new cells (300$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Unlockcells_gray, empty, 'Unlock new cells (300$)')
@@ -820,7 +738,7 @@ IF npc_reveal['realtor'] = 0:
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_employeeestate_gray, empty, 'Offer an employee')
  END
- FUNC('$menu', 'interaction_city', $menu_item_requirementsestate, menu_requirementsestate, 'Ask about requirements')
+ FUNC('$menu', 'interaction_city', $menu_item_requirementsestate, menu_requirementsestate, 'About the requirements')
 END
 FUNC('$menu', 'city_form', $menu_item_Exittocity, menu_Exittocity, 'Exit to the city')
 FUNC('$menu', '===END===')
@@ -829,27 +747,27 @@ FUNC('$menu', '===END===')
 $realtor_options[2] = {
 $text_display = '<br><br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF sparks => 250 and brand_reputation > 2:
+IF sparks >= 250 and brand_reputation > 2:
  FUNC('$menu', 'interaction_city', $menu_item_realtorWhite, menu_realtorWhite, 'White town')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_realtorWhite_gray, empty, 'White town')
 END
-IF sparks => 200 and faction_fame['korvus'] > 0:
+IF sparks >= 200 and faction_fame['korvus'] > 0:
  FUNC('$menu', 'interaction_city', $menu_item_realtorNecropolis, menu_realtorNecropolis, 'Necropolis')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_realtorNecropolis_gray, empty, 'Necropolis')
 END
-IF sparks => 150 and faction_fame['taurus'] > 0:
+IF sparks >= 150 and faction_fame['taurus'] > 0:
  FUNC('$menu', 'interaction_city', $menu_item_realtorBull, menu_realtorBull, 'Quarter of the Bull')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_realtorBull_gray, empty, 'Quarter of the Bull')
 END
-IF sparks => 75 and faction_fame['serpis'] > 0:
+IF sparks >= 75 and faction_fame['serpis'] > 0:
  FUNC('$menu', 'interaction_city', $menu_item_realtorSerpentine, menu_realtorSerpentine, 'Serpentine quarter')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_realtorSerpentine_gray, empty, 'Serpentine quarter')
 END
-IF sparks => 50 and faction_fame['kamira'] > 0:
+IF sparks >= 50 and faction_fame['kamira'] > 0:
  FUNC('$menu', 'interaction_city', $menu_item_realtorOutcasts, menu_realtorOutcasts, 'Quarter of the Outcasts')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_realtorOutcasts_gray, empty, 'Quarter of the Outcasts')
@@ -862,27 +780,27 @@ $realtor_options[3] = {
 $text_display = '<br><br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0') 
 if dungeon = 0:
- if sparks => estate_cost_dungeon[$estate]: FUNC('$menu', 'interaction_city', $menu_item_Rentdungeon, menu_Rentdungeon, 'Rent a dungeon')
+ if sparks >= estate_cost_dungeon[$estate]: FUNC('$menu', 'interaction_city', $menu_item_Rentdungeon, menu_Rentdungeon, 'Rent a dungeon')
  else
  FUNC('$menu', 'interaction_city', $menu_item_Abandondungeon, menu_Abandondungeon, 'Abandon the dungeon')
 END
 if bouduar = 0:
- if sparks => estate_cost_bouduar[$estate]: FUNC('$menu', 'interaction_city', $menu_item_Rentboudoir, menu_Rentboudoir, 'Rent a boudoir')
+ if sparks >= estate_cost_bouduar[$estate]: FUNC('$menu', 'interaction_city', $menu_item_Rentboudoir, menu_Rentboudoir, 'Rent a boudoir')
  else
  FUNC('$menu', 'interaction_city', $menu_item_Abandonboudoir, menu_Abandonboudoir, 'Abandon the boudoir')
 END
 if lab = 0:
- if sparks => estate_cost_lab[$estate]: FUNC('$menu', 'interaction_city', $menu_item_Rentlaboratory, menu_Rentlaboratory, 'Rent a laboratory')
+ if sparks >= estate_cost_lab[$estate]: FUNC('$menu', 'interaction_city', $menu_item_Rentlaboratory, menu_Rentlaboratory, 'Rent a laboratory')
  else
  FUNC('$menu', 'interaction_city', $menu_item_Abandonlaboratory, menu_Abandonlaboratory, 'Abandon the laboratory')
 END
 if pen = 0:
-  if sparks => 10: FUNC('$menu', 'interaction_city', $menu_item_Rentpen, menu_Rentpen, 'Rent a pen for fiend')
+  if sparks >= 10: FUNC('$menu', 'interaction_city', $menu_item_Rentpen, menu_Rentpen, 'Rent a pen for fiend')
  else
  FUNC('$menu', 'interaction_city', $menu_item_Abandonpen, menu_Abandonpen, 'Abandon the pen')
 END
 if barn = 0:
-  if sparks => 30: FUNC('$menu', 'interaction_city', $menu_item_Rentbarn, menu_Rentbarn, 'Rent a barn')
+  if sparks >= 30: FUNC('$menu', 'interaction_city', $menu_item_Rentbarn, menu_Rentbarn, 'Rent a barn')
  else
  FUNC('$menu', 'interaction_city', $menu_item_Abandonbarn, menu_Abandonbarn, 'Abandon the barn')
 END
@@ -918,128 +836,139 @@ FUNC('$menu', '===END===')
 
 $realtor_options[41] = {
 FUNC('$menu', 'spacer', 1)
+	
 FUNC('$menu', '===BEGIN===', 'column_0') 
-if $hall ! 'basic' and sparks => 0: FUNC('$menu', 'interaction_city', $menu_item_hallFree, menu_hallFree, 'Free')
-if $hall ! 'econom' and sparks => 25: FUNC('$menu', 'interaction_city', $menu_item_hallEconom, menu_hallEconom, 'Econom')
-if $hall ! 'japan' and sparks => 25: FUNC('$menu', 'interaction_city', $menu_item_hallJapanese, menu_hallJapanese, 'Japanese')
-if $hall ! 'comfy' and sparks => 25: FUNC('$menu', 'interaction_city', $menu_item_hallCozy, menu_hallCozy, 'Cozy')
-if $hall ! 'fort' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_hallmedieval, menu_hallmedieval, 'Neo-medieval')
-if $hall ! 'modern' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_hallModern, menu_hallModern, 'Modern')
+if $hall ! 'basic' and sparks >= 0: FUNC('$menu', 'interaction_city', $menu_item_hallFree, menu_hallFree, 'Free')
+if $hall ! 'econom' and sparks >= 25: FUNC('$menu', 'interaction_city', $menu_item_hallEconom, menu_hallEconom, 'Econom')
+if $hall ! 'japan' and sparks >= 25: FUNC('$menu', 'interaction_city', $menu_item_hallJapanese, menu_hallJapanese, 'Japanese')
+if $hall ! 'comfy' and sparks >= 25: FUNC('$menu', 'interaction_city', $menu_item_hallCozy, menu_hallCozy, 'Cozy')
+if $hall ! 'fort' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_hallmedieval, menu_hallmedieval, 'Neo-medieval')
+if $hall ! 'modern' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_hallModern, menu_hallModern, 'Modern')
 FUNC('$menu', 'exec_options', $menu_item_Backfromhall, 'sp_txt = 4 & gt $curloc', 'Back')
 FUNC('$menu', '===END===')
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_1') 
-if $hall ! 'classic' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_hallClassical, menu_hallClassical, 'Classical')
-if $hall ! 'victorian' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_HallVictorian, menu_HallVictorian, 'Victorian')
-if $hall ! 'gothic' and sparks => 150: FUNC('$menu', 'interaction_city', $menu_item_HallNecro, menu_HallNecro, 'Necro-gothic')
-if $hall ! 'elite' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_HallElite, menu_HallElite, 'Elite')
-if $hall ! 'Slaver' and sparks => 150: FUNC('$menu', 'interaction_city', $menu_item_hallSlaver, menu_hallSlaver, 'Slaver')
-if $hall ! 'lux' and sparks => 200: FUNC('$menu', 'interaction_city', $menu_item_hallluxurious, menu_hallLuxurious, 'Luxurious')
+if $hall ! 'classic' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_hallClassical, menu_hallClassical, 'Classical')
+if $hall ! 'victorian' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_HallVictorian, menu_HallVictorian, 'Victorian')
+if $hall ! 'gothic' and sparks >= 150: FUNC('$menu', 'interaction_city', $menu_item_HallNecro, menu_HallNecro, 'Necro-gothic')
+if $hall ! 'elite' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_HallElite, menu_HallElite, 'Elite')
+if $hall ! 'Slaver' and sparks >= 150: FUNC('$menu', 'interaction_city', $menu_item_hallSlaver, menu_hallSlaver, 'Slaver')
+if $hall ! 'lux' and sparks >= 200: FUNC('$menu', 'interaction_city', $menu_item_hallluxurious, menu_hallLuxurious, 'Luxurious')
 FUNC('$menu', '===END===')
 }
 
 $realtor_options[42] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-if $bed ! 'basic' and sparks => 0: FUNC('$menu', 'interaction_city', $menu_item_bedFree, menu_bedFree, 'Free')
-if $bed ! 'econom' and sparks => 15: FUNC('$menu', 'interaction_city', $menu_item_bedEconom, menu_bedEconom, 'Econom')
-if $bed ! 'japan' and sparks => 25: FUNC('$menu', 'interaction_city', $menu_item_bedJapanese, menu_bedJapanese, 'Japanese')
-if $bed ! 'comfy' and sparks => 25: FUNC('$menu', 'interaction_city', $menu_item_bedCozy, menu_bedCozy, 'Cozy')
-if $bed ! 'fort' and sparks => 30: FUNC('$menu', 'interaction_city', $menu_item_bedmedieval, menu_bedmedieval, 'Neo-medieval')
-if $bed ! 'modern' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_bedModern, menu_bedModern, 'Modern')
+if $bed ! 'basic' and sparks >= 0: FUNC('$menu', 'interaction_city', $menu_item_bedFree, menu_bedFree, 'Free')
+if $bed ! 'econom' and sparks >= 15: FUNC('$menu', 'interaction_city', $menu_item_bedEconom, menu_bedEconom, 'Econom')
+if $bed ! 'japan' and sparks >= 25: FUNC('$menu', 'interaction_city', $menu_item_bedJapanese, menu_bedJapanese, 'Japanese')
+if $bed ! 'comfy' and sparks >= 25: FUNC('$menu', 'interaction_city', $menu_item_bedCozy, menu_bedCozy, 'Cozy')
+if $bed ! 'fort' and sparks >= 30: FUNC('$menu', 'interaction_city', $menu_item_bedmedieval, menu_bedmedieval, 'Neo-medieval')
+if $bed ! 'modern' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_bedModern, menu_bedModern, 'Modern')
 FUNC('$menu', 'exec_options', $menu_item_Backfrombed, 'sp_txt = 4 & gt $curloc', 'Back')
 FUNC('$menu', '===END===')
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_1') 
-if $bed ! 'classic' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_bedClassical, menu_bedClassical, 'Classical')
-if $bed ! 'slaver' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_bedSlaver, menu_bedSlaver, 'Slaver')
-if $bed ! 'stylish' and sparks => 150: FUNC('$menu', 'interaction_city', $menu_item_bedStyle, menu_bedStyle, 'Style')
-if $bed ! 'gothic' and sparks => 150: FUNC('$menu', 'interaction_city', $menu_item_bedNecro, menu_bedNecro, 'Necro-gothic')
-if $bed ! 'elite' and sparks => 150: FUNC('$menu', 'interaction_city', $menu_item_bedElite, menu_bedElite, 'Elite')
-if $bed ! 'lux' and sparks => 200: FUNC('$menu', 'interaction_city', $menu_item_beduxurious, menu_bedLuxurious, 'Luxurious')
+if $bed ! 'classic' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_bedClassical, menu_bedClassical, 'Classical')
+if $bed ! 'slaver' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_bedSlaver, menu_bedSlaver, 'Slaver')
+if $bed ! 'stylish' and sparks >= 150: FUNC('$menu', 'interaction_city', $menu_item_bedStyle, menu_bedStyle, 'Style')
+if $bed ! 'gothic' and sparks >= 150: FUNC('$menu', 'interaction_city', $menu_item_bedNecro, menu_bedNecro, 'Necro-gothic')
+if $bed ! 'elite' and sparks >= 150: FUNC('$menu', 'interaction_city', $menu_item_bedElite, menu_bedElite, 'Elite')
+if $bed ! 'lux' and sparks >= 200: FUNC('$menu', 'interaction_city', $menu_item_beduxurious, menu_bedLuxurious, 'Luxurious')
 FUNC('$menu', '===END===')
 }
 
 $realtor_options[43] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-if $kitchen ! 'basic' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_kitchenRustic, menu_kitchenRustic, 'Rustic')
-if $kitchen ! 'econom' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_kitchenEconom, menu_kitchenEconom, 'Econom')
-if $kitchen ! 'fort' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_kitchenmedieval, menu_kitchenmedieval, 'Neo-medieval')
-if $kitchen ! 'gothic' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_kitchenNecro, menu_kitchenNecro, 'Necro-gothic')
-if $kitchen ! 'elite' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_kitchenElite, menu_kitchenElite, 'Elite')
+if $kitchen ! 'basic' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_kitchenRustic, menu_kitchenRustic, 'Rustic')
+if $kitchen ! 'econom' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_kitchenEconom, menu_kitchenEconom, 'Econom')
+if $kitchen ! 'fort' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_kitchenmedieval, menu_kitchenmedieval, 'Neo-medieval')
+if $kitchen ! 'gothic' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_kitchenNecro, menu_kitchenNecro, 'Necro-gothic')
+if $kitchen ! 'elite' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_kitchenElite, menu_kitchenElite, 'Elite')
 FUNC('$menu', 'exec_options', $menu_item_Backfromkitchen, 'sp_txt = 4 & gt $curloc', 'Back')
 FUNC('$menu', '===END===')
 }
 
 $realtor_options[44] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-if $bath ! 'basic' and sparks => 0: FUNC('$menu', 'interaction_city', $menu_item_bathFree, menu_bathFree, 'Free')
-if $bath ! 'econom' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_bathEconom, menu_bathEconom, 'Econom')
-if $bath ! 'fort' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_bathmedieval, menu_bathmedieval, 'Neo-medieval')
-if $bath ! 'classic' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_bathClassical, menu_bathClassical, 'Classical')
-if $bath ! 'japan' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_bathJapanese, menu_bathJapanese, 'Japanese tub')
-if $bath ! 'gothic' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_bathNecro, menu_bathNecro, 'Necro-gothic')
-if $bath ! 'elite' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_bathElite, menu_bathElite, 'Elite')
-if $bath ! 'lux' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_bathLuxurious, menu_bathLuxurious, 'Luxurious')
+if $bath ! 'basic' and sparks >= 0: FUNC('$menu', 'interaction_city', $menu_item_bathFree, menu_bathFree, 'Free')
+if $bath ! 'econom' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_bathEconom, menu_bathEconom, 'Econom')
+if $bath ! 'fort' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_bathmedieval, menu_bathmedieval, 'Neo-medieval')
+if $bath ! 'classic' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_bathClassical, menu_bathClassical, 'Classical')
+if $bath ! 'japan' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_bathJapanese, menu_bathJapanese, 'Japanese tub')
+if $bath ! 'gothic' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_bathNecro, menu_bathNecro, 'Necro-gothic')
+if $bath ! 'elite' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_bathElite, menu_bathElite, 'Elite')
+if $bath ! 'lux' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_bathLuxurious, menu_bathLuxurious, 'Luxurious')
 FUNC('$menu', 'exec_options', $menu_item_Backfrombath, 'sp_txt = 4 & gt $curloc', 'Back')
 FUNC('$menu', '===END===')
 }
 
 $realtor_options[45] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-if $dungeon ! 'basic' and sparks => 0: FUNC('$menu', 'interaction_city', $menu_item_dungeonFree, menu_dungeonFree, 'Free')
-if $dungeon ! 'fort' and sparks => 10: FUNC('$menu', 'interaction_city', $menu_item_dungeonMedieval, menu_dungeonMedieval, 'Medieval')
-if $dungeon ! 'entomb' and sparks => 10: FUNC('$menu', 'interaction_city', $menu_item_dungeonStone, menu_dungeonStone, 'Stone sack')
-if $dungeon ! 'econom' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_dungeonEconom, menu_dungeonEconom, 'Econom')
-if $dungeon ! 'classic' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_dungeonClassical, menu_dungeonClassical, 'Classical')
-if $dungeon ! 'pastoral' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_dungeonRustic, menu_dungeonRustic, 'Rustic')
+if $dungeon ! 'basic' and sparks >= 0: FUNC('$menu', 'interaction_city', $menu_item_dungeonFree, menu_dungeonFree, 'Free')
+if $dungeon ! 'fort' and sparks >= 10: FUNC('$menu', 'interaction_city', $menu_item_dungeonMedieval, menu_dungeonMedieval, 'Medieval')
+if $dungeon ! 'entomb' and sparks >= 10: FUNC('$menu', 'interaction_city', $menu_item_dungeonStone, menu_dungeonStone, 'Stone sack')
+if $dungeon ! 'econom' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_dungeonEconom, menu_dungeonEconom, 'Econom')
+if $dungeon ! 'classic' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_dungeonClassical, menu_dungeonClassical, 'Classical')
+if $dungeon ! 'pastoral' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_dungeonRustic, menu_dungeonRustic, 'Rustic')
 FUNC('$menu', 'exec_options', $menu_item_Backfromdungeon, 'sp_txt = 4 & gt $curloc', 'Back')
 FUNC('$menu', '===END===')
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_1') 
-if $dungeon ! 'gothic' and sparks => 25: FUNC('$menu', 'interaction_city', $menu_item_dungeonNecro, menu_dungeonNecro, 'Necro-gothic')
-if $dungeon ! 'executor' and sparks => 25: FUNC('$menu', 'interaction_city', $menu_item_dungeonExecutioner, menu_dungeonExecutioner, 'Executioner')
-if $dungeon ! 'slaver' and sparks => 25: FUNC('$menu', 'interaction_city', $menu_item_dungeonSlaver, menu_dungeonSlaver, 'Slaver')
-if $dungeon ! 'victorian' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_dungeonVictorian, menu_dungeonVictorian, 'Victorian')
-if $dungeon ! 'elite' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_dungeonElite, menu_dungeonElite, 'Elite')
-if $dungeon ! 'lux' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_dungeonLuxurious, menu_dungeonLuxurious, 'Luxurious')
+if $dungeon ! 'gothic' and sparks >= 25: FUNC('$menu', 'interaction_city', $menu_item_dungeonNecro, menu_dungeonNecro, 'Necro-gothic')
+if $dungeon ! 'executor' and sparks >= 25: FUNC('$menu', 'interaction_city', $menu_item_dungeonExecutioner, menu_dungeonExecutioner, 'Executioner')
+if $dungeon ! 'slaver' and sparks >= 25: FUNC('$menu', 'interaction_city', $menu_item_dungeonSlaver, menu_dungeonSlaver, 'Slaver')
+if $dungeon ! 'victorian' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_dungeonVictorian, menu_dungeonVictorian, 'Victorian')
+if $dungeon ! 'elite' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_dungeonElite, menu_dungeonElite, 'Elite')
+if $dungeon ! 'lux' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_dungeonLuxurious, menu_dungeonLuxurious, 'Luxurious')
 FUNC('$menu', '===END===')
 }
 
 $realtor_options[46] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-if $bouduar ! 'basic' and sparks => 0: FUNC('$menu', 'interaction_city', $menu_item_bouduarFree, menu_bouduarFree, 'Free')
-if $bouduar ! 'econom' and sparks => 10: FUNC('$menu', 'interaction_city', $menu_item_bouduarEconom, menu_bouduarEconom, 'Econom')
-if $bouduar ! 'modern' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_bouduarModern, menu_bouduarModern, 'Modern')
-if $bouduar ! 'comfy' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_bouduarComfy, menu_bouduarComfy, 'Comfy')
-if $bouduar ! 'magic' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_bouduarWitch, menu_bouduarWitch, 'Witch')
+if $bouduar ! 'basic' and sparks >= 0: FUNC('$menu', 'interaction_city', $menu_item_bouduarFree, menu_bouduarFree, 'Free')
+if $bouduar ! 'econom' and sparks >= 10: FUNC('$menu', 'interaction_city', $menu_item_bouduarEconom, menu_bouduarEconom, 'Econom')
+if $bouduar ! 'modern' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_bouduarModern, menu_bouduarModern, 'Modern')
+if $bouduar ! 'comfy' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_bouduarComfy, menu_bouduarComfy, 'Comfy')
+if $bouduar ! 'magic' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_bouduarWitch, menu_bouduarWitch, 'Witch')
 FUNC('$menu', 'exec_options', $menu_item_Backfromdungeon, 'sp_txt = 4 & gt $curloc', 'Back')
 FUNC('$menu', '===END===')
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_1') 
-if $bouduar ! 'victorian' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_bouduarVictorian, menu_bouduarVictorian, 'Victorian')
-if $bouduar ! 'slaver' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_bouduarSlaver, menu_bouduarSlaver, 'Slaver')
-if $bouduar ! 'fort' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_bouduarmedieval, menu_bouduarmedieval, 'Neo-medieval')
-if $bouduar ! 'elite' and sparks => 150: FUNC('$menu', 'interaction_city', $menu_item_bouduarElite, menu_bouduarElite, 'Elite')
-if $bouduar ! 'gothic' and sparks => 200: FUNC('$menu', 'interaction_city', $menu_item_bouduarNecro, menu_bouduarNecro, 'Necro-gothic')
-if $bouduar ! 'lux' and sparks => 250: FUNC('$menu', 'interaction_city', $menu_item_bouduarLuxurious, menu_bouduarLuxurious, 'Luxurious')
+if $bouduar ! 'victorian' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_bouduarVictorian, menu_bouduarVictorian, 'Victorian')
+if $bouduar ! 'slaver' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_bouduarSlaver, menu_bouduarSlaver, 'Slaver')
+if $bouduar ! 'fort' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_bouduarmedieval, menu_bouduarmedieval, 'Neo-medieval')
+if $bouduar ! 'elite' and sparks >= 150: FUNC('$menu', 'interaction_city', $menu_item_bouduarElite, menu_bouduarElite, 'Elite')
+if $bouduar ! 'gothic' and sparks >= 200: FUNC('$menu', 'interaction_city', $menu_item_bouduarNecro, menu_bouduarNecro, 'Necro-gothic')
+if $bouduar ! 'lux' and sparks >= 250: FUNC('$menu', 'interaction_city', $menu_item_bouduarLuxurious, menu_bouduarLuxurious, 'Luxurious')
 FUNC('$menu', '===END===')
 }
 
 $realtor_options[47] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-if $lab ! 'econom' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_labProfessor, menu_labProfessor, 'Professor')
-if $lab ! 'basic' and sparks => 20: FUNC('$menu', 'interaction_city', $menu_item_labWitch, menu_labWitch, 'Witch')
-if $lab ! 'fort' and sparks => 50: FUNC('$menu', 'interaction_city', $menu_item_labAlchemist, menu_labAlchemist, 'Alchemist')
-if $lab ! 'gothic' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_labNecromancer, menu_labNecromancer, 'Necromancer')
-if $lab ! 'slaver' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_labSlaver, menu_labSlaver, 'Slaver')
-if $lab ! 'victorian' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_labVictorian, menu_labVictorian, 'Victorian')
-if $lab ! 'elite' and sparks => 100: FUNC('$menu', 'interaction_city', $menu_item_labElite, menu_labElite, 'Elite')
+if $lab ! 'econom' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_labProfessor, menu_labProfessor, 'Professor')
+if $lab ! 'basic' and sparks >= 20: FUNC('$menu', 'interaction_city', $menu_item_labWitch, menu_labWitch, 'Witch')
+if $lab ! 'fort' and sparks >= 50: FUNC('$menu', 'interaction_city', $menu_item_labAlchemist, menu_labAlchemist, 'Alchemist')
+if $lab ! 'gothic' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_labNecromancer, menu_labNecromancer, 'Necromancer')
+if $lab ! 'slaver' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_labSlaver, menu_labSlaver, 'Slaver')
+if $lab ! 'victorian' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_labVictorian, menu_labVictorian, 'Victorian')
+if $lab ! 'elite' and sparks >= 100: FUNC('$menu', 'interaction_city', $menu_item_labElite, menu_labElite, 'Elite')
 FUNC('$menu', 'exec_options', $menu_item_Backfromlab, 'sp_txt = 4 & gt $curloc', 'Back')
 FUNC('$menu', '===END===')
 }
@@ -1050,6 +979,7 @@ $forum_options[1] = {
 $sp_text[1] = "   Central forum provides huge opportunities to a person of your profession. There you can advertise yourself a little and put sticks in the wheels of rivals, or to collect information about the best potential buyers for your slave. And of course you can just communicate with the others." 
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 3)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:
  FUNC('$menu', 'interaction_city', $menu_item_Findcustomers, menu_Findcustomers, 'Find potential customers')
@@ -1066,6 +996,7 @@ $forum_options[2] = {
 $sp_text[2] = "   At the forum you can periodically meet different interesting personalities who do not buy ordinary slaves, but are interested in special deals. Some of them offer some really interesting things." 
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 if active[$quest[6]] < 2: FUNC('$menu', 'interaction_city', $menu_item_Aramus, menu_Aramus, 'Quartermaster Aramus')
 if active[$quest[7]] < 2: FUNC('$menu', 'interaction_city', $menu_item_Vujin, menu_Vujin, 'Vujin the Wise')
@@ -1080,13 +1011,14 @@ $farm_options[1] = {
 $sp_text[1] = '   Very long barrack filled with cramped stalls where contains interspersed people and animals. The smell here is very nasty. But business is business.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 4)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  FUNC('$menu', 'interaction_city', $menu_item_merchandisefarm, menu_merchandisefarm, 'Offer merchandise')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_merchandisefarm_gray, empty, 'Offer merchandise')
 END
-FUNC('$menu', 'interaction_city', $menu_item_requirementsfarm, menu_requirementsfarm, 'Ask about requirements')
+FUNC('$menu', 'interaction_city', $menu_item_requirementsfarm, menu_requirementsfarm, 'About the requirements')
 FUNC('$menu', 'city_form', $menu_item_Leavefarm, menu_Leavefarm, 'Leave the animal farm')
 FUNC('$menu', '===END===')
 }
@@ -1096,13 +1028,14 @@ $warcamp_options[1] = {
 $sp_text[1] = '   Places there are unsafe, but you can feel relatively safe behind a hastily built fence of base camp.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 4)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  FUNC('$menu', 'interaction_city', $menu_item_employeecamp, menu_employeecamp, 'Offer an employee')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_employeecamp_gray, empty, 'Offer an employee')
 END
-FUNC('$menu', 'interaction_city', $menu_item_requirementscamp, menu_requirementscamp, 'Ask about requirements')
+FUNC('$menu', 'interaction_city', $menu_item_requirementscamp, menu_requirementscamp, 'About the requirements')
 FUNC('$menu', 'city_form', $menu_item_Leavecamp, menu_Leavecamp, 'Leave the base camp')
 FUNC('$menu', '===END===')
 }
@@ -1113,13 +1046,14 @@ npc = 1
 $sp_text[1] = '   Considering the level of artists mortality, Malifistsent should always need a new girls. It is a good business opportunity!'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 4)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
  FUNC('$menu', 'interaction_city', $menu_item_Offerartist, menu_Offerartist, 'Offer an artist')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Offerartist_gray, empty, 'Offer an artist')
 END
-FUNC('$menu', 'interaction_city', $menu_item_requirementstheater, menu_requirementstheater, 'Ask about requirements')
+FUNC('$menu', 'interaction_city', $menu_item_requirementstheater, menu_requirementstheater, 'About the requirements')
 FUNC('$menu', 'city_form', $menu_item_Leavetheater, menu_Leavetheater, 'Leave the theater')
 FUNC('$menu', '===END===')
 }
@@ -1129,17 +1063,17 @@ $smugler_options[1] = {
 $sp_text[1] = '   On this dark street, few people can feel comfortable. But this is where you can set up a meeting to the right people who do not want to attract too much attention.'
 $text_display = '<br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF slave_state = CONST_INT['no_slave'] and sparks => 2000:
+IF slave_state = CONST_INT['no_slave'] and sparks >= 2000:
  FUNC('$menu', 'exec_options', $menu_item_Orderparcel, 'sp_txt = 2 & gt $curloc', 'Order parcel (2000$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Orderparcel_gray, empty, 'Order parcel (2000$)')
 END
-IF helen = 0 and slave_state = CONST_INT['no_slave'] and sparks => 3000:
+IF helen = 0 and slave_state = CONST_INT['no_slave'] and sparks >= 3000:
  FUNC('$menu', 'interaction_city', $menu_item_BuyHelen, menu_BuyHelen, 'Buy Helen (3000$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_BuyHelen_gray, empty, 'Buy Helen (3000$)')
 END
-IF yasmin = 0 and slave_state = CONST_INT['no_slave'] and sparks => 3000:
+IF yasmin = 0 and slave_state = CONST_INT['no_slave'] and sparks >= 3000:
  FUNC('$menu', 'interaction_city', $menu_item_BuyYasmin, menu_BuyYasmin, 'Buy Yasmin (3000$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_BuyYasmin_gray, empty, 'Buy Yasmin (3000$)')
@@ -1158,6 +1092,7 @@ $smugler_options[2] = {
 $sp_text[2] = '   Training scheme for all our slaves are standard, appearance too. Clones, you know. But you can select the desired age category.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 FUNC('$menu', 'interaction_city', $menu_item_Choosemature, menu_Choosemature, 'Choose mature')
 FUNC('$menu', 'interaction_city', $menu_item_Chooseyoung, menu_Chooseyoung, 'Choose young')
@@ -1173,8 +1108,9 @@ npc = 0
 $place = 'palace'
 $text_display = '<br><br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF faction_fame['taurus'] => 3:
+IF faction_fame['taurus'] >= 3:
  $sp_text[1] = '   I was allowed to enter the White Palace. It remains only to choose whom offer my services.'
  if npc_progress['bishop_molaru'] < 2: FUNC('$menu', 'interaction_city', $menu_item_archbishoppalace, menu_archbishoppalace, 'Audience with archbishop')
  if npc_progress['general_barabas'] < 2: FUNC('$menu', 'interaction_city', $menu_item_generalpalace, menu_generalpalace, 'Audience with general')
@@ -1184,7 +1120,7 @@ IF faction_fame['taurus'] => 3:
  $text_display += '<br><br><br><br>' 
  $sp_text[1] = '   At the entrance of the White Palace watchful guards on duty. They will not allow strangers here.'
 END
-IF faction_fame['taurus'] => 4:
+IF faction_fame['taurus'] >= 4:
  $sp_text[1] = '   I was allowed to see the King. I will need to meet with him and try to fulfill his assignment.'
  if npc_progress['taurus_king'] < 2: FUNC('$menu', 'interaction_city', $menu_item_Kingpalace, menu_Kingpalace, 'Audience with King')
 END
@@ -1203,8 +1139,9 @@ $spire_options[1] = {
 $place = 'spire'
 $text_display = '<br><br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF faction_fame['serpis'] => 3:
+IF faction_fame['serpis'] >= 3:
  $sp_text[1] = '   So, I''m inside. It remains only to choose whom to offer my services.'
  if npc_progress['bishop_porter'] < 2: FUNC('$menu', 'interaction_city', $menu_item_archbishopspires, menu_archbishopspires, 'Audience with archbishop')
  if npc_progress['general_drago'] < 2: FUNC('$menu', 'interaction_city', $menu_item_generalspires, menu_generalspires, 'Audience with general')
@@ -1215,7 +1152,7 @@ IF faction_fame['serpis'] => 3:
  $text_display += '<br><br><br><br>' 
  $sp_text[1] = '   At the entrance of the Administrative Spires watchful guards on duty. They will not allow strangers here.'
 END
-IF faction_fame['serpis'] => 4:
+IF faction_fame['serpis'] >= 4:
  $sp_text[1] = '   I was allowed to see the President. I will need to meet with him and try to fulfill his assignment.'
  if npc_progress['serpis_prince_first'] < 2: FUNC('$menu', 'interaction_city', $menu_item_Presidentspires, menu_Presidentspires, 'Audience with President')
 END
@@ -1234,8 +1171,9 @@ $citadel_options[1] = {
 $place = 'citadel'
 $text_display = '<br><br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF faction_fame['kamira'] => 3:
+IF faction_fame['kamira'] >= 3:
  $sp_text[1] = '   Beastmen allowed me to enter into the Tierra del Citadel. It remains only to choose whom to offer my services.'
  if npc_progress['bishop_shaitana'] < 2: FUNC('$menu', 'interaction_city', $menu_item_archbishopCitadel, menu_archbishopCitadel, 'Audience with archbishop')
  if npc_progress['general_carnis'] < 2: FUNC('$menu', 'interaction_city', $menu_item_generalCitadel, menu_generalCitadel, 'Audience with general')
@@ -1245,7 +1183,7 @@ IF faction_fame['kamira'] => 3:
  $text_display += '<br><br><br><br>' 
  $sp_text[1] = '   At the entrance to the Tierra del Citadel watchful guards on duty. They will not allow strangers here.'
 END
-IF faction_fame['kamira'] => 4:
+IF faction_fame['kamira'] >= 4:
  $sp_text[1] = '   I was allowed to see Mistress. I will need to meet with her and try to fulfill her assignment.'
  if npc_progress['tiamath'] < 2: FUNC('$menu', 'interaction_city', $menu_item_MistressCitadel, menu_MistressCitadel, 'Audience with Mistress')
 END
@@ -1264,8 +1202,9 @@ $tower_options[1] = {
 $place = 'tower'
 $text_display = '<br><br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF faction_fame['korvus'] => 3:
+IF faction_fame['korvus'] >= 3:
  $sp_text[1] = '   Ghouls trust me. Now I can go into the Raven Tower. It remains only to choose whom to offer my services.'
  if npc_progress['bishop_nerilis'] < 2: FUNC('$menu', 'interaction_city', $menu_item_archbishoptower, menu_archbishoptower, 'Audience with archbishop')
  if npc_progress['hand_of_the_knyaz'] < 2: FUNC('$menu', 'interaction_city', $menu_item_righthandtower, menu_righthandtower, 'Audience with the right hand')
@@ -1275,7 +1214,7 @@ IF faction_fame['korvus'] => 3:
  $sp_text[1] = '   Undead Knight stands unchallenged on Raven Tower guard. Try to pass him without invitation is tantamount to suicide.'
  $text_display += '<br><br><br><br>' 
 END
-IF faction_fame['korvus'] => 4:
+IF faction_fame['korvus'] >= 4:
  $sp_text[1] = '   I was allowed to see the Prince. I will need to meet with him and try to fulfill his assignment.'
  if npc_progress['korvus_knyaz'] < 2: FUNC('$menu', 'interaction_city', $menu_item_Princetower, menu_Princetower, 'Audience with Prince')
 END
@@ -1294,8 +1233,9 @@ $vatican_options[1] = {
 $place = 'vatican'
 $text_display = '<br><br><br>'
 FUNC('$menu', 'spacer', 3)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF brand_reputation => 5:
+IF brand_reputation >= 5:
  IF npc_progress['cardinal_de_mujlon'] < 2: 
   $sp_text[1] = '   To get to the Pope, I need to perform a service for Cardinal.'
   FUNC('$menu', 'interaction_city', $menu_item_CardinalVatican, menu_CardinalVatican, 'Audience with Cardinal')
@@ -1325,6 +1265,7 @@ $club_options[1] = {
 $sp_text[1] = '   Sir Shelley''s Gentleman''s club provides great opportunities not only for leisure but also for business. Here you can find a lot of potential customers, or at least to sell slaves to owner himself.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 if club_member = 0: FUNC('$menu', 'interaction_city', $menu_item_Joinclub, menu_Joinclub, 'Join the club')
 if club_member = 1: FUNC('$menu', 'exec_options', $menu_item_Visitclub, 'sp_txt = 2 & gt $curloc', 'Visit the club')
@@ -1333,15 +1274,15 @@ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['bran
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_employeeclub_gray, empty, 'Offer an employee')
 END
-FUNC('$menu', 'interaction_city', $menu_item_requirementsclub, menu_requirementsclub, 'Ask about requirements')
+FUNC('$menu', 'interaction_city', $menu_item_requirementsclub, menu_requirementsclub, 'About the requirements')
 FUNC('$menu', 'city_form', $menu_item_Leaveclub, menu_Leaveclub, 'Leave the club')
 FUNC('$menu', '===END===')
 }
 
 $club_options[2] = {
 $sp_text[2] = '   You walk inside and surrenders to entertainment befitting a respectable gentleman. Alcohol, cigars, cards, conversations about politics and of course the lovely maids and actresses... But you must not forget about the business.'
-
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
 FUNC('$menu', 'interaction_city', $menu_item_clubM1, menu_clubM1, 'Don Karbolio')
 FUNC('$menu', 'interaction_city', $menu_item_clubM2, menu_clubM2, 'Don Sigismund')
@@ -1352,6 +1293,7 @@ FUNC('$menu', 'interaction_city', $menu_item_Backclub, menu_Backclub, 'Back')
 FUNC('$menu', 'city_form', $menu_item_Leaveclub, menu_Leaveclub, 'Leave the club')
 FUNC('$menu', '===END===')
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_1') 
 FUNC('$menu', 'interaction_city', $menu_item_clubM4, menu_clubM4, 'Don Bobrit')
 FUNC('$menu', 'interaction_city', $menu_item_clubM5, menu_clubM5, 'Don Mladio')
@@ -1363,43 +1305,33 @@ FUNC('$menu', '===END===')
 $isabella_options[1] = {
 $sp_text[1] = '     [Isabella]
   - So, <<$master_name>>, we have an agreement, or what?'
-$text_display = '<br><br><br><br><br><br><br><br><br><br>'
+$text_display = '<br><br><br><br><br>'
 if nsfw = 0: $text_display += '<div id="center_Isabella"><img src="content\pic\girls\full\isabela.gif"></div>' 
-FUNC('$menu', '===BEGIN===', 'centermenu')
+FUNC('$menu', 'spacer', 4)
+
+FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'interaction_city', $menu_item_acceptIsabella, menu_acceptIsabella, 'Lead Isabella to the Rome')
 FUNC('$menu', 'city_form', $menu_item_refuseIsabella, menu_refuseIsabella, 'She is too dangerous')
 FUNC('$menu', '===END===')
 }
 
-!"Shira
-$shira_options[1] = {
-$sp_text[1] = '     [Shira]
-  - So, <<$master_name>>, we have an agreement, or what?'
-$text_display = '<br><br><br><br><br>'
-FUNC('$menu', 'spacer', 4)
-FUNC('$menu', '===BEGIN===', 'center')
-FUNC('$menu', 'interaction_city', $menu_item_acceptIsabella, menu_acceptIsabella, 'Accept Shira''s deal')
-FUNC('$menu', 'city_form', $menu_item_refuseIsabella, menu_refuseIsabella, 'Refuse Shira''s deal')
-FUNC('$menu', '===END===')
-}"
-
-
 !Salon of Madame Jofre
 $brothel_options[1] = {
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF sparks => 1 and master_energy > 0:
+IF sparks >= 1 and master_energy > 0:
  FUNC('$menu', 'exec_options', $menu_item_Fastservice, 'sp_txt = 2 & gt $curloc', 'Fast service (1$)')
  else
  FUNC('$menu', 'location_gray', $menu_item_Fastservice_gray, empty, 'Fast service (1$)')
 END
-IF sparks => 5 and master_energy > 0:
+IF sparks >= 5 and master_energy > 0:
  FUNC('$menu', 'exec_options', $menu_item_Standardservice, 'sp_txt = 3 & gt $curloc', 'Standard service (5$)')
  else
  FUNC('$menu', 'location_gray', $menu_item_Standardservice_gray, empty, 'Standard service (5$)')
 END
-IF sparks => 15 and master_energy > 0:
+IF sparks >= 15 and master_energy > 0:
  FUNC('$menu', 'exec_options', $menu_item_Eliteservice, 'sp_txt = 4 & gt $curloc', 'Elite service (15$)')
  else
  FUNC('$menu', 'location_gray', $menu_item_Eliteservice_gray, empty, 'Elite service (15$)')
@@ -1417,6 +1349,7 @@ FUNC('$menu', '===END===')
 $brothel_options[2] = {
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction_city', $menu_item_Fastsex, menu_Fastsex, 'Fast sex')
 FUNC('$menu', 'interaction_city', $menu_item_Analsex, menu_Analsex, 'Anal sex')
@@ -1430,6 +1363,7 @@ FUNC('$menu', '===END===')
 $brothel_options[3] = {
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction_city', $menu_item_Twins, menu_Twins, 'Twins')
 FUNC('$menu', 'interaction_city', $menu_item_Threelolita, menu_Threelolita, 'Three lolita')
@@ -1443,6 +1377,7 @@ FUNC('$menu', '===END===')
 $brothel_options[4] = {
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction_city', $menu_item_Motherdaughter, menu_Motherdaughter, 'Mother and daughter')
 FUNC('$menu', 'interaction_city', $menu_item_Sixlolitas, menu_Sixlolitas, 'Six lolitas')
@@ -1471,6 +1406,7 @@ $text_display += {<br><div id="under">End conversation<br><div id = "clear"><a h
 !Boutique
 $boutic_options[1] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'exec_options', $menu_item_Menswear, 'sp_txt = 6 & gt $curloc', 'Menswear')
 IF slave_state > CONST_INT['no_slave']:
@@ -1496,48 +1432,27 @@ FUNC('$menu', '===END===')
 
 $boutic_options[2] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
-if brand_reputation <= 1: FUNC('$menu', 'interaction_city', $menu_item_Frilly_apron, menu_Frilly_apron1, 'Frilly apron')
-if brand_reputation = 2: FUNC('$menu', 'interaction_city', $menu_item_Frilly_apron, menu_Frilly_apron2, 'Frilly apron')
-if brand_reputation = 3: FUNC('$menu', 'interaction_city', $menu_item_Frilly_apron, menu_Frilly_apron3, 'Frilly apron')
-if brand_reputation => 4: FUNC('$menu', 'interaction_city', $menu_item_Frilly_apron, menu_Frilly_apron4, 'Frilly apron')
-if brand_reputation <= 1: FUNC('$menu', 'interaction_city', $menu_item_Maid_outfit, menu_Maid_outfit1, 'Maid outfit')
-if brand_reputation = 2: FUNC('$menu', 'interaction_city', $menu_item_Maid_outfit, menu_Maid_outfit2, 'Maid outfit')
-if brand_reputation = 3: FUNC('$menu', 'interaction_city', $menu_item_Maid_outfit, menu_Maid_outfit3, 'Maid outfit')
-if brand_reputation => 4: FUNC('$menu', 'interaction_city', $menu_item_Maid_outfit, menu_Maid_outfit4, 'Maid outfit')
-if brand_reputation <= 1: FUNC('$menu', 'interaction_city', $menu_item_Nurse_outfit, menu_Nurse_outfit1, 'Nurse outfit')
-if brand_reputation = 2: FUNC('$menu', 'interaction_city', $menu_item_Nurse_outfit, menu_Nurse_outfit2, 'Nurse outfit')
-if brand_reputation = 3: FUNC('$menu', 'interaction_city', $menu_item_Nurse_outfit, menu_Nurse_outfit3, 'Nurse outfit')
-if brand_reputation => 4: FUNC('$menu', 'interaction_city', $menu_item_Nurse_outfit, menu_Nurse_outfit4, 'Nurse outfit')
-if brand_reputation <= 1: FUNC('$menu', 'interaction_city', $menu_item_Sorceress_robes, menu_Sorceress_robes1, 'Sorceress robes')
-if brand_reputation = 2: FUNC('$menu', 'interaction_city', $menu_item_Sorceress_robes, menu_Sorceress_robes2, 'Sorceress robes')
-if brand_reputation = 3: FUNC('$menu', 'interaction_city', $menu_item_Sorceress_robes, menu_Sorceress_robes3, 'Sorceress robes')
-if brand_reputation => 4: FUNC('$menu', 'interaction_city', $menu_item_Sorceress_robes, menu_Sorceress_robes4, 'Sorceress robes')
+FUNC('$menu', 'interaction_city', $menu_item_Frilly_apron, menu_Frilly_apron, 'Frilly apron')
+FUNC('$menu', 'interaction_city', $menu_item_Maid_outfit, menu_Maid_outfit, 'Maid outfit')
+FUNC('$menu', 'interaction_city', $menu_item_Nurse_outfit, menu_Nurse_outfit, 'Nurse outfit')
+FUNC('$menu', 'interaction_city', $menu_item_Sorceress_robes, menu_Sorceress_robes, 'Sorceress robes')
 FUNC('$menu', 'exec_options', $menu_item_boutic_options, 'sp_txt = 1 & gt $curloc', 'Other goods')
 FUNC('$menu', '===END===')
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_1')
-if brand_reputation <= 1: FUNC('$menu', 'interaction_city', $menu_item_Athletic_leotard, menu_Athletic_leotard1, 'Athletic leotard')
-if brand_reputation = 2: FUNC('$menu', 'interaction_city', $menu_item_Athletic_leotard, menu_Athletic_leotard2, 'Athletic leotard')
-if brand_reputation = 3: FUNC('$menu', 'interaction_city', $menu_item_Athletic_leotard, menu_Athletic_leotard3, 'Athletic leotard')
-if brand_reputation => 4: FUNC('$menu', 'interaction_city', $menu_item_Athletic_leotard, menu_Athletic_leotard4, 'Athletic leotard')
-if brand_reputation <= 1: FUNC('$menu', 'interaction_city', $menu_item_Chainmail_bikini, menu_Chainmail_bikini1, 'Chainmail bikini')
-if brand_reputation = 2: FUNC('$menu', 'interaction_city', $menu_item_Chainmail_bikini, menu_Chainmail_bikini2, 'Chainmail bikini')
-if brand_reputation = 3: FUNC('$menu', 'interaction_city', $menu_item_Chainmail_bikini, menu_Chainmail_bikini3, 'Chainmail bikini')
-if brand_reputation => 4: FUNC('$menu', 'interaction_city', $menu_item_Chainmail_bikini, menu_Chainmail_bikini4, 'Chainmail bikini')
-if brand_reputation <= 1: FUNC('$menu', 'interaction_city', $menu_item_Kimono_yukata, menu_Kimono_yukata1, 'Kimono yukata')
-if brand_reputation = 2: FUNC('$menu', 'interaction_city', $menu_item_Kimono_yukata, menu_Kimono_yukata2, 'Kimono yukata')
-if brand_reputation = 3: FUNC('$menu', 'interaction_city', $menu_item_Kimono_yukata, menu_Kimono_yukata3, 'Kimono yukata')
-if brand_reputation => 4: FUNC('$menu', 'interaction_city', $menu_item_Kimono_yukata, menu_Kimono_yukata4, 'Kimono yukata')
-if brand_reputation <= 1: FUNC('$menu', 'interaction_city', $menu_item_School_uniform, menu_School_uniform1, 'School uniform')
-if brand_reputation = 2: FUNC('$menu', 'interaction_city', $menu_item_School_uniform, menu_School_uniform2, 'School uniform')
-if brand_reputation = 3: FUNC('$menu', 'interaction_city', $menu_item_School_uniform, menu_School_uniform3, 'School uniform')
-if brand_reputation => 4: FUNC('$menu', 'interaction_city', $menu_item_School_uniform, menu_School_uniform4, 'School uniform')
+FUNC('$menu', 'interaction_city', $menu_item_Athletic_leotard, menu_Athletic_leotard, 'Athletic leotard')
+FUNC('$menu', 'interaction_city', $menu_item_Chainmail_bikini, menu_Chainmail_bikini, 'Chainmail bikini')
+FUNC('$menu', 'interaction_city', $menu_item_Kimono_yukata, menu_Kimono_yukata, 'Kimono yukata')
+FUNC('$menu', 'interaction_city', $menu_item_School_uniform, menu_School_uniform, 'School uniform')
 FUNC('$menu', '===END===')
 }
 
 $boutic_options[3] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction_city', $menu_item_Light_sundress, menu_Light_sundress, 'Light sundress')
 FUNC('$menu', 'interaction_city', $menu_item_Lace_underwear, menu_Lace_underwear, 'Lace underwear')
@@ -1546,6 +1461,7 @@ FUNC('$menu', 'interaction_city', $menu_item_Latex_dress, menu_Latex_dress, 'Lat
 FUNC('$menu', 'exec_options', $menu_item_boutic_options, 'sp_txt = 1 & gt $curloc', 'Other goods')
 FUNC('$menu', '===END===')
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_1')
 FUNC('$menu', 'interaction_city', $menu_item_Exotic_outfit, menu_Exotic_outfit, 'Exotic outfit')
 FUNC('$menu', 'interaction_city', $menu_item_Leather_corset, menu_Leather_corset, 'Leather corset')
@@ -1556,6 +1472,7 @@ FUNC('$menu', '===END===')
 
 $boutic_options[4] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction_city', $menu_item_Rubber_gloves, menu_Rubber_gloves, 'Rubber gloves')
 FUNC('$menu', 'interaction_city', $menu_item_Lace_gloves, menu_Lace_gloves, 'Lace gloves')
@@ -1568,6 +1485,7 @@ FUNC('$menu', '===END===')
 
 $boutic_options[5] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction_city', $menu_item_Tabi_socks, menu_Tabi_socks, 'Tabi socks')
 FUNC('$menu', 'interaction_city', $menu_item_Soft_slippers, menu_Soft_slippers, 'Soft slippers')
@@ -1580,9 +1498,10 @@ FUNC('$menu', '===END===')
 }
 
 $boutic_options[6] = {
-FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', 'spacer', 1)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
- IF sparks => 10:
+ IF sparks >= 10:
   if formal_suit < 1 and $master_cloth ! "formal_suit":
    FUNC('$menu', 'interaction_city', $menu_item_Formal_suit, menu_Formal_suit, 'Formal suit')
    ELSE
@@ -1606,9 +1525,10 @@ FUNC('$menu', 'spacer', 1)
  END
  FUNC('$menu', 'exec_options', $menu_item_boutic_options, 'sp_txt = 1 & gt $curloc', 'Other goods')
  FUNC('$menu', '===END===')
-FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', 'spacer', 1)
+
  FUNC('$menu', '===BEGIN===', 'column_1')
- IF sparks => 10:
+ IF sparks >= 10:
   if fancy_suit < 1 and $master_cloth ! "fancy_suit":
    FUNC('$menu', 'interaction_city', $menu_item_Fashionable_attire, menu_Fashionable_attire, 'Fashionable attire')
    ELSE
@@ -1633,7 +1553,7 @@ FUNC('$menu', 'spacer', 1)
   FUNC('$menu', 'location_gray', $menu_item_Aketon_gray, empty, 'Aketon')
   FUNC('$menu', 'location_gray', $menu_item_Livery_gray, empty, 'Livery')
  END
- IF sparks => 20:
+ IF sparks >= 20:
   if regal_suit < 1 and $master_cloth ! "regal_suit":
    FUNC('$menu', 'interaction_city', $menu_item_Noble_regalia, menu_Noble_regalia, 'Noble regalia')
    ELSE
@@ -1648,7 +1568,8 @@ FUNC('$menu', '===END===')
 
 !Jewelry store
 $jeweler_options[1] = {
-FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', 'spacer', 1)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  IF slave_state > CONST_INT['no_slave']:
   FUNC('$menu', 'exec_options', $menu_item_Women_jewelry, 'sp_txt = 2 & gt $curloc', 'Women`s jewelry')
@@ -1726,12 +1647,12 @@ FUNC('$menu', '===BEGIN===', 'column_0')
   IF slave["manicure"] < 5:
    FUNC('$menu', 'interaction_city', $menu_item_manicure, menu_manicure, 'Makeup and manicure(3$)')
    ELSE
-   FUNC('$menu', 'location_gray', $menu_item_manicure_gray, empty, 'Make-up and manicure')
+   FUNC('$menu', 'location_gray', $menu_item_manicure_gray, empty, 'Makeup and manicure')
   END
   IF slave["manicure"] < 5 and slave["epilation"] < 12 and slave["hairstyle"] ! 7:
-   FUNC('$menu', 'interaction_city', $menu_item_treatment9, menu_treatment9, 'Full beauty service(9$)')
+   FUNC('$menu', 'interaction_city', $menu_item_treatment9, menu_treatment9, 'Full treatment (9$)')
    elseif slave["manicure"] < 5 and slave["epilation"] > 12 and slave["hairstyle"] ! 7:
-   FUNC('$menu', 'interaction_city', $menu_item_treatment6, menu_treatment6, 'Full beauty service(6$)')
+   FUNC('$menu', 'interaction_city', $menu_item_treatment6, menu_treatment6, 'Full treatment (6$)')
    else
    FUNC('$menu', 'location_gray', $menu_item_treatment0_gray, empty, 'Full beauty treatment')
   END
@@ -1795,6 +1716,7 @@ dynamic $get_frige_space
 $place = 'gastronom'
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'exec_options', $menu_item_Eggs_milk, 'sp_txt = 2 & gt $curloc', 'Eggs and milk')
 FUNC('$menu', 'exec_options', $menu_item_Groceries_alcohol, 'sp_txt = 3 & gt $curloc', 'Groceries and alcohol')
@@ -1814,20 +1736,21 @@ $gastronom_options[2] = {
 dynamic $get_frige_space
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
-IF sparks => 10 and frige_space => 5:
+IF sparks >= 10 and frige_space >= 5:
  FUNC('$menu', 'interaction_city', $menu_item_Fresh_eggs, menu_Fresh_eggs, 'Fresh eggs x5 (10$)')
  FUNC('$menu', 'interaction_city', $menu_item_Fresh_milk, menu_Fresh_milk, 'Fresh milk x5 (10$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Fresh_eggs_gray, empty, 'Fresh eggs x5 (10$)')
  FUNC('$menu', 'location_gray', $menu_item_Fresh_milk_gray, empty, 'Fresh milk x5 (10$)')
 END
-IF sparks => 20 and frige_space => 5:
+IF sparks >= 20 and frige_space >= 5:
  FUNC('$menu', 'interaction_city', $menu_item_Double_cream, menu_Double_cream, 'Double cream x5 (20 sparks')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Double_cream_gray, empty, 'Double cream x5 (20 sparks')
 END
-IF sparks => 5 and frige_space => 5:
+IF sparks >= 5 and frige_space >= 5:
  FUNC('$menu', 'interaction_city', $menu_item_Mature_cheese, menu_Mature_cheese, 'Mature cheese x5 (5$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Mature_cheese_gray, empty, 'Mature cheese x5 (5$)')
@@ -1841,8 +1764,9 @@ $gastronom_options[3] = {
 dynamic $get_frige_space
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
-IF sparks => 5 and frige_space => 5:
+IF sparks >= 5 and frige_space >= 5:
  FUNC('$menu', 'interaction_city', $menu_item_Fresh_vegetables, menu_Fresh_vegetables, 'Fresh vegetables x5 (5$)')
  FUNC('$menu', 'interaction_city', $menu_item_Cereals_flour, menu_Cereals_flour, 'Cereals and flour x5 (5$)')
  FUNC('$menu', 'interaction_city', $menu_item_Herbs_spices, menu_Herbs_spices, 'Herbs and spices x5 (5$)')
@@ -1867,13 +1791,14 @@ if nsfw = 1: not_safe = 1
 $place = 'slaughter'
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
-IF sparks => 7 and frige_space => 5:
+IF sparks >= 7 and frige_space >= 5:
  FUNC('$menu', 'interaction_city', $menu_item_Greasy_mince, menu_Greasy_mince, 'Greasy mince x5 (7$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Greasy_mince_gray, empty, 'Greasy mince x5 (7$)')
 END
-IF sparks => 20 and frige_space => 5:
+IF sparks >= 20 and frige_space >= 5:
  FUNC('$menu', 'interaction_city', $menu_item_Tender_fillet, menu_Tender_fillet, 'Tender fillet x5 (20$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Tender_fillet_gray, empty, 'Tender fillet x5 (20$)')
@@ -1883,7 +1808,7 @@ IF slave_state = CONST_INT['slave_exist'] or slave_state = CONST_INT['slave_fain
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Slaughter_slave_gray, empty, 'Slaughter slave for meat')
 END
-IF sparks => 5 and slave_state ! CONST_INT['no_slave']:
+IF sparks >= 5 and slave_state ! CONST_INT['no_slave']:
  FUNC('$menu', 'interaction_city', $menu_item_butcher_slave, menu_butcher_slave, 'Ask to butcher slave')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_butcher_slave_gray, empty, 'Ask to butcher slave')
@@ -1897,8 +1822,9 @@ $tabern_options[1] = {
 $place = 'tabern'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
-IF sparks => 1:
+IF sparks >= 1:
  FUNC('$menu', 'interaction_city', $menu_item_Drinkpub, menu_Drinkpub, 'Drink (1$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Drinkpub_gray, empty, 'Drink (1$)')
@@ -1912,6 +1838,7 @@ FUNC('$menu', '===END===')
 $tabern_options[2] = {
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 3)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 !$text_display += {<br><div id="under_gray">Check out the news (1 sparks)<br></div>}
 FUNC('$menu', 'interaction_city', $menu_item_preferencesbar, menu_preferencesbar, 'Check preferences')
@@ -1929,6 +1856,7 @@ $place = 'tabern_kitchen'
 $text_display = '<br><br>'
 if nsfw = 1: not_safe = 1
 FUNC('$menu', 'spacer', 3)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 !$text_display += {<br><div id="under_gray">Personal lesson<br></div>}
 !$text_display += {<br><div id="under_gray">Lesson for slave<br></div>}
@@ -1988,22 +1916,22 @@ $mistra_options[1] = {
 $sp_text[1] = '   <<$mystra_spd[mystra_spd]>>'
 $text_display = '<br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0')
-IF sparks => 10:
+IF sparks >= 10:
  FUNC('$menu', 'exec_options', $menu_item_Elysian_datura, 'interaction_city = 4311 & mystra_spd = 1 & gt "interaction_city"', 'Elysian datura x5 (10$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Elysian_datura_gray, empty, 'Elysian datura x5 (10$)')
 END
-IF sparks => 10:
+IF sparks >= 10:
  FUNC('$menu', 'exec_options', $menu_item_Kamrian_resin, 'interaction_city = 4312 & mystra_spd = 2 & gt "interaction_city"', 'Kamrian resin x5 (10$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Kamrian_resin_gray, empty, 'Kamrian resin x5 (10$)')
 END
-IF sparks => 10:
+IF sparks >= 10:
  FUNC('$menu', 'exec_options', $menu_item_Faeries_pollen, 'interaction_city = 4313 & mystra_spd = 3 & gt "interaction_city"', 'Faeries` pollen x5 (10$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Faeries_pollen_gray, empty, 'Faeries` pollen x5 (10$)')
 END
-IF sparks => 10:
+IF sparks >= 10:
  FUNC('$menu', 'exec_options', $menu_item_Essence_oblivion, 'interaction_city = 4314 & mystra_spd = 4 & gt "interaction_city"', 'Essence of oblivion x5 (10$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Essence_oblivion_gray, empty, 'Essence of oblivion x5 (10$)')
@@ -2036,6 +1964,7 @@ FUNC('$menu', '===END===')
 $spell_book[0] = {
 $sp_text[0] = '   You open an old worn book with a picture of spark on the cover. It seems you can learn here more about the spells effect. It would be nice to do it before you start to conjure.'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction', $menu_item_Basicsspellbook, menu_Basicsspellbook, 'Basics')
 FUNC('$menu', 'interaction', $menu_item_Auspexspellbook, menu_Auspexspellbook, 'Auspex')
@@ -2049,6 +1978,7 @@ IF exam_in_progress = 1:
 END
 FUNC('$menu', '===END===')
 FUNC('$menu', 'spacer', 3)
+
 FUNC('$menu', '===BEGIN===', 'column_1')
 FUNC('$menu', 'interaction', $menu_item_Magnifikaspellbook, menu_Magnifikaspellbook, 'Magna Magnifika')
 FUNC('$menu', 'interaction', $menu_item_Tremendiospellbook, menu_Tremendiospellbook, 'Tremendio')
@@ -2067,6 +1997,7 @@ put_meth = 0
 put_opium = 0
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'exec_options', $menu_item_lab_water, 'sp_txt = 1 & gt $curloc', 'Spring water')
 IF frige["alcohol"] > 0:
@@ -2086,6 +2017,7 @@ FUNC('$menu', '===END===')
 $lab_options[1] = {
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 IF lab_store["kanabis"] > 0 and put_kanabis = 0:
  FUNC('$menu', 'exec_options', $menu_item_lab_datura, 'put_kanabis = 1 & lab_store["kanabis"] -= 1 & sp_txt = 2 & gt $curloc', 'Elysian datura')
@@ -2114,6 +2046,7 @@ FUNC('$menu', '===END===')
 $lab_options[2] = {
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 IF lab_store["kanabis"] > 0 and put_kanabis = 0:
  FUNC('$menu', 'exec_options', $menu_item_lab_datura, 'put_kanabis = 1 & lab_store["kanabis"] -= 1 & sp_txt = 3 & gt $curloc', 'Elysian datura')
@@ -2142,6 +2075,7 @@ FUNC('$menu', '===END===')
 $lab_options[3] = {
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 IF lab_store["kanabis"] > 0 and put_kanabis = 0:
  FUNC('$menu', 'exec_options', $menu_item_lab_datura, 'put_kanabis = 1 & lab_store["kanabis"] -= 1 & interaction = 22 & gt "interaction"', 'Elysian datura')
@@ -2171,6 +2105,7 @@ FUNC('$menu', '===END===')
 !piercing shop
 $piercing_options[1] = {
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 IF slave_state = CONST_INT['slave_exist']:
  FUNC('$menu', 'exec_options', $menu_item_Bodypiercing, 'sp_txt = 2 & gt $curloc', 'Body modification')
@@ -2194,6 +2129,7 @@ FUNC('$menu', '===END===')
 
 $piercing_options[2] = {
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 if slave["full_piercing"] = 0:  
  FUNC('$menu', 'interaction_city', $menu_item_Mass_piercing, menu_Mass_piercing, 'Mass piercing (35$)')
@@ -2223,6 +2159,7 @@ end
 FUNC('$menu', 'exec_options', $menu_item_backpiercing, 'sp_txt = 1 & gt $curloc', 'Other services')
 FUNC('$menu', '===END===')
 FUNC('$menu', 'spacer', 3)
+
 FUNC('$menu', '===BEGIN===', 'column_2')
 if slave["belly_piercing"] = 0:  
  FUNC('$menu', 'interaction_city', $menu_item_Pierce_navel, menu_Pierce_navel, 'Pierce navel (5$)')
@@ -2254,6 +2191,7 @@ FUNC('$menu', '===END===')
 
 $piercing_options[3] = {
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction_city', $menu_item_Leather_collar, menu_Leather_collar, 'Leather collar (3$)')
 FUNC('$menu', 'interaction_city', $menu_item_Steel_collar, menu_Steel_collar, 'Steel collar (10$)')
@@ -2267,6 +2205,7 @@ FUNC('$menu', '===END===')
 
 $piercing_options[4] = {
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'interaction_city', $menu_item_Collar_leash, menu_Collar_leash, 'Collar and leash (5$)')
 FUNC('$menu', 'interaction_city', $menu_item_Anal_tail, menu_Anal_tail, 'Anal tail (10$)')
@@ -2280,6 +2219,7 @@ FUNC('$menu', '===END===')
 
 $piercing_options[5] = {
 FUNC('$menu', 'spacer', 1)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 IF inventory['vaginal_balls'] = 0:
  FUNC('$menu', 'interaction_city', $menu_item_Vaginal_beads, menu_Vaginal_beads, 'Vaginal beads (5$)')
@@ -2324,7 +2264,8 @@ FUNC('$menu', '===END===')
 !added $sp_text for the first and second options are so theres no sticky text about preparing for battle
 $colloseum_options[1] = { 
  $sp_text[1] = '   You enter the service premises under the amphitheater. The guards passed you without problems - Slavers Guild is always the case in the school of gladiators and the stables. You only have to find the right person.' 
-FUNC('$menu', 'spacer', 3)
+ FUNC('$menu', 'spacer', 3)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  FUNC('$menu', 'exec_options', $menu_item_LanistaColiseum, 'sp_txt = 21 & gt $curloc', 'Lanista')
  FUNC('$menu', 'exec_options', $menu_item_StablemanColiseum, 'sp_txt = 22 & gt $curloc', 'Stableman')
@@ -2351,7 +2292,8 @@ FUNC('$menu', 'spacer', 3)
 }
 
 $colloseum_options[21] = { 
-FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', 'spacer', 1)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  IF master_energy > 0:
   FUNC('$menu', 'exec_options', $menu_item_Arrange_me, 'sp_txt = 2 & gt $curloc', 'Arrange me a sparring')
@@ -2386,7 +2328,8 @@ FUNC('$menu', 'spacer', 1)
 
 $colloseum_options[22] = {
  $sp_text[22] = '   You find a beastman-stableman with a horse''s head, which is responsible for race. He can be a source of valuable information, especially when it is necessary to know what awaits you in the next race.'
-FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', 'spacer', 4)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  FUNC('$menu', 'interaction_city', $menu_item_next_track, menu_next_track, 'Tell me about the next track')
  FUNC('$menu', 'interaction_city', $menu_item_chariot_race, menu_chariot_race, 'Tell me about a chariot race')
@@ -2397,7 +2340,8 @@ FUNC('$menu', 'spacer', 4)
 
 $colloseum_options[23] = { 
  $sp_text[23] = '   While there is still time for race, you can order a variety of chariot modification. The more heavy elements are used, the less will be the speed and agility of your chariot, but it will lower the risk of the fact that it may fall apart in the middle of the race. Ignoring your own defense, you`re playing with death.'
-FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', 'spacer', 2)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  IF heavy_frame = 1:
   FUNC('$menu', 'exec_options', $menu_item_Pobedit, 'heavy_frame = 0 & gt $curloc', 'Pobedit frame')
@@ -2430,7 +2374,8 @@ FUNC('$menu', 'spacer', 2)
 
 
 $colloseum_options[24] = { 
-FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', 'spacer', 2)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  IF $slave['trademark_style'] = '':
   $sp_text[24] = '   Battles take place in the arena with a clear regulation of weapons and equipment. You need to choose a style that will fight <<$slave_name>> and appropriate outfit to this style.'
@@ -2452,7 +2397,8 @@ FUNC('$menu', 'spacer', 2)
 }
 
 $colloseum_options[2] = { 
-FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', 'spacer', 2)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  FUNC('$menu', 'exec_options', $menu_item_unarmed, 'colloseum_fight = 1 & gt $curloc', 'Against unarmed slave')
  FUNC('$menu', 'exec_options', $menu_item_wardress, 'colloseum_fight = 2 & gt $curloc', 'Against wardress')
@@ -2465,7 +2411,8 @@ FUNC('$menu', 'spacer', 2)
 }
 
 $colloseum_options[3] = { 
-FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', 'spacer', 2)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  FUNC('$menu', 'exec_options', $menu_item_unarmed, 'colloseum_fight = 11 & gt $curloc', 'Against unarmed slave')
  FUNC('$menu', 'exec_options', $menu_item_wardress, 'colloseum_fight = 12 & gt $curloc', 'Against wardress')
@@ -2478,7 +2425,8 @@ FUNC('$menu', 'spacer', 2)
 }
 
 $colloseum_options[4] = { 
-FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', 'spacer', 2)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  FUNC('$menu', 'exec_options', $menu_item_unarmed, 'colloseum_fight = 31 & gt $curloc', 'Against unarmed slave')
  FUNC('$menu', 'exec_options', $menu_item_wardress, 'colloseum_fight = 32 & gt $curloc', 'Against wardress')
@@ -2493,34 +2441,35 @@ FUNC('$menu', 'spacer', 2)
 $colloseum_options[5] = {
  spm_mod = spm_number+1
  spm_price = 10*spm_mod*spm_mod
-FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', 'spacer', 2)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
- IF sparks => spm_price and $spm_learned['удар_с_разворота'] = 0:
+ IF sparks >= spm_price and $spm_learned['удар_с_разворота'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Roundhouse, menu_Roundhouse, 'Roundhouse kick')
   else
   FUNC('$menu', 'location_gray', $menu_item_Roundhouse_gray, empty, 'Roundhouse kick')
  END
- IF sparks => spm_price and $spm_learned['рассечение'] = 0:
+ IF sparks >= spm_price and $spm_learned['рассечение'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Swift, menu_Swift, 'Swift blow')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Swift_gray, empty, 'Swift blow')
  END 
- IF sparks => spm_price and $spm_learned['воинственный_клич'] = 0:
+ IF sparks >= spm_price and $spm_learned['воинственный_клич'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Battlecry, menu_Battlecry, 'Battle cry')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Battlecry_gray, empty, 'Battle cry')
  END 
- IF sparks => spm_price and $spm_learned['оглушение'] = 0:
+ IF sparks >= spm_price and $spm_learned['оглушение'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Heavyblow, menu_Heavyblow, 'Heavy blow')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Heavyblow_gray, empty, 'Heavy blow')
  END 
- IF sparks => spm_price and $spm_learned['подрезка'] = 0:
+ IF sparks >= spm_price and $spm_learned['подрезка'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Dashing, menu_Dashing, 'Dashing blow')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Dashing_gray, empty, 'Dashing blow')
  END 
- IF sparks => spm_price and $spm_learned['ослепление'] = 0:
+ IF sparks >= spm_price and $spm_learned['ослепление'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Precise, menu_Precise, 'Precise hit')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Precise_gray, empty, 'Precise hit')
@@ -2531,13 +2480,14 @@ FUNC('$menu', 'spacer', 2)
 
 !Moneylender
 $moneylander_options[1] = {
-FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', 'spacer', 2)
+
  FUNC('$menu', '===BEGIN===', 'column_0')
  if nsfw = 1: not_safe = 1
  IF debt <= 0:
   FUNC('$menu', 'exec_options', $menu_item_Borrow_sparks, 'sp_txt = 2 & gt $curloc', 'Borrow sparks')
   else
-  IF sparks => debt:
+  IF sparks >= debt:
    FUNC('$menu', 'interaction_city', $menu_item_Repay_debt, menu_Repay_debt, 'Repay the debt')
    ELSE
    FUNC('$menu', 'location_gray', $menu_item_Repay_debt_gray, empty, 'Repay the debt')
@@ -2556,6 +2506,7 @@ FUNC('$menu', 'spacer', 2)
 
 $moneylander_options[2] = {
 FUNC('$menu', 'spacer', 3)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 if nsfw = 1: not_safe = 1
 FUNC('$menu', 'interaction_city', $menu_item_laon1, menu_laon1, '500$, repay 600$, 20 days')
@@ -2593,6 +2544,7 @@ $text_display += {<br><div id="under">Bid farewell and leave<br><div id = "clear
 !preparing for fight
 $get_weapon[1] = {
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 IF $за_спиной!'':
  FUNC('$menu', 'exec_options', $menu_item_the_shoulder, 'dynamic $взять_оружие_за_спиной & no_wpn[""за_спиной""] = 1 & sp_txt = 2 & gt $curloc', 'Shoulder: <<$название_предмета[$за_спиной]>>')
@@ -2625,6 +2577,7 @@ FUNC('$menu', '===END===')
 
 $get_weapon[2] = {
 FUNC('$menu', 'spacer', 2)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 if $класс_оружия[$за_спиной] = 'тяжелое_оружие': nogoto = 0 & killvar "no_wpn" &  gt "начать_бой"
 IF $за_спиной!'' and no_wpn["за_спиной"] = 0:
@@ -2670,6 +2623,7 @@ FUNC('$menu', '===END===')
 
 $get_weapon[3] = {
 FUNC('$menu', 'spacer', 4)
+
 FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'exec_options', $menu_item_Stool, '$оружие = "табуретка" & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Stool')
 FUNC('$menu', 'exec_options', $menu_item_Dagger, '$оружие = "кинжал" & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Dagger')

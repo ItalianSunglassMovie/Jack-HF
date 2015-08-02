@@ -30,7 +30,7 @@ IF auction_phase = 0:
  if stock_sold > 1: $text = '  [FARID]
   -  Next lot! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing the first bid?
 '
- if stock_sold => stock_limit: $text = '  [FARID]
+ if stock_sold >= stock_limit: $text = '  [FARID]
   -  And last lot for today! <<$stock_name>> - <<$stock_epithet>> <<$stock_occupation_auk>> from <<$stock_world_auk>>, <<$stock_family_auk>>. Starting price <<stock_base_price>> sparks. So, who is placing the first bid?
 '
 END
@@ -74,7 +74,7 @@ if stock_sold > 0 and auction_phase < 5: if nsfw = 0:*p '<div id = "bg"><img src
 *p '<div id = "text"><<$text>></div>'
 
 IF haggling_stage = 1:
- if auction_phase < 4 and sparks => rise_stock_price: *p '<div id = "auction_price">Rise to <<rise_stock_price>> sparks</div>' & *p '<div id = "auction_rise_up"><a href = "EXEC: gt ''slave_auction_rise''"><img src="content\pic\buttons\rise_up.png"></a></div>'
+ if auction_phase < 4 and sparks >= rise_stock_price: *p '<div id = "auction_price">Rise to <<rise_stock_price>> sparks</div>' & *p '<div id = "auction_rise_up"><a href = "EXEC: gt ''slave_auction_rise''"><img src="content\pic\buttons\rise_up.png"></a></div>'
  else
  if haggling_stage = 2: *p '<div id = "auction_price">Bid: <<cur_stock_price>> sparks </div>'
 END
@@ -89,15 +89,12 @@ IF stock_sold > 0 and auction_phase < 5:
  *p '<div id = "interaction_stat_bar">
 <u>SUMMARY</u>
 <<$beauty[stock["beauty"]]>> 
-<<$stamina[stock["stamina"]]>>  
+<<$stamina[stock["stamina"]]>> 
 <<$exotic[stock["exotic"]]>> 
 <<$fat[stock["fat"]]>> 
-<<$sensitivity[stock["sensitivity"]]>>  
+<<$sensitivity[stock["sensitivity"]]>> 
 <<$style[stock["style"]]>> 
-<<$intellect[stock["intellect"]]>> 
 <<$temper[stock["temper"]]>> 
-<<$ego[stock["ego"]]>> 
-<<$pride[stock["pride"]]>> 
 
 <u>TRAITS</u>
 <<$stock_features_list>>

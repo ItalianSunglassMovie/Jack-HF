@@ -58,7 +58,7 @@ END
 IF $trace[trace_segment] = 'curve':
  diff = RAND (1,5)
  if charriot['maneurability_effective'] < diff: $current_ride = $trace_fail_description['curve'] & dynamic $damage_frame & charriot['speed'] -= 3
- if charriot['maneurability_effective'] => diff: $current_ride = $trace_pass_description['curve']  
+ if charriot['maneurability_effective'] >= diff: $current_ride = $trace_pass_description['curve']  
  dynamic $race_curve[$participant[1]]
  dynamic $race_curve[$participant[2]]
  dynamic $race_curve[$participant[3]]

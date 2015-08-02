@@ -171,7 +171,7 @@ IF sex_interaction = 103:
 
  IF $sex['partner'] = '':
   IF slave["sub_kiss"] = 0:
-   if sex["girl_attention"] => 3: $rise_skill = 'slave["sub_kiss"]'
+   if sex["girl_attention"] >= 3: $rise_skill = 'slave["sub_kiss"]'
    else
    if sex["girl_attention"] > slave["sub_kiss"] and sex_done_today[sex_interaction] = 0: slave["sub_kiss_xp"] += sex["girl_attention"] - 2
   END
@@ -179,7 +179,7 @@ IF sex_interaction = 103:
  
  IF $sex['partner'] = 'assistant':
   IF assistant["sub_kiss"] = 0:
-   if sex["girl_attention"] => 3: $rise_skill = 'assistant["sub_kiss"]'
+   if sex["girl_attention"] >= 3: $rise_skill = 'assistant["sub_kiss"]'
    else
    if sex["girl_attention"] > assistant["sub_kiss"] and sex_done_today[sex_interaction] = 0: assistant["sub_kiss_xp"] += sex["girl_attention"] - 2
   END
@@ -502,7 +502,7 @@ IF sex_interaction = 105:
    if a <= 0: balance = 0
    else
    a = balance + compensation
-   if a => 0: balance = 0
+   if a >= 0: balance = 0
   END
  END
  
@@ -541,7 +541,7 @@ IF sex_interaction = 106:
    if a <= 0: balance = 0
    else
    a = balance + compensation
-   if a => 0: balance = 0
+   if a >= 0: balance = 0
   END
  END
  
@@ -1101,7 +1101,7 @@ IF sex_interaction = 161:
  IF balance < 0: 
   skill += balance
   sex["girl_attention"] += 1
-  if sex['girl_excitement'] => intensity: sex["climax_buildup"] += 1
+  if sex['girl_excitement'] >= intensity: sex["climax_buildup"] += 1
  END
  IF balance > 0:
   skill -= balance - 1
@@ -1266,7 +1266,7 @@ IF sex_interaction = 165:
   sex["girl_openmind"] -= 1 
   sex["girl_attention"] += 1  
  END 
- if force < 0 and intensity => sex['girl_excitement']: sex['girl_excitement'] += 1
+ if force < 0 and intensity >= sex['girl_excitement']: sex['girl_excitement'] += 1
  
  IF $sex['partner'] = '':
   IF slave["sub_mazo"] = 0:
@@ -1432,7 +1432,7 @@ IF sex_interaction = 24:
  $interaction_type = 'foreplay'
  bloody = 1
  a = sex['girl_fear'] + sex['girl_sensitivity']
- IF a => 6 and sex['girl_masohism'] < 1:
+ IF a >= 6 and sex['girl_masohism'] < 1:
   sex["climax_buildup"] = 0
   sex["girl_openmind"] -= 1
   sex["girl_excitement"] -= 1
@@ -1463,7 +1463,7 @@ IF sex_interaction = 25:
  $interaction_type = 'foreplay'
  painfull = 1
  a = sex['girl_fear'] + sex['girl_sensitivity']
- IF a => 6 and sex['girl_masohism'] < 1:
+ IF a >= 6 and sex['girl_masohism'] < 1:
   sex["climax_buildup"] = 0
   sex["girl_openmind"] -= 1
   sex["girl_excitement"] -= 1

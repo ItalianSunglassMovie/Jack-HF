@@ -30,32 +30,32 @@ if sex['girl_newness'] > 20: sex['girl_newness'] = 20
 !Counting all modifiers
 sex["pc_excitement_state"] = 0
 if sex['pc_boner'] <= 0: sex["pc_excitement"] = 0
-if sex["pc_excitement"] => 5: sex["pc_excitement_state"] = 1
-if sex["pc_excitement"] => 10: sex["pc_excitement_state"] = 2
-if sex["pc_excitement"] => 25: sex["pc_excitement_state"] = 3
-if sex["pc_excitement"] => 50: sex["pc_excitement_state"] = 4
-if sex["pc_excitement"] => 100: sex["pc_excitement_state"] = 5
+if sex["pc_excitement"] >= 5: sex["pc_excitement_state"] = 1
+if sex["pc_excitement"] >= 10: sex["pc_excitement_state"] = 2
+if sex["pc_excitement"] >= 25: sex["pc_excitement_state"] = 3
+if sex["pc_excitement"] >= 50: sex["pc_excitement_state"] = 4
+if sex["pc_excitement"] >= 100: sex["pc_excitement_state"] = 5
 
 sex["pc_energy_state"] = 0
-if sex["pc_energy"] => 5: sex["pc_energy_state"] = 1
-if sex["pc_energy"] => 10: sex["pc_energy_state"] = 2
-if sex["pc_energy"] => 25: sex["pc_energy_state"] = 3
-if sex["pc_energy"] => 50: sex["pc_energy_state"] = 4
-if sex["pc_energy"] => 100: sex["pc_energy_state"] = 5
+if sex["pc_energy"] >= 5: sex["pc_energy_state"] = 1
+if sex["pc_energy"] >= 10: sex["pc_energy_state"] = 2
+if sex["pc_energy"] >= 25: sex["pc_energy_state"] = 3
+if sex["pc_energy"] >= 50: sex["pc_energy_state"] = 4
+if sex["pc_energy"] >= 100: sex["pc_energy_state"] = 5
 
 sex["pc_interest_state"] = 0
-if sex["pc_interest"] => 5: sex["pc_interest_state"] = 1
-if sex["pc_interest"] => 10: sex["pc_interest_state"] = 2
-if sex["pc_interest"] => 25: sex["pc_interest_state"] = 3
-if sex["pc_interest"] => 50: sex["pc_interest_state"] = 4
-if sex["pc_interest"] => 100: sex["pc_interest_state"] = 5
+if sex["pc_interest"] >= 5: sex["pc_interest_state"] = 1
+if sex["pc_interest"] >= 10: sex["pc_interest_state"] = 2
+if sex["pc_interest"] >= 25: sex["pc_interest_state"] = 3
+if sex["pc_interest"] >= 50: sex["pc_interest_state"] = 4
+if sex["pc_interest"] >= 100: sex["pc_interest_state"] = 5
 
 sex["girl_energy_state"] = 0
-if sex["girl_energy"] => 5: sex["girl_energy_state"] = 1
-if sex["girl_energy"] => 10: sex["girl_energy_state"] = 2
-if sex["girl_energy"] => 25: sex["girl_energy_state"] = 3
-if sex["girl_energy"] => 50: sex["girl_energy_state"] = 4
-if sex["girl_energy"] => 100: sex["girl_energy_state"] = 5
+if sex["girl_energy"] >= 5: sex["girl_energy_state"] = 1
+if sex["girl_energy"] >= 10: sex["girl_energy_state"] = 2
+if sex["girl_energy"] >= 25: sex["girl_energy_state"] = 3
+if sex["girl_energy"] >= 50: sex["girl_energy_state"] = 4
+if sex["girl_energy"] >= 100: sex["girl_energy_state"] = 5
 
 
 !climax treshold
@@ -63,11 +63,11 @@ a = 10 + sex["girl_attention"] - sex['girl_sensitivity'] - slave['temper'] - sex
 if sex['girl_excitement'] < 3: sex["climax_treshold"] = 100
 if sex['girl_excitement'] = 3: sex["climax_treshold"] = a*5
 if sex['girl_excitement'] = 4: sex["climax_treshold"] = a*3
-if sex['girl_excitement'] => 5: sex["climax_treshold"] = a*2
+if sex['girl_excitement'] >= 5: sex["climax_treshold"] = a*2
 if orgasm_prohibited > 0 and $sex['partner'] = '': sex["climax_treshold"] += slave["obedience"]
 
 
-IF sex["climax_buildup"] => sex["climax_treshold"]:
+IF sex["climax_buildup"] >= sex["climax_treshold"]:
 !clitoral orgasm
  IF clitoral_stimulation > 0:
   sex["climax_force"] = 1
@@ -81,8 +81,8 @@ IF sex["climax_buildup"] => sex["climax_treshold"]:
   sex['girl_orgasm_type'] = 1  
  END
 !squirt
- if sex['girl_excitement'] => 5 and sex['girl_orgasm_type'] = 2 and sex["girl_openmind"] > 3 and sex["girl_attention"] < 3: sex["climax_force"] = 3
- IF sex['girl_excitement'] => 5 and sex['girl_orgasm_type'] < 2 and sex["girl_openmind"] => 5 and sex["girl_attention"] <= 1: 
+ if sex['girl_excitement'] >= 5 and sex['girl_orgasm_type'] = 2 and sex["girl_openmind"] > 3 and sex["girl_attention"] < 3: sex["climax_force"] = 3
+ IF sex['girl_excitement'] >= 5 and sex['girl_orgasm_type'] < 2 and sex["girl_openmind"] >= 5 and sex["girl_attention"] <= 1: 
   sex["climax_force"] = 3
   sex['girl_orgasm_type_change'] = 2  
   sex['girl_orgasm_type'] = 2

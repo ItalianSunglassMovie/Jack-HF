@@ -212,9 +212,58 @@ IF house_mess > 1:
  END
 END
 
+IF slave_state = CONST_INT['slave_dead']:
+ *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava_gray'']>>.jpg"></a></div>'
+ *p '<div id = "slave_short_stat">Died
+</div>'
+END
+
+IF slave_state = CONST_INT['no_slave']:
+! *p '<div id = "slave_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
+ *p '<div id = "slave_short_ava"><a href = "EXEC: menu_form = 3000 & gt ''menu_form''"><img src = "content/pic/blank_ava.jpg"></a></div>'
+ *p '<div id = "slave_short_stat">No slave
+</div>'
+END
+
+IF slave_state = CONST_INT['slave_exist']:
+ *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava'']>>.jpg"></a></div>'
+ *p '<div id = "slave_short_stat">Energy <<$stars[slave_energy_plus]>>
+<<$girl_mood[slave_mood_plus]>> 
+<<$behavior_evaluation[eval]>>
+<<$girl_hygiene[slave["hygiene"]]>>
+</div>'
+ !*p '<div id="fast_chat"><img src="content\pic\buttons\chat.png"></div>' 
+ IF exam_in_progress = 1:
+  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'demo_menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
+  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'demo_menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
+  elseif ui_style = 2 and exam_in_progress = 0:
+  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\influence.png"></a></div>}   
+  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\question.png"></a></div>}
+  else
+  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
+  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
+ END
+END
+
+IF slave_state = CONST_INT['slave_faint']:
+ *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava_gray'']>>.jpg"></a></div>'
+ *p '<div id = "slave_short_stat">Unconscious
+</div>'
+END
 
 IF slave["hygiene"] > 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 52 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
 
+IF slave_state = CONST_INT['slave_exist']:
+ IF exam_in_progress = 1:
+  if slave["sin"] >= 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
+  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+  else
+  if slave["sin"] >= 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
+  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+ END
+END
 
 *p '<div id = "master_short_ava"><a href = "EXEC: gt ''master_stat''"><img src = "<<$master_ava>>"></a></div>'
 
@@ -255,63 +304,7 @@ IF master_excitement > 0:
 END
 
 !exchange button for the slave with assistant
-IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3 and assistant_state = 1: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
-IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3 and assistant_state = 0: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
-IF slave_state = CONST_INT['no_slave'] and assistant_state = 1: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
-
-IF slave_state = CONST_INT['slave_dead']:
- *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava_gray'']>>.jpg"></a></div>'
- *p '<div id = "slave_short_stat">Died
-</div>'
-END
-
-IF slave_state = CONST_INT['no_slave']:
-! *p '<div id = "slave_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
- *p '<div id = "slave_short_ava"><a href = "EXEC: menu_form = 3000 & gt ''menu_form''"><img src = "content/pic/blank_ava.jpg"></a></div>'
- *p '<div id = "slave_short_stat">No slave
-</div>'
-END
-
-IF slave_state = CONST_INT['slave_exist']:
- *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava'']>>.jpg"></a></div>'
- *p '<div id = "slave_short_stat">Energy <<$stars[slave_energy_plus]>>
-<<$girl_mood[slave_mood_plus]>> 
-<<$behavior_evaluation[eval]>>
-<<$girl_hygiene[slave["hygiene"]]>>
-</div>'
- !*p '<div id="fast_chat"><img src="content\pic\buttons\chat.png"></div>' 
- IF exam_in_progress = 1:
-  *p  {<div id="fast_influences"><a href = "EXEC: menu_form = 112 & gt 'demo_menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
-  *p  {<div id="fast_questions"><a href = "EXEC: menu_form = 111 & gt 'demo_menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
-  elseif ui_style = 2 and exam_in_progress = 0:
-  *p  {<div id="fast_influences"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\influence.png"></a></div>}   
-  *p  {<div id="fast_questions"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\question.png"></a></div>}
-  else
-  *p  {<div id="fast_influences"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
-  *p  {<div id="fast_questions"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
- END
-END
-
-IF slave_state = CONST_INT['slave_faint']:
- *p '<div id = "slave_short_ava"><a href = "EXEC: gt ''slave_stat''"><img src = "<<$slave[''ava_gray'']>>.jpg"></a></div>'
- *p '<div id = "slave_short_stat">Unconscious
-</div>'
-END
-
-IF slave["hygiene"] > 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 52 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
-
-IF slave_state = CONST_INT['slave_exist']:
- IF exam_in_progress = 1:
-  if slave["sin"] > 0: *p {<div id="fast_redeems"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
-  if slave["virtue"] > 0: *p {<div id="fast_redeems"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
-  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeems1"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeems2"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
-  else
-  if slave["sin"] > 0: *p {<div id="fast_redeems"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
-  if slave["virtue"] > 0: *p {<div id="fast_redeems"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
-  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeems1"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeems2"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
- END
-END
-
+IF slave_state = CONST_INT['slave_exist'] and slave["moral"] >= 3 and assistant_state = 1:*p  {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
 
 !showing spell state 
 $active_spell = ''
@@ -371,21 +364,21 @@ IF slave_state = CONST_INT['slave_exist']:
  end
  IF assistant_state = 1:
   IF ui_style = 2:
-   if sparks => 25: *p '<div id = "teach_r"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_r.png"></a></div>'
-   if sparks => 16: *p '<div id = "teach_s"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_s.png"></a></div>'
+   if sparks >= 25: *p '<div id = "teach_r"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_r.png"></a></div>'
+   if sparks >= 16: *p '<div id = "teach_s"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_s.png"></a></div>'
    *p '<div id = "teach_a"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$assistant_name>>, conduct a lesson" href = "EXEC: teach_stat_screen = 3 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_a.png"></a></div>'
    else
-   if sparks => 25: *p '<div id = "teach_r"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\buttons\teach_r.png"></a></div>'
-   if sparks => 16: *p '<div id = "teach_s"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\buttons\teach_s.png"></a></div>'
+   if sparks >= 25: *p '<div id = "teach_r"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\buttons\teach_r.png"></a></div>'
+   if sparks >= 16: *p '<div id = "teach_s"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\buttons\teach_s.png"></a></div>'
    *p '<div id = "teach_a"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$assistant_name>>, conduct a lesson" href = "EXEC: teach_stat_screen = 3 & gt ''teach_screen''"><img src="content\pic\buttons\teach_a.png"></a></div>'
   END
   else
   IF ui_style = 2:
-   if sparks => 25: *p '<div id = "teach_r_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_r.png"></a></div>'
-   if sparks => 16 and exam_in_progress ! 1: *p '<div id = "teach_s_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_s.png"></a></div>'
+   if sparks >= 25: *p '<div id = "teach_r_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_r.png"></a></div>'
+   if sparks >= 16 and exam_in_progress ! 1: *p '<div id = "teach_s_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_s.png"></a></div>'
    else
-   if sparks => 25: *p '<div id = "teach_r_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\buttons\teach_r.png"></a></div>'
-   if sparks => 16 and exam_in_progress ! 1: *p '<div id = "teach_s_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\buttons\teach_s.png"></a></div>'
+   if sparks >= 25: *p '<div id = "teach_r_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\buttons\teach_r.png"></a></div>'
+   if sparks >= 16 and exam_in_progress ! 1: *p '<div id = "teach_s_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\buttons\teach_s.png"></a></div>'
   END
  END
 END
@@ -411,7 +404,7 @@ IF menu_form ! 2000 and menu_form ! 2020 and menu_form ! 2022 and exam_in_progre
 gs 'revelations'
 
 !for decade count
-IF decadecount => 10:
+IF decadecount >= 10:
  gs 'billing'
  msg '<<$bill_message>>'
  barn_report_available = 0
@@ -448,19 +441,19 @@ if sbros = 1:
  END
 END
 
-IF slave['pregnant'] => 150: 
+IF slave['pregnant'] >= 150: 
  interaction = 9911
  slave['pregnant'] = 0
  gt 'interaction'
 END
 
-IF assistant['pregnant'] => 150: 
+IF assistant['pregnant'] >= 150: 
  interaction = 9912
  assistant['pregnant'] = 0 
  gt 'interaction'
 END
 
-IF prisoner['pregnant'] => 150: 
+IF prisoner['pregnant'] >= 150: 
  interaction = 9913
  prisoner['pregnant'] = 0 
  gt 'interaction'
@@ -481,7 +474,7 @@ IF autosave_decade = 1:
 END
 !Strec - jon_UIadds addition (begin)
 $quick_move_action = "show"
-gs 'sjm_UI_UIadds1'
+gs 'sjm_UI_UIadds'
 !Strec - jon_UIadds addition (end)
 
 --- main_screen ---------------------------------

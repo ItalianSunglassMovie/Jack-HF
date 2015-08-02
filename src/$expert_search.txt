@@ -21,12 +21,12 @@ i = 0
         end
     END
 
-    if stock["beauty"] => search["beauty"]: match += 1
-    if stock["stamina"] => search["stamina"]: match += 1
-    if stock["sensitivity"] => search["sensitivity"]: match += 1
-    if stock["intellect"] => search["intellect"]: match += 1
-    if stock["temper"] => search["temper"]: match += 1
-    if stock["ego"] => search["ego"]: match += 1
+    if stock["beauty"] >= search["beauty"]: match += 1
+    if stock["stamina"] >= search["stamina"]: match += 1
+    if stock["sensitivity"] >= search["sensitivity"]: match += 1
+    if stock["intellect"] >= search["intellect"]: match += 1
+    if stock["temper"] >= search["temper"]: match += 1
+    if stock["ego"] >= search["ego"]: match += 1
 
     IF match >= 7:
         search['active'] = 2

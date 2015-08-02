@@ -59,27 +59,11 @@ IF assistant_auto_tentacle = 1:
  jump 'loop'
 END
 
-IF slave_auto_wash = 1:
- $special_bg = $washing[slave_type] 
- $place = 'bathroom'  
- $text = '<<$slave_washes_master>>'
- slave_auto_wash = 0
- jump 'loop'
-END
-
 IF assistant_auto_wash = 1:
  $special_bg = $washing[assistant_type] 
  $place = 'bathroom'  
  $text = '<<$assistant_washes_master>>'
  assistant_auto_wash = 0
- jump 'loop'
-END
-
-IF assistant_washs_slave = 1:
- $special_bg = $lesbo_bath[assistant_type] 
- $place = 'bathroom'  
- $text = '<<$assistant_wash_slave>>'
- assistant_washs_slave = 0
  jump 'loop'
 END
 
@@ -147,7 +131,7 @@ IF slave_masturbating_anyway = 1:
  $place = 'bedroom'
  $special_bg = $masturbation[slave_type]
  IF slave["sub_masturbation"] < 1: slave["sub_masturbation"] = 1 ELSE slave["sub_masturbation_xp"] += 1
- IF slave["obedience"] + orgasm_prohibited => slave["arousal"]:
+ IF slave["obedience"] + orgasm_prohibited >= slave["arousal"]:
   $text = 'You caught your slave during masturbation, and she stops immediately, knowing she broke the rules you set.' 
   slave_rate["arousal"] += slave["sub_masturbation"] + slave["arousal"]
   slave['neg_horny'] = 1
@@ -277,7 +261,7 @@ IF egg_time = 1:
  if g = 2: $special_bg = 'scene\egg_birth_2'    
  if g = 3: $special_bg = 'scene\egg_birth_3'  
  IF frige_space > 0:
-  IF frige_space => total_eggs_gain:
+  IF frige_space >= total_eggs_gain:
    frige["eggs"] += total_eggs_gain
    else
    frige["eggs"] += frige_space
@@ -303,14 +287,14 @@ IF milking_time = 1:
  if g = 5: $special_bg = 'scene\milking_5' 
  if g = 6: $special_bg = 'scene\milking_6' 
  IF frige_space > 0:
-  IF frige_space => cream_bottle_plus:
+  IF frige_space >= cream_bottle_plus:
    frige["cream"] += cream_bottle_plus
    else
    frige["cream"] += frige_space
   END
  END
  IF frige_space > 0:
-  IF frige_space => milk_bottle_plus:
+  IF frige_space >= milk_bottle_plus:
    frige["milk"] += milk_bottle_plus
    else
    frige["milk"] += frige_space

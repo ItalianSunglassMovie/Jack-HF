@@ -112,13 +112,13 @@ IF slot > 0 and slot < 20:
  gt 'master_stat'
 END
 
-IF slot => 20 and slot < 40: 
+IF slot >= 20 and slot < 40: 
  $equip_choice = ''
  gs '$newloc'
  gt 'slave_stat'
 END
 
-IF slot => 40 and slot < 60: 
+IF slot >= 40 and slot < 60: 
  $equip_choice = ''
  gs '$newloc'
  gt 'assistant_stat'

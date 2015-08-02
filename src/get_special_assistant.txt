@@ -94,7 +94,7 @@ $assistant['pussy_img'] = $seed_pussy_img[assistant_type]
 assistant['brand'] = 1
 
 !stats alignment
-assistant["energy"] = 7
+assistant["energy"] = 3
 assistant["hygiene"] = 1
 assistant["exotic"] = seed_exotic[assistant_type]
 assistant["bcheck"] = 0
@@ -128,56 +128,31 @@ if slave["bruises"] = 2: slave_rate["bruises"] = 20
 if slave["bruises"] = 3: slave_rate["bruises"] = 40
 if slave["bruises"] = 4: slave_rate["bruises"] = 80
 if slave["bruises"] = 5: slave_rate["bruises"] = 160
-if slave["bruises"] = 6: slave_rate["bruises"] = 160
-if slave["bruises"] = 7: slave_rate["bruises"] = 160
-if slave["bruises"] = 8: slave_rate["bruises"] = 160
-if slave["bruises"] = 9: slave_rate["bruises"] = 160
-if slave["bruises"] = 10: slave_rate["bruises"] = 160
 
 if slave["scares"] = 1: slave_rate["scares"] = 10
 if slave["scares"] = 2: slave_rate["scares"] = 20
 if slave["scares"] = 3: slave_rate["scares"] = 40
 if slave["scares"] = 4: slave_rate["scares"] = 80
 if slave["scares"] = 5: slave_rate["scares"] = 160
-if slave["scares"] = 6: slave_rate["scares"] = 160
-if slave["scares"] = 7: slave_rate["scares"] = 160
-if slave["scares"] = 8: slave_rate["scares"] = 160
-if slave["scares"] = 9: slave_rate["scares"] = 160
-if slave["scares"] = 10: slave_rate["scares"] = 160
 
 if slave["hygiene"] = 1: slave_rate["hygiene"] = 10
 if slave["hygiene"] = 2: slave_rate["hygiene"] = 20
 if slave["hygiene"] = 3: slave_rate["hygiene"] = 40
 if slave["hygiene"] = 4: slave_rate["hygiene"] = 80
 if slave["hygiene"] = 5: slave_rate["hygiene"] = 160
-if slave["hygiene"] = 6: slave_rate["hygiene"] = 160
-if slave["hygiene"] = 7: slave_rate["hygiene"] = 160
-if slave["hygiene"] = 8: slave_rate["hygiene"] = 160
-if slave["hygiene"] = 9: slave_rate["hygiene"] = 160
-if slave["hygiene"] = 10: slave_rate["hygiene"] = 160
 
 IF assistant["bcheck"] = 0:
  assistant["bcheck"] = 1
  if assistant["beauty"] = 1: assistant_rate["beauty"] = 10
  if assistant["beauty"] = 2: assistant_rate["beauty"] = 20
  if assistant["beauty"] = 3: assistant_rate["beauty"] = 40
- if assistant["beauty"] = 4: assistant_rate["beauty"] = 60
- if assistant["beauty"] = 5: assistant_rate["beauty"] = 80
- if assistant["beauty"] = 6: assistant_rate["beauty"] = 120
- if assistant["beauty"] = 7: assistant_rate["beauty"] = 140
- if assistant["beauty"] = 8: assistant_rate["beauty"] = 160
- if assistant["beauty"] = 9: assistant_rate["beauty"] = 180
- if assistant["beauty"] = 10: assistant_rate["beauty"] = 200
- if assistant_rate["beauty"] => 10: assistant["base_beauty"] = 1
- if assistant_rate["beauty"] => 20: assistant["base_beauty"] = 2
- if assistant_rate["beauty"] => 40: assistant["base_beauty"] = 3
- if assistant_rate["beauty"] => 60: assistant["base_beauty"] = 4
- if assistant_rate["beauty"] => 80: assistant["base_beauty"] = 5
- if assistant_rate["beauty"] => 120: assistant["base_beauty"] = 6
- if assistant_rate["beauty"] => 140: assistant["base_beauty"] = 7
- if assistant_rate["beauty"] => 160: assistant["base_beauty"] = 8
- if assistant_rate["beauty"] => 180: assistant["base_beauty"] = 9
- if assistant_rate["beauty"] => 200: assistant["base_beauty"] = 10
+ if assistant["beauty"] = 4: assistant_rate["beauty"] = 80
+ if assistant["beauty"] = 5: assistant_rate["beauty"] = 160
+ if assistant_rate["beauty"] >= 10: assistant["base_beauty"] = 1
+ if assistant_rate["beauty"] >= 20: assistant["base_beauty"] = 2
+ if assistant_rate["beauty"] >= 40: assistant["base_beauty"] = 3
+ if assistant_rate["beauty"] >= 80: assistant["base_beauty"] = 4
+ if assistant_rate["beauty"] >= 160: assistant["base_beauty"] = 5
 END
 
 gs '#txt'

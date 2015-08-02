@@ -100,7 +100,7 @@ IF no_slave_count[$npc_id] <= 0:
  IF buy_slave = 1: 
   no_slave_count[$npc_id] = count_size[$npc_id] + rr
  END
- IF buy_slave => 2 and buy_slave <= 2: 
+ IF buy_slave >= 2 and buy_slave <= 2: 
   no_slave_count[$npc_id] = npc_contract_time[$npc_id] + count_size[$npc_id] + rr
   train_slave_count[$npc_id] = 10
  END

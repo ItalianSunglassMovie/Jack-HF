@@ -7,13 +7,5 @@ IF city_form = 6 and isabella_met = 0 and assistant_state = 0 and $estate ! 'slu
  interaction_city = 601
  gt 'interaction_city'
 END
-
-!"IF interaction_city = 12 and shira_met = 0 and assistant['arena_level'] > 4 and slave_state = CONST_INT['no_slave'] and brand_reputation = 2:
- shira_met = 1
- city_random_event = 1
- interaction_city = 602
- gt 'interaction_city'
-END
-"
 --- $city_random_event ---------------------------------
 

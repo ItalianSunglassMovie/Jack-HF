@@ -6,7 +6,7 @@ $master_ava = $sepia_ava_path[hero_choice]
 $master_ava_color = $clear_ava_path[hero_choice]
 dynamic $master_version_stats[hero_choice]
 master_energy = master_str + 1
-if master_energy > 15: master_energy = 15
+if master_energy > 5: master_energy = 5
 get_initial_slave = 0
 
 $secondary_stt = ''

@@ -1,4 +1,5 @@
 # demo_menu_form
+*P 'c'
 $toplay = 'girl'
 
 !check for drug sound, all other sounds will be disabled except bulk sound
@@ -201,7 +202,7 @@ IF menu_form = 6:
   $text_display += {<br><div id="under_gray">Tremendio (5 sparks)<br></div>} 
   $text_display += {<br><div id="under_gray">Domini Dictum (5 sparks)<br></div>}
  END
- IF master_mage => 4 and slave_state > CONST_INT['no_slave'] and sparks => 25 and slave["brand"] = 0:
+ IF master_mage >= 4 and slave_state > CONST_INT['no_slave'] and sparks >= 25 and slave["brand"] = 0:
   $text_display += {<br><div id="under">Adverto Servili (25 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 68 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Adverto Servili (25 sparks)<br></div>} 
@@ -265,17 +266,17 @@ IF menu_form = 16:
  $text_display += {<br><div id="under">Relaxed vaginal sex<br><div id = "clear"><a href = 'EXEC: interaction = 5414 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Relaxed anal sex<br><div id = "clear"><a href = 'EXEC: interaction = 54141 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Active sex<br><div id = "clear"><a href = 'EXEC: interaction = 5415 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
- IF master_excitement => 0:
+ IF master_excitement >= 0:
   $text_display += {<br><div id="under">Rape<br><div id = "clear"><a href = 'EXEC: interaction = 161 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Rape<br></div>}
  END
- IF master_excitement => 0:
+ IF master_excitement >= 0:
   $text_display += {<br><div id="under">Oral rape<br><div id = "clear"><a href = 'EXEC: interaction = 162 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Oral rape<br></div>}
  END
- IF master_excitement => 0:
+ IF master_excitement >= 0:
   $text_display += {<br><div id="under">Anal rape<br><div id = "clear"><a href = 'EXEC: interaction = 163 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Anal rape<br></div>}
@@ -713,22 +714,22 @@ full_day = slave["stamina"] - 1
 if full_day < 1: full_day = 1
 
 IF menu_form = 152:
- IF slave["energy"] => 1:
+ IF slave["energy"] >= 1:
   $text_display += {<br><div id="under">An hour of rest (=1)<br><div id = "clear"><a href = 'EXEC: interaction = 1521 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">An hour of rest (=1)<br></div>}
  END  
- IF slave["energy"] => 1 and boardgames => 0:
+ IF slave["energy"] >= 1 and boardgames >= 0:
   $text_display += {<br><div id="under">An hour of fun (=2)<br><div id = "clear"><a href = 'EXEC: interaction = 1522 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">An hour of fun (=2)<br></div>}
  END  
- IF slave["energy"] => full_day:
+ IF slave["energy"] >= full_day:
   $text_display += {<br><div id="under">Day off for rest (=3)<br><div id = "clear"><a href = 'EXEC: interaction = 1523 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Day off for rest (=3)<br></div>}
  END  
- IF slave["energy"] => full_day and boardgames => 0:
+ IF slave["energy"] >= full_day and boardgames >= 0:
   $text_display += {<br><div id="under">Day off for fun (=4)<br><div id = "clear"><a href = 'EXEC: interaction = 1524 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Day off for fun (=4)<br></div>}
@@ -768,27 +769,27 @@ IF menu_form = 153:
 END
 
 IF menu_form = 154:
- IF sparks => 2:
+ IF sparks >= 2:
   $text_display += {<br><div id="under">Bouquet of flowers (2 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1541 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Bouquet of flowers (2 sparks)<br></div>}
  END  
- IF sparks => 5:
+ IF sparks >= 5:
   $text_display += {<div id="under">Perfume (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1542 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">Perfume (5 sparks)<br></div>}
  END 
- IF sparks => 9:
+ IF sparks >= 9:
   $text_display += {<div id="under">Warm plaid (9 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1543 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">Warm plaid (9 sparks)<br></div>}
  END  
- IF sparks => 15:
+ IF sparks >= 15:
   $text_display += {<div id="under">Plush toy (15 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1544 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">Plush toy (15 sparks)<br></div>}
  END   
- IF sparks => 50 and slave['pony'] = 0:
+ IF sparks >= 50 and slave['pony'] = 0:
   $text_display += {<div id="under">Mini-pony (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 1545 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<div id="under_gray">Mini-pony (50 sparks)<br></div>}
@@ -800,27 +801,27 @@ IF menu_form = 154:
 END
 
 IF menu_form = 1546:
- IF sparks => 3:
+ IF sparks >= 3:
   $text_display += {<br><div id="under">Headband (3 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15461 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Headband (3 sparks)<br></div>}
  END  
- IF sparks => 3:
+ IF sparks >= 3:
   $text_display += {<br><div id="under">Sparkly earrings (3 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15462 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Sparkly earrings (3 sparks)<br></div>}
  END 
- IF sparks => 5:
+ IF sparks >= 5:
   $text_display += {<br><div id="under">A ring with a gem (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15463 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">A ring with a gem (5 sparks)<br></div>}
  END  
- IF sparks => 10:
+ IF sparks >= 10:
   $text_display += {<br><div id="under">Sparkling necklace (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15464 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Sparkling necklace (10 sparks)<br></div>}
  END   
- IF sparks => 20:
+ IF sparks >= 20:
   $text_display += {<br><div id="under">Precious tiara (20 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15465 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Precious tiara (20 sparks)<br></div>}
@@ -830,27 +831,27 @@ IF menu_form = 1546:
 END
 
 IF menu_form = 1547:
- IF sparks => 5:
+ IF sparks >= 5:
   $text_display += {<br><div id="under">Soft slippers (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15471 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Soft slippers (5 sparks)<br></div>}
  END  
- IF sparks => 5:
+ IF sparks >= 5:
   $text_display += {<br><div id="under">Sundress (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15472 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Sundress (5 sparks)<br></div>}
  END 
- IF sparks => 10:
+ IF sparks >= 10:
   $text_display += {<br><div id="under">Gown (10 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15473 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Gown (10 sparks)<br></div>}
  END  
- IF sparks => 50:
+ IF sparks >= 50:
   $text_display += {<br><div id="under">Gorgeous dress (50 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15474 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Gorgeous dress (50 sparks)<br></div>}
  END   
- IF sparks => 100:
+ IF sparks >= 100:
   $text_display += {<br><div id="under">Wedding dress (100 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 15475 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Wedding dress (100 sparks)<br></div>}
@@ -861,27 +862,27 @@ END
 
 
 IF menu_form = 155:
- IF sparks => 1:
+ IF sparks >= 1:
   $text_display += {<br><div id="under">Chocolate (1 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1551 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Chocolate (1 sp)<br></div>}
  END  
- IF sparks => 2:
+ IF sparks >= 2:
   $text_display += {<br><div id="under">Cream cake (2 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1552 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Cream cake (2 sp)<br></div>}
  END  
- IF sparks => 4:
+ IF sparks >= 4:
   $text_display += {<br><div id="under">Banana sundae (4 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1553 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Banana sundae (4 sp)<br></div>}
  END  
- IF sparks => 8:
+ IF sparks >= 8:
   $text_display += {<br><div id="under">Euphorijelly (8 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1554 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Euphorijelly (8 sp)<br></div>}
  END  
- IF sparks => 16:
+ IF sparks >= 16:
   $text_display += {<br><div id="under">Vesturian ambrosia (16 sp)<br><div id = "clear"><a href = 'EXEC: interaction = 1555 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Vesturian ambrosia (16 sp)<br></div>}

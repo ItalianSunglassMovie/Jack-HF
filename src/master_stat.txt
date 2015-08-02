@@ -1,4 +1,4 @@
-﻿# master_stat
+# master_stat
 gs 'stats_layout'
 gs '$furniture_list'
 gs '$quest_list'
@@ -17,7 +17,6 @@ IF exam_in_progress = 1:
  else
  *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 END
-
 
 !'
  IF slave["stamina"] > 1:
@@ -133,7 +132,6 @@ END
 <<$master_fetish[master_fetish]>> 
 </div>'
 
-*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !OBJECTIVES TAB
 IF master_stat_screen = 1:

@@ -19,7 +19,7 @@ IF auction_phase = 6:
 END
 
 IF auction_phase = 4:
- IF stock_sold => stock_limit:
+ IF stock_sold >= stock_limit:
   auction_phase = 5
   else
   IF haggling_stage = 1:

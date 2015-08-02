@@ -95,49 +95,30 @@ END
 
 
 IF $ARGS[0] = 'bceck_cheat' :
- if slave["base_beauty"] = 1: slave_rate["beauty"] = 0
- if slave["base_beauty"] = 2: slave_rate["beauty"] = 10
- if slave["base_beauty"] = 3: slave_rate["beauty"] = 20
- if slave["base_beauty"] = 4: slave_rate["beauty"] = 40
- if slave["base_beauty"] = 5: slave_rate["beauty"] = 60
- if slave["base_beauty"] = 6: slave_rate["beauty"] = 80
- if slave["base_beauty"] = 7: slave_rate["beauty"] = 120
- if slave["base_beauty"] = 8: slave_rate["beauty"] = 140
- if slave["base_beauty"] = 9: slave_rate["beauty"] = 160
- if slave["base_beauty"] = 10: slave_rate["beauty"] = 180
+  If slave["base_beauty"] = 0: slave_rate["beauty"] = 0
+  If slave["base_beauty"] = 1: slave_rate["beauty"] = 10
+  If slave["base_beauty"] = 2: slave_rate["beauty"] = 20
+  If slave["base_beauty"] = 3: slave_rate["beauty"] = 40
+  If slave["base_beauty"] = 4: slave_rate["beauty"] = 80
+  If slave["base_beauty"] = 5: slave_rate["beauty"] = 160
 END
 
 
 IF $ARGS[0] = 'stat_tooltip_text' :
   IF slave[$args[1]] = 0 or slave[$args[1]] = 1:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/10)"
+    $result = "<<slave_rate[$args[1]]>> ~ (+/-10)"
   END
   IF slave[$args[1]] = 2:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/20)"
+    $result = "<<slave_rate[$args[1]]>> ~ (+/-20)"
   END
   IF slave[$args[1]] = 3:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/40)"
+    $result = "<<slave_rate[$args[1]]>> ~ (+/-40)"
   END
   IF slave[$args[1]] = 4:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/60)"
+    $result = "<<slave_rate[$args[1]]>> ~ (+/-80)"
   END
   IF slave[$args[1]] = 5:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/80)"
-  END
-  IF slave[$args[1]] = 6:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/120)"
-  END
-  IF slave[$args[1]] = 7:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/140)"
-  END
-  IF slave[$args[1]] = 8:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/160)"
-  END
-  IF slave[$args[1]] = 9:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/180)"
-  END
-  IF slave[$args[1]] = 10:
-    $result = "<<slave_rate[$args[1]]>> ~ (+/200)"
+    $result = "<<slave_rate[$args[1]]>> ~ (10/-80)"
   END
 END
 

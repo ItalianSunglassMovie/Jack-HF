@@ -67,12 +67,12 @@ IF interaction_city = 1113:
 END
 
 
-IF interaction_city = 112: 
- $place = 'guild_hall' 
+IF interaction_city = 112:
+ $place = 'guild_hall'
  $guild[0] = '   You enter the building of your guild. The slave trade in the eternal city is booming, and the interior of the headquarters only emphasizes it. Facilities are very spacious and the furniture is comfortable and richly decorated.'
  $return_lock = 'guild' 
- GT 'guild' 
-END 
+ GT 'guild'
+END
 
 IF interaction_city = 113:
  $place = 'boutic'
@@ -117,224 +117,63 @@ IF interaction_city = 11311:
  $place = 'boutic'
  $return_lock  = 'shop_general'
  $interaction_type = 'buy_item'
- $item_id = 'Frilly_apron1'
-END
-
-IF interaction_city = 113111:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'Frilly_apron2'
-END
-
-IF interaction_city = 113112:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'Frilly_apron3'
-END
-
-IF interaction_city = 113113:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'Frilly_apron4'
+ $item_id = 'common_apron'
 END
 
 IF interaction_city = 11312:
  $place = 'boutic'
  $return_lock  = 'shop_general'
  $interaction_type = 'buy_item'
- $item_id = 'maid_dress1'
-END
-
-IF interaction_city = 113121:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'maid_dress2'
-END
-
-IF interaction_city = 113122:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'maid_dress3'
-END
-
-IF interaction_city = 113123:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'maid_dress4'
+ $item_id = 'maid_dress'
 END
 
 IF interaction_city = 11313:
  $place = 'boutic'
  $return_lock  = 'shop_general'
  $interaction_type = 'buy_item'
- $item_id = 'nurse_dress1'
-END
-
-IF interaction_city = 113131:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'nurse_dress2'
-END
-
-IF interaction_city = 113132:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'nurse_dress3'
-END
-
-IF interaction_city = 113133:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'nurse_dress4'
+ $item_id = 'nurse_dress'
 END
 
 IF interaction_city = 11314:
  $place = 'boutic'
  $return_lock  = 'shop_general'
  $interaction_type = 'buy_item'
- $item_id = 'enchanter_robe1'
-END
-
-IF interaction_city = 113141:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'enchanter_robe2'
-END
-
-IF interaction_city = 113142:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'enchanter_robe3'
-END
-
-IF interaction_city = 113143:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'enchanter_robe4'
+ $item_id = 'enchanter_robe'
 END
 
 IF interaction_city = 11315:
  $place = 'boutic'
  $return_lock  = 'shop_general'
  $interaction_type = 'buy_item'
- $item_id = 'leotard1'
-END
-
-IF interaction_city = 113151:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'leotard2'
-END
-
-IF interaction_city = 113152:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'leotard3'
-END
-
-IF interaction_city = 113153:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'leotard4'
+ $item_id = 'leotard'
 END
 
 IF interaction_city = 11316:
  $place = 'boutic'
  $return_lock  = 'shop_general'
  $interaction_type = 'buy_item'
- $item_id = 'chainmail_bikini1'
+ $item_id = 'chainmail_bikini'
 END
 
-IF interaction_city = 113161:
+IF interaction_city = 11317:
  $place = 'boutic'
  $return_lock  = 'shop_general'
  $interaction_type = 'buy_item'
- $item_id = 'chainmail_bikini2'
-END
-
-IF interaction_city = 113162:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'chainmail_bikini3'
-END
-
-IF interaction_city = 113163:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'chainmail_bikini4'
+ $item_id = 'ukata'
 END
 
 IF interaction_city = 11319:
  $place = 'boutic'
  $return_lock  = 'shop_general'
  $interaction_type = 'buy_item'
- $item_id = 'ukata1'
-END
-
-IF interaction_city = 113191:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'ukata2'
-END
-
-IF interaction_city = 113192:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'ukata3'
-END
-
-IF interaction_city = 113193:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'ukata4'
+ $item_id = 'ukata'
 END
 
 IF interaction_city = 11318:
  $place = 'boutic'
  $return_lock  = 'shop_general'
  $interaction_type = 'buy_item'
- $item_id = 'sailor_foku1'
-END
-
-IF interaction_city = 113181:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'sailor_foku2'
-END
-
-IF interaction_city = 113182:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'sailor_foku3'
-END
-
-IF interaction_city = 113183:
- $place = 'boutic'
- $return_lock  = 'shop_general'
- $interaction_type = 'buy_item'
- $item_id = 'sailor_foku4'
+ $item_id = 'sailor_foku'
 END
 
 IF interaction_city = 11321:
@@ -959,7 +798,7 @@ IF interaction_city = 11611:
   slave["massaged"] = 1
   slave_rate["mood"] += 5
   if slave["pos_gentle"] < 2: slave["pos_gentle"] = 2 
-  if slave["energy"] < 15: slave["energy"] += 3
+  if slave["energy"] < 5: slave["energy"] += 1
  END
  }
 END
@@ -1074,7 +913,7 @@ IF interaction_city = 11620:
     master_visage = 10
     IF master_massaged = 0:
      master_massaged = 1
-     if master_energy < 15: master_energy += 3
+     if master_energy < 5: master_energy += 1
      master_mood_rate += 3
      if master_mood["pos_massage"] < 2: master_mood["pos_massage"] = 2  
     END
@@ -1122,7 +961,7 @@ IF interaction_city = 11623:
  $do_service = {
     IF master_massaged = 0:
         master_massaged = 1
-        if master_energy < 15: master_energy += 3
+        if master_energy < 5: master_energy += 1
         master_mood_rate += 3
         if master_mood["pos_massage"] < 2: master_mood["pos_massage"] = 2  
     END
@@ -1432,7 +1271,7 @@ IF interaction_city = 1294:
  slave['sin'] = 0
  master_mood['pos_master_winner'] = 1
  slave['pos_slave_winner'] = slave['sensitivity']  
- fgn = 100 + slave['winning_series'] * slave['winning_series']
+ fgn = 1 + slave['winning_series'] * slave['winning_series']
  slave_rate['fame'] += fgn 
  brand_rate += 1
  if slave['arena_level'] = 8: slave['arena_level'] = 9
@@ -1511,7 +1350,7 @@ END
 
 IF interaction_city = 1321:
  $interaction_type = 'rental_demo'
- $place = 'street_rental'
+ $place = 'street'
  $demo_var = 'elite'
  $place_location['demo'] = 'White Town' 
  $yes = {interaction_city = 13211
@@ -1528,7 +1367,7 @@ END
 
 IF interaction_city = 1322:
  $interaction_type = 'rental_demo'
- $place = 'necropolis_street_rental'
+ $place = 'necropolis_street'
  $demo_var = 'gothic'
  $place_location['demo'] = 'Necropolis' 
  $yes = {interaction_city = 13221
@@ -1545,7 +1384,7 @@ END
 
 IF interaction_city = 1323:
  $interaction_type = 'rental_demo'
- $place = 'taurus_street_rental'
+ $place = 'taurus_street'
  $demo_var = 'fort'
  $place_location['demo'] = 'Quarter of the Bull' 
  $yes = {interaction_city = 13231
@@ -1562,7 +1401,7 @@ END
 
 IF interaction_city = 1324:
  $interaction_type = 'rental_demo'
- $place = 'serpis_street_rental'
+ $place = 'serpis_street'
  $demo_var = 'econom'
  $place_location['demo'] = 'Serpentine quarter' 
  $yes = {interaction_city = 13241
@@ -1579,7 +1418,7 @@ END
 
 IF interaction_city = 1325:
  $interaction_type = 'rental_demo'
- $place = 'kamira_street_rental'
+ $place = 'kamira_street'
  $demo_var = 'basic'
  $place_location['demo'] = 'Quarter of the Outcasts' 
  $yes = {interaction_city = 13251
@@ -3165,7 +3004,7 @@ gt 'guild'}
 ! gt 'choice_screen'
 !END
 
-!D- rank contract
+!D-rank contract
 IF interaction_city = 1412:
  gs 'generate_stock'
  npc = 9999
@@ -3176,7 +3015,7 @@ IF interaction_city = 1412:
  specialisation = rand(1,n)
  txt = 1
  $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for D- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">200 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for D <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">200 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
  $yes = {
 gs 'stock_to_slave_nogt' 
 slave["parasite"] = 0
@@ -3196,7 +3035,7 @@ gt 'guild'}
  gt 'choice_screen'
 END
 
-!D+ rank contract
+!C-rank contract
 IF interaction_city = 1413:
  gs 'generate_stock'
  npc = 9999
@@ -3207,7 +3046,7 @@ IF interaction_city = 1413:
  specialisation = rand(1,n)
  txt = 1
  $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for D+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">350 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for C <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">300 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
  $yes = {
 gs 'stock_to_slave_nogt' 
 slave["parasite"] = 0
@@ -3215,7 +3054,7 @@ slave['brand'] = 4
 killvar 'contract'
 contract['active'] = 1
 active[$quest[10]] = 1
-sparks += 350
+sparks += 300
 contract['level'] = 2
 $contract['specialisation'] = $specialisation[specialisation]
 npc = 0
@@ -3227,7 +3066,7 @@ gt 'guild'}
  gt 'choice_screen'
 END
 
-!C- rank contract
+!B-rank contract
 IF interaction_city = 1414:
  gs 'generate_stock'
  npc = 9999
@@ -3238,7 +3077,7 @@ IF interaction_city = 1414:
  specialisation = rand(1,n)
  txt = 1
  $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for C- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">700 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for B <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">500 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
  $yes = {
 gs 'stock_to_slave_nogt' 
 slave["parasite"] = 0
@@ -3246,225 +3085,8 @@ slave['brand'] = 4
 killvar 'contract'
 contract['active'] = 1
 active[$quest[10]] = 1
-sparks += 700
+sparks += 500
 contract['level'] = 3
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!C+ rank contract
-IF interaction_city = 1415:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for C+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">1300 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 1300
-contract['level'] = 4
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!B- rank contract
-IF interaction_city = 1416:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for B- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">2000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 2000
-contract['level'] = 5
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!B+ rank contract
-IF interaction_city = 1417:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for B+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">2800 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 2800
-contract['level'] = 6
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!A- rank contract
-IF interaction_city = 1418:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for A- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">5000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 5000
-contract['level'] = 7
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!A+ rank contract
-IF interaction_city = 1419:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for A+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">7000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 7000
-contract['level'] = 8
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!S- rank contract
-IF interaction_city = 1420:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for S- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">12000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 12000
-contract['level'] = 9
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!S+ rank contract
-IF interaction_city = 1421:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for S- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">25000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 25000
-contract['level'] = 10
 $contract['specialisation'] = $specialisation[specialisation]
 npc = 0
 gt 'guild'}
@@ -3490,7 +3112,7 @@ IF interaction_city = 142:
  $npc_id = 'госпожа_ангелика' 
  $return_lock  = 'guild'
  gs '$slave_price'
- IF slave_specialisation[$contract['specialisation']] > 0 and rating => contract['level'] and slave_state = CONST_INT['slave_exist']:
+ IF slave_specialisation[$contract['specialisation']] > 0 and rating >= contract['level'] and slave_state = CONST_INT['slave_exist']:
   quality_bonus = 0
   IF rating > contract['level']: 
    if brand_reputation > 0: quality_bonus = 200 * brand_reputation
@@ -3498,7 +3120,7 @@ IF interaction_city = 142:
   END
   time_bonus = common_price[contract['level']]
   time_bonus -= contract['time'] * 10
-  if time_bonus => auction_price[contract['level']]: time_bonus = auction_price[contract['level']]
+  if time_bonus >= auction_price[contract['level']]: time_bonus = auction_price[contract['level']]
   final_bonus = time_bonus + quality_bonus
   IF final_bonus <= 0: 
    final_bonus = 0
@@ -3687,7 +3309,7 @@ IF interaction_city = 1534:
   interaction_city = 15341
   else
   interaction_city = 15342
-  if tentacle_size => 4 and pet_tentacle > 0: interaction_city = 15343 
+  if tentacle_size >= 4 and pet_tentacle > 0: interaction_city = 15343 
  end
 END
 
@@ -3721,11 +3343,11 @@ IF interaction_city = 16:
  end
  copyarr '$display_options', '$vatican_options'
  txt_count = 1
- IF brand_reputation => 5 and vatican_met = 0:
+ IF brand_reputation >= 5 and vatican_met = 0:
   vatican_met = 1
   $text[1] = "   [CAPTAIN DURWARD]
    - Mortal, you became quite famous to get here and you proved your exceptional devotion to Rome. You can pass."
-  elseif brand_reputation => 5 and vatican_met = 1: 
+  elseif brand_reputation >= 5 and vatican_met = 1: 
 		$text[1] = "   [CAPTAIN DURWARD]
    - Come in, mortal."
   END
@@ -3865,7 +3487,7 @@ IF interaction_city = 1941:
  $yes = {
 $spm_to_learn = 'удар_с_разворота'
 sparks -= spm_price
-master_energy -= 15
+master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
  $no = {sp_txt = 5
@@ -3885,7 +3507,7 @@ IF interaction_city = 1942:
  $yes = {
 $spm_to_learn = 'рассечение'
 sparks -= spm_price
-master_energy -= 15
+master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
  $no = {sp_txt = 5
@@ -3905,7 +3527,7 @@ IF interaction_city = 1943:
  $yes = {
 $spm_to_learn = 'воинственный_клич'
 sparks -= spm_price
-master_energy -= 15
+master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
  $no = {sp_txt = 5
@@ -3925,7 +3547,7 @@ IF interaction_city = 1944:
  $yes = {
 $spm_to_learn = 'оглушение'
 sparks -= spm_price
-master_energy -= 15
+master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
  $no = {sp_txt = 5
@@ -3945,7 +3567,7 @@ IF interaction_city = 1945:
  $yes = {
 $spm_to_learn = 'подрезка'
 sparks -= spm_price
-master_energy -= 15
+master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
  $no = {sp_txt = 5
@@ -3965,7 +3587,7 @@ IF interaction_city = 1946:
  $yes = {
 $spm_to_learn = 'ослепление'
 sparks -= spm_price
-master_energy -= 15
+master_energy -= 5
 interaction_city = 19410
 gt 'interaction_city'}
  $no = {sp_txt = 5
@@ -4259,7 +3881,7 @@ IF interaction_city = 231:
  $place = 'club'
  $return_lock  = 'shop_general' 
  txt_count = 1
- IF master_wealth => 4 and faction_fame['taurus'] => 1:
+ IF master_wealth >= 4 and faction_fame['taurus'] >= 1:
   club_member = 1
   $text[1] = '   [Sir Shelly]
    - Welcome to our club, <<$master_name>>. Here, everything is at your disposal, enjoy. And do not worry about membership fees - let them engaged by your accountant. For a respectable man, these costs are negligible.'
@@ -4322,7 +3944,7 @@ IF interaction_city = 2317:
  $return_lock  = 'shop_general' 
  txt_count = 1
  dynamic $master_energy_drop
- IF already_done_today[interaction_city] => 0:
+ IF already_done_today[interaction_city] >= 0:
   brand_rate += 1 
   $text[1] = '   You are doing a tough work praising your own goods and teaching methods, as well as questioning the quality of the other guild members. Club members tend to support each other, so your attempts to raise your image are very successful.'
   else
@@ -4373,11 +3995,11 @@ IF interaction_city = 24:
  end
  copyarr '$display_options', '$palace_options'
  txt_count = 1
- IF faction_fame['taurus'] => 3 and taurus_met = 0:
+ IF faction_fame['taurus'] >= 3 and taurus_met = 0:
   taurus_met = 1
   $text[1] = "   [GUARD KNIGHTS]
    - We've heard about you, <<$master_name>>. You can go through."
-  elseif faction_fame['taurus'] => 3 and taurus_met = 1: 
+  elseif faction_fame['taurus'] >= 3 and taurus_met = 1: 
 		$text[1] = "   [GUARD KNIGHTS]
    - Come in, <<$master_name>>."
   END
@@ -4770,36 +4392,6 @@ IF interaction_city = 3311:
  $text[master_issues] = '      [DOCTOR]
    - Oh God! How did you reach us under your own?! This is a mortal wound. You urgently need an operation, and not a cheap one. We take 100 sparks for that, but I do not recommend you to refuse. Otherwise there is a risk for life.' 
  END   
- IF master_wounds = 6:
-  master_issues += 1
-  txt_count += 1
- $text[master_issues] = '      [DOCTOR]
-   - Oh God! How did you reach us under your own?! This is a mortal wound. You urgently need an operation, and not a cheap one. We take 150 sparks for that, but I do not recommend you to refuse. Otherwise there is a risk for life.' 
- END   
- IF master_wounds = 7:
-  master_issues += 1
-  txt_count += 1
- $text[master_issues] = '      [DOCTOR]
-   - Oh God! How did you reach us under your own?! This is a mortal wound. You urgently need an operation, and not a cheap one. We take 200 sparks for that, but I do not recommend you to refuse. Otherwise there is a risk for life.' 
- END   
- IF master_wounds = 8:
-  master_issues += 1
-  txt_count += 1
- $text[master_issues] = '      [DOCTOR]
-   - Oh God! How did you reach us under your own?! This is a mortal wound. You urgently need an operation, and not a cheap one. We take 250 sparks for that, but I do not recommend you to refuse. Otherwise there is a risk for life.' 
- END   
- IF master_wounds = 9:
-  master_issues += 1
-  txt_count += 1
- $text[master_issues] = '      [DOCTOR]
-   - Oh God! How did you reach us under your own?! This is a mortal wound. You urgently need an operation, and not a cheap one. We take 300 sparks for that, but I do not recommend you to refuse. Otherwise there is a risk for life.' 
- END   
- IF master_wounds = 10:
-  master_issues += 1
-  txt_count += 1
- $text[master_issues] = '      [DOCTOR]
-   - Oh God! How did you reach us under your own?! This is a mortal wound. You urgently need an operation, and not a cheap one. We take 350 sparks for that, but I do not recommend you to refuse. Otherwise there is a risk for life.' 
- END   
  IF master_ill > 0:
   master_issues += 1
   txt_count += 1  
@@ -4830,16 +4422,6 @@ IF interaction_city = 33111:
         sparks -= 50
     elseif master_wounds = 5:
         sparks -= 100
-    elseif master_wounds = 6:
-        sparks -= 150
-    elseif master_wounds = 7:
-        sparks -= 200
-    elseif master_wounds = 8:
-        sparks -= 250
-    elseif master_wounds = 9:
-        sparks -= 300
-    elseif master_wounds = 10:
-        sparks -= 350
     elseif master_wounds ! 0:
         msg 'master_wounds = <<master_wounds>>, master_wounds -> [0, 5]!'
     end
@@ -4916,7 +4498,7 @@ IF interaction_city = 3312:
   slave_issues += 1
   txt_count += 1  
  $text[slave_issues] = '   [DOCTOR]
-   - Your slave has a small scar that slightly spoils the appearance. We could make a little plastic surgery to remove it. Only for 5 sparks.'   
+   - Your slave has a small scar that slightly spoils the appearance. We could make a little plastic surgery to remove it. Only for five sparks.'   
  END 
  IF slave["scares"] = 2:
   slave_issues += 1
@@ -4928,109 +4510,49 @@ IF interaction_city = 3312:
   slave_issues += 1
   txt_count += 1  
  $text[slave_issues] = '   [DOCTOR]
-   - As you can see, your slave has rather impressive scars. But nothing that can not handle with a good old-fashioned plastic surgery. 25 sparks, an hour and she will be as good as new!'   
+   - As you can see, your slave has rather impressive scars. But nothing that can not handle with a good old-fashioned plastic surgery. Twenty-five sparks, an hour and she will be as good as new!'   
  END 
  IF slave["scares"] = 4:
   slave_issues += 1
   txt_count += 1  
  $text[slave_issues] = '   [DOCTOR]
-   - Looks like your slave has a hard fate, <<$master_name>>. These scars look very impressive, but they not decorate her. Needs a serious intervention to get rid of this horror. The procedure will cost 50 sparks.'   
+   - Looks like your slave has a hard fate, <<$master_name>>. These scars look very impressive, but they not decorate her. Needs a serious intervention to get rid of this horror. The procedure will cost fifty sparks.'   
  END 
  IF slave["scares"] = 5:
   slave_issues += 1
   txt_count += 1  
  $text[slave_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 100 sparks.'     
- END   
- IF slave["scares"] = 6:
-  slave_issues += 1
-  txt_count += 1  
- $text[slave_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 150 sparks.'     
- END   
- IF slave["scares"] = 7:
-  slave_issues += 1
-  txt_count += 1  
- $text[slave_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 200 sparks.'     
- END   
- IF slave["scares"] = 8:
-  slave_issues += 1
-  txt_count += 1  
- $text[slave_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 250 sparks.'     
- END   
- IF slave["scares"] = 9:
-  slave_issues += 1
-  txt_count += 1  
- $text[slave_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 300 sparks.'     
- END   
- IF slave["scares"] = 10:
-  slave_issues += 1
-  txt_count += 1  
- $text[slave_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 350 sparks.'     
+   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you a hundred sparks.'     
  END   
  IF slave["wounds"] = 1:
   slave_issues += 1
   txt_count += 1  
   $text[slave_issues] = '   [DOCTOR]
-   - Good that you have applied to us, <<$master_name>>. She has a slight wound, almost a scratch, but who knows what complications can be. Restorative treatment will cost only a 5 sparks.' 
+   - Good that you have applied to us, <<$master_name>>. She has a slight wound, almost a scratch, but who knows what complications can be. Restorative treatment will cost only a five sparks.' 
  END
  IF slave["wounds"] = 2:
   slave_issues += 1
   txt_count += 1  
   $text[slave_issues] = '   [DOCTOR]
-   - Do not worry, the injury is not too severe and not threatening to her life. It can heal itself after a week or two, but it is safer and faster to receive treatment from us. Just 10 sparks and she as good as new. There will be no scars, I guarantee.' 
+   - Do not worry, the injury is not too severe and not threatening to her life. It can heal itself after a week or two, but it is safer and faster to receive treatment from us. Just ten sparks and she as good as new. There will be no scars, I guarantee.' 
  END 
  IF slave["wounds"] = 3:
   slave_issues += 1
   txt_count += 1  
   $text[slave_issues] = '   [DOCTOR]
-   - This is a pretty serious wound, I do not recommend you to self-medicate. The process will be long and in any case there will be scars. But we can heal the wound quickly and without consequences, just for 25 sparks.' 
+   - This is a pretty serious wound, I do not recommend you to self-medicate. The process will be long and in any case there will be scars. But we can heal the wound quickly and without consequences, just for twenty-five sparks.' 
  END 
  IF slave["wounds"] = 4:
   slave_issues += 1
   txt_count += 1  
   $text[slave_issues] = '   [DOCTOR]
-   - I am afraid injures that your slave has is very heavy, <<$master_name>>. Treatment will cost 50 sparks, but I still recommend you pay it. If you leave things as they are, the consequences of such injuries can be very serious.' 
+   - I am afraid injures that your slave has is very heavy, <<$master_name>>. Treatment will cost fifty sparks, but I still recommend you pay it. If you leave things as they are, the consequences of such injuries can be very serious.' 
  END 
- IF slave["wounds"] = 5:
+ IF slave["wounds"] >= 5:
   slave_issues += 1
   txt_count += 1  
   $text[slave_issues] = '   [DOCTOR]
    - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 100 sparks, but note that it is likely a matter of life and death!' 
- END   
- IF slave["wounds"] = 6:
-  slave_issues += 1
-  txt_count += 1  
-  $text[slave_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 150 sparks, but note that it is likely a matter of life and death!' 
- END   
- IF slave["wounds"] = 7:
-  slave_issues += 1
-  txt_count += 1  
-  $text[slave_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 200 sparks, but note that it is likely a matter of life and death!' 
- END   
- IF slave["wounds"] = 8:
-  slave_issues += 1
-  txt_count += 1  
-  $text[slave_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 250 sparks, but note that it is likely a matter of life and death!' 
- END   
- IF slave["wounds"] = 9:
-  slave_issues += 1
-  txt_count += 1  
-  $text[slave_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 300 sparks, but note that it is likely a matter of life and death!' 
- END   
- IF slave["wounds"] = 10:
-  slave_issues += 1
-  txt_count += 1  
-  $text[slave_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 350 sparks, but note that it is likely a matter of life and death!' 
  END   
  IF slave['ill'] > 0:
   slave_issues += 1
@@ -5060,18 +4582,8 @@ IF interaction_city = 33121:
         sparks -= 50
     elseif slave["wounds"] = 5:
         sparks -= 100
-    elseif slave["wounds"] = 6:
-        sparks -= 150
-    elseif slave["wounds"] = 7:
-        sparks -= 200
-    elseif slave["wounds"] = 8:
-        sparks -= 250
-    elseif slave["wounds"] = 9:
-        sparks -= 300
-    elseif slave["wounds"] = 10:
-        sparks -= 350
     elseif slave["wounds"] ! 0:
-        msg 'slave["wounds"] = <<slave["wounds"]>>, slave["wounds"] -> [0, 10]!'
+        msg 'slave["wounds"] = <<slave["wounds"]>>, slave["wounds"] -> [0, 5]!'
     end
 
     slave["wounds"] = 0
@@ -5121,18 +4633,8 @@ IF interaction_city = 33123:
     sparks -= 50
  elseif slave["scares"] = 5:
     sparks -= 100
- elseif slave["scares"] = 6:
-    sparks -= 150
- elseif slave["scares"] = 7:
-    sparks -= 200
- elseif slave["scares"] = 8:
-    sparks -= 250
- elseif slave["scares"] = 9:
-    sparks -= 300
- elseif slave["scares"] = 10:
-    sparks -= 350
  elseif slave["scares"] ! 0:
-    msg 'slave["scares"] = <<slave["scares"]>>, slave["scares"] -> [0, 10]!'
+    msg 'slave["scares"] = <<slave["scares"]>>, slave["scares"] -> [0, 5]!'
  end
  
  slave["scares"] = 0
@@ -5195,7 +4697,7 @@ IF interaction_city = 33126:
  if slave["res"] = 4: sparks -= 500
  if slave["res"] = 5: sparks -= 1000
  slave["energy"] = 0
- if slave["stamina"] < 3: slave["stamina"] = 3
+ if slave["stamina"] < 2: slave["stamina"] = 2
  if slave['starvation'] > 0: slave['starvation'] = 0
  slave_state = CONST_INT['slave_exist']
  slave_stimulation = 0
@@ -5299,6 +4801,7 @@ gt 'shop_general'}
  gt 'choice_screen'
 END
 
+!slave neoplasty
 IF interaction_city = 3324:
  $place = 'hospital'
  $return_lock  = 'shop_general' 
@@ -5316,96 +4819,8 @@ slave['reabilitation'] = 20
 slave['beauty_enchanced'] = 1
 if slave_rate["beauty"] = 10: slave_rate["beauty"] = 21
 if slave_rate["beauty"] = 20: slave_rate["beauty"] = 41
-if slave_rate["beauty"] = 40: slave_rate["beauty"] = 61
-if slave_rate["beauty"] = 60: slave_rate["beauty"] = 81
-if slave_rate["beauty"] = 80: slave_rate["beauty"] = 121
-if slave_rate["beauty"] = 120: slave_rate["beauty"] = 141
-if slave_rate["beauty"] = 140: slave_rate["beauty"] = 161
-if slave_rate["beauty"] = 160: slave_rate["beauty"] = 181
-interaction_city = 33241
-gt 'interaction_city'}
- $no = {sp_txt = 2
-gt 'shop_general'}
- gt 'choice_screen'
-END
-
-IF interaction_city = 3327:
- $place = 'hospital'
- $return_lock  = 'shop_general' 
- txt_count = 1
- txt = 1
- npc = 1
- $npc_id = 'doctor'
- $text[1] = '   [DOCTOR]
-   - We can remove some of the disadvantages in appearance of your slave and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. ' 
- $yes = {
-sparks -= 350
-slave['energy'] = -4
-slave_rate['stamina'] -= 20
-slave['reabilitation'] = 25
-slave['beauty_enchanced'] = 2
-if slave_rate["beauty"] = 21: slave_rate["beauty"] = 42
-if slave_rate["beauty"] = 41: slave_rate["beauty"] = 62
-if slave_rate["beauty"] = 61: slave_rate["beauty"] = 82
-if slave_rate["beauty"] = 81: slave_rate["beauty"] = 122
-if slave_rate["beauty"] = 121: slave_rate["beauty"] = 142
-if slave_rate["beauty"] = 141: slave_rate["beauty"] = 162
-if slave_rate["beauty"] = 161: slave_rate["beauty"] = 182
-interaction_city = 33241
-gt 'interaction_city'}
- $no = {sp_txt = 2
-gt 'shop_general'}
- gt 'choice_screen'
-END
-
-IF interaction_city = 3328:
- $place = 'hospital'
- $return_lock  = 'shop_general' 
- txt_count = 1
- txt = 1
- npc = 1
- $npc_id = 'doctor'
- $text[1] = '   [DOCTOR]
-   - We can remove some of the disadvantages in appearance of your slave and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. ' 
- $yes = {
-sparks -= 450
-slave['energy'] = -4
-slave_rate['stamina'] -= 20
-slave['reabilitation'] = 30
-slave['beauty_enchanced'] = 3
-if slave_rate["beauty"] = 42: slave_rate["beauty"] = 63
-if slave_rate["beauty"] = 62: slave_rate["beauty"] = 83
-if slave_rate["beauty"] = 82: slave_rate["beauty"] = 123
-if slave_rate["beauty"] = 122: slave_rate["beauty"] = 143
-if slave_rate["beauty"] = 142: slave_rate["beauty"] = 163
-if slave_rate["beauty"] = 162: slave_rate["beauty"] = 183
-interaction_city = 33241
-gt 'interaction_city'}
- $no = {sp_txt = 2
-gt 'shop_general'}
- gt 'choice_screen'
-END
-
-IF interaction_city = 3329:
- $place = 'hospital'
- $return_lock  = 'shop_general' 
- txt_count = 1
- txt = 1
- npc = 1
- $npc_id = 'doctor'
- $text[1] = '   [DOCTOR]
-   - We can remove some of the disadvantages in appearance of your slave and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. ' 
- $yes = {
-sparks -= 550
-slave['energy'] = -4
-slave_rate['stamina'] -= 20
-slave['reabilitation'] = 35
-slave['beauty_enchanced'] = 4
-if slave_rate["beauty"] = 63: slave_rate["beauty"] = 84
-if slave_rate["beauty"] = 83: slave_rate["beauty"] = 124
-if slave_rate["beauty"] = 123: slave_rate["beauty"] = 144
-if slave_rate["beauty"] = 143: slave_rate["beauty"] = 164
-if slave_rate["beauty"] = 163: slave_rate["beauty"] = 184
+if slave_rate["beauty"] = 40: slave_rate["beauty"] = 81
+if slave_rate["beauty"] = 80: slave_rate["beauty"] = 161
 interaction_city = 33241
 gt 'interaction_city'}
  $no = {sp_txt = 2
@@ -5533,7 +4948,7 @@ IF interaction_city = 13312:
   assistant_issues += 1
   txt_count += 1  
  $text[assistant_issues] = '   [DOCTOR]
-   - Your assistant has a small scar that slightly spoils the appearance. We could make a little plastic surgery to remove it. Only for 5 sparks.'  
+   - Your assistant has a small scar that slightly spoils the appearance. We could make a little plastic surgery to remove it. Only for five sparks.'  
  END
  IF assistant["scares"] = 2:
   assistant_issues += 1
@@ -5545,109 +4960,49 @@ IF interaction_city = 13312:
   assistant_issues += 1
   txt_count += 1  
  $text[assistant_issues] = '   [DOCTOR]
-   - As you can see, your assistant has rather impressive scars. But nothing that can not handle with a good old-fashioned plastic surgery. 25 sparks, an hour and she will be as good as new!'  
+   - As you can see, your assistant has rather impressive scars. But nothing that can not handle with a good old-fashioned plastic surgery. Twenty-five sparks, an hour and she will be as good as new!'  
  END
  IF assistant["scares"] = 4:
   assistant_issues += 1
   txt_count += 1  
  $text[assistant_issues] = '   [DOCTOR]
-   - Looks like your assistant has a hard fate, <<$master_name>>. These scars look very impressive, but they not decorate her. Needs a serious intervention to get rid of this horror. The procedure will cost 50 sparks.'  
+   - Looks like your assistant has a hard fate, <<$master_name>>. These scars look very impressive, but they not decorate her. Needs a serious intervention to get rid of this horror. The procedure will cost fifty sparks.'  
  END
  IF assistant["scares"] = 5:
   assistant_issues += 1
   txt_count += 1  
  $text[assistant_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 100 sparks.'    
- END  
- IF assistant["scares"] = 6:
-  assistant_issues += 1
-  txt_count += 1  
- $text[assistant_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 150 sparks.'    
- END  
- IF assistant["scares"] = 7:
-  assistant_issues += 1
-  txt_count += 1  
- $text[assistant_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 200 sparks.'    
- END  
- IF assistant["scares"] = 8:
-  assistant_issues += 1
-  txt_count += 1  
- $text[assistant_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 250 sparks.'    
- END  
- IF assistant["scares"] = 9:
-  assistant_issues += 1
-  txt_count += 1  
- $text[assistant_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 300 sparks.'    
- END  
- IF assistant["scares"] = 10:
-  assistant_issues += 1
-  txt_count += 1  
- $text[assistant_issues] = '   [DOCTOR]
-   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you 350 sparks.'    
+   - Oh boy. The woman is rarely seen with such a terrible scars. They would rather fit to the old viking... Is she a gladiator? Oh well, it does not matter, we can remove them. But the work is very delicate, the operation will cost you a hundred sparks.'    
  END  
  IF assistant["wounds"] = 1:
   assistant_issues += 1
   txt_count += 1  
   $text[assistant_issues] = '   [DOCTOR]
-   - Good that you have applied to us, <<$master_name>>. She has a slight wound, almost a scratch, but who knows what complications can be. Restorative treatment will cost only a 5 sparks.'
+   - Good that you have applied to us, <<$master_name>>. She has a slight wound, almost a scratch, but who knows what complications can be. Restorative treatment will cost only a five sparks.'
  END
  IF assistant["wounds"] = 2:
   assistant_issues += 1
   txt_count += 1  
   $text[assistant_issues] = '   [DOCTOR]
-   - Do not worry, the injury is not too severe and not threatening to her life. It can heal itself after a week or two, but it is safer and faster to receive treatment from us. Just 10 sparks and she as good as new. There will be no scars, I guarantee.'
+   - Do not worry, the injury is not too severe and not threatening to her life. It can heal itself after a week or two, but it is safer and faster to receive treatment from us. Just ten sparks and she as good as new. There will be no scars, I guarantee.'
  END
  IF assistant["wounds"] = 3:
   assistant_issues += 1
   txt_count += 1  
   $text[assistant_issues] = '   [DOCTOR]
-   - This is a pretty serious wound, I do not recommend you to self-medicate. The process will be long and in any case there will be scars. But we can heal the wound quickly and without consequences, just for 25 sparks.'
+   - This is a pretty serious wound, I do not recommend you to self-medicate. The process will be long and in any case there will be scars. But we can heal the wound quickly and without consequences, just for twenty-five sparks.'
  END
  IF assistant["wounds"] = 4:
   assistant_issues += 1
   txt_count += 1  
   $text[assistant_issues] = '   [DOCTOR]
-   - I am afraid injures that your assistant has is very heavy, <<$master_name>>. Treatment will cost 50 sparks, but I still recommend you pay it. If you leave things as they are, the consequences of such injuries can be very serious.'
+   - I am afraid injures that your assistant has is very heavy, <<$master_name>>. Treatment will cost fifty sparks, but I still recommend you pay it. If you leave things as they are, the consequences of such injuries can be very serious.'
  END
- IF assistant["wounds"] = 5:
+ IF assistant["wounds"] >= 5:
   assistant_issues += 1
   txt_count += 1  
   $text[assistant_issues] = '   [DOCTOR]
    - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 100 sparks, but note that it is likely a matter of life and death!'
- END  
- IF assistant["wounds"] = 6:
-  assistant_issues += 1
-  txt_count += 1  
-  $text[assistant_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 150 sparks, but note that it is likely a matter of life and death!'
- END  
- IF assistant["wounds"] = 7:
-  assistant_issues += 1
-  txt_count += 1  
-  $text[assistant_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 200 sparks, but note that it is likely a matter of life and death!'
- END  
- IF assistant["wounds"] = 8:
-  assistant_issues += 1
-  txt_count += 1  
-  $text[assistant_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 250 sparks, but note that it is likely a matter of life and death!'
- END  
- IF assistant["wounds"] = 9:
-  assistant_issues += 1
-  txt_count += 1  
-  $text[assistant_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 300 sparks, but note that it is likely a matter of life and death!'
- END  
- IF assistant["wounds"] = 10:
-  assistant_issues += 1
-  txt_count += 1  
-  $text[assistant_issues] = '   [DOCTOR]
-   - Put her on a stretcher, quick! Such injuries are usually not compatible with life. <<$master_name>>, if you want to save the girl, she urgently needs a surgery. It will cost you 350 sparks, but note that it is likely a matter of life and death!'
  END  
  IF assistant['ill'] > 0:
   assistant_issues += 1
@@ -5678,16 +5033,6 @@ IF interaction_city = 331211:
         sparks -= 50
     elseif assistant["wounds"] = 5:
         sparks -= 100
-    elseif assistant["wounds"] = 6:
-        sparks -= 150
-    elseif assistant["wounds"] = 7:
-        sparks -= 200
-    elseif assistant["wounds"] = 8:
-        sparks -= 250
-    elseif assistant["wounds"] = 9:
-        sparks -= 300
-    elseif assistant["wounds"] = 10:
-        sparks -= 350
     elseif assistant["wounds"] ! 0:
         msg 'assistant["wounds"] = <<assistant["wounds"]>>, assistant["wounds"] -> [0, 5]!'
     end
@@ -5741,16 +5086,6 @@ IF interaction_city = 331231:
     sparks -= 50
  elseif assistant["scares"] = 5:
     sparks -= 100
- elseif assistant["scares"] = 6:
-    sparks -= 150
- elseif assistant["scares"] = 7:
-    sparks -= 200
- elseif assistant["scares"] = 8:
-    sparks -= 250
- elseif assistant["scares"] = 9:
-    sparks -= 300
- elseif assistant["scares"] = 10:
-    sparks -= 350
  elseif assistant["scares"] ! 0:
     msg 'assistant["scares"] = <<assistant["scares"]>>, assistant["scares"] -> [0, 5]!'
  end
@@ -5942,98 +5277,10 @@ assistant['energy'] = -4
 assistant_rate['stamina'] -= 20
 assistant['reabilitation'] = 20
 assistant['beauty_enchanced'] = 1
-if assistant_rate["beauty"] = 10: assistant_rate["beauty"] = 11
+if assistant_rate["beauty"] = 10: assistant_rate["beauty"] = 21
 if assistant_rate["beauty"] = 20: assistant_rate["beauty"] = 41
-if assistant_rate["beauty"] = 40: assistant_rate["beauty"] = 61
-if assistant_rate["beauty"] = 60: assistant_rate["beauty"] = 81
-if assistant_rate["beauty"] = 80: assistant_rate["beauty"] = 121
-if assistant_rate["beauty"] = 120: assistant_rate["beauty"] = 141
-if assistant_rate["beauty"] = 140: assistant_rate["beauty"] = 161
-if assistant_rate["beauty"] = 160: assistant_rate["beauty"] = 181
-interaction_city = 33244
-gt 'interaction_city'}
- $no = {sp_txt = 3
-gt 'shop_general'}
- gt 'choice_screen'
-END
- 
-IF interaction_city = 33243:
- $place = 'hospital'
- $return_lock  = 'shop_general'
- txt_count = 1
- txt = 1
- npc = 1
- $npc_id = 'doctor'
- $text[1] = '   [DOCTOR]
-   - We can remove some of the disadvantages in appearance of your assistant and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. '
- $yes = {
-sparks -= 350
-assistant['energy'] = -4
-assistant_rate['stamina'] -= 20
-assistant['reabilitation'] = 25
-assistant['beauty_enchanced'] = 2
-if assistant_rate["beauty"] = 21: assistant_rate["beauty"] = 42
-if assistant_rate["beauty"] = 41: assistant_rate["beauty"] = 62
-if assistant_rate["beauty"] = 61: assistant_rate["beauty"] = 82
-if assistant_rate["beauty"] = 81: assistant_rate["beauty"] = 122
-if assistant_rate["beauty"] = 121: assistant_rate["beauty"] = 142
-if assistant_rate["beauty"] = 141: assistant_rate["beauty"] = 162
-if assistant_rate["beauty"] = 161: assistant_rate["beauty"] = 182
-interaction_city = 33244
-gt 'interaction_city'}
- $no = {sp_txt = 3
-gt 'shop_general'}
- gt 'choice_screen'
-END
- 
-IF interaction_city = 33245:
- $place = 'hospital'
- $return_lock  = 'shop_general'
- txt_count = 1
- txt = 1
- npc = 1
- $npc_id = 'doctor'
- $text[1] = '   [DOCTOR]
-   - We can remove some of the disadvantages in appearance of your assistant and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. '
- $yes = {
-sparks -= 450
-assistant['energy'] = -4
-assistant_rate['stamina'] -= 20
-assistant['reabilitation'] = 30
-assistant['beauty_enchanced'] = 3
-if assistant_rate["beauty"] = 42: assistant_rate["beauty"] = 63
-if assistant_rate["beauty"] = 62: assistant_rate["beauty"] = 83
-if assistant_rate["beauty"] = 82: assistant_rate["beauty"] = 123
-if assistant_rate["beauty"] = 122: assistant_rate["beauty"] = 143
-if assistant_rate["beauty"] = 142: assistant_rate["beauty"] = 163
-if assistant_rate["beauty"] = 162: assistant_rate["beauty"] = 183
-interaction_city = 33244
-gt 'interaction_city'}
- $no = {sp_txt = 3
-gt 'shop_general'}
- gt 'choice_screen'
-END
- 
-IF interaction_city = 33246:
- $place = 'hospital'
- $return_lock  = 'shop_general'
- txt_count = 1
- txt = 1
- npc = 1
- $npc_id = 'doctor'
- $text[1] = '   [DOCTOR]
-   - We can remove some of the disadvantages in appearance of your assistant and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. '
- $yes = {
-sparks -= 550
-assistant['energy'] = -4
-assistant_rate['stamina'] -= 20
-assistant['reabilitation'] = 35
-assistant['beauty_enchanced'] = 4
-if assistant_rate["beauty"] = 63: assistant_rate["beauty"] = 84
-if assistant_rate["beauty"] = 83: assistant_rate["beauty"] = 124
-if assistant_rate["beauty"] = 123: assistant_rate["beauty"] = 144
-if assistant_rate["beauty"] = 143: assistant_rate["beauty"] = 164
-if assistant_rate["beauty"] = 163: assistant_rate["beauty"] = 184
+if assistant_rate["beauty"] = 40: assistant_rate["beauty"] = 81
+if assistant_rate["beauty"] = 80: assistant_rate["beauty"] = 161
 interaction_city = 33244
 gt 'interaction_city'}
  $no = {sp_txt = 3
@@ -6252,11 +5499,11 @@ IF interaction_city = 34:
  end
  copyarr '$display_options', '$spire_options'
  txt_count = 1
- IF faction_fame['serpis'] => 3 and serpis_met = 0:
+ IF faction_fame['serpis'] >= 3 and serpis_met = 0:
   serpis_met = 1
   $text[1] = "   [TECHNO-JANISSARIES]
    - Seem like we seen you somewhere, <<$master_name>>. Show your pass. Hmmm... Well, you can go through."
-  elseif faction_fame['serpis'] => 3 and serpis_met = 1: 
+  elseif faction_fame['serpis'] >= 3 and serpis_met = 1: 
 		$text[1] = "   [TECHNO-JANISSARIES]
    - You can go in, <<$master_name>>."
   END
@@ -6813,11 +6060,11 @@ IF interaction_city = 45:
  end
  copyarr '$display_options', '$citadel_options'
  txt_count = 1
- IF faction_fame['kamira'] => 3 and kamira_met = 0:
+ IF faction_fame['kamira'] >= 3 and kamira_met = 0:
   kamira_met = 1
   $text[1] = "   [CITADEL GUARD]
    - You've proven that you can be trusted, <<$master_name>>. Come on in."
-  elseif faction_fame['kamira'] => 3 and kamira_met = 1: 
+  elseif faction_fame['kamira'] >= 3 and kamira_met = 1: 
 		$text[1] = "   [CITADEL GUARD]
    - Go on, <<$master_name>>."
   END
@@ -7449,11 +6696,11 @@ IF interaction_city = 54:
  end-
  copyarr '$display_options', '$tower_options'
  txt_count = 1
- IF faction_fame['korvus'] => 3 and korvus_met = 0:
+ IF faction_fame['korvus'] >= 3 and korvus_met = 0:
   korvus_met = 1
   $text[1] = "   [DEATH KNIGHT]
    - Grrghhh... Human... Obedient man... Glorious man... <<$master_name>>? Go thrrroooughhh..."
-  elseif faction_fame['korvus'] => 3 and korvus_met = 1: 
+  elseif faction_fame['korvus'] >= 3 and korvus_met = 1: 
 		$text[1] = "   [DEATH KNIGHT]
    - <<$master_name>> wants to enter? Obedient man will. Go iinnnnn..."
   END
@@ -7613,16 +6860,6 @@ IF interaction_city = 6011:
  assistant_type = 901
  gs 'get_special_assistant'
 END
-
-!"IF interaction_city = 602:
- $place = 'colloseum'
- $return_lock  = 'city_menu_form'
- txt_count = arrsize('$shira_met_part_1') - 1
- copyarr '$text', '$shira_met_part_1'
- $special_action[4] = {$picture_type = 'pic_jpg'
- $special_bg = 'characters\shira_meeting'
- }
-END"
 
 !starting the patrol
 IF interaction_city = 62:
@@ -8322,7 +7559,7 @@ IF interaction_city = 9511:
  $place = 'guild_hall'
  $return_lock  = 'guild' 
  expert_looks_for_slave = 1
- full_search_cost = search["cost"] * 70
+ full_search_cost = search["cost"] * 50
  npc = 1
  $npc_id = 'scoops'
  txt = 1

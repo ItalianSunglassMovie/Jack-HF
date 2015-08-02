@@ -60,7 +60,6 @@ Cancel
 IF city_form = 0:
   $place = 'city' 
   if homerun = 0: master_energy -= 1 & homerun = 1 
-
   FUNC('$menu', 'spacer', 1)
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
@@ -78,8 +77,8 @@ END
 
 IF city_form = 1:
   $place = 'white_city' 
-
   FUNC('$menu', 'spacer', 1)
+
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   FUNC('$menu', 'city_form', $menu_item_square, menu_square, 'Trade square')
@@ -121,6 +120,7 @@ END
 IF city_form = 2:
   $place = 'taurus_district' 
   FUNC('$menu', 'spacer', 1)
+
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   FUNC('$menu', 'city_form', $menu_item_ResidencesBull, menu_ResidencesBull, 'Residences area')
@@ -177,8 +177,8 @@ END
 
 IF city_form = 3:
   $place = 'serpis_district' 
-
   FUNC('$menu', 'spacer', 1)
+
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   FUNC('$menu', 'city_form', $menu_item_Anthill, menu_Anthill, 'Anthill')
@@ -281,7 +281,6 @@ END
 
 IF city_form = 33:
   $place = 'technodrom' 
-
   FUNC('$menu', 'spacer', 1)
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
@@ -300,8 +299,8 @@ END
 
 IF city_form = 4:
   $place = 'kamira_district' 
-
   FUNC('$menu', 'spacer', 1)
+
   FUNC('$menu', '===BEGIN===', 'column_0') 
   
   FUNC('$menu', 'city_form', $menu_item_Resident_kamira_district, menu_Resident_kamira_district, 'Residential area')
@@ -394,8 +393,8 @@ END
 
 IF city_form = 5:
   $place = 'korvus_district' 
-
   FUNC('$menu', 'spacer', 1)
+
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   FUNC('$menu', 'city_form', $menu_item_Residenceskorvus_district, menu_Residenceskorvus_district, 'Residences area')
@@ -484,6 +483,7 @@ END
 IF city_form = 6:
   $place = 'gates_of_mists' 
   FUNC('$menu', 'spacer', 1)
+
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   IF master_energy > 0:

@@ -1,179 +1,124 @@
-﻿# #help_msg
+# #help_msg
 !TODO: Нужен var_base для vb_cycle вставок, + придумать нормальную замену by Lyazar
 !help messages
 $красота_справка = '<center>BEAUTY<br>
-<font color="#CD0000">Ugly</font>
-<font color="#FF004C">Plain</font>
-<font color="#FF00A2">Cute</font>
-<font color="#D805FF">Pretty</font>
-<font color="#9100FF">Attractive</font>
-<font color="#0205FF">Beautiful</font>
-<font color="#0205FF">Stunning</font>
-<font color="#23B4C4">Exquisite</font>
-<font color="#008080">Gorgeous</font>
-<font color="#2E8B57">Breathtaking</font>
-<font color="#008000">Goddess</font></center>'
+<font color="#cd0000">Ugly</font>
+<font color="#C71585">Plain</font>
+<font color="#4B0082">Cute</font>
+<font color="#0000CD">Pretty</font>
+<font color="#008080">Beautiful</font>
+<font color="#008000">Exquisite</font></center>
+'
 $красота_справка_2 = "  Natural beauty very strongly influences her market price. Your slave's rank will never rise higher than her beauty value. At auctions beautiful slaves are sold for higher prices."
 $красота_совет = '   [BEAUTY TIPS]
    All your efforts to improve appearance of the slave will influence style, not beauty. Stylishness is important too, but the value of natural beauty is huge. You can increase beauty only by plastic surgery in technosphere and only once. Try to buy beautiful slaves if you intend to train them to high ranks. Beauty will decrease, if a slave has scars or bruises.'
 
 $здоровье_справка = '<center>ENDURANCE<br>
-<font color="#CD0000">Dying</font>
-<font color="#FF004C">Feeble</font>
-<font color="#FF00A2">Weakened</font>
-<font color="#D805FF">Healthy</font>
-<font color="#9100FF">Firm</font>
-<font color="#0205FF">Tough</font>
-<font color="#0205FF">Enduring</font>
-<font color="#23B4C4">Mighty</font>
-<font color="#008080">Vigorous</font>
-<font color="#2E8B57">Withstanding</font>
-<font color="#008000">Unbreakable</font></center>'
-$здоровье_справка_2 = '  Hardy slave can work well and hard and is more attractive for clients. Critical decrease of endurance can kill Your slave.'
+<font color="#cd0000">Dying</font>
+<font color="#C71585">Feeble</font>
+<font color="#4B0082">Weakened</font>
+<font color="#0000CD">Healthy</font>
+<font color="#008080">Tough</font>
+<font color="#008000">Enduring</font></center>'
+$здоровье_справка_2 = '  Hardy slave can work well and hard and is more attractive for clients. Critical decrease of endurance can kill your slave.'
 $здоровье_совет = "   [ENDURANCE TIPS]
-<div style='font-size: 88%;'>   Endurance always comes handy. If Your slave has weak endurance you need to feed her well; it's desirable to prescribe vitamins and not let her become exhausted (receive red energy stars). Assistant with high nurse skill can help too. To increase endurance of healthy slave, make her do sports, race and martial arts. You also need to heal her injuries and sicknesses in time, don't let her starve or overwork.</div>"
+<div style='font-size: 88%;'>   Endurance always comes handy. If your slave has weak endurance you need to feed her well; it's desirable to prescribe vitamins and not let her become exhausted (receive red energy stars). Assistant with high nurse skill can help too. To increase endurance of healthy slave, make her do sports, race and martial arts. You also need to heal her injuries and sicknesses in time, don't let her starve or overwork.</div>"
 
 $экзотичность_справка = '<center>EXOTICISM<br>
-<font color="#CD0000">Freak</font>
-<font color="#FF004C">Common</font>
-<font color="#FF00A2">Ordinary</font>
-<font color="#D805FF">Quirky</font>
-<font color="#9100FF">Mysterious</font>
-<font color="#0205FF">Enigmatic</font>
-<font color="#0205FF">Exotic</font>
-<font color="#23B4C4">Mystical</font>
-<font color="#008080">Sexy</font>
-<font color="#2E8B57">Extraordinary</font>
-<font color="#008000">Glamorous</font></center>'
+<font color="#cd0000">Ordinary</font>
+<font color="#C71585">Quirky</font>
+<font color="#4B0082">Mysterious</font>
+<font color="#0000CD">Enigmatic</font>
+<font color="#008080">Exotic</font>
+<font color="#008000">Mystical</font></center>'
 $экзотичность_справка_2 = '  Slaves with unusual, irregular appearance attract attention at once and generally are more interesting for customers.'
 $экзотичность_совет = "   [EXOTICISM TIPS]
-   Some slaves are exotic inherently. You can increase exoticism of Your slave by using tattoos, piercings, body modifications, as well as flamboyant clothes and wigs."
+   Some slaves are exotic inherently. You can increase exoticism of your slave by using tattoos, piercings, body modifications, as well as flamboyant clothes and wigs."
    
 $жыр_справка = '<center>PHYSIQUE<br>
-<font color="#CD0000">Obese</font>
-<font color="#FF004C">Overweight</font>
-<font color="#FF00A2">Chunky</font>
-<font color="#D805FF">Plump</font>
-<font color="#9100FF">Meaty</font>
-<font color="#9100FF">Weighty</font>
-<font color="#0205FF">Voluptuous</font>
-<font color="#0205FF">Healthy Weight</font>
-<font color="#008080">Slim</font>
-<font color="#008000">Slender</font>
-<font color="#FF0000">Underweight</font>
-</center>'
-$жыр_справка_2 = "  You can get more mince from fat slaves but they are not attractive. Weedy starvelings aren't attractive as well, but you can't get a lot meat from them either. It's better to keep Your slave slim, but not skinny."
+<font color="#cd0000">Obese</font>
+<font color="#C71585">Overweight</font>
+<font color="#4B0082">Plump</font>
+<font color="#0000CD">Underweight</font>
+<font color="#008080">Voluptuous</font>
+<font color="#008000">Healthy weight</font></center>'
+$жыр_справка_2 = "  You can get more mince from fat slaves but they are not attractive. Weedy starvelings aren't attractive as well, but you can't get a lot meat from them either. It's better to keep your slave slim, but not skinny."
 $жыр_совет = "   [PHYSIQUE TIPS]
-<div style='font-size: 95%;'>   Extra weight is generally harmful, as well as a lack of it. To keep Your slave slim you need to balance her nutrition that way that it is sufficient, but not excessive. The more Your slave works and the more endurant she is - the more food she needs. Physical exercises don't decrease weight directly but are a good way to burn extra calories. Actively involved in sports slave should be well fed slave.</div>"
+<div style='font-size: 95%;'>   Extra weight is generally harmful, as well as a lack of it. To keep your slave slim you need to balance her nutrition that way that it is sufficient, but not excessive. The more your slave works and the more endurant she is - the more food she needs. Physical exercises don't decrease weight directly but are a good way to burn extra calories. Actively involved in sports slave should be well fed slave.</div>"
 
 $чувствительность_справка = '<center>EMPATHY<br>
-<font color="#CD0000">Heartless</font>
-<font color="#FF004C">Callous</font>
-<font color="#FF00A2">Sharp</font>
-<font color="#D805FF">Uncaring</font>
-<font color="#9100FF">Insensitive</font>
-<font color="#0205FF">Sensitive</font>
-<font color="#0205FF">Hypersensitive</font>
-<font color="#23B4C4">Caring</font>
-<font color="#008080">Emotional</font>
-<font color="#2E8B57">Nurturing</font>
-<font color="#008000">Sensorial</font></center>'
+<font color="#cd0000">Uncaring</font>
+<font color="#C71585">Callous</font>
+<font color="#4B0082">Insensitive</font>
+<font color="#0000CD">Sensitive</font>
+<font color="#008080">Caring</font>	
+<font color="#008000">Nurturing</font></center>'
 $чувствительность_справка_2 = '  On one hand the gentle slave is easier affected by stress and stung by punishments. On the other hand she is turned on much faster and more lively, which makes her attractive for customers.'
 $чувствительность_совет = "   [EMPATHY TIPS]
    Callousness develops quickly with mistreatment. Severe punishments are especially harmful. While a less sensitive slave is hardened against depression and endures suffering, she is also less valuable. There are no reliable ways to increase a slave's empathy, but refined petting and pleasures may help."
 
 $стиль_справка = '<center>STYLE<br>
-<font color="#CD0000">Unfashionable</font>
-<font color="#FF004C">Unremarkable</font>
-<font color="#FF00A2">Common</font>
-<font color="#D805FF">Remarkable</font>
-<font color="#9100FF">Common</font>
-<font color="#0205FF">Stylish</font>
-<font color="#0205FF">Refined</font>
-<font color="#23B4C4">Delicate</font>
-<font color="#008080">Hot</font>
-<font color="#2E8B57">Graceful</font>
-<font color="#008000">Angel</font></center>'
+<font color="#cd0000">Unfashionable</font>
+<font color="#C71585">Unremarkable</font>
+<font color="#4B0082">Common</font>
+<font color="#0000CD">Stylish</font>
+<font color="#008080">Refined</font>
+<font color="#008000">Graceful</font></center>'
 $стиль_справка_2 = "  Slave's appearance is extremely important during the sales. Customers will like well-groomed and well-dressed slave, and sloppy slave can be turned down even if she fits to the requirements."
 $стиль_совет = '   [STYLE TIPS]
 <div style="font-size: 88%;">   Style depends little on the natural abilities and skills, though it is influences by ability to communicate ("escort") and presence ("dancer"). Style suffers from dirt and sloppiness. Hairstyle, make up, perfume, beautiful clothes and jewelry -  all of these improve style and makes slave more attractive to customers. It is not necessary to constantly maintain style - it plays a role only when it is time to show girl to customer.</div>'
    
 $ум_справка = '<center>INTELLECT<br>
-<font color="#CD0000">Brainless</font>
-<font color="#FF004C">Retarded</font>
-<font color="#FF00A2">Stupid</font>
-<font color="#D805FF">Dimwitted</font>
-<font color="#9100FF">Bright</font>
-<font color="#0205FF">Thinker</font>
-<font color="#0205FF">Clever</font>
-<font color="#23B4C4">Intelligent</font>
-<font color="#008080">Genius</font>
-<font color="#2E8B57">Sage</font>
-<font color="#008000">Mastermind</font></center>'
+<font color="#cd0000">Retarded</font>
+<font color="#C71585">Stupid</font>
+<font color="#4B0082">Dimwitted</font>
+<font color="#0000CD">Bright</font>
+<font color="#008080">Clever</font>
+<font color="#008000">Intelligent</font></center>'
 $ум_справка_2 = '  Smart slaves master skills faster and are able to cope with accounting better, they are more valuable on the market. But it is easier to dominate and manipulate stupid ones.'
 $ум_совет = '   [INTELLECT TIPS]
-<div style="font-size: 97%;">   Smarts are not always useful, as more intellectual slaves are harder to control and manipulate. On the other hand rational factors of submission and explanatory conversations will work even better. Smart slaves also are trained better, cope well with the work of secretary and generally are valued more on the market. Smarts can be slightly increased if you make Your slave an accountant.</div>'
+<div style="font-size: 97%;">   Smarts are not always useful, as more intellectual slaves are harder to control and manipulate. On the other hand rational factors of submission and explanatory conversations will work even better. Smart slaves also are trained better, cope well with the work of secretary and generally are valued more on the market. Smarts can be slightly increased if you make your slave an accountant.</div>'
    
 $темперамент_справка = '<center>TEMPERAMENT<br>
-<font color="#CD0000">Apathetic</font>
-<font color="#FF004C">Cold</font>
-<font color="#FF00A2">Stoic</font>
-<font color="#D805FF">Reserved</font>
-<font color="#9100FF">Distant</font>
-<font color="#0205FF">Reactive</font>
-<font color="#0205FF">Warm</font>
-<font color="#23B4C4">Lively</font>
-<font color="#008080">Frisky</font>
-<font color="#2E8B57">Passionate</font>
-<font color="#008000">Romantic</font></center>'
+<font color="#cd0000">Apathetic</font>
+<font color="#C71585">Cold</font>
+<font color="#4B0082">Reserved</font>
+<font color="#0000CD">Reactive</font>
+<font color="#008080">Lively</font>
+<font color="#008000">Passionate</font></center>'
 $темперамент_справка_2 = '  Temperamental slaves are uncontrollable and are less susceptible to education but they are passionate lovers and are more interesting for customers, as they have a bright personality. Calms ones are easier to control.'
 $темперамент_совет = '   [TEMPERAMENT TIPS]
    Temperament is ambiguous feature. More emotional slaves are harder to control, but cold ones are less valuable. By suppressing initiative, driving her in depression and silencing her you will eventually lower her temperament. There are no good ways to increase it, but you can make a slave wear a spiked collar and boots.'
    
 $характер_справка = '<center>NATURE<br>
-<font color="#CD0000">Spineless</font>
-<font color="#FF004C">Cowardly</font>
-<font color="#FF00A2">Anxious</font>
-<font color="#D805FF">Uncertain</font>
-<font color="#9100FF">Hesitant</font>
-<font color="#0205FF">Independent</font>
-<font color="#0205FF">Resolute</font>
-<font color="#23B4C4">Determined</font>
-<font color="#008080">Driven</font>
-<font color="#2E8B57">Willful</font>
-<font color="#008000">Sovereign</font></center>'
+<font color="#cd0000">Spineless</font>
+<font color="#C71585">Cowardly</font>
+<font color="#4B0082">Uncertain</font>
+<font color="#0000CD">Independent</font>
+<font color="#008080">Determined</font>
+<font color="#008000">Willful</font></center>'
 $характер_справка_2 = '  Strong character makes slave more interesting and independent but lowers her obedience. It is easier to control a weak-willed slaves but their value will be lower too.'
 $характер_совет = '   [NATURE TIPS]
 <div style="font-size: 97%;">   Nature is ambiguous feature. It is very hard to train willful slave but weak-willed will lose its value greatly. The more you make a slave do what she does not want to do, the more her nature will break. It is difficult to restore nature so do not overdo it. Victory in duels, assistance in training, martial arts and recreation in a golden cage can help in the formation of solid nature.</div>'
 
 $гордыня_справка = '<center>PRIDE<br>
-<font color="#CD0000">Arrogant</font>
-<font color="#FF004C">Conceited</font>
-<font color="#FF00A2">Cocky</font>
-<font color="#D805FF">Haughty</font>
-<font color="#9100FF">Proud</font>
-<font color="#0205FF">Fastidious</font>
-<font color="#0205FF">Timid</font>
-<font color="#23B4C4">Open</font>
-<font color="#008080">Bold</font>
-<font color="#2E8B57">Unashamed</font>
-<font color="#008000">Lewd</font></center>'
+<font color="#cd0000">Arrogant</font>
+<font color="#C71585">Haughty</font>
+<font color="#4B0082">Proud</font>
+<font color="#0000CD">Fastidious</font>
+<font color="#008080">Open</font>
+<font color="#008000">Unashamed</font></center>'
 $гордыня_справка_2 = '  Pride prevents slave from being open and enjoying sex, causes her to resist your will, refuse humiliating orders.'
 $гордыня_совет = '   [PRIDE TIPS]
    Pride is harmful both in training and in the sale, so you should work on her openness. Force her to do dirty, perverted and degrading things, and assign strict rules. Eventually pride will be broken and the slave will become more open. But do not overdo it, as with pride, you can break the very slave.'
 
 $слава_справка = '<center>FAME IN ROME<br>
-<font color="#CD0000">Unknown</font>
-<font color="#FF004C">Obscure</font>
-<font color="#FF00A2">Rumored</font>
-<font color="#D805FF">Recognized</font>
-<font color="#9100FF">Famous</font>
-<font color="#0205FF">Legendary-I</font>
-<font color="#0205FF">Legendary-II</font>
-<font color="#23B4C4">Legendary-III</font>
-<font color="#008080">Legendary-IV</font>
-<font color="#2E8B57">Legendary-V</font>
-<font color="#008000">Legendary-VI</font></center>'
+<font color="#cd0000">Unknown</font>
+<font color="#C71585">Well-known</font>
+<font color="#4B0082">Celebrity</font>
+<font color="#0000CD">Illustrious</font>
+<font color="#008080">Superstar</font>
+<font color="#008000">Legend of Rome</font></center>'
 $слава_справка_2 = "  Famous slaves are much more expensive. Your slave's rank won't be lower than level of her fame, even if she lacks other attributes, beauty included."
 $слава_совет = '   [FAME TIPS]
    Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena coliseum.'
@@ -387,19 +332,14 @@ $charm_help = ' Charm - is the sum of exponents which determines the overall att
 $rank_help = '   Click on a letter to the left to learn how to improve the slave rank. Click on the stat to show hints. Clicking on a skill will start a quick lesson.'
 
 $rank_help_2 = '<center><u>COLOR EXPLANATION:</u>
-(For stats and skill levels)
-<font color="#CD0000">skill level</font> = 0
-<font color="#ff004c">skill level</font> = 1
-<font color="#ff00a2">skill level</font> = 2
-<font color="#d805ff">skill level</font> = 3
-<font color="#9100ff">skill level</font> = 4
-<font color="#0205ff">skill level</font> = 5
-<font color="#0205ff">skill level</font> = 6
-<font color="#23B4C4">skill level</font> = 7
-<font color="#008080">skill level</font> = 8
-<font color="#2E8B57">skill level</font> = 9
-<font color="#008000">skill level</font> = 10
-<font color="#C0C0C0">skill unavailable</font></center>'
+(For stats)
+<font color="#556832">Dark Olive</font> = Higher than 5
+<font color="#008000">Green</font> = 5
+<font color="#008080">Light green</font> = 4
+<font color="#0000CD">Blue</font> = 3
+<font color="#4B0082">Purple</font> = 2
+<font color="#C71585">Pink</font> = 1
+<font color="#cd0000">Red</font> = 0</center>'
 
 $specialisation_help = '<div style="font-size: 90%;"><center>Assistant - Clerical work or Etiquette
 Maid - Housekeeping or Cooking

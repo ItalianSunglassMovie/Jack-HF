@@ -1,4 +1,4 @@
-﻿# generate_stock
+# generate_stock
 stock_pending = 1
 killvar 'stock'
 killvar 'stock_rate'
@@ -51,17 +51,12 @@ stat_count = 7
 i = 0
 :loop
     i += 1
-    gen = RAND (1,27)
+    gen = RAND (1,12)
     if gen > 0: atribute = 1
     if gen > 3: atribute = 2
     if gen > 6: atribute = 3
     if gen > 9: atribute = 4
     if gen = 12: atribute = 5
-    if gen = 15: atribute = 6
-    if gen = 18: atribute = 7
-    if gen = 21: atribute = 8
-    if gen = 14: atribute = 9
-    if gen = 27: atribute = 10
 
     dynamic '<<$stockatr[i]>> = atribute'
 if i < stat_count: jump 'loop'
@@ -91,30 +86,30 @@ IF $stock_world = 'prehistoric':
  $namebase = 'prehistoric'
  $stock_world_auk = 'prehistoric world' 
  stock_rate["exotic"] += 10
- if stock["stamina"] < 10: stock["stamina"] += 1
- if stock["temper"] < 10: stock["temper"] += 1
+ if stock["stamina"] < 5: stock["stamina"] += 1
+ if stock["temper"] < 5: stock["temper"] += 1
  if stock["ego"] > 1: stock["ego"] -= 1
  if stock["intellect"] > 1: stock["intellect"] -= 1 
 END
 IF $stock_world = 'barbarian': 
  $namebase = 'barbarian' 
  $stock_world_auk = 'barbarian world' 
- if stock["stamina"] < 10: stock["stamina"] += 1
- if stock["temper"] < 10: stock["temper"] += 1
+ if stock["stamina"] < 5: stock["stamina"] += 1
+ if stock["temper"] < 5: stock["temper"] += 1
  if stock["ego"] > 1: stock["ego"] -= 1
  if stock["intellect"] > 1: stock["intellect"] -= 1  
 END
 IF $stock_world = 'sns': 
  $namebase = 'barbarian'  
  $stock_world_auk = 'the world of might and magic' 
- if stock["stamina"] < 10: stock["stamina"] += 1 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
  if stock["ego"] > 1: stock["ego"] -= 1
  if stock["intellect"] > 1: stock["intellect"] -= 1  
 END
 IF $stock_world = 'medieval': 
  $namebase = 'medieval'  
  $stock_world_auk = 'traditional agrarian world' 
- if stock["temper"] < 10: stock["temper"] -= 1
+ if stock["temper"] < 5: stock["temper"] -= 1
  if stock["ego"] > 1: stock["ego"] -= 1
  if stock["intellect"] > 1: stock["intellect"] -= 1   
  if stock["custom"] < 5: stock["custom"] += 1  
@@ -128,7 +123,7 @@ IF $stock_world = 'highfantasy':
   $namebase = 'fantasy'  
  END 
  $stock_world_auk = 'magical world' 
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
  stock_rate["exotic"] += 10
 END
 IF $stock_world = 'darkfantasy': 
@@ -174,9 +169,9 @@ IF $stock_world = 'modern':
   $namebase = 'euro'  
  END 
  $stock_world_auk = 'economically developed world' 
- if stock["ego"] < 10: stock["ego"] += 1
- if stock["pride"] < 10: stock["pride"] += 1
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1
+ if stock["pride"] < 5: stock["pride"] += 1
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  if stock["stamina"] > 1: stock["stamina"] -= 1
 END
 IF $stock_world = 'cyberpunk': 
@@ -188,8 +183,8 @@ IF $stock_world = 'cyberpunk':
   $namebase = 'euro'  
  END 
  $stock_world_auk = 'cyberpunk world' 
- if stock["ego"] < 10: stock["ego"] += 1
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  if stock["temper"] > 1: stock["temper"] -= 1
  if stock["stamina"] > 1: stock["stamina"] -= 1
 END
@@ -197,11 +192,11 @@ IF $stock_world = 'utopia':
  $namebase = 'utopia'   
  $stock_world_auk = 'idyllic utopia' 
  if stock["spoil"] < 5: stock["spoil"] += 1
- if stock["intellect"] < 10: stock["intellect"] += 1
+ if stock["intellect"] < 5: stock["intellect"] += 1
  stock_rate["exotic"] += 10 
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1   
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1  
- if stock["pride"] < 10: stock["pride"] += 1
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1   
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1  
+ if stock["pride"] < 5: stock["pride"] += 1
 END
 
 IF $stock_world = 'darkfuture': 
@@ -209,7 +204,7 @@ IF $stock_world = 'darkfuture':
  $stock_world_auk = 'totalitarian country' 
  if stock["stamina"] > 1: stock["stamina"] -= 1 
  if stock["temper"] > 1: stock["temper"] -= 1
- if stock["intellect"] < 10: stock["intellect"] += 1
+ if stock["intellect"] < 5: stock["intellect"] += 1
  if stock["custom"] < 4: stock["custom"] += 2 
  if stock["temper"] > 1: stock["temper"] -= 1
  if stock["temper"] > 1: stock["temper"] -= 1
@@ -230,10 +225,10 @@ IF $stock_world = 'space':
  END   
  $stock_world_auk = 'highly advanced space civilization' 
  if stock["stamina"] > 1: stock["stamina"] -= 1
- if stock["intellect"] < 10: stock["intellect"] += 1
+ if stock["intellect"] < 5: stock["intellect"] += 1
  stock_rate["exotic"] += 10 
- if stock["ego"] < 10: stock["ego"] += 1
- if stock["pride"] < 10: stock["pride"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1
+ if stock["pride"] < 5: stock["pride"] += 1 
 END
 
 chance = RAND (1, arrsize("$<<$stock_world>>_family") - 1)
@@ -241,13 +236,13 @@ dynamic '$stock_family = $<<$stock_world>>_family[chance]'
 
 IF $stock_family = 'tribe': 
  $stock_family_auk = 'who grew up in tribe of savages' 
- if stock["stamina"] < 10: stock["stamina"] += 1 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
 END
 IF $stock_family = 'amazon': 
  $stock_family_auk = 'brought up by brave amazons' 
- if stock["temper"] < 10: stock["temper"] += 1
- if stock["ego"] < 10: stock["ego"] += 1 
- if stock["pride"] < 10: stock["pride"] += 1
+ if stock["temper"] < 5: stock["temper"] += 1
+ if stock["ego"] < 5: stock["ego"] += 1 
+ if stock["pride"] < 5: stock["pride"] += 1
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
 END
 IF $stock_family = 'nomad': 
@@ -255,7 +250,7 @@ IF $stock_family = 'nomad':
 END
 IF $stock_family = 'pesant': 
  $stock_family_auk = 'peasant''s daughter' 
- if stock["stamina"] < 10: stock["stamina"] += 1 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
  if stock["temper"] > 1: stock["temper"] -= 1
  if stock["ego"] > 1: stock["ego"] -= 1  
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
@@ -264,8 +259,8 @@ IF $stock_family = 'pesant':
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1  
 END
 IF $stock_family = 'hunter': 
- if stock["temper"] < 10: stock["temper"] += 1 
- if stock["stamina"] < 10: stock["stamina"] += 1  
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["stamina"] < 5: stock["stamina"] += 1  
  $stock_family_auk = 'hunter''s daughter' 
 END
 g = rand(1,7)
@@ -284,16 +279,16 @@ IF $stock_family = 'fisher':
 END
 IF $stock_family = 'viking': 
  $stock_family_auk = 'daughter of the sea robber'  
- if stock["temper"] < 10: stock["temper"] += 1 
- if stock["pride"] < 10: stock["pride"] += 1 
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["pride"] < 5: stock["pride"] += 1 
  if stock["intellect"] > 1: stock["intellect"] -= 1  
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1 
 END
 IF $stock_family = 'barbarian_king': 
  $stock_family_auk = 'barbarian princess'  
- if stock["temper"] < 10: stock["temper"] += 1 
- if stock["ego"] < 10: stock["ego"] += 1   
- if stock["pride"] < 10: stock["pride"] += 1
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1
  if stock["spoi"] < 4: stock["spoi"] += 2  
  if stock["custom"] > 0: stock["custom"] = 0   
  $stock_occupation_auk = 'noblewoman' 
@@ -301,7 +296,7 @@ END
 
 IF $stock_family = 'orphan': 
  if stock["stamina"] > 1: stock["stamina"] -= 1
- if stock["temper"] < 10: stock["temper"] += 1  
+ if stock["temper"] < 5: stock["temper"] += 1  
  if stock["pride"] > 1: stock["pride"] -= 1 
  if stock["intellect"] > 1: stock["intellect"] -= 1  
  $stock_family_auk = 'the orphan' 
@@ -317,13 +312,13 @@ IF $stock_family = 'bondman':
 END
 IF $stock_family = 'gypsy': 
  stock_rate["exotic"] += 10 
- if stock["temper"] < 10: stock["temper"] += 1  
+ if stock["temper"] < 5: stock["temper"] += 1  
  $stock_family_auk = 'brought up in gypsy camp' 
 END
 IF $stock_family = 'church': 
  if stock["temper"] > 1: stock["temper"] -= 1
  if stock["ego"] > 1: stock["ego"] -= 1  
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  if stock["custom"] < 5: stock["custom"] += 1  
  $stock_family_auk = 'student of a church orphanage' 
 END
@@ -342,22 +337,22 @@ IF $stock_family = 'valetry':
 END
 IF $stock_family = 'knight': 
  if stock["spoi"] < 5: stock["spoi"] += 1   
- if stock["ego"] < 10: stock["ego"] += 1    
- if stock["pride"] < 10: stock["pride"] += 1     
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1    
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1    
  $stock_family_auk = 'daughter of the landed feudal' 
 END
 IF $stock_family = 'mprincess': 
- if stock["temper"] < 10: stock["temper"] += 1 
- if stock["ego"] < 10: stock["ego"] += 1   
- if stock["pride"] < 10: stock["pride"] += 1
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1
  if stock["spoi"] < 4: stock["spoi"] += 2  
  if stock["custom"] > 0: stock["custom"] = 0  
  $stock_family_auk = 'the princess' 
 END
 
 IF $stock_family = 'farmers': 
- if stock["stamina"] < 10: stock["stamina"] += 1 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
  if stock["intellect"] > 1: stock["intellect"] -= 1   
  if stock["pride"] > 1: stock["pride"] -= 1    
  if stock["custom"] < 5: stock["custom"] += 1   
@@ -378,20 +373,20 @@ IF $stock_family = 'proletarian':
  $stock_family_auk = 'the daughter of a factory worker' 
 END
 IF $stock_family = 'clerk': 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'daughter of office worker' 
 END
 IF $stock_family = 'naturalist': 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'daughter of the scientist-naturalist' 
 END
 IF $stock_family = 'ingeneer': 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'the daughter of an engineer' 
 END
 IF $stock_family = 'doctor': 
- if stock["stamina"] < 10: stock["stamina"] += 1 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'daughter of a famous doctor' 
 END
 IF $stock_family = 'servant': 
@@ -402,29 +397,29 @@ IF $stock_family = 'servant':
 END
 IF $stock_family = 'magnat': 
  if stock["spoi"] < 5: stock["spoi"] += 1   
- if stock["ego"] < 10: stock["ego"] += 1    
- if stock["pride"] < 10: stock["pride"] += 1     
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1   
  $stock_family_auk = 'who grew up in a family of tycoon' 
 END
 IF $stock_family = 'bankeer': 
  if stock["spoi"] < 5: stock["spoi"] += 1   
- if stock["ego"] < 10: stock["ego"] += 1    
- if stock["pride"] < 10: stock["pride"] += 1     
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
  $stock_family_auk = 'daughter of a wealthy banker' 
 END
 IF $stock_family = 'mayor': 
  if stock["spoi"] < 5: stock["spoi"] += 1   
- if stock["ego"] < 10: stock["ego"] += 1    
- if stock["pride"] < 10: stock["pride"] += 1     
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
  $stock_family_auk = 'daughter of an influential politician' 
 END
 IF $stock_family = 'mafiosi': 
  if stock["spoi"] < 5: stock["spoi"] += 1   
- if stock["temper"] < 10: stock["temper"] += 1    
- if stock["pride"] < 10: stock["pride"] += 1     
+ if stock["temper"] < 5: stock["temper"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1     
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
  $stock_family_auk = 'who grew up in a mafia family' 
 END
@@ -446,46 +441,46 @@ IF $stock_family = 'manager':
  $stock_family_auk = 'daughter of an office worker' 
 END
 IF $stock_family = 'biologist': 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'brought up in an intellectual family' 
 END
 IF $stock_family = 'programmer': 
  $stock_family_auk = 'brought up in a middle class family' 
 END
 IF $stock_family = 'surgeon': 
- if stock["stamina"] < 10: stock["stamina"] += 1 
- if stock["beauty"] < 10: stock["beauty"] += 1  
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["beauty"] < 5: stock["beauty"] += 1  
  $stock_family_auk = 'daughter of a successful plastic surgeon' 
 END
 IF $stock_family = 'buissinesman': 
  if stock["spoi"] < 5: stock["spoi"] += 1  
- if stock["pride"] < 10: stock["pride"] += 1  
+ if stock["pride"] < 5: stock["pride"] += 1  
  $stock_family_auk = 'the daughter of a successful businessman' 
 END
 IF $stock_family = 'finance': 
  if stock["spoil"] < 5: stock["spoil"] += 1  
- if stock["pride"] < 10: stock["pride"] += 1  
+ if stock["pride"] < 5: stock["pride"] += 1  
  $stock_family_auk = 'daughter of a successful financier' 
 END
 IF $stock_family = 'general': 
  if stock["custom"] < 5: stock["custom"] += 1   
- if stock["pride"] < 10: stock["pride"] += 1     
+ if stock["pride"] < 5: stock["pride"] += 1     
  $stock_family_auk = 'general''s daughter' 
 END
 
 IF $stock_family = 'poet': 
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
  $stock_family_auk = 'brought up in a family of poets' 
 END
 IF $stock_family = 'operator': 
  $stock_family_auk = 'daughter of an production base operator' 
 END
 IF $stock_family = 'artist': 
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
  $stock_family_auk = 'brought up in an artistic family' 
 END
 IF $stock_family = 'architect': 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'brought up in a family of architects' 
 END
 
@@ -498,7 +493,7 @@ IF $stock_family = 'bioreactor':
  $stock_family_auk = 'daughter of an bioreactor operator' 
 END
 IF $stock_family = 'minitruth': 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'daughter of functionary of the Ministry of Truth' 
 END
 IF $stock_family = 'anter': 
@@ -515,21 +510,21 @@ IF $stock_family = 'astrofarm':
  $stock_family_auk = 'who grown on the space station' 
 END
 IF $stock_family = 'astrogator': 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'brought up on the developed planet' 
 END
 IF $stock_family = 'admiral': 
  if stock["custom"] < 5: stock["custom"] += 1   
- if stock["pride"] < 10: stock["pride"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1   
  $stock_family_auk = 'admiral''s daughter' 
 END
 IF $stock_family = 'nanofarmacist': 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'who grown on an industrial plant' 
 END
 IF $stock_family = 'gendesigner': 
- if stock["beauty"] < 10: stock["beauty"] += 1 
- if stock["intellect"] < 10: stock["intellect"] += 1 
+ if stock["beauty"] < 5: stock["beauty"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
  $stock_family_auk = 'daughter of the famous genetic designer' 
 END
 
@@ -547,9 +542,9 @@ IF meta_type = 2:
  chance = RAND (1,4)
  IF chance = 1:  
   stock_virginity = 2
-  if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
-  if stock["sub_kiss"] < 10: stock["sub_kiss"] += 1  
-  if stock["sub_vaginal"] < 10: stock["sub_vaginal"] += 1 
+  if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+  if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1  
+  if stock["sub_vaginal"] < 5: stock["sub_vaginal"] += 1 
   chance = RAND (1,3)
   if chance = 1: stock["sub_anal"] += 1  
   chance = RAND (1,3)
@@ -558,8 +553,8 @@ IF meta_type = 2:
 END
 
 if meta_type = 3:
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 10: stock["sub_kiss"] += 1 
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1 
  chance = RAND (1,2)
  if chance = 1: stock["sub_masturbation"] += 1   
  chance = RAND (1,3)
@@ -573,10 +568,10 @@ if meta_type = 3:
  chance = RAND (1,4)
  IF chance > 1:  
   stock_virginity = 2
-  if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
-  if stock["sub_kiss"] < 10: stock["sub_kiss"] += 1  
-  if stock["sub_seduce"] < 10: stock["sub_seduce"] += 1 
-  if stock["sub_vaginal"] < 8: stock["sub_vaginal"] += 2    
+  if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+  if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1  
+  if stock["sub_seduce"] < 5: stock["sub_seduce"] += 1 
+  if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2    
   chance = RAND (1,3)
   if chance = 1: stock["sub_anal"] += 1  
   chance = RAND (1,2)
@@ -596,52 +591,52 @@ $stock_occupation_description = $occupation_description[$stock_occupation]
 
 IF $stock_occupation = 'tribal_girl':
  $stock_occupation_auk = 'girl'
- if stock["stamina"] < 10: stock["stamina"] += 1 
+ if stock["stamina"] < 5: stock["stamina"] += 1 
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1   
 END
 IF $stock_occupation = 'shaman':
  $stock_occupation_auk = 'shaman'
- if stock["enchanter"] < 10: stock["enchanter"] += 1
- if stock["nurse"] < 10: stock["nurse"] += 1
+ if stock["enchanter"] < 5: stock["enchanter"] += 1
+ if stock["nurse"] < 5: stock["nurse"] += 1
 END
 IF $stock_occupation = 'huntress':
  $stock_occupation_auk = 'huntress'
- if stock["stamina"] < 10: stock["stamina"] += 1
- if stock["gladiatrix"] < 10:  stock["gladiatrix"] += 1
+ if stock["stamina"] < 5: stock["stamina"] += 1
+ if stock["gladiatrix"] < 5:  stock["gladiatrix"] += 1
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
 END
 IF $stock_occupation = 'heroine':
  $stock_occupation_auk = 'heroine-warrior'
- if stock["stamina"] < 10: stock["stamina"] += 1 
- if stock["stamina"] < 6: stock["stamina"] = 6 
- if stock["gladiatrix"] < 8: stock["gladiatrix"] = 4
+ if stock["stamina"] < 5: stock["stamina"] += 1 
+ if stock["stamina"] < 3: stock["stamina"] = 3 
+ if stock["gladiatrix"] < 4: stock["gladiatrix"] = 4
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
- if stock["temper"] < 10: stock["temper"] += 1 
- if stock["ego"] < 10: stock["ego"] += 1   
- if stock["pride"] < 10: stock["pride"] += 1
+ if stock["temper"] < 5: stock["temper"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1
 END
 IF $stock_occupation = 'bride':
  $stock_occupation_auk = 'virgin'
  stock_virginity = 0
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1
  if stock["temper"] > 1: stock["temper"] -= 1  
 END
 IF $stock_occupation = 'viking_wife':
  $stock_occupation_auk = 'young wife of a viking'
  stock_virginity = 2
  if stock["temper"] > 1: stock["temper"] -= 1  
- if stock["cook"] < 10: stock["cook"] += 1
- if stock["service"] < 10: stock["service"] += 1
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 8: stock["sub_kiss"] += 2 
- if stock["sub_vaginal"] < 8: stock["sub_vaginal"] += 2 
- if stock["sub_masturbation"] < 10: stock["sub_masturbation"] += 1
- if stock["sub_exhibit"] < 10: stock["sub_exhibit"] += 1
- if stock["sub_humiliation"] < 10: stock["sub_humiliation"] += 1  
+ if stock["cook"] < 5: stock["cook"] += 1
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 4: stock["sub_kiss"] += 2 
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ if stock["sub_masturbation"] < 5: stock["sub_masturbation"] += 1
+ if stock["sub_exhibit"] < 5: stock["sub_exhibit"] += 1
+ if stock["sub_humiliation"] < 5: stock["sub_humiliation"] += 1  
 END
 IF $stock_occupation = 'herbalist':
  $stock_occupation_auk = 'herbalist'
- if stock["nurse"] < 10: stock["nurse"] += 1
+ if stock["nurse"] < 5: stock["nurse"] += 1
 END
 IF $stock_occupation = 'witch':
  $stock_occupation_auk = 'witch'
@@ -652,8 +647,8 @@ IF $stock_occupation = 'thief':
  $stock_occupation_auk = 'thief'
 END
 IF $stock_occupation = 'beggar':
- if stock["expression"] < 8: stock["expression"] += 2
- if stock["pet"] < 10: stock["pet"] += 1 
+ if stock["expression"] < 4: stock["expression"] += 2
+ if stock["pet"] < 5: stock["pet"] += 1 
  if stock["stamina"] > 1: stock["stamina"] -= 1
  if stock["pride"] > 1: stock["pride"] = 1   
  if stock["fat"] > 0: stock["fat"] = 0  
@@ -661,11 +656,11 @@ IF $stock_occupation = 'beggar':
  $stock_occupation_auk = 'beggar'
 END
 IF $stock_occupation = 'gypsy':
- if stock["expression"] < 8: stock["expression"] += 2
- if stock["callisthenics"] < 8: stock["callisthenics"] += 2 
- if stock["enchanter"] < 10: stock["enchanter"] += 1 
- if stock["music"] < 10: stock["music"] += 1
- if stock["vocal"] < 10: stock["vocal"] += 1 
+ if stock["expression"] < 4: stock["expression"] += 2
+ if stock["callisthenics"] < 4: stock["callisthenics"] += 2 
+ if stock["enchanter"] < 5: stock["enchanter"] += 1 
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1 
  $stock_occupation_auk = 'soothsayer'
 END
 IF $stock_occupation = 'whore':
@@ -673,47 +668,47 @@ IF $stock_occupation = 'whore':
  if stock["stamina"]> 1: stock["stamina"] -= 1
  if stock["pride"]> 1: stock["pride"] -= 1
  if stock["pride"]> 0: stock["pride"] -= 1 
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_hug"] < 6: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 10: stock["sub_kiss"] += 1 
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_hug"] < 3: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1 
  if stock["sub_kiss"] < 2: stock["sub_kiss"] += 1  
- if stock["sub_bj"] < 8: stock["sub_bj"] += 2  
- if stock["sub_vaginal"] < 8: stock["sub_vaginal"] += 2 
- if stock["sub_vaginal"] < 6: stock["sub_vaginal"] += 1  
- if stock["sub_anal"] < 10: stock["sub_anal"] += 1   
- if stock["sub_exhibit"] < 8: stock["sub_exhibit"] += 2
- if stock["sub_humiliation"] < 8: stock["sub_humiliation"] += 2  
+ if stock["sub_bj"] < 4: stock["sub_bj"] += 2  
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ if stock["sub_vaginal"] < 3: stock["sub_vaginal"] += 1  
+ if stock["sub_anal"] < 5: stock["sub_anal"] += 1   
+ if stock["sub_exhibit"] < 4: stock["sub_exhibit"] += 2
+ if stock["sub_humiliation"] < 4: stock["sub_humiliation"] += 2  
   $stock_occupation_auk = 'street whore'
 END
 IF $stock_occupation = 'markitane':
  stock_virginity = 2
  if stock["pride"]> 1: stock["pride"] -= 1
- if stock["temper"] < 10: stock["temper"] += 1    
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_hug"] < 6: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 10: stock["sub_kiss"] += 1 
+ if stock["temper"] < 5: stock["temper"] += 1    
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_hug"] < 3: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1 
  if stock["sub_kiss"] < 2: stock["sub_kiss"] += 1  
- if stock["sub_bj"] < 8: stock["sub_bj"] += 2  
- if stock["sub_vaginal"] < 8: stock["sub_vaginal"] += 2 
- if stock["sub_vaginal"] < 6: stock["sub_vaginal"] += 1  
- if stock["sub_anal"] < 10: stock["sub_anal"] += 1   
- if stock["sub_exhibit"] < 8: stock["sub_exhibit"] += 2
- if stock["sub_humiliation"] < 8: stock["sub_humiliation"] += 2  
+ if stock["sub_bj"] < 4: stock["sub_bj"] += 2  
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ if stock["sub_vaginal"] < 3: stock["sub_vaginal"] += 1  
+ if stock["sub_anal"] < 5: stock["sub_anal"] += 1   
+ if stock["sub_exhibit"] < 4: stock["sub_exhibit"] += 2
+ if stock["sub_humiliation"] < 4: stock["sub_humiliation"] += 2  
  $stock_occupation_auk = 'track whore'
 END
 IF $stock_occupation = 'brothel':
  stock_virginity = 2
  if stock["custom"] < 5: stock["custom"] += 1 
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_hug"] < 6: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 10: stock["sub_kiss"] += 1 
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_hug"] < 3: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1 
  if stock["sub_kiss"] < 2: stock["sub_kiss"] += 1  
- if stock["sub_bj"] < 8: stock["sub_bj"] += 2  
- if stock["sub_vaginal"] < 8: stock["sub_vaginal"] += 2 
- if stock["sub_vaginal"] < 6: stock["sub_vaginal"] += 1  
- if stock["sub_anal"] < 10: stock["sub_anal"] += 1   
- if stock["sub_exhibit"] < 8: stock["sub_exhibit"] += 2
- if stock["sub_humiliation"] < 8: stock["sub_humiliation"] += 2  
+ if stock["sub_bj"] < 4: stock["sub_bj"] += 2  
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
+ if stock["sub_vaginal"] < 3: stock["sub_vaginal"] += 1  
+ if stock["sub_anal"] < 5: stock["sub_anal"] += 1   
+ if stock["sub_exhibit"] < 4: stock["sub_exhibit"] += 2
+ if stock["sub_humiliation"] < 4: stock["sub_humiliation"] += 2  
  $stock_occupation_auk = 'brothel whore'
 END
 IF $stock_occupation = 'nun':
@@ -721,13 +716,13 @@ IF $stock_occupation = 'nun':
  stock["sub_vaginal"] = 0
  stock["sub_anal"] = 0
  stock["sub_bj"] = 0
- if stock["nurse"] < 10: stock["nurse"] += 1
- if stock["service"] < 10: stock["service"] += 1 
- if stock["secretary"] < 10: stock["secretary"] += 1 
+ if stock["nurse"] < 5: stock["nurse"] += 1
+ if stock["service"] < 5: stock["service"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
  $stock_occupation_auk = 'nun'
 END
 IF $stock_occupation = 'valertry':
- if stock["service"] < 6: stock["service"] += 6 
+ if stock["service"] < 3: stock["service"] += 3 
  if stock["custom"] < 5: stock["custom"] += 1  
  if stock["pride"] > 1: stock["pride"] -= 1 
  $stock_occupation_auk = 'maid'
@@ -737,19 +732,19 @@ IF $stock_occupation = 'sorceress':
  stock["sub_vaginal"] = 0
  stock["sub_anal"] = 0
  stock["sub_bj"] = 0
- if stock["intellect"] < 10: stock["intellect"] += 1   
+ if stock["intellect"] < 5: stock["intellect"] += 1   
  if stock["custom"] < 5: stock["custom"] += 1 
- if stock["service"] < 8: stock["service"] += 2
- if stock["cook"] < 10: stock["cook"] += 1  
- if stock["enchanter"] < 8: stock["enchanter"] += 2 
+ if stock["service"] < 4: stock["service"] += 2
+ if stock["cook"] < 5: stock["cook"] += 1  
+ if stock["enchanter"] < 4: stock["enchanter"] += 2 
  $stock_occupation_auk = 'student of sorceress'
 END
 IF $stock_occupation = 'thug':
- if stock["stamina"] < 10: stock["stamina"] += 1   
- if stock["stamina"] < 6: stock["stamina"] = 6 
- if stock["gladiatrix"] < 6: stock["gladiatrix"] += 6
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 3: stock["stamina"] = 3 
+ if stock["gladiatrix"] < 3: stock["gladiatrix"] += 3
  if stock["intellect"] > 1: stock["intellect"] -= 1 
- if stock["temper"] < 10: stock["temper"] += 1    
+ if stock["temper"] < 5: stock["temper"] += 1    
  $stock_occupation_auk = 'street robber'
 END
 IF $stock_occupation = 'poor_bride':
@@ -766,19 +761,19 @@ END
 IF $stock_occupation = 'poor_wife':
  stock_virginity = 2
  if stock["temper"] > 1: stock["temper"] -= 1  
- if stock["cook"] < 10: stock["cook"] += 1
- if stock["service"] < 10: stock["service"] += 1
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 8: stock["sub_kiss"] += 2 
- if stock["sub_vaginal"] < 8: stock["sub_vaginal"] += 2 
+ if stock["cook"] < 5: stock["cook"] += 1
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 4: stock["sub_kiss"] += 2 
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
  $stock_occupation_auk = 'commoner wife'
 END
 IF $stock_occupation = 'brigand':
- if stock["stamina"] < 10: stock["stamina"] += 1   
- if stock["stamina"] < 6: stock["stamina"] = 6 
- if stock["gladiatrix"] < 6: stock["gladiatrix"] += 6
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 3: stock["stamina"] = 3 
+ if stock["gladiatrix"] < 3: stock["gladiatrix"] += 3
  if stock["intellect"] > 1: stock["intellect"] -= 1 
- if stock["temper"] < 10: stock["temper"] += 1    
+ if stock["temper"] < 5: stock["temper"] += 1    
  $stock_occupation_auk = 'forest robber'
 END
 IF $stock_occupation = 'noble_bride':
@@ -795,11 +790,11 @@ END
 IF $stock_occupation = 'noble_wife':
  stock_virginity = 2
  if stock["temper"] > 1: stock["temper"] -= 1  
- if stock["music"] < 10: stock["music"] += 1
- if stock["vocal"] < 10: stock["vocal"] += 1
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 8: stock["sub_kiss"] += 2 
- if stock["sub_vaginal"] < 8: stock["sub_vaginal"] += 2 
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 4: stock["sub_kiss"] += 2 
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
  $stock_occupation_auk = 'lord''s wife'
 END
 IF $stock_occupation = 'mprincess':
@@ -807,82 +802,82 @@ IF $stock_occupation = 'mprincess':
  stock["sub_vaginal"] = 0
  stock["sub_anal"] = 0
  stock["sub_bj"] = 0  
- if stock["expression"] < 10: stock["expression"] += 1 
- if stock["callisthenics"] < 10: stock["callisthenics"] += 1 
- if stock["music"] < 10: stock["music"] += 1
- if stock["vocal"] < 10: stock["vocal"] += 1 
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["callisthenics"] < 5: stock["callisthenics"] += 1 
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1 
  $stock_occupation_auk = 'noble princess'
 END
 IF $stock_occupation = 'farmer':
- if stock["service"] < 10: stock["service"] += 1
- if stock["cook"] < 10: stock["cook"] += 1
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["cook"] < 5: stock["cook"] += 1
  $stock_occupation_auk = 'cotton picker'
 END
 IF $stock_occupation = 'milker':
- if stock["service"] < 10: stock["service"] += 1
- if stock["cook"] < 10: stock["cook"] += 1
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["cook"] < 5: stock["cook"] += 1
  $stock_occupation_auk = 'milkmaid'
 END
 IF $stock_occupation = 'swiner':
- if stock["service"] < 10: stock["service"] += 1
- if stock["cook"] < 10: stock["cook"] += 1
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["cook"] < 5: stock["cook"] += 1
  $stock_occupation_auk = 'swineherd'
 END
 IF $stock_occupation = 'weaver':
- if stock["service"] < 10: stock["service"] += 1
+ if stock["service"] < 5: stock["service"] += 1
  $stock_occupation_auk = 'weaver'
 END
 IF $stock_occupation = 'freaser':
- if stock["service"] < 10: stock["service"] += 1
+ if stock["service"] < 5: stock["service"] += 1
  $stock_occupation_auk = 'milling machine operator'
 END
 IF $stock_occupation = 'maid':
- if stock["service"] < 6: stock["service"] += 6 
+ if stock["service"] < 3: stock["service"] += 3 
  if stock["custom"] < 5: stock["custom"] += 1  
  if stock["pride"] > 1: stock["pride"] -= 1 
  $stock_occupation_auk = 'maid'
 END
 IF $stock_occupation = 'sufragist':
- if stock["pride"] < 10: stock["pride"] += 1   
- if stock["pride"] < 8: stock["pride"] += 1   
- if stock["temper"] < 10: stock["temper"] += 1   
- if stock["ego"] < 10: stock["ego"] += 1    
- if stock["intellect"] < 10: stock["intellect"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1   
+ if stock["pride"] < 4: stock["pride"] += 1   
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["intellect"] < 5: stock["intellect"] += 1    
  if stock["custom"] > 1: stock["custom"] -= 1 
- if stock["expression"] < 8: stock["expression"] += 2 
+ if stock["expression"] < 4: stock["expression"] += 2 
  $stock_occupation_auk = 'suffragette'
 END
 IF $stock_occupation = 'nurse':
- if stock["nurse"] < 6: stock["nurse"] += 6
- if stock["service"] < 10: stock["service"] += 1 
- if stock["cook"] < 10: stock["cook"] += 1 
- if stock["secretary"] < 10: stock["secretary"] += 1 
+ if stock["nurse"] < 3: stock["nurse"] += 3
+ if stock["service"] < 5: stock["service"] += 1 
+ if stock["cook"] < 5: stock["cook"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
  $stock_occupation_auk = 'nurse'
 END
 IF $stock_occupation = 'teacher':
- if stock["intellect"] < 10: stock["intellect"] += 1 
- if stock["expression"] < 10: stock["expression"] += 1 
- if stock["secretary"] < 10: stock["secretary"] += 1 
- if stock["service"] < 10: stock["service"] += 1 
- if stock["cook"] < 10: stock["cook"] += 1  
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["service"] < 5: stock["service"] += 1 
+ if stock["cook"] < 5: stock["cook"] += 1  
  $stock_occupation_auk = 'primary school teacher'
 END
 IF $stock_occupation = 'oficiant':
- if stock["expression"] < 10: stock["expression"] += 1 
- if stock["service"] < 10: stock["service"] += 1 
- if stock["cook"] < 10: stock["cook"] += 1   
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["service"] < 5: stock["service"] += 1 
+ if stock["cook"] < 5: stock["cook"] += 1   
  $stock_occupation_auk = 'waitress'
 END
 IF $stock_occupation = 'avanturiste':
- if stock["expression"] < 6: stock["expression"] += 6
- if stock["sub_seduce"] < 6: stock["sub_seduce"] += 6   
- if stock["intellect"] < 10: stock["intellect"] += 1    
- if stock["ego"] < 10: stock["ego"] += 1    
- if stock["pride"] < 10: stock["pride"] += 1    
+ if stock["expression"] < 3: stock["expression"] += 3
+ if stock["sub_seduce"] < 3: stock["sub_seduce"] += 3   
+ if stock["intellect"] < 5: stock["intellect"] += 1    
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["pride"] < 5: stock["pride"] += 1    
  if stock["spoil"] < 5: stock["spoil"] +=1   
  if stock["custom"] > 1: stock["custom"] -= 1 
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 10: stock["sub_kiss"] += 1  
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1  
  $stock_occupation_auk = 'secular adventuress'
 END
 IF $stock_occupation = 'rich_bride':
@@ -899,125 +894,125 @@ END
 IF $stock_occupation = 'rich_wife':
  stock_virginity = 2
  if stock["temper"] > 1: stock["temper"] -= 1  
- if stock["music"] < 10: stock["music"] += 1
- if stock["vocal"] < 10: stock["vocal"] += 1
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 8: stock["sub_kiss"] += 2 
- if stock["sub_vaginal"] < 8: stock["sub_vaginal"] += 2 
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 4: stock["sub_kiss"] += 2 
+ if stock["sub_vaginal"] < 4: stock["sub_vaginal"] += 2 
  $stock_occupation_auk = 'wife of a rich man'
 END
 IF $stock_occupation = 'punk':
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1
  if stock["custom"] > 1: stock["custom"] -= 1 
- if stock["temper"] < 10: stock["temper"] += 1   
- if stock["expression"] < 10: stock["expression"] += 1 
- if stock["music"] < 10: stock["music"] += 1
- if stock["vocal"] < 10: stock["vocal"] += 1 
- if stock["gladiatrix"] < 10: stock["gladiatrix"] += 1 
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["music"] < 5: stock["music"] += 1
+ if stock["vocal"] < 5: stock["vocal"] += 1 
+ if stock["gladiatrix"] < 5: stock["gladiatrix"] += 1 
  $stock_occupation_auk = 'punk'
 END
 IF $stock_occupation = 'student':
- if stock["intellect"] < 10: stock["intellect"] += 1    
- if stock["expression"] < 10: stock["expression"] += 1 
- if stock["secretary"] < 10: stock["secretary"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1    
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
  $stock_occupation_auk = 'student'
 END
 IF $stock_occupation = 'secretary':
- if stock["expression"] < 10: stock["expression"] += 1 
- if stock["secretary"] < 6: stock["secretary"] += 6 
- if stock["service"] < 10: stock["service"] += 1 
+ if stock["expression"] < 5: stock["expression"] += 1 
+ if stock["secretary"] < 3: stock["secretary"] += 3 
+ if stock["service"] < 5: stock["service"] += 1 
  if stock["ego"] > 1: stock["ego"] -= 1
  if stock["custom"] < 5: stock["custom"] += 1   
  $stock_occupation_auk = 'secretary'
 END
 IF $stock_occupation = 'voleyball':
- if stock["stamina"] < 10: stock["stamina"] += 1   
- if stock["stamina"] < 8: stock["stamina"] = 8    
- if stock["temper"] < 10: stock["temper"] += 1   
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 4: stock["stamina"] = 4    
+ if stock["temper"] < 5: stock["temper"] += 1   
  if stock["fat"] > 1: stock["fat"] = 1     
- if stock["callisthenics"] < 10: stock["callisthenics"] += 1
+ if stock["callisthenics"] < 5: stock["callisthenics"] += 1
  $stock_occupation_auk = 'volleyballer'
 END
 IF $stock_occupation = 'karateka':
- if stock["stamina"] < 10: stock["stamina"] += 1   
- if stock["stamina"] < 8: stock["stamina"] = 8    
- if stock["temper"] < 10: stock["temper"] += 1   
- if stock["gladiatrix"] < 6: stock["gladiatrix"] += 6
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 4: stock["stamina"] = 4    
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["gladiatrix"] < 3: stock["gladiatrix"] += 3
  $stock_occupation_auk = 'kickboxer'
 END
 IF $stock_occupation = 'hymnast':
- if stock["stamina"] < 10: stock["stamina"] += 1   
- if stock["stamina"] < 8: stock["stamina"] = 8    
- if stock["temper"] < 10: stock["temper"] += 1   
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["stamina"] < 4: stock["stamina"] = 4    
+ if stock["temper"] < 5: stock["temper"] += 1   
  if stock["fat"] > 1: stock["fat"] = 1      
- if stock["callisthenics"] < 6: stock["callisthenics"] += 6
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1   
+ if stock["callisthenics"] < 3: stock["callisthenics"] += 3
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1   
  $stock_occupation_auk = 'gymnast'
 END
 IF $stock_occupation = 'policewoman':
- if stock["expression"] < 10: stock["expression"] += 1
- if stock["ego"] < 10: stock["ego"] += 1    
- if stock["gladiatrix"] < 8: stock["gladiatrix"] += 2
+ if stock["expression"] < 5: stock["expression"] += 1
+ if stock["ego"] < 5: stock["ego"] += 1    
+ if stock["gladiatrix"] < 4: stock["gladiatrix"] += 2
  if stock["sensitivity"] > 1: stock["sensitivity"] -= 1 
- if stock["secretary"] < 10: stock["secretary"] += 1 
- if stock["nurse"] < 10: stock["nurse"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["nurse"] < 5: stock["nurse"] += 1 
  $stock_occupation_auk = 'police worker'
 END
 IF $stock_occupation = 'model':
- if stock["beauty"] < 10: stock["beauty"] += 1   
- if stock["beauty"] < 8: stock["beauty"] = 8   
- if stock["expression"] < 10: stock["expression"] += 1
- if stock["callisthenics"] < 8: stock["callisthenics"] += 2 
- if stock["pride"] < 10: stock["pride"] += 1    
- if stock["dressage"] < 10: stock["dressage"] += 1 
- if stock["fat"] > 0: stock["fat"] = 1      
+ if stock["beauty"] < 5: stock["beauty"] += 1   
+ if stock["beauty"] < 4: stock["beauty"] = 4   
+ if stock["expression"] < 5: stock["expression"] += 1
+ if stock["callisthenics"] < 4: stock["callisthenics"] += 2 
+ if stock["pride"] < 5: stock["pride"] += 1    
+ if stock["dressage"] < 5: stock["dressage"] += 1 
+ if stock["fat"] > 0: stock["fat"] = 1
  $stock_occupation_auk = 'photomodel'
 END
 IF $stock_occupation = 'hacker':
- if stock["intellect"] < 10: stock["intellect"] += 1  
- if stock["intellect"] < 8: stock["intellect"] = 8  
- if stock["ego"] < 10: stock["ego"] += 1     
- if stock["secretary"] < 10: stock["secretary"] += 1 
+ if stock["intellect"] < 5: stock["intellect"] += 1  
+ if stock["intellect"] < 4: stock["intellect"] = 4  
+ if stock["ego"] < 5: stock["ego"] += 1     
+ if stock["secretary"] < 5: stock["secretary"] += 1 
  $stock_occupation_auk = 'hacker'
 END
 IF $stock_occupation = 'writer':
- if stock["intellect"] < 10: stock["intellect"] += 1 
- if stock["expression"] < 8: stock["expression"] += 2 
+ if stock["intellect"] < 5: stock["intellect"] += 1 
+ if stock["expression"] < 4: stock["expression"] += 2 
  $stock_occupation_auk = 'author of women''s novels'
 END
 IF $stock_occupation = 'major':
- if stock["temper"] < 10: stock["temper"] += 1   
- if stock["ego"] < 10: stock["ego"] += 1   
- if stock["pride"] < 10: stock["pride"] += 1     
- if stock["callisthenics"] < 10: stock["callisthenics"] += 1 
- if stock["sub_seduce"] < 10: stock["sub_seduce"] += 1    
- if stock["sub_bj"] < 10: stock["sub_bj"] += 1   
- if stock["sub_hug"] < 10: stock["sub_hug"] += 1 
- if stock["sub_kiss"] < 10: stock["sub_kiss"] += 1  
+ if stock["temper"] < 5: stock["temper"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["pride"] < 5: stock["pride"] += 1     
+ if stock["callisthenics"] < 5: stock["callisthenics"] += 1 
+ if stock["sub_seduce"] < 5: stock["sub_seduce"] += 1    
+ if stock["sub_bj"] < 5: stock["sub_bj"] += 1   
+ if stock["sub_hug"] < 5: stock["sub_hug"] += 1 
+ if stock["sub_kiss"] < 5: stock["sub_kiss"] += 1  
  $stock_occupation_auk = 'representative of the jet set'
 END
 IF $stock_occupation = 'artist':
  if stock["stamina"] > 1: stock["stamina"] -= 1
- if stock["expression"] < 10: stock["expression"] += 1
- if stock["sensitivity"] < 10: stock["sensitivity"] += 1    
+ if stock["expression"] < 5: stock["expression"] += 1
+ if stock["sensitivity"] < 5: stock["sensitivity"] += 1    
  $stock_occupation_auk = 'an artist'
 END
 IF $stock_occupation = 'mind_contol':
- if stock["ego"] < 10: stock["ego"] += 1   
- if stock["secretary"] < 10: stock["secretary"] += 1 
- if stock["enchanter"] < 10: stock["enchanter"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["enchanter"] < 5: stock["enchanter"] += 1 
  $stock_occupation_auk = 'mind control police worker'
 END
 IF $stock_occupation = 'time_plice':
- if stock["stamina"] < 10: stock["stamina"] += 1   
- if stock["expression"] < 10: stock["expression"] += 1
- if stock["gladiatrix"] < 7: stock["gladiatrix"] += 7
- if stock["secretary"] < 10: stock["secretary"] += 1  
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["expression"] < 5: stock["expression"] += 1
+ if stock["gladiatrix"] < 3: stock["gladiatrix"] += 3
+ if stock["secretary"] < 5: stock["secretary"] += 1  
  $stock_occupation_auk = 'time police worker'
 END
 IF $stock_occupation = 'jailer':
- if stock["stamina"] < 10: stock["stamina"] += 1   
- if stock["ego"] < 10: stock["ego"] += 1    
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["ego"] < 5: stock["ego"] += 1    
  $stock_occupation_auk = 'wardress'
 END
 IF $stock_occupation = 'anter':
@@ -1028,41 +1023,41 @@ IF $stock_occupation = 'anter':
  if stock["pride"] > 1: stock["pride"] -= 1
  if stock["intellect"] > 1: stock["intellect"] -= 1 
  if stock["custom"] < 5: stock["custom"] += 1  
- if stock["service"] < 10: stock["service"] += 1 
+ if stock["service"] < 5: stock["service"] += 1 
  $stock_occupation_auk = 'ordinary worker'
 END
 IF $stock_occupation = 'academy':
- if stock["intellect"] < 10: stock["intellect"] += 1   
- if stock["gladiatrix"] < 10: stock["gladiatrix"] += 1 
- if stock["secretary"] < 10: stock["secretary"] += 1 
- if stock["pride"] < 10: stock["pride"] += 1   
+ if stock["intellect"] < 5: stock["intellect"] += 1   
+ if stock["gladiatrix"] < 5: stock["gladiatrix"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["pride"] < 5: stock["pride"] += 1   
  $stock_occupation_auk = 'graduate of Starfleet Academy'
 END
 IF $stock_occupation = 'mech':
- if stock["stamina"] < 10: stock["stamina"] += 1   
- if stock["temper"] < 10: stock["temper"] += 1    
- if stock["gladiatrix"] < 8: stock["gladiatrix"] += 2 
- if stock["service"] < 10: stock["service"] += 1 
+ if stock["stamina"] < 5: stock["stamina"] += 1   
+ if stock["temper"] < 5: stock["temper"] += 1    
+ if stock["gladiatrix"] < 4: stock["gladiatrix"] += 2 
+ if stock["service"] < 5: stock["service"] += 1 
  $stock_occupation_auk = 'pilot of a giant humanoid battle robot'
 END
 IF $stock_occupation = 'contraband':
- if stock["expression"] < 8: stock["expression"] += 2
- if stock["gladiatrix"] < 10: stock["gladiatrix"] += 1 
- if stock["secretary"] < 10: stock["secretary"] += 1 
- if stock["ego"] < 10: stock["ego"] += 1   
- if stock["intellect"] < 10: stock["intellect"] += 1   
+ if stock["expression"] < 4: stock["expression"] += 2
+ if stock["gladiatrix"] < 5: stock["gladiatrix"] += 1 
+ if stock["secretary"] < 5: stock["secretary"] += 1 
+ if stock["ego"] < 5: stock["ego"] += 1   
+ if stock["intellect"] < 5: stock["intellect"] += 1   
  if stock["custom"] > 1: stock["custom"] -= 1 
  $stock_occupation_auk = 'smuggler'
 END
 IF $stock_occupation = 'astrofarmer':
  if stock["temper"] > 1: stock["temper"] -= 1
- if stock["service"] < 10: stock["service"] += 1
- if stock["cook"] < 10: stock["cook"] += 1
+ if stock["service"] < 5: stock["service"] += 1
+ if stock["cook"] < 5: stock["cook"] += 1
  $stock_occupation_auk = 'operator of an orbital farm'
 END
 IF $stock_occupation = 'installer':
- if stock["stamina"] < 10: stock["stamina"] += 1  
- if stock["service"] < 10: stock["service"] += 1
+ if stock["stamina"] < 5: stock["stamina"] += 1  
+ if stock["service"] < 5: stock["service"] += 1
  $stock_occupation_auk = 'orbital fitter'
 END
 
@@ -1114,7 +1109,7 @@ IF a = 1:
  stock["scares"] = b
 END
 
-IF a => 2 and a < 4:
+IF a >= 2 and a < 4:
  chance = RAND (1,15)
  if chance > 0: b = 1
  if chance > 5: b = 2
@@ -1234,7 +1229,7 @@ IF a = 22:
  stock["sport_affinity"] = IIF(chance = 1, -1, 1)
 END
 
-IF a => 22 and a < 30:
+IF a >= 22 and a < 30:
  chance = RAND (1,12)
  if chance = 1: stock["expression_affinity"] = 1
  if chance = 2: stock["pet_affinity"] = 1
@@ -1281,20 +1276,26 @@ if i < 10: jump 'loop10'
 !characteristics alignment
 stock["energy"] = RAND (0,3)
 stock["hygiene"] = RAND (0,4)
-if stock["beauty"] > 10: stock["beauty"] = 10
+if stock["beauty"] > 5: stock["beauty"] = 5
 if stock["beauty"] < 1: stock["beauty"] = 1
-if stock["stamina"] > 10: stock["stamina"] = 10
+if stock["stamina"] > 5: stock["stamina"] = 5
 if stock["stamina"] < 1: stock["stamina"] = 1
-if stock["sensitivity"] > 10: stock["sensitivity"] = 10
+if stock["sensitivity"] > 5: stock["sensitivity"] = 5
 if stock["sensitivity"] < 1: stock["sensitivity"] = 1
-if stock["pride"] > 10: stock["pride"] = 10
-if stock["pride"] < 0: stock["pride"] = 0
-if stock["ego"] > 10: stock["ego"] = 10
+if stock["pride"] > 5: stock["pride"] = 5
+if stock["pride"] < 1: stock["pride"] = 1
+if stock["ego"] > 5: stock["ego"] = 5
 if stock["ego"] < 1: stock["ego"] = 1
-if stock["intellect"] > 10: stock["intellect"] = 10
+if stock["intellect"] > 5: stock["intellect"] = 5
 if stock["intellect"] < 1: stock["intellect"] = 1
-if stock["style"] > 10: stock["style"] = 10
-if stock["style"] < 0: stock["style"] = 0
+if stock["style"] > 5: stock["style"] = 5
+if stock["style"] < 1: stock["style"] = 1
+
+if stock_rate["exotic"] >= 10: stock["exotic"] = 1
+if stock_rate["exotic"] >= 20: stock["exotic"] = 2
+if stock_rate["exotic"] >= 40: stock["exotic"] = 3
+if stock_rate["exotic"] >= 80: stock["exotic"] = 4
+if stock_rate["exotic"] >= 160: stock["exotic"] = 5
 
 ! For future use so seed_exotic can be used in the slave files - crushboss
 if stock["exotic"] = 1: stock_rate["exotic"] = 15
@@ -1302,12 +1303,6 @@ if stock["exotic"] = 2: stock_rate["exotic"] = 30
 if stock["exotic"] = 3: stock_rate["exotic"] = 60
 if stock["exotic"] = 4: stock_rate["exotic"] = 120
 if stock["exotic"] = 5: stock_rate["exotic"] = 240
-
-if stock_rate["exotic"] => 10: stock["exotic"] = 1
-if stock_rate["exotic"] => 20: stock["exotic"] = 2
-if stock_rate["exotic"] => 40: stock["exotic"] = 3
-if stock_rate["exotic"] => 80: stock["exotic"] = 4
-if stock_rate["exotic"] => 160: stock["exotic"] = 5
 
 if stock["stamina"] = 5: stock["metabolism"] += 1
 if stock["stamina"] = 1: stock["metabolism"] -= 1
@@ -1328,16 +1323,16 @@ a = RAND (1,3)
 if a = 1: $stock_psy_basic = 'reluctant'
 if a = 2: $stock_psy_basic = 'soft'
 if a = 3: $stock_psy_basic = 'optimistic'
-if stock["sensitivity"] => 8: $stock_psy_basic = 'lachrymose'
+if stock["sensitivity"] >= 4: $stock_psy_basic = 'lachrymose'
 a = stock["ego"] + stock["temper"] + stock["pride"]
 IF a > 20:
- if stock["ego"] => 8: $stock_psy_basic = 'resistant'
- if stock["temper"] => 8: $stock_psy_basic = 'hateful'
- if stock["pride"] => 8: $stock_psy_basic = 'arrogant'
+ if stock["ego"] >= 4: $stock_psy_basic = 'resistant'
+ if stock["temper"] >= 4: $stock_psy_basic = 'hateful'
+ if stock["pride"] >= 4: $stock_psy_basic = 'arrogant'
 END
-if stock["ego"] = 10: $stock_psy_basic = 'resistant'
-if stock["temper"] = 10: $stock_psy_basic = 'hateful'
-if stock["pride"] = 10: $stock_psy_basic = 'arrogant'
+if stock["ego"] = 5: $stock_psy_basic = 'resistant'
+if stock["temper"] = 5: $stock_psy_basic = 'hateful'
+if stock["pride"] = 5: $stock_psy_basic = 'arrogant'
 
 if $seed_psy_basic[stock_type] ! '': $stock_psy_basic = $seed_psy_basic[stock_type]
 
@@ -1351,16 +1346,16 @@ $stock_ava_gray = $seed_ava_gray[stock_type]
 
 !initialization
 IF stock["fat"] = 1: $stock_epithet = 'slender like a cypress'
-IF stock["beauty"] = 6: $stock_epithet = 'charming'
-IF stock["temper"] = 8: $stock_epithet = 'restive'
-IF stock["sensitivity"] = 8: $stock_epithet = 'tender and sensitive'
-IF stock["stamina"] = 8: $stock_epithet = 'strong and healthy'
-IF stock["beauty"] = 8: $stock_epithet = 'adorable'
-IF stock["temper"] = 10: $stock_epithet = 'hot like fire'
-IF stock["sensitivity"] = 10: $stock_epithet = 'gentle like a beautiful flower'
-IF stock["stamina"] = 10: $stock_epithet = 'unusually strong and hardy'
-IF stock["beauty"] = 10: $stock_epithet = 'perfect as the stars themselves'
-IF stock["exotic"] => 5: $stock_epithet = 'exotic'
+IF stock["beauty"] = 3: $stock_epithet = 'charming'
+IF stock["temper"] = 4: $stock_epithet = 'restive'
+IF stock["sensitivity"] = 4: $stock_epithet = 'tender and sensitive'
+IF stock["stamina"] = 4: $stock_epithet = 'strong and healthy'
+IF stock["beauty"] = 4: $stock_epithet = 'adorable'
+IF stock["temper"] = 5: $stock_epithet = 'hot like fire'
+IF stock["sensitivity"] = 5: $stock_epithet = 'gentle like a beautiful flower'
+IF stock["stamina"] = 5: $stock_epithet = 'unusually strong and hardy'
+IF stock["beauty"] = 5: $stock_epithet = 'perfect as the stars themselves'
+IF stock["exotic"] >= 2: $stock_epithet = 'exotic'
 
 !BASE PRICE
 !stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
@@ -1372,98 +1367,46 @@ if stock["stamina"] < 3: stock_base_price -= 5
 if stock["stamina"] > 2: stock_base_price += 5
 if stock["stamina"] > 3: stock_base_price += 10
 if stock["stamina"] > 4: stock_base_price += 20
-if stock["stamina"] > 5: stock_base_price += 22
-if stock["stamina"] > 6: stock_base_price += 24
-if stock["stamina"] > 7: stock_base_price += 26
-if stock["stamina"] > 8: stock_base_price += 28
-if stock["stamina"] > 9: stock_base_price += 30
 if stock["beauty"] < 2: stock_base_price -= 5
 if stock["beauty"] > 1: stock_base_price += 5
 if stock["beauty"] > 2: stock_base_price += 10
 if stock["beauty"] > 3: stock_base_price += 20
 if stock["beauty"] > 4: stock_base_price += 40
-if stock["beauty"] > 5: stock_base_price += 42
-if stock["beauty"] > 6: stock_base_price += 44
-if stock["beauty"] > 7: stock_base_price += 46
-if stock["beauty"] > 8: stock_base_price += 48
-if stock["beauty"] > 9: stock_base_price += 50
-if stock["fat"] = 1: stock_base_price += 25
-if stock["fat"] > 1: stock_base_price += 20
-if stock["fat"] > 3: stock_base_price += 10
-if stock["fat"] > 4: stock_base_price += 5
-if stock["fat"] > 5: stock_base_price -= 5
-if stock["fat"] > 6: stock_base_price -= 10
-if stock["fat"] > 7: stock_base_price -= 20
-if stock["fat"] > 8: stock_base_price -= 22
-if stock["fat"] > 9: stock_base_price -= 24
+if stock["fat"] = 1: stock_base_price += 5
+if stock["fat"] > 2: stock_base_price -= 5
+if stock["fat"] > 3: stock_base_price -= 10
+if stock["fat"] > 4: stock_base_price -= 20
 if stock["scares"] > 0: stock_base_price -= 5
 if stock["scares"] > 1: stock_base_price -= 10
 if stock["scares"] > 2: stock_base_price -= 20
 if stock["scares"] > 3: stock_base_price -= 40
 if stock["scares"] > 4: stock_base_price -= 80
-if stock["bruises"] > 1: stock_base_price -= 10
+if stock["bruises"] > 1: stock_base_price -= 5
 if stock["bruises"] > 2: stock_base_price -= 10
-if stock["bruises"] > 3: stock_base_price -= 40
-if stock["bruises"] > 4: stock_base_price -= 80
+if stock["bruises"] > 3: stock_base_price -= 20
+if stock["bruises"] > 4: stock_base_price -= 40
 if stock["style"] > 0: stock_base_price += 5
 if stock["style"] > 1: stock_base_price += 10
 if stock["style"] > 2: stock_base_price += 20
 if stock["style"] > 3: stock_base_price += 40
 if stock["style"] > 4: stock_base_price += 80
-if stock["style"] > 5: stock_base_price += 82
-if stock["style"] > 6: stock_base_price += 84
-if stock["style"] > 7: stock_base_price += 86
-if stock["style"] > 8: stock_base_price += 88
-if stock["style"] > 9: stock_base_price += 90
 if stock["exotic"] > 0: stock_base_price += 5
 if stock["exotic"] > 1: stock_base_price += 10
 if stock["exotic"] > 2: stock_base_price += 20
 if stock["exotic"] > 3: stock_base_price += 40
 if stock["exotic"] > 4: stock_base_price += 80
-if stock["exotic"] > 5: stock_base_price += 82
-if stock["exotic"] > 6: stock_base_price += 84
-if stock["exotic"] > 7: stock_base_price += 86
-if stock["exotic"] > 8: stock_base_price += 88
-if stock["exotic"] > 9: stock_base_price += 90
 if stock["sensitivity"] < 3: stock_base_price -= 5
-if stock["sensitivity"] > 3: stock_base_price += 2
+if stock["sensitivity"] > 3: stock_base_price += 5
 if stock["sensitivity"] > 4: stock_base_price += 10
-if stock["sensitivity"] > 5: stock_base_price += 12
-if stock["sensitivity"] > 6: stock_base_price += 14
-if stock["sensitivity"] > 7: stock_base_price += 16
-if stock["sensitivity"] > 8: stock_base_price += 18
-if stock["sensitivity"] > 9: stock_base_price += 20
 if stock["intellect"] < 3: stock_base_price -= 5
 if stock["intellect"] > 4: stock_base_price += 10
-if stock["intellect"] > 5: stock_base_price += 12
-if stock["intellect"] > 6: stock_base_price += 14
-if stock["intellect"] > 7: stock_base_price += 16
-if stock["intellect"] > 8: stock_base_price += 18
-if stock["intellect"] > 9: stock_base_price += 20
 if stock["temper"] > 3: stock_base_price += 5
 if stock["temper"] > 4: stock_base_price += 10
-if stock["temper"] > 5: stock_base_price += 12
-if stock["temper"] > 6: stock_base_price += 14
-if stock["temper"] > 7: stock_base_price += 16
-if stock["temper"] > 8: stock_base_price += 18
-if stock["temper"] > 9: stock_base_price += 20
 if stock["ego"] < 2: stock_base_price -= 5
 if stock["ego"] > 3: stock_base_price += 5
-if stock["ego"] > 4: stock_base_price += 7
-if stock["ego"] > 5: stock_base_price += 9
-if stock["ego"] > 6: stock_base_price += 11
-if stock["ego"] > 7: stock_base_price += 13
-if stock["ego"] > 8: stock_base_price += 15
-if stock["ego"] > 9: stock_base_price += 17
-if stock["pride"] < 1: stock_base_price += 14
-if stock["pride"] < 4: stock_base_price += 12
-if stock["pride"] > 3: stock_base_price += 10
-if stock["pride"] > 4: stock_base_price += 5
-if stock["pride"] > 5: stock_base_price -= 5
-if stock["pride"] > 6: stock_base_price -= 10
-if stock["pride"] > 7: stock_base_price -= 12
-if stock["pride"] > 8: stock_base_price -= 14
-if stock["pride"] > 9: stock_base_price -= 16
+if stock["pride"] < 4: stock_base_price += 5
+if stock["pride"] > 3: stock_base_price -= 5
+if stock["pride"] > 4: stock_base_price -= 10
 if stock_virginity < 2: stock_base_price += 5
 if stock["grace"] = 1: stock_base_price += 5
 if stock["grace"] = -1: stock_base_price -= 5

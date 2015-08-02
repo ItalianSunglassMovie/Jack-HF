@@ -9,127 +9,37 @@ n -= 1
 i += 1
 
 slave[$cont_atr[i]] = 0
-if slave_rate[$cont_atr[i]] => 10: slave[$cont_atr[i]] = 1
-if slave_rate[$cont_atr[i]] => 15: slave[$cont_atr[i]] = 2
-if slave_rate[$cont_atr[i]] => 20: slave[$cont_atr[i]] = 3
-if slave_rate[$cont_atr[i]] => 40: slave[$cont_atr[i]] = 4
-if slave_rate[$cont_atr[i]] => 60: slave[$cont_atr[i]] = 5
-if slave_rate[$cont_atr[i]] => 80: slave[$cont_atr[i]] = 6
-if slave_rate[$cont_atr[i]] => 120: slave[$cont_atr[i]] = 7
-if slave_rate[$cont_atr[i]] => 140: slave[$cont_atr[i]] = 8
-if slave_rate[$cont_atr[i]] => 160: slave[$cont_atr[i]] = 9
-if slave_rate[$cont_atr[i]] => 180: slave[$cont_atr[i]] = 10
+if slave_rate[$cont_atr[i]] >= 10: slave[$cont_atr[i]] = 1
+if slave_rate[$cont_atr[i]] >= 20: slave[$cont_atr[i]] = 2
+if slave_rate[$cont_atr[i]] >= 40: slave[$cont_atr[i]] = 3
+if slave_rate[$cont_atr[i]] >= 80: slave[$cont_atr[i]] = 4
+if slave_rate[$cont_atr[i]] >= 160: slave[$cont_atr[i]] = 5
 if slave_rate[$cont_atr[i]] < 0: slave_rate[$cont_atr[i]] = 0
 
-slave_1[$cont_atr[i]] = 0
-if slave_rate_1[$cont_atr[i]] => 10: slave_1[$cont_atr[i]] = 1
-if slave_rate_1[$cont_atr[i]] => 15: slave_1[$cont_atr[i]] = 2
-if slave_rate_1[$cont_atr[i]] => 20: slave_1[$cont_atr[i]] = 3
-if slave_rate_1[$cont_atr[i]] => 40: slave_1[$cont_atr[i]] = 4
-if slave_rate_1[$cont_atr[i]] => 60: slave_1[$cont_atr[i]] = 5
-if slave_rate_1[$cont_atr[i]] => 80: slave_1[$cont_atr[i]] = 6
-if slave_rate_1[$cont_atr[i]] => 120: slave_1[$cont_atr[i]] = 7
-if slave_rate_1[$cont_atr[i]] => 140: slave_1[$cont_atr[i]] = 8
-if slave_rate_1[$cont_atr[i]] => 160: slave_1[$cont_atr[i]] = 9
-if slave_rate_1[$cont_atr[i]] => 180: slave_1[$cont_atr[i]] = 10
-if slave_rate_1[$cont_atr[i]] < 0: slave_rate_1[$cont_atr[i]] = 0
-
-slave_2[$cont_atr[i]] = 0
-if slave_rate_2[$cont_atr[i]] => 10: slave_2[$cont_atr[i]] = 1
-if slave_rate_2[$cont_atr[i]] => 15: slave_2[$cont_atr[i]] = 2
-if slave_rate_2[$cont_atr[i]] => 20: slave_2[$cont_atr[i]] = 3
-if slave_rate_2[$cont_atr[i]] => 40: slave_2[$cont_atr[i]] = 4
-if slave_rate_2[$cont_atr[i]] => 60: slave_2[$cont_atr[i]] = 5
-if slave_rate_2[$cont_atr[i]] => 80: slave_2[$cont_atr[i]] = 6
-if slave_rate_2[$cont_atr[i]] => 120: slave_2[$cont_atr[i]] = 7
-if slave_rate_2[$cont_atr[i]] => 140: slave_2[$cont_atr[i]] = 8
-if slave_rate_2[$cont_atr[i]] => 160: slave_2[$cont_atr[i]] = 9
-if slave_rate_2[$cont_atr[i]] => 180: slave_2[$cont_atr[i]] = 10
-if slave_rate_2[$cont_atr[i]] < 0: slave_rate_2[$cont_atr[i]] = 0
-
-slave_3[$cont_atr[i]] = 0
-if slave_rate_3[$cont_atr[i]] => 10: slave_3[$cont_atr[i]] = 1
-if slave_rate_3[$cont_atr[i]] => 15: slave_3[$cont_atr[i]] = 2
-if slave_rate_3[$cont_atr[i]] => 20: slave_3[$cont_atr[i]] = 3
-if slave_rate_3[$cont_atr[i]] => 40: slave_3[$cont_atr[i]] = 4
-if slave_rate_3[$cont_atr[i]] => 60: slave_3[$cont_atr[i]] = 5
-if slave_rate_3[$cont_atr[i]] => 80: slave_3[$cont_atr[i]] = 6
-if slave_rate_3[$cont_atr[i]] => 120: slave_3[$cont_atr[i]] = 7
-if slave_rate_3[$cont_atr[i]] => 140: slave_3[$cont_atr[i]] = 8
-if slave_rate_3[$cont_atr[i]] => 160: slave_3[$cont_atr[i]] = 9
-if slave_rate_3[$cont_atr[i]] => 180: slave_3[$cont_atr[i]] = 10
-if slave_rate_3[$cont_atr[i]] < 0: slave_rate_3[$cont_atr[i]] = 0
-
-slave_4[$cont_atr[i]] = 0
-if slave_rate_4[$cont_atr[i]] => 10: slave_4[$cont_atr[i]] = 1
-if slave_rate_4[$cont_atr[i]] => 15: slave_4[$cont_atr[i]] = 2
-if slave_rate_4[$cont_atr[i]] => 20: slave_4[$cont_atr[i]] = 3
-if slave_rate_4[$cont_atr[i]] => 40: slave_4[$cont_atr[i]] = 4
-if slave_rate_4[$cont_atr[i]] => 60: slave_4[$cont_atr[i]] = 5
-if slave_rate_4[$cont_atr[i]] => 80: slave_4[$cont_atr[i]] = 6
-if slave_rate_4[$cont_atr[i]] => 120: slave_4[$cont_atr[i]] = 7
-if slave_rate_4[$cont_atr[i]] => 140: slave_4[$cont_atr[i]] = 8
-if slave_rate_4[$cont_atr[i]] => 160: slave_4[$cont_atr[i]] = 9
-if slave_rate_4[$cont_atr[i]] => 180: slave_4[$cont_atr[i]] = 10
-if slave_rate_4[$cont_atr[i]] < 0: slave_rate_4[$cont_atr[i]] = 0
-
-slave_5[$cont_atr[i]] = 0
-if slave_rate_5[$cont_atr[i]] => 10: slave_5[$cont_atr[i]] = 1
-if slave_rate_5[$cont_atr[i]] => 15: slave_5[$cont_atr[i]] = 2
-if slave_rate_5[$cont_atr[i]] => 20: slave_5[$cont_atr[i]] = 3
-if slave_rate_5[$cont_atr[i]] => 40: slave_5[$cont_atr[i]] = 4
-if slave_rate_5[$cont_atr[i]] => 60: slave_5[$cont_atr[i]] = 5
-if slave_rate_5[$cont_atr[i]] => 80: slave_5[$cont_atr[i]] = 6
-if slave_rate_5[$cont_atr[i]] => 120: slave_5[$cont_atr[i]] = 7
-if slave_rate_5[$cont_atr[i]] => 140: slave_5[$cont_atr[i]] = 8
-if slave_rate_5[$cont_atr[i]] => 160: slave_5[$cont_atr[i]] = 9
-if slave_rate_5[$cont_atr[i]] => 180: slave_5[$cont_atr[i]] = 10
-if slave_rate_5[$cont_atr[i]] < 0: slave_rate_5[$cont_atr[i]] = 0
-
 prisoner[$cont_atr[i]] = 0
-if prisoner_rate[$cont_atr[i]] => 10: prisoner[$cont_atr[i]] = 1
-if prisoner_rate[$cont_atr[i]] => 15: prisoner[$cont_atr[i]] = 2
-if prisoner_rate[$cont_atr[i]] => 20: prisoner[$cont_atr[i]] = 3
-if prisoner_rate[$cont_atr[i]] => 40: prisoner[$cont_atr[i]] = 4
-if prisoner_rate[$cont_atr[i]] => 60: prisoner[$cont_atr[i]] = 5
-if prisoner_rate[$cont_atr[i]] => 80: prisoner[$cont_atr[i]] = 6
-if prisoner_rate[$cont_atr[i]] => 120: prisoner[$cont_atr[i]] = 7
-if prisoner_rate[$cont_atr[i]] => 140: prisoner[$cont_atr[i]] = 8
-if prisoner_rate[$cont_atr[i]] => 160: prisoner[$cont_atr[i]] = 9
-if prisoner_rate[$cont_atr[i]] => 180: prisoner[$cont_atr[i]] = 10
+if prisoner_rate[$cont_atr[i]] >= 10: prisoner[$cont_atr[i]] = 1
+if prisoner_rate[$cont_atr[i]] >= 20: prisoner[$cont_atr[i]] = 2
+if prisoner_rate[$cont_atr[i]] >= 40: prisoner[$cont_atr[i]] = 3
+if prisoner_rate[$cont_atr[i]] >= 80: prisoner[$cont_atr[i]] = 4
+if prisoner_rate[$cont_atr[i]] >= 160: prisoner[$cont_atr[i]] = 5
 if prisoner_rate[$cont_atr[i]] <= -10: prisoner[$cont_atr[i]] = -1
-if prisoner_rate[$cont_atr[i]] <= -15: prisoner[$cont_atr[i]] = -2
-if prisoner_rate[$cont_atr[i]] <= -20: prisoner[$cont_atr[i]] = -3
-if prisoner_rate[$cont_atr[i]] <= -40: prisoner[$cont_atr[i]] = -4
-if prisoner_rate[$cont_atr[i]] <= -60: prisoner[$cont_atr[i]] = -5
-if prisoner_rate[$cont_atr[i]] <= -80: prisoner[$cont_atr[i]] = -6
-if prisoner_rate[$cont_atr[i]] <= -120: prisoner[$cont_atr[i]] = -7
-if prisoner_rate[$cont_atr[i]] <= -140: prisoner[$cont_atr[i]] = -8
-if prisoner_rate[$cont_atr[i]] <= -160: prisoner[$cont_atr[i]] = -9
-if prisoner_rate[$cont_atr[i]] <= -180: prisoner[$cont_atr[i]] = -10
+if prisoner_rate[$cont_atr[i]] <= -20: prisoner[$cont_atr[i]] = -2
+if prisoner_rate[$cont_atr[i]] <= -40: prisoner[$cont_atr[i]] = -3
+if prisoner_rate[$cont_atr[i]] <= -80: prisoner[$cont_atr[i]] = -4
+if prisoner_rate[$cont_atr[i]] <= -160: prisoner[$cont_atr[i]] = -5
 
 
 assistant[$cont_atr[i]] = 0
-if assistant_rate[$cont_atr[i]] => 10: assistant[$cont_atr[i]] = 1
-if assistant_rate[$cont_atr[i]] => 12: assistant[$cont_atr[i]] = 2
-if assistant_rate[$cont_atr[i]] => 20: assistant[$cont_atr[i]] = 3
-if assistant_rate[$cont_atr[i]] => 40: assistant[$cont_atr[i]] = 4
-if assistant_rate[$cont_atr[i]] => 60: assistant[$cont_atr[i]] = 5
-if assistant_rate[$cont_atr[i]] => 80: assistant[$cont_atr[i]] = 6
-if assistant_rate[$cont_atr[i]] => 120: assistant[$cont_atr[i]] = 7
-if assistant_rate[$cont_atr[i]] => 140: assistant[$cont_atr[i]] = 8
-if assistant_rate[$cont_atr[i]] => 160: assistant[$cont_atr[i]] = 9
-if assistant_rate[$cont_atr[i]] => 180: assistant[$cont_atr[i]] = 10
+if assistant_rate[$cont_atr[i]] >= 10: assistant[$cont_atr[i]] = 1
+if assistant_rate[$cont_atr[i]] >= 20: assistant[$cont_atr[i]] = 2
+if assistant_rate[$cont_atr[i]] >= 40: assistant[$cont_atr[i]] = 3
+if assistant_rate[$cont_atr[i]] >= 80: assistant[$cont_atr[i]] = 4
+if assistant_rate[$cont_atr[i]] >= 160: assistant[$cont_atr[i]] = 5
 if assistant_rate[$cont_atr[i]] <= -10: assistant[$cont_atr[i]] = -1
-if assistant_rate[$cont_atr[i]] <= -15: assistant[$cont_atr[i]] = -2
-if assistant_rate[$cont_atr[i]] <= -20: assistant[$cont_atr[i]] = -3
-if assistant_rate[$cont_atr[i]] <= -40: assistant[$cont_atr[i]] = -4
-if assistant_rate[$cont_atr[i]] <= -60: assistant[$cont_atr[i]] = -5
-if assistant_rate[$cont_atr[i]] <= -80: assistant[$cont_atr[i]] = -6
-if assistant_rate[$cont_atr[i]] <= -120: assistant[$cont_atr[i]] = -7
-if assistant_rate[$cont_atr[i]] <= -140: assistant[$cont_atr[i]] = -8
-if assistant_rate[$cont_atr[i]] <= -160: assistant[$cont_atr[i]] = -9
-if assistant_rate[$cont_atr[i]] <= -180: assistant[$cont_atr[i]] = -10
+if assistant_rate[$cont_atr[i]] <= -20: assistant[$cont_atr[i]] = -2
+if assistant_rate[$cont_atr[i]] <= -40: assistant[$cont_atr[i]] = -3
+if assistant_rate[$cont_atr[i]] <= -80: assistant[$cont_atr[i]] = -4
+if assistant_rate[$cont_atr[i]] <= -160: assistant[$cont_atr[i]] = -5
 
 if i < n: jump 'slave_cont_loop'
 
@@ -141,383 +51,98 @@ n -= 1
 i += 1
 !'IF slave[$indep_atr[i]] = -5:
  if slave_rate[$indep_atr[i]] < -10: slave_rate[$indep_atr[i]] = -10
- if slave_rate[$indep_atr[i]] => 80: slave[$indep_atr[i]] = -4 & slave_rate[$indep_atr[i]] = 0  
+ if slave_rate[$indep_atr[i]] >= 80: slave[$indep_atr[i]] = -4 & slave_rate[$indep_atr[i]] = 0  
 END
 IF slave[$indep_atr[i]] = -4:
  if slave_rate[$indep_atr[i]] <= -40: slave[$indep_atr[i]] = -5 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 40: slave[$indep_atr[i]] = -3 & slave_rate[$indep_atr[i]] = 0 
+ if slave_rate[$indep_atr[i]] >= 40: slave[$indep_atr[i]] = -3 & slave_rate[$indep_atr[i]] = 0 
 END
 IF slave[$indep_atr[i]] = -3:
  if slave_rate[$indep_atr[i]] <= -20: slave[$indep_atr[i]] = -4 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 20: slave[$indep_atr[i]] = -2 & slave_rate[$indep_atr[i]] = 0 
+ if slave_rate[$indep_atr[i]] >= 20: slave[$indep_atr[i]] = -2 & slave_rate[$indep_atr[i]] = 0 
 END
 IF slave[$indep_atr[i]] = -2:
  if slave_rate[$indep_atr[i]] <= -10: slave[$indep_atr[i]] = -3 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 10: slave[$indep_atr[i]] = -1 & slave_rate[$indep_atr[i]] = 0 
+ if slave_rate[$indep_atr[i]] >= 10: slave[$indep_atr[i]] = -1 & slave_rate[$indep_atr[i]] = 0 
 END
 IF slave[$indep_atr[i]] = -1:
  if slave_rate[$indep_atr[i]] <= -10: slave[$indep_atr[i]] = -2 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 10: slave[$indep_atr[i]] = 0 & slave_rate[$indep_atr[i]] = 0 
+ if slave_rate[$indep_atr[i]] >= 10: slave[$indep_atr[i]] = 0 & slave_rate[$indep_atr[i]] = 0 
 END'
 
 IF slave[$indep_atr[i]] = 0:
  if slave_rate[$indep_atr[i]] <= -10: slave[$indep_atr[i]] = 0 & slave_rate[$indep_atr[i]] = -10
- if slave_rate[$indep_atr[i]] => 10: slave[$indep_atr[i]] = 1 & slave_rate[$indep_atr[i]] = 0 
+ if slave_rate[$indep_atr[i]] >= 10: slave[$indep_atr[i]] = 1 & slave_rate[$indep_atr[i]] = 0 
 END
 IF slave[$indep_atr[i]] = 1:
- if slave_rate[$indep_atr[i]] <= -15: slave[$indep_atr[i]] = 0 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 15: slave[$indep_atr[i]] = 2 & slave_rate[$indep_atr[i]] = 0 
+ if slave_rate[$indep_atr[i]] <= -10: slave[$indep_atr[i]] = 0 & slave_rate[$indep_atr[i]] = 0
+ if slave_rate[$indep_atr[i]] >= 10: slave[$indep_atr[i]] = 2 & slave_rate[$indep_atr[i]] = 0 
 END
 IF slave[$indep_atr[i]] = 2:
  if slave_rate[$indep_atr[i]] <= -20: slave[$indep_atr[i]] = 1 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 20: slave[$indep_atr[i]] = 3 & slave_rate[$indep_atr[i]] = 0 
+ if slave_rate[$indep_atr[i]] >= 20: slave[$indep_atr[i]] = 3 & slave_rate[$indep_atr[i]] = 0 
 END
 IF slave[$indep_atr[i]] = 3:
  if slave_rate[$indep_atr[i]] <= -40: slave[$indep_atr[i]] = 2 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 40: slave[$indep_atr[i]] = 4 & slave_rate[$indep_atr[i]] = 0 
+ if slave_rate[$indep_atr[i]] >= 40: slave[$indep_atr[i]] = 4 & slave_rate[$indep_atr[i]] = 0 
 END
 IF slave[$indep_atr[i]] = 4:
- if slave_rate[$indep_atr[i]] <= -60: slave[$indep_atr[i]] = 3 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 60: slave[$indep_atr[i]] = 5 & slave_rate[$indep_atr[i]] = 0 
+ if slave_rate[$indep_atr[i]] <= -80: slave[$indep_atr[i]] = 3 & slave_rate[$indep_atr[i]] = 0
+ if slave_rate[$indep_atr[i]] >= 80: slave[$indep_atr[i]] = 5 & slave_rate[$indep_atr[i]] = 0 
 END
 IF slave[$indep_atr[i]] = 5:
- if slave_rate[$indep_atr[i]] <= -80: slave[$indep_atr[i]] = 4 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 80: slave[$indep_atr[i]] = 6 & slave_rate[$indep_atr[i]] = 0 
-END
-IF slave[$indep_atr[i]] = 6:
- if slave_rate[$indep_atr[i]] <= -120: slave[$indep_atr[i]] = 5 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 120: slave[$indep_atr[i]] = 7 & slave_rate[$indep_atr[i]] = 0 
-END
-IF slave[$indep_atr[i]] = 7:
- if slave_rate[$indep_atr[i]] <= -140: slave[$indep_atr[i]] = 6 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 140: slave[$indep_atr[i]] = 8 & slave_rate[$indep_atr[i]] = 0 
-END
-IF slave[$indep_atr[i]] = 8:
- if slave_rate[$indep_atr[i]] <= -160: slave[$indep_atr[i]] = 7 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 160: slave[$indep_atr[i]] = 9 & slave_rate[$indep_atr[i]] = 0 
-END
-IF slave[$indep_atr[i]] = 9:
- if slave_rate[$indep_atr[i]] <= -180: slave[$indep_atr[i]] = 8 & slave_rate[$indep_atr[i]] = 0
- if slave_rate[$indep_atr[i]] => 180: slave[$indep_atr[i]] = 10 & slave_rate[$indep_atr[i]] = 0 
-END
-IF slave[$indep_atr[i]] = 10:
  if slave_rate[$indep_atr[i]] > 10: slave_rate[$indep_atr[i]] = 10
- if slave_rate[$indep_atr[i]] <= -180: slave[$indep_atr[i]] = 7 & slave_rate[$indep_atr[i]] = 0  
-END
-
-IF slave_1[$indep_atr[i]] = 0:
- if slave_rate_1[$indep_atr[i]] <= -10: slave_1[$indep_atr[i]] = 0 & slave_rate_1[$indep_atr[i]] = -10
- if slave_rate_1[$indep_atr[i]] => 10: slave_1[$indep_atr[i]] = 1 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 1:
- if slave_rate_1[$indep_atr[i]] <= -15: slave_1[$indep_atr[i]] = 0 & slave_rate_1[$indep_atr[i]] = 0
- if slave_rate_1[$indep_atr[i]] => 15: slave_1[$indep_atr[i]] = 2 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 2:
- if slave_rate_1[$indep_atr[i]] <= -20: slave_1[$indep_atr[i]] = 1 & slave_rate_1[$indep_atr[i]] = 0
- if slave_rate_1[$indep_atr[i]] => 20: slave_1[$indep_atr[i]] = 3 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 3:
- if slave_rate_1[$indep_atr[i]] <= -40: slave_1[$indep_atr[i]] = 2 & slave_rate_1[$indep_atr[i]] = 0
- if slave_rate_1[$indep_atr[i]] => 40: slave_1[$indep_atr[i]] = 4 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 4:
- if slave_rate_1[$indep_atr[i]] <= -60: slave_1[$indep_atr[i]] = 3 & slave_rate_1[$indep_atr[i]] = 0
- if slave_rate_1[$indep_atr[i]] => 60: slave_1[$indep_atr[i]] = 5 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 5:
- if slave_rate_1[$indep_atr[i]] <= -80: slave_1[$indep_atr[i]] = 4 & slave_rate_1[$indep_atr[i]] = 0
- if slave_rate_1[$indep_atr[i]] => 80: slave_1[$indep_atr[i]] = 6 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 6:
- if slave_rate_1[$indep_atr[i]] <= -120: slave_1[$indep_atr[i]] = 5 & slave_rate_1[$indep_atr[i]] = 0
- if slave_rate_1[$indep_atr[i]] => 120: slave_1[$indep_atr[i]] = 7 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 7:
- if slave_rate_1[$indep_atr[i]] <= -140: slave_1[$indep_atr[i]] = 6 & slave_rate_1[$indep_atr[i]] = 0
- if slave_rate_1[$indep_atr[i]] => 140: slave_1[$indep_atr[i]] = 8 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 8:
- if slave_rate_1[$indep_atr[i]] <= -160: slave_1[$indep_atr[i]] = 7 & slave_rate_1[$indep_atr[i]] = 0
- if slave_rate_1[$indep_atr[i]] => 160: slave_1[$indep_atr[i]] = 9 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 9:
- if slave_rate_1[$indep_atr[i]] <= -180: slave_1[$indep_atr[i]] = 8 & slave_rate_1[$indep_atr[i]] = 0
- if slave_rate_1[$indep_atr[i]] => 180: slave_1[$indep_atr[i]] = 10 & slave_rate_1[$indep_atr[i]] = 0 
-END
-IF slave_1[$indep_atr[i]] = 10:
- if slave_rate_1[$indep_atr[i]] > 10: slave_rate_1[$indep_atr[i]] = 10
- if slave_rate_1[$indep_atr[i]] <= -180: slave_1[$indep_atr[i]] = 7 & slave_rate_1[$indep_atr[i]] = 0  
-END
-
-IF slave_2[$indep_atr[i]] = 0:
- if slave_rate_2[$indep_atr[i]] <= -10: slave_2[$indep_atr[i]] = 0 & slave_rate_2[$indep_atr[i]] = -10
- if slave_rate_2[$indep_atr[i]] => 10: slave_2[$indep_atr[i]] = 1 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 1:
- if slave_rate_2[$indep_atr[i]] <= -15: slave_2[$indep_atr[i]] = 0 & slave_rate_2[$indep_atr[i]] = 0
- if slave_rate_2[$indep_atr[i]] => 15: slave_2[$indep_atr[i]] = 2 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 2:
- if slave_rate_2[$indep_atr[i]] <= -20: slave_2[$indep_atr[i]] = 1 & slave_rate_2[$indep_atr[i]] = 0
- if slave_rate_2[$indep_atr[i]] => 20: slave_2[$indep_atr[i]] = 3 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 3:
- if slave_rate_2[$indep_atr[i]] <= -40: slave_2[$indep_atr[i]] = 2 & slave_rate_2[$indep_atr[i]] = 0
- if slave_rate_2[$indep_atr[i]] => 40: slave_2[$indep_atr[i]] = 4 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 4:
- if slave_rate_2[$indep_atr[i]] <= -60: slave_2[$indep_atr[i]] = 3 & slave_rate_2[$indep_atr[i]] = 0
- if slave_rate_2[$indep_atr[i]] => 60: slave_2[$indep_atr[i]] = 5 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 5:
- if slave_rate_2[$indep_atr[i]] <= -80: slave_2[$indep_atr[i]] = 4 & slave_rate_2[$indep_atr[i]] = 0
- if slave_rate_2[$indep_atr[i]] => 80: slave_2[$indep_atr[i]] = 6 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 6:
- if slave_rate_2[$indep_atr[i]] <= -120: slave_2[$indep_atr[i]] = 5 & slave_rate_2[$indep_atr[i]] = 0
- if slave_rate_2[$indep_atr[i]] => 120: slave_2[$indep_atr[i]] = 7 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 7:
- if slave_rate_2[$indep_atr[i]] <= -140: slave_2[$indep_atr[i]] = 6 & slave_rate_2[$indep_atr[i]] = 0
- if slave_rate_2[$indep_atr[i]] => 140: slave_2[$indep_atr[i]] = 8 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 8:
- if slave_rate_2[$indep_atr[i]] <= -160: slave_2[$indep_atr[i]] = 7 & slave_rate_2[$indep_atr[i]] = 0
- if slave_rate_2[$indep_atr[i]] => 160: slave_2[$indep_atr[i]] = 9 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 9:
- if slave_rate_2[$indep_atr[i]] <= -180: slave_2[$indep_atr[i]] = 8 & slave_rate_2[$indep_atr[i]] = 0
- if slave_rate_2[$indep_atr[i]] => 180: slave_2[$indep_atr[i]] = 10 & slave_rate_2[$indep_atr[i]] = 0 
-END
-IF slave_2[$indep_atr[i]] = 10:
- if slave_rate_2[$indep_atr[i]] > 10: slave_rate_2[$indep_atr[i]] = 10
- if slave_rate_2[$indep_atr[i]] <= -180: slave_2[$indep_atr[i]] = 7 & slave_rate_2[$indep_atr[i]] = 0  
-END
-
-IF slave_3[$indep_atr[i]] = 0:
- if slave_rate_3[$indep_atr[i]] <= -10: slave_3[$indep_atr[i]] = 0 & slave_rate_3[$indep_atr[i]] = -10
- if slave_rate_3[$indep_atr[i]] => 10: slave_3[$indep_atr[i]] = 1 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 1:
- if slave_rate_3[$indep_atr[i]] <= -15: slave_3[$indep_atr[i]] = 0 & slave_rate_3[$indep_atr[i]] = 0
- if slave_rate_3[$indep_atr[i]] => 15: slave_3[$indep_atr[i]] = 2 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 2:
- if slave_rate_3[$indep_atr[i]] <= -20: slave_3[$indep_atr[i]] = 1 & slave_rate_3[$indep_atr[i]] = 0
- if slave_rate_3[$indep_atr[i]] => 20: slave_3[$indep_atr[i]] = 3 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 3:
- if slave_rate_3[$indep_atr[i]] <= -40: slave_3[$indep_atr[i]] = 2 & slave_rate_3[$indep_atr[i]] = 0
- if slave_rate_3[$indep_atr[i]] => 40: slave_3[$indep_atr[i]] = 4 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 4:
- if slave_rate_3[$indep_atr[i]] <= -60: slave_3[$indep_atr[i]] = 3 & slave_rate_3[$indep_atr[i]] = 0
- if slave_rate_3[$indep_atr[i]] => 60: slave_3[$indep_atr[i]] = 5 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 5:
- if slave_rate_3[$indep_atr[i]] <= -80: slave_3[$indep_atr[i]] = 4 & slave_rate_3[$indep_atr[i]] = 0
- if slave_rate_3[$indep_atr[i]] => 80: slave_3[$indep_atr[i]] = 6 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 6:
- if slave_rate_3[$indep_atr[i]] <= -120: slave_3[$indep_atr[i]] = 5 & slave_rate_3[$indep_atr[i]] = 0
- if slave_rate_3[$indep_atr[i]] => 120: slave_3[$indep_atr[i]] = 7 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 7:
- if slave_rate_3[$indep_atr[i]] <= -140: slave_3[$indep_atr[i]] = 6 & slave_rate_3[$indep_atr[i]] = 0
- if slave_rate_3[$indep_atr[i]] => 140: slave_3[$indep_atr[i]] = 8 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 8:
- if slave_rate_3[$indep_atr[i]] <= -160: slave_3[$indep_atr[i]] = 7 & slave_rate_3[$indep_atr[i]] = 0
- if slave_rate_3[$indep_atr[i]] => 160: slave_3[$indep_atr[i]] = 9 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 9:
- if slave_rate_3[$indep_atr[i]] <= -180: slave_3[$indep_atr[i]] = 8 & slave_rate_3[$indep_atr[i]] = 0
- if slave_rate_3[$indep_atr[i]] => 180: slave_3[$indep_atr[i]] = 10 & slave_rate_3[$indep_atr[i]] = 0 
-END
-IF slave_3[$indep_atr[i]] = 10:
- if slave_rate_3[$indep_atr[i]] > 10: slave_rate_3[$indep_atr[i]] = 10
- if slave_rate_3[$indep_atr[i]] <= -180: slave_3[$indep_atr[i]] = 7 & slave_rate_3[$indep_atr[i]] = 0  
-END
-
-IF slave_4[$indep_atr[i]] = 0:
- if slave_rate_4[$indep_atr[i]] <= -10: slave_4[$indep_atr[i]] = 0 & slave_rate_4[$indep_atr[i]] = -10
- if slave_rate_4[$indep_atr[i]] => 10: slave_4[$indep_atr[i]] = 1 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 1:
- if slave_rate_4[$indep_atr[i]] <= -15: slave_4[$indep_atr[i]] = 0 & slave_rate_4[$indep_atr[i]] = 0
- if slave_rate_4[$indep_atr[i]] => 15: slave_4[$indep_atr[i]] = 2 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 2:
- if slave_rate_4[$indep_atr[i]] <= -20: slave_4[$indep_atr[i]] = 1 & slave_rate_4[$indep_atr[i]] = 0
- if slave_rate_4[$indep_atr[i]] => 20: slave_4[$indep_atr[i]] = 3 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 3:
- if slave_rate_4[$indep_atr[i]] <= -40: slave_4[$indep_atr[i]] = 2 & slave_rate_4[$indep_atr[i]] = 0
- if slave_rate_4[$indep_atr[i]] => 40: slave_4[$indep_atr[i]] = 4 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 4:
- if slave_rate_4[$indep_atr[i]] <= -60: slave_4[$indep_atr[i]] = 3 & slave_rate_4[$indep_atr[i]] = 0
- if slave_rate_4[$indep_atr[i]] => 60: slave_4[$indep_atr[i]] = 5 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 5:
- if slave_rate_4[$indep_atr[i]] <= -80: slave_4[$indep_atr[i]] = 4 & slave_rate_4[$indep_atr[i]] = 0
- if slave_rate_4[$indep_atr[i]] => 80: slave_4[$indep_atr[i]] = 6 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 6:
- if slave_rate_4[$indep_atr[i]] <= -120: slave_4[$indep_atr[i]] = 5 & slave_rate_4[$indep_atr[i]] = 0
- if slave_rate_4[$indep_atr[i]] => 120: slave_4[$indep_atr[i]] = 7 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 7:
- if slave_rate_4[$indep_atr[i]] <= -140: slave_4[$indep_atr[i]] = 6 & slave_rate_4[$indep_atr[i]] = 0
- if slave_rate_4[$indep_atr[i]] => 140: slave_4[$indep_atr[i]] = 8 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 8:
- if slave_rate_4[$indep_atr[i]] <= -160: slave_4[$indep_atr[i]] = 7 & slave_rate_4[$indep_atr[i]] = 0
- if slave_rate_4[$indep_atr[i]] => 160: slave_4[$indep_atr[i]] = 9 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 9:
- if slave_rate_4[$indep_atr[i]] <= -180: slave_4[$indep_atr[i]] = 8 & slave_rate_4[$indep_atr[i]] = 0
- if slave_rate_4[$indep_atr[i]] => 180: slave_4[$indep_atr[i]] = 10 & slave_rate_4[$indep_atr[i]] = 0 
-END
-IF slave_4[$indep_atr[i]] = 10:
- if slave_rate_4[$indep_atr[i]] > 10: slave_rate_4[$indep_atr[i]] = 10
- if slave_rate_4[$indep_atr[i]] <= -180: slave_4[$indep_atr[i]] = 7 & slave_rate_4[$indep_atr[i]] = 0  
-END
-
-IF slave_5[$indep_atr[i]] = 0:
- if slave_rate_5[$indep_atr[i]] <= -10: slave_5[$indep_atr[i]] = 0 & slave_rate_5[$indep_atr[i]] = -10
- if slave_rate_5[$indep_atr[i]] => 10: slave_5[$indep_atr[i]] = 1 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 1:
- if slave_rate_5[$indep_atr[i]] <= -15: slave_5[$indep_atr[i]] = 0 & slave_rate_5[$indep_atr[i]] = 0
- if slave_rate_5[$indep_atr[i]] => 15: slave_5[$indep_atr[i]] = 2 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 2:
- if slave_rate_5[$indep_atr[i]] <= -20: slave_5[$indep_atr[i]] = 1 & slave_rate_5[$indep_atr[i]] = 0
- if slave_rate_5[$indep_atr[i]] => 20: slave_5[$indep_atr[i]] = 3 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 3:
- if slave_rate_5[$indep_atr[i]] <= -40: slave_5[$indep_atr[i]] = 2 & slave_rate_5[$indep_atr[i]] = 0
- if slave_rate_5[$indep_atr[i]] => 40: slave_5[$indep_atr[i]] = 4 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 4:
- if slave_rate_5[$indep_atr[i]] <= -60: slave_5[$indep_atr[i]] = 3 & slave_rate_5[$indep_atr[i]] = 0
- if slave_rate_5[$indep_atr[i]] => 60: slave_5[$indep_atr[i]] = 5 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 5:
- if slave_rate_5[$indep_atr[i]] <= -80: slave_5[$indep_atr[i]] = 4 & slave_rate_5[$indep_atr[i]] = 0
- if slave_rate_5[$indep_atr[i]] => 80: slave_5[$indep_atr[i]] = 6 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 6:
- if slave_rate_5[$indep_atr[i]] <= -120: slave_5[$indep_atr[i]] = 5 & slave_rate_5[$indep_atr[i]] = 0
- if slave_rate_5[$indep_atr[i]] => 120: slave_5[$indep_atr[i]] = 7 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 7:
- if slave_rate_5[$indep_atr[i]] <= -140: slave_5[$indep_atr[i]] = 6 & slave_rate_5[$indep_atr[i]] = 0
- if slave_rate_5[$indep_atr[i]] => 140: slave_5[$indep_atr[i]] = 8 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 8:
- if slave_rate_5[$indep_atr[i]] <= -160: slave_5[$indep_atr[i]] = 7 & slave_rate_5[$indep_atr[i]] = 0
- if slave_rate_5[$indep_atr[i]] => 160: slave_5[$indep_atr[i]] = 9 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 9:
- if slave_rate_5[$indep_atr[i]] <= -180: slave_5[$indep_atr[i]] = 8 & slave_rate_5[$indep_atr[i]] = 0
- if slave_rate_5[$indep_atr[i]] => 180: slave_5[$indep_atr[i]] = 10 & slave_rate_5[$indep_atr[i]] = 0 
-END
-IF slave_5[$indep_atr[i]] = 10:
- if slave_rate_5[$indep_atr[i]] > 10: slave_rate_5[$indep_atr[i]] = 10
- if slave_rate_5[$indep_atr[i]] <= -180: slave_5[$indep_atr[i]] = 7 & slave_rate_5[$indep_atr[i]] = 0  
+ if slave_rate[$indep_atr[i]] <= -80: slave[$indep_atr[i]] = 4 & slave_rate[$indep_atr[i]] = 0  
 END
 
 IF assistant[$indep_atr[i]] = 0:
  if assistant_rate[$indep_atr[i]] <= -10: assistant[$indep_atr[i]] = 0 & assistant_rate[$indep_atr[i]] = -10
- if assistant_rate[$indep_atr[i]] => 10: assistant[$indep_atr[i]] = 1 & assistant_rate[$indep_atr[i]] = 0 
+ if assistant_rate[$indep_atr[i]] >= 10: assistant[$indep_atr[i]] = 1 & assistant_rate[$indep_atr[i]] = 0 
 END
 IF assistant[$indep_atr[i]] = 1:
- if assistant_rate[$indep_atr[i]] <= -15: assistant[$indep_atr[i]] = 0 & assistant_rate[$indep_atr[i]] = 0
- if assistant_rate[$indep_atr[i]] => 15: assistant[$indep_atr[i]] = 2 & assistant_rate[$indep_atr[i]] = 0 
+ if assistant_rate[$indep_atr[i]] <= -10: assistant[$indep_atr[i]] = 0 & assistant_rate[$indep_atr[i]] = 0
+ if assistant_rate[$indep_atr[i]] >= 10: assistant[$indep_atr[i]] = 2 & assistant_rate[$indep_atr[i]] = 0 
 END
 IF assistant[$indep_atr[i]] = 2:
  if assistant_rate[$indep_atr[i]] <= -20: assistant[$indep_atr[i]] = 1 & assistant_rate[$indep_atr[i]] = 0
- if assistant_rate[$indep_atr[i]] => 20: assistant[$indep_atr[i]] = 3 & assistant_rate[$indep_atr[i]] = 0 
+ if assistant_rate[$indep_atr[i]] >= 20: assistant[$indep_atr[i]] = 3 & assistant_rate[$indep_atr[i]] = 0 
 END
 IF assistant[$indep_atr[i]] = 3:
  if assistant_rate[$indep_atr[i]] <= -40: assistant[$indep_atr[i]] = 2 & assistant_rate[$indep_atr[i]] = 0
- if assistant_rate[$indep_atr[i]] => 40: assistant[$indep_atr[i]] = 4 & assistant_rate[$indep_atr[i]] = 0 
+ if assistant_rate[$indep_atr[i]] >= 40: assistant[$indep_atr[i]] = 4 & assistant_rate[$indep_atr[i]] = 0 
 END
 IF assistant[$indep_atr[i]] = 4:
- if assistant_rate[$indep_atr[i]] <= -60: assistant[$indep_atr[i]] = 3 & assistant_rate[$indep_atr[i]] = 0
- if assistant_rate[$indep_atr[i]] => 60: assistant[$indep_atr[i]] = 5 & assistant_rate[$indep_atr[i]] = 0 
+ if assistant_rate[$indep_atr[i]] <= -80: assistant[$indep_atr[i]] = 3 & assistant_rate[$indep_atr[i]] = 0
+ if assistant_rate[$indep_atr[i]] >= 80: assistant[$indep_atr[i]] = 5 & assistant_rate[$indep_atr[i]] = 0 
 END
 IF assistant[$indep_atr[i]] = 5:
- if assistant_rate[$indep_atr[i]] <= -80: assistant[$indep_atr[i]] = 4 & assistant_rate[$indep_atr[i]] = 0
- if assistant_rate[$indep_atr[i]] => 80: assistant[$indep_atr[i]] = 6 & assistant_rate[$indep_atr[i]] = 0 
-END
-IF assistant[$indep_atr[i]] = 6:
- if assistant_rate[$indep_atr[i]] <= -120: assistant[$indep_atr[i]] = 5 & assistant_rate[$indep_atr[i]] = 0
- if assistant_rate[$indep_atr[i]] => 120: assistant[$indep_atr[i]] = 7 & assistant_rate[$indep_atr[i]] = 0 
-END
-IF assistant[$indep_atr[i]] = 7:
- if assistant_rate[$indep_atr[i]] <= -140: assistant[$indep_atr[i]] = 6 & assistant_rate[$indep_atr[i]] = 0
- if assistant_rate[$indep_atr[i]] => 140: assistant[$indep_atr[i]] = 8 & assistant_rate[$indep_atr[i]] = 0 
-END
-IF assistant[$indep_atr[i]] = 8:
- if assistant_rate[$indep_atr[i]] <= -160: assistant[$indep_atr[i]] = 7 & assistant_rate[$indep_atr[i]] = 0
- if assistant_rate[$indep_atr[i]] => 160: assistant[$indep_atr[i]] = 9 & assistant_rate[$indep_atr[i]] = 0 
-END
-IF assistant[$indep_atr[i]] = 9:
- if assistant_rate[$indep_atr[i]] <= -180: assistant[$indep_atr[i]] = 8 & assistant_rate[$indep_atr[i]] = 0
- if assistant_rate[$indep_atr[i]] => 180: assistant[$indep_atr[i]] = 10 & assistant_rate[$indep_atr[i]] = 0 
-END
-IF assistant[$indep_atr[i]] = 10:
  if assistant_rate[$indep_atr[i]] > 10: assistant_rate[$indep_atr[i]] = 10
- if assistant_rate[$indep_atr[i]] <= -180: assistant[$indep_atr[i]] = 8 & assistant_rate[$indep_atr[i]] = 0  
+ if assistant_rate[$indep_atr[i]] <= -80: assistant[$indep_atr[i]] = 4 & assistant_rate[$indep_atr[i]] = 0  
 END
 
 IF prisoner[$indep_atr[i]] = 0:
  if prisoner_rate[$indep_atr[i]] <= -10: prisoner[$indep_atr[i]] = 0 & prisoner_rate[$indep_atr[i]] = -10
- if prisoner_rate[$indep_atr[i]] => 10: prisoner[$indep_atr[i]] = 1 & prisoner_rate[$indep_atr[i]] = 0 
+ if prisoner_rate[$indep_atr[i]] >= 10: prisoner[$indep_atr[i]] = 1 & prisoner_rate[$indep_atr[i]] = 0 
 END
 IF prisoner[$indep_atr[i]] = 1:
- if prisoner_rate[$indep_atr[i]] <= -15: prisoner[$indep_atr[i]] = 0 & prisoner_rate[$indep_atr[i]] = 0
- if prisoner_rate[$indep_atr[i]] => 15: prisoner[$indep_atr[i]] = 2 & prisoner_rate[$indep_atr[i]] = 0 
+ if prisoner_rate[$indep_atr[i]] <= -10: prisoner[$indep_atr[i]] = 0 & prisoner_rate[$indep_atr[i]] = 0
+ if prisoner_rate[$indep_atr[i]] >= 10: prisoner[$indep_atr[i]] = 2 & prisoner_rate[$indep_atr[i]] = 0 
 END
 IF prisoner[$indep_atr[i]] = 2:
  if prisoner_rate[$indep_atr[i]] <= -20: prisoner[$indep_atr[i]] = 1 & prisoner_rate[$indep_atr[i]] = 0
- if prisoner_rate[$indep_atr[i]] => 20: prisoner[$indep_atr[i]] = 3 & prisoner_rate[$indep_atr[i]] = 0 
+ if prisoner_rate[$indep_atr[i]] >= 20: prisoner[$indep_atr[i]] = 3 & prisoner_rate[$indep_atr[i]] = 0 
 END
 IF prisoner[$indep_atr[i]] = 3:
  if prisoner_rate[$indep_atr[i]] <= -40: prisoner[$indep_atr[i]] = 2 & prisoner_rate[$indep_atr[i]] = 0
- if prisoner_rate[$indep_atr[i]] => 40: prisoner[$indep_atr[i]] = 4 & prisoner_rate[$indep_atr[i]] = 0 
+ if prisoner_rate[$indep_atr[i]] >= 40: prisoner[$indep_atr[i]] = 4 & prisoner_rate[$indep_atr[i]] = 0 
 END
 IF prisoner[$indep_atr[i]] = 4:
- if prisoner_rate[$indep_atr[i]] <= -60: prisoner[$indep_atr[i]] = 3 & prisoner_rate[$indep_atr[i]] = 0
- if prisoner_rate[$indep_atr[i]] => 60: prisoner[$indep_atr[i]] = 5 & prisoner_rate[$indep_atr[i]] = 0 
+ if prisoner_rate[$indep_atr[i]] <= -80: prisoner[$indep_atr[i]] = 3 & prisoner_rate[$indep_atr[i]] = 0
+ if prisoner_rate[$indep_atr[i]] >= 80: prisoner[$indep_atr[i]] = 5 & prisoner_rate[$indep_atr[i]] = 0 
 END
 IF prisoner[$indep_atr[i]] = 5:
- if prisoner_rate[$indep_atr[i]] <= -80: prisoner[$indep_atr[i]] = 4 & prisoner_rate[$indep_atr[i]] = 0
- if prisoner_rate[$indep_atr[i]] => 80: prisoner[$indep_atr[i]] = 6 & prisoner_rate[$indep_atr[i]] = 0 
-END
-IF prisoner[$indep_atr[i]] = 6:
- if prisoner_rate[$indep_atr[i]] <= -120: prisoner[$indep_atr[i]] = 5 & prisoner_rate[$indep_atr[i]] = 0
- if prisoner_rate[$indep_atr[i]] => 120: prisoner[$indep_atr[i]] = 7 & prisoner_rate[$indep_atr[i]] = 0 
-END
-IF prisoner[$indep_atr[i]] = 7:
- if prisoner_rate[$indep_atr[i]] <= -140: prisoner[$indep_atr[i]] = 6 & prisoner_rate[$indep_atr[i]] = 0
- if prisoner_rate[$indep_atr[i]] => 140: prisoner[$indep_atr[i]] = 8 & prisoner_rate[$indep_atr[i]] = 0 
-END
-IF prisoner[$indep_atr[i]] = 8:
- if prisoner_rate[$indep_atr[i]] <= -160: prisoner[$indep_atr[i]] = 7 & prisoner_rate[$indep_atr[i]] = 0
- if prisoner_rate[$indep_atr[i]] => 160: prisoner[$indep_atr[i]] = 9 & prisoner_rate[$indep_atr[i]] = 0 
-END
-IF prisoner[$indep_atr[i]] = 9:
- if prisoner_rate[$indep_atr[i]] <= -180: prisoner[$indep_atr[i]] = 8 & prisoner_rate[$indep_atr[i]] = 0
- if prisoner_rate[$indep_atr[i]] => 180: prisoner[$indep_atr[i]] = 10 & prisoner_rate[$indep_atr[i]] = 0 
-END
-IF prisoner[$indep_atr[i]] = 10:
  if prisoner_rate[$indep_atr[i]] > 10: prisoner_rate[$indep_atr[i]] = 10
- if prisoner_rate[$indep_atr[i]] <= -180: prisoner[$indep_atr[i]] = 8 & prisoner_rate[$indep_atr[i]] = 0  
+ if prisoner_rate[$indep_atr[i]] <= -80: prisoner[$indep_atr[i]] = 4 & prisoner_rate[$indep_atr[i]] = 0  
 END
 
 if i < n: jump 'slave_independent_loop'
@@ -537,71 +162,6 @@ affinity['music'] = slave["music_affinity"]
 affinity['callisthenics'] = slave["callisthenics_affinity"]
 affinity['secretary'] = slave["secretary_affinity"]
 
-affinity_1['expression'] = slave_1["expression_affinity"]
-affinity_1['pet'] = slave_1["pet_affinity"]
-affinity_1['dressage'] = slave_1["dressage_affinity"]
-affinity_1['nurse'] = slave_1["nurse_affinity"]
-affinity_1['service'] = slave_1["service_affinity"]
-affinity_1['cook'] = slave_1["cook_affinity"]
-affinity_1['gladiatrix'] = slave_1["gladiatrix_affinity"]
-affinity_1['enchanter'] = slave_1["enchanter_affinity"]
-affinity_1['vocal'] = slave_1["vocal_affinity"]
-affinity_1['music'] = slave_1["music_affinity"]
-affinity_1['callisthenics'] = slave_1["callisthenics_affinity"]
-affinity_1['secretary'] = slave_1["secretary_affinity"]
-
-affinity_2['expression'] = slave_2["expression_affinity"]
-affinity_2['pet'] = slave_2["pet_affinity"]
-affinity_2['dressage'] = slave_2["dressage_affinity"]
-affinity_2['nurse'] = slave_2["nurse_affinity"]
-affinity_2['service'] = slave_2["service_affinity"]
-affinity_2['cook'] = slave_2["cook_affinity"]
-affinity_2['gladiatrix'] = slave_2["gladiatrix_affinity"]
-affinity_2['enchanter'] = slave_2["enchanter_affinity"]
-affinity_2['vocal'] = slave_2["vocal_affinity"]
-affinity_2['music'] = slave_2["music_affinity"]
-affinity_2['callisthenics'] = slave_2["callisthenics_affinity"]
-affinity_2['secretary'] = slave_2["secretary_affinity"]
-
-affinity_3['expression'] = slave_3["expression_affinity"]
-affinity_3['pet'] = slave_3["pet_affinity"]
-affinity_3['dressage'] = slave_3["dressage_affinity"]
-affinity_3['nurse'] = slave_3["nurse_affinity"]
-affinity_3['service'] = slave_3["service_affinity"]
-affinity_3['cook'] = slave_3["cook_affinity"]
-affinity_3['gladiatrix'] = slave_3["gladiatrix_affinity"]
-affinity_3['enchanter'] = slave_3["enchanter_affinity"]
-affinity_3['vocal'] = slave_3["vocal_affinity"]
-affinity_3['music'] = slave_3["music_affinity"]
-affinity_3['callisthenics'] = slave_3["callisthenics_affinity"]
-affinity_3['secretary'] = slave_3["secretary_affinity"]
-
-affinity_4['expression'] = slave_4["expression_affinity"]
-affinity_4['pet'] = slave_4["pet_affinity"]
-affinity_4['dressage'] = slave_4["dressage_affinity"]
-affinity_4['nurse'] = slave_4["nurse_affinity"]
-affinity_4['service'] = slave_4["service_affinity"]
-affinity_4['cook'] = slave_4["cook_affinity"]
-affinity_4['gladiatrix'] = slave_4["gladiatrix_affinity"]
-affinity_4['enchanter'] = slave_4["enchanter_affinity"]
-affinity_4['vocal'] = slave_4["vocal_affinity"]
-affinity_4['music'] = slave_4["music_affinity"]
-affinity_4['callisthenics'] = slave_4["callisthenics_affinity"]
-affinity_4['secretary'] = slave_4["secretary_affinity"]
-
-affinity_5['expression'] = slave_5["expression_affinity"]
-affinity_5['pet'] = slave_5["pet_affinity"]
-affinity_5['dressage'] = slave_5["dressage_affinity"]
-affinity_5['nurse'] = slave_5["nurse_affinity"]
-affinity_5['service'] = slave_5["service_affinity"]
-affinity_5['cook'] = slave_5["cook_affinity"]
-affinity_5['gladiatrix'] = slave_5["gladiatrix_affinity"]
-affinity_5['enchanter'] = slave_5["enchanter_affinity"]
-affinity_5['vocal'] = slave_5["vocal_affinity"]
-affinity_5['music'] = slave_5["music_affinity"]
-affinity_5['callisthenics'] = slave_5["callisthenics_affinity"]
-affinity_5['secretary'] = slave_5["secretary_affinity"]
-
 i = 0
 slave_rm = 0
 assistant_rm = 0
@@ -611,11 +171,6 @@ n -= 1
 i += 1
 
 if affinity[$dep_atr[i]] <= 0: slave_rm += slave[$dep_atr[i]]
-if affinity_1[$dep_atr[i]] <= 0: slave_rm += slave_1[$dep_atr[i]]
-if affinity_2[$dep_atr[i]] <= 0: slave_rm += slave_2[$dep_atr[i]]
-if affinity_3[$dep_atr[i]] <= 0: slave_rm += slave_3[$dep_atr[i]]
-if affinity_4[$dep_atr[i]] <= 0: slave_rm += slave_4[$dep_atr[i]]
-if affinity_5[$dep_atr[i]] <= 0: slave_rm += slave_5[$dep_atr[i]]
 assistant_rm += assistant[$dep_atr[i]]
  
 if i < n: jump 'affinity_loop'
@@ -625,349 +180,69 @@ if i < n: jump 'affinity_loop'
 i = 0
 :slave_dependent_loop
 i += 1
-srd1 = 5
-srd2 = 10
-srd3 = 20
-srd4 = 40
-srd5 = 60
-srd6 = 80
-srd7 = 100
-srd8 = 120
-srd9 = 140
+srd1 = 5 
+srd2 = 10 
+srd3 = 20 
+srd4 = 40 
 
 IF affinity[$dep_atr[i]] <= 0:
  srd1 += slave_rm/2
  srd2 += slave_rm
  srd3 += slave_rm*2
  srd4 += slave_rm*3
- srd5 += slave_rm*4
- srd6 += slave_rm*5
- srd7 += slave_rm*6
- srd8 += slave_rm*7
- srd9 += slave_rm*8
 END
 
 ard1 = 5 + assistant_rm/2
 ard2 = 10 + assistant_rm
 ard3 = 20 + assistant_rm*2
-ard4 = 40 + assistant_rm*3
-ard5 = 60 + assistant_rm*4
-ard6 = 80 + assistant_rm*5
-ard7 = 100 + assistant_rm*6
-ard8 = 120 + assistant_rm*7
-ard9 = 140 + assistant_rm*8
+ard4 = 40 + assistant_rm*3 
 
 IF slave[$dep_atr[i]] = 0:
  if slave_rate[$dep_atr[i]] < 0: slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd1: slave[$dep_atr[i]] = 1 & slave_rate[$dep_atr[i]] = 0 
+ if slave_rate[$dep_atr[i]] >= srd1: slave[$dep_atr[i]] = 1 & slave_rate[$dep_atr[i]] = 0 
 END
 IF slave[$dep_atr[i]] = 1:
  if slave_rate[$dep_atr[i]] <= -srd1: slave[$dep_atr[i]] = 0 & slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd1: slave[$dep_atr[i]] = 2 & slave_rate[$dep_atr[i]] = 0 
+ if slave_rate[$dep_atr[i]] >= srd1: slave[$dep_atr[i]] = 2 & slave_rate[$dep_atr[i]] = 0 
 END
 IF slave[$dep_atr[i]] = 2:
  if slave_rate[$dep_atr[i]] <= -srd2: slave[$dep_atr[i]] = 1 & slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd2: slave[$dep_atr[i]] = 3 & slave_rate[$dep_atr[i]] = 0 
+ if slave_rate[$dep_atr[i]] >= srd2: slave[$dep_atr[i]] = 3 & slave_rate[$dep_atr[i]] = 0 
 END
 IF slave[$dep_atr[i]] = 3:
  if slave_rate[$dep_atr[i]] <= -srd3: slave[$dep_atr[i]] = 2 & slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd3: slave[$dep_atr[i]] = 4 & slave_rate[$dep_atr[i]] = 0 
+ if slave_rate[$dep_atr[i]] >= srd3: slave[$dep_atr[i]] = 4 & slave_rate[$dep_atr[i]] = 0 
 END
 IF slave[$dep_atr[i]] = 4:
  if slave_rate[$dep_atr[i]] <= -srd4: slave[$dep_atr[i]] = 3 & slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd4: slave[$dep_atr[i]] = 5 & slave_rate[$dep_atr[i]] = 0 
+ if slave_rate[$dep_atr[i]] >= srd4: slave[$dep_atr[i]] = 5 & slave_rate[$dep_atr[i]] = 0 
 END
 IF slave[$dep_atr[i]] = 5:
- if slave_rate[$dep_atr[i]] <= -srd5: slave[$dep_atr[i]] = 4 & slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd5: slave[$dep_atr[i]] = 6 & slave_rate[$dep_atr[i]] = 0 
-END
-IF slave[$dep_atr[i]] = 6:
- if slave_rate[$dep_atr[i]] <= -srd6: slave[$dep_atr[i]] = 5 & slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd6: slave[$dep_atr[i]] = 7 & slave_rate[$dep_atr[i]] = 0 
-END
-IF slave[$dep_atr[i]] = 7:
- if slave_rate[$dep_atr[i]] <= -srd7: slave[$dep_atr[i]] = 6 & slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd7: slave[$dep_atr[i]] = 8 & slave_rate[$dep_atr[i]] = 0 
-END
-IF slave[$dep_atr[i]] = 8:
- if slave_rate[$dep_atr[i]] <= -srd8: slave[$dep_atr[i]] = 7 & slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd8: slave[$dep_atr[i]] = 9 & slave_rate[$dep_atr[i]] = 0 
-END
-IF slave[$dep_atr[i]] = 9:
- if slave_rate[$dep_atr[i]] <= -srd9: slave[$dep_atr[i]] = 8 & slave_rate[$dep_atr[i]] = 0
- if slave_rate[$dep_atr[i]] => srd9: slave[$dep_atr[i]] = 10 & slave_rate[$dep_atr[i]] = 0 
-END
-IF slave[$dep_atr[i]] = 10:
  if slave_rate[$dep_atr[i]] > 10: slave_rate[$dep_atr[i]] = 10
  if slave_rate[$dep_atr[i]] < 0: slave_rate[$dep_atr[i]] = 0
 END
 
-IF slave_1[$dep_atr[i]] = 0:
- if slave_rate_1[$dep_atr[i]] < 0: slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd1: slave_1[$dep_atr[i]] = 1 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 1:
- if slave_rate_1[$dep_atr[i]] <= -srd1: slave_1[$dep_atr[i]] = 0 & slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd1: slave_1[$dep_atr[i]] = 2 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 2:
- if slave_rate_1[$dep_atr[i]] <= -srd2: slave_1[$dep_atr[i]] = 1 & slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd2: slave_1[$dep_atr[i]] = 3 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 3:
- if slave_rate_1[$dep_atr[i]] <= -srd3: slave_1[$dep_atr[i]] = 2 & slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd3: slave_1[$dep_atr[i]] = 4 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 4:
- if slave_rate_1[$dep_atr[i]] <= -srd4: slave_1[$dep_atr[i]] = 3 & slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd4: slave_1[$dep_atr[i]] = 5 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 5:
- if slave_rate_1[$dep_atr[i]] <= -srd5: slave_1[$dep_atr[i]] = 4 & slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd5: slave_1[$dep_atr[i]] = 6 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 6:
- if slave_rate_1[$dep_atr[i]] <= -srd6: slave_1[$dep_atr[i]] = 5 & slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd6: slave_1[$dep_atr[i]] = 7 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 7:
- if slave_rate_1[$dep_atr[i]] <= -srd7: slave_1[$dep_atr[i]] = 6 & slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd7: slave_1[$dep_atr[i]] = 8 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 8:
- if slave_rate_1[$dep_atr[i]] <= -srd8: slave_1[$dep_atr[i]] = 7 & slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd8: slave_1[$dep_atr[i]] = 9 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 9:
- if slave_rate_1[$dep_atr[i]] <= -srd9: slave_1[$dep_atr[i]] = 8 & slave_rate_1[$dep_atr[i]] = 0
- if slave_rate_1[$dep_atr[i]] => srd9: slave_1[$dep_atr[i]] = 10 & slave_rate_1[$dep_atr[i]] = 0 
-END
-IF slave_1[$dep_atr[i]] = 10:
- if slave_rate_1[$dep_atr[i]] > 10: slave_rate_1[$dep_atr[i]] = 10
- if slave_rate_1[$dep_atr[i]] < 0: slave_rate_1[$dep_atr[i]] = 0
-END
-
-IF slave_2[$dep_atr[i]] = 0:
- if slave_rate_2[$dep_atr[i]] < 0: slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd1: slave_2[$dep_atr[i]] = 1 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 1:
- if slave_rate_2[$dep_atr[i]] <= -srd1: slave_2[$dep_atr[i]] = 0 & slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd1: slave_2[$dep_atr[i]] = 2 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 2:
- if slave_rate_2[$dep_atr[i]] <= -srd2: slave_2[$dep_atr[i]] = 1 & slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd2: slave_2[$dep_atr[i]] = 3 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 3:
- if slave_rate_2[$dep_atr[i]] <= -srd3: slave_2[$dep_atr[i]] = 2 & slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd3: slave_2[$dep_atr[i]] = 4 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 4:
- if slave_rate_2[$dep_atr[i]] <= -srd4: slave_2[$dep_atr[i]] = 3 & slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd4: slave_2[$dep_atr[i]] = 5 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 5:
- if slave_rate_2[$dep_atr[i]] <= -srd5: slave_2[$dep_atr[i]] = 4 & slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd5: slave_2[$dep_atr[i]] = 6 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 6:
- if slave_rate_2[$dep_atr[i]] <= -srd6: slave_2[$dep_atr[i]] = 5 & slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd6: slave_2[$dep_atr[i]] = 7 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 7:
- if slave_rate_2[$dep_atr[i]] <= -srd7: slave_2[$dep_atr[i]] = 6 & slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd7: slave_2[$dep_atr[i]] = 8 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 8:
- if slave_rate_2[$dep_atr[i]] <= -srd8: slave_2[$dep_atr[i]] = 7 & slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd8: slave_2[$dep_atr[i]] = 9 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 9:
- if slave_rate_2[$dep_atr[i]] <= -srd9: slave_2[$dep_atr[i]] = 8 & slave_rate_2[$dep_atr[i]] = 0
- if slave_rate_2[$dep_atr[i]] => srd9: slave_2[$dep_atr[i]] = 10 & slave_rate_2[$dep_atr[i]] = 0 
-END
-IF slave_2[$dep_atr[i]] = 10:
- if slave_rate_2[$dep_atr[i]] > 10: slave_rate_2[$dep_atr[i]] = 10
- if slave_rate_2[$dep_atr[i]] < 0: slave_rate_2[$dep_atr[i]] = 0
-END
-
-IF slave_3[$dep_atr[i]] = 0:
- if slave_rate_3[$dep_atr[i]] < 0: slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd1: slave_3[$dep_atr[i]] = 1 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 1:
- if slave_rate_3[$dep_atr[i]] <= -srd1: slave_3[$dep_atr[i]] = 0 & slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd1: slave_3[$dep_atr[i]] = 2 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 2:
- if slave_rate_3[$dep_atr[i]] <= -srd2: slave_3[$dep_atr[i]] = 1 & slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd2: slave_3[$dep_atr[i]] = 3 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 3:
- if slave_rate_3[$dep_atr[i]] <= -srd3: slave_3[$dep_atr[i]] = 2 & slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd3: slave_3[$dep_atr[i]] = 4 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 4:
- if slave_rate_3[$dep_atr[i]] <= -srd4: slave_3[$dep_atr[i]] = 3 & slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd4: slave_3[$dep_atr[i]] = 5 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 5:
- if slave_rate_3[$dep_atr[i]] <= -srd5: slave_3[$dep_atr[i]] = 4 & slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd5: slave_3[$dep_atr[i]] = 6 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 6:
- if slave_rate_3[$dep_atr[i]] <= -srd6: slave_3[$dep_atr[i]] = 5 & slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd6: slave_3[$dep_atr[i]] = 7 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 7:
- if slave_rate_3[$dep_atr[i]] <= -srd7: slave_3[$dep_atr[i]] = 6 & slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd7: slave_3[$dep_atr[i]] = 8 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 8:
- if slave_rate_3[$dep_atr[i]] <= -srd8: slave_3[$dep_atr[i]] = 7 & slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd8: slave_3[$dep_atr[i]] = 9 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 9:
- if slave_rate_3[$dep_atr[i]] <= -srd9: slave_3[$dep_atr[i]] = 8 & slave_rate_3[$dep_atr[i]] = 0
- if slave_rate_3[$dep_atr[i]] => srd9: slave_3[$dep_atr[i]] = 10 & slave_rate_3[$dep_atr[i]] = 0 
-END
-IF slave_3[$dep_atr[i]] = 10:
- if slave_rate_3[$dep_atr[i]] > 10: slave_rate_3[$dep_atr[i]] = 10
- if slave_rate_3[$dep_atr[i]] < 0: slave_rate_3[$dep_atr[i]] = 0
-END
-
-IF slave_4[$dep_atr[i]] = 0:
- if slave_rate_4[$dep_atr[i]] < 0: slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd1: slave_4[$dep_atr[i]] = 1 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 1:
- if slave_rate_4[$dep_atr[i]] <= -srd1: slave_4[$dep_atr[i]] = 0 & slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd1: slave_4[$dep_atr[i]] = 2 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 2:
- if slave_rate_4[$dep_atr[i]] <= -srd2: slave_4[$dep_atr[i]] = 1 & slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd2: slave_4[$dep_atr[i]] = 3 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 3:
- if slave_rate_4[$dep_atr[i]] <= -srd3: slave_4[$dep_atr[i]] = 2 & slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd3: slave_4[$dep_atr[i]] = 4 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 4:
- if slave_rate_4[$dep_atr[i]] <= -srd4: slave_4[$dep_atr[i]] = 3 & slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd4: slave_4[$dep_atr[i]] = 5 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 5:
- if slave_rate_4[$dep_atr[i]] <= -srd5: slave_4[$dep_atr[i]] = 4 & slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd5: slave_4[$dep_atr[i]] = 6 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 6:
- if slave_rate_4[$dep_atr[i]] <= -srd6: slave_4[$dep_atr[i]] = 5 & slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd6: slave_4[$dep_atr[i]] = 7 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 7:
- if slave_rate_4[$dep_atr[i]] <= -srd7: slave_4[$dep_atr[i]] = 6 & slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd7: slave_4[$dep_atr[i]] = 8 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 8:
- if slave_rate_4[$dep_atr[i]] <= -srd8: slave_4[$dep_atr[i]] = 7 & slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd8: slave_4[$dep_atr[i]] = 9 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 9:
- if slave_rate_4[$dep_atr[i]] <= -srd9: slave_4[$dep_atr[i]] = 8 & slave_rate_4[$dep_atr[i]] = 0
- if slave_rate_4[$dep_atr[i]] => srd9: slave_4[$dep_atr[i]] = 10 & slave_rate_4[$dep_atr[i]] = 0 
-END
-IF slave_4[$dep_atr[i]] = 10:
- if slave_rate_4[$dep_atr[i]] > 10: slave_rate_4[$dep_atr[i]] = 10
- if slave_rate_4[$dep_atr[i]] < 0: slave_rate_4[$dep_atr[i]] = 0
-END
-
-IF slave_5[$dep_atr[i]] = 0:
- if slave_rate_5[$dep_atr[i]] < 0: slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd1: slave_5[$dep_atr[i]] = 1 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 1:
- if slave_rate_5[$dep_atr[i]] <= -srd1: slave_5[$dep_atr[i]] = 0 & slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd1: slave_5[$dep_atr[i]] = 2 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 2:
- if slave_rate_5[$dep_atr[i]] <= -srd2: slave_5[$dep_atr[i]] = 1 & slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd2: slave_5[$dep_atr[i]] = 3 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 3:
- if slave_rate_5[$dep_atr[i]] <= -srd3: slave_5[$dep_atr[i]] = 2 & slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd3: slave_5[$dep_atr[i]] = 4 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 4:
- if slave_rate_5[$dep_atr[i]] <= -srd4: slave_5[$dep_atr[i]] = 3 & slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd4: slave_5[$dep_atr[i]] = 5 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 5:
- if slave_rate_5[$dep_atr[i]] <= -srd5: slave_5[$dep_atr[i]] = 4 & slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd5: slave_5[$dep_atr[i]] = 6 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 6:
- if slave_rate_5[$dep_atr[i]] <= -srd6: slave_5[$dep_atr[i]] = 5 & slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd6: slave_5[$dep_atr[i]] = 7 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 7:
- if slave_rate_5[$dep_atr[i]] <= -srd7: slave_5[$dep_atr[i]] = 6 & slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd7: slave_5[$dep_atr[i]] = 8 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 8:
- if slave_rate_5[$dep_atr[i]] <= -srd8: slave_5[$dep_atr[i]] = 7 & slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd8: slave_5[$dep_atr[i]] = 9 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 9:
- if slave_rate_5[$dep_atr[i]] <= -srd9: slave_5[$dep_atr[i]] = 8 & slave_rate_5[$dep_atr[i]] = 0
- if slave_rate_5[$dep_atr[i]] => srd9: slave_5[$dep_atr[i]] = 10 & slave_rate_5[$dep_atr[i]] = 0 
-END
-IF slave_5[$dep_atr[i]] = 10:
- if slave_rate_5[$dep_atr[i]] > 10: slave_rate_5[$dep_atr[i]] = 10
- if slave_rate_5[$dep_atr[i]] < 0: slave_rate_5[$dep_atr[i]] = 0
-END
-
 IF assistant[$dep_atr[i]] = 0:
  if assistant_rate[$dep_atr[i]] < 0: assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd1: assistant[$dep_atr[i]] = 1 & assistant_rate[$dep_atr[i]] = 0 
+ if assistant_rate[$dep_atr[i]] >= srd1: assistant[$dep_atr[i]] = 1 & assistant_rate[$dep_atr[i]] = 0 
 END
 IF assistant[$dep_atr[i]] = 1:
  if assistant_rate[$dep_atr[i]] <= -srd1: assistant[$dep_atr[i]] = 0 & assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd1: assistant[$dep_atr[i]] = 2 & assistant_rate[$dep_atr[i]] = 0 
+ if assistant_rate[$dep_atr[i]] >= srd1: assistant[$dep_atr[i]] = 2 & assistant_rate[$dep_atr[i]] = 0 
 END
 IF assistant[$dep_atr[i]] = 2:
  if assistant_rate[$dep_atr[i]] <= -srd2: assistant[$dep_atr[i]] = 1 & assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd2: assistant[$dep_atr[i]] = 3 & assistant_rate[$dep_atr[i]] = 0 
+ if assistant_rate[$dep_atr[i]] >= srd2: assistant[$dep_atr[i]] = 3 & assistant_rate[$dep_atr[i]] = 0 
 END
 IF assistant[$dep_atr[i]] = 3:
  if assistant_rate[$dep_atr[i]] <= -srd3: assistant[$dep_atr[i]] = 2 & assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd3: assistant[$dep_atr[i]] = 4 & assistant_rate[$dep_atr[i]] = 0 
+ if assistant_rate[$dep_atr[i]] >= srd3: assistant[$dep_atr[i]] = 4 & assistant_rate[$dep_atr[i]] = 0 
 END
 IF assistant[$dep_atr[i]] = 4:
  if assistant_rate[$dep_atr[i]] <= -srd4: assistant[$dep_atr[i]] = 3 & assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd4: assistant[$dep_atr[i]] = 5 & assistant_rate[$dep_atr[i]] = 0 
+ if assistant_rate[$dep_atr[i]] >= srd4: assistant[$dep_atr[i]] = 5 & assistant_rate[$dep_atr[i]] = 0 
 END
 IF assistant[$dep_atr[i]] = 5:
- if assistant_rate[$dep_atr[i]] <= -srd5: assistant[$dep_atr[i]] = 4 & assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd5: assistant[$dep_atr[i]] = 6 & assistant_rate[$dep_atr[i]] = 0 
-END
-IF assistant[$dep_atr[i]] = 6:
- if assistant_rate[$dep_atr[i]] <= -srd6: assistant[$dep_atr[i]] = 5 & assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd6: assistant[$dep_atr[i]] = 7 & assistant_rate[$dep_atr[i]] = 0 
-END
-IF assistant[$dep_atr[i]] = 7:
- if assistant_rate[$dep_atr[i]] <= -srd7: assistant[$dep_atr[i]] = 6 & assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd7: assistant[$dep_atr[i]] = 8 & assistant_rate[$dep_atr[i]] = 0 
-END
-IF assistant[$dep_atr[i]] = 8:
- if assistant_rate[$dep_atr[i]] <= -srd8: assistant[$dep_atr[i]] = 7 & assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd8: assistant[$dep_atr[i]] = 9 & assistant_rate[$dep_atr[i]] = 0 
-END
-IF assistant[$dep_atr[i]] = 9:
- if assistant_rate[$dep_atr[i]] <= -srd9: assistant[$dep_atr[i]] = 8 & assistant_rate[$dep_atr[i]] = 0
- if assistant_rate[$dep_atr[i]] => srd9: assistant[$dep_atr[i]] = 10 & assistant_rate[$dep_atr[i]] = 0 
-END
-IF assistant[$dep_atr[i]] = 10:
  if assistant_rate[$dep_atr[i]] > 10: assistant_rate[$dep_atr[i]] = 10
  if assistant_rate[$dep_atr[i]] < 0: assistant_rate[$dep_atr[i]] = 0
 END
@@ -1070,16 +345,11 @@ i += 1
 
 dynamic '
 <<$master[$hero_con[i]]>> = 0
-if <<$master_rate[$hero_con[i]]>> => 10: <<$master[$hero_con[i]]>> = 1
-if <<$master_rate[$hero_con[i]]>> => 10: <<$master[$hero_con[i]]>> = 2
-if <<$master_rate[$hero_con[i]]>> => 20: <<$master[$hero_con[i]]>> = 3
-if <<$master_rate[$hero_con[i]]>> => 40: <<$master[$hero_con[i]]>> = 4
-if <<$master_rate[$hero_con[i]]>> => 60: <<$master[$hero_con[i]]>> = 5
-if <<$master_rate[$hero_con[i]]>> => 80: <<$master[$hero_con[i]]>> = 6
-if <<$master_rate[$hero_con[i]]>> => 120: <<$master[$hero_con[i]]>> = 7
-if <<$master_rate[$hero_con[i]]>> => 140: <<$master[$hero_con[i]]>> = 8
-if <<$master_rate[$hero_con[i]]>> => 160: <<$master[$hero_con[i]]>> = 9
-if <<$master_rate[$hero_con[i]]>> => 180: <<$master[$hero_con[i]]>> = 10
+if <<$master_rate[$hero_con[i]]>> >= 10: <<$master[$hero_con[i]]>> = 1
+if <<$master_rate[$hero_con[i]]>> >= 20: <<$master[$hero_con[i]]>> = 2
+if <<$master_rate[$hero_con[i]]>> >= 40: <<$master[$hero_con[i]]>> = 3
+if <<$master_rate[$hero_con[i]]>> >= 80: <<$master[$hero_con[i]]>> = 4
+if <<$master_rate[$hero_con[i]]>> >= 160: <<$master[$hero_con[i]]>> = 5
 '
 
 if i < n: jump 'master_cont_loop'
@@ -1104,55 +374,30 @@ i += 1
 
 hrd1 = 1 + hrm/2
 hrd2 = 10 + hrm
-hrd3 = 15 + hrm*2
-hrd4 = 20 + hrm*2
-hrd5 = 25 + hrm*2
-hrd6 = 30 + hrm*3
-hrd7 = 35 + hrm*3
-hrd8 = 40 + hrm*4
-hrd9 = 60 + hrm*4
+hrd3 = 20 + hrm*2
+hrd4 = 40 + hrm*3
 
 IF master[$hero_dep[i]] = 0:
  if master_rate[$hero_dep[i]] < 0: master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd1: master[$hero_dep[i]] = 1 & master_rate[$hero_dep[i]] = 0 
+ if master_rate[$hero_dep[i]] >= hrd1: master[$hero_dep[i]] = 1 & master_rate[$hero_dep[i]] = 0 
 END
 IF master[$hero_dep[i]] = 1:
  if master_rate[$hero_dep[i]] <= -hrd1: master[$hero_dep[i]] = 0 & master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd1: master[$hero_dep[i]] = 2 & master_rate[$hero_dep[i]] = 0 
+ if master_rate[$hero_dep[i]] >= hrd1: master[$hero_dep[i]] = 2 & master_rate[$hero_dep[i]] = 0 
 END
 IF master[$hero_dep[i]] = 2:
  if master_rate[$hero_dep[i]] <= -hrd2: master[$hero_dep[i]] = 1 & master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd2: master[$hero_dep[i]] = 3 & master_rate[$hero_dep[i]] = 0 
+ if master_rate[$hero_dep[i]] >= hrd2: master[$hero_dep[i]] = 3 & master_rate[$hero_dep[i]] = 0 
 END
 IF master[$hero_dep[i]] = 3:
  if master_rate[$hero_dep[i]] <= -hrd3: master[$hero_dep[i]] = 2 & master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd3: master[$hero_dep[i]] = 4 & master_rate[$hero_dep[i]] = 0 
+ if master_rate[$hero_dep[i]] >= hrd3: master[$hero_dep[i]] = 4 & master_rate[$hero_dep[i]] = 0 
 END
 IF master[$hero_dep[i]] = 4:
  if master_rate[$hero_dep[i]] <= -hrd4: master[$hero_dep[i]] = 3 & master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd4: master[$hero_dep[i]] = 5 & master_rate[$hero_dep[i]] = 0 
+ if master_rate[$hero_dep[i]] >= hrd4: master[$hero_dep[i]] = 5 & master_rate[$hero_dep[i]] = 0 
 END
 IF master[$hero_dep[i]] = 5:
- if master_rate[$hero_dep[i]] <= -hrd5: master[$hero_dep[i]] = 4 & master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd5: master[$hero_dep[i]] = 6 & master_rate[$hero_dep[i]] = 0 
-END
-IF master[$hero_dep[i]] = 6:
- if master_rate[$hero_dep[i]] <= -hrd6: master[$hero_dep[i]] = 5 & master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd6: master[$hero_dep[i]] = 7 & master_rate[$hero_dep[i]] = 0 
-END
-IF master[$hero_dep[i]] = 7:
- if master_rate[$hero_dep[i]] <= -hrd7: master[$hero_dep[i]] = 6 & master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd7: master[$hero_dep[i]] = 8 & master_rate[$hero_dep[i]] = 0 
-END
-IF master[$hero_dep[i]] = 8:
- if master_rate[$hero_dep[i]] <= -hrd8: master[$hero_dep[i]] = 7 & master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd8: master[$hero_dep[i]] = 9 & master_rate[$hero_dep[i]] = 0 
-END
-IF master[$hero_dep[i]] = 9:
- if master_rate[$hero_dep[i]] <= -hrd9: master[$hero_dep[i]] = 8 & master_rate[$hero_dep[i]] = 0
- if master_rate[$hero_dep[i]] => hrd9: master[$hero_dep[i]] = 10 & master_rate[$hero_dep[i]] = 0 
-END
-IF master[$hero_dep[i]] = 10:
  if master_rate[$hero_dep[i]] > 10: master_rate[$hero_dep[i]] = 10
  if master_rate[$hero_dep[i]] < 0: master_rate[$hero_dep[i]] = 0
 END
@@ -1196,41 +441,41 @@ master_medic = master_medic_own + boost_up['master_medic']
 master_fighter = master_fighter_own + boost_up['master_fighter']
 master_mage = master_mage_own + boost_up['master_mage']
 
-if master_str > 10: master_str = 10
+if master_str > 5: master_str = 5
 if master_str < 0: master_str = 0
-if master_cha > 10: master_cha = 10
+if master_cha > 5: master_cha = 5
 if master_cha < 0: master_cha = 0
-if master_style > 10: master_style = 10
+if master_style > 5: master_style = 5
 if master_style < 0: master_style = 0
-if master_libido > 10: master_libido = 10
+if master_libido > 5: master_libido = 5
 if master_libido < 0: master_libido = 0
-if master_tutor > 10: master_tutor = 10
+if master_tutor > 5: master_tutor = 5
 if master_tutor < 0: master_tutor = 0
-if master_fighter > 10: master_fighter = 10
+if master_fighter > 6: master_fighter = 6
 if master_fighter < 0: master_fighter = 0
-if master_butler > 10: master_butler = 10
+if master_butler > 6: master_butler = 6
 if master_butler < 0: master_butler = 0
-if master_artdirector > 10: master_artdirector = 10
+if master_artdirector > 6: master_artdirector = 6
 if master_artdirector < 0: master_artdirector = 0
-if master_medic > 10: master_medic = 10
+if master_medic > 6: master_medic = 6
 if master_medic < 0: master_medic = 0
-if master_mage > 10: master_mage = 10
+if master_mage > 6: master_mage = 6
 if master_mage < 0: master_mage = 0
-if master_torture > 10: master_torture = 10
+if master_torture > 5: master_torture = 5
 if master_torture < 0: master_torture = 0
-if master_domination > 10: master_domination = 10
+if master_domination > 5: master_domination = 5
 if master_domination < 0: master_domination = 0
-if master_bondage > 10: master_bondage = 10
+if master_bondage > 5: master_bondage = 5
 if master_bondage < 0: master_bondage = 0
-if master_flagelation > 10: master_flagelation = 10
+if master_flagelation > 5: master_flagelation = 5
 if master_flagelation < 0: master_flagelation = 0
-if master_petting > 10: master_petting = 10
+if master_petting > 5: master_petting = 5
 if master_petting < 0: master_petting = 0
-if master_oral > 10: master_oral = 10
+if master_oral > 5: master_oral = 5
 if master_oral < 0: master_oral = 0
-if master_penetration > 10: master_penetration = 10
+if master_penetration > 5: master_penetration = 5
 if master_penetration < 0: master_penetration = 0
-if master_fetish > 10: master_fetish = 10
+if master_fetish > 5: master_fetish = 5
 if master_fetish < 0: master_fetish = 0
 
 --- $calculate_atributes ---------------------------------

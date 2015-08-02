@@ -4,21 +4,21 @@ GS '_layout'
 copyarr '$special_image', '$fullimage'
 
 IF slave['age'] = CONST_INT['young_age'] and txt = 0:
- txt = 201
- min_txt = 201
- txt_count = 273
+ txt = young_first
+ min_txt = young_first
+ txt_count = young_last
 END
 
 IF slave['age'] = CONST_INT['loli_age'] and txt = 0:
- txt = 1
- min_txt = 1
- txt_count = 58
+ txt = loli_first
+ min_txt = loli_first
+ txt_count = loli_last
 END
 
 IF slave['age'] = CONST_INT['milf_age'] and txt = 0:
- txt = 501
- min_txt = 501
- txt_count = 569
+ txt = milf_first
+ min_txt = milf_first
+ txt_count = milf_last
 END
 
 $text[txt] = '   [Doctor]

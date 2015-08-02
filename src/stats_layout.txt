@@ -25,7 +25,5 @@ STATDESC_X = 810
 STATDESC_Y = 1
 STATDESC_W = 450
 STATDESC_H = 800
-
-
 --- stats_layout ---------------------------------
 

@@ -36,7 +36,7 @@ END
 !interaction type - slave sell simple scheme
 IF $interaction_type = 'sell_slave_simple':
  txt_count = 1
- if slave_specialisation[$interesting_specialisation[$npc_id]] => 1 and rating => demand_rating[$npc_id] and slave[$npc_id] = 0: byer_interested = 1 
+ if slave_specialisation[$interesting_specialisation[$npc_id]] >= 1 and rating >= demand_rating[$npc_id] and slave[$npc_id] = 0: byer_interested = 1 
  n = 13 + 2 * demand_rating[$npc_id]
  demand = rand(0,n)
  if demand > charm and byer_interested = 1: byer_interested += no_charm_check
@@ -74,7 +74,7 @@ END
 !interaction type - slave sell to clients from houses, new scheme
 IF $interaction_type = 'sell_slave_house':
  txt_count = 1
- if slave_specialisation[$interesting_specialisation[$npc_id]] => 1 and rating => demand_rating[$npc_id] and slave[$npc_id] = 0: byer_interested = 1 
+ if slave_specialisation[$interesting_specialisation[$npc_id]] >= 1 and rating >= demand_rating[$npc_id] and slave[$npc_id] = 0: byer_interested = 1 
  charm_demand_max = 8 + demand_rating[$npc_id]*2
  charm_demand = RAND (0,charm_demand_max)
  !charm_demand = 0
@@ -346,7 +346,7 @@ IF $interaction_type = 'buy_item':
  $picture_type = 'pic_jpg'
  if nsfw = 0: $special_bg  = "<<$item_demo[$item_id]>>"  
  $text[1] = $item_description[$item_id]
- IF sparks => item_price[$item_id]: 
+ IF sparks >= item_price[$item_id]: 
   $do_buy = {
   sparks -= item_price[$item_id]
   slave_inventory[$item_id] += 1} 
@@ -363,7 +363,7 @@ IF $interaction_type = 'buy_item_home':
  $picture_type = 'pic_jpg'
  if nsfw = 0: $special_bg  = "<<$item_demo[$item_id]>>"  
  $text[1] = $item_description[$item_id]
- IF sparks => item_price[$item_id]: 
+ IF sparks >= item_price[$item_id]: 
   $do_buy = {
   sparks -= item_price[$item_id]
   inventory[$item_id] += 1} 
@@ -380,7 +380,7 @@ IF $interaction_type = 'buy_item_personal':
  $picture_type = 'pic_jpg'
  if nsfw = 0: $special_bg  = "<<$item_demo[$item_id]>>"  
  $text[1] = $item_description[$item_id]
- IF sparks => item_price[$item_id]: 
+ IF sparks >= item_price[$item_id]: 
   $do_buy = {
  sparks -= item_price[$item_id]
  dynamic '<<$item_id>> += multiple'} 
@@ -397,7 +397,7 @@ IF $interaction_type = 'service':
  $return_lock  = 'shop_general'  
  $picture_type = 'pic_jpg'
  $special_bg  = $service_picture   
- IF sparks => item_price[$item_id]: 
+ IF sparks >= item_price[$item_id]: 
   sparks -= service_price
   dynamic $do_service
   else
