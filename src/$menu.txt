@@ -59,7 +59,7 @@ END
 
 IF $ARGS[0] = 'join_battle' :
   $text_display += $args[1]
-  $text_display +={<a href ='EXEC: & gt "начать_бой"'>}
+  $text_display +={<a href ='EXEC: & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"'>}
   $text_display +=$args[2] + '</a></li>'
 END
 

@@ -34,7 +34,7 @@ sp_txt = 0
 gs '$moodlets_account'
 quest_description_mode = 0
 
-!Тестовые значения
+!Ð¢ÐµÑ�Ñ‚Ð¾Ð²Ñ‹Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ�
 IF get_initial_slave = 1:
  $special_age = 'young'
  gs 'generate_stock'
@@ -54,31 +54,31 @@ END
 IF slave_state = 2:
  IF slave["energy"] > -5: 
   slave_state = 1
-  msg '<<$slave_name>> пришла в сознание.'
+  msg '<<$slave_name>> Ð¿Ñ€Ð¸ÑˆÐ»Ð° Ð² Ñ�Ð¾Ð·Ð½Ð°Ð½Ð¸Ðµ.'
  END
 END
 '
 !'Menu option - empty
- $text_display += {<br><div id="under_gray">Деалать <br></div>}
+ $text_display += {<br><div id="under_gray">Ð”ÐµÐ°Ð»Ð°Ñ‚ÑŒ <br></div>}
 
 Menu option - active
- $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Ð”ÐµÐ°Ð»Ð°Ñ‚ÑŒ <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 
 Menu option - active with variable
  IF assistant_state = 1:
-  $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Ð”ÐµÐ°Ð»Ð°Ñ‚ÑŒ <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Деалать <br></div>}
+  $text_display += {<br><div id="under_gray">Ð”ÐµÐ°Ð»Ð°Ñ‚ÑŒ <br></div>}
  END
  
 Menu interaction option - active
- $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: interaction = 1 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Ð”ÐµÐ°Ð»Ð°Ñ‚ÑŒ <br><div id = "clear"><a href = 'EXEC: interaction = 1 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
 
 Menu interaction option - active with variable
  IF assistant_state = 1:
-  $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: interaction = 1 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under">Ð”ÐµÐ°Ð»Ð°Ñ‚ÑŒ <br><div id = "clear"><a href = 'EXEC: interaction = 1 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
-  $text_display += {<br><div id="under_gray">Деалать <br></div>}
+  $text_display += {<br><div id="under_gray">Ð”ÐµÐ°Ð»Ð°Ñ‚ÑŒ <br></div>}
  END
  
 Cancel

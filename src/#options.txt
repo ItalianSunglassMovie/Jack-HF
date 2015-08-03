@@ -1,4 +1,4 @@
-# #options
+#options
 !DIALOG OPTIONS DATABASE
 
 !empty location
@@ -644,7 +644,7 @@ FUNC('$menu', '===BEGIN===', 'column_0')
 $place = 'stasis_bank'
 if nsfw = 1: not_safe = 1
 cryo_intro = 1
-!дополнительная проверка чтобы выходил правильный пункт в меню
+!Ð´Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°Ñ� Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð²Ñ‹Ñ…Ð¾Ð´Ð¸Ð» Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð¿ÑƒÐ½ÐºÑ‚ Ð² Ð¼ÐµÐ½ÑŽ
 IF sparks >= 20:
  IF stasis_tank = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Rentcapsule, menu_Rentcapsule, 'Rent home capsule')
@@ -674,19 +674,19 @@ FUNC('$menu', '===BEGIN===', 'column_0')
 $place = 'stasis_bank_2'
 if nsfw = 1: not_safe = 1
 IF iced_1_state = 0:
- FUNC('$menu', 'interaction_city', $menu_item_Cell1, menu_Cell1, 'Cell №1: rent (1/day)')
+ FUNC('$menu', 'interaction_city', $menu_item_Cell1, menu_Cell1, 'Cell â„–1: rent (1/day)')
  ELSE
- FUNC('$menu', 'interaction_city', $menu_item_Cell1RE, menu_Cell1, 'Cell №1: take out')
+ FUNC('$menu', 'interaction_city', $menu_item_Cell1RE, menu_Cell1, 'Cell â„–1: take out')
 END
 IF iced_2_state = 0:
- FUNC('$menu', 'interaction_city', $menu_item_Cell2, menu_Cell2, 'Cell №2: rent (1/day)')
+ FUNC('$menu', 'interaction_city', $menu_item_Cell2, menu_Cell2, 'Cell â„–2: rent (1/day)')
  ELSE
- FUNC('$menu', 'interaction_city', $menu_item_Cell2RE, menu_Cell2, 'Cell №2: take out')
+ FUNC('$menu', 'interaction_city', $menu_item_Cell2RE, menu_Cell2, 'Cell â„–2: take out')
 END
 IF iced_3_state = 0:
- FUNC('$menu', 'interaction_city', $menu_item_Cell3, menu_Cell3, 'Cell №3: rent (1/day)')
+ FUNC('$menu', 'interaction_city', $menu_item_Cell3, menu_Cell3, 'Cell â„–3: rent (1/day)')
  ELSE
- FUNC('$menu', 'interaction_city', $menu_item_Cell3RE, menu_Cell3, 'Cell №3: take out')
+ FUNC('$menu', 'interaction_city', $menu_item_Cell3RE, menu_Cell3, 'Cell â„–3: take out')
 END
 IF sparks >= 300 and cells_unlocked ! 1:
  FUNC('$menu', 'interaction_city', $menu_item_Unlockcells, menu_Unlockcells, 'Unlock new cells (300$)')
@@ -695,19 +695,19 @@ IF sparks >= 300 and cells_unlocked ! 1:
 END
 IF cells_unlocked = 1:
  IF iced_4_state = 0:
-  FUNC('$menu', 'interaction_city', $menu_item_Cell4, menu_Cell4, 'Cell №4: rent (1/day)')
+  FUNC('$menu', 'interaction_city', $menu_item_Cell4, menu_Cell4, 'Cell â„–4: rent (1/day)')
   ELSE
-  FUNC('$menu', 'interaction_city', $menu_item_Cell4RE, menu_Cell4, 'Cell №4: take out')
+  FUNC('$menu', 'interaction_city', $menu_item_Cell4RE, menu_Cell4, 'Cell â„–4: take out')
  END
  IF iced_5_state = 0:
-  FUNC('$menu', 'interaction_city', $menu_item_Cell5, menu_Cell5, 'Cell №5: rent (1/day)')
+  FUNC('$menu', 'interaction_city', $menu_item_Cell5, menu_Cell5, 'Cell â„–5: rent (1/day)')
   ELSE
-  FUNC('$menu', 'interaction_city', $menu_item_Cell5RE, menu_Cell5, 'Cell №5: take out')
+  FUNC('$menu', 'interaction_city', $menu_item_Cell5RE, menu_Cell5, 'Cell â„–5: take out')
  END
  IF iced_6_state = 0:
-  FUNC('$menu', 'interaction_city', $menu_item_Cell6, menu_Cell6, 'Cell №6: rent (1/day)')
+  FUNC('$menu', 'interaction_city', $menu_item_Cell6, menu_Cell6, 'Cell â„–6: rent (1/day)')
   ELSE
-  FUNC('$menu', 'interaction_city', $menu_item_Cell6RE, menu_Cell6, 'Cell №6: take out')
+  FUNC('$menu', 'interaction_city', $menu_item_Cell6RE, menu_Cell6, 'Cell â„–6: take out')
  END
 END
 FUNC('$menu', 'city_form', $menu_item_Backstasis, menu_Backstasis, 'Back')
@@ -2454,32 +2454,32 @@ $colloseum_options[5] = {
  FUNC('$menu', 'spacer', 2)
 
  FUNC('$menu', '===BEGIN===', 'column_0')
- IF sparks >= spm_price and $spm_learned['удар_с_разворота'] = 0:
+ IF sparks >= spm_price and $spm_learned['ÑƒÐ´Ð°Ñ€_Ñ�_Ñ€Ð°Ð·Ð²Ð¾Ñ€Ð¾Ñ‚Ð°'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Roundhouse, menu_Roundhouse, 'Roundhouse kick')
   else
   FUNC('$menu', 'location_gray', $menu_item_Roundhouse_gray, empty, 'Roundhouse kick')
  END
- IF sparks >= spm_price and $spm_learned['рассечение'] = 0:
+ IF sparks >= spm_price and $spm_learned['Ñ€Ð°Ñ�Ñ�ÐµÑ‡ÐµÐ½Ð¸Ðµ'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Swift, menu_Swift, 'Swift blow')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Swift_gray, empty, 'Swift blow')
  END 
- IF sparks >= spm_price and $spm_learned['воинственный_клич'] = 0:
+ IF sparks >= spm_price and $spm_learned['Ð²Ð¾Ð¸Ð½Ñ�Ñ‚Ð²ÐµÐ½Ð½Ñ‹Ð¹_ÐºÐ»Ð¸Ñ‡'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Battlecry, menu_Battlecry, 'Battle cry')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Battlecry_gray, empty, 'Battle cry')
  END 
- IF sparks >= spm_price and $spm_learned['оглушение'] = 0:
+ IF sparks >= spm_price and $spm_learned['Ð¾Ð³Ð»ÑƒÑˆÐµÐ½Ð¸Ðµ'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Heavyblow, menu_Heavyblow, 'Heavy blow')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Heavyblow_gray, empty, 'Heavy blow')
  END 
- IF sparks >= spm_price and $spm_learned['подрезка'] = 0:
+ IF sparks >= spm_price and $spm_learned['Ð¿Ð¾Ð´Ñ€ÐµÐ·ÐºÐ°'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Dashing, menu_Dashing, 'Dashing blow')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Dashing_gray, empty, 'Dashing blow')
  END 
- IF sparks >= spm_price and $spm_learned['ослепление'] = 0:
+ IF sparks >= spm_price and $spm_learned['Ð¾Ñ�Ð»ÐµÐ¿Ð»ÐµÐ½Ð¸Ðµ'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Precise, menu_Precise, 'Precise hit')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Precise_gray, empty, 'Precise hit')
@@ -2556,32 +2556,32 @@ $get_weapon[1] = {
 FUNC('$menu', 'spacer', 2)
 
 FUNC('$menu', '===BEGIN===', 'column_0')
-IF $за_спиной!'':
- FUNC('$menu', 'exec_options', $menu_item_the_shoulder, 'dynamic $взять_оружие_за_спиной & no_wpn[""за_спиной""] = 1 & sp_txt = 2 & gt $curloc', 'Shoulder: <<$название_предмета[$за_спиной]>>')
+IF $Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹!'':
+ FUNC('$menu', 'exec_options', $menu_item_the_shoulder, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ_Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹ & no_wpn[""Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹""] = 1 & sp_txt = 2 & gt $curloc', 'Shoulder: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_the_shoulder_gray, empty, 'Nothing over the shoulder')
 END
-IF $слева!'':
- FUNC('$menu', 'exec_options', $menu_item_left_side, 'dynamic $взять_оружие_слева & no_wpn[""слева""] = 1 & sp_txt = 2 & gt $curloc', 'Left: <<$название_предмета[$слева]>>')
+IF $Ñ�Ð»ÐµÐ²Ð°!'':
+ FUNC('$menu', 'exec_options', $menu_item_left_side, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ_Ñ�Ð»ÐµÐ²Ð° & no_wpn[""Ñ�Ð»ÐµÐ²Ð°""] = 1 & sp_txt = 2 & gt $curloc', 'Left: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ñ�Ð»ÐµÐ²Ð°]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_left_side_gray, empty, 'Nothing on the left side')
 END
-IF $справа!'':
- FUNC('$menu', 'exec_options', $menu_item_right_side, 'dynamic $взять_оружие_справа & no_wpn[""справа""] = 1 & sp_txt = 2 & gt $curloc', 'Right: <<$название_предмета[$справа]>>')
+IF $Ñ�Ð¿Ñ€Ð°Ð²Ð°!'':
+ FUNC('$menu', 'exec_options', $menu_item_right_side, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ_Ñ�Ð¿Ñ€Ð°Ð²Ð° & no_wpn[""Ñ�Ð¿Ñ€Ð°Ð²Ð°""] = 1 & sp_txt = 2 & gt $curloc', 'Right: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ñ�Ð¿Ñ€Ð°Ð²Ð°]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_right_side_gray, empty, 'Nothing on the right side')
 END
-IF $предплечье!'':
- FUNC('$menu', 'exec_options', $menu_item_in_bracer, 'dynamic $взять_оружие_предплечье & no_wpn[""предплечье""] = 1 & sp_txt = 2 & gt $curloc', 'In a bracer: <<$название_предмета[$предплечье]>>')
+IF $Ð¿Ñ€ÐµÐ´Ð¿Ð»ÐµÑ‡ÑŒÐµ!'':
+ FUNC('$menu', 'exec_options', $menu_item_in_bracer, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¿Ð»ÐµÑ‡ÑŒÐµ & no_wpn[""Ð¿Ñ€ÐµÐ´Ð¿Ð»ÐµÑ‡ÑŒÐµ""] = 1 & sp_txt = 2 & gt $curloc', 'In a bracer: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ð¿Ñ€ÐµÐ´Ð¿Ð»ÐµÑ‡ÑŒÐµ]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_in_bracer_gray, empty, 'Nothing in a bracer')
 END
-IF $в_сапоге!'':
- FUNC('$menu', 'exec_options', $menu_item_in_boot, 'dynamic $взять_оружие_в_сапоге & no_wpn[""в_сапоге""] = 1 & sp_txt = 2 & gt $curloc', 'In a boot: <<$название_предмета[$в_сапоге]>>')
+IF $Ð²_Ñ�Ð°Ð¿Ð¾Ð³Ðµ!'':
+ FUNC('$menu', 'exec_options', $menu_item_in_boot, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ_Ð²_Ñ�Ð°Ð¿Ð¾Ð³Ðµ & no_wpn[""Ð²_Ñ�Ð°Ð¿Ð¾Ð³Ðµ""] = 1 & sp_txt = 2 & gt $curloc', 'In a boot: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ð²_Ñ�Ð°Ð¿Ð¾Ð³Ðµ]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_in_boot_gray, empty, 'Nothing in a boot')
 END
-FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" &  gt "начать_бой"', 'Join the battle')
+FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" &  gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"', 'Join the battle')
 FUNC('$menu', '===END===')
 }
 
@@ -2589,45 +2589,45 @@ $get_weapon[2] = {
 FUNC('$menu', 'spacer', 2)
 
 FUNC('$menu', '===BEGIN===', 'column_0')
-if $класс_оружия[$за_спиной] = 'тяжелое_оружие': nogoto = 0 & killvar "no_wpn" &  gt "начать_бой"
-IF $за_спиной!'' and no_wpn["за_спиной"] = 0:
- IF $класс_оружия[$за_спиной] ! 'оружие' and $класс_оружия[$за_спиной] ! 'тяжелое_оружие': 
-  FUNC('$menu', 'exec_options', $menu_item_the_shoulder, 'dynamic $взять_вторичный_за_спиной & nogoto = 0 & killvar ""no_wpn"" & gt ""начать_бой""', 'Shoulder: <<$название_предмета[$за_спиной]>>')
+if $ÐºÐ»Ð°Ñ�Ñ�_Ð¾Ñ€ÑƒÐ¶Ð¸Ñ�[$Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹] = 'Ñ‚Ñ�Ð¶ÐµÐ»Ð¾Ðµ_Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ': nogoto = 0 & killvar "no_wpn" &  gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"
+IF $Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹!'' and no_wpn["Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹"] = 0:
+ IF $ÐºÐ»Ð°Ñ�Ñ�_Ð¾Ñ€ÑƒÐ¶Ð¸Ñ�[$Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹] ! 'Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ' and $ÐºÐ»Ð°Ñ�Ñ�_Ð¾Ñ€ÑƒÐ¶Ð¸Ñ�[$Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹] ! 'Ñ‚Ñ�Ð¶ÐµÐ»Ð¾Ðµ_Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ': 
+  FUNC('$menu', 'exec_options', $menu_item_the_shoulder, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹_Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹ & nogoto = 0 & killvar ""no_wpn"" & gt ""Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹""', 'Shoulder: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹]>>')
   else
-  FUNC('$menu', 'location_gray', $menu_item_the_shoulder_gray, empty, 'Shoulder: <<$название_предмета[$за_спиной]>>')
+  FUNC('$menu', 'location_gray', $menu_item_the_shoulder_gray, empty, 'Shoulder: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ð·Ð°_Ñ�Ð¿Ð¸Ð½Ð¾Ð¹]>>')
  END
  else
  FUNC('$menu', 'location_gray', $menu_item_the_shoulder_gray, empty, 'Nothing over the shoulder')
 END
-IF $слева!'' and no_wpn["слева"] = 0:
- IF $класс_оружия[$слева] ! 'оружие':
-  FUNC('$menu', 'exec_options', $menu_item_left_side, 'dynamic $взять_вторичный_слева & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Left: <<$название_предмета[$слева]>>')
+IF $Ñ�Ð»ÐµÐ²Ð°!'' and no_wpn["Ñ�Ð»ÐµÐ²Ð°"] = 0:
+ IF $ÐºÐ»Ð°Ñ�Ñ�_Ð¾Ñ€ÑƒÐ¶Ð¸Ñ�[$Ñ�Ð»ÐµÐ²Ð°] ! 'Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ':
+  FUNC('$menu', 'exec_options', $menu_item_left_side, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹_Ñ�Ð»ÐµÐ²Ð° & nogoto = 0 & killvar "no_wpn" & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"', 'Left: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ñ�Ð»ÐµÐ²Ð°]>>')
   else
-  FUNC('$menu', 'location_gray', $menu_item_left_side_gray, empty, 'Left: <<$название_предмета[$слева]>>')
+  FUNC('$menu', 'location_gray', $menu_item_left_side_gray, empty, 'Left: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ñ�Ð»ÐµÐ²Ð°]>>')
  END
  else
  FUNC('$menu', 'location_gray', $menu_item_left_side_gray, empty, 'Nothing on the left side')
 END
-IF $справа!'' and no_wpn["справа"] = 0:
- IF $класс_оружия[$справа] ! 'оружие':
-  FUNC('$menu', 'exec_options', $menu_item_right_side, 'dynamic $взять_вторичный_справа & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Right: <<$название_предмета[$справа]>>')
+IF $Ñ�Ð¿Ñ€Ð°Ð²Ð°!'' and no_wpn["Ñ�Ð¿Ñ€Ð°Ð²Ð°"] = 0:
+ IF $ÐºÐ»Ð°Ñ�Ñ�_Ð¾Ñ€ÑƒÐ¶Ð¸Ñ�[$Ñ�Ð¿Ñ€Ð°Ð²Ð°] ! 'Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ':
+  FUNC('$menu', 'exec_options', $menu_item_right_side, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹_Ñ�Ð¿Ñ€Ð°Ð²Ð° & nogoto = 0 & killvar "no_wpn" & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"', 'Right: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ñ�Ð¿Ñ€Ð°Ð²Ð°]>>')
   else
-  FUNC('$menu', 'location_gray', $menu_item_right_side_gray, empty, 'Right: <<$название_предмета[$справа]>>')
+  FUNC('$menu', 'location_gray', $menu_item_right_side_gray, empty, 'Right: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ñ�Ð¿Ñ€Ð°Ð²Ð°]>>')
  END
  else
  FUNC('$menu', 'location_gray', $menu_item_right_side_gray, empty, 'Nothing on the right side')
 END
-IF $предплечье!'' and no_wpn["предплечье"] = 0:
- FUNC('$menu', 'exec_options', $menu_item_in_bracer, 'dynamic $взять_вторичный_предплечье & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'In a bracer: <<$название_предмета[$предплечье]>>')
+IF $Ð¿Ñ€ÐµÐ´Ð¿Ð»ÐµÑ‡ÑŒÐµ!'' and no_wpn["Ð¿Ñ€ÐµÐ´Ð¿Ð»ÐµÑ‡ÑŒÐµ"] = 0:
+ FUNC('$menu', 'exec_options', $menu_item_in_bracer, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹_Ð¿Ñ€ÐµÐ´Ð¿Ð»ÐµÑ‡ÑŒÐµ & nogoto = 0 & killvar "no_wpn" & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"', 'In a bracer: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ð¿Ñ€ÐµÐ´Ð¿Ð»ÐµÑ‡ÑŒÐµ]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_in_bracer_gray, empty, 'Nothing in a bracer')
 END
-IF $в_сапоге!'' and no_wpn["в_сапоге"] = 0:
- FUNC('$menu', 'exec_options', $menu_item_in_boot, 'dynamic $взять_вторичный_в_сапоге & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'In a boot: <<$название_предмета[$в_сапоге]>>')
+IF $Ð²_Ñ�Ð°Ð¿Ð¾Ð³Ðµ!'' and no_wpn["Ð²_Ñ�Ð°Ð¿Ð¾Ð³Ðµ"] = 0:
+ FUNC('$menu', 'exec_options', $menu_item_in_boot, 'dynamic $Ð²Ð·Ñ�Ñ‚ÑŒ_Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‡Ð½Ñ‹Ð¹_Ð²_Ñ�Ð°Ð¿Ð¾Ð³Ðµ & nogoto = 0 & killvar "no_wpn" & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"', 'In a boot: <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$Ð²_Ñ�Ð°Ð¿Ð¾Ð³Ðµ]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_in_boot_gray, empty, 'Nothing in a boot')
 END
-FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Join the battle')
+FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"', 'Join the battle')
 FUNC('$menu', '===END===')
 }
 
@@ -2635,9 +2635,9 @@ $get_weapon[3] = {
 FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'column_0')
-FUNC('$menu', 'exec_options', $menu_item_Stool, '$оружие = "табуретка" & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Stool')
-FUNC('$menu', 'exec_options', $menu_item_Dagger, '$оружие = "кинжал" & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Dagger')
-FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Join the battle')
+FUNC('$menu', 'exec_options', $menu_item_Stool, '$Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ = "Ñ‚Ð°Ð±ÑƒÑ€ÐµÑ‚ÐºÐ°" & nogoto = 0 & killvar "no_wpn" & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"', 'Stool')
+FUNC('$menu', 'exec_options', $menu_item_Dagger, '$Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ = "ÐºÐ¸Ð½Ð¶Ð°Ð»" & nogoto = 0 & killvar "no_wpn" & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"', 'Dagger')
+FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"', 'Join the battle')
 FUNC('$menu', '===END===')
 }
 

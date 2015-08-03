@@ -1,9 +1,9 @@
-﻿# next_day
-!Переход на следующий день
+# next_day
+!ÐŸÐµÑ€ÐµÑ…Ð¾Ð´ Ð½Ð° Ñ�Ð»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ Ð´ÐµÐ½ÑŒ
 killvar 'play_sound'
 killvar '$text'
 killvar 'sex_done_today'
-killvar 'суперудар_сделан'
+killvar 'Ñ�ÑƒÐ¿ÐµÑ€ÑƒÐ´Ð°Ñ€_Ñ�Ð´ÐµÐ»Ð°Ð½'
 !Debug
 !msg 'total_food_cost = <<total_food_cost>>'
 !AddOn - makes more sense to reset here instead on every $newloc trigger
@@ -718,7 +718,7 @@ IF silence_rule = 1:
   if silence_rule_res < 0: slave['neg_rules'] = 1
   silence_rule_res = 0
   slave_rate["mood"] -= slave["temper"] - slave["moral"] 
-  $force_msg += 'Кляп работает <br>'
+  $force_msg += 'ÐšÐ»Ñ�Ð¿ Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚ <br>'
  END
  else
  silence_rule_res = 0 

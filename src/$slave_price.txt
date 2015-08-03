@@ -1,4 +1,4 @@
-﻿# $slave_price
+# $slave_price
 !BASE PRICE
 !stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
 
@@ -200,7 +200,7 @@ $rating_help = '<center><u>To Do:</u></center>'
 
 IF rating = 0:
  if skill_sum < 5: $rating_help += '- Teach this slave some common skills<br>'  
- if atribute_sum < 8: $rating_help += '- Develop this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
+ if atribute_sum < 8: $rating_help += '- Develop this slave''s <a href="EXEC: msg $Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñ‹_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°">basic attributes</a><br>'  
  if slave["beauty"] < 1: $rating_help += '- This slave is not beautiful enough to rank higher<br>'  
  if slave_relative_obedience < 1: $rating_help += '- This slave needs to learn obedience<br>'   
 END
@@ -208,7 +208,7 @@ END
 IF rating = 1:
  if sex_sum < 5: $rating_help += '- Teach this slave some sexual skills<br>' 
  if skill_sum < 10: $rating_help += '- Teach this slave some common skills<br>'  
- if atribute_sum < 12: $rating_help += '- Further develop this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
+ if atribute_sum < 12: $rating_help += '- Further develop this slave''s <a href="EXEC: msg $Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñ‹_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°">basic attributes</a><br>'  
  if slave["beauty"] < 2: $rating_help += '- This slave is not beautiful enough to rank higher<br>'  
  if slave_relative_obedience < 5: $rating_help += '- This slave needs to be more obedient<br>'    
 END
@@ -216,7 +216,7 @@ END
 IF rating = 2:
  if sex_sum < 12: $rating_help += '- Improve this slave''s sexual skills<br>' 
  if skill_sum < 15: $rating_help += '- Improve this slave''s common skills<br>'  
- if atribute_sum < 14: $rating_help += '- Enhance this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
+ if atribute_sum < 14: $rating_help += '- Enhance this slave''s <a href="EXEC: msg $Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñ‹_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°">basic attributes</a><br>'  
  if slave["beauty"] < 3: $rating_help += '- This slave is cute, but not cute enough to rank higher<br>'  
  if maxsum < 1: $rating_help += '- This slave should master a skill<br>'  
 END
@@ -224,7 +224,7 @@ END
 IF rating = 3:
  if sex_sum < 15: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
  if skill_sum < 20: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
- if atribute_sum < 16: $rating_help += '<div style="font-size: 90%;">- Further enhance <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
+ if atribute_sum < 16: $rating_help += '<div style="font-size: 90%;">- Further enhance <a href="EXEC: msg $Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñ‹_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°">basic attributes</a></div>'  
  if slave["beauty"] < 4: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
  if max_skill < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a common skill</div>' 
  if max_sex < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a sexual skill</div>' 
@@ -234,7 +234,7 @@ END
 IF rating = 4:
  if sex_sum < 25: $rating_help += '<div style="font-size: 90%;">- Perfect this slave''s sexual skills</div>' 
  if skill_sum < 30: $rating_help += '<div style="font-size: 90%;">- Perfect this slave''s common skills</div>'  
- if atribute_sum < 18: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
+ if atribute_sum < 18: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $Ð°Ñ‚Ñ€Ð¸Ð±ÑƒÑ‚Ñ‹_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°">basic attributes</a></div>'  
  if slave["beauty"] < 5: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
  if max_skill < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a common skill</div>' 
  if max_sex < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a sexual skill</div>' 

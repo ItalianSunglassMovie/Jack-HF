@@ -1,4 +1,4 @@
-﻿# assistant_stat
+# assistant_stat
 !rewritten a piece of code with assistant infotext, now its all in one file, removed some from main_screen
 
 IF $assistant_info_text = '':
@@ -80,7 +80,7 @@ gs 'stats_layout'
 </div>'
 
 !"
-ОСОБЕННОСТИ:
+ÐžÐ¡ÐžÐ‘Ð•Ð�Ð�ÐžÐ¡Ð¢Ð˜:
 <<$assistant_features_list>>
 "
 *p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
@@ -296,9 +296,9 @@ If assistant_stat_screen = 1:
  if nsfw = 0: *p '<div id="lower_image"><img width = "370px" src = "content\pic\girls\body\<<$assistant["pussy_img"]>>.jpg"></div>' 
  *p '<div id = "stat_text"><center>
  <b><a href = "EXEC: msg $charm_help & gt curloc"><<$assistant_charm_stat>></a></b>
- <<$красота[assistant["beauty"]]>> = <<$природная_красота[assistant["base_beauty"]]>> + <<$пластика[assistant["beauty_enchanced"]]>> - (<<$шрамы[assistant["scares"]]>> + <<$синяки[assistant["bruises"]]>>)
- <<$экзотика[assistant["exotic"]]>> = <<$природная_экзотика[assistant["base_exotic"]]>> + <<$slave_tatoo[assistant["tatoo"]]>> + <<$пирсинг[assistant["piercing_count"]]>> + <<$wear[assistant["ex_count"]]>>
- <<$стиль[assistant["style"]]>> = <<$wear[assistant["st_count"]]>> + <<$slave_makeup[assistant["makeup"]]>> + <<$hair_style[assistant["hairstyle"]]>> + <<$мейкап[assistant["makeup_count"]]>> + <<$гигиена[assistant["hygiene"]]>> + <<$грация[assistant["grace_count"]]>></div>
+ <<$ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°[assistant["beauty"]]>> = <<$Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ð½Ð°Ñ�_ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°[assistant["base_beauty"]]>> + <<$Ð¿Ð»Ð°Ñ�Ñ‚Ð¸ÐºÐ°[assistant["beauty_enchanced"]]>> - (<<$ÑˆÑ€Ð°Ð¼Ñ‹[assistant["scares"]]>> + <<$Ñ�Ð¸Ð½Ñ�ÐºÐ¸[assistant["bruises"]]>>)
+ <<$Ñ�ÐºÐ·Ð¾Ñ‚Ð¸ÐºÐ°[assistant["exotic"]]>> = <<$Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ð½Ð°Ñ�_Ñ�ÐºÐ·Ð¾Ñ‚Ð¸ÐºÐ°[assistant["base_exotic"]]>> + <<$slave_tatoo[assistant["tatoo"]]>> + <<$Ð¿Ð¸Ñ€Ñ�Ð¸Ð½Ð³[assistant["piercing_count"]]>> + <<$wear[assistant["ex_count"]]>>
+ <<$Ñ�Ñ‚Ð¸Ð»ÑŒ[assistant["style"]]>> = <<$wear[assistant["st_count"]]>> + <<$slave_makeup[assistant["makeup"]]>> + <<$hair_style[assistant["hairstyle"]]>> + <<$Ð¼ÐµÐ¹ÐºÐ°Ð¿[assistant["makeup_count"]]>> + <<$Ð³Ð¸Ð³Ð¸ÐµÐ½Ð°[assistant["hygiene"]]>> + <<$Ð³Ñ€Ð°Ñ†Ð¸Ñ�[assistant["grace_count"]]>></div>
  </div>'
  *p '<div id = "upper_text">
 <<$slave_boobs[assistant["boobs"]]>>
@@ -329,10 +329,10 @@ IF assistant_stat_screen = 2:
 	END
     *p '<div id = "center_text_column_1">'
         *p '<div style = "text-align: center;"><u>ASSISTANT EQUIPMENT</u></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 40 & dynamic $assistant_armor_list"><u>Armour:</u> <<$название_предмета[$assistant["armor"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 41 & dynamic $assistant_wpn_list_large"><u>Shoulder holster:</u> <<$название_предмета[$assistant["back_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 42 & dynamic $assistant_wpn_list"><u>Left hand:</u> <<$название_предмета[$assistant["left_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 43 & dynamic $assistant_wpn_list_2"><u>Right hand:</u> <<$название_предмета[$assistant["right_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 40 & dynamic $assistant_armor_list"><u>Armour:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$assistant["armor"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 41 & dynamic $assistant_wpn_list_large"><u>Shoulder holster:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$assistant["back_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 42 & dynamic $assistant_wpn_list"><u>Left hand:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$assistant["left_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 43 & dynamic $assistant_wpn_list_2"><u>Right hand:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$assistant["right_wpn"]]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 44 & dynamic $assistant_cloth_list"><u>Clothes:</u> <<$item_name[$assistant["cloth"]]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 45 & dynamic $assistant_head_list"><u>Headgear:</u> <<$item_name[$assistant["headband"]]>></a></div>'
         *p '<br>'

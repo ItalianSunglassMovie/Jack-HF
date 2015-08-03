@@ -1,7 +1,7 @@
 # shop_wpn
 GS '_layout'
 npc = 0
-$npc_id = 'менхантер'
+$npc_id = 'Ð¼ÐµÐ½Ñ…Ð°Ð½Ñ‚ÐµÑ€'
 $text_display = ''
 	!Strec - jon_UIadds addition
 	sjm_weaponshopsparksbegin = sparks
@@ -52,7 +52,7 @@ END
 IF sp_txt = 111:
  IF sparks >= 10: 
   sparks -= 10
-  кинжал += 1
+  ÐºÐ¸Ð½Ð¶Ð°Ð» += 1
   $shop_wpn[111] = $shop_wpn_accept
   else
   $shop_wpn[111] = $shop_wpn_deny 
@@ -68,7 +68,7 @@ END
 IF sp_txt = 112:
  IF sparks >= 10: 
   sparks -= 10
-  стилет += 1
+  Ñ�Ñ‚Ð¸Ð»ÐµÑ‚ += 1
   $shop_wpn[112] = $shop_wpn_accept
   else
   $shop_wpn[112] = $shop_wpn_deny 
@@ -84,7 +84,7 @@ END
 IF sp_txt = 113:
  IF sparks >= 10: 
   sparks -= 10
-  кастет += 1
+  ÐºÐ°Ñ�Ñ‚ÐµÑ‚ += 1
   $shop_wpn[113] = $shop_wpn_accept
   else
   $shop_wpn[113] = $shop_wpn_deny 
@@ -100,7 +100,7 @@ END
 IF sp_txt = 114:
  IF sparks >= 10: 
   sparks -= 10
-  нагайка += 1
+  Ð½Ð°Ð³Ð°Ð¹ÐºÐ° += 1
   $shop_wpn[114] = $shop_wpn_accept
   else
   $shop_wpn[114] = $shop_wpn_deny 
@@ -116,7 +116,7 @@ END
 IF sp_txt = 115:
  IF sparks >= 10: 
   sparks -= 10
-  глушилка += 1
+  Ð³Ð»ÑƒÑˆÐ¸Ð»ÐºÐ° += 1
   $shop_wpn[115] = $shop_wpn_accept
   else
   $shop_wpn[115] = $shop_wpn_deny 
@@ -132,7 +132,7 @@ END
 IF sp_txt = 116:
  IF sparks >= 20: 
   sparks -= 20
-  тесак += 1
+  Ñ‚ÐµÑ�Ð°Ðº += 1
   $shop_wpn[116] = $shop_wpn_accept
   else
   $shop_wpn[116] = $shop_wpn_deny 
@@ -169,7 +169,7 @@ END
 IF sp_txt = 121:
  IF sparks >= 50: 
   sparks -= 50
-  кнут += 1
+  ÐºÐ½ÑƒÑ‚ += 1
   $shop_wpn[121] = $shop_wpn_accept
   else
   $shop_wpn[121] = $shop_wpn_deny 
@@ -185,7 +185,7 @@ END
 IF sp_txt = 122:
  IF sparks >= 50: 
   sparks -= 50
-  шпага += 1
+  ÑˆÐ¿Ð°Ð³Ð° += 1
   $shop_wpn[122] = $shop_wpn_accept
   else
   $shop_wpn[122] = $shop_wpn_deny 
@@ -201,7 +201,7 @@ END
 IF sp_txt = 123:
  IF sparks >= 50: 
   sparks -= 50
-  рапира += 1
+  Ñ€Ð°Ð¿Ð¸Ñ€Ð° += 1
   $shop_wpn[123] = $shop_wpn_accept
   else
   $shop_wpn[123] = $shop_wpn_deny 
@@ -217,7 +217,7 @@ END
 IF sp_txt = 124:
  IF sparks >= 50: 
   sparks -= 50
-  кончар += 1
+  ÐºÐ¾Ð½Ñ‡Ð°Ñ€ += 1
   $shop_wpn[124] = $shop_wpn_accept
   else
   $shop_wpn[124] = $shop_wpn_deny 
@@ -233,7 +233,7 @@ END
 IF sp_txt = 125:
  IF sparks >= 50: 
   sparks -= 50
-  гладиус += 1
+  Ð³Ð»Ð°Ð´Ð¸ÑƒÑ� += 1
   $shop_wpn[125] = $shop_wpn_accept
   else
   $shop_wpn[125] = $shop_wpn_deny 
@@ -249,7 +249,7 @@ END
 IF sp_txt = 126:
  IF sparks >= 100: 
   sparks -= 100
-  бастард += 1
+  Ð±Ð°Ñ�Ñ‚Ð°Ñ€Ð´ += 1
   $shop_wpn[126] = $shop_wpn_accept
   else
   $shop_wpn[126] = $shop_wpn_deny 
@@ -265,7 +265,7 @@ END
 IF sp_txt = 127:
  IF sparks >= 50: 
   sparks -= 50
-  мачете += 1
+  Ð¼Ð°Ñ‡ÐµÑ‚Ðµ += 1
   $shop_wpn[127] = $shop_wpn_accept
   else
   $shop_wpn[127] = $shop_wpn_deny 
@@ -281,7 +281,7 @@ END
 IF sp_txt = 128:
  IF sparks >= 100: 
   sparks -= 100
-  катана += 1
+  ÐºÐ°Ñ‚Ð°Ð½Ð° += 1
   $shop_wpn[128] = $shop_wpn_accept
   else
   $shop_wpn[128] = $shop_wpn_deny 
@@ -297,7 +297,7 @@ END
 IF sp_txt = 129:
  IF sparks >= 25: 
   sparks -= 25
-  демократизатор += 1
+  Ð´ÐµÐ¼Ð¾ÐºÑ€Ð°Ñ‚Ð¸Ð·Ð°Ñ‚Ð¾Ñ€ += 1
   $shop_wpn[129] = $shop_wpn_accept
   else
   $shop_wpn[129] = $shop_wpn_deny 
@@ -327,7 +327,7 @@ END
 IF sp_txt = 131:
  IF sparks >= 200: 
   sparks -= 200
-  фламберг += 1
+  Ñ„Ð»Ð°Ð¼Ð±ÐµÑ€Ð³ += 1
   $shop_wpn[131] = $shop_wpn_accept
   else
   $shop_wpn[131] = $shop_wpn_deny 
@@ -343,7 +343,7 @@ END
 IF sp_txt = 132:
  IF sparks >= 200: 
   sparks -= 200
-  нагината += 1
+  Ð½Ð°Ð³Ð¸Ð½Ð°Ñ‚Ð° += 1
   $shop_wpn[132] = $shop_wpn_accept
   else
   $shop_wpn[132] = $shop_wpn_deny 
@@ -359,7 +359,7 @@ END
 IF sp_txt = 133:
  IF sparks >= 150: 
   sparks -= 150
-  моргенштерн += 1
+  Ð¼Ð¾Ñ€Ð³ÐµÐ½ÑˆÑ‚ÐµÑ€Ð½ += 1
   $shop_wpn[133] = $shop_wpn_accept
   else
   $shop_wpn[133] = $shop_wpn_deny 
@@ -375,7 +375,7 @@ END
 IF sp_txt = 134:
  IF sparks >= 100: 
   sparks -= 100
-  грейтекс += 1
+  Ð³Ñ€ÐµÐ¹Ñ‚ÐµÐºÑ� += 1
   $shop_wpn[134] = $shop_wpn_accept
   else
   $shop_wpn[134] = $shop_wpn_deny 
@@ -391,7 +391,7 @@ END
 IF sp_txt = 135:
  IF sparks >= 100: 
   sparks -= 100
-  бита += 1
+  Ð±Ð¸Ñ‚Ð° += 1
   $shop_wpn[135] = $shop_wpn_accept
   else
   $shop_wpn[135] = $shop_wpn_deny 
@@ -407,7 +407,7 @@ END
 IF sp_txt = 136:
  IF sparks >= 150: 
   sparks -= 150
-  скотобой += 1
+  Ñ�ÐºÐ¾Ñ‚Ð¾Ð±Ð¾Ð¹ += 1
   $shop_wpn[136] = $shop_wpn_accept
   else
   $shop_wpn[136] = $shop_wpn_deny 
@@ -437,7 +437,7 @@ END
 IF sp_txt = 21:
  IF sparks >= 100: 
   sparks -= 100
-  комбез += 1
+  ÐºÐ¾Ð¼Ð±ÐµÐ· += 1
   $shop_wpn[21] = $shop_wpn_accept
   else
   $shop_wpn[21] = $shop_wpn_deny 
@@ -453,7 +453,7 @@ END
 IF sp_txt = 22:
  IF sparks >= 400: 
   sparks -= 400
-  кожан += 1
+  ÐºÐ¾Ð¶Ð°Ð½ += 1
   $shop_wpn[22] = $shop_wpn_accept
   else
   $shop_wpn[22] = $shop_wpn_deny 
@@ -469,7 +469,7 @@ END
 IF sp_txt = 23:
  IF sparks >= 250: 
   sparks -= 250
-  эльчуга += 1
+  Ñ�Ð»ÑŒÑ‡ÑƒÐ³Ð° += 1
   $shop_wpn[23] = $shop_wpn_accept
   else
   $shop_wpn[23] = $shop_wpn_deny 
@@ -485,7 +485,7 @@ END
 IF sp_txt = 24:
  IF sparks >= 300: 
   sparks -= 300
-  ячуга += 1
+  Ñ�Ñ‡ÑƒÐ³Ð° += 1
   $shop_wpn[24] = $shop_wpn_accept
   else
   $shop_wpn[24] = $shop_wpn_deny 
@@ -501,7 +501,7 @@ END
 IF sp_txt = 25:
  IF sparks >= 800: 
   sparks -= 800
-  полудоспех += 1
+  Ð¿Ð¾Ð»ÑƒÐ´Ð¾Ñ�Ð¿ÐµÑ… += 1
   $shop_wpn[25] = $shop_wpn_accept
   else
   $shop_wpn[25] = $shop_wpn_deny 
@@ -517,7 +517,7 @@ END
 IF sp_txt = 26:
  IF sparks >= 1000: 
   sparks -= 1000
-  плейт += 1
+  Ð¿Ð»ÐµÐ¹Ñ‚ += 1
   $shop_wpn[26] = $shop_wpn_accept
   else
   $shop_wpn[26] = $shop_wpn_deny 

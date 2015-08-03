@@ -255,8 +255,8 @@ IF master_excitement > 0:
 END
 
 !exchange button for the slave with assistant
-IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3 and assistant_state = 1: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
-IF slave_state = CONST_INT['slave_exist'] and slave["moral"] => 3 and assistant_state = 0: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+IF slave_state = CONST_INT['slave_exist'] and slave["moral"] >= 3 and assistant_state = 1: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+IF slave_state = CONST_INT['slave_exist'] and slave["moral"] >= 3 and assistant_state = 0: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
 IF slave_state = CONST_INT['no_slave'] and assistant_state = 1: *p {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
 
 IF slave_state = CONST_INT['slave_dead']:
@@ -371,21 +371,21 @@ IF slave_state = CONST_INT['slave_exist']:
  end
  IF assistant_state = 1:
   IF ui_style = 2:
-   if sparks => 25: *p '<div id = "teach_r"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_r.png"></a></div>'
-   if sparks => 16: *p '<div id = "teach_s"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_s.png"></a></div>'
+   if sparks >= 25: *p '<div id = "teach_r"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_r.png"></a></div>'
+   if sparks >= 16: *p '<div id = "teach_s"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_s.png"></a></div>'
    *p '<div id = "teach_a"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$assistant_name>>, conduct a lesson" href = "EXEC: teach_stat_screen = 3 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_a.png"></a></div>'
    else
-   if sparks => 25: *p '<div id = "teach_r"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\buttons\teach_r.png"></a></div>'
-   if sparks => 16: *p '<div id = "teach_s"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\buttons\teach_s.png"></a></div>'
+   if sparks >= 25: *p '<div id = "teach_r"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\buttons\teach_r.png"></a></div>'
+   if sparks >= 16: *p '<div id = "teach_s"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\buttons\teach_s.png"></a></div>'
    *p '<div id = "teach_a"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$assistant_name>>, conduct a lesson" href = "EXEC: teach_stat_screen = 3 & gt ''teach_screen''"><img src="content\pic\buttons\teach_a.png"></a></div>'
   END
   else
   IF ui_style = 2:
-   if sparks => 25: *p '<div id = "teach_r_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_r.png"></a></div>'
-   if sparks => 16 and exam_in_progress ! 1: *p '<div id = "teach_s_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_s.png"></a></div>'
+   if sparks >= 25: *p '<div id = "teach_r_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_r.png"></a></div>'
+   if sparks >= 16 and exam_in_progress ! 1: *p '<div id = "teach_s_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach_s.png"></a></div>'
    else
-   if sparks => 25: *p '<div id = "teach_r_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\buttons\teach_r.png"></a></div>'
-   if sparks => 16 and exam_in_progress ! 1: *p '<div id = "teach_s_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\buttons\teach_s.png"></a></div>'
+   if sparks >= 25: *p '<div id = "teach_r_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="Invite a tutor for <<$slave_name>>" href = "EXEC: teach_stat_screen = 1 & gt ''teach_screen''"><img src="content\pic\buttons\teach_r.png"></a></div>'
+   if sparks >= 16 and exam_in_progress ! 1: *p '<div id = "teach_s_noa"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide" tooltip-data="<<$slave_name>>, attend classes..." href = "EXEC: teach_stat_screen = 2 & gt ''teach_screen''"><img src="content\pic\buttons\teach_s.png"></a></div>'
   END
  END
 END
@@ -411,7 +411,7 @@ IF menu_form ! 2000 and menu_form ! 2020 and menu_form ! 2022 and exam_in_progre
 gs 'revelations'
 
 !for decade count
-IF decadecount => 10:
+IF decadecount >= 10:
  gs 'billing'
  msg '<<$bill_message>>'
  barn_report_available = 0
@@ -448,19 +448,19 @@ if sbros = 1:
  END
 END
 
-IF slave['pregnant'] => 150: 
+IF slave['pregnant'] >= 150: 
  interaction = 9911
  slave['pregnant'] = 0
  gt 'interaction'
 END
 
-IF assistant['pregnant'] => 150: 
+IF assistant['pregnant'] >= 150: 
  interaction = 9912
  assistant['pregnant'] = 0 
  gt 'interaction'
 END
 
-IF prisoner['pregnant'] => 150: 
+IF prisoner['pregnant'] >= 150: 
  interaction = 9913
  prisoner['pregnant'] = 0 
  gt 'interaction'

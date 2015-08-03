@@ -1,8 +1,8 @@
-﻿# $newloc
+# $newloc
 !Location handler transitions.
 if $rating[0] = '': gs '#var_base'
 !AddOnn - disabled wizard_mode check to enable in story mode via options menu
-IF $master_name ! 'Старый Охотник': wizard_mode = 0
+IF $master_name ! 'Ð¡Ñ‚Ð°Ñ€Ñ‹Ð¹ ÐžÑ…Ð¾Ñ‚Ð½Ð¸Ðº': wizard_mode = 0
 
 !AddOn - master_mood fix for new game
 if master_mood['a'] = 0: master_mood['a'] = 0
@@ -406,7 +406,7 @@ IF slave["energy"] < 0:
  slave["neg_exhausted"] = 0 
 END
 
-IF $slave["cloth"] = 'голая':
+IF $slave["cloth"] = 'Ð³Ð¾Ð»Ð°Ñ�':
  if slave['sub_exhibit'] < slave['ego']: slave['neg_naked'] = 1
  else
  slave['neg_naked'] = 0
@@ -592,7 +592,7 @@ if slave["fear"] > 0 and slave["courage_revealed"] = 0: slave["courage_revealed"
 !traits
 $features_list = ''
 if slave["metabolism"] < 1: slave["metabolism"] = 1
-IF slave["brand"] = 0: $features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
+IF slave["brand"] = 0: $features_list +='<a href = "EXEC: msg $Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð°"><font color="#cd0000">Not branded</font></a><BR>'
 if sanity <= 5: $features_list +='<<$slave_sanity>><BR>'
 IF slave["wounds"] > 0: $features_list += '<<$slave_wounds[slave["wounds"]]>><BR>'
 IF slave["scares"] > 0: $features_list += '<<$slave_scares[slave["scares"]]>><BR>'
@@ -616,202 +616,202 @@ IF slave["pregnant"] > 0:
  if slave["pregnant_revealed"] > 0: $features_list += 'Pregnant<BR>' 
 END
 IF slave["nymphomania"] > 0: 
- if slave["nymphomania_revealed"] > 0: $features_list += '<a href="EXEC: msg $Нимфоманка">Nymphomaniac</a><BR>' 
+ if slave["nymphomania_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð�Ð¸Ð¼Ñ„Ð¾Ð¼Ð°Ð½ÐºÐ°">Nymphomaniac</a><BR>' 
 END
 IF slave["nymphomania"] < 0: 
- if slave["nymphomania_revealed"] > 0: $features_list += '<a href="EXEC: msg $Фригидная">Frigid</a><BR>' 
+ if slave["nymphomania_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¤Ñ€Ð¸Ð³Ð¸Ð´Ð½Ð°Ñ�">Frigid</a><BR>' 
  slave['neg_horny'] = 0
 END
 IF slave["masohism"] = 2: 
- if slave["masohism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Мазохистка">Masochist</a><BR>'
+ if slave["masohism_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐœÐ°Ð·Ð¾Ñ…Ð¸Ñ�Ñ‚ÐºÐ°">Masochist</a><BR>'
  slave['neg_pain'] = 0  
 END
 IF slave["masohism"] = 1: 
- if slave["masohism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Привычна_к_боли">Accustomed to pain</a><BR>'
+ if slave["masohism_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐŸÑ€Ð¸Ð²Ñ‹Ñ‡Ð½Ð°_Ðº_Ð±Ð¾Ð»Ð¸">Accustomed to pain</a><BR>'
 END
 IF slave["masohism"] = -1: 
- if slave["masohism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Боится_боли">Afraid of pain</a><BR>' 
+ if slave["masohism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð‘Ð¾Ð¸Ñ‚Ñ�Ñ�_Ð±Ð¾Ð»Ð¸">Afraid of pain</a><BR>' 
 END
 IF slave["exhibitionism"] = 2: 
- if slave["exhibitionism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Эксгибиционистка">Exhibitionist</a><BR>' 
+ if slave["exhibitionism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð­ÐºÑ�Ð³Ð¸Ð±Ð¸Ñ†Ð¸Ð¾Ð½Ð¸Ñ�Ñ‚ÐºÐ°">Exhibitionist</a><BR>' 
  slave['neg_naked'] = 0   
  slave['neg_shame'] = 0   
 END
 IF slave["exhibitionism"] = -1: 
- if slave["exhibitionism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Стеснительная">Shy</a><BR>' 
+ if slave["exhibitionism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¡Ñ‚ÐµÑ�Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°Ñ�">Shy</a><BR>' 
 END
 IF slave["preversion"] = 2: 
- if slave["preversion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Извращенка">Pervert</a><BR>' 
+ if slave["preversion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð˜Ð·Ð²Ñ€Ð°Ñ‰ÐµÐ½ÐºÐ°">Pervert</a><BR>' 
 END
 IF slave["preversion"] = -1: 
- if slave["preversion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Пуристка">Purist</a><BR>' 
+ if slave["preversion_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐŸÑƒÑ€Ð¸Ñ�Ñ‚ÐºÐ°">Purist</a><BR>' 
 END
 IF slave["homosexualism"] = 2: 
- if slave["homosexualism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Лесбиянка">Lesbian</a><BR>'
+ if slave["homosexualism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð›ÐµÑ�Ð±Ð¸Ñ�Ð½ÐºÐ°">Lesbian</a><BR>'
 END
 IF slave["homosexualism"] = 1: 
- if slave["homosexualism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Бисексуальная">Bisexual</a><BR>' 
+ if slave["homosexualism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð‘Ð¸Ñ�ÐµÐºÑ�ÑƒÐ°Ð»ÑŒÐ½Ð°Ñ�">Bisexual</a><BR>' 
 END
 IF slave["homosexualism"] = -1: 
- if slave["homosexualism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Гомофобка">Homophobic</a><BR>' 
+ if slave["homosexualism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð“Ð¾Ð¼Ð¾Ñ„Ð¾Ð±ÐºÐ°">Homophobic</a><BR>' 
 END
 IF slave["abuse_attitude"] = 2: 
- if slave["abuse_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Пси_мазохистка">Psi-masochist</a><BR>'
+ if slave["abuse_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐŸÑ�Ð¸_Ð¼Ð°Ð·Ð¾Ñ…Ð¸Ñ�Ñ‚ÐºÐ°">Psi-masochist</a><BR>'
  slave['neg_abuse'] = 0 
 END
 IF slave["abuse_attitude"] = -1: 
- if slave["abuse_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Истеричка">Hysteric</a><BR>' 
+ if slave["abuse_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð˜Ñ�Ñ‚ÐµÑ€Ð¸Ñ‡ÐºÐ°">Hysteric</a><BR>' 
 END
 IF slave["darkness_attitude"] = 2: 
- if slave["darkness_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Дитя_тьмы">Darkness child</a><BR>' 
+ if slave["darkness_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð”Ð¸Ñ‚Ñ�_Ñ‚ÑŒÐ¼Ñ‹">Darkness child</a><BR>' 
 END
 IF slave["darkness_attitude"] = -1: 
- if slave["darkness_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Боится_темноты">Nyctophobia</a><BR>' 
+ if slave["darkness_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð‘Ð¾Ð¸Ñ‚Ñ�Ñ�_Ñ‚ÐµÐ¼Ð½Ð¾Ñ‚Ñ‹">Nyctophobia</a><BR>' 
 END
 IF slave["blood_attitude"] = 2: 
- if slave["blood_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Кровожадная">Bloodthirsty</a><BR>' 
+ if slave["blood_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐšÑ€Ð¾Ð²Ð¾Ð¶Ð°Ð´Ð½Ð°Ñ�">Bloodthirsty</a><BR>' 
 END
 IF slave["blood_attitude"] = -1:
- if slave["blood_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Боится_крови">Hemophobia</a><BR>' 
+ if slave["blood_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð‘Ð¾Ð¸Ñ‚Ñ�Ñ�_ÐºÑ€Ð¾Ð²Ð¸">Hemophobia</a><BR>' 
 END
 IF slave["fire_attitude"] = 2:
- if slave["fire_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Пиромания">Pyromania</a><BR>' 
+ if slave["fire_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐŸÐ¸Ñ€Ð¾Ð¼Ð°Ð½Ð¸Ñ�">Pyromania</a><BR>' 
 END
 IF slave["fire_attitude"] = -1: 
- if slave["fire_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Пирофобия">Pyrophobia</a><BR>' 
+ if slave["fire_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐŸÐ¸Ñ€Ð¾Ñ„Ð¾Ð±Ð¸Ñ�">Pyrophobia</a><BR>' 
 END
 IF slave["water_attitude"] = 2: 
- if slave["water_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Дитя_воды">Water child</a><BR>' 
+ if slave["water_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð”Ð¸Ñ‚Ñ�_Ð²Ð¾Ð´Ñ‹">Water child</a><BR>' 
 END
 IF slave["water_attitude"] = -1:
- if slave["water_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Гидрофобия">Hydrophobia</a><BR>' 
+ if slave["water_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð“Ð¸Ð´Ñ€Ð¾Ñ„Ð¾Ð±Ð¸Ñ�">Hydrophobia</a><BR>' 
 END
 IF slave["vermin_attitude"] = 2:
- if slave["vermin_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Арахнофилия">Arachnophilia</a><BR>' 
+ if slave["vermin_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð�Ñ€Ð°Ñ…Ð½Ð¾Ñ„Ð¸Ð»Ð¸Ñ�">Arachnophilia</a><BR>' 
 END
 IF slave["vermin_attitude"] = -1:
- if slave["vermin_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Арахнофобия">Arachnophobia</a><BR>'
+ if slave["vermin_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð�Ñ€Ð°Ñ…Ð½Ð¾Ñ„Ð¾Ð±Ð¸Ñ�">Arachnophobia</a><BR>'
 END
 IF slave["deprivation_attitude"] = 2:
- if slave["deprivation_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Любит_беспомощность">Loves helplessness</a><BR>' 
+ if slave["deprivation_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð›ÑŽÐ±Ð¸Ñ‚_Ð±ÐµÑ�Ð¿Ð¾Ð¼Ð¾Ñ‰Ð½Ð¾Ñ�Ñ‚ÑŒ">Loves helplessness</a><BR>' 
 END
 IF slave["deprivation_attitude"] = -1:
- if slave["deprivation_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $Клаустрофобия">Claustrophobia</a><BR>' 
+ if slave["deprivation_attitude_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐšÐ»Ð°ÑƒÑ�Ñ‚Ñ€Ð¾Ñ„Ð¾Ð±Ð¸Ñ�">Claustrophobia</a><BR>' 
 END
 IF slave["passion_comfort"] = 1:
- if slave["passion_comfort_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ленивая">Lazy</a><BR>' 
+ if slave["passion_comfort_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð›ÐµÐ½Ð¸Ð²Ð°Ñ�">Lazy</a><BR>' 
 END
 IF slave["passion_comfort"] = -1:
- if slave["passion_comfort_revealed"] > 0: $features_list += '<a href="EXEC: msg $Гиперактивная">Hyperactive</a><BR>' 
+ if slave["passion_comfort_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð“Ð¸Ð¿ÐµÑ€Ð°ÐºÑ‚Ð¸Ð²Ð½Ð°Ñ�">Hyperactive</a><BR>' 
  slave['pos_well_rested'] = 0  
 END
 IF slave["passion_luxury"] = 1:
- if slave["passion_luxury_revealed"] > 0: $features_list += '<a href="EXEC: msg $Любит_роскошь">Loves luxury</a><BR>' 
+ if slave["passion_luxury_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð›ÑŽÐ±Ð¸Ñ‚_Ñ€Ð¾Ñ�ÐºÐ¾ÑˆÑŒ">Loves luxury</a><BR>' 
 END
 IF slave["passion_luxury"] = -1:
- if slave["passion_luxury_revealed"] > 0: $features_list += '<a href="EXEC: msg $Аскетичная">Ascetic</a><BR>' 
+ if slave["passion_luxury_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð�Ñ�ÐºÐµÑ‚Ð¸Ñ‡Ð½Ð°Ñ�">Ascetic</a><BR>' 
 END
 IF slave["passion_sweets"] = 1:
- if slave["passion_sweets_revealed"] > 0: $features_list += '<a href="EXEC: msg $Сладкоежка">Sweet-tooth</a><BR>' 
+ if slave["passion_sweets_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¡Ð»Ð°Ð´ÐºÐ¾ÐµÐ¶ÐºÐ°">Sweet-tooth</a><BR>' 
 END
 IF slave["passion_sweets"] = -1:
- if slave["passion_sweets_revealed"] > 0: $features_list += '<a href="EXEC: msg $Не_любит_сладкое">Dislikes sweets</a><BR>' 
+ if slave["passion_sweets_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð�Ðµ_Ð»ÑŽÐ±Ð¸Ñ‚_Ñ�Ð»Ð°Ð´ÐºÐ¾Ðµ">Dislikes sweets</a><BR>' 
  slave['pos_desert'] = 0   
 END
 IF slave["passion_fame"] = 1:
- if slave["passion_fame_revealed"] > 0: $features_list += '<a href="EXEC: msg $Тщеславная">Conceited</a><BR>' 
+ if slave["passion_fame_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¢Ñ‰ÐµÑ�Ð»Ð°Ð²Ð½Ð°Ñ�">Conceited</a><BR>' 
 END
 IF slave["passion_fame"] = -1:
- if slave["passion_fame_revealed"] > 0: $features_list += '<a href="EXEC: msg $Хикикомори">Hikikomori</a><BR>' 
+ if slave["passion_fame_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¥Ð¸ÐºÐ¸ÐºÐ¾Ð¼Ð¾Ñ€Ð¸">Hikikomori</a><BR>' 
  slave['pos_prise'] = 0    
 END
 IF slave["courage"] = 2:
- if slave["courage_revealed"] > 0: $features_list += '<a href="EXEC: msg $Отмороженая">Moronic</a><BR>'
+ if slave["courage_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐžÑ‚Ð¼Ð¾Ñ€Ð¾Ð¶ÐµÐ½Ð°Ñ�">Moronic</a><BR>'
  slave['neg_fear'] = 0     
 END
 IF slave["courage"] = 1:
- if slave["courage_revealed"] > 0: $features_list += '<a href="EXEC: msg $Храбрая">Brace</a><BR>'
+ if slave["courage_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¥Ñ€Ð°Ð±Ñ€Ð°Ñ�">Brace</a><BR>'
 END
 IF slave["courage"] = -1:
- if slave["courage_revealed"] > 0: $features_list += '<a href="EXEC: msg $Трусиха">Coward</a><BR>' 
+ if slave["courage_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¢Ñ€ÑƒÑ�Ð¸Ñ…Ð°">Coward</a><BR>' 
 END
 IF slave["metabolism"] = 5:
- if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Мощный_метаболизм">Powerful metabolism</a><BR>' 
+ if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐœÐ¾Ñ‰Ð½Ñ‹Ð¹_Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼">Powerful metabolism</a><BR>' 
 END
 IF slave["metabolism"] = 4:
- if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Хороший_метаболизм">Good metabolism</a><BR>' 
+ if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¥Ð¾Ñ€Ð¾ÑˆÐ¸Ð¹_Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼">Good metabolism</a><BR>' 
 END
 IF slave["metabolism"] = 2:
- if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ослабленный_метаболизм">Weakened metabolism</a><BR>' 
+ if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐžÑ�Ð»Ð°Ð±Ð»ÐµÐ½Ð½Ñ‹Ð¹_Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼">Weakened metabolism</a><BR>' 
 END
 IF slave["metabolism"] = 1:
- if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Слабый_метаболизм">Weak metabolism</a><BR>' 
+ if slave["metabolism_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¡Ð»Ð°Ð±Ñ‹Ð¹_Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼">Weak metabolism</a><BR>' 
 END
 IF slave["sport_affinity"] = 1:
- if slave["sport_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Спортивная">Sportive</a><BR>' 
+ if slave["sport_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¡Ð¿Ð¾Ñ€Ñ‚Ð¸Ð²Ð½Ð°Ñ�">Sportive</a><BR>' 
 END
 IF slave["sport_affinity"] = -1:
- if slave["sport_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Апатичная">Torpid</a><BR>' 
+ if slave["sport_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð�Ð¿Ð°Ñ‚Ð¸Ñ‡Ð½Ð°Ñ�">Torpid</a><BR>' 
 END
 IF slave["expression_affinity"] > 0:
- if slave["expression_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $оратор">Talent: orator</a><BR>'
+ if slave["expression_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¾Ñ€Ð°Ñ‚Ð¾Ñ€">Talent: orator</a><BR>'
 END
 IF slave["pet_affinity"] > 0: 
- if slave["pet_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $питомец">Talent: pet</a><BR>' 
+ if slave["pet_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¿Ð¸Ñ‚Ð¾Ð¼ÐµÑ†">Talent: pet</a><BR>' 
 END
 IF slave["dressage_affinity"] > 0:
  if slave["dressage_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Brony">Brony</a><BR>' 
 END
 IF slave["nurse_affinity"] > 0: 
- if slave["nurse_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $медсестра">Talent: nurse</a><BR>'
+ if slave["nurse_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¼ÐµÐ´Ñ�ÐµÑ�Ñ‚Ñ€Ð°">Talent: nurse</a><BR>'
 END
 IF slave["service_affinity"] > 0: 
- if slave["service_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $горничная">Talent: maid</a><BR>'
+ if slave["service_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð³Ð¾Ñ€Ð½Ð¸Ñ‡Ð½Ð°Ñ�">Talent: maid</a><BR>'
 END
 IF slave["cook_affinity"] > 0: 
- if slave["cook_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $кухарка">Talent: cook</a><BR>' 
+ if slave["cook_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐºÑƒÑ…Ð°Ñ€ÐºÐ°">Talent: cook</a><BR>' 
 END
 IF slave["gladiatrix_affinity"] > 0:
- if slave["gladiatrix_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $воительница">Talent: gladiatrix</a><BR>' 
+ if slave["gladiatrix_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð²Ð¾Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¸Ñ†Ð°">Talent: gladiatrix</a><BR>' 
 END
 IF slave["enchanter_affinity"] > 0:
- if slave["enchanter_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $чародейка">Talent: enchantress</a><BR>'
+ if slave["enchanter_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ñ‡Ð°Ñ€Ð¾Ð´ÐµÐ¹ÐºÐ°">Talent: enchantress</a><BR>'
 END
 IF slave["vocal_affinity"] > 0:
- if slave["vocal_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $певица">Talent: singer</a><BR>' 
+ if slave["vocal_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¿ÐµÐ²Ð¸Ñ†Ð°">Talent: singer</a><BR>' 
 END
 IF slave["music_affinity"] > 0:
- if slave["music_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $музыкантка">Talent: musician</a><BR>' 
+ if slave["music_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¼ÑƒÐ·Ñ‹ÐºÐ°Ð½Ñ‚ÐºÐ°">Talent: musician</a><BR>' 
 END
 IF slave["callisthenics_affinity"] > 0: 
- if slave["callisthenics_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $танцовщица">Talent: dancer</a><BR>' 
+ if slave["callisthenics_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ñ‚Ð°Ð½Ñ†Ð¾Ð²Ñ‰Ð¸Ñ†Ð°">Talent: dancer</a><BR>' 
 END
 IF slave["secretary_affinity"] > 0: 
- if slave["secretary_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $секретарша">Talent: secretary</a><BR>'    
+ if slave["secretary_affinity_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ñ�ÐµÐºÑ€ÐµÑ‚Ð°Ñ€ÑˆÐ°">Talent: secretary</a><BR>'    
 END
 !"IF slave["memory"] = 1:
- if slave["memory_revealed"] > 0: $features_list += '<a href="EXEC: msg $Эйдетическая_память">Eidetic memory</a><BR>' 
+ if slave["memory_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð­Ð¹Ð´ÐµÑ‚Ð¸Ñ‡ÐµÑ�ÐºÐ°Ñ�_Ð¿Ð°Ð¼Ñ�Ñ‚ÑŒ">Eidetic memory</a><BR>' 
 END
 IF slave["memory"] = -1:
- if slave["memory_revealed"] > 0: $features_list += '<a href="EXEC: msg $Забывчивая">Forgetful</a><BR>' 
+ if slave["memory_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð—Ð°Ð±Ñ‹Ð²Ñ‡Ð¸Ð²Ð°Ñ�">Forgetful</a><BR>' 
 END"
 IF slave["meekness"] > 0:
- if slave["meekness_revealed"] > 0: $features_list += '<a href="EXEC: msg $Дисциплинированная">Disciplined</a><BR>' 
+ if slave["meekness_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð”Ð¸Ñ�Ñ†Ð¸Ð¿Ð»Ð¸Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð°Ñ�">Disciplined</a><BR>' 
 END
 IF slave["meekness"] < 0:
- if slave["meekness_revealed"] > 0: $features_list += '<a href="EXEC: msg $Своенравная">Wayward</a><BR>' 
+ if slave["meekness_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¡Ð²Ð¾ÐµÐ½Ñ€Ð°Ð²Ð½Ð°Ñ�">Wayward</a><BR>' 
 END
 IF slave["selfesteem"] > 0:
- if slave["selfesteem_revealed"] > 0: $features_list += '<a href="EXEC: msg $Мания_величия">Megalomania</a><BR>'
+ if slave["selfesteem_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐœÐ°Ð½Ð¸Ñ�_Ð²ÐµÐ»Ð¸Ñ‡Ð¸Ñ�">Megalomania</a><BR>'
 END
 IF slave["selfesteem"] < 0:
- if slave["selfesteem_revealed"] > 0: $features_list += '<a href="EXEC: msg $Комплекс_вины">Guilt complex</a><BR>' 
+ if slave["selfesteem_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐšÐ¾Ð¼Ð¿Ð»ÐµÐºÑ�_Ð²Ð¸Ð½Ñ‹">Guilt complex</a><BR>' 
 END
 IF slave["compassion"] > 0:
- if slave["compassion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Милосердная">Merciful</a><BR>'
+ if slave["compassion_revealed"] > 0: $features_list += '<a href="EXEC: msg $ÐœÐ¸Ð»Ð¾Ñ�ÐµÑ€Ð´Ð½Ð°Ñ�">Merciful</a><BR>'
 END
 IF slave["compassion"] < 0:
- if slave["compassion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Садистка">Sadist</a><BR>' 
+ if slave["compassion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Ð¡Ð°Ð´Ð¸Ñ�Ñ‚ÐºÐ°">Sadist</a><BR>' 
 END
 
 !prisoner
@@ -916,7 +916,7 @@ IF master_medic >= 4: if prisoner["starvation"] >= 5: $prisoner_features_list +=
 !assistant
 !traits
 $assistant_features_list = ''
-IF assistant["brand"] = 0: $assistant_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
+IF assistant["brand"] = 0: $assistant_features_list +='<a href = "EXEC: msg $Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð°"><font color="#cd0000">Not branded</font></a><BR>'
 IF assistant["wounds"] > 0: $assistant_features_list += '<<$slave_wounds[assistant["wounds"]]>><BR>'
 IF assistant["scares"] > 0: $assistant_features_list += '<<$slave_scares[assistant["scares"]]>><BR>'
 IF assistant["bruises"] > 0: $assistant_features_list += '<<$slave_bruises[assistant["bruises"]]>><BR>'
@@ -1125,7 +1125,7 @@ if assistant["deprivation_xp"] > 10 and assistant["deprivation_attitude"] = 0: a
 
 !TRAIT OF FROZEN SLAVES
 $iced_features_list = ''
-IF iced["brand"] = 0: $iced_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
+IF iced["brand"] = 0: $iced_features_list +='<a href = "EXEC: msg $Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð°"><font color="#cd0000">Not branded</font></a><BR>'
 IF iced["wounds"] > 0: $iced_features_list += '<<$slave_wounds[iced["wounds"]]>><BR>'
 IF iced["scares"] > 0: $iced_features_list += '<<$slave_scares[iced["scares"]]>><BR>'
 IF iced["bruises"] > 0: $iced_features_list += '<<$slave_bruises[iced["bruises"]]>><BR>'
@@ -1138,7 +1138,7 @@ IF iced["pregnant"] = 1 and iced['pregnant_revealed'] > 0: $iced_features_list +
 IF iced['arena_level'] > 4: $iced_features_list += 'Arena champion<BR>'
 
 $iced_1_features_list = ''
-IF iced_1["brand"] = 0: $iced_1_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
+IF iced_1["brand"] = 0: $iced_1_features_list +='<a href = "EXEC: msg $Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð°"><font color="#cd0000">Not branded</font></a><BR>'
 IF iced_1["wounds"] > 0: $iced_1_features_list += '<<$slave_wounds[iced_1["wounds"]]>><BR>'
 IF iced_1["scares"] > 0: $iced_1_features_list += '<<$slave_scares[iced_1["scares"]]>><BR>'
 IF iced_1["bruises"] > 0: $iced_1_features_list += '<<$slave_bruises[iced_1["bruises"]]>><BR>'
@@ -1151,7 +1151,7 @@ IF iced_1["pregnant"] = 1 and iced_1['pregnant_revealed'] > 0: $iced_1_features_
 IF iced_1['arena_level'] > 4: $iced_1_features_list += 'Arena champion<BR>'
 
 $iced_2_features_list = ''
-IF iced_2["brand"] = 0: $iced_2_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
+IF iced_2["brand"] = 0: $iced_2_features_list +='<a href = "EXEC: msg $Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð°"><font color="#cd0000">Not branded</font></a><BR>'
 IF iced_2["wounds"] > 0: $iced_2_features_list += '<<$slave_wounds[iced_2["wounds"]]>><BR>'
 IF iced_2["scares"] > 0: $iced_2_features_list += '<<$slave_scares[iced_2["scares"]]>><BR>'
 IF iced_2["bruises"] > 0: $iced_2_features_list += '<<$slave_bruises[iced_2["bruises"]]>><BR>'
@@ -1164,7 +1164,7 @@ IF iced_2["pregnant"] = 1 and iced_2['pregnant_revealed'] > 0: $iced_2_features_
 IF iced_2['arena_level'] > 4: $iced_2_features_list += 'Arena champion<BR>'
 
 $iced_3_features_list = ''
-IF iced_3["brand"] = 0: $iced_3_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
+IF iced_3["brand"] = 0: $iced_3_features_list +='<a href = "EXEC: msg $Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð°"><font color="#cd0000">Not branded</font></a><BR>'
 IF iced_3["wounds"] > 0: $iced_3_features_list += '<<$slave_wounds[iced_3["wounds"]]>><BR>'
 IF iced_3["scares"] > 0: $iced_3_features_list += '<<$slave_scares[iced_3["scares"]]>><BR>'
 IF iced_3["bruises"] > 0: $iced_3_features_list += '<<$slave_bruises[iced_3["bruises"]]>><BR>'
@@ -1177,7 +1177,7 @@ IF iced_3["pregnant"] = 1 and iced_3['pregnant_revealed'] > 0: $iced_3_features_
 IF iced_3['arena_level'] > 4: $iced_3_features_list += 'Arena champion<BR>'
 
 $iced_4_features_list = ''
-IF iced_4["brand"] = 0: $iced_4_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
+IF iced_4["brand"] = 0: $iced_4_features_list +='<a href = "EXEC: msg $Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð°"><font color="#cd0000">Not branded</font></a><BR>'
 IF iced_4["wounds"] > 0: $iced_4_features_list += '<<$slave_wounds[iced_4["wounds"]]>><BR>'
 IF iced_4["scares"] > 0: $iced_4_features_list += '<<$slave_scares[iced_4["scares"]]>><BR>'
 IF iced_4["bruises"] > 0: $iced_4_features_list += '<<$slave_bruises[iced_4["bruises"]]>><BR>'
@@ -1190,7 +1190,7 @@ IF iced_4["pregnant"] = 1 and iced_4['pregnant_revealed'] > 0: $iced_4_features_
 IF iced_4['arena_level'] > 4: $iced_4_features_list += 'Arena champion<BR>'
 
 $iced_5_features_list = ''
-IF iced_5["brand"] = 0: $iced_5_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
+IF iced_5["brand"] = 0: $iced_5_features_list +='<a href = "EXEC: msg $Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð°"><font color="#cd0000">Not branded</font></a><BR>'
 IF iced_5["wounds"] > 0: $iced_5_features_list += '<<$slave_wounds[iced_5["wounds"]]>><BR>'
 IF iced_5["scares"] > 0: $iced_5_features_list += '<<$slave_scares[iced_5["scares"]]>><BR>'
 IF iced_5["bruises"] > 0: $iced_5_features_list += '<<$slave_bruises[iced_5["bruises"]]>><BR>'
@@ -1203,7 +1203,7 @@ IF iced_5["pregnant"] = 1 and iced_5['pregnant_revealed'] > 0: $iced_5_features_
 IF iced_5['arena_level'] > 4: $iced_5_features_list += 'Arena champion<BR>'
 
 $iced_6_features_list = ''
-IF iced_6["brand"] = 0: $iced_6_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
+IF iced_6["brand"] = 0: $iced_6_features_list +='<a href = "EXEC: msg $Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð°"><font color="#cd0000">Not branded</font></a><BR>'
 IF iced_6["wounds"] > 0: $iced_6_features_list += '<<$slave_wounds[iced_6["wounds"]]>><BR>'
 IF iced_6["scares"] > 0: $iced_6_features_list += '<<$slave_scares[iced_6["scares"]]>><BR>'
 IF iced_6["bruises"] > 0: $iced_6_features_list += '<<$slave_bruises[iced_6["bruises"]]>><BR>'
@@ -1267,9 +1267,9 @@ if slave["vocal"] > 5: slave["vocal"] = 5
 
 if slave_state = CONST_INT['no_slave']: slave_account_rule = 0
 
-восприятие = master_fighter - 1
-ловкость = master_fighter - 1
-сила = master_fighter - 1
+Ð²Ð¾Ñ�Ð¿Ñ€Ð¸Ñ�Ñ‚Ð¸Ðµ = master_fighter - 1
+Ð»Ð¾Ð²ÐºÐ¾Ñ�Ñ‚ÑŒ = master_fighter - 1
+Ñ�Ð¸Ð»Ð° = master_fighter - 1
 
 !display indicators
 gs '$moodlets_account'
@@ -1303,7 +1303,7 @@ IF cooked_food < 0: cooked_food_plus = 0
 IF cooked_food > 0: cooked_food_plus = cooked_food
 
 !calculation of fridge free space
-!TODO: заменить на вызов $get_frige_space ?
+!TODO: Ð·Ð°Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð½Ð° Ð²Ñ‹Ð·Ð¾Ð² $get_frige_space ?
 frige_items = frige["vegetables"] + frige["flower"] + frige["spice"] + frige["cheese"] + frige["eggs"] + frige["milk"] + frige["cream"] + frige["mince"] + frige["meat"] + frige["virgin_meat"]
 frige_space = estate_size[$estate] - frige_items
 if spawn_semen > estate_size[$estate]: spawn_semen = estate_size[$estate]
@@ -1316,7 +1316,7 @@ $quest_description[1] = "<<$brand_fame[brand_reputation]>><br>
    <<$korvus_fame[faction_fame['korvus']]>><br>
 
 <a href = 'EXEC: quest_description_mode = 0 & gt curloc'>Back</a>"
-!CHECK: почему мертвым можно?
+!CHECK: Ð¿Ð¾Ñ‡ÐµÐ¼Ñƒ Ð¼ÐµÑ€Ñ‚Ð²Ñ‹Ð¼ Ð¼Ð¾Ð¶Ð½Ð¾?
 IF slave_state > CONST_INT['no_slave']:
  active[$quest[2]] = 1
  else

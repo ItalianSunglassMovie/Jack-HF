@@ -32,14 +32,14 @@ if get_initial_slave = 1:
  slave["hygiene"] = 0
  slave_rate["hygiene"] = 0
  
- $master_armor = 'плейт'
+ $master_armor = 'Ð¿Ð»ÐµÐ¹Ñ‚'
  $master_cloth = 'fancy_suit'
  
- $master_back_wpn = 'грейтекс'
- $master_left_wpn = 'демократизатор'
- $master_right_wpn = 'кнут'
- $master_arm_wpn = 'нагайка'
- $master_leg_wpn = 'кинжал'
+ $master_back_wpn = 'Ð³Ñ€ÐµÐ¹Ñ‚ÐµÐºÑ�'
+ $master_left_wpn = 'Ð´ÐµÐ¼Ð¾ÐºÑ€Ð°Ñ‚Ð¸Ð·Ð°Ñ‚Ð¾Ñ€'
+ $master_right_wpn = 'ÐºÐ½ÑƒÑ‚'
+ $master_arm_wpn = 'Ð½Ð°Ð³Ð°Ð¹ÐºÐ°'
+ $master_leg_wpn = 'ÐºÐ¸Ð½Ð¶Ð°Ð»'
 
 
  slave_inventory['maid_dress'] = 1
@@ -51,7 +51,7 @@ if get_initial_slave = 1:
  slave['expression'] = 3
  slave['service'] = 3
  
- !расчет подчиненности у стартовой ассистентки для корректного отображения
+ !Ñ€Ð°Ñ�Ñ‡ÐµÑ‚ Ð¿Ð¾Ð´Ñ‡Ð¸Ð½ÐµÐ½Ð½Ð¾Ñ�Ñ‚Ð¸ Ñƒ Ñ�Ñ‚Ð°Ñ€Ñ‚Ð¾Ð²Ð¾Ð¹ Ð°Ñ�Ñ�Ð¸Ñ�Ñ‚ÐµÐ½Ñ‚ÐºÐ¸ Ð´Ð»Ñ� ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ð³Ð¾ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ�
  slave_obedience_bonus = 0 + slave["meekness"]
  if slave["courage"] = 2: slave["fear"] = 0
  if slave["courage"] = 0: slave_obedience_bonus += slave["fear"]

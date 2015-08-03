@@ -514,27 +514,27 @@ IF interaction = 22:
  $place = 'lab'
  $return_lock  = 'menu_form'
  txt_count = 2
- $get_pot = 'самогон'
+ $get_pot = 'Ñ�Ð°Ð¼Ð¾Ð³Ð¾Ð½'
  IF put_kanabis = 0:
-  IF $potion_base = 'water' and slave['enchanter'] > 0: $get_pot = 'вакхический_нектар'
-  IF $potion_base = 'spirit' and slave['enchanter'] > 1: $get_pot = 'тонизируюзщий_эликсир'
-  IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'целительный_бальзам'  
+  IF $potion_base = 'water' and slave['enchanter'] > 0: $get_pot = 'Ð²Ð°ÐºÑ…Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹_Ð½ÐµÐºÑ‚Ð°Ñ€'
+  IF $potion_base = 'spirit' and slave['enchanter'] > 1: $get_pot = 'Ñ‚Ð¾Ð½Ð¸Ð·Ð¸Ñ€ÑƒÑŽÐ·Ñ‰Ð¸Ð¹_Ñ�Ð»Ð¸ÐºÑ�Ð¸Ñ€'
+  IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'Ñ†ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹_Ð±Ð°Ð»ÑŒÐ·Ð°Ð¼'  
  END
  IF put_koffe = 0:
-  IF $potion_base = 'slime' and slave['enchanter'] > 4: $get_pot = 'приворотное_зелье'  
+  IF $potion_base = 'slime' and slave['enchanter'] > 4: $get_pot = 'Ð¿Ñ€Ð¸Ð²Ð¾Ñ€Ð¾Ñ‚Ð½Ð¾Ðµ_Ð·ÐµÐ»ÑŒÐµ'  
  END
  IF put_meth = 0:
-  IF $potion_base = 'water' and slave['enchanter'] > 4: $get_pot = 'вода_леты'
-  IF $potion_base = 'spirit' and slave['enchanter'] > 3: $get_pot = 'вода_леты'
-  IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'вода_леты'  
+  IF $potion_base = 'water' and slave['enchanter'] > 4: $get_pot = 'Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹'
+  IF $potion_base = 'spirit' and slave['enchanter'] > 3: $get_pot = 'Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹'
+  IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹'  
  END
  IF put_opium = 0:
-  IF $potion_base = 'spirit' and slave['enchanter'] > 1: $get_pot = 'афродизиак'
-  IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'мощный_афодизиак'  
+  IF $potion_base = 'spirit' and slave['enchanter'] > 1: $get_pot = 'Ð°Ñ„Ñ€Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº'
+  IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹_Ð°Ñ„Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº'  
  END  
  $text[1] = '   When all components are properly mixed, it''s time to most critical process. Need to refine and distill mix using alchemical equipment, and then saturate the potion with the power of sparks, so that magic gains strength.' 
  $text[2] = $get_pot_description[$get_pot]
- IF $get_pot = 'самогон':
+ IF $get_pot = 'Ñ�Ð°Ð¼Ð¾Ð³Ð¾Ð½':
   frige["alcohol"] += 1
   else
   dynamic "<<$get_pot>> += 1"
@@ -546,28 +546,28 @@ IF interaction = 23:
  npc = 0
  $place = 'lab'
  $return_lock  = 'menu_form'
- $get_pot = 'самогон'
+ $get_pot = 'Ñ�Ð°Ð¼Ð¾Ð³Ð¾Ð½'
  txt_count = 2
  IF put_kanabis = 0:
-  IF $potion_base = 'water' and assistant['enchanter'] > 0: $get_pot = 'вакхический_нектар'
-  IF $potion_base = 'spirit' and assistant['enchanter'] > 1: $get_pot = 'тонизируюзщий_эликсир'
-  IF $potion_base = 'slime' and assistant['enchanter'] > 2: $get_pot = 'целительный_бальзам'  
+  IF $potion_base = 'water' and assistant['enchanter'] > 0: $get_pot = 'Ð²Ð°ÐºÑ…Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹_Ð½ÐµÐºÑ‚Ð°Ñ€'
+  IF $potion_base = 'spirit' and assistant['enchanter'] > 1: $get_pot = 'Ñ‚Ð¾Ð½Ð¸Ð·Ð¸Ñ€ÑƒÑŽÐ·Ñ‰Ð¸Ð¹_Ñ�Ð»Ð¸ÐºÑ�Ð¸Ñ€'
+  IF $potion_base = 'slime' and assistant['enchanter'] > 2: $get_pot = 'Ñ†ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹_Ð±Ð°Ð»ÑŒÐ·Ð°Ð¼'  
  END
  IF put_koffe = 0:
-  IF $potion_base = 'slime' and assistant['enchanter'] > 4: $get_pot = 'приворотное_зелье'  
+  IF $potion_base = 'slime' and assistant['enchanter'] > 4: $get_pot = 'Ð¿Ñ€Ð¸Ð²Ð¾Ñ€Ð¾Ñ‚Ð½Ð¾Ðµ_Ð·ÐµÐ»ÑŒÐµ'  
  END
  IF put_meth = 0:
-  IF $potion_base = 'water' and assistant['enchanter'] > 4: $get_pot = 'вода_леты'
-  IF $potion_base = 'spirit' and assistant['enchanter'] > 3: $get_pot = 'вода_леты'
-  IF $potion_base = 'slime' and assistant['enchanter'] > 2: $get_pot = 'вода_леты'  
+  IF $potion_base = 'water' and assistant['enchanter'] > 4: $get_pot = 'Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹'
+  IF $potion_base = 'spirit' and assistant['enchanter'] > 3: $get_pot = 'Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹'
+  IF $potion_base = 'slime' and assistant['enchanter'] > 2: $get_pot = 'Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹'  
  END
  IF put_opium = 0:
-  IF $potion_base = 'spirit' and assistant['enchanter'] > 1: $get_pot = 'афродизиак'
-  IF $potion_base = 'slime' and assistant['enchanter'] > 2: $get_pot = 'мощный_афодизиак'  
+  IF $potion_base = 'spirit' and assistant['enchanter'] > 1: $get_pot = 'Ð°Ñ„Ñ€Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº'
+  IF $potion_base = 'slime' and assistant['enchanter'] > 2: $get_pot = 'Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹_Ð°Ñ„Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº'  
  END  
  $text[1] = '   When all components are properly mixed, it''s time to most critical process. Need to refine and distill mix using alchemical equipment, and then saturate the potion with the power of sparks, so that magic gains strength.' 
  $text[2] = $get_pot_description[$get_pot]
- IF $get_pot = 'самогон':
+ IF $get_pot = 'Ñ�Ð°Ð¼Ð¾Ð³Ð¾Ð½':
   frige["alcohol"] += 1
   else
   dynamic "<<$get_pot>> += 1"
@@ -1537,7 +1537,7 @@ IF interaction = 1212:
 END
 
 !Personal lesson on medicine
-!добавлен код прокачки интеллекта для медицины, делопроизводства и алхимии, if diligence > 2 - старание выше двух, т.е. как минимум на троечку, slave["nurse"] < 5 - добавлена для всего на всякий случай, для школы обязательно, т.к. была возможность послать еще раз и получить рейт интеллекта на халяву.
+!Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÐºÐ¾Ð´ Ð¿Ñ€Ð¾ÐºÐ°Ñ‡ÐºÐ¸ Ð¸Ð½Ñ‚ÐµÐ»Ð»ÐµÐºÑ‚Ð° Ð´Ð»Ñ� Ð¼ÐµÐ´Ð¸Ñ†Ð¸Ð½Ñ‹, Ð´ÐµÐ»Ð¾Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ñ�Ñ‚Ð²Ð° Ð¸ Ð°Ð»Ñ…Ð¸Ð¼Ð¸Ð¸, if diligence > 2 - Ñ�Ñ‚Ð°Ñ€Ð°Ð½Ð¸Ðµ Ð²Ñ‹ÑˆÐµ Ð´Ð²ÑƒÑ…, Ñ‚.Ðµ. ÐºÐ°Ðº Ð¼Ð¸Ð½Ð¸Ð¼ÑƒÐ¼ Ð½Ð° Ñ‚Ñ€Ð¾ÐµÑ‡ÐºÑƒ, slave["nurse"] < 5 - Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð° Ð´Ð»Ñ� Ð²Ñ�ÐµÐ³Ð¾ Ð½Ð° Ð²Ñ�Ñ�ÐºÐ¸Ð¹ Ñ�Ð»ÑƒÑ‡Ð°Ð¹, Ð´Ð»Ñ� ÑˆÐºÐ¾Ð»Ñ‹ Ð¾Ð±Ñ�Ð·Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾, Ñ‚.Ðº. Ð±Ñ‹Ð»Ð° Ð²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾Ñ�Ñ‚ÑŒ Ð¿Ð¾Ñ�Ð»Ð°Ñ‚ÑŒ ÐµÑ‰Ðµ Ñ€Ð°Ð· Ð¸ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ñ€ÐµÐ¹Ñ‚ Ð¸Ð½Ñ‚ÐµÐ»Ð»ÐµÐºÑ‚Ð° Ð½Ð° Ñ…Ð°Ð»Ñ�Ð²Ñƒ.
 IF interaction = 1213:
  $interaction_type = 'master_teaches_slave'
  $special_bg = $nurse[slave_type] 
@@ -4701,8 +4701,8 @@ IF interaction = 1474:
 END
 
 !Public toilet
-!Убрана потеря девственности при наказании общественным туалетом. Скорее всего - это ошибка копипасты наказания сверху.
-!Вероятность залететь оставлена - 1/10
+!Ð£Ð±Ñ€Ð°Ð½Ð° Ð¿Ð¾Ñ‚ÐµÑ€Ñ� Ð´ÐµÐ²Ñ�Ñ‚Ð²ÐµÐ½Ð½Ð¾Ñ�Ñ‚Ð¸ Ð¿Ñ€Ð¸ Ð½Ð°ÐºÐ°Ð·Ð°Ð½Ð¸Ð¸ Ð¾Ð±Ñ‰ÐµÑ�Ñ‚Ð²ÐµÐ½Ð½Ñ‹Ð¼ Ñ‚ÑƒÐ°Ð»ÐµÑ‚Ð¾Ð¼. Ð¡ÐºÐ¾Ñ€ÐµÐµ Ð²Ñ�ÐµÐ³Ð¾ - Ñ�Ñ‚Ð¾ Ð¾ÑˆÐ¸Ð±ÐºÐ° ÐºÐ¾Ð¿Ð¸Ð¿Ð°Ñ�Ñ‚Ñ‹ Ð½Ð°ÐºÐ°Ð·Ð°Ð½Ð¸Ñ� Ñ�Ð²ÐµÑ€Ñ…Ñƒ.
+!Ð’ÐµÑ€Ð¾Ñ�Ñ‚Ð½Ð¾Ñ�Ñ‚ÑŒ Ð·Ð°Ð»ÐµÑ‚ÐµÑ‚ÑŒ Ð¾Ñ�Ñ‚Ð°Ð²Ð»ÐµÐ½Ð° - 1/10
 IF interaction = 1475:
  $interaction_type = 'torture'
  $place = 'marketplace'
@@ -5296,7 +5296,7 @@ IF interaction = 1840:
 END
 
 !STUFF
-!было slave_mood для мудлетов, что работает не правильно для рабыни
+!Ð±Ñ‹Ð»Ð¾ slave_mood Ð´Ð»Ñ� Ð¼ÑƒÐ´Ð»ÐµÑ‚Ð¾Ð², Ñ‡Ñ‚Ð¾ Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚ Ð½Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾ Ð´Ð»Ñ� Ñ€Ð°Ð±Ñ‹Ð½Ð¸
 IF interaction = 371:
  lab_store["koffe"] -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
@@ -5395,7 +5395,7 @@ IF interaction = 375:
 END
 
 IF interaction = 381:
- вакхический_нектар -= 1
+ Ð²Ð°ÐºÑ…Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹_Ð½ÐµÐºÑ‚Ð°Ñ€ -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  master_mood['pos_bahus'] = 1
@@ -5407,7 +5407,7 @@ IF interaction = 381:
 END
 
 IF interaction = 382:
- тонизируюзщий_эликсир -= 1
+ Ñ‚Ð¾Ð½Ð¸Ð·Ð¸Ñ€ÑƒÑŽÐ·Ñ‰Ð¸Ð¹_Ñ�Ð»Ð¸ÐºÑ�Ð¸Ñ€ -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  master_energy += 1
@@ -5420,7 +5420,7 @@ IF interaction = 382:
 END
 
 IF interaction = 383:
- целительный_бальзам -= 1
+ Ñ†ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹_Ð±Ð°Ð»ÑŒÐ·Ð°Ð¼ -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  msg 'Balm better to apply at the same time when the wound is received, otherwise the efficiency is much lower. Nevertheless, you feel a little better.'
@@ -5433,7 +5433,7 @@ IF interaction = 383:
 END
 
 IF interaction = 384:
- афродизиак -= 1
+ Ð°Ñ„Ñ€Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  if master_excitement < 5: master_excitement += 1
@@ -5445,7 +5445,7 @@ IF interaction = 384:
 END
 
 IF interaction = 385:
- мощный_афодизиак -= 1
+ Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹_Ð°Ñ„Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  master_excitement = 5
@@ -5457,7 +5457,7 @@ IF interaction = 385:
 END
 
 IF interaction = 386:
- приворотное_зелье -= 1
+ Ð¿Ñ€Ð¸Ð²Ð¾Ñ€Ð¾Ñ‚Ð½Ð¾Ðµ_Ð·ÐµÐ»ÑŒÐµ -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  master_excitement = 5
@@ -5469,7 +5469,7 @@ IF interaction = 386:
 END
 
 IF interaction = 387:
- вода_леты -= 1
+ Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹ -= 1
  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
  bulk = 1
  gs '$mod_master_rise',100
@@ -5561,7 +5561,7 @@ IF interaction = 581:
  $interaction_type = 'get_grug'
  repulse = -5
  $special_part = {
- вакхический_нектар -= 1
+ Ð²Ð°ÐºÑ…Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹_Ð½ÐµÐºÑ‚Ð°Ñ€ -= 1
  slave_rate['arousal'] += 5
  if slave['pos_slave_alco'] < 1: slave['pos_slave_alco'] = 1
  }
@@ -5571,7 +5571,7 @@ IF interaction = 582:
  $interaction_type = 'get_grug'
  repulse = -5
  $special_part = {
- тонизируюзщий_эликсир -= 1
+ Ñ‚Ð¾Ð½Ð¸Ð·Ð¸Ñ€ÑƒÑŽÐ·Ñ‰Ð¸Ð¹_Ñ�Ð»Ð¸ÐºÑ�Ð¸Ñ€ -= 1
  if slave['energy'] < 5: slave['energy'] += 1
  slave_rate["stamina"] -= slave['energysed']
  slave['energysed'] += 1
@@ -5582,7 +5582,7 @@ IF interaction = 583:
  $interaction_type = 'get_grug'
  repulse = -5
  $special_part = {
- целительный_бальзам -= 1
+ Ñ†ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹_Ð±Ð°Ð»ÑŒÐ·Ð°Ð¼ -= 1
  if slave_rate['wounds'] > 0: slave_rate['wounds'] -= 10
  }
 END
@@ -5591,7 +5591,7 @@ IF interaction = 584:
  $interaction_type = 'get_grug'
  repulse = 0
  $special_part = {
- афродизиак -= 1
+ Ð°Ñ„Ñ€Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº -= 1
  if slave['arousal'] < 5: slave_rate['arousal'] += 20
  }
 END
@@ -5600,7 +5600,7 @@ IF interaction = 585:
  $interaction_type = 'get_grug'
  repulse = 0
  $special_part = {
- мощный_афодизиак -= 1
+ Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹_Ð°Ñ„Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº -= 1
  slave['arousal'] = 5
  slave_rate['arousal'] = 200
  }
@@ -5610,7 +5610,7 @@ IF interaction = 586:
  $interaction_type = 'get_grug'
  repulse = 1
  $special_part = {
- приворотное_зелье -= 1
+ Ð¿Ñ€Ð¸Ð²Ð¾Ñ€Ð¾Ñ‚Ð½Ð¾Ðµ_Ð·ÐµÐ»ÑŒÐµ -= 1
  IF slave['on_love_drug'] = 0:
   slave['on_love_drug'] = 1
   slave['pos_slave_love'] = 100
@@ -5625,7 +5625,7 @@ IF interaction = 587:
  $interaction_type = 'get_grug'
  repulse = 1
  $special_part = {
- вода_леты -= 1
+ Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹ -= 1
  slave_rate["moral"] = 0
  slave["moral"] = 0
  slave_rate["angst"] = 0 

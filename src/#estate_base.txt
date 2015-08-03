@@ -1,4 +1,4 @@
-# #estate_base
+#estate_base
 !Database of rental housing and interiors
 
 !housings
@@ -151,7 +151,7 @@ $estate_lab_location['white_house'] = 'Vatican Suburbs'
 
 
 !INTERIORS
-!Лачуга [slum_house]
+!Ð›Ð°Ñ‡ÑƒÐ³Ð° [slum_house]
 interior_prestige['slum_house'] = -1
 
 $interior_bg['slum_house'] = 'interiors\slum_large'
@@ -177,7 +177,7 @@ $interior_lab['slum_house'] = 'interiors\slum_lab'
 $interior_lab_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
 
-!Базовый интерьер ['basic']
+!Ð‘Ð°Ð·Ð¾Ð²Ñ‹Ð¹ Ð¸Ð½Ñ‚ÐµÑ€ÑŒÐµÑ€ ['basic']
 interior_prestige['basic'] = 0
 
 $interior_bg['basic'] = 'interiors\basic_large'
@@ -203,7 +203,7 @@ $interior_lab['basic'] = 'interiors\basic_lab'
 $interior_lab_info['basic'] = '   '
 
 
-!Интерьер эконом класса ['subprime']
+!Ð˜Ð½Ñ‚ÐµÑ€ÑŒÐµÑ€ Ñ�ÐºÐ¾Ð½Ð¾Ð¼ ÐºÐ»Ð°Ñ�Ñ�Ð° ['subprime']
 interior_prestige['econom'] = 0
 
 $interior_bg['econom'] = 'interiors\econom_large'
@@ -228,7 +228,7 @@ $interior_dungeon_info['econom'] = '   '
 $interior_lab['econom'] = 'interiors\econom_lab'
 $interior_lab_info['econom'] = '   '
 
-!Готический набор ['gothic']
+!Ð“Ð¾Ñ‚Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹ Ð½Ð°Ð±Ð¾Ñ€ ['gothic']
 interior_prestige['gothic'] = 1
 
 $interior_bg['gothic'] = 'interiors\gothic_large'
@@ -253,7 +253,7 @@ $interior_dungeon_info['gothic'] = '   '
 $interior_lab['gothic'] = 'interiors\gothic_lab'
 $interior_lab_info['gothic'] = '   '
 
-!Набор форт ['fort']
+!Ð�Ð°Ð±Ð¾Ñ€ Ñ„Ð¾Ñ€Ñ‚ ['fort']
 interior_prestige['fort'] = 0
 
 $interior_bg['fort'] = 'interiors\fort_large'
@@ -278,7 +278,7 @@ $interior_dungeon_info['fort'] = '   '
 $interior_lab['fort'] = 'interiors\fort_lab'
 $interior_lab_info['fort'] = '   '
 
-!Название ['elite']
+!Ð�Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ ['elite']
 interior_prestige['elite'] = 1
 
 $interior_bg['elite'] = 'interiors\elite_large'
@@ -303,7 +303,7 @@ $interior_dungeon_info['elite'] = '   '
 $interior_lab['elite'] = 'interiors\elite_lab'
 $interior_lab_info['elite'] = '   '
 
-!Классический набор ['classic']
+!ÐšÐ»Ð°Ñ�Ñ�Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹ Ð½Ð°Ð±Ð¾Ñ€ ['classic']
 interior_prestige['classic'] = 1
 
 $interior_bg['classic'] = 'study_large'
@@ -322,14 +322,14 @@ $interior_bath_info['classic'] = '   '
 $interior_dungeon['classic'] = 'dungeon'
 $interior_dungeon_info['classic'] = '   '
 
-!Набор альков ['alcove']
+!Ð�Ð°Ð±Ð¾Ñ€ Ð°Ð»ÑŒÐºÐ¾Ð² ['alcove']
 interior_prestige['alcove'] = 1
 
 $interior_bed['alcove'] = 'interiors\alcove_bed'
 $interior_bed_info['alcove'] = '   '
 
 
-!Набор комфорт ['comfy']
+!Ð�Ð°Ð±Ð¾Ñ€ ÐºÐ¾Ð¼Ñ„Ð¾Ñ€Ñ‚ ['comfy']
 interior_prestige['comfy'] = 0
 
 $interior_bg['comfy'] = 'interiors\comfy_large'
@@ -342,19 +342,19 @@ $interior_bed_info['comfy'] = '   '
 $interior_bouduar['comfy'] = 'interiors\comfy_bouduar'
 $interior_bouduar_info['comfy'] = '   '
 
-!Каменный мешок ['entomb']
+!ÐšÐ°Ð¼ÐµÐ½Ð½Ñ‹Ð¹ Ð¼ÐµÑˆÐ¾Ðº ['entomb']
 interior_prestige['entomb'] = 0
 
 $interior_dungeon['entomb'] = 'interiors\entomb_dungeon'
 $interior_dungeon_info['entomb'] = '   '
 
-!Палач ['executor']
+!ÐŸÐ°Ð»Ð°Ñ‡ ['executor']
 interior_prestige['executor'] = 0
 
 $interior_dungeon['executor'] = 'interiors\executor_dungeon'
 $interior_dungeon_info['executor'] = '   '
 
-!Пасторальный набор ['pastoral']
+!ÐŸÐ°Ñ�Ñ‚Ð¾Ñ€Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð½Ð°Ð±Ð¾Ñ€ ['pastoral']
 interior_prestige['pastoral'] = 0
 
 $interior_bg['pastoral'] = 'interiors\pastoral_large'
@@ -364,7 +364,7 @@ $interior_study_info['pastoral'] = '   '
 $interior_dungeon['pastoral'] = 'interiors\pastoral_dungeon'
 $interior_dungeon_info['pastoral'] = '   '
 
-!Японский набор ['japan']
+!Ð¯Ð¿Ð¾Ð½Ñ�ÐºÐ¸Ð¹ Ð½Ð°Ð±Ð¾Ñ€ ['japan']
 interior_prestige['japan'] = 0
 
 $interior_bg['japan'] = 'interiors\japan_large'
@@ -377,7 +377,7 @@ $interior_bed_info['japan'] = '   '
 $interior_bath['japan'] = 'interiors\japan_bath'
 $interior_bath_info['japan'] = '   '
 
-!Набор люкс ['lux']
+!Ð�Ð°Ð±Ð¾Ñ€ Ð»ÑŽÐºÑ� ['lux']
 interior_prestige['lux'] = 1
 
 $interior_bg['lux'] = 'interiors\lux_large'
@@ -396,13 +396,13 @@ $interior_bouduar_info['lux'] = '   '
 $interior_dungeon['lux'] = 'interiors\lux_dungeon'
 $interior_dungeon_info['lux'] = '   '
 
-!Магический набор ['magic']
+!ÐœÐ°Ð³Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹ Ð½Ð°Ð±Ð¾Ñ€ ['magic']
 interior_prestige['magic'] = 0
 
 $interior_bouduar['magic'] = 'interiors\magic_bouduar'
 $interior_bouduar_info['magic'] = '   '
 
-!Набор модерн ['modern']
+!Ð�Ð°Ð±Ð¾Ñ€ Ð¼Ð¾Ð´ÐµÑ€Ð½ ['modern']
 interior_prestige['modern'] = 1
 
 $interior_bg['modern'] = 'interiors\modern_large'
@@ -415,7 +415,7 @@ $interior_bed_info['modern'] = '   '
 $interior_bouduar['modern'] = 'interiors\modern_bouduar'
 $interior_bouduar_info['modern'] = '   '
 
-!Набор работорговец ['slaver']
+!Ð�Ð°Ð±Ð¾Ñ€ Ñ€Ð°Ð±Ð¾Ñ‚Ð¾Ñ€Ð³Ð¾Ð²ÐµÑ† ['slaver']
 interior_prestige['slaver'] = 1 
 
 $interior_bg['slaver'] = 'interiors\slaver_large'
@@ -434,13 +434,13 @@ $interior_dungeon_info['slaver'] = '   '
 $interior_lab['slaver'] = 'interiors\slaver_lab'
 $interior_lab_info['slaver'] = '   '
 
-!Стильный набор ['stylish']
+!Ð¡Ñ‚Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð½Ð°Ð±Ð¾Ñ€ ['stylish']
 interior_prestige['stylish'] = 1
 
 $interior_bed['stylish'] = 'interiors\stylish_bed'
 $interior_bed_info['stylish'] = '   '
 
-!Викторианский набор ['victorian']
+!Ð’Ð¸ÐºÑ‚Ð¾Ñ€Ð¸Ð°Ð½Ñ�ÐºÐ¸Ð¹ Ð½Ð°Ð±Ð¾Ñ€ ['victorian']
 interior_prestige['victorian'] = 1
 
 $interior_bg['victorian'] = 'interiors\victorian_large'
@@ -458,7 +458,7 @@ $interior_lab_info['victorian'] = '   '
 
 
 !'
-!Название ['']
+!Ð�Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ ['']
 interior_prestige['basic'] = 0
 
 $interior_bg['basic'] = 'interiors\_large'

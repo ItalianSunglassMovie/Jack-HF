@@ -1,4 +1,4 @@
-# #place_base
+#place_base
 !places
 $bg['dungeon'] = 'dungeon'
 $bg['study'] = 'study'
@@ -110,11 +110,11 @@ $pb_cycle = {
 
 ! replaces to:
 !dynamic $pb_cycle, 'place', '', '', ''
-!-----Замена для копипасты локаций, by Lyazar-----
-!TODO: глянуть где еще используется
+!-----Ð—Ð°Ð¼ÐµÐ½Ð° Ð´Ð»Ñ� ÐºÐ¾Ð¿Ð¸Ð¿Ð°Ñ�Ñ‚Ñ‹ Ð»Ð¾ÐºÐ°Ñ†Ð¸Ð¹, by Lyazar-----
+!TODO: Ð³Ð»Ñ�Ð½ÑƒÑ‚ÑŒ Ð³Ð´Ðµ ÐµÑ‰Ðµ Ð¸Ñ�Ð¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚Ñ�Ñ�
 
 dynamic $pb_cycle, 'place', '', '', ''
-dynamic $pb_cycle, 'computer', 'Data Terminal', 'Technosphere', '   It is not known exactly why slaves used as a terminals in the technical center. Probably it''s just more economical in terms of costs of sparks. Anyway, brains of this «terminals» are fully integrated into Soulnet and no longer contains personality. But they have access to a huge amount of useful information.'
+dynamic $pb_cycle, 'computer', 'Data Terminal', 'Technosphere', '   It is not known exactly why slaves used as a terminals in the technical center. Probably it''s just more economical in terms of costs of sparks. Anyway, brains of this Â«terminalsÂ» are fully integrated into Soulnet and no longer contains personality. But they have access to a huge amount of useful information.'
 dynamic $pb_cycle, 'forum', 'Central Forum', 'Vatican Suburbs', '   Under the very walls of the Vatican is a large landscaped area with flowerbeds, statues and pavilions, where representatives of all the houses are free to meet, socialize and share rumors and gossip.'
 dynamic $pb_cycle, 'palace', 'Throne Room', 'White Palace', ''
 dynamic $pb_cycle, 'church', 'Palace Chapel', 'White Palace', ''
@@ -153,15 +153,15 @@ dynamic $pb_cycle, 'study', 'Working Room', 'Guild House', 'Comfortable working 
 dynamic $pb_cycle, 'bedroom', 'Bedroom', 'Guild House', 'Almost all the space in this room takes a huge soft bed with canopy. With this size, it may fit well the four persons at once...'
 dynamic $pb_cycle, 'street', 'Streets', 'White Town', 'The streets of the Eternal Rome is not always the most pleasant place, many are simply dangerous. But in the piling high tower-houses you can find several broad avenues and landscaped alleys. Most of these places in the White Town, which is located on the outskirts of the Vatican. This is neutral territory, besides being under the protection of the Swiss Guard.'
 dynamic $pb_cycle, 'farm', 'Animal Farm', 'Quarter of the Outcasts', 'Eternal Rome doesn`t have many large animals, as they take up much space, and it is unprofitable to breed them. However, there are a couple of farms where you can rent a healthy purebred animals for a particular purpose. Here, on the rights of animals kept ordinary human slaves as well.'
-dynamic $pb_cycle, 'restaurant', '«Gold Quail»', 'Quarter of the Outcasts', 'In the cauldron of Eternal Rome brewed so many cultures and peoples that none of their restaurant is not like the other. Hardly anywhere else in the multiverse one can find such a variety. Greedy for meal, beastmen cook especially tasty food. In those cases, of course, when they are not so hungry to ingest raw meat and gnaw bones.'
+dynamic $pb_cycle, 'restaurant', 'Â«Gold QuailÂ»', 'Quarter of the Outcasts', 'In the cauldron of Eternal Rome brewed so many cultures and peoples that none of their restaurant is not like the other. Hardly anywhere else in the multiverse one can find such a variety. Greedy for meal, beastmen cook especially tasty food. In those cases, of course, when they are not so hungry to ingest raw meat and gnaw bones.'
 dynamic $pb_cycle, 'high_view', 'Observation Point', 'The Slavers Guild', 'In the Eternal Rome there''s not so much space as people would like, therefore each house-tower roof has an observation point on which you can walk, watch the city with a bird''s-eye view and take a breath of fresh air.'
 dynamic $pb_cycle, 'beach', 'Illusory Beach', 'Catacombs of Serpentine Sector', 'Illusionists Guild settle a real beach in a huge flooded cave under the town, with soft sand, warm sun and endless blue sky above. Maintaining such a large-scale illusion requires a lot of sparks, but those who willing to pay to rest at the sea for an hour is always enough. There is always crowded and noisy.'
 dynamic $pb_cycle, 'theater', 'Via Grande Theater', 'Necropolis', 'Culture thrives in the Eternal Rome, and many theaters provide representation for every taste, including quite exotic ones. Oddly enough, some of the most exciting performances in theaters give Corvus sector. Vampires - born actors, who are used to deceive people.'
 dynamic $pb_cycle, 'garden', 'Garden of Gethsemane', 'Pontifical Zone', 'On the outskirts of the Pontifical Zone located the ancient Garden of Gethsemane, the place where all the suffering can find solace for their tormented soul through union with the Son of God, where he prayed here on his last night. There''s no escape from the garden, as well you can`t to stay there forever. But as long as you`re there - no place is quieter and safer.'
 dynamic $pb_cycle, 'onsen', 'Onsen', 'White Town', 'Baths at the hot springs - a favorite vacation spot of citizens of Eternal Rome. For a small fee you can wash and relax in the warm pool. Women and men are separated by half, but the slaves carefully guarded, so they could not escape.'
-dynamic $pb_cycle, 'harem', '«The Golden Cage»', 'The Slavers Guild', 'The Slavers Guild holds a special institution for slaves. Outside it is securely guarded, and inside girls can relax and socialize with each other in luxury and comfort. Most slaves very much appreciate the time spent there, although among attendees sometimes can arise quarrels and conflicts.'
+dynamic $pb_cycle, 'harem', 'Â«The Golden CageÂ»', 'The Slavers Guild', 'The Slavers Guild holds a special institution for slaves. Outside it is securely guarded, and inside girls can relax and socialize with each other in luxury and comfort. Most slaves very much appreciate the time spent there, although among attendees sometimes can arise quarrels and conflicts.'
 dynamic $pb_cycle, 'guild_board', 'Bulletin board', 'The Slavers Guild', 'On this board you can find news of the guild and possible contracts for training or the capture of fugitive slaves. If you low on money, taking a training contract for other slave can be very sensible strategy!'
-dynamic $pb_cycle, 'brothel', 'Salon of Madame Jofre', 'Quarter of the Bull', '  Madame Jofre contains one of the best and largest salons in the Eternal Rome. Due to the specific location, the clientèle is limited primarily to the Faithfuls and citizens of White Town, so the prices here are pretty decent, but the level of service is appropriate.'
+dynamic $pb_cycle, 'brothel', 'Salon of Madame Jofre', 'Quarter of the Bull', '  Madame Jofre contains one of the best and largest salons in the Eternal Rome. Due to the specific location, the clientÃ¨le is limited primarily to the Faithfuls and citizens of White Town, so the prices here are pretty decent, but the level of service is appropriate.'
 dynamic $pb_cycle, 'beauty_shop', 'Beauty Shop', 'White Town', '  This luxurious beauty salon offers a variety of treatments for body care: manicures, pedicures, perms, highlighting, spa and other scary words... Everything you need to uncover the woman''s beauty. They also can bring a man to the divine form as well.'
 dynamic $pb_cycle, 'jeweler', 'Jewelry Store', 'White Town', '   '
 dynamic $pb_cycle, 'gastronom', 'Grocery Store', 'White Town', '   '
@@ -171,7 +171,7 @@ dynamic $pb_cycle, 'tabern', '"Virgin''s hip" Pub', 'Serpentine Quarter', '   On
 dynamic $pb_cycle, 'tabern_kitchen', 'Pub''s Kitchen', '"Virgin''s hip"', '   '
 dynamic $pb_cycle, 'uncle_bo', 'Tattoo Shop', 'Quarter of the Outcasts', '  '
 dynamic $pb_cycle, 'piercing_shop', 'Piercing Shop', 'Necropolis', '  '
-dynamic $pb_cycle, 'edge_patrool', 'Border of the Fogs', 'City ​​Outskirts', ''
+dynamic $pb_cycle, 'edge_patrool', 'Border of the Fogs', 'City â€‹â€‹Outskirts', ''
 dynamic $pb_cycle, 'moneylander', 'House of Moneylender', 'Slums', ''
 dynamic $pb_cycle, 'marketplace', '', '', ''
 --- #place_base ---------------------------------

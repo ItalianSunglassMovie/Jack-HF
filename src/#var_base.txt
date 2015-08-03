@@ -1,4 +1,4 @@
-﻿# #var_base
+#var_base
 !Various technical variables and arrays
 
 !Replacement for font copypaste
@@ -38,7 +38,7 @@ $vb_full_cycle = {
     killvar '_counter'
     killvar '$_tmp'
 }
-! dynamic $vb_full_cycle, '$slave_petting', 5, 'Петтинг'
+! dynamic $vb_full_cycle, '$slave_petting', 5, 'ÐŸÐµÑ‚Ñ‚Ð¸Ð½Ð³'
 
 !-----Replacement for font copypaste-----
 
@@ -60,29 +60,29 @@ age_code['loli']  = CONST_INT['loli_age']
 age_code['milf']  = CONST_INT['milf_age']
 
 !gladiator weapon
-$style_wpn['retiarius'] = 'трезубец'
-$style_wpn['flagrius'] = 'пилохлыст'
-$style_wpn['dimacherus'] = 'бастард'
-$style_wpn['hoplomachus'] = 'гладиус'
-$style_wpn['kimerian'] = 'грейтекс'
+$style_wpn['retiarius'] = 'Ñ‚Ñ€ÐµÐ·ÑƒÐ±ÐµÑ†'
+$style_wpn['flagrius'] = 'Ð¿Ð¸Ð»Ð¾Ñ…Ð»Ñ‹Ñ�Ñ‚'
+$style_wpn['dimacherus'] = 'Ð±Ð°Ñ�Ñ‚Ð°Ñ€Ð´'
+$style_wpn['hoplomachus'] = 'Ð³Ð»Ð°Ð´Ð¸ÑƒÑ�'
+$style_wpn['kimerian'] = 'Ð³Ñ€ÐµÐ¹Ñ‚ÐµÐºÑ�'
 
 $style_freehand['retiarius'] = ''
 $style_freehand['flagrius'] = ''
-$style_freehand['dimacherus'] = 'короткий_меч'
+$style_freehand['dimacherus'] = 'ÐºÐ¾Ñ€Ð¾Ñ‚ÐºÐ¸Ð¹_Ð¼ÐµÑ‡'
 $style_freehand['hoplomachus'] = ''
 $style_freehand['kimerian'] = ''
 
-$armor['retiarius'] = 'без_брони'
-$armor['flagrius'] = 'полудоспех'
-$armor['dimacherus'] = 'комбез'
-$armor['hoplomachus'] = 'эльчуга'
-$armor['kimerian'] = 'без_брони'
+$armor['retiarius'] = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$armor['flagrius'] = 'Ð¿Ð¾Ð»ÑƒÐ´Ð¾Ñ�Ð¿ÐµÑ…'
+$armor['dimacherus'] = 'ÐºÐ¾Ð¼Ð±ÐµÐ·'
+$armor['hoplomachus'] = 'Ñ�Ð»ÑŒÑ‡ÑƒÐ³Ð°'
+$armor['kimerian'] = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
 
-$gt_spm['retiarius'] = 'бросок_сети'
-$gt_spm['flagrius'] = 'серейтор'
-$gt_spm['dimacherus'] = 'ножницы'
-$gt_spm['hoplomachus'] = 'толчок_щитом'
-$gt_spm['kimerian'] = 'удар_с_разворота'
+$gt_spm['retiarius'] = 'Ð±Ñ€Ð¾Ñ�Ð¾Ðº_Ñ�ÐµÑ‚Ð¸'
+$gt_spm['flagrius'] = 'Ñ�ÐµÑ€ÐµÐ¹Ñ‚Ð¾Ñ€'
+$gt_spm['dimacherus'] = 'Ð½Ð¾Ð¶Ð½Ð¸Ñ†Ñ‹'
+$gt_spm['hoplomachus'] = 'Ñ‚Ð¾Ð»Ñ‡Ð¾Ðº_Ñ‰Ð¸Ñ‚Ð¾Ð¼'
+$gt_spm['kimerian'] = 'ÑƒÐ´Ð°Ñ€_Ñ�_Ñ€Ð°Ð·Ð²Ð¾Ñ€Ð¾Ñ‚Ð°'
 
 !fiend vars
 semen_gain[0] = 3
@@ -181,7 +181,7 @@ $specialisation[8] = 'concubine'
 !GENERAL PICTURES
 $fullimage[0] = ''
 
-!' Эта фигня перезаписывается в дальнейшем, да и картинок таких нет.
+!' Ð­Ñ‚Ð° Ñ„Ð¸Ð³Ð½Ñ� Ð¿ÐµÑ€ÐµÐ·Ð°Ð¿Ð¸Ñ�Ñ‹Ð²Ð°ÐµÑ‚Ñ�Ñ� Ð² Ð´Ð°Ð»ÑŒÐ½ÐµÐ¹ÑˆÐµÐ¼, Ð´Ð° Ð¸ ÐºÐ°Ñ€Ñ‚Ð¸Ð½Ð¾Ðº Ñ‚Ð°ÐºÐ¸Ñ… Ð½ÐµÑ‚.
 
 $cooked_food = 'scene/food'   
 $cooked_food[1] = 'scene/food1' 
@@ -204,7 +204,7 @@ $games = 'scene/'
 
 $finger_gripe = 'girls\torture\fingergrip'
 
-!ЗВУКИ
+!Ð—Ð’Ð£ÐšÐ˜
 !0 - girl
 !1 - loli
 !2 - MILF
@@ -865,7 +865,7 @@ $brand_fame[0] = $_font_col_rep[0] + 'My brand is not known by anybody and this 
 $brand_fame[1] = $_font_col_rep[1] + 'Among all the brands of my guild mine is valued less than others, but if I sell good slaves, it will quickly change.' + $_font_closer
 $brand_fame[2] = $_font_col_rep[2] + 'At least my brand is already know, even though it does not add special prices on slaves that I deliver. It is necessary to improve the quality of my goods!' + $_font_closer
 $brand_fame[3] = $_font_col_rep[3] + 'I am known as supplier of quality products and girls with my brand on a hip are worth something. But this is not a major league.' + $_font_closer
-$brand_fame[4] = $_font_col_rep[4] + 'Work on my image has payed off. My brand is now known by everyone and I am recognized as a great trainer. Selling ​​goods has never been so easy!' + $_font_closer
+$brand_fame[4] = $_font_col_rep[4] + 'Work on my image has payed off. My brand is now known by everyone and I am recognized as a great trainer. Selling â€‹â€‹goods has never been so easy!' + $_font_closer
 $brand_fame[5] = $_font_col_rep[5] + 'Maybe I overestimating myself, but I think that my brand is the best among all members of the guild. Even if I put it on a piece of shit, I will get sparks for this shit!' + $_font_closer
 
 !show vars
@@ -1411,9 +1411,9 @@ $cooked_food[3] = $_font_col_rep[3] + 'Full meal' + $_font_closer
 $cooked_food[4] = $_font_col_rep[4] + 'Full meal' + $_font_closer
 $cooked_food[5] = $_font_col_rep[5] + 'Full meal' + $_font_closer
 
-!костыль для состояния волос, волософикс ~the_vm
-!неделя слишком дохуя, надо дорабатывать
-!для предпоследнего состояния: имеется в виду что от помятой прически останутся лишь простые расчесанные волосы, а далее растрепанные - рабыни слишком заняты, чтобы себя расчесывать. Вообще. Также к состоянию (1) отсылается парик, если прически нет, а парик есть. Вроде подходит.
+!ÐºÐ¾Ñ�Ñ‚Ñ‹Ð»ÑŒ Ð´Ð»Ñ� Ñ�Ð¾Ñ�Ñ‚Ð¾Ñ�Ð½Ð¸Ñ� Ð²Ð¾Ð»Ð¾Ñ�, Ð²Ð¾Ð»Ð¾Ñ�Ð¾Ñ„Ð¸ÐºÑ� ~the_vm
+!Ð½ÐµÐ´ÐµÐ»Ñ� Ñ�Ð»Ð¸ÑˆÐºÐ¾Ð¼ Ð´Ð¾Ñ…ÑƒÑ�, Ð½Ð°Ð´Ð¾ Ð´Ð¾Ñ€Ð°Ð±Ð°Ñ‚Ñ‹Ð²Ð°Ñ‚ÑŒ
+!Ð´Ð»Ñ� Ð¿Ñ€ÐµÐ´Ð¿Ð¾Ñ�Ð»ÐµÐ´Ð½ÐµÐ³Ð¾ Ñ�Ð¾Ñ�Ñ‚Ð¾Ñ�Ð½Ð¸Ñ�: Ð¸Ð¼ÐµÐµÑ‚Ñ�Ñ� Ð² Ð²Ð¸Ð´Ñƒ Ñ‡Ñ‚Ð¾ Ð¾Ñ‚ Ð¿Ð¾Ð¼Ñ�Ñ‚Ð¾Ð¹ Ð¿Ñ€Ð¸Ñ‡ÐµÑ�ÐºÐ¸ Ð¾Ñ�Ñ‚Ð°Ð½ÑƒÑ‚Ñ�Ñ� Ð»Ð¸ÑˆÑŒ Ð¿Ñ€Ð¾Ñ�Ñ‚Ñ‹Ðµ Ñ€Ð°Ñ�Ñ‡ÐµÑ�Ð°Ð½Ð½Ñ‹Ðµ Ð²Ð¾Ð»Ð¾Ñ�Ñ‹, Ð° Ð´Ð°Ð»ÐµÐµ Ñ€Ð°Ñ�Ñ‚Ñ€ÐµÐ¿Ð°Ð½Ð½Ñ‹Ðµ - Ñ€Ð°Ð±Ñ‹Ð½Ð¸ Ñ�Ð»Ð¸ÑˆÐºÐ¾Ð¼ Ð·Ð°Ð½Ñ�Ñ‚Ñ‹, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ñ�ÐµÐ±Ñ� Ñ€Ð°Ñ�Ñ‡ÐµÑ�Ñ‹Ð²Ð°Ñ‚ÑŒ. Ð’Ð¾Ð¾Ð±Ñ‰Ðµ. Ð¢Ð°ÐºÐ¶Ðµ Ðº Ñ�Ð¾Ñ�Ñ‚Ð¾Ñ�Ð½Ð¸ÑŽ (1) Ð¾Ñ‚Ñ�Ñ‹Ð»Ð°ÐµÑ‚Ñ�Ñ� Ð¿Ð°Ñ€Ð¸Ðº, ÐµÑ�Ð»Ð¸ Ð¿Ñ€Ð¸Ñ‡ÐµÑ�ÐºÐ¸ Ð½ÐµÑ‚, Ð° Ð¿Ð°Ñ€Ð¸Ðº ÐµÑ�Ñ‚ÑŒ. Ð’Ñ€Ð¾Ð´Ðµ Ð¿Ð¾Ð´Ñ…Ð¾Ð´Ð¸Ñ‚.
 $hair_style[0] = $_font_col_rep[0] + 'disheveled hair' + $_font_closer
 $hair_style[1] = $_font_col_rep[1] + 'combed hair' + $_font_closer
 $hair_style[2] = $_font_col_rep[2] + 'rumpled hairstyle' + $_font_closer
@@ -1486,29 +1486,29 @@ $vaginal_modification[3] = 'Vagina tongue'
 $vaginal_modification[4] = 'Egg birthing'
 
 !for formulas
-dynamic $vb_full_cycle, '$красота', 5, 'Beauty'
-dynamic $vb_full_cycle, '$природная_красота', 5, 'natural beauty'
-$пластика[0] = $_font_col_rep[0] + 'neoplasty' + $_font_closer
-$пластика[1] = $_font_col_rep[5] + 'neoplasty' + $_font_closer
-dynamic $vb_full_cycle, '$шрамы', 5, 'scars'
-dynamic $vb_full_cycle, '$синяки', 5, 'bruises'
+dynamic $vb_full_cycle, '$ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°', 5, 'Beauty'
+dynamic $vb_full_cycle, '$Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ð½Ð°Ñ�_ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°', 5, 'natural beauty'
+$Ð¿Ð»Ð°Ñ�Ñ‚Ð¸ÐºÐ°[0] = $_font_col_rep[0] + 'neoplasty' + $_font_closer
+$Ð¿Ð»Ð°Ñ�Ñ‚Ð¸ÐºÐ°[1] = $_font_col_rep[5] + 'neoplasty' + $_font_closer
+dynamic $vb_full_cycle, '$ÑˆÑ€Ð°Ð¼Ñ‹', 5, 'scars'
+dynamic $vb_full_cycle, '$Ñ�Ð¸Ð½Ñ�ÐºÐ¸', 5, 'bruises'
 
-dynamic $vb_full_cycle, '$экзотика', 5, 'Exoticism'
-dynamic $vb_full_cycle, '$природная_экзотика', 5, 'natural exoticism'
-dynamic $vb_full_cycle, '$пирсинг', 5, 'piercing'
+dynamic $vb_full_cycle, '$Ñ�ÐºÐ·Ð¾Ñ‚Ð¸ÐºÐ°', 5, 'Exoticism'
+dynamic $vb_full_cycle, '$Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ð½Ð°Ñ�_Ñ�ÐºÐ·Ð¾Ñ‚Ð¸ÐºÐ°', 5, 'natural exoticism'
+dynamic $vb_full_cycle, '$Ð¿Ð¸Ñ€Ñ�Ð¸Ð½Ð³', 5, 'piercing'
 dynamic $vb_full_cycle, '$wear', 5, 'clothes'
 
-dynamic $vb_full_cycle, '$стиль', 5, 'Style'
-$грация[0] = $_font_col_rep[0] + 'grace' + $_font_closer
-$грация[1] = $_font_col_rep[5] + 'grace' + $_font_closer
-$грация[2] = $_font_col_rep[0] + 'grace' + $_font_closer
-$гигиена[0] = $_font_col_rep[5] + 'hygiene' + $_font_closer
-$гигиена[1] = $_font_col_rep[4] + 'hygiene' + $_font_closer
-$гигиена[2] = $_font_col_rep[3] + 'hygiene' + $_font_closer
-$гигиена[3] = $_font_col_rep[2] + 'hygiene' + $_font_closer
-$гигиена[4] = $_font_col_rep[1] + 'hygiene' + $_font_closer
-$гигиена[5] = $_font_col_rep[0] + 'hygiene' + $_font_closer
-dynamic $vb_full_cycle, '$мейкап', 3, 'makeup'
+dynamic $vb_full_cycle, '$Ñ�Ñ‚Ð¸Ð»ÑŒ', 5, 'Style'
+$Ð³Ñ€Ð°Ñ†Ð¸Ñ�[0] = $_font_col_rep[0] + 'grace' + $_font_closer
+$Ð³Ñ€Ð°Ñ†Ð¸Ñ�[1] = $_font_col_rep[5] + 'grace' + $_font_closer
+$Ð³Ñ€Ð°Ñ†Ð¸Ñ�[2] = $_font_col_rep[0] + 'grace' + $_font_closer
+$Ð³Ð¸Ð³Ð¸ÐµÐ½Ð°[0] = $_font_col_rep[5] + 'hygiene' + $_font_closer
+$Ð³Ð¸Ð³Ð¸ÐµÐ½Ð°[1] = $_font_col_rep[4] + 'hygiene' + $_font_closer
+$Ð³Ð¸Ð³Ð¸ÐµÐ½Ð°[2] = $_font_col_rep[3] + 'hygiene' + $_font_closer
+$Ð³Ð¸Ð³Ð¸ÐµÐ½Ð°[3] = $_font_col_rep[2] + 'hygiene' + $_font_closer
+$Ð³Ð¸Ð³Ð¸ÐµÐ½Ð°[4] = $_font_col_rep[1] + 'hygiene' + $_font_closer
+$Ð³Ð¸Ð³Ð¸ÐµÐ½Ð°[5] = $_font_col_rep[0] + 'hygiene' + $_font_closer
+dynamic $vb_full_cycle, '$Ð¼ÐµÐ¹ÐºÐ°Ð¿', 3, 'makeup'
 !end of section for formulas
 
 dynamic $vb_full_cycle, '$service_lesson', 6, 'Housekeeping lesson'

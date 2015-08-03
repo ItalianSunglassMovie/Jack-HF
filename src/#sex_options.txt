@@ -1,4 +1,4 @@
-# #sex_options
+#sex_options
 !MAIN MENU FOR ACTIVE SEX
 
 killvar '$play_sound'  
@@ -169,7 +169,7 @@ $sex_options[9] = {
     FUNC('$menu', '===SEX_END===')
 }
 
-!настройки
+!Ð½Ð°Ñ�Ñ‚Ñ€Ð¾Ð¹ÐºÐ¸
 $sex_options[100] = {
   $sex_menu = '<br>'
  IF exam_in_progress ! 1:
