@@ -1,4 +1,4 @@
-# interaction_city
+﻿# interaction_city
 !INTERACTIONS IN CITY
 gs '#txt'
 gs '#txt_2'
@@ -3035,7 +3035,7 @@ gt 'guild'}
  gt 'choice_screen'
 END
 
-!C-rank contract
+!D+ rank contract
 IF interaction_city = 1413:
  gs 'generate_stock'
  npc = 9999
@@ -3046,7 +3046,7 @@ IF interaction_city = 1413:
  specialisation = rand(1,n)
  txt = 1
  $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for C <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">300 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for D+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">350 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
  $yes = {
 gs 'stock_to_slave_nogt' 
 slave["parasite"] = 0
@@ -3054,7 +3054,7 @@ slave['brand'] = 4
 killvar 'contract'
 contract['active'] = 1
 active[$quest[10]] = 1
-sparks += 300
+sparks += 350
 contract['level'] = 2
 $contract['specialisation'] = $specialisation[specialisation]
 npc = 0
@@ -3066,7 +3066,7 @@ gt 'guild'}
  gt 'choice_screen'
 END
 
-!B-rank contract
+!C- rank contract
 IF interaction_city = 1414:
  gs 'generate_stock'
  npc = 9999
@@ -3077,7 +3077,7 @@ IF interaction_city = 1414:
  specialisation = rand(1,n)
  txt = 1
  $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for B <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">500 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for C- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">700 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
  $yes = {
 gs 'stock_to_slave_nogt' 
 slave["parasite"] = 0
@@ -3085,8 +3085,225 @@ slave['brand'] = 4
 killvar 'contract'
 contract['active'] = 1
 active[$quest[10]] = 1
-sparks += 500
+sparks += 700
 contract['level'] = 3
+$contract['specialisation'] = $specialisation[specialisation]
+npc = 0
+gt 'guild'}
+ $no = {contract['active'] = 2
+npc = 0
+gs 'generate_stock'
+gt 'guild'}  
+ gt 'choice_screen'
+END
+
+!C+ rank contract
+IF interaction_city = 1415:
+ gs 'generate_stock'
+ npc = 9999
+ $place = 'guild_hall'
+ $picture_type = 'stock_picture'
+ $return_lock  = 'guild'
+ n = arrsize('$specialisation') - 1 
+ specialisation = rand(1,n)
+ txt = 1
+ $text[1] = '[MISTRESS ANGELIKA]
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for C+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">1300 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+ $yes = {
+gs 'stock_to_slave_nogt' 
+slave["parasite"] = 0
+slave['brand'] = 4
+killvar 'contract'
+contract['active'] = 1
+active[$quest[10]] = 1
+sparks += 1300
+contract['level'] = 4
+$contract['specialisation'] = $specialisation[specialisation]
+npc = 0
+gt 'guild'}
+ $no = {contract['active'] = 2
+npc = 0
+gs 'generate_stock'
+gt 'guild'}  
+ gt 'choice_screen'
+END
+
+!B- rank contract
+IF interaction_city = 1416:
+ gs 'generate_stock'
+ npc = 9999
+ $place = 'guild_hall'
+ $picture_type = 'stock_picture'
+ $return_lock  = 'guild'
+ n = arrsize('$specialisation') - 1 
+ specialisation = rand(1,n)
+ txt = 1
+ $text[1] = '[MISTRESS ANGELIKA]
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for B- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">2000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+ $yes = {
+gs 'stock_to_slave_nogt' 
+slave["parasite"] = 0
+slave['brand'] = 4
+killvar 'contract'
+contract['active'] = 1
+active[$quest[10]] = 1
+sparks += 2000
+contract['level'] = 5
+$contract['specialisation'] = $specialisation[specialisation]
+npc = 0
+gt 'guild'}
+ $no = {contract['active'] = 2
+npc = 0
+gs 'generate_stock'
+gt 'guild'}  
+ gt 'choice_screen'
+END
+
+!B+ rank contract
+IF interaction_city = 1417:
+ gs 'generate_stock'
+ npc = 9999
+ $place = 'guild_hall'
+ $picture_type = 'stock_picture'
+ $return_lock  = 'guild'
+ n = arrsize('$specialisation') - 1 
+ specialisation = rand(1,n)
+ txt = 1
+ $text[1] = '[MISTRESS ANGELIKA]
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for B+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">2800 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+ $yes = {
+gs 'stock_to_slave_nogt' 
+slave["parasite"] = 0
+slave['brand'] = 4
+killvar 'contract'
+contract['active'] = 1
+active[$quest[10]] = 1
+sparks += 2800
+contract['level'] = 6
+$contract['specialisation'] = $specialisation[specialisation]
+npc = 0
+gt 'guild'}
+ $no = {contract['active'] = 2
+npc = 0
+gs 'generate_stock'
+gt 'guild'}  
+ gt 'choice_screen'
+END
+
+!A- rank contract
+IF interaction_city = 1418:
+ gs 'generate_stock'
+ npc = 9999
+ $place = 'guild_hall'
+ $picture_type = 'stock_picture'
+ $return_lock  = 'guild'
+ n = arrsize('$specialisation') - 1 
+ specialisation = rand(1,n)
+ txt = 1
+ $text[1] = '[MISTRESS ANGELIKA]
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for A- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">5000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+ $yes = {
+gs 'stock_to_slave_nogt' 
+slave["parasite"] = 0
+slave['brand'] = 4
+killvar 'contract'
+contract['active'] = 1
+active[$quest[10]] = 1
+sparks += 5000
+contract['level'] = 7
+$contract['specialisation'] = $specialisation[specialisation]
+npc = 0
+gt 'guild'}
+ $no = {contract['active'] = 2
+npc = 0
+gs 'generate_stock'
+gt 'guild'}  
+ gt 'choice_screen'
+END
+
+!A+ rank contract
+IF interaction_city = 1419:
+ gs 'generate_stock'
+ npc = 9999
+ $place = 'guild_hall'
+ $picture_type = 'stock_picture'
+ $return_lock  = 'guild'
+ n = arrsize('$specialisation') - 1 
+ specialisation = rand(1,n)
+ txt = 1
+ $text[1] = '[MISTRESS ANGELIKA]
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for A+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">7000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+ $yes = {
+gs 'stock_to_slave_nogt' 
+slave["parasite"] = 0
+slave['brand'] = 4
+killvar 'contract'
+contract['active'] = 1
+active[$quest[10]] = 1
+sparks += 7000
+contract['level'] = 8
+$contract['specialisation'] = $specialisation[specialisation]
+npc = 0
+gt 'guild'}
+ $no = {contract['active'] = 2
+npc = 0
+gs 'generate_stock'
+gt 'guild'}  
+ gt 'choice_screen'
+END
+
+!S- rank contract
+IF interaction_city = 1420:
+ gs 'generate_stock'
+ npc = 9999
+ $place = 'guild_hall'
+ $picture_type = 'stock_picture'
+ $return_lock  = 'guild'
+ n = arrsize('$specialisation') - 1 
+ specialisation = rand(1,n)
+ txt = 1
+ $text[1] = '[MISTRESS ANGELIKA]
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for S- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">12000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+ $yes = {
+gs 'stock_to_slave_nogt' 
+slave["parasite"] = 0
+slave['brand'] = 4
+killvar 'contract'
+contract['active'] = 1
+active[$quest[10]] = 1
+sparks += 12000
+contract['level'] = 9
+$contract['specialisation'] = $specialisation[specialisation]
+npc = 0
+gt 'guild'}
+ $no = {contract['active'] = 2
+npc = 0
+gs 'generate_stock'
+gt 'guild'}  
+ gt 'choice_screen'
+END
+
+!S+ rank contract
+IF interaction_city = 1421:
+ gs 'generate_stock'
+ npc = 9999
+ $place = 'guild_hall'
+ $picture_type = 'stock_picture'
+ $return_lock  = 'guild'
+ n = arrsize('$specialisation') - 1 
+ specialisation = rand(1,n)
+ txt = 1
+ $text[1] = '[MISTRESS ANGELIKA]
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for S- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">25000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+ $yes = {
+gs 'stock_to_slave_nogt' 
+slave["parasite"] = 0
+slave['brand'] = 4
+killvar 'contract'
+contract['active'] = 1
+active[$quest[10]] = 1
+sparks += 25000
+contract['level'] = 10
 $contract['specialisation'] = $specialisation[specialisation]
 npc = 0
 gt 'guild'}
@@ -5281,6 +5498,93 @@ if assistant_rate["beauty"] = 10: assistant_rate["beauty"] = 21
 if assistant_rate["beauty"] = 20: assistant_rate["beauty"] = 41
 if assistant_rate["beauty"] = 40: assistant_rate["beauty"] = 81
 if assistant_rate["beauty"] = 80: assistant_rate["beauty"] = 161
+if assistant_rate["beauty"] = 120: assistant_rate["beauty"] = 141
+if assistant_rate["beauty"] = 140: assistant_rate["beauty"] = 161
+if assistant_rate["beauty"] = 160: assistant_rate["beauty"] = 181
+interaction_city = 33244
+gt 'interaction_city'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
+ gt 'choice_screen'
+END
+ 
+IF interaction_city = 33243:
+ $place = 'hospital'
+ $return_lock  = 'shop_general'
+ txt_count = 1
+ txt = 1
+ npc = 1
+ $npc_id = 'doctor'
+ $text[1] = '   [DOCTOR]
+   - We can remove some of the disadvantages in appearance of your assistant and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. '
+ $yes = {
+sparks -= 350
+assistant['energy'] = -4
+assistant_rate['stamina'] -= 20
+assistant['reabilitation'] = 25
+assistant['beauty_enchanced'] = 2
+if assistant_rate["beauty"] = 21: assistant_rate["beauty"] = 42
+if assistant_rate["beauty"] = 41: assistant_rate["beauty"] = 62
+if assistant_rate["beauty"] = 61: assistant_rate["beauty"] = 82
+if assistant_rate["beauty"] = 81: assistant_rate["beauty"] = 122
+if assistant_rate["beauty"] = 121: assistant_rate["beauty"] = 142
+if assistant_rate["beauty"] = 141: assistant_rate["beauty"] = 162
+if assistant_rate["beauty"] = 161: assistant_rate["beauty"] = 182
+interaction_city = 33244
+gt 'interaction_city'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
+ gt 'choice_screen'
+END
+ 
+IF interaction_city = 33245:
+ $place = 'hospital'
+ $return_lock  = 'shop_general'
+ txt_count = 1
+ txt = 1
+ npc = 1
+ $npc_id = 'doctor'
+ $text[1] = '   [DOCTOR]
+   - We can remove some of the disadvantages in appearance of your assistant and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. '
+ $yes = {
+sparks -= 450
+assistant['energy'] = -4
+assistant_rate['stamina'] -= 20
+assistant['reabilitation'] = 30
+assistant['beauty_enchanced'] = 3
+if assistant_rate["beauty"] = 42: assistant_rate["beauty"] = 63
+if assistant_rate["beauty"] = 62: assistant_rate["beauty"] = 83
+if assistant_rate["beauty"] = 82: assistant_rate["beauty"] = 123
+if assistant_rate["beauty"] = 122: assistant_rate["beauty"] = 143
+if assistant_rate["beauty"] = 142: assistant_rate["beauty"] = 163
+if assistant_rate["beauty"] = 162: assistant_rate["beauty"] = 183
+interaction_city = 33244
+gt 'interaction_city'}
+ $no = {sp_txt = 3
+gt 'shop_general'}
+ gt 'choice_screen'
+END
+ 
+IF interaction_city = 33246:
+ $place = 'hospital'
+ $return_lock  = 'shop_general'
+ txt_count = 1
+ txt = 1
+ npc = 1
+ $npc_id = 'doctor'
+ $text[1] = '   [DOCTOR]
+   - We can remove some of the disadvantages in appearance of your assistant and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. '
+ $yes = {
+sparks -= 550
+assistant['energy'] = -4
+assistant_rate['stamina'] -= 20
+assistant['reabilitation'] = 35
+assistant['beauty_enchanced'] = 4
+if assistant_rate["beauty"] = 63: assistant_rate["beauty"] = 84
+if assistant_rate["beauty"] = 83: assistant_rate["beauty"] = 124
+if assistant_rate["beauty"] = 123: assistant_rate["beauty"] = 144
+if assistant_rate["beauty"] = 143: assistant_rate["beauty"] = 164
+if assistant_rate["beauty"] = 163: assistant_rate["beauty"] = 184
 interaction_city = 33244
 gt 'interaction_city'}
  $no = {sp_txt = 3
