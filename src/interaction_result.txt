@@ -54,7 +54,7 @@ IF $interaction_type = 'spell_cast':
   if master_mage = 3: spell_effectiveness = 6
   if master_mage = 4: spell_effectiveness = 8
   if master_mage = 5: spell_effectiveness = 10 
-  if master_mage = 6: spell_effectiveness = 10   
+  if master_mage = 6: spell_effectiveness = 12   
   spell_effectiveness -= slave['ego']
  END
  dynamic $special_part 

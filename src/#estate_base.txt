@@ -1,4 +1,4 @@
-﻿# #estate_base
+# #estate_base
 !Database of rental housing and interiors
 
 !housings

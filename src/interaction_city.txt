@@ -1,4 +1,4 @@
-﻿# interaction_city
+# interaction_city
 !INTERACTIONS IN CITY
 gs '#txt'
 gs '#txt_2'

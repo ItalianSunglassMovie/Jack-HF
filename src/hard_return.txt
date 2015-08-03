@@ -1,4 +1,4 @@
-﻿# hard_return
+# hard_return
 !Return through the extra location for the benefit of proper display characteristics
 sbros = 1
 

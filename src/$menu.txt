@@ -1,4 +1,4 @@
-﻿# $menu
+# $menu
 ! Creates a link to something
 ! arg1 = ID
 ! arg2 = EXEC

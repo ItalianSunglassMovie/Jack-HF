@@ -1,4 +1,4 @@
-﻿# #sex_options
+# #sex_options
 !MAIN MENU FOR ACTIVE SEX
 
 killvar '$play_sound'  

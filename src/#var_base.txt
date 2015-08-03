@@ -132,16 +132,16 @@ couch_price[5] = 25
 $school_price[0] = '1 spark'
 $school_price[1] = '2 sparks'
 $school_price[2] = '4 sparks'
-$school_price[3] = '8 sparks'
-$school_price[4] = '12 sparks'
-$school_price[5] = '16 sparks'
+$school_price[3] = '6 sparks'
+$school_price[4] = '8 sparks'
+$school_price[5] = '10 sparks'
 
 school_price[0] = 1
 school_price[1] = 2
 school_price[2] = 4
-school_price[3] = 8
-school_price[4] = 12
-school_price[5] = 16
+school_price[3] = 6
+school_price[4] = 8
+school_price[5] = 10
 
 !prepay for guild contracts
 prepay[0] = 50
