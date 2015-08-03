@@ -1962,6 +1962,39 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    virgin_meat_gain -= 5
   END
  END
+ IF frige_space >= 7 AND estate_size[$estate] = 70:
+  mince_gain += frige["mince"]
+  frige["mince"] = 0
+  IF mince_gain < 7:
+   frige["mince"] = mince_gain
+   mince_gain = 0
+   ELSE
+   frige["mince"] = 7
+   mince_gain -= 7
+  END
+ END
+ IF frige_space >= 7 AND estate_size[$estate] = 70:
+  meat_gain += frige["meat"]
+  frige["meat"] = 0
+  IF meat_gain < 7:
+   frige["meat"] = meat_gain
+   meat_gain = 0
+   ELSE
+   frige["meat"] = 7
+   meat_gain -= 7
+  END
+ END
+ IF frige_space >= 7 AND estate_size[$estate] = 70:
+  virgin_meat_gain += frige["virgin_meat"]
+  frige["virgin_meat"] = 0
+  IF virgin_meat_gain < 7:
+   frige["virgin_meat"] = virgin_meat_gain
+   virgin_meat_gain = 0
+   ELSE
+   frige["virgin_meat"] = 7
+   virgin_meat_gain -= 7
+  END
+ END
  IF frige_space >= 10 AND estate_size[$estate] = 100:
   mince_gain += frige["mince"]
   frige["mince"] = 0
@@ -1995,7 +2028,7 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    virgin_meat_gain -= 10
   END
  END
- IF frige_space >= 15 AND estate_size[$estate] >= 150:
+ IF frige_space >= 15 AND estate_size[$estate] = 150:
   mince_gain += frige["mince"]
   frige["mince"] = 0
   IF mince_gain < 15:
@@ -2006,7 +2039,7 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    mince_gain -= 15
   END
  END
- IF frige_space >= 15 AND estate_size[$estate] >= 150:
+ IF frige_space >= 15 AND estate_size[$estate] = 150:
   meat_gain += frige["meat"]
   frige["meat"] = 0
   IF meat_gain < 15:
@@ -2017,7 +2050,7 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    meat_gain -= 15
   END
  END
- IF frige_space >= 15 AND estate_size[$estate] >= 150:
+ IF frige_space >= 15 AND estate_size[$estate] = 150:
   virgin_meat_gain += frige["virgin_meat"]
   frige["virgin_meat"] = 0
   IF virgin_meat_gain < 15:
@@ -2027,7 +2060,73 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    frige["virgin_meat"] = 15
    virgin_meat_gain -= 15
   END
- END 
+ END
+ IF frige_space >= 20 AND estate_size[$estate] = 200:
+  mince_gain += frige["mince"]
+  frige["mince"] = 0
+  IF mince_gain < 20:
+   frige["mince"] = mince_gain
+   mince_gain = 0
+   ELSE
+   frige["mince"] = 20
+   mince_gain -= 20
+  END
+ END
+ IF frige_space >= 20 AND estate_size[$estate] = 200:
+  meat_gain += frige["meat"]
+  frige["meat"] = 0
+  IF meat_gain < 20:
+   frige["meat"] = meat_gain
+   meat_gain = 0
+   ELSE
+   frige["meat"] = 20
+   meat_gain -= 20
+  END
+ END
+ IF frige_space >= 20 AND estate_size[$estate] = 200:
+  virgin_meat_gain += frige["virgin_meat"]
+  frige["virgin_meat"] = 0
+  IF virgin_meat_gain < 20:
+   frige["virgin_meat"] = virgin_meat_gain
+   virgin_meat_gain = 0
+   ELSE
+   frige["virgin_meat"] = 20
+   virgin_meat_gain -= 20
+  END
+ END
+ IF frige_space >= 25 AND estate_size[$estate] = 250:
+  mince_gain += frige["mince"]
+  frige["mince"] = 0
+  IF mince_gain < 25:
+   frige["mince"] = mince_gain
+   mince_gain = 0
+   ELSE
+   frige["mince"] = 25
+   mince_gain -= 25
+  END
+ END
+ IF frige_space >= 25 AND estate_size[$estate] = 250:
+  meat_gain += frige["meat"]
+  frige["meat"] = 0
+  IF meat_gain < 25:
+   frige["meat"] = meat_gain
+   meat_gain = 0
+   ELSE
+   frige["meat"] = 25
+   meat_gain -= 25
+  END
+ END
+ IF frige_space >= 25 AND estate_size[$estate] = 250:
+  virgin_meat_gain += frige["virgin_meat"]
+  frige["virgin_meat"] = 0
+  IF virgin_meat_gain < 25:
+   frige["virgin_meat"] = virgin_meat_gain
+   virgin_meat_gain = 0
+   ELSE
+   frige["virgin_meat"] = 25
+   virgin_meat_gain -= 25
+  END
+ END
  barn_pig_profit += mince_gain + meat_gain*2 + virgin_meat_gain*4
 END
 

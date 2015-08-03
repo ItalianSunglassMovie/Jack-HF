@@ -259,7 +259,7 @@ IF master_mage_rised = 1 and boost_up['master_mage'] = 0:
 END
 
 gs '$calculate_atributes'
-
+!calculate fear
 if slave['fear'] > 5: slave['fear'] = 5
 if slave['fear'] < 0: slave['fear'] = 0
 

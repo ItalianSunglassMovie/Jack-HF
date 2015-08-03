@@ -1,4 +1,4 @@
-# $slave_price
+﻿# $slave_price
 !BASE PRICE
 !stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
 
@@ -12,7 +12,9 @@ if stock["beauty"] > 1: stock_base_price += 5
 if stock["beauty"] > 2: stock_base_price += 10
 if stock["beauty"] > 3: stock_base_price += 20
 if stock["beauty"] > 4: stock_base_price += 40
-if stock["fat"] = 1: stock_base_price += 5
+if stock["fat"] < 1: stock_base_price -= 10
+if stock["fat"] = 1: stock_base_price += 10
+if stock["fat"] = 2: stock_base_price += 10
 if stock["fat"] > 2: stock_base_price -= 5
 if stock["fat"] > 3: stock_base_price -= 10
 if stock["fat"] > 4: stock_base_price -= 20
@@ -40,13 +42,13 @@ if stock["sensitivity"] > 3: stock_base_price += 5
 if stock["sensitivity"] > 4: stock_base_price += 10
 if stock["intellect"] < 3: stock_base_price -= 5
 if stock["intellect"] > 4: stock_base_price += 10
-if stock["temper"] > 3: stock_base_price += 5
-if stock["temper"] > 4: stock_base_price += 10
-if stock["ego"] < 2: stock_base_price -= 5
-if stock["ego"] > 3: stock_base_price += 5
-if stock["pride"] < 2: stock_base_price += 12
-if stock["pride"] > 3: stock_base_price -= 5
-if stock["pride"] > 4: stock_base_price -= 10
+if stock["temper"] > 3: stock_base_price += 10
+if stock["temper"] > 4: stock_base_price += 20
+if stock["ego"] < 2: stock_base_price -= 20
+if stock["ego"] > 3: stock_base_price += 40
+if stock["pride"] < 3: stock_base_price += 10
+if stock["pride"] > 3: stock_base_price -= 10
+if stock["pride"] > 4: stock_base_price -= 20
 if stock_virginity < 2: stock_base_price += 5
 if stock["grace"] = 1: stock_base_price += 5
 if stock["grace"] = -1: stock_base_price -= 5
@@ -69,7 +71,9 @@ if slave["beauty"] > 1: slave_base_price += 5
 if slave["beauty"] > 2: slave_base_price += 10
 if slave["beauty"] > 3: slave_base_price += 20
 if slave["beauty"] > 4: slave_base_price += 40
-if slave["fat"] = 1: slave_base_price += 5
+if slave["fat"] < 1: slave_base_price -= 10
+if slave["fat"] = 1: slave_base_price += 10
+if slave["fat"] = 2: slave_base_price += 10
 if slave["fat"] > 2: slave_base_price -= 5
 if slave["fat"] > 3: slave_base_price -= 10
 if slave["fat"] > 4: slave_base_price -= 20
@@ -97,11 +101,11 @@ if slave["sensitivity"] > 3: slave_base_price += 5
 if slave["sensitivity"] > 4: slave_base_price += 10
 if slave["intellect"] < 3: slave_base_price -= 5
 if slave["intellect"] > 4: slave_base_price += 10
-if slave["temper"] > 3: slave_base_price += 5
-if slave["temper"] > 4: slave_base_price += 10
-if slave["ego"] < 2: slave_base_price -= 5
-if slave["ego"] > 3: slave_base_price += 5
-if slave["pride"] < 2: slave_base_price += 12
+if slave["temper"] > 3: slave_base_price += 10
+if slave["temper"] > 4: slave_base_price += 20
+if slave["ego"] < 2: slave_base_price -= 20
+if slave["ego"] > 3: slave_base_price += 40
+if slave["pride"] < 2: slave_base_price += 15
 if slave["pride"] > 3: slave_base_price -= 5
 if slave["pride"] > 4: slave_base_price -= 10
 if virginity < 2: slave_base_price += 5

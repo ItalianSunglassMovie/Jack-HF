@@ -1,4 +1,4 @@
-# init_game
+﻿# init_game
 !settings for master stats for a sandbox mode
 $master_ava = 'content\pic\master\master_noble_sepia.jpg'
 $master_ava_color = 'content\pic\master\master_noble.jpg'
@@ -51,7 +51,7 @@ arachnidSpider = 1
 polypusvermin = 1
 
 cooked_food = -1
-sparks = 10000
+sparks = 1000
 $защита[0] = 'блок'
 
 $суперудар[1] = ''
