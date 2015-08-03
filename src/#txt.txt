@@ -1364,6 +1364,8 @@ $assistant_cooks_rule_abort = '  You allow your assistant not to waste energy on
 $assistant_cooks_rule = '  You give an order to your assistant to cook meals for you. Now, if only she can find enough time and has energy left, she will do it herself, without your further reminders.'
 $assistant_washes_rule_abort = '  You decide to wash yourself, to not distract your assistant from more important matters.'
 $assistant_washes_rule = '  There is no need to wash yourself, if this work can be assigned to a beautiful and gentle girl. You order your assistant to help you wash.'
+$assistant_washe_slave_rule_abort = '  You tell your assistant to abort the order, your slave will have to clean herself by herself from now on.'
+$assistant_washe_slave_rule = '  You order your assistant to take care of your slave hygiene, from now on your assistant will wash your slave and make sure she is clean enough.'
 $assistant_supervise_rule_abort = '   You tell your assistant that henceforth you will look after the slave yourself and accompany her while taking a walk to the city. You assistant needs to concentrate on other important matters.'
 $assistant_supervise_rule = '   You order your assistant to look after your slave and accompany her during walks in the city. <<$assistant_name>> bows her head and promises to fulfill your order at its best.'
 
@@ -1751,12 +1753,12 @@ $aura_lust[3] = 'Aura is clearly trembling, twisting and then unwinding in an er
 $aura_lust[4] = 'Aura is pulsing sensually and eagerly, stretching and arching your way. This is a sign of powerful sexual arousal and almost uncontrollable desire.'
 $aura_lust[5] = 'Almost epileptic flicker speed and modulations suggest ultimate sexual arousal. All colors mixed in a fast paced whirlwind, like on the surface of the spinning whirligig.'
 
-$aura_fear[0] = '<font color="#960018">Ruby flashes of fear</font> <font color="#cd0000"> are insignificant</font>.'
-$aura_fear[1] = '<font color="#960018">Ruby flashes of fear</font> are rare, in a one minute you noticed just <font color="#C71585">one</font>.'
-$aura_fear[2] = '<font color="#960018">Ruby flashes of fear</font> appear from time to time, you counted <font color="#4B0082">a pair</font> of them in a minute.'
-$aura_fear[3] = '<font color="#960018">Ruby flashes of fear</font> appear quite often. You counted <font color="#0000CD">three</font> of them.'
-$aura_fear[4] = '<font color="#960018">Ruby flashes of fear</font> are quite bright and noticeable. You counted <font color="#008080">four</font> especially strong ones.'
-$aura_fear[5] = '<font color="#960018">Ruby flashes of fear</font> appear one by one and are not in a hurry to fade, pulsing like a heart overflowing with adrenaline. You counted as many as <font color="#008000">five</font> just in one minute.'
+$aura_fear[0] = '<font color="#960018">Ruby flashes of fear</font> <font color="#008000"> are insignificant</font>.'
+$aura_fear[1] = '<font color="#960018">Ruby flashes of fear</font> are rare, in a one minute you noticed just <font color="#008080">one</font>.'
+$aura_fear[2] = '<font color="#960018">Ruby flashes of fear</font> appear from time to time, you counted <font color="#0000CD">a pair</font> of them in a minute.'
+$aura_fear[3] = '<font color="#960018">Ruby flashes of fear</font> appear quite often. You counted <font color="#4B0082">three</font> of them.'
+$aura_fear[4] = '<font color="#960018">Ruby flashes of fear</font> are quite bright and noticeable. You counted <font color="#C71585">four</font> especially strong ones.'
+$aura_fear[5] = '<font color="#960018">Ruby flashes of fear</font> appear one by one and are not in a hurry to fade, pulsing like a heart overflowing with adrenaline. You counted as many as <font color="#CD0000">five</font> just in one minute.'
 
 $aura_angst[0] = '<font color="#464451">Anthracite colored despair</font> <font color="#008000"> is almost imperceptible</font>.'
 $aura_angst[1] = '<font color="#464451">Anthracite colored despair</font> formed <font color="#cd0000">one</font> tentacle, permeating through the whole aura of a slave.'
@@ -1836,12 +1838,12 @@ $aura_assistant_lust[3] = 'Aura is clearly trembling, twisting and then unwindin
 $aura_assistant_lust[4] = 'Aura is pulsing sensually and eagerly, stretching and arching your way. This is a sign of powerful sexual arousal and almost uncontrollable desire.'
 $aura_assistant_lust[5] = 'Almost epileptic flicker speed and modulations suggest ultimate sexual arousal. All colors mixed in a fast paced whirlwind, like on the surface of the spinning whirligig.'
 
-$aura_assistant_fear[0] = '<font color="#960018">Ruby flashes of fear</font> <font color="#cd0000"> are insignificant</font>.'
-$aura_assistant_fear[1] = '<font color="#960018">Ruby flashes of fear</font> are rare, in a one minute you noticed just <font color="#C71585">one</font>.'
-$aura_assistant_fear[2] = '<font color="#960018">Ruby flashes of fear</font> appear from time to time, you counted <font color="#4B0082">a pair</font> of them in a minute.'
-$aura_assistant_fear[3] = '<font color="#960018">Ruby flashes of fear</font> appear quite often. You counted <font color="#0000CD">three</font> of them.'
-$aura_assistant_fear[4] = '<font color="#960018">Ruby flashes of fear</font> are quite bright and noticeable. You counted <font color="#008080">four</font> especially strong ones.'
-$aura_assistant_fear[5] = '<font color="#960018">Ruby flashes of fear</font> appear one by one and are not in a hurry to fade, pulsing like a heart overflowing with adrenaline. You counted as many as <font color="#008000">five</font> just in one minute.'
+$aura_assistant_fear[0] = '<font color="#960018">Ruby flashes of fear</font> <font color="#008000"> are insignificant</font>.'
+$aura_assistant_fear[1] = '<font color="#960018">Ruby flashes of fear</font> are rare, in a one minute you noticed just <font color="#008080">one</font>.'
+$aura_assistant_fear[2] = '<font color="#960018">Ruby flashes of fear</font> appear from time to time, you counted <font color="#0000CD">a pair</font> of them in a minute.'
+$aura_assistant_fear[3] = '<font color="#960018">Ruby flashes of fear</font> appear quite often. You counted <font color="#4B0082">three</font> of them.'
+$aura_assistant_fear[4] = '<font color="#960018">Ruby flashes of fear</font> are quite bright and noticeable. You counted <font color="#C71585">four</font> especially strong ones.'
+$aura_assistant_fear[5] = '<font color="#960018">Ruby flashes of fear</font> appear one by one and are not in a hurry to fade, pulsing like a heart overflowing with adrenaline. You counted as many as <font color="#CD0000">five</font> just in one minute.'
 
 $aura_assistant_angst[0] = '<font color="#464451">Anthracite colored despair</font> <font color="#008000"> is almost imperceptible</font>.'
 $aura_assistant_angst[1] = '<font color="#464451">Anthracite colored despair</font> formed <font color="#cd0000">one</font> tentacle, permeating through the whole aura of an assistant.'
@@ -3449,5 +3451,8 @@ $polypus_lesson_description[3] = 'Your slave steps onto the grate in the middle 
 $polypus_lesson_description[4] = '<<$slave_name>> steps eagerly onto the grate that covers the cell`s tentacle pool. She works her clitoris with one hand while the other stretches her anus. A drop of her pussy juice strikes the water below and in response a forest of tentacles explodes upward. You start back as a wave of cold seawater washes around your feet. By the time you return your gaze to the slave, she`s taking seven tentacles. Or is it eight? A fine performance.'
 $polypus_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
 
+$slave_to_pig_pos_description[1] = 'Your slave obeys, too stupid to realize or too broken to care what this new role implies for her future. Over the coming days, her weight will dramatically increase, as she will have nothing to do but eat.'
+$slave_to_pig_neg_description[1] = 'Your slave has enough intelligence and self-preservation to refuse outright.'
+$pig_to_slave_description[1] = 'On your order, your pig leaves her pen and reports back to you. Her stomach is bulging and her gaze dull, and she could definitely use a bath.'
 --- #txt ---------------------------------
 

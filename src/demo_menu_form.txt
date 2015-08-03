@@ -1,5 +1,4 @@
 # demo_menu_form
-*P 'c'
 $toplay = 'girl'
 
 !check for drug sound, all other sounds will be disabled except bulk sound

@@ -1,4 +1,4 @@
-# #sex_options
+﻿# #sex_options
 !MAIN MENU FOR ACTIVE SEX
 
 killvar '$play_sound'  
@@ -7,7 +7,7 @@ $play_sound[1] = ''
 !main options
 $sex_options[0] = {
     FUNC('$menu', '===SEX_BEGIN===', 'column_3')
-    FUNC('$menu', 'spacer', 1)
+    FUNC('$menu', 'sex_empty_item', 1)
     IF strip = 0:
         FUNC('$menu', 'sex_interaction', $menu_item_sexStriptease, menu_sexStriptease, 'Striptease')
     else
@@ -26,9 +26,8 @@ $sex_options[0] = {
 }
 
 $sex_options[1] = {
-    FUNC('$menu', 'spacer', 3)
-
     FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 3)
     if lube = 0: FUNC('$menu', 'sex_interaction', $menu_item_Lubricant, menu_Lubricant, 'Lubricant')
     IF sex['girl_virgin'] = 1:
         FUNC('$menu', 'exec_sex_options', $menu_item_Defloration, 'sex_num = 11 & sex_interaction = 11 & gt "sex_interaction"', 'Defloration')
@@ -43,9 +42,8 @@ $sex_options[1] = {
 }
 
 $sex_options[11] = {
-    FUNC('$menu', 'spacer', 1)
-
     FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 1)
     IF sex['girl_virgin'] = 1:
         FUNC('$menu', 'sex_interaction', $menu_item_Continuezvirgin, menu_Continuezvirgin, 'Continue <<$intensity[intensity]>>')
     else
@@ -67,9 +65,8 @@ $sex_options[11] = {
 }
 
 $sex_options[12] = {
-    FUNC('$menu', 'spacer', 1)
     FUNC('$menu', '===SEX_BEGIN===', 'column_3')
-
+    FUNC('$menu', 'sex_empty_item', 1)
         FUNC('$menu', 'sex_interaction', $menu_item_Continuexvirgin, menu_Continuesex1, 'Continue <<$intensity[intensity]>>')
     IF sex["pc_excitement_state"] > 2:
         FUNC('$menu', 'exec_sex_options', $menu_item_Cum, 'sex_num = 9 & gt $curloc', 'Cum')
@@ -87,9 +84,8 @@ $sex_options[12] = {
 }
 
 $sex_options[13] = {
-    FUNC('$menu', 'spacer', 1)
     FUNC('$menu', '===SEX_BEGIN===', 'column_3')
-
+    FUNC('$menu', 'sex_empty_item', 1)
         FUNC('$menu', 'sex_interaction', $menu_item_Continuexvirgin, menu_Continuesex2, 'Continue <<$intensity[intensity]>>')
     IF sex["pc_excitement_state"] > 2:
         FUNC('$menu', 'exec_sex_options', $menu_item_Cum, 'sex_num = 9 & gt $curloc', 'Cum')
@@ -107,9 +103,8 @@ $sex_options[13] = {
 }
 
 $sex_options[14] = {
-    FUNC('$menu', 'spacer', 1)
-
     FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 1)
         FUNC('$menu', 'sex_interaction', $menu_item_Continuexvirgin, menu_Continuesex3, 'Continue <<$intensity[intensity]>>')
     IF sex["pc_excitement_state"] > 2:
         FUNC('$menu', 'exec_sex_options', $menu_item_Cum, 'sex_num = 9 & gt $curloc', 'Cum')
@@ -158,9 +153,8 @@ $sex_options[2] = {
 }
 
 $sex_options[9] = {
-    FUNC('$menu', 'spacer', 2)
-
     FUNC('$menu', '===SEX_BEGIN===', 'column_3')
+    FUNC('$menu', 'sex_empty_item', 2)
     IF $insertion = 'anal' or $insertion = 'vaginal':
         FUNC('$menu', 'exec_sex_options', $menu_item_Cum_inside, 'sex_num = 0 & sex_interaction = 91 & gt "sex_interaction"', 'Cum inside')
     END

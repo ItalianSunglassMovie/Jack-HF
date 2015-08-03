@@ -1,4 +1,4 @@
-# hard_return
+﻿# hard_return
 !Return through the extra location for the benefit of proper display characteristics
 sbros = 1
 
@@ -12,7 +12,7 @@ if get_initial_slave = 1:
  slave["pride"] = 0
  slave["ego"] = 3
  slave["neg_slave"] = 0
- sparks = 10000
+ sparks = 90000
  npc_reveal['realtor'] = 1
  noble_status = 1
  active[$quest[3]] = 0

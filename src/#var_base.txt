@@ -1,4 +1,4 @@
-# #var_base
+﻿# #var_base
 !Various technical variables and arrays
 
 !Replacement for font copypaste
@@ -13,7 +13,6 @@ $_font_col_rep[6] = '<font color="#C0C0C0">'
 ! for stats that higher than 5
 $_font_col_rep[7] = '<font color="#556832">'
 $_font_closer = '</font>'
-!TODO: добить замены во всем файле
 $vb_cycle = {
     $result = $_font_col_rep[args[0]] + $args[1] + $_font_closer
 }
@@ -45,20 +44,17 @@ $vb_full_cycle = {
 
 ! Constants table that replace the magic numbers
 !Replacement for slave\assistant age etc.
-!TODO: заменить в коде числа [0-2] на CONST_INT[?]
 CONST_INT['young_age'] = 0
 CONST_INT['loli_age']  = 1
 CONST_INT['milf_age']  = 2
 
 !Replacement for slave\assistant status (slave_state)
-!TODO: заменить в коде числа [0-3] на CONST_INT[?]
 CONST_INT['no_slave'] = 0
 CONST_INT['slave_exist'] = 1
 CONST_INT['slave_faint'] = 2
 CONST_INT['slave_dead'] = 3
 
 !MAIN CODE
-!Оставлена старая замена, пока лень ковырять
 age_code['young'] = CONST_INT['young_age']
 age_code['loli']  = CONST_INT['loli_age']
 age_code['milf']  = CONST_INT['milf_age']
@@ -148,12 +144,12 @@ school_price[4] = 12
 school_price[5] = 16
 
 !prepay for guild contracts
-prepay[0] = 200
-prepay[1] = 200
-prepay[2] = 300
-prepay[3] = 300
-prepay[4] = 500
-prepay[5] = 500
+prepay[0] = 50
+prepay[1] = 100
+prepay[2] = 150
+prepay[3] = 500
+prepay[4] = 700
+prepay[5] = 1000
 
 contract_level[0] = 1
 contract_level[1] = 1
@@ -1037,12 +1033,12 @@ $exotic[5] = $_font_col_rep[5] + 'Mystical' + $_font_closer
 
 $fat[5] = $_font_col_rep[0] + 'Obese' + $_font_closer
 $fat[4] = $_font_col_rep[1] + 'Overweight' + $_font_closer
-$fat[3] = $_font_col_rep[2] + 'Plump' + $_font_closer
-$fat[0] = $_font_col_rep[3] + 'Underweight' + $_font_closer
+$fat[0] = $_font_col_rep[2] + 'Underweight' + $_font_closer
+$fat[3] = $_font_col_rep[3] + 'Healthy Weight' + $_font_closer
 $fat[2] = $_font_col_rep[4] + 'Voluptuous' + $_font_closer
-$fat[1] = $_font_col_rep[5] + 'Healthy weight' + $_font_closer
+$fat[1] = $_font_col_rep[5] + 'Model' + $_font_closer
 
-$sensitivity[0] = $_font_col_rep[0] + 'Uncaring' + $_font_closer
+$sensitivity[0] = $_font_col_rep[0] + 'Heartless' + $_font_closer
 $sensitivity[1] = $_font_col_rep[1] + 'Callous' + $_font_closer
 $sensitivity[2] = $_font_col_rep[2] + 'Insensitive' + $_font_closer
 $sensitivity[3] = $_font_col_rep[3] + 'Sensitive' + $_font_closer
@@ -1072,9 +1068,9 @@ $ego[5] = $_font_col_rep[5] + 'Willful' + $_font_closer
 
 $pride[0] = $_font_col_rep[5] + 'Unashamed' + $_font_closer
 $pride[1] = $_font_col_rep[4] + 'Open' + $_font_closer
-$pride[2] = $_font_col_rep[3] + 'Fastidious' + $_font_closer
+$pride[2] = $_font_col_rep[3] + 'Timid' + $_font_closer
 $pride[3] = $_font_col_rep[2] + 'Proud' + $_font_closer
-$pride[4] = $_font_col_rep[1] + 'Haughty' + $_font_closer
+$pride[4] = $_font_col_rep[1] + 'Conceited' + $_font_closer
 $pride[5] = $_font_col_rep[0] + 'Arrogant' + $_font_closer
 
 $slave_service[0] = dyneval($vb_cycle, 0, 'Not a maid')
@@ -1249,12 +1245,12 @@ $master_wealth[5] = dyneval($vb_cycle, 5, 'Luxurious')
 $master_wealth[6] = dyneval($vb_cycle, 7, 'Extravagant')
 
 base_expense[0] = 0
-base_expense[1] = 25
-base_expense[2] = 50
-base_expense[3] = 100
-base_expense[4] = 250
-base_expense[5] = 500
-base_expense[6] = 1000
+base_expense[1] = 20
+base_expense[2] = 40
+base_expense[3] = 80
+base_expense[4] = 200
+base_expense[5] = 400
+base_expense[6] = 800
 
 $master_tutor[0] = dyneval($vb_cycle, 0, 'Unskilled teacher')
 $master_tutor[1] = dyneval($vb_cycle, 1, 'Poor teacher')

@@ -1,4 +1,4 @@
-# #help_msg
+﻿# #help_msg
 !TODO: Нужен var_base для vb_cycle вставок, + придумать нормальную замену by Lyazar
 !help messages
 $красота_справка = '<center>BEAUTY<br>
@@ -38,16 +38,16 @@ $экзотичность_совет = "   [EXOTICISM TIPS]
 $жыр_справка = '<center>PHYSIQUE<br>
 <font color="#cd0000">Obese</font>
 <font color="#C71585">Overweight</font>
-<font color="#4B0082">Plump</font>
-<font color="#0000CD">Underweight</font>
+<font color="#4B0082">Underweight</font>
+<font color="#0000CD">Healthy Weight</font>
 <font color="#008080">Voluptuous</font>
-<font color="#008000">Healthy weight</font></center>'
+<font color="#008000">Model</font></center>'
 $жыр_справка_2 = "  You can get more mince from fat slaves but they are not attractive. Weedy starvelings aren't attractive as well, but you can't get a lot meat from them either. It's better to keep your slave slim, but not skinny."
 $жыр_совет = "   [PHYSIQUE TIPS]
 <div style='font-size: 95%;'>   Extra weight is generally harmful, as well as a lack of it. To keep your slave slim you need to balance her nutrition that way that it is sufficient, but not excessive. The more your slave works and the more endurant she is - the more food she needs. Physical exercises don't decrease weight directly but are a good way to burn extra calories. Actively involved in sports slave should be well fed slave.</div>"
 
 $чувствительность_справка = '<center>EMPATHY<br>
-<font color="#cd0000">Uncaring</font>
+<font color="#cd0000">Heartless</font>
 <font color="#C71585">Callous</font>
 <font color="#4B0082">Insensitive</font>
 <font color="#0000CD">Sensitive</font>
@@ -103,9 +103,9 @@ $характер_совет = '   [NATURE TIPS]
 
 $гордыня_справка = '<center>PRIDE<br>
 <font color="#cd0000">Arrogant</font>
-<font color="#C71585">Haughty</font>
+<font color="#C71585">Conceited</font>
 <font color="#4B0082">Proud</font>
-<font color="#0000CD">Fastidious</font>
+<font color="#0000CD">Timid</font>
 <font color="#008080">Open</font>
 <font color="#008000">Unashamed</font></center>'
 $гордыня_справка_2 = '  Pride prevents slave from being open and enjoying sex, causes her to resist your will, refuse humiliating orders.'

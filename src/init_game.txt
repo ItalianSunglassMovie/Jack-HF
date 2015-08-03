@@ -28,13 +28,14 @@ master_penetration = 3
 master_fetish = 3
 
 !other settings
-stock_limit = 300
+stock_limit = 15
 
 bath = 1
 kitchen = 1
 dungeon = 1
 lab = 1
 library = 1
+barn = 1
 
 flute = 1
 guitar = 1
@@ -50,7 +51,7 @@ arachnidSpider = 1
 polypusvermin = 1
 
 cooked_food = -1
-sparks = 1000
+sparks = 10000
 $защита[0] = 'блок'
 
 $суперудар[1] = ''

@@ -34,7 +34,7 @@ master_fetish = 3
 $master_armor = 'эльчуга'
 $master_cloth = 'regal_suit'
 $master_right_wpn = 'шпага'
-sparks = 2000
+sparks = 5000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -73,7 +73,7 @@ master_fetish = 4
 $master_armor = 'без_брони'
 $master_cloth = 'man_rugs'
 $master_right_wpn = 'кнут'
-sparks = 1000
+sparks = 4500
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -111,7 +111,7 @@ master_fetish = 2
 $master_armor = 'ячуга'
 $master_cloth = 'aketon'
 $master_right_wpn = 'бастард'
-sparks = 1000
+sparks = 4000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -149,7 +149,7 @@ master_fetish = 5
 $master_armor = 'без_брони'
 $master_cloth = 'fancy_suit'
 $master_right_wpn = 'кастет'
-sparks = 1000
+sparks = 3500
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -187,7 +187,7 @@ master_fetish = 0
 $master_armor = 'без_брони'
 $master_cloth = 'livery'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 3000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -226,7 +226,7 @@ master_fetish = 0
 $master_armor = 'без_брони'
 $master_cloth = 'formal_suit'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 2500
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -264,7 +264,7 @@ master_fetish = 0
 $master_armor = 'без_брони'
 $master_cloth = 'medic_robes'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 2000
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -302,7 +302,7 @@ master_fetish = 1
 $master_armor = 'без_брони'
 $master_cloth = 'formal_suit'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 1500
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -378,7 +378,7 @@ master_fetish = 5
 $master_armor = 'без_брони'
 $master_cloth = 'man_rugs'
 $master_right_wpn = ''
-sparks = 200
+sparks = 500
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -418,7 +418,7 @@ master_fetish = 0
 $master_armor = 'без_брони'
 $master_cloth = 'wizard_robes'
 $master_right_wpn = ''
-sparks = 1000
+sparks = 2500
 
 faction_fame['serpis'] = 1
 } 

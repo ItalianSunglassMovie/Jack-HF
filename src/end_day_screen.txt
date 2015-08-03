@@ -59,11 +59,25 @@ IF assistant_auto_tentacle = 1:
  jump 'loop'
 END
 
+IF slave_auto_wash = 1:
+ $special_bg = $washing[slave_type] 
+ $place = 'bathroom'  
+ $text = '<<$slave_washes_master>>'
+ slave_auto_wash = 0
+ jump 'loop'
+END
 IF assistant_auto_wash = 1:
  $special_bg = $washing[assistant_type] 
  $place = 'bathroom'  
  $text = '<<$assistant_washes_master>>'
  assistant_auto_wash = 0
+ jump 'loop'
+END
+IF assistant_washs_slave = 1:
+ $special_bg = $lesbo_bath[assistant_type] 
+ $place = 'bathroom'  
+ $text = '<<$assistant_wash_slave>>'
+ assistant_washs_slave = 0
  jump 'loop'
 END
 

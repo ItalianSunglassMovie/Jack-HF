@@ -94,7 +94,10 @@ IF stock_sold > 0 and auction_phase < 5:
 <<$fat[stock["fat"]]>> 
 <<$sensitivity[stock["sensitivity"]]>> 
 <<$style[stock["style"]]>> 
+<<$intellect[stock["intellect"]]>> 
 <<$temper[stock["temper"]]>> 
+<<$ego[stock["ego"]]>> 
+<<$pride[stock["pride"]]>> 
 
 <u>TRAITS</u>
 <<$stock_features_list>>

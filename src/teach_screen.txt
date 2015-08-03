@@ -46,28 +46,40 @@ IF exam_in_progress = 1:
  *p '<div id = "close"><a href = "EXEC: gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 END
 
+GS '$addon', 'info_box'
+
 *p '<div id="left_column">
-<u>SLAVE RANK:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>
-<a href="EXEC: msg $красота_справка & msg $красота_справка_2 & $info_text = $красота_совет & gt $curloc"><<$beauty[slave["beauty"]]>></a>
-<a href="EXEC: msg $здоровье_справка & msg $здоровье_справка_2 & $info_text = $здоровье_совет & gt $curloc"><<$stamina[slave["stamina"]]>></a>
-<a href="EXEC: msg $чувствительность_справка & msg $чувствительность_справка_2 & $info_text = $чувствительность_совет & gt $curloc"><<$sensitivity[slave["sensitivity"]]>></a>
-<a href="EXEC: msg $темперамент_справка & msg $темперамент_справка_2 & $info_text = $темперамент_совет & gt $curloc"><<$temper[slave["temper"]]>></a>
-<a href="EXEC: msg $ум_справка & msg $ум_справка_2 & $info_text = $ум_совет & gt $curloc"><<$intellect[slave["intellect"]]>></a>
-<a href="EXEC: msg $характер_справка & msg $характер_справка_2 & $info_text = $характер_совет & gt $curloc"><<$ego[slave["ego"]]>></a>
-<a href="EXEC: msg $гордыня_справка & msg $гордыня_справка_2 & $info_text = $гордыня_совет & gt $curloc"><<$pride[slave["pride"]]>></a>
-<a href="EXEC: msg $экзотичность_справка & msg $экзотичность_справка_2 & $info_text = $экзотичность_совет & gt $curloc"><<$exotic[slave["exotic"]]>></a>
-<a href="EXEC: msg $жыр_справка & msg $жыр_справка_2 & $info_text = $жыр_совет & gt $curloc"><<$fat[slave["fat"]]>></a>
-<a href="EXEC: msg $стиль_справка & msg $стиль_справка_2 & $info_text = $стиль_совет & gt $curloc"><<$style[slave["style"]]>></a>
-<a href="EXEC: msg $слава_справка & msg $слава_справка_2 & $info_text = $слава_совет & gt $curloc"><<$girl_fame[slave["fame"]]>></a>
+<u>SLAVE RANK:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'beauty')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $красота_справка & msg $красота_справка_2 & $info_text = $красота_совет & gt $curloc"><<$beauty[slave["beauty"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'stamina')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $здоровье_справка & msg $здоровье_справка_2 & $info_text = $здоровье_совет & gt $curloc"><<$stamina[slave["stamina"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'sensitivity')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $чувствительность_справка & msg $чувствительность_справка_2 & $info_text = $чувствительность_совет & gt $curloc"><<$sensitivity[slave["sensitivity"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'temper')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $темперамент_справка & msg $темперамент_справка_2 & $info_text = $темперамент_совет & gt $curloc"><<$temper[slave["temper"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'intellect')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $ум_справка & msg $ум_справка_2 & $info_text = $ум_совет & gt $curloc"><<$intellect[slave["intellect"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'ego')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $характер_справка & msg $характер_справка_2 & $info_text = $характер_совет & gt $curloc"><<$ego[slave["ego"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $гордыня_справка & msg $гордыня_справка_2 & $info_text = $гордыня_совет & gt $curloc"><<$pride[slave["pride"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'exotic')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $экзотичность_справка & msg $экзотичность_справка_2 & $info_text = $экзотичность_совет & gt $curloc"><<$exotic[slave["exotic"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'fat')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $жыр_справка & msg $жыр_справка_2 & $info_text = $жыр_совет & gt $curloc"><<$fat[slave["fat"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'style')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $стиль_справка & msg $стиль_справка_2 & $info_text = $стиль_совет & gt $curloc"><<$style[slave["style"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'fame')
+*nl '<a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: msg $слава_справка & msg $слава_справка_2 & $info_text = $слава_совет & gt $curloc"><<$girl_fame[slave["fame"]]>></a>
 
 <u>TRAITS</u>
 <<$features_list>>
 </div>'
 
-if rank_help = 0: *p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc">[?]</a>
-</div>'
+*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
- *p '<div id="right_column">
+*p '<div id="right_column">
 <u>SKILLS</u>
 <<$slave_service[slave["service"]]>> 
 <<$slave_cook[slave["cook"]]>> 

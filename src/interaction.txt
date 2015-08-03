@@ -3176,7 +3176,7 @@ IF interaction = 1525:
 slave_rate["fear"] -= slave["fear"]*2 
 slave_rate["angst"] -= slave["angst"]*2 
 slave_well_rested = slave["energy"]
-slave_rate["sensitivity"] += 1
+slave_rate["sensitivity"] += 5
 slave["energy"] = 0 
 if slave['pos_games'] < 5: slave['pos_games'] = 5
 } 
@@ -3197,7 +3197,7 @@ IF interaction = 1526:
  slave_rate["hygiene"] = 0
  slave["pos_slave_clean"] = 1
  if slave["parfume"] = 1: slave["parfume"] = 0
- slave_rate["sensitivity"] += 1
+ slave_rate["sensitivity"] += 2
  sparks -= 2
  dynamic $slave_energy_drop
  if slave['pos_games'] < 1: slave['pos_games'] = 1
@@ -3218,8 +3218,8 @@ IF interaction = 1527:
  $special_part = {
 slave_rate["angst"] -= slave["angst"]
 slave_well_rested += 1
-slave_rate["ego"] += 1
-slave_rate["temper"] += 1
+slave_rate["ego"] += 5
+slave_rate["temper"] += 5
 sparks -= 5
 slave["energy"] = 0 
 slave['pos_games'] = slave["ego"] + slave["temper"] + slave["sensitivity"]
@@ -6327,7 +6327,7 @@ IF interaction = 6020:
  npc = 0
  txt_count = 1
  txt = 1
- $text[1] = 'Do you want your farmhand to overfeed your animals, fattening them up to increase their output? (pigs are automatically fattened)'
+ $text[0] = 'Do you want your farmhand to overfeed your animals, fattening them up to increase their output? (pigs are automatically fattened)'
  $yes = {
 barn_farmhand_fattens = 1
 gt "menu_form"}

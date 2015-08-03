@@ -1,4 +1,4 @@
-# $newloc
+﻿# $newloc
 !Location handler transitions.
 if $rating[0] = '': gs '#var_base'
 !AddOnn - disabled wizard_mode check to enable in story mode via options menu
@@ -105,6 +105,7 @@ IF assistant_state ! 1:
  if assistant_cleans_rule = 1: assistant_cleans_rule = 2
  if assistant_cooks_rule = 1: assistant_cooks_rule = 2
  if assistant_washes_rule = 1: assistant_washes_rule = 2
+ if assistant_washe_slave_rule = 1: assistant_washe_slave_rule = 2
  if assistant_account_rule = 1: assistant_account_rule = 2  
  if assistant_supervise_rule = 1: assistant_supervise_rule = 2
  if assistant_buy_vegetables = 1: assistant_buy_vegetables = 2
@@ -121,6 +122,7 @@ IF assistant_state ! 1:
  if assistant_cleans_rule = 2: assistant_cleans_rule = 1
  if assistant_cooks_rule = 2: assistant_cooks_rule = 1
  if assistant_washes_rule = 2: assistant_washes_rule = 1
+ if assistant_washe_slave_rule = 2: assistant_washe_slave_rule = 1
  if assistant_account_rule = 2: assistant_account_rule = 1  
  if assistant_supervise_rule = 2: assistant_supervise_rule = 1
  if assistant_buy_vegetables = 2: assistant_buy_vegetables = 1
@@ -805,10 +807,10 @@ END
 IF slave["selfesteem"] < 0:
  if slave["selfesteem_revealed"] > 0: $features_list += '<a href="EXEC: msg $Комплекс_вины">Guilt complex</a><BR>' 
 END
-IF slave["compassion"] = 2:
+IF slave["compassion"] > 0:
  if slave["compassion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Милосердная">Merciful</a><BR>'
 END
-IF slave["compassion"] = -1:
+IF slave["compassion"] < 0:
  if slave["compassion_revealed"] > 0: $features_list += '<a href="EXEC: msg $Садистка">Sadist</a><BR>' 
 END
 

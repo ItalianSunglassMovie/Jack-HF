@@ -1350,7 +1350,7 @@ END
 
 IF interaction_city = 1321:
  $interaction_type = 'rental_demo'
- $place = 'street'
+ $place = 'street_rental'
  $demo_var = 'elite'
  $place_location['demo'] = 'White Town' 
  $yes = {interaction_city = 13211
@@ -1367,7 +1367,7 @@ END
 
 IF interaction_city = 1322:
  $interaction_type = 'rental_demo'
- $place = 'necropolis_street'
+ $place = 'necropolis_street_rental'
  $demo_var = 'gothic'
  $place_location['demo'] = 'Necropolis' 
  $yes = {interaction_city = 13221
@@ -1384,7 +1384,7 @@ END
 
 IF interaction_city = 1323:
  $interaction_type = 'rental_demo'
- $place = 'taurus_street'
+ $place = 'taurus_street_rental'
  $demo_var = 'fort'
  $place_location['demo'] = 'Quarter of the Bull' 
  $yes = {interaction_city = 13231
@@ -1401,7 +1401,7 @@ END
 
 IF interaction_city = 1324:
  $interaction_type = 'rental_demo'
- $place = 'serpis_street'
+ $place = 'serpis_street_rental'
  $demo_var = 'econom'
  $place_location['demo'] = 'Serpentine quarter' 
  $yes = {interaction_city = 13241
@@ -1418,7 +1418,7 @@ END
 
 IF interaction_city = 1325:
  $interaction_type = 'rental_demo'
- $place = 'kamira_street'
+ $place = 'kamira_street_rental'
  $demo_var = 'basic'
  $place_location['demo'] = 'Quarter of the Outcasts' 
  $yes = {interaction_city = 13251
@@ -6861,6 +6861,15 @@ IF interaction_city = 6011:
  gs 'get_special_assistant'
 END
 
+!"IF interaction_city = 602:
+ $place = 'colloseum'
+ $return_lock  = 'city_menu_form'
+ txt_count = arrsize('$shira_met_part_1') - 1
+ copyarr '$text', '$shira_met_part_1'
+ $special_action[4] = {$picture_type = 'pic_jpg'
+ $special_bg = 'characters\shira_meeting'
+ }
+END"
 !starting the patrol
 IF interaction_city = 62:
  $place = 'edge_patrool'
@@ -7559,7 +7568,7 @@ IF interaction_city = 9511:
  $place = 'guild_hall'
  $return_lock  = 'guild' 
  expert_looks_for_slave = 1
- full_search_cost = search["cost"] * 50
+ full_search_cost = search["cost"] * 70
  npc = 1
  $npc_id = 'scoops'
  txt = 1

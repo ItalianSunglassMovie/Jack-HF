@@ -1,4 +1,4 @@
-# next_day
+﻿# next_day
 !Переход на следующий день
 killvar 'play_sound'
 killvar '$text'
@@ -1995,7 +1995,7 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    virgin_meat_gain -= 10
   END
  END
- IF frige_space >= 15 AND estate_size[$estate] = 150:
+ IF frige_space >= 15 AND estate_size[$estate] >= 150:
   mince_gain += frige["mince"]
   frige["mince"] = 0
   IF mince_gain < 15:
@@ -2006,7 +2006,7 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    mince_gain -= 15
   END
  END
- IF frige_space >= 15 AND estate_size[$estate] = 150:
+ IF frige_space >= 15 AND estate_size[$estate] >= 150:
   meat_gain += frige["meat"]
   frige["meat"] = 0
   IF meat_gain < 15:
@@ -2017,7 +2017,7 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    meat_gain -= 15
   END
  END
- IF frige_space >= 15 AND estate_size[$estate] = 150:
+ IF frige_space >= 15 AND estate_size[$estate] >= 150:
   virgin_meat_gain += frige["virgin_meat"]
   frige["virgin_meat"] = 0
   IF virgin_meat_gain < 15:

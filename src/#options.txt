@@ -24,7 +24,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6201] = {
 mem_skip = 6201
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -35,7 +35,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6202] = {
 mem_skip = 6202
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -46,7 +46,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6203] = {
 mem_skip = 6203
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -57,7 +57,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6204] = {
 mem_skip = 6204
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -68,7 +68,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6205] = {
 mem_skip = 6205
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -79,7 +79,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6206] = {
 mem_skip = 6206
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -90,7 +90,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6207] = {
 mem_skip = 6207
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -101,7 +101,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6208] = {
 mem_skip = 6208
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -112,7 +112,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6209] = {
 mem_skip = 6209
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -123,7 +123,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6210] = {
 mem_skip = 6210
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -135,7 +135,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6211] = {
 mem_skip = 6211
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -147,7 +147,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6212] = {
 mem_skip = 6212
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -159,7 +159,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6213] = {
 mem_skip = 6213
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -171,7 +171,7 @@ FUNC('$menu', '===END===')
 $edge_of_mists[6214] = {
 mem_skip = 6214
 $text_display = '<br>'
-FUNC('$menu', 'spacer', 7)
+FUNC('$menu', 'spacer', 4)
 
 FUNC('$menu', '===BEGIN===', 'center')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
@@ -738,7 +738,7 @@ IF npc_reveal['realtor'] = 0:
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_employeeestate_gray, empty, 'Offer an employee')
  END
- FUNC('$menu', 'interaction_city', $menu_item_requirementsestate, menu_requirementsestate, 'About the requirements')
+ FUNC('$menu', 'interaction_city', $menu_item_requirementsestate, menu_requirementsestate, 'Ask about requirements')
 END
 FUNC('$menu', 'city_form', $menu_item_Exittocity, menu_Exittocity, 'Exit to the city')
 FUNC('$menu', '===END===')
@@ -1018,7 +1018,7 @@ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['bran
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_merchandisefarm_gray, empty, 'Offer merchandise')
 END
-FUNC('$menu', 'interaction_city', $menu_item_requirementsfarm, menu_requirementsfarm, 'About the requirements')
+FUNC('$menu', 'interaction_city', $menu_item_requirementsfarm, menu_requirementsfarm, 'Ask about requirements')
 FUNC('$menu', 'city_form', $menu_item_Leavefarm, menu_Leavefarm, 'Leave the animal farm')
 FUNC('$menu', '===END===')
 }
@@ -1035,7 +1035,7 @@ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['bran
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_employeecamp_gray, empty, 'Offer an employee')
 END
-FUNC('$menu', 'interaction_city', $menu_item_requirementscamp, menu_requirementscamp, 'About the requirements')
+FUNC('$menu', 'interaction_city', $menu_item_requirementscamp, menu_requirementscamp, 'Ask about requirements')
 FUNC('$menu', 'city_form', $menu_item_Leavecamp, menu_Leavecamp, 'Leave the base camp')
 FUNC('$menu', '===END===')
 }
@@ -1053,7 +1053,7 @@ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['bran
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Offerartist_gray, empty, 'Offer an artist')
 END
-FUNC('$menu', 'interaction_city', $menu_item_requirementstheater, menu_requirementstheater, 'About the requirements')
+FUNC('$menu', 'interaction_city', $menu_item_requirementstheater, menu_requirementstheater, 'Ask about requirements')
 FUNC('$menu', 'city_form', $menu_item_Leavetheater, menu_Leavetheater, 'Leave the theater')
 FUNC('$menu', '===END===')
 }
@@ -1274,7 +1274,7 @@ IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['bran
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_employeeclub_gray, empty, 'Offer an employee')
 END
-FUNC('$menu', 'interaction_city', $menu_item_requirementsclub, menu_requirementsclub, 'About the requirements')
+FUNC('$menu', 'interaction_city', $menu_item_requirementsclub, menu_requirementsclub, 'Ask about requirements')
 FUNC('$menu', 'city_form', $menu_item_Leaveclub, menu_Leaveclub, 'Leave the club')
 FUNC('$menu', '===END===')
 }
@@ -1305,16 +1305,26 @@ FUNC('$menu', '===END===')
 $isabella_options[1] = {
 $sp_text[1] = '     [Isabella]
   - So, <<$master_name>>, we have an agreement, or what?'
-$text_display = '<br><br><br><br><br>'
+$text_display = '<br><br><br><br><br><br><br><br><br><br>'
 if nsfw = 0: $text_display += '<div id="center_Isabella"><img src="content\pic\girls\full\isabela.gif"></div>' 
-FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'centermenu')
 FUNC('$menu', 'interaction_city', $menu_item_acceptIsabella, menu_acceptIsabella, 'Lead Isabella to the Rome')
 FUNC('$menu', 'city_form', $menu_item_refuseIsabella, menu_refuseIsabella, 'She is too dangerous')
 FUNC('$menu', '===END===')
 }
 
+!"Shira
+$shira_options[1] = {
+$sp_text[1] = '     [Shira]
+  - So, <<$master_name>>, we have an agreement, or what?'
+$text_display = '<br><br><br><br><br>'
+FUNC('$menu', 'spacer', 4)
+FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', 'interaction_city', $menu_item_acceptIsabella, menu_acceptIsabella, 'Accept Shira''s deal')
+FUNC('$menu', 'city_form', $menu_item_refuseIsabella, menu_refuseIsabella, 'Refuse Shira''s deal')
+FUNC('$menu', '===END===')
+}"
 !Salon of Madame Jofre
 $brothel_options[1] = {
 $text_display = '<br>'
@@ -1650,9 +1660,9 @@ FUNC('$menu', '===BEGIN===', 'column_0')
    FUNC('$menu', 'location_gray', $menu_item_manicure_gray, empty, 'Makeup and manicure')
   END
   IF slave["manicure"] < 5 and slave["epilation"] < 12 and slave["hairstyle"] ! 7:
-   FUNC('$menu', 'interaction_city', $menu_item_treatment9, menu_treatment9, 'Full treatment (9$)')
+   FUNC('$menu', 'interaction_city', $menu_item_treatment9, menu_treatment9, 'Full beauty service(9$)')
    elseif slave["manicure"] < 5 and slave["epilation"] > 12 and slave["hairstyle"] ! 7:
-   FUNC('$menu', 'interaction_city', $menu_item_treatment6, menu_treatment6, 'Full treatment (6$)')
+   FUNC('$menu', 'interaction_city', $menu_item_treatment6, menu_treatment6, 'Full beauty service(6$)')
    else
    FUNC('$menu', 'location_gray', $menu_item_treatment0_gray, empty, 'Full beauty treatment')
   END

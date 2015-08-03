@@ -57,7 +57,7 @@ IF sp_txt = 111:
   else
   $shop_wpn[111] = $shop_wpn_deny 
  END
- FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', 'spacer', 1)
 
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
@@ -311,7 +311,7 @@ IF sp_txt = 129:
 END
 
 IF sp_txt = 13:
- FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', 'spacer', 4)
 
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Flamberge, 'sp_txt = 131 & gt $curloc', 'Flamberge (200$)')
@@ -421,7 +421,7 @@ IF sp_txt = 136:
 END
 
 IF sp_txt = 3:
- FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', 'spacer', 3)
 
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Aramid, 'sp_txt = 21 & gt $curloc', 'Aramid suit(100$)')
@@ -538,7 +538,6 @@ END'
 $text[txt] = $shop_wpn[sp_txt]
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
-*p '<div id = "bg"><img src="content\pic\bg\layout_2.png"></div>'
 *p '<div id = "text"><<$text[txt]>></div>'
 *p '<div id = "bg"><<$text_display>></div>'
 *p '<div id = "sparks_display"><<sparks>>$</div>'

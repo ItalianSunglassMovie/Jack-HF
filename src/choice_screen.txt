@@ -59,8 +59,11 @@ IF npc = 9999:
 <<$exotic[stock["exotic"]]>> 
 <<$fat[stock["fat"]]>> 
 <<$sensitivity[stock["sensitivity"]]>> 
-<<$style[stock["style"]]>> 
-<<$temper[stock["temper"]]>> 
+<<$style[stock["style"]]>>  
+<<$intellect[stock["intellect"]]>> 
+<<$temper[stock["temper"]]>>  
+<<$ego[stock["ego"]]>> 
+<<$pride[stock["pride"]]>> 
 
 <u>TRAITS</u>
 <<$stock_features_list>>

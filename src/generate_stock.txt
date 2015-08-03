@@ -1,4 +1,4 @@
-# generate_stock
+﻿# generate_stock
 stock_pending = 1
 killvar 'stock'
 killvar 'stock_rate'
@@ -1283,7 +1283,7 @@ if stock["stamina"] < 1: stock["stamina"] = 1
 if stock["sensitivity"] > 5: stock["sensitivity"] = 5
 if stock["sensitivity"] < 1: stock["sensitivity"] = 1
 if stock["pride"] > 5: stock["pride"] = 5
-if stock["pride"] < 1: stock["pride"] = 1
+if stock["pride"] < 1: stock["pride"] = 0
 if stock["ego"] > 5: stock["ego"] = 5
 if stock["ego"] < 1: stock["ego"] = 1
 if stock["intellect"] > 5: stock["intellect"] = 5
@@ -1291,32 +1291,23 @@ if stock["intellect"] < 1: stock["intellect"] = 1
 if stock["style"] > 5: stock["style"] = 5
 if stock["style"] < 1: stock["style"] = 1
 
-if stock_rate["exotic"] >= 10: stock["exotic"] = 1
-if stock_rate["exotic"] >= 20: stock["exotic"] = 2
-if stock_rate["exotic"] >= 40: stock["exotic"] = 3
-if stock_rate["exotic"] >= 80: stock["exotic"] = 4
-if stock_rate["exotic"] >= 160: stock["exotic"] = 5
-
-! For future use so seed_exotic can be used in the slave files - crushboss
+! For future use so 'seed_exotic' can be used in the slave files - crushboss
 if stock["exotic"] = 1: stock_rate["exotic"] = 15
 if stock["exotic"] = 2: stock_rate["exotic"] = 30
 if stock["exotic"] = 3: stock_rate["exotic"] = 60
 if stock["exotic"] = 4: stock_rate["exotic"] = 120
 if stock["exotic"] = 5: stock_rate["exotic"] = 240
 
+if stock_rate["exotic"] => 10: stock["exotic"] = 1
+if stock_rate["exotic"] => 20: stock["exotic"] = 2
+if stock_rate["exotic"] => 40: stock["exotic"] = 3
+if stock_rate["exotic"] => 80: stock["exotic"] = 4
+if stock_rate["exotic"] => 160: stock["exotic"] = 5
+
 if stock["stamina"] = 5: stock["metabolism"] += 1
 if stock["stamina"] = 1: stock["metabolism"] -= 1
 if stock["metabolism"] < 1: stock["metabolism"] = 1
 if stock["metabolism"] > 5: stock["metabolism"] = 5
-
-!'
-gen = RAND (1,12)
-if gen = 1: atribute = 1
-if gen > 1: atribute = 2
-if gen > 3: atribute = 3
-if gen > 9: atribute = 4
-if gen = 12: atribute = 5
-stock["metabolism"] = atribute'
 
 !psy determination
 a = RAND (1,3)
@@ -1325,7 +1316,7 @@ if a = 2: $stock_psy_basic = 'soft'
 if a = 3: $stock_psy_basic = 'optimistic'
 if stock["sensitivity"] >= 4: $stock_psy_basic = 'lachrymose'
 a = stock["ego"] + stock["temper"] + stock["pride"]
-IF a > 20:
+IF a > 12:
  if stock["ego"] >= 4: $stock_psy_basic = 'resistant'
  if stock["temper"] >= 4: $stock_psy_basic = 'hateful'
  if stock["pride"] >= 4: $stock_psy_basic = 'arrogant'
@@ -1372,7 +1363,9 @@ if stock["beauty"] > 1: stock_base_price += 5
 if stock["beauty"] > 2: stock_base_price += 10
 if stock["beauty"] > 3: stock_base_price += 20
 if stock["beauty"] > 4: stock_base_price += 40
-if stock["fat"] = 1: stock_base_price += 5
+if stock["fat"] = 0: stock_base_price -= 10
+if stock["fat"] = 1: stock_base_price += 10
+if stock["fat"] = 2: stock_base_price += 10
 if stock["fat"] > 2: stock_base_price -= 5
 if stock["fat"] > 3: stock_base_price -= 10
 if stock["fat"] > 4: stock_base_price -= 20

@@ -61,7 +61,8 @@ GS '$addon', 'info_box'
 
 *p '<div id="left_column">
 <u>SLAVE RANK:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>
-<a href="EXEC: msg $красота_справка & msg $красота_справка_2"><img src="<<$info_box[slave["beauty"]]>>"></a><a href="EXEC:$info_text = $красота_совет & gt $curloc"><<$beauty[slave["beauty"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'beauty')
+*nl '<a href="EXEC: msg $красота_справка & msg $красота_справка_2"><img src="<<$info_box[slave["beauty"]]>>"></a><a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC:$info_text = $красота_совет & gt $curloc"><<$beauty[slave["beauty"]]>></a>'
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'stamina')
 *nl '<a href="EXEC: msg $здоровье_справка & msg $здоровье_справка_2"><img src="<<$info_box[slave["stamina"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC:$info_text = $здоровье_совет & gt $curloc"><<$stamina[slave["stamina"]]>></a>'
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'sensitivity')
@@ -83,8 +84,7 @@ $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
 <<$features_list>>
 </div>'
 
-if rank_help = 0: *p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc">[?]</a>
-</div>'
+*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !calculation the food cost
 food_cost = 0
@@ -496,25 +496,13 @@ If slave_stat_screen = 3:
   *p '<div id="center_image"><img src = "content\pic\page_aura.gif"></div>'
  END
  gs 'auspex_list'
- IF wizard_mode = 1: 
-  *p '<div id = "center_text_compact"><<$auspex_list>></div>'
-  else
-  *p '<div id = "center_text_compact_blue"><<$auspex_list>></div>'
- END 
+ *p '<div id = "center_text_compact_blue"><<$auspex_list>></div>'
 END
 
 IF slave_state = CONST_INT['slave_exist']:
  $skill_text = ''
- IF  house_mess > 0:
-  $skill_text += '<a href = "EXEC: interaction = 1211 & gt ''interaction''"><<$slave_service[slave["service"]]>></a><BR>'
-  else
-  $skill_text += '<<$slave_service[slave["service"]]>><BR>'  
- END
- IF kitchen > 0 and master_butler: 
-  $skill_text += '<a href = "EXEC: interaction = 1212 & gt ''interaction''"><<$slave_cook[slave["cook"]]>></a><BR>'
-  else
-  $skill_text += '<<$slave_cook[slave["cook"]]>><BR>'  
- END
+ $skill_text += '<a href = "EXEC: interaction = 1211 & gt ''interaction''"><<$slave_service[slave["service"]]>></a><BR>'
+ $skill_text += '<a href = "EXEC: interaction = 1212 & gt ''interaction''"><<$slave_cook[slave["cook"]]>></a><BR>'
  $skill_text += '<a href = "EXEC: interaction = 1213 & gt ''interaction''"><<$slave_nurse[slave["nurse"]]>></a><BR>'
  $skill_text += '<a href = "EXEC: interaction = 1214 & gt ''interaction''"><<$slave_secretary[slave["secretary"]]>></a><BR>'
  IF slave["stamina"] > 1:  
@@ -533,8 +521,13 @@ IF slave_state = CONST_INT['slave_exist']:
   else
   $skill_text += '<<$slave_callisthenics[slave["callisthenics"]]>><BR>'    
  END
+ IF slave["stamina"] > 1: 
+  $skill_text += '<a href = "EXEC: interaction = 1221 & gt ''interaction''"><<$gym_lesson[slave["stamina"]]>></a><BR>'
+  else
+  $skill_text += '<<$slave_stamina[slave["stamina"]]>><BR>'    
+ END
  $skill_text += '<a href = "EXEC: interaction = 1234 & gt ''interaction''"><<$slave_vocal[slave["vocal"]]>></a><BR>'
- $skill_text += '<a href = "EXEC: menu_form = 1233 & gt ''menu_form''"><<$slave_music[slave["music"]]>></a><BR>'
+ $skill_text += '<a href = "EXEC: interaction = 112332 & gt ''interaction''"><<$slave_music[slave["music"]]>></a><BR>'
  $skill_text += '<a href = "EXEC: interaction = 1241 & gt ''interaction''"><<$slave_pet[slave["pet"]]>></a><BR>'
  IF slave["stamina"] > 1: 
   $skill_text += '<a href = "EXEC: interaction = 1224 & gt ''interaction''"><<$slave_dressage[slave["dressage"]]>></a><BR>'
