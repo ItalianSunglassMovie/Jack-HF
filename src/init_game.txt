@@ -50,7 +50,7 @@ arachnidSpider = 1
 polypusvermin = 1
 
 cooked_food = -1
-sparks = 10000
+sparks = 1000
 $защита[0] = 'блок'
 
 $суперудар[1] = ''
