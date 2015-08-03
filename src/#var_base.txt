@@ -1,4 +1,4 @@
-#var_base
+# #var_base
 !Various technical variables and arrays
 
 !Replacement for font copypaste

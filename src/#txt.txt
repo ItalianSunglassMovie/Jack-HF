@@ -1,4 +1,4 @@
-#txt
+# #txt
 !MAIN TEXT DATABASE
 $text[0] = ''
 

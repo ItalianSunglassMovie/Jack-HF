@@ -1,4 +1,4 @@
-#help_msg
+# #help_msg
 !TODO: Ð�ÑƒÐ¶ÐµÐ½ var_base Ð´Ð»Ñ� vb_cycle Ð²Ñ�Ñ‚Ð°Ð²Ð¾Ðº, + Ð¿Ñ€Ð¸Ð´ÑƒÐ¼Ð°Ñ‚ÑŒ Ð½Ð¾Ñ€Ð¼Ð°Ð»ÑŒÐ½ÑƒÑŽ Ð·Ð°Ð¼ÐµÐ½Ñƒ by Lyazar
 !help messages
 $ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° = '<center>BEAUTY<br>

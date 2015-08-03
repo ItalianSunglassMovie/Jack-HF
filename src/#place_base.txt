@@ -1,4 +1,4 @@
-#place_base
+# #place_base
 !places
 $bg['dungeon'] = 'dungeon'
 $bg['study'] = 'study'
