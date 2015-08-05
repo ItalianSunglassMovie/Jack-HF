@@ -22,10 +22,6 @@ IF $ARGS[0] = 'goto' :
   $text_display += $args[1] + FUNC('$menu', 'get_link',  args[2],  $args[3], $args[4]) + $args[5] + '</a></li>'
   $text_display += FUNC('$menu', 'tooltip_menu',  'tooltip', menu_item_counter, $args[6])
 END
-IF $ARGS[0] = 'gotobarn' :
-  menu_item_counter += 1
-  $text_display += $args[1] + FUNC('$menu', 'get_link',  args[2],  $args[3], $args[4]) + $args[5] + '</a></li>'
-END
 IF $ARGS[0] = 'goto_2' :
   menu_item_counter += 1
   $text_display += $args[1] + FUNC('$menu', 'get_link',  args[2],  $args[3], $args[4]) + $args[5] + '</a></li>'
@@ -59,8 +55,12 @@ END
 
 IF $ARGS[0] = 'join_battle' :
   $text_display += $args[1]
-  $text_display +={<a href ='EXEC: & gt "Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹"'>}
+  $text_display +={<a href ='EXEC: & gt "начать_бой"'>}
   $text_display +=$args[2] + '</a></li>'
+END
+
+IF $ARGS[0] = 'spacer' :
+    $text_display += '<div style="margin-bottom: ' + (args[1] *  65)  + 'px;"></div>'
 END
 
 IF $ARGS[0] = 'empty_item' :
@@ -69,9 +69,6 @@ IF $ARGS[0] = 'empty_item' :
     menu_item_counter += 1
     $text_display += '<li id="no_bg"> </li>'
   END
-END
-IF $ARGS[0] = 'spacer' :
-    $text_display += '<div style="margin-bottom: ' + (args[1] *  65)  + 'px;"></div>'
 END
 
 IF $ARGS[0] = 'sex_empty_item' :
@@ -84,10 +81,6 @@ END
 
 IF $ARGS[0] = 'menu_form' :
    FUNC('$menu', 'goto',  $args[1], args[2], 'menu_form', 'menu_form', $args[3], $args[4])
-END
-
-IF $ARGS[0] = 'barn_form' :
-   FUNC('$menu', 'goto',  $args[1], args[2], 'barn_interface', 'barn_interface', $args[3], $args[4])
 END
 
 IF $ARGS[0] = 'menu_form_2' :
@@ -114,12 +107,12 @@ IF $ARGS[0] = 'location_gray':
    FUNC('$menu', 'goto_city', $args[1], args[2], empty, empty, $args[3])
 END
 
-IF $ARGS[0] = 'menu_form_gray':
-   FUNC('$menu', 'goto', $args[1], args[2], empty, empty, $args[3], $args[4])
-END
-
 IF $ARGS[0] = 'sex_location_gray':
    FUNC('$menu', 'goto_sex_options', $args[1], args[2], empty, empty, $args[3])
+END
+
+IF $ARGS[0] = 'home_gray':
+   FUNC('$menu', 'goto', $args[1], args[2], empty, empty, $args[3], $args[4])
 END
 
 IF $ARGS[0] = '===BEGIN===' :

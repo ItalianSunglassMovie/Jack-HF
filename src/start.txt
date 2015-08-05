@@ -1,0 +1,70 @@
+# Start
+killall
+
+usehtml = 1
+debug = 1
+!debug = 1
+sound_on = 1
+music_volume = 100
+sound_volume = 100
+
+SHOWOBJS 0
+SHOWACTS 0
+SHOWINPUT 0
+SHOWSTAT 0
+
+INTEGRATED_ACTIONS = 1
+HIDE_SCROLL_ARROWS = 1
+DISABLESCROLL = 1
+
+$FNAME = 'Consolas'
+
+$counter = '$counter'
+$onobjsel = '$objsel'
+!$ongload = '$check_load'
+
+gs '#simple_npc'
+gs '#dynamic'
+gs '#npc_base'
+gs '#place_base'
+gs '#estate_base'
+gs '#txt'
+gs '#txt_2'
+gs '#var_base'
+gs '#variative'
+gs '#options'
+gs '#item_base'
+gs '#moodlet_base'
+gs '#food_base'
+gs '#charriots_base'
+gs '#masters_base'
+gs '#quest_base'
+gs '#help_msg'
+!fight engine
+gs '#тексты_движка'
+gs '#противники'
+gs '#суперудары'
+gs '#боевые_предметы'
+!sex engine
+gs '#sex_texts'
+gs '#sex_options'
+
+!gs '$check_load'
+
+$music['ride'] = 'content\snd\race_master.mp3'
+$music['arena'] = 'content\snd\fight_arena.mp3'
+$music['girl'] = 'content\snd\fight_girl.mp3'
+$music['fight'] = 'content\snd\fight_master.mp3'
+$music['home'] = 'content\snd\home.mp3'
+$music['city'] = 'content\snd\city.mp3'
+$music['mainscreen'] = 'content\snd\mainscreen.mp3'
+
+!AddOn - Initialisation
+$title_fix = 'fix 25.07#1, Merged Mods by Lillibilli v1.9'
+$game_ver = $title_fix
+GS '#addon_slave_base'
+GS '$addon_custom_data'
+
+GT 'main_menu'
+--- Start ---------------------------------
+

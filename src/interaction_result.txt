@@ -54,7 +54,7 @@ IF $interaction_type = 'spell_cast':
   if master_mage = 3: spell_effectiveness = 6
   if master_mage = 4: spell_effectiveness = 8
   if master_mage = 5: spell_effectiveness = 10 
-  if master_mage = 6: spell_effectiveness = 12   
+  if master_mage = 6: spell_effectiveness = 10   
   spell_effectiveness -= slave['ego']
  END
  dynamic $special_part 
@@ -607,6 +607,11 @@ END
 IF $interaction_type = 'prisoner_torture':
  txt_count = 2
  fear_force += slave["sensitivity"] - 3
+ IF slave["compassion"] = 1: 
+  $text[2] = '  <<$compassion_reaction["goodkind"]>>'
+  fear_force = torture_intensity*2
+  gs '$mod_slave_drop', torture_intensity
+ END
  IF slave["compassion"] > 0: 
   $text[2] = '  <<$compassion_reaction["goodkind"]>>'
   fear_force = torture_intensity*2

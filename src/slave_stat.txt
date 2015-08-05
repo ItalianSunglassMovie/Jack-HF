@@ -60,31 +60,31 @@ GS '$addon', 'info_box'
 !lillimerge add more tooltips?
 
 *p '<div id="left_column">
-<u>SLAVE RANK:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>'
-$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'beauty')
-*nl '<a href="EXEC: msg $ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box[slave["beauty"]]>>"></a><a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC:$info_text = $ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$beauty[slave["beauty"]]>></a>'
+<u>SLAVE RANK:</u>&nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a>
+<a href="EXEC: msg $красота_справка & msg $красота_справка_2"><img src="<<$info_box[slave["beauty"]]>>"></a><a href="EXEC:$info_text = $красота_совет & gt $curloc"><<$beauty[slave["beauty"]]>></a>'
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'stamina')
-*nl '<a href="EXEC: msg $Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÐµ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÐµ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box[slave["stamina"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC:$info_text = $Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÐµ_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$stamina[slave["stamina"]]>></a>'
+*nl '<a href="EXEC: msg $здоровье_справка & msg $здоровье_справка_2"><img src="<<$info_box[slave["stamina"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC:$info_text = $здоровье_совет & gt $curloc"><<$stamina[slave["stamina"]]>></a>'
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'sensitivity')
-*nl '<a href="EXEC: msg $Ñ‡ÑƒÐ²Ñ�Ñ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ñ�Ñ‚ÑŒ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $Ñ‡ÑƒÐ²Ñ�Ñ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ñ�Ñ‚ÑŒ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box[slave["sensitivity"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $Ñ‡ÑƒÐ²Ñ�Ñ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ñ�Ñ‚ÑŒ_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$sensitivity[slave["sensitivity"]]>></a>'
+*nl '<a href="EXEC: msg $чувствительность_справка & msg $чувствительность_справка_2"><img src="<<$info_box[slave["sensitivity"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $чувствительность_совет & gt $curloc"><<$sensitivity[slave["sensitivity"]]>></a>'
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'temper')
-*nl '<a href="EXEC: msg $Ñ‚ÐµÐ¼Ð¿ÐµÑ€Ð°Ð¼ÐµÐ½Ñ‚_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $Ñ‚ÐµÐ¼Ð¿ÐµÑ€Ð°Ð¼ÐµÐ½Ñ‚_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box[slave["temper"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $Ñ‚ÐµÐ¼Ð¿ÐµÑ€Ð°Ð¼ÐµÐ½Ñ‚_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$temper[slave["temper"]]>></a>'
+*nl '<a href="EXEC: msg $темперамент_справка & msg $темперамент_справка_2"><img src="<<$info_box[slave["temper"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $темперамент_совет & gt $curloc"><<$temper[slave["temper"]]>></a>'
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'intellect')
-*nl '<a href="EXEC: msg $ÑƒÐ¼_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $ÑƒÐ¼_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box[slave["intellect"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $ÑƒÐ¼_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$intellect[slave["intellect"]]>></a>'
+*nl '<a href="EXEC: msg $ум_справка & msg $ум_справка_2"><img src="<<$info_box[slave["intellect"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $ум_совет & gt $curloc"><<$intellect[slave["intellect"]]>></a>'
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'ego')
-*nl '<a href="EXEC: msg $Ñ…Ð°Ñ€Ð°ÐºÑ‚ÐµÑ€_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $Ñ…Ð°Ñ€Ð°ÐºÑ‚ÐµÑ€_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box[slave["ego"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $Ñ…Ð°Ñ€Ð°ÐºÑ‚ÐµÑ€_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$ego[slave["ego"]]>></a>'
+*nl '<a href="EXEC: msg $характер_справка & msg $характер_справка_2"><img src="<<$info_box[slave["ego"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $характер_совет & gt $curloc"><<$ego[slave["ego"]]>></a>'
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
-*nl '<a href="EXEC: msg $Ð³Ð¾Ñ€Ð´Ñ‹Ð½Ñ�_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $Ð³Ð¾Ñ€Ð´Ñ‹Ð½Ñ�_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box_p[slave["pride"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $Ð³Ð¾Ñ€Ð´Ñ‹Ð½Ñ�_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$pride[slave["pride"]]>></a>'
-*nl '<a href="EXEC: msg $Ñ�ÐºÐ·Ð¾Ñ‚Ð¸Ñ‡Ð½Ð¾Ñ�Ñ‚ÑŒ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $Ñ�ÐºÐ·Ð¾Ñ‚Ð¸Ñ‡Ð½Ð¾Ñ�Ñ‚ÑŒ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box[slave["exotic"]]>>"></a> <a href="EXEC: $info_text = $Ñ�ÐºÐ·Ð¾Ñ‚Ð¸Ñ‡Ð½Ð¾Ñ�Ñ‚ÑŒ_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$exotic[slave["exotic"]]>></a>'
-*nl '<a href="EXEC: msg $Ð¶Ñ‹Ñ€_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $Ð¶Ñ‹Ñ€_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box_f[slave["fat"]]>>"></a> <a href="EXEC: $info_text = $Ð¶Ñ‹Ñ€_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$fat[slave["fat"]]>></a>'
-*nl '<a href="EXEC: msg $Ñ�Ñ‚Ð¸Ð»ÑŒ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $Ñ�Ñ‚Ð¸Ð»ÑŒ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box[slave["style"]]>>"></a> <a href="EXEC: $info_text = $Ñ�Ñ‚Ð¸Ð»ÑŒ_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$style[slave["style"]]>></a>'
-*nl '<a href="EXEC: msg $Ñ�Ð»Ð°Ð²Ð°_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & msg $Ñ�Ð»Ð°Ð²Ð°_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ°_2"><img src="<<$info_box[slave["fame"]]>>"></a> <a href="EXEC: $info_text = $Ñ�Ð»Ð°Ð²Ð°_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$girl_fame[slave["fame"]]>></a>
+*nl '<a href="EXEC: msg $гордыня_справка & msg $гордыня_справка_2"><img src="<<$info_box_p[slave["pride"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $гордыня_совет & gt $curloc"><<$pride[slave["pride"]]>></a>'
+*nl '<a href="EXEC: msg $экзотичность_справка & msg $экзотичность_справка_2"><img src="<<$info_box[slave["exotic"]]>>"></a> <a href="EXEC: $info_text = $экзотичность_совет & gt $curloc"><<$exotic[slave["exotic"]]>></a>'
+*nl '<a href="EXEC: msg $жыр_справка & msg $жыр_справка_2"><img src="<<$info_box_f[slave["fat"]]>>"></a> <a href="EXEC: $info_text = $жыр_совет & gt $curloc"><<$fat[slave["fat"]]>></a>'
+*nl '<a href="EXEC: msg $стиль_справка & msg $стиль_справка_2"><img src="<<$info_box[slave["style"]]>>"></a> <a href="EXEC: $info_text = $стиль_совет & gt $curloc"><<$style[slave["style"]]>></a>'
+*nl '<a href="EXEC: msg $слава_справка & msg $слава_справка_2"><img src="<<$info_box[slave["fame"]]>>"></a> <a href="EXEC: $info_text = $слава_совет & gt $curloc"><<$girl_fame[slave["fame"]]>></a>
 
 <u>TRAITS</u>
 <<$features_list>>
 </div>'
 
-*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
+if rank_help = 0: *p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc">[?]</a>
+</div>'
 
 !calculation the food cost
 food_cost = 0
@@ -264,9 +264,9 @@ IF presets_list = 0:
  END  
  IF master_medic >= 2:
   $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'fat')
-  *p '<div id="chekbox_133l"><a style="text-decoration: none;" class="segoe_print tooltip-left" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $ÐºÐ°Ð»Ð¾Ñ€Ð¸Ð¸_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><img src="content\pic\kalkulyator.png"></a></div>'  
+  *p '<div id="chekbox_133l"><a style="text-decoration: none;" class="segoe_print tooltip-left" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $калории_совет & gt $curloc"><img src="content\pic\kalkulyator.png"></a></div>'  
  Else
-  *p '<div id="chekbox_133l"><a href="EXEC: $info_text = $ÐºÐ°Ð»Ð¾Ñ€Ð¸Ð¸_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><img src="content\pic\kalkulyator.png"></a></div>'  
+  *p '<div id="chekbox_133l"><a href="EXEC: $info_text = $калории_совет & gt $curloc"><img src="content\pic\kalkulyator.png"></a></div>'  
  END
 
  KILLVAR '$tooltip_text'
@@ -275,7 +275,7 @@ IF presets_list = 0:
   else
   *p '<div id="chekbox_14l"><a href = "EXEC: vitamin = 1 & $info_text = $slave_vitamin & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END    
- *p '<div id="chekbox_133l"><a href="EXEC: $info_text = $ÐºÐ°Ð»Ð¾Ñ€Ð¸Ð¸_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><img src="content\pic\kalkulyator.png"></a></div>'  
+ *p '<div id="chekbox_133l"><a href="EXEC: $info_text = $калории_совет & gt $curloc"><img src="content\pic\kalkulyator.png"></a></div>'  
  else
  IF preset = 1:
   *p '<div id="chekbox_1l"><a href = "EXEC: preset = 0 & dynamic $purge_preset & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
@@ -431,9 +431,9 @@ If slave_stat_screen = 1:
  if nsfw = 0: *p '<div id="lower_image"><img width = "370px" src = "content\pic\girls\body\<<$slave["pussy_img"]>>.jpg"></div>' 
  *p '<div id = "stat_text"><center>
  <b><a href = "EXEC: msg $charm_help & gt curloc"><<$charm_stat>></a></b>
- <<$ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°[slave["beauty"]]>> = <<$Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ð½Ð°Ñ�_ÐºÑ€Ð°Ñ�Ð¾Ñ‚Ð°[slave["base_beauty"]]>> + <<$Ð¿Ð»Ð°Ñ�Ñ‚Ð¸ÐºÐ°[slave["beauty_enchanced"]]>> - (<<$ÑˆÑ€Ð°Ð¼Ñ‹[slave["scares"]]>> + <<$Ñ�Ð¸Ð½Ñ�ÐºÐ¸[slave["bruises"]]>>)
- <<$Ñ�ÐºÐ·Ð¾Ñ‚Ð¸ÐºÐ°[slave["exotic"]]>> = <<$Ð¿Ñ€Ð¸Ñ€Ð¾Ð´Ð½Ð°Ñ�_Ñ�ÐºÐ·Ð¾Ñ‚Ð¸ÐºÐ°[slave["base_exotic"]]>> + <<$slave_tatoo[slave["tatoo"]]>> + <<$Ð¿Ð¸Ñ€Ñ�Ð¸Ð½Ð³[slave["piercing_count"]]>> + <<$wear[slave["ex_count"]]>>
- <<$Ñ�Ñ‚Ð¸Ð»ÑŒ[slave["style"]]>> = <<$wear[slave["st_count"]]>> + <<$slave_makeup[slave["makeup"]]>> + <<$hair_style[slave["hairstyle"]]>> + <<$Ð¼ÐµÐ¹ÐºÐ°Ð¿[slave["makeup_count"]]>> + <<$Ð³Ð¸Ð³Ð¸ÐµÐ½Ð°[slave["hygiene"]]>> + <<$Ð³Ñ€Ð°Ñ†Ð¸Ñ�[slave["grace_count"]]>></div>
+ <<$красота[slave["beauty"]]>> = <<$природная_красота[slave["base_beauty"]]>> + <<$пластика[slave["beauty_enchanced"]]>> - (<<$шрамы[slave["scares"]]>> + <<$синяки[slave["bruises"]]>>)
+ <<$экзотика[slave["exotic"]]>> = <<$природная_экзотика[slave["base_exotic"]]>> + <<$slave_tatoo[slave["tatoo"]]>> + <<$пирсинг[slave["piercing_count"]]>> + <<$wear[slave["ex_count"]]>>
+ <<$стиль[slave["style"]]>> = <<$wear[slave["st_count"]]>> + <<$slave_makeup[slave["makeup"]]>> + <<$hair_style[slave["hairstyle"]]>> + <<$мейкап[slave["makeup_count"]]>> + <<$гигиена[slave["hygiene"]]>> + <<$грация[slave["grace_count"]]>></div>
  </div>'
  *p '<div id = "upper_text">
 <<$slave_boobs[slave["boobs"]]>>
@@ -463,10 +463,10 @@ If slave_stat_screen = 2:
 	END
     *p '<div id = "center_text_column_1">'
         *p '<div style = "text-align: center;"><u>SLAVE EQUIPMENT</u></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 20 & dynamic $slave_armor_list"><u>Armour:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$slave["armor"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 21 & dynamic $slave_wpn_list_large"><u>Shoulder holster:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$slave["back_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 22 & dynamic $slave_wpn_list"><u>Left hand:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$slave["left_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 23 & dynamic $slave_wpn_list_2"><u>Right hand:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$slave["right_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 20 & dynamic $slave_armor_list"><u>Armour:</u> <<$название_предмета[$slave["armor"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 21 & dynamic $slave_wpn_list_large"><u>Shoulder holster:</u> <<$название_предмета[$slave["back_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 22 & dynamic $slave_wpn_list"><u>Left hand:</u> <<$название_предмета[$slave["left_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 23 & dynamic $slave_wpn_list_2"><u>Right hand:</u> <<$название_предмета[$slave["right_wpn"]]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 24 & dynamic $slave_cloth_list"><u>Clothes:</u> <<$item_name[$slave["cloth"]]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 25 & dynamic $slave_head_list"><u>Headgear:</u> <<$item_name[$slave["headband"]]>></a></div>'
         *p '<br>'
@@ -496,13 +496,25 @@ If slave_stat_screen = 3:
   *p '<div id="center_image"><img src = "content\pic\page_aura.gif"></div>'
  END
  gs 'auspex_list'
- *p '<div id = "center_text_compact_blue"><<$auspex_list>></div>'
+ IF wizard_mode = 1: 
+  *p '<div id = "center_text_compact"><<$auspex_list>></div>'
+  else
+  *p '<div id = "center_text_compact_blue"><<$auspex_list>></div>'
+ END 
 END
 
 IF slave_state = CONST_INT['slave_exist']:
  $skill_text = ''
- $skill_text += '<a href = "EXEC: interaction = 1211 & gt ''interaction''"><<$slave_service[slave["service"]]>></a><BR>'
- $skill_text += '<a href = "EXEC: interaction = 1212 & gt ''interaction''"><<$slave_cook[slave["cook"]]>></a><BR>'
+ IF  house_mess > 0:
+  $skill_text += '<a href = "EXEC: interaction = 1211 & gt ''interaction''"><<$slave_service[slave["service"]]>></a><BR>'
+  else
+  $skill_text += '<<$slave_service[slave["service"]]>><BR>'  
+ END
+ IF kitchen > 0 and master_butler: 
+  $skill_text += '<a href = "EXEC: interaction = 1212 & gt ''interaction''"><<$slave_cook[slave["cook"]]>></a><BR>'
+  else
+  $skill_text += '<<$slave_cook[slave["cook"]]>><BR>'  
+ END
  $skill_text += '<a href = "EXEC: interaction = 1213 & gt ''interaction''"><<$slave_nurse[slave["nurse"]]>></a><BR>'
  $skill_text += '<a href = "EXEC: interaction = 1214 & gt ''interaction''"><<$slave_secretary[slave["secretary"]]>></a><BR>'
  IF slave["stamina"] > 1:  
@@ -521,13 +533,8 @@ IF slave_state = CONST_INT['slave_exist']:
   else
   $skill_text += '<<$slave_callisthenics[slave["callisthenics"]]>><BR>'    
  END
- IF slave["stamina"] > 1: 
-  $skill_text += '<a href = "EXEC: interaction = 1221 & gt ''interaction''"><<$gym_lesson[slave["stamina"]]>></a><BR>'
-  else
-  $skill_text += '<<$slave_stamina[slave["stamina"]]>><BR>'    
- END
  $skill_text += '<a href = "EXEC: interaction = 1234 & gt ''interaction''"><<$slave_vocal[slave["vocal"]]>></a><BR>'
- $skill_text += '<a href = "EXEC: interaction = 112332 & gt ''interaction''"><<$slave_music[slave["music"]]>></a><BR>'
+ $skill_text += '<a href = "EXEC: menu_form = 1233 & gt ''menu_form''"><<$slave_music[slave["music"]]>></a><BR>'
  $skill_text += '<a href = "EXEC: interaction = 1241 & gt ''interaction''"><<$slave_pet[slave["pet"]]>></a><BR>'
  IF slave["stamina"] > 1: 
   $skill_text += '<a href = "EXEC: interaction = 1224 & gt ''interaction''"><<$slave_dressage[slave["dressage"]]>></a><BR>'

@@ -14,17 +14,11 @@ master_wealth = master_wealth_target
 
 if master_wealth = 0: other_bills = 0
 if master_wealth = 1: other_bills = RAND (20,30)
-if master_wealth = 1 and day = 10: other_bills = 0
 if master_wealth = 2: other_bills = RAND (40,60)
-if master_wealth = 2 and day = 10: other_bills = 0
 if master_wealth = 3: other_bills = RAND (80,120)
-if master_wealth = 3 and day = 10: other_bills = 0
 if master_wealth = 4: other_bills = RAND (200,300)
-if master_wealth = 4 and day = 10: other_bills = 0
 if master_wealth = 5: other_bills = RAND (400,600)
-if master_wealth = 5 and day = 10: other_bills = 0
 if master_wealth = 6: other_bills = RAND (800,1200)
-if master_wealth = 6 and day = 10: other_bills = 0
 
 if stasis_tank > 0: other_bills += 20
 if iced_1_state > 0: other_bills += 10
@@ -91,11 +85,11 @@ barn_report_food_cost = barn_cow_food + barn_harpy_food + barn_pig_food
 barn_cow_food = 0
 barn_harpy_food = 0
 barn_pig_food = 0
+barn_total_profit = barn_report_cow_profit + barn_report_egg_profit + barn_report_pig_profit - barn_report_food_cost
 barn_milk_profit = 0
 barn_cream_profit = 0
 barn_egg_profit = 0
 barn_pig_profit = 0
-barn_total_profit = barn_report_cow_profit + barn_report_egg_profit + barn_report_pig_profit - barn_report_food_cost
 
 $bill_message = '<center>BILLS TO PAY</center>
 Rental cost: <<rental_cost>> sparks

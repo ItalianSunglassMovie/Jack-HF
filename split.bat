@@ -1,2 +1,2 @@
 @echo on
-split_file.py --merge2 jack.txt
+compile.py -s jack.txt

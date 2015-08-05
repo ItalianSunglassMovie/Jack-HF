@@ -72,7 +72,7 @@ display_psy_status = 1
 
 !CREATING RANDOM BACKGROUND
 IF $seed_world[stock_type] = '':
-    ! -1, Ñ‚.Ðº. Ð½ÐµÑ‚ Ð½ÑƒÐ»ÐµÐ²Ð¾Ð³Ð¾ Ñ�Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð² Ñ�Ð¿Ð¸Ñ�ÐºÐµ, Ð´Ð°Ð»ÐµÐµ Ñ‚Ð° Ð¶Ðµ Ñ„Ð¸Ð³Ð½Ñ�
+    ! -1, т.к. нет нулевого элемента в списке, далее та же фигня
     chance = RAND (1, arrsize('$origin_world') - 1)
     $stock_world = $origin_world[chance]
 else
@@ -1216,7 +1216,7 @@ END
 
 IF a = 20:
  chance = RAND (1,2)
- stock["metabolism"] = IIF(chance = 1, 4, 5)
+ stock["metabolism"] = IIF(chance = 1, 5, 5)
 END
 
 IF a = 21:
@@ -1283,7 +1283,7 @@ if stock["stamina"] < 1: stock["stamina"] = 1
 if stock["sensitivity"] > 5: stock["sensitivity"] = 5
 if stock["sensitivity"] < 1: stock["sensitivity"] = 1
 if stock["pride"] > 5: stock["pride"] = 5
-if stock["pride"] < 1: stock["pride"] = 0
+if stock["pride"] < 1: stock["pride"] = 1
 if stock["ego"] > 5: stock["ego"] = 5
 if stock["ego"] < 1: stock["ego"] = 1
 if stock["intellect"] > 5: stock["intellect"] = 5
@@ -1291,18 +1291,18 @@ if stock["intellect"] < 1: stock["intellect"] = 1
 if stock["style"] > 5: stock["style"] = 5
 if stock["style"] < 1: stock["style"] = 1
 
-! For future use so 'seed_exotic' can be used in the slave files - crushboss
-if stock["exotic"] = 1: stock_rate["exotic"] = 15
-if stock["exotic"] = 2: stock_rate["exotic"] = 30
-if stock["exotic"] = 3: stock_rate["exotic"] = 60
-if stock["exotic"] = 4: stock_rate["exotic"] = 120
-if stock["exotic"] = 5: stock_rate["exotic"] = 240
-
 if stock_rate["exotic"] >= 10: stock["exotic"] = 1
 if stock_rate["exotic"] >= 20: stock["exotic"] = 2
 if stock_rate["exotic"] >= 40: stock["exotic"] = 3
 if stock_rate["exotic"] >= 80: stock["exotic"] = 4
 if stock_rate["exotic"] >= 160: stock["exotic"] = 5
+
+! For future use so seed_exotic can be used in the slave files - crushboss
+if stock["exotic"] = 1: stock_rate["exotic"] = 15
+if stock["exotic"] = 2: stock_rate["exotic"] = 30
+if stock["exotic"] = 3: stock_rate["exotic"] = 60
+if stock["exotic"] = 4: stock_rate["exotic"] = 120
+if stock["exotic"] = 5: stock_rate["exotic"] = 240
 
 if stock["stamina"] = 5: stock["metabolism"] += 1
 if stock["stamina"] = 1: stock["metabolism"] -= 1
@@ -1317,6 +1317,7 @@ if gen > 3: atribute = 3
 if gen > 9: atribute = 4
 if gen = 12: atribute = 5
 stock["metabolism"] = atribute'
+
 !psy determination
 a = RAND (1,3)
 if a = 1: $stock_psy_basic = 'reluctant'
@@ -1324,7 +1325,7 @@ if a = 2: $stock_psy_basic = 'soft'
 if a = 3: $stock_psy_basic = 'optimistic'
 if stock["sensitivity"] >= 4: $stock_psy_basic = 'lachrymose'
 a = stock["ego"] + stock["temper"] + stock["pride"]
-IF a > 12:
+IF a > 20:
  if stock["ego"] >= 4: $stock_psy_basic = 'resistant'
  if stock["temper"] >= 4: $stock_psy_basic = 'hateful'
  if stock["pride"] >= 4: $stock_psy_basic = 'arrogant'
@@ -1359,8 +1360,8 @@ IF stock["exotic"] >= 2: $stock_epithet = 'exotic'
 !BASE PRICE
 !stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
 
-!TODO: Ñ�Ð´ÐµÐ»Ð°Ñ‚ÑŒ Ð½Ð¾Ñ€Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð±Ð°Ð»Ð°Ð½Ñ� Ñ†ÐµÐ½Ñ‹
-!Ð¿Ð¾Ñ…Ð¾Ð¶Ð¸Ð¹ ÐºÐ¾Ð´ Ð² $slave_price
+!TODO: сделать нормальный баланс цены
+!похожий код в $slave_price
 stock_base_price = 5
 if stock["stamina"] < 3: stock_base_price -= 5
 if stock["stamina"] > 2: stock_base_price += 5
@@ -1371,9 +1372,7 @@ if stock["beauty"] > 1: stock_base_price += 5
 if stock["beauty"] > 2: stock_base_price += 10
 if stock["beauty"] > 3: stock_base_price += 20
 if stock["beauty"] > 4: stock_base_price += 40
-if stock["fat"] = 0: stock_base_price -= 10
-if stock["fat"] = 1: stock_base_price += 10
-if stock["fat"] = 2: stock_base_price += 10
+if stock["fat"] = 1: stock_base_price += 5
 if stock["fat"] > 2: stock_base_price -= 5
 if stock["fat"] > 3: stock_base_price -= 10
 if stock["fat"] > 4: stock_base_price -= 20
@@ -1401,13 +1400,13 @@ if stock["sensitivity"] > 3: stock_base_price += 5
 if stock["sensitivity"] > 4: stock_base_price += 10
 if stock["intellect"] < 3: stock_base_price -= 5
 if stock["intellect"] > 4: stock_base_price += 10
-if stock["temper"] > 3: stock_base_price += 10
-if stock["temper"] > 4: stock_base_price += 20
-if stock["ego"] < 2: stock_base_price -= 20
-if stock["ego"] > 3: stock_base_price += 40
-if stock["pride"] < 3: stock_base_price += 10
-if stock["pride"] > 3: stock_base_price -= 10
-if stock["pride"] > 4: stock_base_price -= 20
+if stock["temper"] > 3: stock_base_price += 5
+if stock["temper"] > 4: stock_base_price += 10
+if stock["ego"] < 2: stock_base_price -= 5
+if stock["ego"] > 3: stock_base_price += 5
+if stock["pride"] < 4: stock_base_price += 5
+if stock["pride"] > 3: stock_base_price -= 5
+if stock["pride"] > 4: stock_base_price -= 10
 if stock_virginity < 2: stock_base_price += 5
 if stock["grace"] = 1: stock_base_price += 5
 if stock["grace"] = -1: stock_base_price -= 5
@@ -1418,8 +1417,8 @@ haggling_limit = stock_base_price/3
 !stock_base_price = 5
 
 !EQUIP
-$stock["wpn"] = 'Ð±ÐµÐ·Ð¾Ñ€ÑƒÐ¶Ð½Ñ‹Ð¹'
-$stock["armor"] = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$stock["wpn"] = 'безоружный'
+$stock["armor"] = 'без_брони'
 $stock["scnd"] = ''
 
 $stock["back_wpn"] = ''
@@ -1428,7 +1427,7 @@ $stock["right_wpn"] = ''
 $stock["arm_wpn"] = ''
 $stock["leg_wpn"] = ''
 
-$stock["cloth"] = 'Ð»Ð¾Ñ…Ð¼Ð¾Ñ‚ÑŒÑ�'
+$stock["cloth"] = 'лохмотья'
 
 stock['newness'] = 10 - brand_reputation
 
@@ -1443,66 +1442,66 @@ IF stock["grace"] = -1: $stock_features_list += 'Clumsy<BR>'
 IF stock["voice"] > 0: $stock_features_list += 'Charming voice<BR>'
 IF stock["voice"] < 0: $stock_features_list += 'Hoarse voice<BR>'
 !'
-IF stock["nymphomania"] > 0: $stock_features_list += '<font color="#666666">Ð�Ð¸Ð¼Ñ„Ð¾Ð¼Ð°Ð½ÐºÐ°</font><BR>' 
-IF stock["nymphomania"] < 0: $stock_features_list += '<font color="#666666">Ð¤Ñ€Ð¸Ð³Ð¸Ð´Ð½Ð°Ñ�</font><BR>' 
-IF stock["masohism"] = 2: $stock_features_list += '<font color="#666666">ÐœÐ°Ð·Ð¾Ñ…Ð¸Ñ�Ñ‚ÐºÐ°</font><BR>'
-IF stock["masohism"] = 1: $stock_features_list += '<font color="#666666">ÐŸÑ€Ð¸Ð²Ñ‹Ñ‡Ð½Ð° Ðº Ð±Ð¾Ð»Ð¸</font><BR>'
-IF stock["masohism"] = -1: $stock_features_list += '<font color="#666666">Ð‘Ð¾Ð¸Ñ‚Ñ�Ñ� Ð±Ð¾Ð»Ð¸</font><BR>'
-IF stock["exhibitionism"] = 2: $stock_features_list += '<font color="#666666">Ð­ÐºÑ�Ð³Ð¸Ð±Ð¸Ñ†Ð¸Ð¾Ð½Ð¸Ñ�Ñ‚ÐºÐ°</font><BR>'
-IF stock["exhibitionism"] = -1: $stock_features_list += '<font color="#666666">Ð¡Ñ‚ÐµÑ�Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°Ñ�</font><BR>'
-IF stock["preversion"] = 2: $stock_features_list += '<font color="#666666">Ð˜Ð·Ð²Ñ€Ð°Ñ‰ÐµÐ½ÐºÐ°</font><BR>'
-IF stock["preversion"] = -1: $stock_features_list += '<font color="#666666">ÐŸÑƒÑ€Ð¸Ñ�Ñ‚ÐºÐ°</font><BR>'
-IF stock["homosexualism"] = 2: $stock_features_list += '<font color="#666666">Ð›ÐµÑ�Ð±Ð¸Ñ�Ð½ÐºÐ°</font><BR>'
-IF stock["homosexualism"] = 1: $stock_features_list += '<font color="#666666">Ð‘Ð¸Ñ�ÐµÐºÑ�ÑƒÐ°Ð»ÑŒÐ½Ð°Ñ�</font><BR>'
-IF stock["homosexualism"] = -1: $stock_features_list += '<font color="#666666">Ð“Ð¾Ð¼Ð¾Ñ„Ð¾Ð±ÐºÐ°</font><BR>'
-IF stock["abuse_attitude"] = 2: $stock_features_list += '<font color="#666666">ÐŸÑ�Ð¸-Ð¼Ð°Ð·Ð¾Ñ…Ð¸Ñ�Ñ‚ÐºÐ°</font><BR>'
-IF stock["abuse_attitude"] = -1: $stock_features_list += '<font color="#666666">Ð˜Ñ�Ñ‚ÐµÑ€Ð¸Ñ‡ÐºÐ°</font><BR>'
-IF stock["darkness_attitude"] = 2: $stock_features_list += '<font color="#666666">Ð”Ð¸Ñ‚Ñ� Ñ‚ÑŒÐ¼Ñ‹</font><BR>'
-IF stock["darkness_attitude"] = -1: $stock_features_list += '<font color="#666666">Ð‘Ð¾Ð¸Ñ‚Ñ�Ñ� Ñ‚ÐµÐ¼Ð½Ð¾Ñ‚Ñ‹</font><BR>'
-IF stock["blood_attitude"] = 2: $stock_features_list += '<font color="#666666">ÐšÑ€Ð¾Ð²Ð¾Ð¶Ð°Ð´Ð½Ð°Ñ�</font><BR>'
-IF stock["blood_attitude"] = -1: $stock_features_list += '<font color="#666666">Ð‘Ð¾Ð¸Ñ‚Ñ�Ñ� Ð²Ð¸Ð´Ð° ÐºÑ€Ð¾Ð²Ð¸</font><BR>'
-IF stock["fire_attitude"] = 2: $stock_features_list += '<font color="#666666">ÐŸÐ¸Ñ€Ð¾Ð¼Ð°Ð½Ð¸Ñ�</font><BR>'
-IF stock["fire_attitude"] = -1: $stock_features_list += '<font color="#666666">ÐŸÐ¸Ñ€Ð¾Ñ„Ð¾Ð±Ð¸Ñ�</font><BR>'
-IF stock["water_attitude"] = 2: $stock_features_list += '<font color="#666666">Ð”Ð¸Ñ‚Ñ� Ð²Ð¾Ð´Ñ‹</font><BR>'
-IF stock["water_attitude"] = -1: $stock_features_list += '<font color="#666666">Ð“Ð¸Ð´Ñ€Ð¾Ñ„Ð¾Ð±Ð¸Ñ�</font><BR>'
-IF stock["vermin_attitude"] = 2: $stock_features_list += '<font color="#666666">Ð�Ñ€Ð°Ñ…Ð½Ð¾Ñ„Ð¸Ð»Ð¸Ñ�</font><BR>'
-IF stock["vermin_attitude"] = -1: $stock_features_list += '<font color="#666666">Ð�Ñ€Ð°Ñ…Ð½Ð¾Ñ„Ð¾Ð±Ð¸Ñ�</font><BR>'
-IF stock["deprivation_attitude"] = 2: $stock_features_list += '<font color="#666666">Ð›ÑŽÐ±Ð¸Ñ‚ Ð±ÐµÑ�Ð¿Ð¾Ð¼Ð¾Ñ‰Ð½Ð¾Ñ�Ñ‚ÑŒ</font><BR>'
-IF stock["deprivation_attitude"] = -1: $stock_features_list += '<font color="#666666">ÐšÐ»Ð°ÑƒÑ�Ñ‚Ñ€Ð¾Ñ„Ð¾Ð±Ð¸Ñ�</font><BR>'
-IF stock["passion_comfort"] = 1: $stock_features_list += '<font color="#666666">Ð›ÐµÐ½Ð¸Ð²Ð°Ñ�</font><BR>'
-IF stock["passion_comfort"] = -1: $stock_features_list += '<font color="#666666">Ð“Ð¸Ð¿ÐµÑ€Ð°ÐºÑ‚Ð¸Ð²Ð½Ð°Ñ�</font><BR>'
-IF stock["passion_luxury"] = 1: $stock_features_list += '<font color="#666666">Ð›ÑŽÐ±Ð¸Ñ‚ Ñ€Ð¾Ñ�ÐºÐ¾ÑˆÑŒ</font><BR>'
-IF stock["passion_luxury"] = -1: $stock_features_list += '<font color="#666666">Ð�Ñ�ÐºÐµÑ‚Ð¸Ñ‡Ð½Ð°Ñ�</font><BR>'
-IF stock["passion_sweets"] = 1: $stock_features_list += '<font color="#666666">Ð¡Ð»Ð°Ð´ÐºÐ¾ÐµÐ¶ÐºÐ°</font><BR>'
-IF stock["passion_sweets"] = -1: $stock_features_list += '<font color="#666666">Ð�Ðµ Ð»ÑŽÐ±Ð¸Ñ‚ Ñ�Ð»Ð°Ð´ÐºÐ¾Ðµ</font><BR>'
-IF stock["passion_fame"] = 1: $stock_features_list += '<font color="#666666">Ð¢Ñ‰ÐµÑ�Ð»Ð°Ð²Ð½Ð°Ñ�</font><BR>'
-IF stock["passion_fame"] = -1: $stock_features_list += '<font color="#666666">Ð¥Ð¸ÐºÐ¸ÐºÐ¾Ð¼Ð¾Ñ€Ð¸</font><BR>'
-IF stock["courage"] = 1: $stock_features_list += '<font color="#666666">Ð¥Ñ€Ð°Ð±Ñ€Ð°Ñ�</font><BR>'
-IF stock["courage"] = -1: $stock_features_list += '<font color="#666666">Ð¢Ñ€ÑƒÑ�Ð¸Ñ…Ð°</font><BR>'
-IF stock["metabolism"] = 5: $stock_features_list += '<font color="#666666">ÐœÐ¾Ñ‰Ð½Ñ‹Ð¹ Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼</font><BR>'
-IF stock["metabolism"] = 4: $stock_features_list += '<font color="#666666">Ð¥Ð¾Ñ€Ð¾ÑˆÐ¸Ð¹ Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼</font><BR>'
-IF stock["metabolism"] = 2: $stock_features_list += '<font color="#666666">ÐžÑ�Ð»Ð°Ð±Ð»ÐµÐ½Ð½Ñ‹Ð¹ Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼</font><BR>'
-IF stock["metabolism"] = 1: $stock_features_list += '<font color="#666666">Ð¡Ð»Ð°Ð±Ñ‹Ð¹ Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼</font><BR>'
-IF stock["sport_affinity"] = 1: $stock_features_list += '<font color="#666666">Ð¡Ð¿Ð¾Ñ€Ñ‚Ð¸Ð²Ð½Ð°Ñ�</font><BR>'
-IF stock["sport_affinity"] = -1: $stock_features_list += '<font color="#666666">Ð�Ð¿Ð°Ñ‚Ð¸Ñ‡Ð½Ð°Ñ�</font><BR>'
-if stock["expression_affinity"]:  $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ð¾Ñ€Ð°Ñ‚Ð¾Ñ€</font><BR>'
-if stock["pet_affinity"]:  $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ð¿Ð¸Ñ‚Ð¾Ð¼ÐµÑ†</font><BR>'
+IF stock["nymphomania"] > 0: $stock_features_list += '<font color="#666666">Нимфоманка</font><BR>' 
+IF stock["nymphomania"] < 0: $stock_features_list += '<font color="#666666">Фригидная</font><BR>' 
+IF stock["masohism"] = 2: $stock_features_list += '<font color="#666666">Мазохистка</font><BR>'
+IF stock["masohism"] = 1: $stock_features_list += '<font color="#666666">Привычна к боли</font><BR>'
+IF stock["masohism"] = -1: $stock_features_list += '<font color="#666666">Боится боли</font><BR>'
+IF stock["exhibitionism"] = 2: $stock_features_list += '<font color="#666666">Эксгибиционистка</font><BR>'
+IF stock["exhibitionism"] = -1: $stock_features_list += '<font color="#666666">Стеснительная</font><BR>'
+IF stock["preversion"] = 2: $stock_features_list += '<font color="#666666">Извращенка</font><BR>'
+IF stock["preversion"] = -1: $stock_features_list += '<font color="#666666">Пуристка</font><BR>'
+IF stock["homosexualism"] = 2: $stock_features_list += '<font color="#666666">Лесбиянка</font><BR>'
+IF stock["homosexualism"] = 1: $stock_features_list += '<font color="#666666">Бисексуальная</font><BR>'
+IF stock["homosexualism"] = -1: $stock_features_list += '<font color="#666666">Гомофобка</font><BR>'
+IF stock["abuse_attitude"] = 2: $stock_features_list += '<font color="#666666">Пси-мазохистка</font><BR>'
+IF stock["abuse_attitude"] = -1: $stock_features_list += '<font color="#666666">Истеричка</font><BR>'
+IF stock["darkness_attitude"] = 2: $stock_features_list += '<font color="#666666">Дитя тьмы</font><BR>'
+IF stock["darkness_attitude"] = -1: $stock_features_list += '<font color="#666666">Боится темноты</font><BR>'
+IF stock["blood_attitude"] = 2: $stock_features_list += '<font color="#666666">Кровожадная</font><BR>'
+IF stock["blood_attitude"] = -1: $stock_features_list += '<font color="#666666">Боится вида крови</font><BR>'
+IF stock["fire_attitude"] = 2: $stock_features_list += '<font color="#666666">Пиромания</font><BR>'
+IF stock["fire_attitude"] = -1: $stock_features_list += '<font color="#666666">Пирофобия</font><BR>'
+IF stock["water_attitude"] = 2: $stock_features_list += '<font color="#666666">Дитя воды</font><BR>'
+IF stock["water_attitude"] = -1: $stock_features_list += '<font color="#666666">Гидрофобия</font><BR>'
+IF stock["vermin_attitude"] = 2: $stock_features_list += '<font color="#666666">Арахнофилия</font><BR>'
+IF stock["vermin_attitude"] = -1: $stock_features_list += '<font color="#666666">Арахнофобия</font><BR>'
+IF stock["deprivation_attitude"] = 2: $stock_features_list += '<font color="#666666">Любит беспомощность</font><BR>'
+IF stock["deprivation_attitude"] = -1: $stock_features_list += '<font color="#666666">Клаустрофобия</font><BR>'
+IF stock["passion_comfort"] = 1: $stock_features_list += '<font color="#666666">Ленивая</font><BR>'
+IF stock["passion_comfort"] = -1: $stock_features_list += '<font color="#666666">Гиперактивная</font><BR>'
+IF stock["passion_luxury"] = 1: $stock_features_list += '<font color="#666666">Любит роскошь</font><BR>'
+IF stock["passion_luxury"] = -1: $stock_features_list += '<font color="#666666">Аскетичная</font><BR>'
+IF stock["passion_sweets"] = 1: $stock_features_list += '<font color="#666666">Сладкоежка</font><BR>'
+IF stock["passion_sweets"] = -1: $stock_features_list += '<font color="#666666">Не любит сладкое</font><BR>'
+IF stock["passion_fame"] = 1: $stock_features_list += '<font color="#666666">Тщеславная</font><BR>'
+IF stock["passion_fame"] = -1: $stock_features_list += '<font color="#666666">Хикикомори</font><BR>'
+IF stock["courage"] = 1: $stock_features_list += '<font color="#666666">Храбрая</font><BR>'
+IF stock["courage"] = -1: $stock_features_list += '<font color="#666666">Трусиха</font><BR>'
+IF stock["metabolism"] = 5: $stock_features_list += '<font color="#666666">Мощный метаболизм</font><BR>'
+IF stock["metabolism"] = 4: $stock_features_list += '<font color="#666666">Хороший метаболизм</font><BR>'
+IF stock["metabolism"] = 2: $stock_features_list += '<font color="#666666">Ослабленный метаболизм</font><BR>'
+IF stock["metabolism"] = 1: $stock_features_list += '<font color="#666666">Слабый метаболизм</font><BR>'
+IF stock["sport_affinity"] = 1: $stock_features_list += '<font color="#666666">Спортивная</font><BR>'
+IF stock["sport_affinity"] = -1: $stock_features_list += '<font color="#666666">Апатичная</font><BR>'
+if stock["expression_affinity"]:  $stock_features_list += '<font color="#666666">Талант: оратор</font><BR>'
+if stock["pet_affinity"]:  $stock_features_list += '<font color="#666666">Талант: питомец</font><BR>'
 if stock["dressage_affinity"]:  $stock_features_list += '<font color="#666666">Brony</font><BR>' 
-if stock["nurse_affinity"]:  $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ð¼ÐµÐ´Ñ�ÐµÑ�Ñ‚Ñ€Ð°</font><BR>'
-if stock["service_affinity"]:  $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ð³Ð¾Ñ€Ð½Ð¸Ñ‡Ð½Ð°Ñ�</font><BR>'
-if stock["cook_affinity"]:  $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: ÐºÑƒÑ…Ð°Ñ€ÐºÐ°</font><BR>'
-if stock["gladiatrix_affinity"]:  $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ð²Ð¾Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¸Ñ†Ð°</font><BR>'
-if stock["enchanter_affinity"]:  $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ñ‡Ð°Ñ€Ð¾Ð´ÐµÐ¹ÐºÐ°</font><BR>'
-if stock["vocal_affinity"]:  $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ð¿ÐµÐ²Ð¸Ñ†Ð°</font><BR>'
-if stock["music_affinity"]: $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ð¼ÑƒÐ·Ñ‹ÐºÐ°Ð½Ñ‚ÐºÐ°</font><BR>'
-if stock["callisthenics_affinity"]: $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ñ‚Ð°Ð½Ñ†Ð¾Ð²Ñ‰Ð¸Ñ†Ð°</font><BR>'
-if stock["secretary_affinity"]: $stock_features_list += '<font color="#666666">Ð¢Ð°Ð»Ð°Ð½Ñ‚: Ñ�ÐµÐºÑ€ÐµÑ‚Ð°Ñ€ÑˆÐ°</font><BR>'   
-IF stock["memory"] = 1: $stock_features_list += '<font color="#666666">Ð­Ð¹Ð´ÐµÑ‚Ð¸Ñ‡ÐµÑ�ÐºÐ°Ñ� Ð¿Ð°Ð¼Ñ�Ñ‚ÑŒ</font><BR>'
-IF stock["memory"] = -1: $stock_features_list += '<font color="#666666">Ð—Ð°Ð±Ñ‹Ð²Ñ‡Ð¸Ð²Ð°Ñ�</font><BR>'
-IF stock["meekness"] > 0: $stock_features_list += '<font color="#666666">Ð”Ð¸Ñ�Ñ†Ð¸Ð¿Ð»Ð¸Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð°Ñ�</font><BR>'
-IF stock["meekness"] < 0: $stock_features_list += '<font color="#666666">Ð¡Ð²Ð¾ÐµÐ½Ñ€Ð°Ð²Ð½Ð°Ñ�</font><BR>'
-IF stock["selfesteem"] > 0: $stock_features_list += '<font color="#666666">ÐœÐ°Ð½Ð¸Ñ� Ð²ÐµÐ»Ð¸Ñ‡Ð¸Ñ�</font><BR>'
-IF stock["selfesteem"] < 0: $stock_features_list += '<font color="#666666">ÐšÐ¾Ð¼Ð¿Ð»ÐµÐºÑ� Ð²Ð¸Ð½Ñ‹</font><BR>'
+if stock["nurse_affinity"]:  $stock_features_list += '<font color="#666666">Талант: медсестра</font><BR>'
+if stock["service_affinity"]:  $stock_features_list += '<font color="#666666">Талант: горничная</font><BR>'
+if stock["cook_affinity"]:  $stock_features_list += '<font color="#666666">Талант: кухарка</font><BR>'
+if stock["gladiatrix_affinity"]:  $stock_features_list += '<font color="#666666">Талант: воительница</font><BR>'
+if stock["enchanter_affinity"]:  $stock_features_list += '<font color="#666666">Талант: чародейка</font><BR>'
+if stock["vocal_affinity"]:  $stock_features_list += '<font color="#666666">Талант: певица</font><BR>'
+if stock["music_affinity"]: $stock_features_list += '<font color="#666666">Талант: музыкантка</font><BR>'
+if stock["callisthenics_affinity"]: $stock_features_list += '<font color="#666666">Талант: танцовщица</font><BR>'
+if stock["secretary_affinity"]: $stock_features_list += '<font color="#666666">Талант: секретарша</font><BR>'   
+IF stock["memory"] = 1: $stock_features_list += '<font color="#666666">Эйдетическая память</font><BR>'
+IF stock["memory"] = -1: $stock_features_list += '<font color="#666666">Забывчивая</font><BR>'
+IF stock["meekness"] > 0: $stock_features_list += '<font color="#666666">Дисциплинированная</font><BR>'
+IF stock["meekness"] < 0: $stock_features_list += '<font color="#666666">Своенравная</font><BR>'
+IF stock["selfesteem"] > 0: $stock_features_list += '<font color="#666666">Мания величия</font><BR>'
+IF stock["selfesteem"] < 0: $stock_features_list += '<font color="#666666">Комплекс вины</font><BR>'
 '
 
 gs '#txt'

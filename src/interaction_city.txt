@@ -35,7 +35,7 @@ $interaction_type = 'basic'
 
 IF interaction_city = 111:
  npc = 1
- $npc_id = 'Ð¼ÐµÐ½Ñ…Ð°Ð½Ñ‚ÐµÑ€'
+ $npc_id = 'менхантер'
  $place = 'shop_wpn'
  $text[1] = '   You enter the Manhunter''s shop. The owner greets you with his trademark smile.'
  $return_lock  = 'shop_wpn' 
@@ -52,7 +52,7 @@ END
 IF interaction_city = 1112:
  $place = 'shop_wpn'
  $return_lock  = 'shop_wpn' 
- IF no_slave_count['Ð¼ÐµÐ½Ñ…Ð°Ð½Ñ‚ÐµÑ€'] > 0:
+ IF no_slave_count['менхантер'] > 0:
     interaction_city = 1113  
  else
     gt "slave_sell"
@@ -63,7 +63,7 @@ IF interaction_city = 1113:
  $place = 'shop_wpn'
  $return_lock  = 'shop_wpn' 
  txt_count = 1
- $text[1] = "  Sorry, <<$master_name>>, but I'm not interested now. Have recently bought one. Come back in <<no_slave_count['Ð¼ÐµÐ½Ñ…Ð°Ð½Ñ‚ÐµÑ€']>>, and then we will talk about your product. In the meantime, it is better to take a look at mine!"
+ $text[1] = "  Sorry, <<$master_name>>, but I'm not interested now. Have recently bought one. Come back in <<no_slave_count['менхантер']>>, and then we will talk about your product. In the meantime, it is better to take a look at mine!"
 END
 
 
@@ -519,7 +519,7 @@ IF interaction_city = 11437:
  $item_id = 'hijab'
 END
 
-!ÐŸÑ€Ð¾Ð´ÑƒÐºÑ‚Ð¾Ð²Ñ‹Ð¹ Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½
+!Продуктовый магазин
 IF interaction_city = 115:
  $place = 'gastronom'
  $return_lock  = 'shop_general'
@@ -802,8 +802,8 @@ IF interaction_city = 11611:
  END
  }
 END
-!Ð²Ð¾Ð»Ð¾Ñ�Ð¾Ñ„Ð¸ÐºÑ�
-!ÐµÑ‰Ðµ Ð±Ñ‹ Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð½ÐµÐ±Ð¾Ð»ÑŒÑˆÐ¾Ðµ Ð¿Ð¾Ð²Ñ‹ÑˆÐµÐ½Ð¸Ðµ Ð½Ð°Ñ�Ñ‚Ñ€Ð¾ÐµÐ½Ð¸Ðµ Ñ€Ð°Ð±Ñ‹Ð½Ð¸ Ð¸ Ð¼Ð°Ñ�Ñ‚ÐµÑ€Ð° Ð¾Ñ‚ Ð²Ñ�ÐµÑ… Ñ�Ñ‚Ð¸Ñ… Ð¿Ñ€Ð¾Ñ†ÐµÐ´ÑƒÑ€, ÐºÑ€Ð¾Ð¼Ðµ Ð´ÐµÐ¿Ð¸Ð»Ñ�Ñ†Ð¸Ð¸, Ð½Ð¾ Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð±Ñ‹Ð» Ð»Ð¸Ð¼Ð¸Ñ‚ Ð¾Ð´Ð¸Ð½ Ñ€Ð°Ð· Ð² Ð´ÐµÐ½ÑŒ, Ð¸Ð½Ð°Ñ‡Ðµ Ð²Ñ�Ðµ Ð±ÑƒÐ´ÑƒÑ‚ Ð±ÐµÐ³Ð°Ñ‚ÑŒ ÑƒÐ»ÑƒÑ‡ÑˆÐ°Ñ‚ÑŒ Ð½Ð°Ñ�Ñ‚Ñ€Ð¾ÐµÐ½Ð¸Ðµ Ñ�ÑŽÐ´Ð°
+!волософикс
+!еще бы добавить небольшое повышение настроение рабыни и мастера от всех этих процедур, кроме депиляции, но чтобы был лимит один раз в день, иначе все будут бегать улучшать настроение сюда
 IF interaction_city = 11612:
  $place = 'beauty_shop'
  $return_lock  = 'shop_general'
@@ -1010,7 +1010,7 @@ IF interaction_city = 119:
  txt_count = 3 
  gs '$slave_price'
  farid_potential_debt += halfprice
- $npc_id = 'Ñ„Ð°Ñ€Ð¸Ð´_Ð°ÑƒÐºÑ†Ð¸Ð¾Ð½Ñ‰Ð¸Ðº'
+ $npc_id = 'фарид_аукционщик'
  $place = 'slave_stage'
  $text[1] = '   You already have one slave with you, so you decide to take your girl received as a trophy to Farid.'
  $text[2] = '   [FARID]
@@ -1026,7 +1026,7 @@ IF interaction_city = 1191:
  sparks -= 5
  gs 'stock_to_slave'
  farid_potential_debt = 0
- $npc_id = 'Ñ„Ð°Ñ€Ð¸Ð´_Ð°ÑƒÐºÑ†Ð¸Ð¾Ð½Ñ‰Ð¸Ðº'
+ $npc_id = 'фарид_аукционщик'
  $place = 'slave_stage'
  $text[1] = '   [FARID]
    - Changed your mind? Here''s your girl, I had no time to sell her. But I''ll take five sparks as a penalty. It turns out that I get nothing so I should not have kept her at all, eh? This will not work, my dear!'  
@@ -1038,7 +1038,7 @@ IF interaction_city = 1192:
  $return_lock  = 'city_menu_form' 
  npc = 1
  txt_count = 1 
- $npc_id = 'Ñ„Ð°Ñ€Ð¸Ð´_Ð°ÑƒÐºÑ†Ð¸Ð¾Ð½Ñ‰Ð¸Ðº'
+ $npc_id = 'фарид_аукционщик'
  $place = 'slave_stage'
  $text[1] = '   [FARID]
    - Where sparks? Well, where''s your hurry, eh? don`t you hurry! I have not sold your girl yet. Come tomorrow for your sparks, my dear, tomorrow.'
@@ -1048,7 +1048,7 @@ IF interaction_city = 1193:
  city_form = 11
  $return_lock  = 'city_menu_form' 
  npc = 1
- $npc_id = 'Ñ„Ð°Ñ€Ð¸Ð´_Ð°ÑƒÐºÑ†Ð¸Ð¾Ð½Ñ‰Ð¸Ðº'
+ $npc_id = 'фарид_аукционщик'
  txt_count = 1
  sparks += farid_debt
  $place = 'slave_stage'
@@ -1205,11 +1205,11 @@ IF interaction_city = 12801:
  $return_lock  = '$gladiator_fight_start' 
  $special_image[1] = 'characters\games_superviser.gif' 
  $special_image[2] = '<<$slave["fullimage"]>>.gif' 
- $special_image_full[3] = $Ñ�Ð¸Ð»ÑƒÑ�Ñ‚_Ð¼Ð¾Ð±Ð°[$ge]   
+ $special_image_full[3] = $силуэт_моба[$ge]   
  txt_count = 3 
  $text[1] = $superviser_message[superviser_message]
  $text[2] = $arena_slave_presentation[1]
- $text[3] = $Ð¾Ð¿Ð¸Ñ�Ð°Ð½Ð¸Ðµ_Ð¼Ð¾Ð±Ð°[$ge]
+ $text[3] = $описание_моба[$ge]
 END
 
 !slave dies on arena
@@ -1240,7 +1240,7 @@ IF interaction_city = 1292:
  brand_rate -= 2 
 END
 
-!ÐŸÐ¾Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ñ€Ð°Ð±Ñ‹Ð½Ð¸ Ð½Ð° Ð°Ñ€ÐµÐ½Ðµ
+!Поражение рабыни на арене
 IF interaction_city = 1293:
  $place = 'colloseum_arena'
  $return_lock = 'goto_loc'
@@ -1295,7 +1295,7 @@ IF interaction_city = 1295:
  city_form = 1 
  $return_lock = 'city_menu_form'
  brand_rate += 5
- $text[1] = '   Seeing the magnificent victory of your slave, the crowd roars in ecstasy. One after another, the audience rise from their seats and begin to chant Â«LI-BE-RO!!!Â» You''ll have to give her a freedom... but people will not forget the master who give them such a glorious champion!'
+ $text[1] = '   Seeing the magnificent victory of your slave, the crowd roars in ecstasy. One after another, the audience rise from their seats and begin to chant «LI-BE-RO!!!» You''ll have to give her a freedom... but people will not forget the master who give them such a glorious champion!'
  IF slave['moral'] > slave['fear']: 
   txt_count = 2 
   $text[2] = '   Although you officially bestow the freedom to your slave, immediately after the feast she comes back to you. Looks like <<$slave_name>> does not want other destiny than to serve you. Or maybe she just do not know where to go. In any case, this is a very good situation.'
@@ -1350,7 +1350,7 @@ END
 
 IF interaction_city = 1321:
  $interaction_type = 'rental_demo'
- $place = 'street_rental'
+ $place = 'street'
  $demo_var = 'elite'
  $place_location['demo'] = 'White Town' 
  $yes = {interaction_city = 13211
@@ -1367,7 +1367,7 @@ END
 
 IF interaction_city = 1322:
  $interaction_type = 'rental_demo'
- $place = 'necropolis_street_rental'
+ $place = 'necropolis_street'
  $demo_var = 'gothic'
  $place_location['demo'] = 'Necropolis' 
  $yes = {interaction_city = 13221
@@ -1384,7 +1384,7 @@ END
 
 IF interaction_city = 1323:
  $interaction_type = 'rental_demo'
- $place = 'taurus_street_rental'
+ $place = 'taurus_street'
  $demo_var = 'fort'
  $place_location['demo'] = 'Quarter of the Bull' 
  $yes = {interaction_city = 13231
@@ -1401,7 +1401,7 @@ END
 
 IF interaction_city = 1324:
  $interaction_type = 'rental_demo'
- $place = 'serpis_street_rental'
+ $place = 'serpis_street'
  $demo_var = 'econom'
  $place_location['demo'] = 'Serpentine quarter' 
  $yes = {interaction_city = 13241
@@ -1418,7 +1418,7 @@ END
 
 IF interaction_city = 1325:
  $interaction_type = 'rental_demo'
- $place = 'kamira_street_rental'
+ $place = 'kamira_street'
  $demo_var = 'basic'
  $place_location['demo'] = 'Quarter of the Outcasts' 
  $yes = {interaction_city = 13251
@@ -3035,7 +3035,7 @@ gt 'guild'}
  gt 'choice_screen'
 END
 
-!D+ rank contract
+!C-rank contract
 IF interaction_city = 1413:
  gs 'generate_stock'
  npc = 9999
@@ -3046,7 +3046,7 @@ IF interaction_city = 1413:
  specialisation = rand(1,n)
  txt = 1
  $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for D+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">350 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for C <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">300 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
  $yes = {
 gs 'stock_to_slave_nogt' 
 slave["parasite"] = 0
@@ -3054,7 +3054,7 @@ slave['brand'] = 4
 killvar 'contract'
 contract['active'] = 1
 active[$quest[10]] = 1
-sparks += 350
+sparks += 300
 contract['level'] = 2
 $contract['specialisation'] = $specialisation[specialisation]
 npc = 0
@@ -3066,7 +3066,7 @@ gt 'guild'}
  gt 'choice_screen'
 END
 
-!C- rank contract
+!B-rank contract
 IF interaction_city = 1414:
  gs 'generate_stock'
  npc = 9999
@@ -3077,7 +3077,7 @@ IF interaction_city = 1414:
  specialisation = rand(1,n)
  txt = 1
  $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for C- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">700 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
+   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for B <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">500 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
  $yes = {
 gs 'stock_to_slave_nogt' 
 slave["parasite"] = 0
@@ -3085,225 +3085,8 @@ slave['brand'] = 4
 killvar 'contract'
 contract['active'] = 1
 active[$quest[10]] = 1
-sparks += 700
+sparks += 500
 contract['level'] = 3
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!C+ rank contract
-IF interaction_city = 1415:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for C+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">1300 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 1300
-contract['level'] = 4
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!B- rank contract
-IF interaction_city = 1416:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for B- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">2000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 2000
-contract['level'] = 5
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!B+ rank contract
-IF interaction_city = 1417:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for B+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">2800 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 2800
-contract['level'] = 6
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!A- rank contract
-IF interaction_city = 1418:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for A- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">5000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 5000
-contract['level'] = 7
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!A+ rank contract
-IF interaction_city = 1419:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for A+ <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">7000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 7000
-contract['level'] = 8
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!S- rank contract
-IF interaction_city = 1420:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for S- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">12000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 12000
-contract['level'] = 9
-$contract['specialisation'] = $specialisation[specialisation]
-npc = 0
-gt 'guild'}
- $no = {contract['active'] = 2
-npc = 0
-gs 'generate_stock'
-gt 'guild'}  
- gt 'choice_screen'
-END
-
-!S+ rank contract
-IF interaction_city = 1421:
- gs 'generate_stock'
- npc = 9999
- $place = 'guild_hall'
- $picture_type = 'stock_picture'
- $return_lock  = 'guild'
- n = arrsize('$specialisation') - 1 
- specialisation = rand(1,n)
- txt = 1
- $text[1] = '[MISTRESS ANGELIKA]
-   - This is <font color="#0000CD"><<$stock_name>></font>. She should be prepared as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font> for S- <font color="#0000CD"> rank or higher</font>. Prepayment for this contract is <font color="#0000CD">25000 sparks</font>. Bonus payments on the basis of the work will depend on the speed of train and quality of a slave. You take up?'
- $yes = {
-gs 'stock_to_slave_nogt' 
-slave["parasite"] = 0
-slave['brand'] = 4
-killvar 'contract'
-contract['active'] = 1
-active[$quest[10]] = 1
-sparks += 25000
-contract['level'] = 10
 $contract['specialisation'] = $specialisation[specialisation]
 npc = 0
 gt 'guild'}
@@ -3316,7 +3099,7 @@ END
 
 IF interaction_city = 1411:
  npc = 1
- $npc_id = 'Ð³Ð¾Ñ�Ð¿Ð¾Ð¶Ð°_Ð°Ð½Ð³ÐµÐ»Ð¸ÐºÐ°' 
+ $npc_id = 'госпожа_ангелика' 
  $place = 'guild_hall'
  $return_lock  = 'guild'
  $text[1] = '[MISTRESS ANGELIKA]
@@ -3326,7 +3109,7 @@ END
 IF interaction_city = 142:
  npc = 1
  $place = 'guild_hall'
- $npc_id = 'Ð³Ð¾Ñ�Ð¿Ð¾Ð¶Ð°_Ð°Ð½Ð³ÐµÐ»Ð¸ÐºÐ°' 
+ $npc_id = 'госпожа_ангелика' 
  $return_lock  = 'guild'
  gs '$slave_price'
  IF slave_specialisation[$contract['specialisation']] > 0 and rating >= contract['level'] and slave_state = CONST_INT['slave_exist']:
@@ -3353,7 +3136,7 @@ IF interaction_city = 142:
   if quality_bonus > 0: brand_rate += 1 
   killvar 'contract'
   else
-  !TODO: <<$rating[contract['level']]>> Ð½Ðµ Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚Ñ�Ñ�
+  !TODO: <<$rating[contract['level']]>> не выводится
   $text[1] = "[MISTRESS ANGELIKA]
     - So what? I need a <font color='#0000CD'><<$slave_type_name[$contract['specialisation']]>></font> for <<$rating[contract['level']]>> rank or higher. Alive and well. Not necessarily the one that I gave you, but as long as you do not hand over to me the finished work, the contract remains on you. Go back to work."
  END
@@ -3363,7 +3146,7 @@ END
 IF interaction_city = 143:
  npc = 1
  txt_count = 2
- $npc_id = 'Ð³Ð¾Ñ�Ð¿Ð¾Ð¶Ð°_Ð°Ð½Ð³ÐµÐ»Ð¸ÐºÐ°' 
+ $npc_id = 'госпожа_ангелика' 
  $place = 'guild_hall'
  $return_lock  = 'exid'
  $text[1] = '[MISTRESS ANGELIKA]
@@ -3686,9 +3469,9 @@ IF interaction_city = 199:
  $return_lock  = 'shop_general'  
  $picture_type = 'untyped'
  txt_count = 1
- $text[1] = "  <<$Ð¾Ð¿Ð¸Ñ�Ð°Ð½Ð¸Ðµ_Ð¼Ð¾Ð±Ð°[$Ð²Ñ€Ð°Ð³[1]]>>"
- $special_bg = '<<$Ñ�Ð¸Ð»ÑƒÑ�Ñ‚_Ð¼Ð¾Ð±Ð°[$Ð²Ñ€Ð°Ð³[1]]>>'
- $return_lock = 'Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹'
+ $text[1] = "  <<$описание_моба[$враг[1]]>>"
+ $special_bg = '<<$силуэт_моба[$враг[1]]>>'
+ $return_lock = 'начать_бой'
  memcf = colloseum_fight 
 END
 
@@ -3698,11 +3481,11 @@ IF interaction_city = 1941:
  txt_count = 1
  txt = 1
  npc = 1
- $npc_id = 'Ð±Ñ€Ð¸Ð½Ð°_Ñ€Ñ‹Ð¶Ð°Ñ�'
+ $npc_id = 'брина_рыжая'
  $text[1] = "   [RED HAIR BRYN]
    - I will take for that lesson <<spm_price>> sparks. <font color='red'>Power blow</font> without special effects. Deals triple damage, so if you are well prepared and will choose the right moment - no enemy will have a chance! Fits any weapon."
  $yes = {
-$spm_to_learn = 'ÑƒÐ´Ð°Ñ€_Ñ�_Ñ€Ð°Ð·Ð²Ð¾Ñ€Ð¾Ñ‚Ð°'
+$spm_to_learn = 'удар_с_разворота'
 sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
@@ -3718,11 +3501,11 @@ IF interaction_city = 1942:
  txt_count = 1
  txt = 1
  npc = 1
- $npc_id = 'Ð±Ñ€Ð¸Ð½Ð°_Ñ€Ñ‹Ð¶Ð°Ñ�'
+ $npc_id = 'брина_рыжая'
  $text[1] = "   [RED HAIR BRYN]
    - I will take for that lesson <<spm_price>> sparks. <font color='green'>Swift blow</font> for two enemies at once. You will damage both, twice harder than usual. Try to choose the moment when the two targets are dodges. Needs a slashing weapons, be careful!"
  $yes = {
-$spm_to_learn = 'Ñ€Ð°Ñ�Ñ�ÐµÑ‡ÐµÐ½Ð¸Ðµ'
+$spm_to_learn = 'рассечение'
 sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
@@ -3738,11 +3521,11 @@ IF interaction_city = 1943:
  txt_count = 1
  txt = 1
  npc = 1
- $npc_id = 'Ð±Ñ€Ð¸Ð½Ð°_Ñ€Ñ‹Ð¶Ð°Ñ�'
+ $npc_id = 'брина_рыжая'
  $text[1] = "   [RED HAIR BRYN]
    - I will take for that lesson <<spm_price>> sparks. <font color='purple'>Fearsome</font> battle cry will reduce not only the morale of the enemies, but also give strength to yourself. Enemy with a weak spirit can surrender or flee, forgetting about the fight."
  $yes = {
-$spm_to_learn = 'Ð²Ð¾Ð¸Ð½Ñ�Ñ‚Ð²ÐµÐ½Ð½Ñ‹Ð¹_ÐºÐ»Ð¸Ñ‡'
+$spm_to_learn = 'воинственный_клич'
 sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
@@ -3758,11 +3541,11 @@ IF interaction_city = 1944:
  txt_count = 1
  txt = 1
  npc = 1
- $npc_id = 'Ð±Ñ€Ð¸Ð½Ð°_Ñ€Ñ‹Ð¶Ð°Ñ�'
+ $npc_id = 'брина_рыжая'
  $text[1] = "   [RED HAIR BRYN]
    - I will take for that lesson <<spm_price>> sparks. <font color='red'>Heavy blow</font> on the head, will give a long stun to the enemy and also deals double damage! You will need a blunt weapon, be careful! Choose your own special attacks carefully..."
  $yes = {
-$spm_to_learn = 'Ð¾Ð³Ð»ÑƒÑˆÐµÐ½Ð¸Ðµ'
+$spm_to_learn = 'оглушение'
 sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
@@ -3778,11 +3561,11 @@ IF interaction_city = 1945:
  txt_count = 1
  txt = 1
  npc = 1
- $npc_id = 'Ð±Ñ€Ð¸Ð½Ð°_Ñ€Ñ‹Ð¶Ð°Ñ�'
+ $npc_id = 'брина_рыжая'
  $text[1] = "   [RED HAIR BRYN]
    - I will take for that lesson <<spm_price>> sparks. <font color='green'>Dashing blow</font> to the tendons will weaken an enemy stand and make him vulnerable and shaky! You'll need a slashing weapon, be careful! Choose your own special attacks carefully..."
  $yes = {
-$spm_to_learn = 'Ð¿Ð¾Ð´Ñ€ÐµÐ·ÐºÐ°'
+$spm_to_learn = 'подрезка'
 sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
@@ -3798,11 +3581,11 @@ IF interaction_city = 1946:
  txt_count = 1
  txt = 1
  npc = 1
- $npc_id = 'Ð±Ñ€Ð¸Ð½Ð°_Ñ€Ñ‹Ð¶Ð°Ñ�'
+ $npc_id = 'брина_рыжая'
  $text[1] = "   [RED HAIR BRYN]
    - I will take for that lesson <<spm_price>> sparks. <font color='purple'>Precise hit</font> in the eyes not only cause a double damage, but also cause the enemy to become more scattered and vulnerable! You'll need a piercing weapon, be careful!"
  $yes = {
-$spm_to_learn = 'Ð¾Ñ�Ð»ÐµÐ¿Ð»ÐµÐ½Ð¸Ðµ'
+$spm_to_learn = 'ослепление'
 sparks -= spm_price
 master_energy -= 5
 interaction_city = 19410
@@ -4616,7 +4399,7 @@ IF interaction_city = 3311:
   $text[master_issues] = '   [DOCTOR]
    - We diagnosed rotphilis, <<$master_name>>. In some ways it''s an professional disease for members of your profession. It''s okay. The course of treatment will cost 25 sparks and takes only an hour. I do not recommend ignore a disease, it could end badly.' 
  END
- !INFO: skip_to = 11 -> Ð¿Ñ€Ñ‹Ð¶Ð¾Ðº Ð½Ð° $hospital_options[11]
+ !INFO: skip_to = 11 -> прыжок на $hospital_options[11]
  IF master_issues > 0:
   skip_to = 11
   $sp_text[11] = '   [DOCTOR]
@@ -4662,7 +4445,7 @@ IF interaction_city = 33112:
     killvar 'cure_master_ill'
     sparks -= 25 
     master_ill = 0
-    !TODO: Ð·Ð°Ð¼ÑƒÑ‚Ð¸Ñ‚ÑŒ Ð½ÐµÐ¹Ñ‚Ñ€Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ñ�Ð¿Ð¸Ñ�Ð¾Ðº Ð¼ÑƒÐ´Ð»ÐµÑ‚Ð¾Ð² Ð¿ÐµÑ€Ñ�Ð¾Ð½Ð°Ð¶ÐµÐ¹, Ñ‚Ð¾Ð³Ð´Ð° Ð¿Ð¾Ñ�Ð»Ðµ Ð»ÐµÑ‡ÐµÐ½Ð¸Ñ� Ð½Ð°Ð´Ð¾ Ð±ÑƒÐ´ÐµÑ‚ Ð²ÐºÐ»ÑŽÑ‡Ð°Ñ‚ÑŒ Ñ�Ñ‚Ð°Ñ‚ÑƒÑ� 'Ð¿Ð¾Ñ�Ð»Ðµ Ð±Ð¾Ð»ÐµÐ·Ð½Ð¸', Ñ� Ð²Ñ‹Ð²Ð¾Ð´Ð¾Ð¼ Ð² Ð´Ð½ÐµÐ²Ð½Ð¸Ðº
+    !TODO: замутить нейтральный список мудлетов персонажей, тогда после лечения надо будет включать статус 'после болезни', с выводом в дневник
     !turn off bad moodlet after curing
     master_mood['neg_master_ill'] = 0
 
@@ -5498,93 +5281,6 @@ if assistant_rate["beauty"] = 10: assistant_rate["beauty"] = 21
 if assistant_rate["beauty"] = 20: assistant_rate["beauty"] = 41
 if assistant_rate["beauty"] = 40: assistant_rate["beauty"] = 81
 if assistant_rate["beauty"] = 80: assistant_rate["beauty"] = 161
-if assistant_rate["beauty"] = 120: assistant_rate["beauty"] = 141
-if assistant_rate["beauty"] = 140: assistant_rate["beauty"] = 161
-if assistant_rate["beauty"] = 160: assistant_rate["beauty"] = 181
-interaction_city = 33244
-gt 'interaction_city'}
- $no = {sp_txt = 3
-gt 'shop_general'}
- gt 'choice_screen'
-END
- 
-IF interaction_city = 33243:
- $place = 'hospital'
- $return_lock  = 'shop_general'
- txt_count = 1
- txt = 1
- npc = 1
- $npc_id = 'doctor'
- $text[1] = '   [DOCTOR]
-   - We can remove some of the disadvantages in appearance of your assistant and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. '
- $yes = {
-sparks -= 350
-assistant['energy'] = -4
-assistant_rate['stamina'] -= 20
-assistant['reabilitation'] = 25
-assistant['beauty_enchanced'] = 2
-if assistant_rate["beauty"] = 21: assistant_rate["beauty"] = 42
-if assistant_rate["beauty"] = 41: assistant_rate["beauty"] = 62
-if assistant_rate["beauty"] = 61: assistant_rate["beauty"] = 82
-if assistant_rate["beauty"] = 81: assistant_rate["beauty"] = 122
-if assistant_rate["beauty"] = 121: assistant_rate["beauty"] = 142
-if assistant_rate["beauty"] = 141: assistant_rate["beauty"] = 162
-if assistant_rate["beauty"] = 161: assistant_rate["beauty"] = 182
-interaction_city = 33244
-gt 'interaction_city'}
- $no = {sp_txt = 3
-gt 'shop_general'}
- gt 'choice_screen'
-END
- 
-IF interaction_city = 33245:
- $place = 'hospital'
- $return_lock  = 'shop_general'
- txt_count = 1
- txt = 1
- npc = 1
- $npc_id = 'doctor'
- $text[1] = '   [DOCTOR]
-   - We can remove some of the disadvantages in appearance of your assistant and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. '
- $yes = {
-sparks -= 450
-assistant['energy'] = -4
-assistant_rate['stamina'] -= 20
-assistant['reabilitation'] = 30
-assistant['beauty_enchanced'] = 3
-if assistant_rate["beauty"] = 42: assistant_rate["beauty"] = 63
-if assistant_rate["beauty"] = 62: assistant_rate["beauty"] = 83
-if assistant_rate["beauty"] = 82: assistant_rate["beauty"] = 123
-if assistant_rate["beauty"] = 122: assistant_rate["beauty"] = 143
-if assistant_rate["beauty"] = 142: assistant_rate["beauty"] = 163
-if assistant_rate["beauty"] = 162: assistant_rate["beauty"] = 183
-interaction_city = 33244
-gt 'interaction_city'}
- $no = {sp_txt = 3
-gt 'shop_general'}
- gt 'choice_screen'
-END
- 
-IF interaction_city = 33246:
- $place = 'hospital'
- $return_lock  = 'shop_general'
- txt_count = 1
- txt = 1
- npc = 1
- $npc_id = 'doctor'
- $text[1] = '   [DOCTOR]
-   - We can remove some of the disadvantages in appearance of your assistant and make her more attractive. Significant health consequences. <BR> Cost of the procedure <b>250 sparks</b>. Rehabilitation period <b>20 days</b>. '
- $yes = {
-sparks -= 550
-assistant['energy'] = -4
-assistant_rate['stamina'] -= 20
-assistant['reabilitation'] = 35
-assistant['beauty_enchanced'] = 4
-if assistant_rate["beauty"] = 63: assistant_rate["beauty"] = 84
-if assistant_rate["beauty"] = 83: assistant_rate["beauty"] = 124
-if assistant_rate["beauty"] = 123: assistant_rate["beauty"] = 144
-if assistant_rate["beauty"] = 143: assistant_rate["beauty"] = 164
-if assistant_rate["beauty"] = 163: assistant_rate["beauty"] = 184
 interaction_city = 33244
 gt 'interaction_city'}
  $no = {sp_txt = 3
@@ -6989,7 +6685,7 @@ IF interaction_city = 532:
 END
 
 
-!Ð’Ð¾Ñ€Ð¾Ð½ÑŒÑ� Ð±Ð°ÑˆÐ½Ñ�
+!Воронья башня
 IF interaction_city = 54:
  $place = 'tower_gate'
  $return_lock  = 'shop_general' 
@@ -7165,15 +6861,6 @@ IF interaction_city = 6011:
  gs 'get_special_assistant'
 END
 
-!"IF interaction_city = 602:
- $place = 'colloseum'
- $return_lock  = 'city_menu_form'
- txt_count = arrsize('$shira_met_part_1') - 1
- copyarr '$text', '$shira_met_part_1'
- $special_action[4] = {$picture_type = 'pic_jpg'
- $special_bg = 'characters\shira_meeting'
- }
-END"
 !starting the patrol
 IF interaction_city = 62:
  $place = 'edge_patrool'
@@ -7198,8 +6885,8 @@ IF interaction_city = 6201:
  $fight_return  = 'city_menu_form'
  skip_to = 6201
  $sp_text[6201] = '    You see the young fiend that crept abroad Fogs and caught a girl, which it fertilizes with its tentacles, rumbling. Maybe she can still be saved.'
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'Ð¸Ñ�Ñ‡Ð°Ð´Ð¸Ðµ_Ð¼Ð¾Ð»Ð¾Ð´ÑŒ'
+ количество_врагов = 1
+ $враг[1] = 'исчадие_молодь'
  fighting_expirience = 5
  won_slave_minimum_value = 15
  get_girl = 1 
@@ -7213,8 +6900,8 @@ END
 IF interaction_city = 6202:
  $fight_return  = 'city_menu_form'
  skip_to = 6202
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'Ð¸Ñ�Ñ‡Ð°Ð´Ð¸Ðµ' 
+ количество_врагов = 1
+ $враг[1] = 'исчадие' 
  $sp_text[6202] = '   You stumble upon a large Fog fiend, that accidentally crawled farther its border than usual. In its tentacles desperately beats a woman. Fiend methodically pumps all her holes with liters of thick seed, trying to fertilize.'
  fighting_expirience = 10
  won_slave_minimum_value = 45
@@ -7230,8 +6917,8 @@ IF interaction_city = 6203:
  $fight_return  = 'city_menu_form'
  skip_to = 6203
  $sp_text[6203] = '   You notice a huge, hardened Fog fiend, wandered in its search of the victim to the very border. The search was not in vain - in the creature''s tentacles desperately beats a woman, but beast will not let her go until impregnates her. Or when someone would come and rescue her.'
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'Ñ‡ÑƒÐ´Ð¾Ð²Ñ‰Ð¸Ð½Ð¾Ðµ_Ð¸Ñ�Ñ‡Ð°Ð´Ð¸Ðµ' 
+ количество_врагов = 1
+ $враг[1] = 'чудовщиное_исчадие' 
  fighting_expirience = 15
  won_slave_minimum_value = 75
  get_girl = 1
@@ -7246,11 +6933,11 @@ IF interaction_city = 6204:
  $fight_return  = 'city_menu_form'
  skip_to = 6204
  $sp_text[6204] = '   Patrolling the border, you stumble upon a group of mercenaries accompanying black medic. They just caught some girl and medic sorts his sinister tools, preparing to remove her organs for sale in the medical center of the technosphere.'
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 4
- $Ð²Ñ€Ð°Ð³[1] = 'Ñ‡ÐµÑ€Ð½Ñ‹Ð¹_Ð¼ÐµÐ´Ð¸Ðº' 
- $Ð²Ñ€Ð°Ð³[2] = 'Ð¿Ð¾Ð´Ñ€ÑƒÑ‡Ð½Ñ‹Ð¹' 
- $Ð²Ñ€Ð°Ð³[3] = 'Ð¿Ð¾Ð´Ñ€ÑƒÑ‡Ð½Ñ‹Ð¹' 
- $Ð²Ñ€Ð°Ð³[4] = 'Ð¿Ð¾Ð´Ñ€ÑƒÑ‡Ð½Ñ‹Ð¹'   
+ количество_врагов = 4
+ $враг[1] = 'черный_медик' 
+ $враг[2] = 'подручный' 
+ $враг[3] = 'подручный' 
+ $враг[4] = 'подручный'   
  fighting_expirience = 5
  won_slave_minimum_value = 15
  get_girl = 1 
@@ -7263,10 +6950,10 @@ IF interaction_city = 6205:
  $fight_return  = 'city_menu_form'
  skip_to = 6205
  $sp_text[6205] = '   Walking along the border of fog, you notice you are going to meet a knight. This is a paladin of Taurus House accompanied by two infantry. He leads a naked girl on the chain, apparently a slave who is caught during his own patrol.'
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 3
- $Ð²Ñ€Ð°Ð³[1] = 'Ð¿Ð°Ð»Ð°Ð´Ð¸Ð½' 
- $Ð²Ñ€Ð°Ð³[2] = 'Ð¿ÐµÑ…Ð¾Ñ‚Ð¸Ð½ÐµÑ†' 
- $Ð²Ñ€Ð°Ð³[3] = 'Ð¿ÐµÑ…Ð¾Ñ‚Ð¸Ð½ÐµÑ†' 
+ количество_врагов = 3
+ $враг[1] = 'паладин' 
+ $враг[2] = 'пехотинец' 
+ $враг[3] = 'пехотинец' 
  fighting_expirience = 10
  won_slave_minimum_value = 45
  get_girl = 1 
@@ -7279,19 +6966,19 @@ IF interaction_city = 6206:
  $fight_return  = 'city_menu_form'
  skip_to = 6206
  $sp_text[6206] = '   You hear screams and roars from afar, which indicate that nearby are the beastmen gang of Camira caught a woman. While one of them rapes the victim, rest are building a fire to fry and eat the poor thing.'
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 4
- $Ð·Ð²ÐµÑ€Ð¾Ð»ÑŽÐ´[1] = 'ÐºÐ¾Ð·Ð»Ð¾Ñ€Ð¾Ð³Ð¸Ð¹'
- $Ð·Ð²ÐµÑ€Ð¾Ð»ÑŽÐ´[2] = 'Ñ�Ð²Ð¸Ð½Ð¾Ñ€Ñ‹Ð»Ñ‹Ð¹'
- $Ð·Ð²ÐµÑ€Ð¾Ð»ÑŽÐ´[3] = 'Ð¶Ð°Ð±Ð¾Ð²Ð°Ð½'
- $Ð·Ð²ÐµÑ€Ð¾Ð»ÑŽÐ´[4] = 'ÐºÑ€Ñ‹Ñ�Ð¾Ð»ÑŽÐ´'
+ количество_врагов = 4
+ $зверолюд[1] = 'козлорогий'
+ $зверолюд[2] = 'свинорылый'
+ $зверолюд[3] = 'жабован'
+ $зверолюд[4] = 'крысолюд'
  a = RAND (1,4)
- $Ð²Ñ€Ð°Ð³[1] = $Ð·Ð²ÐµÑ€Ð¾Ð»ÑŽÐ´[a] 
+ $враг[1] = $зверолюд[a] 
  a = RAND (1,4) 
- $Ð²Ñ€Ð°Ð³[2] = $Ð·Ð²ÐµÑ€Ð¾Ð»ÑŽÐ´[a] 
+ $враг[2] = $зверолюд[a] 
  a = RAND (1,4) 
- $Ð²Ñ€Ð°Ð³[3] = $Ð·Ð²ÐµÑ€Ð¾Ð»ÑŽÐ´[a] 
+ $враг[3] = $зверолюд[a] 
  a = RAND (1,4) 
- $Ð²Ñ€Ð°Ð³[4] = $Ð·Ð²ÐµÑ€Ð¾Ð»ÑŽÐ´[a] 
+ $враг[4] = $зверолюд[a] 
  fighting_expirience = 10
  won_slave_minimum_value = 45
  get_girl = 1 
@@ -7306,8 +6993,8 @@ IF interaction_city = 6207:
  $fight_return  = 'city_menu_form'
  skip_to = 6207
  $sp_text[6207] = '   Like a gray lightning rushes past you and jumps on a hardly seen girl, knocking her to the ground. It''s a werewolf, and he seems to believe that the pray belonged to him. Glancing at you with corner of his eye, werewolf tore off the victim''s clothes, ready to rape and then eat her alive.'
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'Ð²ÐµÑ€Ð²Ð¾Ð»ÑŒÑ„' 
+ количество_врагов = 1
+ $враг[1] = 'вервольф' 
  fighting_expirience = 15
  won_slave_minimum_value = 75
  get_girl = 1 
@@ -7319,8 +7006,8 @@ END
 IF interaction_city = 6208:
  $fight_return  = 'city_menu_form'
  skip_to = 6208
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'Ð²Ð°Ð¼Ð¿Ð¸Ñ€'  
+ количество_врагов = 1
+ $враг[1] = 'вампир'  
  $sp_text[6208] = '   Close to the border of Fogs you see two human figures. Dressed in black as the night itself armor, vampire enchanted with his eyes the young girl and is ready to drink her blood. Your approach has not gone unnoticed.'
  fighting_expirience = 10
  won_slave_minimum_value = 45
@@ -7333,8 +7020,8 @@ END
 IF interaction_city = 6209:
  $fight_return  = 'city_menu_form'
  skip_to = 6209
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'Ð»Ð¸Ñ‡'   
+ количество_врагов = 1
+ $враг[1] = 'лич'   
  $sp_text[6209] = '   From a distance you notice a deathly blue flash of magic. It''s a lich necromancer, spell bounded a young girl with paralysis, that just emerged from the Fogs. She seems to need him as a sacrifice for some dark magic ritual. These dead men have no idea for what actually women needs...' 
  fighting_expirience = 10
  won_slave_minimum_value = 45
@@ -7351,22 +7038,22 @@ IF interaction_city = 6210:
  fighting_expirience = 5
  won_slave_minimum_value = 15
  get_girl = 1
- $Ð²Ñ‚[1] = 'ÐºÐ°Ð½Ð¸Ð±Ð°Ð»'
- $Ð²Ñ‚[2] = 'ÐºÐ°Ð»ÐµÐºÐ°'
- $Ð²Ñ‚[3] = 'Ð½Ð¸Ñ‰ÐµÐ±Ñ€Ð¾Ð´'
- $Ð²Ñ‚[4] = 'Ð±ÐµÐ·ÑƒÐ¼ÐµÑ†'
- $Ð²Ñ‚[5] = 'Ð¸Ð·Ð¼Ð¾Ð¶Ð´ÐµÐ½Ð½Ñ‹Ð¹'  
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 5
+ $вт[1] = 'канибал'
+ $вт[2] = 'калека'
+ $вт[3] = 'нищеброд'
+ $вт[4] = 'безумец'
+ $вт[5] = 'изможденный'  
+ количество_врагов = 5
  a = RAND (1,5)
- $Ð²Ñ€Ð°Ð³[1] = $Ð²Ñ‚[a]
+ $враг[1] = $вт[a]
  a = RAND (1,5)
- $Ð²Ñ€Ð°Ð³[2] = $Ð²Ñ‚[a]
+ $враг[2] = $вт[a]
  a = RAND (1,5) 
- $Ð²Ñ€Ð°Ð³[3] = $Ð²Ñ‚[a]
+ $враг[3] = $вт[a]
  a = RAND (1,5) 
- $Ð²Ñ€Ð°Ð³[4] = $Ð²Ñ‚[a]
+ $враг[4] = $вт[a]
  a = RAND (1,5) 
- $Ð²Ñ€Ð°Ð³[5] = $Ð²Ñ‚[a]
+ $враг[5] = $вт[a]
  copyarr '$display_options', '$edge_of_mists'  
  won_slave['ill'] = 1
  won_slave['deflowered'] = 1
@@ -7378,8 +7065,8 @@ IF interaction_city = 6211:
  $fight_return  = 'city_menu_form'
  skip_to = 6211
  $sp_text[6211] = '   Near the edge of the Fogs you hear a deep, gravelly laugh, followed by a scream. Approaching the source, you find a girl in the grips of a large ogre. His massive cock is pistoning in and out of her as he rapes her, making her belly bulge with each thrust. They haven''t noticed you yet.'
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'ogre' 
+ количество_врагов = 1
+ $враг[1] = 'ogre' 
  fighting_expirience = 15
  won_slave_minimum_value = 75
  get_girl = 1 
@@ -7393,9 +7080,9 @@ IF interaction_city = 6212:
  $fight_return  = 'city_menu_form'
  skip_to = 6212
  $sp_text[6212] = '   You come upon a pair of goblins double-penetrating a scared-looking girl near the edge of the Fogs. One of them has his dagger at her neck. She looks relatively unharmed at the moment, though they''ll probably just slit her throat when they''re done with her.'
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'goblin'
- $Ð²Ñ€Ð°Ð³[1] = 'goblin'
+ количество_врагов = 1
+ $враг[1] = 'goblin'
+ $враг[1] = 'goblin'
  fighting_expirience = 5
  won_slave_minimum_value = 5
  get_girl = 1 
@@ -7409,8 +7096,8 @@ END
 IF interaction_city = 6213:
  $fight_return  = 'city_menu_form'
  skip_to = 6213
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'warg' 
+ количество_врагов = 1
+ $враг[1] = 'warg' 
  $sp_text[6213] = '   As you patrol the border of the Fogs, you hear a deep snarling sound accompanied by haggard sobs. Approaching quietly, you see a large wolf-like creature raping a wounded girl. He grips her neck in his teeth, and will surely kill and eat her once he cums. He smells you approaching and growls deeply.'
  fighting_expirience = 8
  won_slave_minimum_value = 30
@@ -7424,8 +7111,8 @@ END
 IF interaction_city = 6214:
  $fight_return  = 'city_menu_form'
  skip_to = 6214
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'orc' 
+ количество_врагов = 1
+ $враг[1] = 'orc' 
  $sp_text[6214] = '   Stalking along the edge of the Fogs, you come across two figures - a large one striding purposefully, and a smaller one bound and limping along behind. Coming closer, you see it is an orcish warrior who appears to have captured a young woman. He sees you and brandishes his large axe.'
  fighting_expirience = 10
  won_slave_minimum_value = 45
@@ -7872,7 +7559,7 @@ IF interaction_city = 9511:
  $place = 'guild_hall'
  $return_lock  = 'guild' 
  expert_looks_for_slave = 1
- full_search_cost = search["cost"] * 70
+ full_search_cost = search["cost"] * 50
  npc = 1
  $npc_id = 'scoops'
  txt = 1

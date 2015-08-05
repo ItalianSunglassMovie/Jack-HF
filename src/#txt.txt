@@ -295,7 +295,7 @@ $adverto_help[1] = '   Imposes magic indelibly seal on the victim''s body. This 
 !INTERACTION WITH SLAVE
 
 !TASKS
-$slave_concert[0] = '<<$slave_name>> either is not able to play music, or just does not want to entertain you. She desperately out of tune, misses the notes and sings without a trace of expression. This Â«concertÂ» does not look as entertainment at all.'
+$slave_concert[0] = '<<$slave_name>> either is not able to play music, or just does not want to entertain you. She desperately out of tune, misses the notes and sings without a trace of expression. This «concert» does not look as entertainment at all.'
 $slave_concert[1] = '<<$slave_name>> plays music well enough that it was possible to listen, but it lacks the emotion. Better than get bored, sitting at the window, but no more than that - in the Eternal Rome is easy to find more interesting things to do.'
 $slave_concert[2] = '<<$slave_name>> sings and plays for your pleasure, and it should be noted that she doing pretty well. Of course, it''s not fit for the general public, but in order to pass the time, this concert fits perfectly.'
 $slave_concert[3] = '<<$slave_name>> has quite a varied repertoire and performs all compositions without a shadow of falsehood. She could very well perform on stage, but now all her talent belongs only to you and damn, it''s nice.'
@@ -340,7 +340,7 @@ $oral_wash_description[5] = '<<$slave_name>> stands in front of you on her knees
 $slave_massages_master[0] = '<<$slave_name>> asks you to sit down and begin to slightly massage your shoulders. Actually, this is all that she planned on her massage session, and even that she did in a bad way. Looks like she needs motivation - or training.'
 $slave_massages_master[1] = 'You undress and lie down on the bed. <<$slave_name>> puts on her hands a little bit of a massage oil and begins to knead your back. Overall pretty nice, but she missed a lot of places and finished too quickly.'
 $slave_massages_master[2] = 'You lie on a bed, and <<$slave_name>> begins to knead your muscles, sparing no effort or massage oil. In general, all done quite skillfully, but lacks depth. Besides, you would not refuse from some additional stimulation... but slave already finished.'
-$slave_massages_master[3] = '<<$slave_name>> helps you to lie down comfortably and carefully kneads your muscles, trying not to miss an inch of the body surface. She has skilled hands enough, so that you remain lying completely relaxed and cÐ¾ntented.'
+$slave_massages_master[3] = '<<$slave_name>> helps you to lie down comfortably and carefully kneads your muscles, trying not to miss an inch of the body surface. She has skilled hands enough, so that you remain lying completely relaxed and cоntented.'
 $slave_massages_master[4] = '<<$slave_name>> helps you to undress and lie down comfortably. Her hands glide over your oiled body, alternating with gentle stroking using firm pressing and pat. In the end, girl finally gets to your manhood, which gets a lot of attention and affection.'
 $slave_massages_master[5] = '<<$slave_name>> expertly massages your entire body, not in a hurry, but not wasting time. The culmination of the process becomes a gentle massage of the prostate, testicles and penis, which slave performs masterfully with both hands simultaneously.'
 
@@ -465,14 +465,14 @@ $slave_foreplay_oral[1] = '<<$slave_name>> gently rubs her cheek against the bul
 $slave_foreplay_oral[2] = '<<$slave_name>> unzips your pants and gentle pulls out your penis, caressing your penis with one hand along the whole length, while the other hand is just as gentle with your balls. Feeling a sufficient hardness, she takes the penis head into her mouth'
 $slave_foreplay_oral[3] = '<<$slave_name>> kisses you on the tip of your penis, then pulls back the foreskin with her tongue, while fondling your balls with her right hand. Finally, you feel her warm lips close up on your excited member. Carefully moistened with saliva, she lowers her head down on your stiff shaft.'
 $slave_foreplay_oral[4] = 'unzipping your pants with her teeths, <<$slave_name>> then licks your penis from the base and all the way to the tip in one slow continuous movement, then decisively swallows your hard shaft almost to it basis. Acting like a vacuum pump, slave''s mouth instantly brings you to rock hardon.'
-$slave_foreplay_oral[5] = 'Blushing with embarrassment, <<$slave_name>> asks you to turn around, so that she could reach your ass with tongue and nicely lick it while caressing your manhood with hand. Gentle and shameless slave''s tongue gives you a heavenly preview of whatâ€™s to come.'
+$slave_foreplay_oral[5] = 'Blushing with embarrassment, <<$slave_name>> asks you to turn around, so that she could reach your ass with tongue and nicely lick it while caressing your manhood with hand. Gentle and shameless slave''s tongue gives you a heavenly preview of what’s to come.'
 
 $slave_fuck_oral[0] = '<<$slave_name>> sits still and simple opens her mouth as wide as possible as you hammer away at her throat, only stopping when she needs to breath. You may as well be fucking a corpse, though at least this one is warm.'
 $slave_fuck_oral[1] = 'When your manhood intrudes past her lips, <<$slave_name>> lifts her tongue, letting it slide along the you penis as you enter her mouth. Feeling her tongue, your pre-cum starts to leak out which she greedily swallows.'
 $slave_fuck_oral[2] = '<<$slave_name>> plays with your balls sits as she swallows deep enough for your penis to hit the back of her throat, then pulls her head back, only to repeat the movement, slowly at first, but more and more passionately, when you approach to the climax.'
 $slave_fuck_oral[3] = '<<$slave_name>> skillfully swallows your entire length in one smooth movement, your balls touching her chin, then pulls back slowly, just enough to allow her tongue to caress your tip, before plunging down again, instantly tuning to the desired rhythm. You feel that you rapidly reach the peak of excitement.'
 $slave_fuck_oral[4] = 'Trying to give you maximum pleasure, <<$slave_name>>, alternating between the various ways her tongue can bring your pleasure as you methodically thrust into her mouth, sometime licking along the shaft, other time playing with the tip. Due to the difference of sensations, excitement does not break immediately, but is stored in waves.'
-$slave_fuck_oral[5] = '<<$slave_name>> lie on her back on the bed, with her head bended backward over the edge and then tells you not to hold back, before then opening her mouh. You feel that slaveâ€™s tongue wrap around your penis, while her throat swallows your member greedily, tightening around your member, only relaxing her throat for when she needs to moan against your member or to breath, giving you no reason to stop, while she plays with herself providing entertainment for your eyes, while skillfully holding back cumming to time it with your rapidly approaching climax.'
+$slave_fuck_oral[5] = '<<$slave_name>> lie on her back on the bed, with her head bended backward over the edge and then tells you not to hold back, before then opening her mouh. You feel that slave’s tongue wrap around your penis, while her throat swallows your member greedily, tightening around your member, only relaxing her throat for when she needs to moan against your member or to breath, giving you no reason to stop, while she plays with herself providing entertainment for your eyes, while skillfully holding back cumming to time it with your rapidly approaching climax.'
 
 !RELAXED ORAL SEX WITH ASSISTANT
 
@@ -488,14 +488,14 @@ $assistant_foreplay_oral[1] = '<<$assistant_name>> gently rubs her cheek against
 $assistant_foreplay_oral[2] = '<<$assistant_name>> unzips your pants and gentle pulls out your penis, caressing your penis with one hand along the whole length, while the other hand is just as gentle with your balls. Feeling a sufficient hardness, she takes the penis head into her mouth'
 $assistant_foreplay_oral[3] = '<<$assistant_name>> kisses you on the tip of your penis, then pulls back the foreskin with her tongue, while fondling your balls with her right hand. Finally, you feel her warm lips close up on your excited member. Carefully moistened with saliva, she lowers her head down on your stiff shaft.'
 $assistant_foreplay_oral[4] = 'unzipping your pants with her teeths, <<$assistant_name>> then licks your penis from the base and all the way to the tip in one slow continuous movement, then decisively swallows your hard shaft almost to it basis. Acting like a vacuum pump, slave''s mouth instantly brings you to rock hardon.'
-$assistant_foreplay_oral[5] = 'Blushing with embarrassment, <<$assistant_name>> asks you to turn around, so that she could reach your ass with tongue and nicely lick it while caressing your manhood with hand. Gentle and shameless slave''s tongue gives you a heavenly preview of whatâ€™s to come.'
+$assistant_foreplay_oral[5] = 'Blushing with embarrassment, <<$assistant_name>> asks you to turn around, so that she could reach your ass with tongue and nicely lick it while caressing your manhood with hand. Gentle and shameless slave''s tongue gives you a heavenly preview of what’s to come.'
 
 $assistant_fuck_oral[0] = '<<$assistant_name>> sits still and simple opens her mouth as wide as possible as you hammer away at her throat, only stopping when she needs to breath. You may as well be fucking a corpse, though at least this one is warm.'
 $assistant_fuck_oral[1] = 'When your manhood intrudes past her lips, <<$assistant_name>> lifts her tongue, letting it slide along the you penis as you enter her mouth. Feeling her tongue, your pre-cum starts to leak out which she greedily swallows.'
 $assistant_fuck_oral[2] = '<<$assistant_name>> plays with your balls sits as she swallows deep enough for your penis to hit the back of her throat, then pulls her head back, only to repeat the movement, slowly at first, but more and more passionately, when you approach to the climax.'
 $assistant_fuck_oral[3] = '<<$assistant_name>> skillfully swallows your entire length in one smooth movement, your balls touching her chin, then pulls back slowly, just enough to allow her tongue to caress your tip, before plunging down again, instantly tuning to the desired rhythm. You feel that you rapidly reach the peak of excitement.'
 $assistant_fuck_oral[4] = 'Trying to give you maximum pleasure, <<$assistant_name>>, alternating between the various ways her tongue can bring your pleasure as you methodically thrust into her mouth, sometime licking along the shaft, other time playing with the tip. Due to the difference of sensations, excitement does not break immediately, but is stored in waves.'
-$assistant_fuck_oral[5] = '<<$assistant_name>> lie on her back on the bed, with her head bended backward over the edge and then tells you not to hold back, before then opening her mouh. You feel that slaveâ€™s tongue wrap around your penis, while her throat swallows your member greedily, tightening around your member, only relaxing her throat for when she needs to moan against your member or to breath, giving you no reason to stop, while she plays with herself providing entertainment for your eyes, while skillfully holding back cumming to time it with your rapidly approaching climax.'
+$assistant_fuck_oral[5] = '<<$assistant_name>> lie on her back on the bed, with her head bended backward over the edge and then tells you not to hold back, before then opening her mouh. You feel that slave’s tongue wrap around your penis, while her throat swallows your member greedily, tightening around your member, only relaxing her throat for when she needs to moan against your member or to breath, giving you no reason to stop, while she plays with herself providing entertainment for your eyes, while skillfully holding back cumming to time it with your rapidly approaching climax.'
 
 !RAPE
 $rape_description = 'You grab the slave and throw her on the bed. Roughly spreading her legs, you forcedly thrust your cock in her pussy and start to rhythmically move with hips. Immediately ramp-up to the maximum, you rapidly approach the climax.'
@@ -823,7 +823,7 @@ $pet_like = "  [<<$slave_name>>]<font color='#8B0A50'>
   - I really think it's a good idea to pretend to be a pet. Eating from bowl and wearing a collar is not too terrible, but you can be caressed and scratched behind the ear. Meow!
 </font>"
 $dressage_like = "  [<<$slave_name>>]<font color='#8B0A50'>
-  - The idea of â€‹â€‹being as a ponygirl seems very interesting to me. It's weird but so exciting... I guess I could even win in some kind of competition.
+  - The idea of ​​being as a ponygirl seems very interesting to me. It's weird but so exciting... I guess I could even win in some kind of competition.
 </font>"
 $nurse_like = "  [<<$slave_name>>]<font color='#8B0A50'>
   - I could take care of patients. It's useful and necessary thing. Yes, I think I'll make a great nurse!
@@ -1005,7 +1005,7 @@ $slave_fear_description[4] = "  [<<$slave_name>>]<font color='#8B0A50'>
   - And I'm really scared. Comprehension of terrible things you can do with me makes me sick.
 </font>"
 $slave_fear_description[5] = "  [<<$slave_name>>]<font color='#8B0A50'>
-  - And I think about almost nothing, but a fear. The last thing I would like to do is to cause your discÐ¾ntent, Master. Given that you can do with me...
+  - And I think about almost nothing, but a fear. The last thing I would like to do is to cause your discоntent, Master. Given that you can do with me...
 </font>"
 
 $slave_ratio_description[0] = "  [<<$slave_name>>]<font color='#8B0A50'>
@@ -1202,7 +1202,7 @@ $verbal_abuse_description[5]= "You grab slave by hair and looking straight into 
 $abuse_torture_reaction['reluctant'] = "<<$slave_name>> seems to be a bit scared, but clearly less than you would like. She still doesn't take you seriously enough."
 $abuse_torture_reaction['arrogant'] = "<<$slave_name>> coldly responds to you that she will not tolerate such abuse."
 $abuse_torture_reaction['hateful'] = "<<$slave_name>> responds rudely and advises you to shove your threats up the place where the sun doesn't shine."
-$abuse_torture_reaction['resistant'] = "After listening to you <<$slave_name>> does not utter a word. Her stubborn look shows that she couldn't care less about your discÐ¾ntent."
+$abuse_torture_reaction['resistant'] = "After listening to you <<$slave_name>> does not utter a word. Her stubborn look shows that she couldn't care less about your discоntent."
 $abuse_torture_reaction['lachrymose'] = "Having heard your harsh words <<$slave_name>> starts to cry and can not calm down for a long time."
 $abuse_torture_reaction['soft'] = "<<$slave_name>> seem to perceive your words very seriously, although innate optimism makes her forget about what happened in half an hour."
 $abuse_torture_reaction['servile'] = "With her head shamefacedly bowed <<$slave_name>> admits that she behaved badly. She begs you to designate her the most severe punishment."
@@ -1308,15 +1308,15 @@ $slave_sleep_condition[4] = '   As a special encouragement, your slave can be al
 $slave_sleep_condition[5] = '   Sleep in her own soft bed - the best luxury for any slave. This bed is very soft and comfortable - you should be careful to not spoil the girl too much. In any case, it should considerably improve her mood.'
 
 !not used, so no translation
-$slave_ration[1] = 'Ð’ Ð’ÐµÑ‡Ð½Ð¾Ð¼ Ð Ð¸Ð¼Ðµ Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ‚Ð¾Ð² Ð¿Ð¸Ñ‚Ð°Ð½Ð¸Ñ� Ð¿Ð¾Ñ‡Ñ‚Ð¸ Ð½Ðµ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ñ�Ñ‚, Ð´Ð»Ñ� Ñ�Ñ‚Ð¾Ð³Ð¾ Ð½Ðµ Ñ…Ð²Ð°Ñ‚Ð°ÐµÑ‚ Ð¼ÐµÑ�Ñ‚Ð°. Ð’Ñ�ÑŽ Ð¿Ñ€Ð¾Ð²Ð¸Ð·Ð¸ÑŽ Ð¿Ñ€Ð¸Ñ…Ð¾Ð´Ð¸Ñ‚Ñ�Ñ� Ð²Ð²Ð¾Ð·Ð¸Ñ‚ÑŒ Ð¸Ð· Ð´Ñ€ÑƒÐ³Ð¸Ñ… Ð¼Ð¸Ñ€Ð¾Ð², Ð¿Ð¾Ñ�Ñ‚Ð¾Ð¼Ñƒ Ð¾Ð½Ð°, ÐºÐ°Ðº Ð¸ Ð²Ñ�Ñ‘ Ð·Ð´ÐµÑ�ÑŒ, Ð¾Ð±Ñ…Ð¾Ð´Ð¸Ñ‚Ñ�Ñ� Ð²ÐµÑ�ÑŒÐ¼Ð° Ð½ÐµÐ´ÐµÑˆÐµÐ²Ð¾. Ð¡Ð°Ð¼Ñ‹Ð¹ Ð¿Ñ€Ð¾Ñ�Ñ‚Ð¾Ð¹ Ñ�Ð¿Ð¾Ñ�Ð¾Ð± Ñ�Ñ�ÐºÐ¾Ð½Ð¾Ð¼Ð¸Ñ‚ÑŒ Ð½Ð° Ñ�Ð¾Ð´ÐµÑ€Ð¶Ð°Ð½Ð¸Ð¸ Ñ€Ð°Ð±Ñ‹Ð½Ð¸ &#45; Ñ�Ñ‚Ð¾ Ð½Ðµ ÐºÐ¾Ñ€Ð¼Ð¸Ñ‚ÑŒ ÐµÐµ Ð²Ð¾Ð²Ñ�Ðµ. Ð”ÐµÐ½ÑŒ-Ð´Ñ€ÑƒÐ³Ð¾Ð¹ Ð³Ð¾Ð»Ð¾Ð´Ð¾Ð²ÐºÐ¸ Ð¿Ð¾Ð·Ð²Ð¾Ð»Ð¸Ñ‚ Ñ�Ð±Ñ€Ð¾Ñ�Ð¸Ñ‚ÑŒ Ð»Ð¸ÑˆÐ½Ð¸Ð¹ Ð²ÐµÑ� Ð¸ Ð½Ð°Ð±Ñ€Ð°Ñ‚ÑŒÑ�Ñ� ÑƒÐ²Ð°Ð¶ÐµÐ½Ð¸Ñ�. Ð“Ð»Ð°Ð²Ð½Ð¾Ðµ &#45; Ð½Ðµ Ð¿ÐµÑ€ÐµÑƒÑ�ÐµÑ€Ð´Ñ�Ñ‚Ð²Ð¾Ð²Ð°Ñ‚ÑŒ!'
-$slave_ration[2] = 'Ð•Ñ�Ð»Ð¸ Ð¾Ð³Ñ€Ð°Ð½Ð¸Ñ‡Ð¸Ñ‚ÑŒ Ñ€Ð°Ð±Ñ‹Ð½ÑŽ Ð² ÐµÐ´Ðµ, Ñ�Ñ‚Ð¾ Ð¿Ð¾Ð·Ð²Ð¾Ð»Ð¸Ñ‚ Ñ�Ñ�ÐºÐ¾Ð½Ð¾Ð¼Ð¸Ñ‚ÑŒ Ð´ÐµÐ½ÑŒÐ³Ð¸ Ð¸ Ð½Ð°ÑƒÑ‡Ð¸Ñ‚ÑŒ ÐµÐµ Ñ�Ð¼Ð¸Ñ€ÐµÐ½Ð¸ÑŽ. ÐšÑ€Ð¾Ð¼Ðµ Ñ‚Ð¾Ð³Ð¾, Ñ�Ð½Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ñ€Ð°Ñ†Ð¸Ð¾Ð½Ð° Ñ€ÐµÑˆÐ°ÐµÑ‚ Ð¿Ñ€Ð¾Ð±Ð»ÐµÐ¼Ñƒ Ð»Ð¸ÑˆÐ½ÐµÐ³Ð¾ Ð²ÐµÑ�Ð°. Ð¥Ð¾Ñ‚Ñ� Ð½Ðµ Ñ�Ñ‚Ð¾Ð¸Ñ‚ Ð½Ð°Ð³Ñ€ÑƒÐ¶Ð°Ñ‚ÑŒ Ð³Ð¾Ð»Ð¾Ð´Ð½ÑƒÑŽ Ñ€Ð°Ð±Ñ‹Ð½ÑŽ Ð¸Ð·Ð»Ð¸ÑˆÐ½ÐµÐ¹ Ñ€Ð°Ð±Ð¾Ñ‚Ð¾Ð¹, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ðµ Ð½Ð°Ð²Ñ€ÐµÐ´Ð¸Ñ‚ÑŒ ÐµÐµ Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÑŽ.'
-$slave_ration[3] = 'Ð Ð°Ñ†Ð¸Ð¾Ð½, Ñ�Ð¾Ñ�Ñ‚Ð¾Ñ�Ñ‰Ð¸Ð¹ Ð¸Ð· Ñ�Ð²ÐµÐ¶Ð¸Ñ… Ð¾Ð²Ð¾Ñ‰ÐµÐ¹ Ð¸ Ð¿Ð¸Ñ‰Ð¸ Ñ� Ð±Ð¾Ð»ÑŒÑˆÐ¸Ð¼ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾Ð¼ Ð±Ð°Ð»Ð»Ð°Ñ�Ñ‚Ð½Ñ‹Ñ… Ð²ÐµÑ‰ÐµÑ�Ñ‚Ð² &#45; Ð½Ð°Ð¿Ñ€Ð¸Ð¼ÐµÑ€, ÐºÐ»ÐµÑ‚Ñ‡Ð°Ñ‚ÐºÐ¸, &#45; Ð¿Ð¾Ð·Ð²Ð¾Ð»Ð¸Ñ‚ Ñ€Ð°Ð±Ñ‹Ð½Ðµ Ð¿Ð¸Ñ‚Ð°Ñ‚ÑŒÑ�Ñ� Ð´Ð¾Ñ�Ñ‚Ð°Ñ‚Ð¾Ñ‡Ð½Ð¾ Ð²ÐºÑƒÑ�Ð½Ð¾ Ð¸ Ð½Ðµ Ð¸Ñ�Ð¿Ñ‹Ñ‚Ñ‹Ð²Ð°Ñ‚ÑŒ Ð¾Ñ�Ð¾Ð±Ð¾Ð³Ð¾ Ð³Ð¾Ð»Ð¾Ð´Ð° Ð² Ð¿Ñ€Ð¾Ñ†ÐµÑ�Ñ�Ðµ Ð¿Ð¾Ñ‚ÐµÑ€Ð¸ Ð»Ð¸ÑˆÐ½ÐµÐ³Ð¾ Ð²ÐµÑ�Ð°. ÐŸÑ€Ð°Ð²Ð´Ð°, Ð¾Ð±Ð¾Ð¹Ð´ÐµÑ‚Ñ�Ñ� Ñ�Ñ‚Ð¾ Ð´Ð¾Ñ€Ð¾Ð¶Ðµ, Ñ‡ÐµÐ¼ Ð¾Ð±Ñ‹Ñ‡Ð½Ð¾Ðµ ÑƒÑ€ÐµÐ·Ð°Ð½Ð¸Ðµ Ñ€Ð°Ñ†Ð¸Ð¾Ð½Ð°.'
-$slave_ration[4] = 'Ð’Ñ�Ñ� Ð¿Ñ€Ð¾Ð²Ð¸Ð·Ð¸Ñ� Ð² Ð’ÐµÑ‡Ð½Ð¾Ð¼ Ð Ð¸Ð¼Ðµ &#45; Ð¸Ð¼Ð¿Ð¾Ñ€Ñ‚Ð½Ð°Ñ�. Ð—Ð°Ð²Ð¾Ð·Ñ�Ñ‚, Ð² Ð¾Ñ�Ð½Ð¾Ð²Ð½Ð¾Ð¼, ÐºÐ¾Ð½Ñ�ÐµÑ€Ð²Ñ‹, Ñ‚Ð°Ðº ÐºÐ°Ðº Ð¾Ð½Ð¸ Ð½Ðµ Ð¿Ð¾Ñ€Ñ‚Ñ�Ñ‚Ñ�Ñ� Ð¿Ñ€Ð¸ Ð´Ð¾Ð»Ð³Ð¾Ð¹ Ñ‚Ñ€Ð°Ð½Ñ�Ð¿Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐµ. ÐšÐ¾Ð½Ñ�ÐµÑ€Ð²Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð°Ñ� Ð¿Ð¸Ñ‰Ð° Ð¿Ð¾Ð·Ð²Ð¾Ð»Ñ�ÐµÑ‚ Ð¾Ð±ÐµÑ�Ð¿ÐµÑ‡Ð¸Ñ‚ÑŒ Ñ€Ð°Ð±Ñ‹Ð½Ðµ Ð¿Ð¾Ð»Ð½Ð¾Ñ†ÐµÐ½Ð½Ð¾Ðµ Ð¿Ð¸Ñ‚Ð°Ð½Ð¸Ðµ Ð¿Ð¾ Ñ€Ð°Ð·ÑƒÐ¼Ð½Ð¾Ð¹ Ñ†ÐµÐ½Ðµ. ÐšÐ¾Ð½ÐµÑ‡Ð½Ð¾, Ñ‚Ð°ÐºÐ°Ñ� ÐµÐ´Ð° Ð½Ðµ Ð¾Ñ�Ð¾Ð±ÐµÐ½Ð½Ð¾ Ð²ÐºÑƒÑ�Ð½Ð°, Ð½Ð¾ Ð¾Ð½Ð° Ð¸ Ð½Ðµ Ð¾Ñ‚Ð²Ñ€Ð°Ñ‚Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°.'
-$slave_ration[5] = 'Ð£Ð´Ð²Ð¾ÐµÐ½Ð½Ñ‹Ðµ Ð¿Ð¾Ñ€Ñ†Ð¸Ð¸ Ð¼Ð¾Ð³ÑƒÑ‚ Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð¾Ð²Ð°Ñ‚ÑŒÑ�Ñ� Ñ€Ð°Ð±Ñ‹Ð½Ðµ, ÐµÑ�Ð»Ð¸ Ð¾Ð½Ð° Ð·Ð°Ð½Ð¸Ð¼Ð°ÐµÑ‚Ñ�Ñ� Ñ‚Ñ�Ð¶ÐµÐ»Ñ‹Ð¼ Ñ„Ð¸Ð·Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¼ Ñ‚Ñ€ÑƒÐ´Ð¾Ð¼ Ð¸Ð»Ð¸ Ð¾Ð¿Ñ€Ð°Ð²Ð»Ñ�ÐµÑ‚Ñ�Ñ� Ð¾Ñ‚ Ð¸Ñ�Ñ‚Ð¾Ñ‰ÐµÐ½Ð¸Ñ�. ÐšÐ¾Ð½ÐµÑ‡Ð½Ð¾, Ð·Ð° Ð´Ð²Ð¾Ð¹Ð½Ð¾Ð¹ Ñ€Ð°Ñ†Ð¸Ð¾Ð½ Ð¸ Ð¿Ð»Ð°Ñ‚Ð¸Ñ‚ÑŒ Ð¿Ñ€Ð¸Ð´ÐµÑ‚Ñ�Ñ� Ð²Ð´Ð²Ð¾Ð¹Ð½Ðµ, Ð° Ð²Ñ�Ðµ Ð½ÐµÐ¸Ð·Ñ€Ð°Ñ�Ñ…Ð¾Ð´Ð¾Ð²Ð°Ð½Ð½Ñ‹Ðµ ÐºÐ°Ð»Ð¾Ñ€Ð¸Ð¸ Ð¾Ñ‚Ð»Ð¾Ð¶Ð°Ñ‚Ñ�Ñ� Ð½Ð° Ð±Ð¾ÐºÐ°Ñ… Ð²Ð¾Ñ�Ð¿Ð¸Ñ‚ÑƒÐµÐ¼Ð¾Ð¹.'
-$slave_ration[6] = 'ÐŸÐ¸Ñ‰Ð°, Ð¿Ñ€Ð¸Ð³Ð¾Ñ‚Ð¾Ð²Ð»ÐµÐ½Ð½Ð°Ñ� Ð½Ð° Ð´Ð¾Ð¼Ð°ÑˆÐ½ÐµÐ¹ ÐºÑƒÑ…Ð½Ðµ, Ð²Ñ‹Ð³Ð¾Ð´Ð½Ð¾ Ð¾Ñ‚Ð»Ð¸Ñ‡Ð°ÐµÑ‚Ñ�Ñ� Ð¿Ð¾ Ð²ÐºÑƒÑ�Ñƒ Ð¾Ñ‚ Ð¾Ð±Ñ‹Ñ‡Ð½Ñ‹Ñ… ÐºÐ¾Ð½Ñ�ÐµÑ€Ð²Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ñ… Ð¿Ð°Ð¹ÐºÐ¾Ð². Ð¢Ð°ÐºÐ°Ñ� ÐºÐ¾Ñ€Ð¼Ñ‘Ð¶ÐºÐ° Ð¿Ð¾Ð´Ð½Ð¸Ð¼ÐµÑ‚ Ð½Ð°Ñ�Ñ‚Ñ€Ð¾ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¼Ñƒ ÑƒÐ³Ð¾Ð´Ð½Ð¾, Ð° Ð¾Ñ�Ð¾Ð±ÐµÐ½Ð½Ð¾ Ð³ÑƒÑ€Ð¼Ð°Ð½Ñƒ! Ð¡Ð»ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð° Ñ„Ð¸Ð³ÑƒÑ€Ð¾Ð¹ Ð¸ Ð¿Ð¾Ð¼Ð½Ð¸Ñ‚Ðµ, Ñ‡Ñ‚Ð¾ ÐµÐ´Ñƒ Ð´Ð¾Ð»Ð¶ÐµÐ½ ÐºÑ‚Ð¾-Ñ‚Ð¾ Ð¿Ñ€Ð¸Ð³Ð¾Ñ‚Ð¾Ð²Ð¸Ñ‚ÑŒ &#45; Ð¸Ð½Ð°Ñ‡Ðµ Ð¿Ñ€Ð¸Ð´Ñ‘Ñ‚Ñ�Ñ� ÐµÑ�Ñ‚ÑŒ ÐºÐ¾Ð½Ñ�ÐµÑ€Ð²Ñ‹!'
-$slave_ration[7] = 'Ð•Ñ�Ð»Ð¸ Ð´Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÑŒ Ð¾Ð±Ñ‹Ñ‡Ð½ÑƒÑŽ Ñ‚Ñ€Ð°Ð¿ÐµÐ·Ñƒ Ñ�Ð»Ð°Ð´ÐºÐ¸Ð¼ Ð´ÐµÑ�ÐµÑ€Ñ‚Ð¾Ð¼, Ð¿ÑƒÑ�Ñ‚ÑŒ Ð´Ð°Ð¶Ðµ Ð¸ ÐºÐ¾Ð½Ñ�ÐµÑ€Ð²Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¼, Ð¾Ð½Ð° Ð¿Ñ€Ð¸Ð½ÐµÑ�ÐµÑ‚ ÐºÑƒÐ´Ð° Ð±Ð¾Ð»ÑŒÑˆÐµ ÑƒÐ´Ð¾Ð²Ð¾Ð»ÑŒÑ�Ñ‚Ð²Ð¸Ñ� Ð¸ Ð³Ð°Ñ€Ð°Ð½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾ Ð¿Ð¾Ð´Ð½Ð¸Ð¼ÐµÑ‚ Ð½Ð°Ñ�Ñ‚Ñ€Ð¾ÐµÐ½Ð¸Ðµ. Ð�Ð°Ð´Ð¾ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ ÑƒÑ‡ÐµÑ�Ñ‚ÑŒ, Ñ‡Ñ‚Ð¾ Ñ�Ñ‚Ð° Ñ€Ð¾Ñ�ÐºÐ¾ÑˆÑŒ Ñ�Ñ‚Ð¾Ð¸Ñ‚ Ð¸Ñ�ÐºÑ€, Ð´Ð° Ð¸ ÐºÐ°Ð»Ð¾Ñ€Ð¸Ð¹ Ð¿Ñ€Ð¸Ð±Ð°Ð²Ð»Ñ�ÐµÑ‚ Ð¸Ð·Ñ€Ñ�Ð´Ð½Ð¾.'
-$slave_ration[8] = 'ÐžÑ‚Ð¼ÐµÐ½Ð° Ð´ÐµÑ�ÐµÑ€Ñ‚Ð° Ð¿Ð¾Ð·Ð²Ð¾Ð»Ð¸Ñ‚ Ñ�Ñ�ÐºÐ¾Ð½Ð¾Ð¼Ð¸Ñ‚ÑŒ Ð´ÐµÐ½ÑŒÐ³Ð¸ Ð¸ Ð½Ðµ Ð¿ÐµÑ€ÐµÐ³Ñ€ÑƒÐ¶Ð°Ñ‚ÑŒ Ð¿Ð¸Ñ‰Ñƒ Ð²Ð¾Ñ�Ð¿Ð¸Ñ‚ÑƒÐµÐ¼Ð¾Ð¹ Ð»Ð¸ÑˆÐ½Ð¸Ð¼Ð¸ ÐºÐ°Ð»Ð¾Ñ€Ð¸Ñ�Ð¼Ð¸. ÐšÐ¾Ð½ÐµÑ‡Ð½Ð¾, Ð¾Ñ‚ Ñ�Ñ‚Ð¾Ð³Ð¾ Ð¿Ñ€Ð¸ÐµÐ¼ Ð¿Ð¸Ñ‰Ð¸ Ñ�Ñ‚Ð°Ð½ÐµÑ‚ Ð½Ðµ Ñ‚Ð°ÐºÐ¸Ð¼ Ñ€Ð°Ð´Ð¾Ñ�Ñ‚Ð½Ñ‹Ð¼ Ñ�Ð¾Ð±Ñ‹Ñ‚Ð¸ÐµÐ¼, ÐºÐ°Ðº Ñ€Ð°Ð½ÑŒÑˆÐµ, Ð½Ð¾ ÐºÑ‚Ð¾ Ð¾Ð±ÐµÑ‰Ð°Ð» ÐµÐµ Ð±Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ?'
-$slave_ration[9] = 'ÐšÐ¾Ð¼Ð¿Ð»ÐµÐºÑ�Ð½Ð°Ñ� Ð´Ð¾Ð±Ð°Ð²ÐºÐ° Ð¸Ð· Ñ�Ð¼ÐµÑ�Ð¸ Ð²Ñ�ÐµÑ… Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ñ… Ð¾Ñ€Ð³Ð°Ð½Ð¸Ð·Ð¼Ñƒ Ð²Ð°ÑˆÐµÐ¹ Ð²Ð¾Ñ�Ð¿Ð¸Ñ‚ÑƒÐµÐ¼Ð¾Ð¹ Ð²Ð¸Ñ‚Ð°Ð¼Ð¸Ð½Ð¾Ð² Ð¸ Ð¼Ð¸Ð½ÐµÑ€Ð°Ð»Ð¾Ð². ÐŸÑ€Ð¸ ÐµÐ¶ÐµÐ´Ð½ÐµÐ²Ð½Ð¾Ð¼ Ð¿Ð¾Ñ‚Ñ€ÐµÐ±Ð»ÐµÐ½Ð¸Ð¸ Ð±Ð»Ð°Ð³Ð¾Ñ‚Ð²Ð¾Ñ€Ð½Ð¾ Ð²Ð»Ð¸Ñ�ÐµÑ‚ Ð½Ð° Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÐµ, Ð¾Ð´Ð½Ð°ÐºÐ¾ Ñ�Ñ‚Ð¾Ð¸Ñ‚ Ð»Ð¸ÑˆÐ½Ð¸Ñ… Ð¸Ñ�ÐºÑ€.'
+$slave_ration[1] = 'В Вечном Риме продуктов питания почти не производят, для этого не хватает места. Всю провизию приходится ввозить из других миров, поэтому она, как и всё здесь, обходится весьма недешево. Самый простой способ сэкономить на содержании рабыни &#45; это не кормить ее вовсе. День-другой голодовки позволит сбросить лишний вес и набраться уважения. Главное &#45; не переусердствовать!'
+$slave_ration[2] = 'Если ограничить рабыню в еде, это позволит сэкономить деньги и научить ее смирению. Кроме того, снижение рациона решает проблему лишнего веса. Хотя не стоит нагружать голодную рабыню излишней работой, чтобы не навредить ее здоровью.'
+$slave_ration[3] = 'Рацион, состоящий из свежих овощей и пищи с большим количеством балластных веществ &#45; например, клетчатки, &#45; позволит рабыне питаться достаточно вкусно и не испытывать особого голода в процессе потери лишнего веса. Правда, обойдется это дороже, чем обычное урезание рациона.'
+$slave_ration[4] = 'Вся провизия в Вечном Риме &#45; импортная. Завозят, в основном, консервы, так как они не портятся при долгой транспортировке. Консервированная пища позволяет обеспечить рабыне полноценное питание по разумной цене. Конечно, такая еда не особенно вкусна, но она и не отвратительна.'
+$slave_ration[5] = 'Удвоенные порции могут потребоваться рабыне, если она занимается тяжелым физическим трудом или оправляется от истощения. Конечно, за двойной рацион и платить придется вдвойне, а все неизрасходованные калории отложатся на боках воспитуемой.'
+$slave_ration[6] = 'Пища, приготовленная на домашней кухне, выгодно отличается по вкусу от обычных консервированных пайков. Такая кормёжка поднимет настроение кому угодно, а особенно гурману! Следите за фигурой и помните, что еду должен кто-то приготовить &#45; иначе придётся есть консервы!'
+$slave_ration[7] = 'Если дополнить обычную трапезу сладким десертом, пусть даже и консервированным, она принесет куда больше удовольствия и гарантированно поднимет настроение. Надо только учесть, что эта роскошь стоит искр, да и калорий прибавляет изрядно.'
+$slave_ration[8] = 'Отмена десерта позволит сэкономить деньги и не перегружать пищу воспитуемой лишними калориями. Конечно, от этого прием пищи станет не таким радостным событием, как раньше, но кто обещал ее баловать?'
+$slave_ration[9] = 'Комплексная добавка из смеси всех необходимых организму вашей воспитуемой витаминов и минералов. При ежедневном потреблении благотворно влияет на здоровье, однако стоит лишних искр.'
 !----------------------------!
 
 $slave_no_food = '   In the Eternal Rome almost no opportunities exist to grow your own food. All meals are brought here from the worlds that lie beyond the Fog and because of that, it costs fair amount of money. By depriving your slave from food you will kill two birds with one stone - it will teach her to be more obedient and you save money.'
@@ -1353,7 +1353,7 @@ $pissuar_rule_abort = 'You tell to your slave that you will use ordinary toilet,
 $toilet_rule = 'You will use the slave as a human toilet. <<$slave_name>> should swallow everything and gently scrub you with her tongue. There is no better way to get rid of unnecessary pride. In addition, well-trained toilet is comfortable at home and lifts your mood. And, in extreme cases, a slave at least will learn something. Harmful to health and hygiene.'
 $toilet_rule_abort = 'You tell to your slave that you will use ordinary toilet, and her services in the near future are not needed.'
 
-$v_balls_rule = "You put vaginal beads in slaveâ€™s pussy and order her to wear them all the time, so she can develop her sensitivity and desire. "
+$v_balls_rule = "You put vaginal beads in slave’s pussy and order her to wear them all the time, so she can develop her sensitivity and desire. "
 $v_balls_rule_abort = "You order a slave to remove vaginal beads, wash them well and give to you. Her excitement must be controlled so that it does not become an obstacle to learning."
 $force_rules = "You tell a slave that you will use various tools such as anal pear, gag, petsuit and toilet rack, as well as special supervision of your assistants to not allow her to ignore the rules."
 $force_rules_abort = "You tell a slave that henceforth she should provide fulfillment of the rules personally, without the help of your special tools. But this does not mean that ignoring orders will leave her unpunished..."
@@ -1364,8 +1364,6 @@ $assistant_cooks_rule_abort = '  You allow your assistant not to waste energy on
 $assistant_cooks_rule = '  You give an order to your assistant to cook meals for you. Now, if only she can find enough time and has energy left, she will do it herself, without your further reminders.'
 $assistant_washes_rule_abort = '  You decide to wash yourself, to not distract your assistant from more important matters.'
 $assistant_washes_rule = '  There is no need to wash yourself, if this work can be assigned to a beautiful and gentle girl. You order your assistant to help you wash.'
-$assistant_washe_slave_rule_abort = '  You tell your assistant to abort the order, your slave will have to clean herself by herself from now on.'
-$assistant_washe_slave_rule = '  You order your assistant to take care of your slave hygiene, from now on your assistant will wash your slave and make sure she is clean enough.'
 $assistant_supervise_rule_abort = '   You tell your assistant that henceforth you will look after the slave yourself and accompany her while taking a walk to the city. You assistant needs to concentrate on other important matters.'
 $assistant_supervise_rule = '   You order your assistant to look after your slave and accompany her during walks in the city. <<$assistant_name>> bows her head and promises to fulfill your order at its best.'
 
@@ -1378,14 +1376,14 @@ $slave_washes_rule_abort = '  You decide to wash yourself, to not distract your 
 
 $prisoner_ration[1] = '  You decide to starve the prisoner with hunger. This will save some sparks.'
 $prisoner_ration[2] = '  You decide to keep the prisoner at a minimum diet. Most likely, she will survive even with poor nutrition, and you can save sparks for a little.'
-$prisoner_ration[3] = '  Dog food - a fairly common food in the Eternal Rome. They both are not very expensive and provide good nutrition. You dumped the cÐ¾ntents of a tin can in a shabby bowl standing in a cage.'
+$prisoner_ration[3] = '  Dog food - a fairly common food in the Eternal Rome. They both are not very expensive and provide good nutrition. You dumped the cоntents of a tin can in a shabby bowl standing in a cage.'
 $prisoner_ration[4] = '  You decide to feed the prisoner with fiend''s cum. Provided that the sperm is in stock - it will be free, which will save a lot of sparks. Another question - if prisoner will like such food? But you do not particularly care.'
 
 !DOING THE WORK
 $master_cook_description[0] = 'By looking into the kitchen and scratching your head, you could not think how you can cook anything from all of this. No, of course you have some ideas, but something tells you that it is better don`t take them to begin with. Sighing, you just opened a few cans and dumped them on the plate. Will do!'
 $master_cook_description[1] = 'What a cruel irony - to cook, when you can make slave to do this! Especially since you`re not a great cook. A simple salad, a few sandwiches and heated canned food - the top of your cooking art. You''ll have to eat the fruit of your labors.'
 $master_cook_description[2] = 'In an amicable way women should work on the kitchen, but you will have to roll up your sleeves yourself. In the end, making a salad and fill it with sauce or concoct a stew of vegetables and meat is not too difficult. At the very least, your skill will be enough to not to spoil the valuable products.'
-$master_cook_description[3] = 'Cooking can be fun if you know on which side to take the pan. And you know it! Quickly evaluating the cÐ¾ntent of the stasis chamber, you estimate a full three-course menu and slowly, tastefully embody your culinary plan. Belissimo!'
+$master_cook_description[3] = 'Cooking can be fun if you know on which side to take the pan. And you know it! Quickly evaluating the cоntent of the stasis chamber, you estimate a full three-course menu and slowly, tastefully embody your culinary plan. Belissimo!'
 $master_cook_description[4] = 'Cooking - is a serious business, and in your kitchen everything perfectly prepared for such task. You have the best knives and utensils, perfect products and plenty of room. It remains to apply your own chef talent and voila - excellent three-course dinner is ready!'
 $master_cook_description[5] = 'Of course, you can entrust this job to slaves, but they will never surpass the art of cooking of such ''chef de cuisine'' like you. Still, a man must cook culinary masterpieces and woman in the kitchen - no more than a simple cooky. Your meals can delight not only the stomach but also the eye. Delicious!' 
 $master_cook_description[6] = 'Of course, you can entrust this job to slave, but they will never surpass the art of cooking of such ''chef de cuisine'' like you. Still, a man must cook culinary masterpieces and woman in the kitchen - no more than a simple cook. Your meals can delight not only the stomach but also the eye. Delicious!' 
@@ -1500,35 +1498,35 @@ $kiss_lesson_description[1] = '<<$slave_name>> is not a good kisser, so you will
 $kiss_lesson_description[2] = '<<$slave_name>> knows how to kiss, but she obviously need to train her tongue. In this lesson, you''ll abut with tongues and try to push partner''s tongue back into his mouth. This exercise will help to develop not only strength, but also slave''s tongue agility.'
 $kiss_lesson_description[3] = 'Slave''s tongue and lips already well developed, but there is no limit to perfection. In this lesson, you will perform exercises twisting with tongues and struggle between them during the kiss.'
 $kiss_lesson_description[4] = '<<$slave_name>> is a great kisser, but for expanding horizons you decide to give her a few tasks for various non-standard kissing and games with mouths, methods of which have brought in Eternal Rome countless wanderers between the worlds.'
-$kiss_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her Â«oral examÂ» and enjoy the fruits of your education.'
+$kiss_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her «oral exam» and enjoy the fruits of your education.'
 
 $liking_lesson_description[0] = '<<$slave_name>> is not able to make good use of her mouth, so you decide to give her a first representation, caressing her yourself. You will kiss her body and licking her with tongue, and she should focus on the sensations.'
 $liking_lesson_description[1] = 'Given the slave''s small experience, you decide to spend a pretty simple lesson. <<$slave_name>> should just evenly cover your entire body with kisses, trying to invest in her actions tenderness as much as possible.'
 $liking_lesson_description[2] = 'You show to slave lines and the directions in which it is possible to caress human using tongue to give him maximum pleasure. <<$slave_name>> should remember them all and pick the correct tongue pressure for the best partner''s sensations.'
 $liking_lesson_description[3] = 'Kissing and licking - not an easy job, if need to do them for a long time. Mouth muscles get tired, saliva ends. There needs its own kind of endurance. As a task for this lesson <<$slave_name>> should lick your entire body from head to toe, not forgetting about the touch tenderness.'
 $liking_lesson_description[4] = 'When slave''s mouth serving to her master, there is no place for squeamishness. In this tutorial <<$slave_name>> should carefully lick your feet. You explain to her how to properly suck toes and put her tongue in the spaces between them.'
-$liking_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her Â«oral examÂ» and enjoy the fruits of your education.'
+$liking_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her «oral exam» and enjoy the fruits of your education.'
 
 $bj_lesson_description[0] = 'You explain to slave that blowjob - is king of affection, because with her mouth slave can deliver to master the maximum pleasure, even when he is tired and does not want to do anything. But first, she should just get used to take a man''s penis in her mouth.'
 $bj_lesson_description[1] = '<<$slave_name>> rather weak in oral sex, so that as a simple tasks you order her to a lick your dick from the bottom up, to kiss, to take the head in her mouth and repeat all over again, until it gets good.'
 $bj_lesson_description[2] = '<<$slave_name>> quite accustomed to the feeling of a penis in her mouth, so that you give her a tasks for the development of shallow blowjob techniques. Kissing, licking, sucking - important to find the right pressure and rhythm, watching the reaction of the men.'
 $bj_lesson_description[3] = 'Swallow dick wholly - not an easy task. You teach slave to properly relax the throat, control her breathing and avoid retching when long and thick piston moves slowly in her gullet.'
 $bj_lesson_description[4] = '<<$slave_name>> is able to swallow dick wholly, but that''s not all you need for a proper royal blowjob. In this lesson you are going to teach her the advanced techniques that will allows your slave to achieve excellence in oral sex.'
-$bj_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her Â«oral examÂ» and enjoy the fruits of your education.'
+$bj_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her «oral exam» and enjoy the fruits of your education.'
 
 $throatfuck_lesson_description[0] = '<<$slave_name>> not accustomed to foreign bodies in her mouth, and, most likely, from the penetration of your penis in her throat she will just vomit. On the other hand, the simplicity of irrumation consists in the fact that she has nothing to do or know - you will do everything yourself.'
 $throatfuck_lesson_description[1] = 'Slave''s throat is still unaccustomed for the violent penis penetration, but it''s just an excuse to get used faster. Almost anything not required from slave, you will do everything yourself.'
 $throatfuck_lesson_description[2] = 'Rough intercourse in mouth - is still an ordeal for slave. Everything that <<$slave_name>> supposed to do in this session - is to try to keep her retching while you hold her ears and fuck her mouth.'
 $throatfuck_lesson_description[3] = '<<$slave_name>> able to quite easily withstand penis penetration in her throat, but you explain to her that when she tries to stop it with tongue or squeeze with her throat, it makes sensations more intense. It is not necessary to relax, it is necessary to learn how to use her muscles.'
 $throatfuck_lesson_description[4] = 'You trying to teach slave the proper use of suction, relaxation and contraction of the throat, while the male member crawl on her stretched gullet. The better she will master these techniques, the faster everything will come to an end.'
-$throatfuck_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her Â«oral examÂ» and enjoy the fruits of your education.'
+$throatfuck_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her «oral exam» and enjoy the fruits of your education.'
 
 $rimming_lesson_description[0] = 'Licking the ass - not a complicated thing, the main obstacles here is a psychological. Although <<$slave_name>> can not really use her own tongue, she is quite capable to just lick several times between your buttocks. The lesson is simple.'
 $rimming_lesson_description[1] = '<<$slave_name>> have to get used to work with her tongue in the master''s ass. Task is very simple - lick your ass long enough and thoroughly.'
 $rimming_lesson_description[2] = 'You decide to dedicate today''s lesson about the comfortable poses for ass licking. There maybe not so much options, and the main task of a slave is to comfortably and gently supports the master in an unusual position while she works with her tongue.'
 $rimming_lesson_description[3] = 'Feeling, that ass - is a dirty place, can interfere working with tongue for even quite proficient slave. The matter of habit. You specifically did not wash after using the toilet, <<$slave_name>> must lick all clean.'
 $rimming_lesson_description[4] = 'Slave''s tongue is quite well developed, so that she could try to push it through your anal sphincter and penetrate into the rectum. You will focus on this in today''s lesson.'
-$rimming_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her Â«oral examÂ» and enjoy the fruits of your education.'
+$rimming_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her «oral exam» and enjoy the fruits of your education.'
 
 $vaginalsex_lesson_description[0] = '<<$slave_name>> completely inexperienced in sex and has no idea what is required of her. You decide to take all the initiative and just give slave used to the feeling of penetration.'
 $vaginalsex_lesson_description[1] = '<<$slave_name>> behaves in sex as a complete log, but you hope that with the experience she will be better. In today''s lesson, you will simply work on the basic poses, to help her to get used to the penetration from different angles.'
@@ -1580,7 +1578,7 @@ $pissing_lesson_description[4] = 'To become a real toilet slave, <<$slave_name>>
 $pissing_lesson_description[5] = '<<$slave_name>> familiar with all kinds of perversions, devoid of complexes and is able to arrange a show against the backdrop of her own pain, dirt and humiliation. You hardly need to teach her anything else, but you will not refuse to test her talents in action.'
 
 $kopro_lesson_description[0] = '<<$slave_name>> afraid to touch the feces, so the task for the lesson will be taking up her own poop and sculpt from it a few simple figures.'
-$kopro_lesson_description[1] = '<<$slave_name>> must get used to the close contact with shit. You give to her your own Â«chocolate productÂ» and order slave to smear it on the face and body. What kind of things can excite people...'
+$kopro_lesson_description[1] = '<<$slave_name>> must get used to the close contact with shit. You give to her your own «chocolate product» and order slave to smear it on the face and body. What kind of things can excite people...'
 $kopro_lesson_description[2] = 'Pulling shit in mouth - not a good idea in terms of hygiene and health, but <<$slave_name>> should learn to do it. In today''s lesson, you will not make her to swallow anything but slave should thoroughly suck and chew a piece of shit.'
 $kopro_lesson_description[3] = '<<$slave_name>> quite accustomed to scat in order to eat some shit. For this lesson, you serve it on a plate with a spoon - not such a difficult task, though dangerous in terms of health and hygiene.'
 $kopro_lesson_description[4] = 'To become a real toilet slave, <<$slave_name>> must learn not just to swallow shit, but do it right away, "on the spot". It is also important for her to learn how to use her tongue as a toilet paper.'
@@ -1685,7 +1683,7 @@ $horsesex_lesson_description[4] = 'Real sex with a stallion requires a fair amou
 $horsesex_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
 
 $tentacle_lesson_description[0] = 'Any fiend craves to inseminate every encountered woman. To do this, it uses the force and the most powerful exciting pheromones. But if a woman will retain control over herself, she will be able to use her hands to milk his semen in a special container.'
-$tentacle_lesson_description[1] = 'Rear gripper â€” the youngest form of fiends. It is smaller than the size of a man, but its tentacles is already very strong. You explain to slave that it makes no sense to resist and try to fight it. It is necessary to caress those tentacles that are not busy and they will flow with seed which should be directed into the bucket.'
+$tentacle_lesson_description[1] = 'Rear gripper — the youngest form of fiends. It is smaller than the size of a man, but its tentacles is already very strong. You explain to slave that it makes no sense to resist and try to fight it. It is necessary to caress those tentacles that are not busy and they will flow with seed which should be directed into the bucket.'
 $tentacle_lesson_description[2] = 'Dark juvenile looks scary because the most of its body takes a fanged mouth. But it will not bite a woman, only fertilize. So it is necessary to overcome the fear and do not forget to milk its seed. Coping with fear - the theme of the day.'
 $tentacle_lesson_description[3] = 'When the fiend grows into the tentacle beast it becomes much more bigger that human and its pheromones so powerful that literally drive mad. But if develop a habit and tune in to the target, it is also possible to milk. Today you tell slave a couple of tricks.'
 $tentacle_lesson_description[4] = 'The oldest fiends reach monstrous proportions, becoming the krakens or even leviathans. But the essence is the same. Just more tentacles and stronger effect of pheromones, but even such a beast can be milked. Slave will train as long as not up to the task.'
@@ -1753,12 +1751,12 @@ $aura_lust[3] = 'Aura is clearly trembling, twisting and then unwinding in an er
 $aura_lust[4] = 'Aura is pulsing sensually and eagerly, stretching and arching your way. This is a sign of powerful sexual arousal and almost uncontrollable desire.'
 $aura_lust[5] = 'Almost epileptic flicker speed and modulations suggest ultimate sexual arousal. All colors mixed in a fast paced whirlwind, like on the surface of the spinning whirligig.'
 
-$aura_fear[0] = '<font color="#960018">Ruby flashes of fear</font> <font color="#008000"> are insignificant</font>.'
-$aura_fear[1] = '<font color="#960018">Ruby flashes of fear</font> are rare, in a one minute you noticed just <font color="#008080">one</font>.'
-$aura_fear[2] = '<font color="#960018">Ruby flashes of fear</font> appear from time to time, you counted <font color="#0000CD">a pair</font> of them in a minute.'
-$aura_fear[3] = '<font color="#960018">Ruby flashes of fear</font> appear quite often. You counted <font color="#4B0082">three</font> of them.'
-$aura_fear[4] = '<font color="#960018">Ruby flashes of fear</font> are quite bright and noticeable. You counted <font color="#C71585">four</font> especially strong ones.'
-$aura_fear[5] = '<font color="#960018">Ruby flashes of fear</font> appear one by one and are not in a hurry to fade, pulsing like a heart overflowing with adrenaline. You counted as many as <font color="#CD0000">five</font> just in one minute.'
+$aura_fear[0] = '<font color="#960018">Ruby flashes of fear</font> <font color="#cd0000"> are insignificant</font>.'
+$aura_fear[1] = '<font color="#960018">Ruby flashes of fear</font> are rare, in a one minute you noticed just <font color="#C71585">one</font>.'
+$aura_fear[2] = '<font color="#960018">Ruby flashes of fear</font> appear from time to time, you counted <font color="#4B0082">a pair</font> of them in a minute.'
+$aura_fear[3] = '<font color="#960018">Ruby flashes of fear</font> appear quite often. You counted <font color="#0000CD">three</font> of them.'
+$aura_fear[4] = '<font color="#960018">Ruby flashes of fear</font> are quite bright and noticeable. You counted <font color="#008080">four</font> especially strong ones.'
+$aura_fear[5] = '<font color="#960018">Ruby flashes of fear</font> appear one by one and are not in a hurry to fade, pulsing like a heart overflowing with adrenaline. You counted as many as <font color="#008000">five</font> just in one minute.'
 
 $aura_angst[0] = '<font color="#464451">Anthracite colored despair</font> <font color="#008000"> is almost imperceptible</font>.'
 $aura_angst[1] = '<font color="#464451">Anthracite colored despair</font> formed <font color="#cd0000">one</font> tentacle, permeating through the whole aura of a slave.'
@@ -1838,12 +1836,12 @@ $aura_assistant_lust[3] = 'Aura is clearly trembling, twisting and then unwindin
 $aura_assistant_lust[4] = 'Aura is pulsing sensually and eagerly, stretching and arching your way. This is a sign of powerful sexual arousal and almost uncontrollable desire.'
 $aura_assistant_lust[5] = 'Almost epileptic flicker speed and modulations suggest ultimate sexual arousal. All colors mixed in a fast paced whirlwind, like on the surface of the spinning whirligig.'
 
-$aura_assistant_fear[0] = '<font color="#960018">Ruby flashes of fear</font> <font color="#008000"> are insignificant</font>.'
-$aura_assistant_fear[1] = '<font color="#960018">Ruby flashes of fear</font> are rare, in a one minute you noticed just <font color="#008080">one</font>.'
-$aura_assistant_fear[2] = '<font color="#960018">Ruby flashes of fear</font> appear from time to time, you counted <font color="#0000CD">a pair</font> of them in a minute.'
-$aura_assistant_fear[3] = '<font color="#960018">Ruby flashes of fear</font> appear quite often. You counted <font color="#4B0082">three</font> of them.'
-$aura_assistant_fear[4] = '<font color="#960018">Ruby flashes of fear</font> are quite bright and noticeable. You counted <font color="#C71585">four</font> especially strong ones.'
-$aura_assistant_fear[5] = '<font color="#960018">Ruby flashes of fear</font> appear one by one and are not in a hurry to fade, pulsing like a heart overflowing with adrenaline. You counted as many as <font color="#CD0000">five</font> just in one minute.'
+$aura_assistant_fear[0] = '<font color="#960018">Ruby flashes of fear</font> <font color="#cd0000"> are insignificant</font>.'
+$aura_assistant_fear[1] = '<font color="#960018">Ruby flashes of fear</font> are rare, in a one minute you noticed just <font color="#C71585">one</font>.'
+$aura_assistant_fear[2] = '<font color="#960018">Ruby flashes of fear</font> appear from time to time, you counted <font color="#4B0082">a pair</font> of them in a minute.'
+$aura_assistant_fear[3] = '<font color="#960018">Ruby flashes of fear</font> appear quite often. You counted <font color="#0000CD">three</font> of them.'
+$aura_assistant_fear[4] = '<font color="#960018">Ruby flashes of fear</font> are quite bright and noticeable. You counted <font color="#008080">four</font> especially strong ones.'
+$aura_assistant_fear[5] = '<font color="#960018">Ruby flashes of fear</font> appear one by one and are not in a hurry to fade, pulsing like a heart overflowing with adrenaline. You counted as many as <font color="#008000">five</font> just in one minute.'
 
 $aura_assistant_angst[0] = '<font color="#464451">Anthracite colored despair</font> <font color="#008000"> is almost imperceptible</font>.'
 $aura_assistant_angst[1] = '<font color="#464451">Anthracite colored despair</font> formed <font color="#cd0000">one</font> tentacle, permeating through the whole aura of an assistant.'
@@ -1888,72 +1886,72 @@ $aura_assistant_moral[4] = '<font color="#00a86b">Emerald glow of devotion</font
 $aura_assistant_moral[5] = '<font color="#00a86b">Emerald glow of devotion</font> dominates the aura of an assistant, dotting it with <font color="#008000">myriads</font> of bright and clear stars.'
 
 !TRAITS
-$Ð�ÐµÑ‚_ÐºÐ»ÐµÐ¹Ð¼Ð° = '  Your slave is not branded! You won''t be able to sell unbranded slaves to customers, and an unbranded slave will take longer to accept her destiny as a slave. You should check the tab "Anatomy" to put the brand yourself if you have a dungeon, or go to a tattoo parlor in the quarter of the outcasts'
+$Нет_клейма = '  Your slave is not branded! You won''t be able to sell unbranded slaves to customers, and an unbranded slave will take longer to accept her destiny as a slave. You should check the tab "Anatomy" to put the brand yourself if you have a dungeon, or go to a tattoo parlor in the quarter of the outcasts'
 $sanity_broken = '  Slave spirit is broken. This means that the slave has become a soulless doll - it will reduce her rating, the slave will stop trying and she will also lose the will to live, but will fulfill all orders without question. Check the condition of temperament and character - their amount should be more than two for the normal state of mind. Also note the pride - the more arrogant slave, the stronger her mind will be.'
 $sanity_low = '  The state of mind of the slave is approaching dangerously low levels! Be careful with pride - when pride lowers, the mind weakens. Check the condition of temperament and character - their amount should be more than two for the normal state of mind.'
-$Ð�Ð¸Ð¼Ñ„Ð¾Ð¼Ð°Ð½ÐºÐ° = "  You've noticed that your slave, to put it mildly, is partial to sex. Many sexual practices will be easier for her, but an insatiable desire will drive her crazy."
-$Ð¤Ñ€Ð¸Ð³Ð¸Ð´Ð½Ð°Ñ� = '  You understand that your slave is completely indifferent to sex. It is practically impossible to excite her and this will clearly complicate the development of many relevant practices and negate all erotic encouragement.'
-$ÐœÐ°Ð·Ð¾Ñ…Ð¸Ñ�Ñ‚ÐºÐ° = '  Pain does not scare your slave. On the contrary, she strives to be in pain and receives pleasure from it. Flogging a masochist is useless, but there are also other influences besides the pain...'
-$ÐŸÑ€Ð¸Ð²Ñ‹Ñ‡Ð½Ð°_Ðº_Ð±Ð¾Ð»Ð¸ = '  Your slave is able to endure the pain. She is not a masochist, but scaring her with a usual torture will not be easy. However, you can always find other sources of fear, in addition to pain...'
-$Ð‘Ð¾Ð¸Ñ‚Ñ�Ñ�_Ð±Ð¾Ð»Ð¸ = '  Your slave is terribly afraid of the pain and is ready to cry even from the most ordinary spanking. It is necessary to take note of it - painful punishments will be more effective!'
-$Ð­ÐºÑ�Ð³Ð¸Ð±Ð¸Ñ†Ð¸Ð¾Ð½Ð¸Ñ�Ñ‚ÐºÐ° = '  You notice that your slave takes special joy in demonstration of her naked body. You can not make her feel ashamed of her nudity, but clearly some lessons will go easier.'
-$Ð¡Ñ‚ÐµÑ�Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°Ñ� = '  Obviously your slave is insanely shy of her own nudity. It will be difficult to teach the skills required to demonstrate nudity, but this trait can be used to select more effective punishment.'
-$Ð˜Ð·Ð²Ñ€Ð°Ñ‰ÐµÐ½ÐºÐ° = '  It seems that your slave like things that most people find disgusting. She is particularly excited by the dirtiest and most perverted acts - this is clearly useful in the study of extreme sex skills.'
-$ÐŸÑƒÑ€Ð¸Ñ�Ñ‚ÐºÐ° = "  You notice that your slave doesn't tolerate non-standard and dirty types of sex and everything associated with perversion. Education extreme sexual practices will be particularly challenging."
-$Ð›ÐµÑ�Ð±Ð¸Ñ�Ð½ÐºÐ° = '  Practice shows that your slave is completely indifferent to men, but is happy to have sex with women. In most cases, this will create a problem, but even she can be taught something.'
-$Ð‘Ð¸Ñ�ÐµÐºÑ�ÑƒÐ°Ð»ÑŒÐ½Ð°Ñ� = '  You understand that your slave with equal pleasure will have sex with both women and men. Such open-mindedness can be quite useful for certain sexual practices.'
-$Ð“Ð¾Ð¼Ð¾Ñ„Ð¾Ð±ÐºÐ° = '  Your slave is completely incapable to be aroused by a sex with another woman. Not that it is a big problem, but still in some sexual practices, she will manifest herself worse.'
-$ÐŸÑ�Ð¸_Ð¼Ð°Ð·Ð¾Ñ…Ð¸Ñ�Ñ‚ÐºÐ° = '  You notice that your slave gets a perverse pleasure when she is mixed with mud. Cursing and threatening will get you nowhere, you only will get her desire a new scandal. You should use a more real sanctions.'
-$Ð˜Ñ�Ñ‚ÐµÑ€Ð¸Ñ‡ÐºÐ° = "  Someone else's attention is incredibly important for your slave, she always wants to be in the spotlight and get as much praise. Verbal encouragement will be particularly effective."
-$Ð”Ð¸Ñ‚Ñ�_Ñ‚ÑŒÐ¼Ñ‹ = '  At every opportunity your slave tends to hide in a dark corner. Looks like she feels particularly comfortable in the dark. This may reduce the effectiveness of certain torture.'
-$Ð‘Ð¾Ð¸Ñ‚Ñ�Ñ�_Ñ‚ÐµÐ¼Ð½Ð¾Ñ‚Ñ‹ = '  Have you noticed that your slave is mortally afraid to remain in the dark. This fear can be used for the benefit: torture related to the restriction of view, will be particularly effective.'
-$ÐšÑ€Ð¾Ð²Ð¾Ð¶Ð°Ð´Ð½Ð°Ñ� = '  It seems that your slave likes the look and taste of blood. This feature can make some torture less effective, because needles and scalpels will attract, not scare the girl.'
-$Ð‘Ð¾Ð¸Ñ‚Ñ�Ñ�_ÐºÑ€Ð¾Ð²Ð¸ = "  At the sight of blood slave almost faints. You take note that all tortures associated with the shedding of blood will produce a particularly powerful effect. It's time to sharpen needles and scalpels!"
-$ÐŸÐ¸Ñ€Ð¾Ð¼Ð°Ð½Ð¸Ñ� = '  Sounds like your slave is absolutely fascinated by fire. She is so fond of the flame that she even is ready to bravely endure painful burns. This will reduce the effectiveness of certain kinds of torture.'
-$ÐŸÐ¸Ñ€Ð¾Ñ„Ð¾Ð±Ð¸Ñ� = '  Apparently, open flame inspires your slave an animal terror. This means that using torture associated with fire, you can achieve a much larger effect.'
-$Ð”Ð¸Ñ‚Ñ�_Ð²Ð¾Ð´Ñ‹ = '  It seems that your slave loves the water so that she is not very afraid of the prospect to be drowned. Frightening her with torture water-based will be difficult.'
-$Ð“Ð¸Ð´Ñ€Ð¾Ñ„Ð¾Ð±Ð¸Ñ� = '  Your slave insanely afraid of choking and just goes crazy with fear if her head is submerged in the water. It will make all water-related torture much more efficient.'
-$Ð�Ñ€Ð°Ñ…Ð½Ð¾Ñ„Ð¸Ð»Ð¸Ñ� = '  Apparently, your slave experiences unhealthy passion for all sorts of nasty creatures: beetles, scorpions, snakes, rats and spiders especially! So it is impossible to scare her even with the vilest of reptiles.'
-$Ð�Ñ€Ð°Ñ…Ð½Ð¾Ñ„Ð¾Ð±Ð¸Ñ� = '  You notice that your slave madly afraid of all kinds of nasty creatures: beetles, scorpions, snakes, rats and spiders in particular. This means that torture with the use of reptiles will be extremely effective.'
-$Ð›ÑŽÐ±Ð¸Ñ‚_Ð±ÐµÑ�Ð¿Ð¾Ð¼Ð¾Ñ‰Ð½Ð¾Ñ�Ñ‚ÑŒ = "  You notice that the restriction of mobility affects your slave very positively. Looks like she's just glad to be bound or locked in a close box. This makes a lot of punishment virtually useless."
-$ÐšÐ»Ð°ÑƒÑ�Ñ‚Ñ€Ð¾Ñ„Ð¾Ð±Ð¸Ñ� = '  When you limit the mobility of slave, she instantly begins to suffocate from fear. It seems that a sense of helplessness and inability to escape induces her animal terror. You should remember this when choosing a most effective punishment.'
-$Ð›ÐµÐ½Ð¸Ð²Ð°Ñ� = '  Watching your slave, you notice that she appreciates the opportunity to slack off. This is not too good for the slave, but some types of incentives will be clearly more effective.'
-$Ð“Ð¸Ð¿ÐµÑ€Ð°ÐºÑ‚Ð¸Ð²Ð½Ð°Ñ� = '  Your slave just can not sit still. She is always busy with some works and runs around like electrobroom until tired. Giving her time to free time will not earn you a special gratitude.'
-$Ð›ÑŽÐ±Ð¸Ñ‚_Ñ€Ð¾Ñ�ÐºÐ¾ÑˆÑŒ = '  Apparently, your slave is crazy about everything that is beautiful, luxurious and brilliant. Dresses and jewelry will easily win her heart.'
-$Ð�Ñ�ÐºÐµÑ‚Ð¸Ñ‡Ð½Ð°Ñ� = "  It seems that your slave is completely indifferent to luxury. She can not be bribed by shiny ornaments or luxurious dresses. And it's not so good, because you have less means of influence!"
-$Ð¡Ð»Ð°Ð´ÐºÐ¾ÐµÐ¶ÐºÐ° = "  You notice that your slave is crazy about everything sweet and tasty. Such gastronomic predilections reveal sizable opportunities for manipulation: for a sweet dessert she'll be ready to go a great length!"
-$Ð�Ðµ_Ð»ÑŽÐ±Ð¸Ñ‚_Ñ�Ð»Ð°Ð´ÐºÐ¾Ðµ = '  It seems that your slave is not a gourmet. She eats very little and pays almost no attention to the taste of food. Alas, bribing her with cake or chocolate will not work.'
-$Ð¢Ñ‰ÐµÑ�Ð»Ð°Ð²Ð½Ð°Ñ� = '  You notice that in the sight of your people slave blooms. She obviously loves to be the center of attention and chats nonstop. Promotion related to walks will be very effective.'
-$Ð¥Ð¸ÐºÐ¸ÐºÐ¾Ð¼Ð¾Ñ€Ð¸ = "  You understand that your slave avoids strangers and doesn't feel good in public view. It seems that all what she wants - is to lock herself in the four walls and not go anywhere. Dates will be a continuous stress for her."
-$ÐžÑ‚Ð¼Ð¾Ñ€Ð¾Ð¶ÐµÐ½Ð°Ñ� = '  Your slave is not just brave. She is a moron. For some reason she is just ignorant of fear, and it is impossible to speak from a position of strength. People like her, can be extremely dangerous  not only for others but for herself too!'
-$Ð¥Ñ€Ð°Ð±Ñ€Ð°Ñ� = '  Your slave is able to easily overcome her own fear. Of course, she also is led by fear, but she is much braver than an ordinary woman, and thus breaking her with torture will not be easy.'
-$Ð¢Ñ€ÑƒÑ�Ð¸Ñ…Ð° = '  It seems that your slave is a real coward. Just a little bit of pressure - and she is ready to surrender. Even not the strongest punishments will quickly break her will to resist and allow you to dictate your terms.'
-$ÐœÐ¾Ñ‰Ð½Ñ‹Ð¹_Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼ = '  Energy metabolism of your slave is incredibly efficient. She hardly scores overweight, even if she sits on the couch all day. Therefore, you can think less about diets. '
-$Ð¥Ð¾Ñ€Ð¾ÑˆÐ¸Ð¹_Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼ = "  Your slave has a very good metabolism. She is gains excess weight slower than other, and she can be given some relief in the diet. It's convenient. "
-$ÐžÑ�Ð»Ð°Ð±Ð»ÐµÐ½Ð½Ñ‹Ð¹_Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼ = "  Over time you realize that your slave has problems with metabolism. She gains excess weight faster than others and requires special attention in the preparation of the diet. "
-$Ð¡Ð»Ð°Ð±Ñ‹Ð¹_Ð¼ÐµÑ‚Ð°Ð±Ð¾Ð»Ð¸Ð·Ð¼ = '  Metabolism of your slave is seriously disturbed. Just one extra bun is enough for extra fat grams to appear on the scales. You need to look very carefully at her diet.'
-$Ð¡Ð¿Ð¾Ñ€Ñ‚Ð¸Ð²Ð½Ð°Ñ� = '  Your slave is very mobile and gets a lot of pleasure from exercise. It will be not difficult for her to get in excellent physical shape.'
-$Ð�Ð¿Ð°Ñ‚Ð¸Ñ‡Ð½Ð°Ñ� = '  You notice that your slave is not too fond of exercises, and they lead to her mortal anguish. Getting her in proper physical shape will be difficult.'
-$Ð¾Ñ€Ð°Ñ‚Ð¾Ñ€ = '  Your slave showed a talent for self-expression. Developing her expression will be easy, and this is clearly a good news!'
-$Ð¿Ð¸Ñ‚Ð¾Ð¼ÐµÑ† = '  It seems that your slave really likes to pretend to be a pet. And, most importantly, she is doing it great. Education will go well!'
+$Нимфоманка = "  You've noticed that your slave, to put it mildly, is partial to sex. Many sexual practices will be easier for her, but an insatiable desire will drive her crazy."
+$Фригидная = '  You understand that your slave is completely indifferent to sex. It is practically impossible to excite her and this will clearly complicate the development of many relevant practices and negate all erotic encouragement.'
+$Мазохистка = '  Pain does not scare your slave. On the contrary, she strives to be in pain and receives pleasure from it. Flogging a masochist is useless, but there are also other influences besides the pain...'
+$Привычна_к_боли = '  Your slave is able to endure the pain. She is not a masochist, but scaring her with a usual torture will not be easy. However, you can always find other sources of fear, in addition to pain...'
+$Боится_боли = '  Your slave is terribly afraid of the pain and is ready to cry even from the most ordinary spanking. It is necessary to take note of it - painful punishments will be more effective!'
+$Эксгибиционистка = '  You notice that your slave takes special joy in demonstration of her naked body. You can not make her feel ashamed of her nudity, but clearly some lessons will go easier.'
+$Стеснительная = '  Obviously your slave is insanely shy of her own nudity. It will be difficult to teach the skills required to demonstrate nudity, but this trait can be used to select more effective punishment.'
+$Извращенка = '  It seems that your slave like things that most people find disgusting. She is particularly excited by the dirtiest and most perverted acts - this is clearly useful in the study of extreme sex skills.'
+$Пуристка = "  You notice that your slave doesn't tolerate non-standard and dirty types of sex and everything associated with perversion. Education extreme sexual practices will be particularly challenging."
+$Лесбиянка = '  Practice shows that your slave is completely indifferent to men, but is happy to have sex with women. In most cases, this will create a problem, but even she can be taught something.'
+$Бисексуальная = '  You understand that your slave with equal pleasure will have sex with both women and men. Such open-mindedness can be quite useful for certain sexual practices.'
+$Гомофобка = '  Your slave is completely incapable to be aroused by a sex with another woman. Not that it is a big problem, but still in some sexual practices, she will manifest herself worse.'
+$Пси_мазохистка = '  You notice that your slave gets a perverse pleasure when she is mixed with mud. Cursing and threatening will get you nowhere, you only will get her desire a new scandal. You should use a more real sanctions.'
+$Истеричка = "  Someone else's attention is incredibly important for your slave, she always wants to be in the spotlight and get as much praise. Verbal encouragement will be particularly effective."
+$Дитя_тьмы = '  At every opportunity your slave tends to hide in a dark corner. Looks like she feels particularly comfortable in the dark. This may reduce the effectiveness of certain torture.'
+$Боится_темноты = '  Have you noticed that your slave is mortally afraid to remain in the dark. This fear can be used for the benefit: torture related to the restriction of view, will be particularly effective.'
+$Кровожадная = '  It seems that your slave likes the look and taste of blood. This feature can make some torture less effective, because needles and scalpels will attract, not scare the girl.'
+$Боится_крови = "  At the sight of blood slave almost faints. You take note that all tortures associated with the shedding of blood will produce a particularly powerful effect. It's time to sharpen needles and scalpels!"
+$Пиромания = '  Sounds like your slave is absolutely fascinated by fire. She is so fond of the flame that she even is ready to bravely endure painful burns. This will reduce the effectiveness of certain kinds of torture.'
+$Пирофобия = '  Apparently, open flame inspires your slave an animal terror. This means that using torture associated with fire, you can achieve a much larger effect.'
+$Дитя_воды = '  It seems that your slave loves the water so that she is not very afraid of the prospect to be drowned. Frightening her with torture water-based will be difficult.'
+$Гидрофобия = '  Your slave insanely afraid of choking and just goes crazy with fear if her head is submerged in the water. It will make all water-related torture much more efficient.'
+$Арахнофилия = '  Apparently, your slave experiences unhealthy passion for all sorts of nasty creatures: beetles, scorpions, snakes, rats and spiders especially! So it is impossible to scare her even with the vilest of reptiles.'
+$Арахнофобия = '  You notice that your slave madly afraid of all kinds of nasty creatures: beetles, scorpions, snakes, rats and spiders in particular. This means that torture with the use of reptiles will be extremely effective.'
+$Любит_беспомощность = "  You notice that the restriction of mobility affects your slave very positively. Looks like she's just glad to be bound or locked in a close box. This makes a lot of punishment virtually useless."
+$Клаустрофобия = '  When you limit the mobility of slave, she instantly begins to suffocate from fear. It seems that a sense of helplessness and inability to escape induces her animal terror. You should remember this when choosing a most effective punishment.'
+$Ленивая = '  Watching your slave, you notice that she appreciates the opportunity to slack off. This is not too good for the slave, but some types of incentives will be clearly more effective.'
+$Гиперактивная = '  Your slave just can not sit still. She is always busy with some works and runs around like electrobroom until tired. Giving her time to free time will not earn you a special gratitude.'
+$Любит_роскошь = '  Apparently, your slave is crazy about everything that is beautiful, luxurious and brilliant. Dresses and jewelry will easily win her heart.'
+$Аскетичная = "  It seems that your slave is completely indifferent to luxury. She can not be bribed by shiny ornaments or luxurious dresses. And it's not so good, because you have less means of influence!"
+$Сладкоежка = "  You notice that your slave is crazy about everything sweet and tasty. Such gastronomic predilections reveal sizable opportunities for manipulation: for a sweet dessert she'll be ready to go a great length!"
+$Не_любит_сладкое = '  It seems that your slave is not a gourmet. She eats very little and pays almost no attention to the taste of food. Alas, bribing her with cake or chocolate will not work.'
+$Тщеславная = '  You notice that in the sight of your people slave blooms. She obviously loves to be the center of attention and chats nonstop. Promotion related to walks will be very effective.'
+$Хикикомори = "  You understand that your slave avoids strangers and doesn't feel good in public view. It seems that all what she wants - is to lock herself in the four walls and not go anywhere. Dates will be a continuous stress for her."
+$Отмороженая = '  Your slave is not just brave. She is a moron. For some reason she is just ignorant of fear, and it is impossible to speak from a position of strength. People like her, can be extremely dangerous  not only for others but for herself too!'
+$Храбрая = '  Your slave is able to easily overcome her own fear. Of course, she also is led by fear, but she is much braver than an ordinary woman, and thus breaking her with torture will not be easy.'
+$Трусиха = '  It seems that your slave is a real coward. Just a little bit of pressure - and she is ready to surrender. Even not the strongest punishments will quickly break her will to resist and allow you to dictate your terms.'
+$Мощный_метаболизм = '  Energy metabolism of your slave is incredibly efficient. She hardly scores overweight, even if she sits on the couch all day. Therefore, you can think less about diets. '
+$Хороший_метаболизм = "  Your slave has a very good metabolism. She is gains excess weight slower than other, and she can be given some relief in the diet. It's convenient. "
+$Ослабленный_метаболизм = "  Over time you realize that your slave has problems with metabolism. She gains excess weight faster than others and requires special attention in the preparation of the diet. "
+$Слабый_метаболизм = '  Metabolism of your slave is seriously disturbed. Just one extra bun is enough for extra fat grams to appear on the scales. You need to look very carefully at her diet.'
+$Спортивная = '  Your slave is very mobile and gets a lot of pleasure from exercise. It will be not difficult for her to get in excellent physical shape.'
+$Апатичная = '  You notice that your slave is not too fond of exercises, and they lead to her mortal anguish. Getting her in proper physical shape will be difficult.'
+$оратор = '  Your slave showed a talent for self-expression. Developing her expression will be easy, and this is clearly a good news!'
+$питомец = '  It seems that your slave really likes to pretend to be a pet. And, most importantly, she is doing it great. Education will go well!'
 $Brony = '  Apparently, your slave loves to depict a horse. What others would consider humiliating and heavy, she finds fun and interesting.'
-$Ð¼ÐµÐ´Ñ�ÐµÑ�Ñ‚Ñ€Ð° = '  Your slave showed remarkable abilities in medicine. It will be easy to make a great nurse from her!'
-$Ð³Ð¾Ñ€Ð½Ð¸Ñ‡Ð½Ð°Ñ� = '  Sounds like your slave gets great pleasure in keeping order in the house and driving economy. This will allow her to become excellent maid!'
-$ÐºÑƒÑ…Ð°Ñ€ÐºÐ° = '  Your slave clearly have a talent for cooking. She copes with cooking and obviously gets a lot of fun by fumbling at the stove.'
-$Ð²Ð¾Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¸Ñ†Ð° = '  Your slave is innate warrior! Developing her fighting skills will be easy, and these abilities are very much in demand.'
-$Ñ‡Ð°Ñ€Ð¾Ð´ÐµÐ¹ÐºÐ° = "  Your slave revealed incredible magic. She'll make a great witch or an alchemist."
-$Ð¿ÐµÐ²Ð¸Ñ†Ð° = '  Your slave not only loves to sing, but also has a great ear for music. It will be ease to raise a good singer from her!'
-$Ð¼ÑƒÐ·Ñ‹ÐºÐ°Ð½Ñ‚ÐºÐ° = '  Your slave has perfect pitch, that would be incredibly useful when learning to play a musical instrument. You should pay special attention to the development of her musical talent.'
-$Ñ‚Ð°Ð½Ñ†Ð¾Ð²Ñ‰Ð¸Ñ†Ð° = '  Your slave has obvious talent for dancing. She deeply feels the music and catches dance moves on the fly, easily improvising and inventing their own pa.'
-$Ñ�ÐµÐºÑ€ÐµÑ‚Ð°Ñ€ÑˆÐ° = '  You notice that your slave has excellent instincts of a personal assistant - she is collected, attentive and easy to cope with the paperwork. You should use this talent to its maximum!'
-$Ð­Ð¹Ð´ÐµÑ‚Ð¸Ñ‡ÐµÑ�ÐºÐ°Ñ�_Ð¿Ð°Ð¼Ñ�Ñ‚ÑŒ = '  You are surprised to notice that your slave has absolute memory. She can quote from memory whole pages of books. She is unlikely to ever forget what has already learned.'
-$Ð—Ð°Ð±Ñ‹Ð²Ñ‡Ð¸Ð²Ð°Ñ� = '  Your slave seems  to have a complete mess in her head. She constantly forgets what she was told just a day ago. You only need to stop conducting lessons - and her skills are lost at an alarming rate.'
-$Ð”Ð¸Ñ�Ñ†Ð¸Ð¿Ð»Ð¸Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð°Ñ� = '  Sounds like your slave is accustomed to strict discipline and is ready to obey, ignoring her own desires. Certainly a useful feature for slaves.'
-$Ð¡Ð²Ð¾ÐµÐ½Ñ€Ð°Ð²Ð½Ð°Ñ� = '  Discipline is clearly not applicable to the strengths of your slave. She is disorganized and always makes everything as she pleases. You need to always stand by her with a stick.'
-$ÐœÐ°Ð½Ð¸Ñ�_Ð²ÐµÐ»Ð¸Ñ‡Ð¸Ñ� = '  Your slave clearly overestimates her merits and too confident of her exclusivity. However, it has a bright side: you can give more serious promotion to her even for modest merits, not being afraid to spoil her.'
-$ÐšÐ¾Ð¼Ð¿Ð»ÐµÐºÑ�_Ð²Ð¸Ð½Ñ‹ = '  Your slave constantly feels guilty and takes mistakes painfully. This low self-esteem can be used to punish her more severely for not even the most significant offenses.'
-$ÐœÐ¸Ð»Ð¾Ñ�ÐµÑ€Ð´Ð½Ð°Ñ� = 'You understand that your slave takes anguish of surrounding people very close to heart. This can be used to control her!'
-$Ð¡Ð°Ð´Ð¸Ñ�Ñ‚ÐºÐ° = 'Your slave obviously enjoys watching the sufferings of surrounding people and even would not mind to participating in the process. Unfortunately, it narrows your means of influence.'
+$медсестра = '  Your slave showed remarkable abilities in medicine. It will be easy to make a great nurse from her!'
+$горничная = '  Sounds like your slave gets great pleasure in keeping order in the house and driving economy. This will allow her to become excellent maid!'
+$кухарка = '  Your slave clearly have a talent for cooking. She copes with cooking and obviously gets a lot of fun by fumbling at the stove.'
+$воительница = '  Your slave is innate warrior! Developing her fighting skills will be easy, and these abilities are very much in demand.'
+$чародейка = "  Your slave revealed incredible magic. She'll make a great witch or an alchemist."
+$певица = '  Your slave not only loves to sing, but also has a great ear for music. It will be ease to raise a good singer from her!'
+$музыкантка = '  Your slave has perfect pitch, that would be incredibly useful when learning to play a musical instrument. You should pay special attention to the development of her musical talent.'
+$танцовщица = '  Your slave has obvious talent for dancing. She deeply feels the music and catches dance moves on the fly, easily improvising and inventing their own pa.'
+$секретарша = '  You notice that your slave has excellent instincts of a personal assistant - she is collected, attentive and easy to cope with the paperwork. You should use this talent to its maximum!'
+$Эйдетическая_память = '  You are surprised to notice that your slave has absolute memory. She can quote from memory whole pages of books. She is unlikely to ever forget what has already learned.'
+$Забывчивая = '  Your slave seems  to have a complete mess in her head. She constantly forgets what she was told just a day ago. You only need to stop conducting lessons - and her skills are lost at an alarming rate.'
+$Дисциплинированная = '  Sounds like your slave is accustomed to strict discipline and is ready to obey, ignoring her own desires. Certainly a useful feature for slaves.'
+$Своенравная = '  Discipline is clearly not applicable to the strengths of your slave. She is disorganized and always makes everything as she pleases. You need to always stand by her with a stick.'
+$Мания_величия = '  Your slave clearly overestimates her merits and too confident of her exclusivity. However, it has a bright side: you can give more serious promotion to her even for modest merits, not being afraid to spoil her.'
+$Комплекс_вины = '  Your slave constantly feels guilty and takes mistakes painfully. This low self-esteem can be used to punish her more severely for not even the most significant offenses.'
+$Милосердная = 'You understand that your slave takes anguish of surrounding people very close to heart. This can be used to control her!'
+$Садистка = 'Your slave obviously enjoys watching the sufferings of surrounding people and even would not mind to participating in the process. Unfortunately, it narrows your means of influence.'
 
 
 !FOR GENERATE_STOCK
@@ -2342,14 +2340,14 @@ $stake_size[9] = 'Forty-five on top!'
 $stake_size[10] = 'Plus fifty!'
 
 !ALCHEMY
-$get_pot_description['Ñ�Ð°Ð¼Ð¾Ð³Ð¾Ð½'] = '   As a result of all the effort, a moonshine was brewed. Not quite the usual, of course, but it is usable and does not have any magical power. Apart of the magic power of drunkenness, of course.'
-$get_pot_description['Ð²Ð°ÐºÑ…Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹_Ð½ÐµÐºÑ‚Ð°Ñ€'] = '   The result of distilling - bacchic nectar. The imbiber will feel a surge of courage and joy. Other people might perceive this as being mad. The potion is very useful to raise a persons'' morale.'
-$get_pot_description['Ñ‚Ð¾Ð½Ð¸Ð·Ð¸Ñ€ÑƒÑŽÐ·Ñ‰Ð¸Ð¹_Ñ�Ð»Ð¸ÐºÑ�Ð¸Ñ€'] = '   The result of distilling - tonic elixir. This powerful potion will lower a person''s fatigue and works even in the heat of battle.'
-$get_pot_description['Ñ†ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹_Ð±Ð°Ð»ÑŒÐ·Ð°Ð¼'] = '   The result of distilling - a healing balm. This ointment with incredible regenerative properties is most effective immediately after receiving damage and can be used in the heat of battle.'
-$get_pot_description['Ð¿Ñ€Ð¸Ð²Ð¾Ñ€Ð¾Ñ‚Ð½Ð¾Ðµ_Ð·ÐµÐ»ÑŒÐµ'] = '   The result of distilling - a love potion. This sinister-looking black liquid will become transparent after dissolving a person''s genetic sample in it. Whoever drinks the potion after some DNA was dissolved in it will feel drawn towards the owner of said DNA.'
-$get_pot_description['Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹'] = '   The result of distilling - the water of Lethe. Like water from the mythical river of oblivion in the realm of the dead, this clear beverage removes all previous joys and sorrows and allows to start with a clean slate.'
-$get_pot_description['Ð°Ñ„Ñ€Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº'] = '   The result of distilling - an aphrodisiac. It is not a strong potion, but nevertheless, it is able to increase the imbiber''s arousal and sex drive.'
-$get_pot_description['Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹_Ð°Ñ„Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº'] = '   The result of distilling - a powerful aphrodisiac. This powerful potion instantly increases the arousal level of the imbiber to the physiological maximum. Use with caution.'
+$get_pot_description['самогон'] = '   As a result of all the effort, a moonshine was brewed. Not quite the usual, of course, but it is usable and does not have any magical power. Apart of the magic power of drunkenness, of course.'
+$get_pot_description['вакхический_нектар'] = '   The result of distilling - bacchic nectar. The imbiber will feel a surge of courage and joy. Other people might perceive this as being mad. The potion is very useful to raise a persons'' morale.'
+$get_pot_description['тонизируюзщий_эликсир'] = '   The result of distilling - tonic elixir. This powerful potion will lower a person''s fatigue and works even in the heat of battle.'
+$get_pot_description['целительный_бальзам'] = '   The result of distilling - a healing balm. This ointment with incredible regenerative properties is most effective immediately after receiving damage and can be used in the heat of battle.'
+$get_pot_description['приворотное_зелье'] = '   The result of distilling - a love potion. This sinister-looking black liquid will become transparent after dissolving a person''s genetic sample in it. Whoever drinks the potion after some DNA was dissolved in it will feel drawn towards the owner of said DNA.'
+$get_pot_description['вода_леты'] = '   The result of distilling - the water of Lethe. Like water from the mythical river of oblivion in the realm of the dead, this clear beverage removes all previous joys and sorrows and allows to start with a clean slate.'
+$get_pot_description['афродизиак'] = '   The result of distilling - an aphrodisiac. It is not a strong potion, but nevertheless, it is able to increase the imbiber''s arousal and sex drive.'
+$get_pot_description['мощный_афодизиак'] = '   The result of distilling - a powerful aphrodisiac. This powerful potion instantly increases the arousal level of the imbiber to the physiological maximum. Use with caution.'
 
 $assistant_alchemist[0] = '   <<$assistant_name>> starts making a magic potion. First of all, she will need to choose a basis for the potion and for the completion of the process you will need to spend a Spark.'
 $assistant_alchemist[1] = '   Now <<$assistant_name>> must choose the combination of different components. Should be three in total, and all necessarily different.'
@@ -2393,7 +2391,7 @@ $prisoner_chestbuster[4] = '   This is the larva of a Fog fiend! All the while i
 $chestbuster_flee = '   You try to crush the creature with your foot, but the larva is incredibly agile. Deftly dodging your attacks, the newborn fiend jumps out to the window and disappears from sight. Gross.'
 $chestbuster_catch = '   Fortunately, you envisaged this in advance and were ready to act. While the bloody larva rushes around the house in search of an exit, you grab the prepared net and catch it. You just have to carry it to the pen and then you will be the owner of a personal Fog fiend.'
 
-$tentacle_grow[0] = '   You were informed that the fiend''s larva, rear gripper, has mutated into a more powerful form: Â«dark juvenileÂ». You were able to extract three hundred milliliters of valuable alchemical mucus from the remains of the cocoon. The yield of the seed will be higher, but the creature''s danger level will also increase.'
+$tentacle_grow[0] = '   You were informed that the fiend''s larva, rear gripper, has mutated into a more powerful form: «dark juvenile». You were able to extract three hundred milliliters of valuable alchemical mucus from the remains of the cocoon. The yield of the seed will be higher, but the creature''s danger level will also increase.'
 $tentacle_grow[1] = '   Today your dark juvenile pupated and transformed into a large and healthy tentacle beast. The yield of the seed will be higher, but the creature''s danger level will also increase. You were able to extract six hundred milliliters of valuable alchemical mucus from the remains of the cocoon.' 
 $tentacle_grow[2] = '   You were informed that your tentacle beast pupated and transformed into a kraken. The yield of the seed will be higher, but the creature''s danger level will also increase. You were able to extract more than a liter of valuable alchemical mucus from the remains of the cocoon.'
 $tentacle_grow[3] = '   A great event! Your kraken has grown into a giant leviathan that barely fits in your largest pen. The fiend reached the limits of its power and proceeds to the final stage of the life cycle. You were able to extract almost two and a half liters of valuable alchemical mucus from the remains of the cocoon.'
@@ -2543,7 +2541,7 @@ $brothel_whore_loli[3] = '   Unfortunately, you have no time for tenderness. Thr
 
 $brothel_whore_twins[1] = '   You pay for an hour with two slender sisters. Cheerfully giggling, they take you to your room and together they quickly remove all of your clothing.'
 $brothel_whore_twins[2] = '   You decide to alternately explore all three pairs of holes to find the differences. As a result, one of the sisters receives a charge of sperm in her ass and the other in her vagina. Ordering them to do 69 with each other, you tell the twins to clean each other with their tongues.'
-$brothel_whore_twins[3] = '   After a while, the twins decide to properly make you happy: while one of them gives you a great blowjob, the other greedily licks your ass. After cumming plentiful in the mouth of the first sister, you ask her to share it with her sister. The girls equally share your thick white Â«rewardÂ».'
+$brothel_whore_twins[3] = '   After a while, the twins decide to properly make you happy: while one of them gives you a great blowjob, the other greedily licks your ass. After cumming plentiful in the mouth of the first sister, you ask her to share it with her sister. The girls equally share your thick white «reward».'
 
 $brothel_whore_loli_3[1] = '   Without thinking twice, you decide to spend your sparks on three charming little girls. You all go to the room and quickly strip naked.'
 $brothel_whore_loli_3[2] = '   While you gently lick the pussy of one girl, the other two are trying to cope with your dick. Their mouths are too small to take all of it, but the little whores manage ti pleasure you, licking it on both sides simultaneously.'
@@ -2612,10 +2610,10 @@ $beauty_master_stylist[2] = '   In addition to a manicure and a pedicure, the sa
 $beauty_master_massage[1] = '   Your muscles ache from the accumulated stress so you decide to use this convenient opportunity to have a rest and relax. A slave-masseuse takes you to a private room and asks you to undress.'
 $beauty_master_massage[2] = '   The girl has surprisingly strong and trained hands with which she skillfully massages all your muscles. Just what you need! After the procedure, you feel rejuvenated and refreshed.'
 
-$beauty_master_eromas[1] = '   For your work you need to get excited and maintain an erection so you order a custom massage which is called the Â«Lingam worshipingÂ». A petite tanned girl with eastern appearance takes you to a private room and asks you to undress.'
-$beauty_master_eromas[2] = '   For almost half an hour she caresses and strokes your Â«lingamÂ» with her oiled fingers. Among other things, she presses specific acupuncture points. After the procedure, you feel a significant rise in excitement. You urgently need to fuck someone!'
+$beauty_master_eromas[1] = '   For your work you need to get excited and maintain an erection so you order a custom massage which is called the «Lingam worshiping». A petite tanned girl with eastern appearance takes you to a private room and asks you to undress.'
+$beauty_master_eromas[2] = '   For almost half an hour she caresses and strokes your «lingam» with her oiled fingers. Among other things, she presses specific acupuncture points. After the procedure, you feel a significant rise in excitement. You urgently need to fuck someone!'
 
-$beauty_master_spa[1] = '   To properly treat yourself and relax you order a particularly advertised procedure under the enigmatic title of Â«aroma-spaÂ». Two half-naked slaves take you to a separate room that looks like a sauna and then light some incense.'
+$beauty_master_spa[1] = '   To properly treat yourself and relax you order a particularly advertised procedure under the enigmatic title of «aroma-spa». Two half-naked slaves take you to a separate room that looks like a sauna and then light some incense.'
 $beauty_master_spa[2] = '   At first, the girls wash you and then apply a healing mud. After the mud dries, they wash you again. After this, they massage your back with some pebbles and knead your muscles. The whole procedure is accompanied by harmonic music. Oddly enough, you really start to feel inner harmony.'
 
 !TATTO PARLOR
@@ -2842,12 +2840,12 @@ $jeeves_diligence[5] = '   [MASTER JEEVES]
    Her grade for the lesson: <font color="#008000"><b>S+</b></font>'
 
 !not used
-$auction_intro[1] = '   [Ð“ÐžÐ¡ÐŸÐžÐ–Ð� Ð�Ð�Ð–Ð•Ð›Ð˜ÐšÐ�]
-   - Ð�Ñƒ ÐºÐ°ÐºÐ¾Ð¹ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð°ÑƒÐºÑ†Ð¸Ð¾Ð½, <<$master_name>>?! Ð¡Ñ‚Ð°Ñ€Ñ‹Ð¹ ÐžÑ…Ð¾Ñ‚Ð½Ð¸Ðº ÐµÑ‰Ñ‘ Ð´Ð°Ð¶Ðµ Ð½Ðµ Ð±Ñ€Ð°Ð»Ñ�Ñ� Ð·Ð° Ð°ÑƒÐºÑ†Ð¸Ð¾Ð½Ð½Ñ‹Ð¹ Ð·Ð°Ð»... Ð¢ÑƒÑ‚ Ð² Ð³Ð¸Ð»ÑŒÐ´Ð¸Ð¸ ÐºÑ€Ð¾Ð¼Ðµ Ð¼ÐµÐ½Ñ� Ð¸ Ð´Ð¾Ñ�ÐºÐ¸ Ð¾Ð±ÑŠÑ�Ð²Ð»ÐµÐ½Ð¸Ð¹ Ð²Ð¾Ð¾Ð±Ñ‰Ðµ Ð½Ð¸Ñ‡ÐµÐ³Ð¾ Ð½ÐµÑ‚Ñƒ. Ð¢Ð¾Ñ�ÐºÐ° Ñ�Ð¼ÐµÑ€Ñ‚Ð½Ð°Ñ�.'
-$auction_intro[2] = '   [Ð“ÐžÐ¡ÐŸÐžÐ–Ð� Ð�Ð�Ð–Ð•Ð›Ð˜ÐšÐ�]
-   - Ð›Ð°Ð´Ð½Ð¾, Ð»Ð°Ð´Ð½Ð¾. Ð¯ Ð·Ð½Ð°ÑŽ Ñ‡Ñ‚Ð¾ Ñ‚ÐµÐ±Ðµ Ð½ÐµÐ³Ð´Ðµ Ð¿Ñ€Ð¾Ð´Ð°Ð²Ð°Ñ‚ÑŒ Ñ€Ð°Ð±Ñ‹Ð½ÑŒ, Ñ‚Ð°Ðº Ñ‡Ñ‚Ð¾ Ñ� Ð¼Ð¾Ð³Ñƒ Ð±Ñ€Ð°Ñ‚ÑŒ Ñƒ Ñ‚ÐµÐ±Ñ� Ð³Ð¾Ñ‚Ð¾Ð²Ñ‹Ð¹ Ð¼Ð°Ñ‚ÐµÑ€Ð¸Ð°Ð» Ð½Ð° Ð¿ÐµÑ€ÐµÐ¿Ñ€Ð¾Ð´Ð°Ð¶Ñƒ Ð¿Ð¾ Ñ‚Ð²Ñ‘Ñ€Ð´Ð¾Ð¹ Ñ€Ñ‹Ð½Ð¾Ñ‡Ð½Ð¾Ð¹ Ñ†ÐµÐ½Ðµ. Ð�Ð¾ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð² Ð¿Ð»Ð°Ð½Ðµ Ñ�ÐºÑ�Ð¿ÐµÑ€Ð¸Ð¼ÐµÐ½Ñ‚Ð°. Ð¢ÐµÐ¿ÐµÑ€ÑŒ Ñ�Ð»ÑƒÑˆÐ°Ð¹ Ð²Ð½Ð¸Ð¼Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾ ÑƒÑ�Ð»Ð¾Ð²Ð¸Ñ�.'
-$auction_intro[3] = '   [Ð“ÐžÐ¡ÐŸÐžÐ–Ð� Ð�Ð�Ð–Ð•Ð›Ð˜ÐšÐ�]
-   - Ð‘ÐµÑ€Ñƒ ÐºÐ»ÐµÐ¹Ð¼Ð»Ñ‘Ð½ÑƒÑŽ Ñ€Ð°Ð±Ñ‹Ð½ÑŽ Ñ� Ñ€ÐµÐ¹Ñ‚Ð¸Ð½Ð³Ð¾Ð¼ D Ð¸ Ð²Ñ‹ÑˆÐµ, Ð¿Ð¾ Ñ�Ð¾Ð¾Ñ‚Ð²ÐµÑ‚Ñ�Ñ‚Ð²ÑƒÑŽÑ‰ÐµÐ¹ Ñ†ÐµÐ½Ðµ. Ð¡Ð¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ðµ Ð¿Ð¾Ð¶ÐµÐ»Ð°Ð½Ð¸Ñ�: Ñ�ÐºÑ�Ð¿ÐµÑ€Ñ‚Ð½Ð°Ñ� <font color="#008080"><b>Ð²Ñ‹Ð½Ð¾Ñ�Ð»Ð¸Ð²Ð¾Ñ�Ñ‚ÑŒ</b></font>, Ð¿Ñ€Ð¾Ñ„ÐµÑ�Ñ�Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ð°Ñ� <font color="#0000CD"><b>ÐºÑƒÐ»Ð¸Ð½Ð°Ñ€Ð¸Ñ�</b></font> Ð¸ ÐºÐ¾Ð¼Ð¿ÐµÑ‚ÐµÐ½Ñ‚Ð½Ð°Ñ� <font color="#4B0082"><b>ÑƒÐ±Ð¾Ñ€ÐºÐ°</b></font>. Ð—Ð° Ð´ÐµÐ²Ñ�Ñ‚Ð²ÐµÐ½Ð½Ð¸Ñ† Ð´Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°Ñ� Ð¿Ð»Ð°Ñ‚Ð°.'
+$auction_intro[1] = '   [ГОСПОЖА АНЖЕЛИКА]
+   - Ну какой может быть аукцион, <<$master_name>>?! Старый Охотник ещё даже не брался за аукционный зал... Тут в гильдии кроме меня и доски объявлений вообще ничего нету. Тоска смертная.'
+$auction_intro[2] = '   [ГОСПОЖА АНЖЕЛИКА]
+   - Ладно, ладно. Я знаю что тебе негде продавать рабынь, так что я могу брать у тебя готовый материал на перепродажу по твёрдой рыночной цене. Но только в плане эксперимента. Теперь слушай внимательно условия.'
+$auction_intro[3] = '   [ГОСПОЖА АНЖЕЛИКА]
+   - Беру клеймлёную рабыню с рейтингом D и выше, по соответствующей цене. Специальные пожелания: экспертная <font color="#008080"><b>выносливость</b></font>, профессиональная <font color="#0000CD"><b>кулинария</b></font> и компетентная <font color="#4B0082"><b>уборка</b></font>. За девственниц дополнительная плата.'
 !-------------------!
 
 !REALTOR GLORIA
@@ -2960,7 +2958,7 @@ $realtor_demo_korvus[3] = '  [GLORIA]
    - This is a local apartment decorated in necro-gothic style, fully ready for occupancy. Let me once again emphasize the extra-spacious rooms and reliability of designs. But see for yourself.'
 $realtor_demo_korvus[4] = '  [GLORIA]
    - Let''s start with the examination of the living room. All of the rooms have high ceilings, including the living room. The interior is designed in red and black. The whole decoration emits an aura of luxury, elegance and high quality, don`t you think?'
-$realtor_demo_korvus[5] = '  You carefully inspect the room. It feels somewhat gloomy, of course, but damn it is beautiful. Really beautiful. So this is what they call Â«necro-gothicÂ» style?'
+$realtor_demo_korvus[5] = '  You carefully inspect the room. It feels somewhat gloomy, of course, but damn it is beautiful. Really beautiful. So this is what they call «necro-gothic» style?'
 $realtor_demo_korvus[6] = '  [GLORIA]
    - Let''s proceed to the bedroom. A low, but large bed with upholstered headboard is perfect for any sexual practices. Even though it was picked by beings who sleep in coffins - the bed is still perfect.'
 $realtor_demo_korvus[7] = '  The bed is really nice. And the rest of the decor is impressive. You can sleep here perfectly and deal with slaves without any problems.'
@@ -2982,7 +2980,7 @@ $realtor_demo_korvus[16] = '  [GLORIA]
    - The cost of renting the main premises, excluding utilities, is 100 sparks for ten days. If you wish, you can move in today, just pay the rent for ten days in advance plus 100 sparks as agency commission.'
 
 $realtor_demo_taurus[1] = '  [GLORIA]
-   - This district is under the jurisdiction of the Taurus Great House. It is inhabited by the Â«faithfulsÂ» - people honoring the Savior and they receive special support from Vatican. There are less people here than in the Serpentine quarter so order is maintained at high levels.'
+   - This district is under the jurisdiction of the Taurus Great House. It is inhabited by the «faithfuls» - people honoring the Savior and they receive special support from Vatican. There are less people here than in the Serpentine quarter so order is maintained at high levels.'
 $realtor_demo_taurus[2] = '  [GLORIA]
    - The price is moderate. Local apartments are the best choice for someone who knows how to save their sparks and want to live in a decent, peaceful place.'
 $realtor_demo_taurus[3] = '  [GLORIA]
@@ -3011,7 +3009,7 @@ $realtor_demo_taurus[16] = '  [GLORIA]
    - The cost of renting the main premises, excluding utilities, is 75 sparks for ten days. If you wish, you can move in today, just pay the rent for ten days in advance plus 75 sparks as agency commission.'   
    
 $realtor_demo_serpis[1] = '  [GLORIA]
-   - The residential Zone of the Serpentine quarter is called Â«anthillÂ» because of the incredibly high population density and development. The Serpis Great House, under whose jurisdiction this district is, has a lot of subjects. Unfortunately, due to the crowding, a lot of crimes are committed.'
+   - The residential Zone of the Serpentine quarter is called «anthill» because of the incredibly high population density and development. The Serpis Great House, under whose jurisdiction this district is, has a lot of subjects. Unfortunately, due to the crowding, a lot of crimes are committed.'
 $realtor_demo_serpis[2] = '  [GLORIA]
    - If you are low on money and do not want to spend extra sparks, anthill will be a good choice. Yes, the apartments here are small, but very cheap. And the situation for people is still less dangerous than in the quarter of the Outcasts. Plus, a Technosphere and an Illusory Sea is nearby.'
 $realtor_demo_serpis[3] = '  [GLORIA]
@@ -3033,7 +3031,7 @@ $realtor_demo_serpis[12] = '  [GLORIA]
 $realtor_demo_serpis[13] = '  [GLORIA]
    - Here, take a look at this room. Your slave will feel like she has earned her own room while not making her too proud or lazy.'
 $realtor_demo_serpis[14] = '  [GLORIA]
-   - As a representative of the Slaver''s Guild, you will probably be interested in a local cellar. The walls are covered with refractory reinforced plastic. There is a metal bed and the toilet of the Â«slop bucketÂ» type.'
+   - As a representative of the Slaver''s Guild, you will probably be interested in a local cellar. The walls are covered with refractory reinforced plastic. There is a metal bed and the toilet of the «slop bucket» type.'
 $realtor_demo_serpis[15] = '  [GLORIA]
    - If you are proficient in the art of enchantment and magic, you can rent a local alchemy lab. This is a modest but perfectly functional alchemy lab, except that it has not enough space for books.'
 $realtor_demo_serpis[16] = '  [GLORIA]
@@ -3110,7 +3108,7 @@ $infodata_aura_color[1] = '  [SOULNET TERMINAL]
 $infodata_aura_color[2] = '  [SOULNET TERMINAL]
   - Red indicates a conscious fear, directed at an object or a subject present in the immediate vicinity of the aura''s source. Appears in the form of glares, that appear more saturated at higher levels of fear.'
 $infodata_aura_color[3] = '  [SOULNET TERMINAL]
-  - A dark color indicates negative subconscious emotions. Usually observed in the depth of the aura, when amplified, they spread in the form of distinctive Â«snakesÂ» or Â«tentaclesÂ».'
+  - A dark color indicates negative subconscious emotions. Usually observed in the depth of the aura, when amplified, they spread in the form of distinctive «snakes» or «tentacles».'
 $infodata_aura_color[4] = '  [SOULNET TERMINAL]
   - The dominance of dark substructures in the aura suggest a strong sense of hopelessness and despair. This is able to lead to a gradual degradation of the individual: The will and motivational spheres get destructed and individuality is lost.'
 $infodata_aura_color[5] = '  [SOULNET TERMINAL]
@@ -3130,7 +3128,7 @@ $infodata_aura_color[9] = '  [SOULNET TERMINAL]
 
 !SPECIAL TASKS
 $aramus_fail[1] = '  [Sir Aramus]
-  - Yes. I still need a champion gladiatrix. Deliver a proper girl and I''ll give you the Â«bull ringÂ». A great thing, I assure you!'
+  - Yes. I still need a champion gladiatrix. Deliver a proper girl and I''ll give you the «bull ring». A great thing, I assure you!'
 $wujen_fail[1] = '  [Vujin the Wise]
   - How are things with the racing champion? I got the amulet already, it is just waiting for its time.'
 $garsid_fail[1] = '  [GARSID]
@@ -3145,7 +3143,7 @@ $wujen_win[1] = '  [Vujin the Wise]
 $garsid_win[1] = '  [GARSID]
   - You ssay that ssshe can do everything? AWESSSOME! Here, take thisss. Thiss isss a chimaera''ss gem. Put it in your ear and you will feel true pleasssure. Ssslutss will burssst.'
 $magister_vailos_win[1] = '  [Master Valios]
-  - I examined your fiend this morning. I think now is best stage for my research. And it''s quite healthy. I''m taking it, here''s your Â«raven crownÂ», mortal.'
+  - I examined your fiend this morning. I think now is best stage for my research. And it''s quite healthy. I''m taking it, here''s your «raven crown», mortal.'
   
 $magister_vailos_quest[1] = '   [Master Valios]
   - Do you want to serve a Great Knowledge, mortal? don`t want to, huh.. well, of course. Mortals are too busy with their short and hectic life, to think about something really important.'
@@ -3160,7 +3158,7 @@ $magister_vailos_quest[5] = '   [Master Valios]
 $magister_vailos_quest[6] = '   [Master Valios]
   - I understand that it is not easy to get such a product and it is not your main profile. But I have something much more valuable than a handful of sparks. I''ve created an artifact that is extremely useful with your work.'
 $magister_vailos_quest[7] = '   [Master Valios]
-  - I''ve called it the Â«raven crownÂ»! Once equipped, you will always see the aura of others. There is no need to spend time and sparks for magic.'
+  - I''ve called it the «raven crown»! Once equipped, you will always see the aura of others. There is no need to spend time and sparks for magic.'
 $magister_vailos_quest[8] = '   [Master Valios]
   - In addition, it strengthens your aura, it even is perceivable by others. Others will perceive your greatness and dignity.'
 $magister_vailos_quest[9] = '   [Master Valios]
@@ -3205,7 +3203,7 @@ $aramus_quest[4] = '   [Sir Aramus]
 $aramus_quest[5] = '   [Sir Aramus]
   - I have access to special military equipment. Well, you know, there are a lot of demons, undead and these weird heathens with their technical gadgets. We must somehow keep up with their level.'
 $aramus_quest[6] = '   [Sir Aramus]
-  - Get me a slave-champion and I''ll get you combat artifact called Â«bull ringÂ». It''s a normal-looking ring, but you''ll be twice as hardy in battle. And as an added bonus, your aura will be stronger.'
+  - Get me a slave-champion and I''ll get you combat artifact called «bull ring». It''s a normal-looking ring, but you''ll be twice as hardy in battle. And as an added bonus, your aura will be stronger.'
 $aramus_quest[7] = '   [Sir Aramus]
   - Think about it. don`t hurry. If there is a suitable girl, just find me on the forum. I will give you the ring on the same day, all without cheating, do not be afraid. Go now, it''s better if they do not see us together once again.'
 
@@ -3417,7 +3415,7 @@ $charriots_info[15] = '   [STABLEMAN]
 $charriots_info[16] = '   [STABLEMAN]
    - In the end we get a road with only potholes and pits. You can pass it safe only at a very small speed. A little faster and you will break suspension, and horse will break legs.'
 $charriots_info[17] = '   [STABLEMAN]
-   - Sometimes we set a Â«dragon teethÂ» on the road. These are the combs with small triangular blades. They are harmless to chariots, but can hurt slave''s legs with ease. Maneuver to avoid them.'
+   - Sometimes we set a «dragon teeth» on the road. These are the combs with small triangular blades. They are harmless to chariots, but can hurt slave''s legs with ease. Maneuver to avoid them.'
 $charriots_info[18] = '   [STABLEMAN]
    - Another obstacle is called a concrete jungle. This thick reinforced concrete pillars with sticking out pieces of rebar, dug right on the track. If you will hit them - say farewell to your chariot.'
 $charriots_info[19] = '   [STABLEMAN]
@@ -3451,8 +3449,5 @@ $polypus_lesson_description[3] = 'Your slave steps onto the grate in the middle 
 $polypus_lesson_description[4] = '<<$slave_name>> steps eagerly onto the grate that covers the cell`s tentacle pool. She works her clitoris with one hand while the other stretches her anus. A drop of her pussy juice strikes the water below and in response a forest of tentacles explodes upward. You start back as a wave of cold seawater washes around your feet. By the time you return your gaze to the slave, she`s taking seven tentacles. Or is it eight? A fine performance.'
 $polypus_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
 
-$slave_to_pig_pos_description[1] = 'Your slave obeys, too stupid to realize or too broken to care what this new role implies for her future. Over the coming days, her weight will dramatically increase, as she will have nothing to do but eat.'
-$slave_to_pig_neg_description[1] = 'Your slave has enough intelligence and self-preservation to refuse outright.'
-$pig_to_slave_description[1] = 'On your order, your pig leaves her pen and reports back to you. Her stomach is bulging and her gaze dull, and she could definitely use a bath.'
 --- #txt ---------------------------------
 

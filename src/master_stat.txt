@@ -20,62 +20,62 @@ END
 
 !'
  IF slave["stamina"] > 1:
-  $middle_text_list += {<a href = 'EXEC: interaction = 1221 & gt "interaction"'>Ð“Ð¸Ð¼Ð½Ð°Ñ�Ñ‚Ð¸ÐºÐ°<BR></a>}
+  $middle_text_list += {<a href = 'EXEC: interaction = 1221 & gt "interaction"'>Гимнастика<BR></a>}
   else
-  $middle_text_list += '<font color="#C0C0C0">Ð“Ð¸Ð¼Ð½Ð°Ñ�Ñ‚Ð¸ÐºÐ°<BR></font>'
+  $middle_text_list += '<font color="#C0C0C0">Гимнастика<BR></font>'
  END
 '
 
-!Ð¤Ð¾Ñ€Ð¼Ð¸Ñ€ÑƒÐµÐ¼ Ñ�Ð¿Ð¸Ñ�Ð¾Ðº Ð½Ð° Ð¾Ð±ÑƒÑ‡ÐµÐ½Ð¸Ðµ
+!Формируем список на обучение
 $left_text_list = ''
 $middle_text_list = '' 
 $right_text_list = '' 
  
  if kitchen > 0: $left_text_list += '<u>CRYOSTORE</u> [<<frige_items>>/<<estate_size[$estate]>>]:
-Vegetables Ñ…<<frige["vegetables"]>>
-Flour and grains Ñ…<<frige["flower"]>>
-Herbs and spices Ñ…<<frige["spice"]>>
-Cheese and butter Ñ…<<frige["cheese"]>>
-Alcohol Ñ…<<frige["alcohol"]>>
-Eggs Ñ…<<frige["eggs"]>>
-Milk Ñ…<<frige["milk"]>>
-Cream Ñ…<<frige["cream"]>>
-Chopped meat Ñ…<<frige["mince"]>>
-Tenderloin Ñ…<<frige["meat"]>>
-Virgin meat Ñ…<<frige["virgin_meat"]>><br>'
+Vegetables х<<frige["vegetables"]>>
+Flour and grains х<<frige["flower"]>>
+Herbs and spices х<<frige["spice"]>>
+Cheese and butter х<<frige["cheese"]>>
+Alcohol х<<frige["alcohol"]>>
+Eggs х<<frige["eggs"]>>
+Milk х<<frige["milk"]>>
+Cream х<<frige["cream"]>>
+Chopped meat х<<frige["mince"]>>
+Tenderloin х<<frige["meat"]>>
+Virgin meat х<<frige["virgin_meat"]>><br>'
 if spawn_semen > 0: $left_text_list += 'Spawn''s semen x<<spawn_semen>>'
 
 IF lab > 0: 
  $middle_text_list += '<u>LABORATORY</u> [<<lab_items>>/<<estate_size[$estate]>>]:
-Fiend''s mucus Ñ…<<lab_store["slime"]>>
-Elysian datura Ñ…<<lab_store["kanabis"]>>
-Kamrian resin Ñ…<<lab_store["koffe"]>>
-Faeries pollen Ñ…<<lab_store["meth"]>>
-Essence of oblivion Ñ…<<lab_store["opium"]>>
+Fiend''s mucus х<<lab_store["slime"]>>
+Elysian datura х<<lab_store["kanabis"]>>
+Kamrian resin х<<lab_store["koffe"]>>
+Faeries pollen х<<lab_store["meth"]>>
+Essence of oblivion х<<lab_store["opium"]>>
 
-Bacchic x<<Ð²Ð°ÐºÑ…Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹_Ð½ÐµÐºÑ‚Ð°Ñ€>>
-Tonic x<<Ñ‚Ð¾Ð½Ð¸Ð·Ð¸Ñ€ÑƒÑŽÐ·Ñ‰Ð¸Ð¹_Ñ�Ð»Ð¸ÐºÑ�Ð¸Ñ€>>
-Balm x<<Ñ†ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹_Ð±Ð°Ð»ÑŒÐ·Ð°Ð¼>>
-Aphrodisiac x<<Ð°Ñ„Ñ€Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº>>
-Super-aphrodisiac x<<Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹_Ð°Ñ„Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº>>
-Philtre x<<Ð¿Ñ€Ð¸Ð²Ð¾Ñ€Ð¾Ñ‚Ð½Ð¾Ðµ_Ð·ÐµÐ»ÑŒÐµ>>
-Water of Lethe x<<Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹>>
+Bacchic x<<вакхический_нектар>>
+Tonic x<<тонизируюзщий_эликсир>>
+Balm x<<целительный_бальзам>>
+Aphrodisiac x<<афродизиак>>
+Super-aphrodisiac x<<мощный_афодизиак>>
+Philtre x<<приворотное_зелье>>
+Water of Lethe x<<вода_леты>>
 '
  else
  $middle_text_list += '<u>SUBSTANCE:</u>
-Fiend''s mucus Ñ…<<lab_store["slime"]>>
-Elysian datura Ñ…<<lab_store["kanabis"]>>
-Kamrian resin Ñ…<<lab_store["koffe"]>>
-Faeries pollen Ñ…<<lab_store["meth"]>>
-Essence of oblivion Ñ…<<lab_store["opium"]>>
+Fiend''s mucus х<<lab_store["slime"]>>
+Elysian datura х<<lab_store["kanabis"]>>
+Kamrian resin х<<lab_store["koffe"]>>
+Faeries pollen х<<lab_store["meth"]>>
+Essence of oblivion х<<lab_store["opium"]>>
 
-Bacchic x<<Ð²Ð°ÐºÑ…Ð¸Ñ‡ÐµÑ�ÐºÐ¸Ð¹_Ð½ÐµÐºÑ‚Ð°Ñ€>>
-Tonic x<<Ñ‚Ð¾Ð½Ð¸Ð·Ð¸Ñ€ÑƒÑŽÐ·Ñ‰Ð¸Ð¹_Ñ�Ð»Ð¸ÐºÑ�Ð¸Ñ€>>
-Balm x<<Ñ†ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹_Ð±Ð°Ð»ÑŒÐ·Ð°Ð¼>>
-Aphrodisiac x<<Ð°Ñ„Ñ€Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº>>
-Super-aphrodisiac x<<Ð¼Ð¾Ñ‰Ð½Ñ‹Ð¹_Ð°Ñ„Ð¾Ð´Ð¸Ð·Ð¸Ð°Ðº>>
-Philtre x<<Ð¿Ñ€Ð¸Ð²Ð¾Ñ€Ð¾Ñ‚Ð½Ð¾Ðµ_Ð·ÐµÐ»ÑŒÐµ>>
-Water of Lethe x<<Ð²Ð¾Ð´Ð°_Ð»ÐµÑ‚Ñ‹>>
+Bacchic x<<вакхический_нектар>>
+Tonic x<<тонизируюзщий_эликсир>>
+Balm x<<целительный_бальзам>>
+Aphrodisiac x<<афродизиак>>
+Super-aphrodisiac x<<мощный_афодизиак>>
+Philtre x<<приворотное_зелье>>
+Water of Lethe x<<вода_леты>>
 ' 
 END
 
@@ -114,16 +114,16 @@ END
 
 *p '<div id="right_column">
 <u>SKILLS</u>
-<a href="EXEC: msg $ÑƒÑ‡Ð¸Ñ‚ÐµÐ»ÑŒ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $ÑƒÑ‡Ð¸Ñ‚ÐµÐ»ÑŒ_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_tutor[master_tutor]>></a> 
-<a href="EXEC: msg $Ð´Ð²Ð¾Ñ€ÐµÑ†ÐºÐ¸Ð¹_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $Ð´Ð²Ð¾Ñ€ÐµÑ†ÐºÐ¸Ð¹_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_butler[master_butler]>></a> 
-<a href="EXEC: msg $Ð°Ñ€Ñ‚Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $Ð°Ñ€Ñ‚Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_artdirector[master_artdirector]>></a> 
-<a href="EXEC: msg $Ð¼ÐµÐ´Ð¸Ðº_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $Ð¼ÐµÐ´Ð¸Ðº_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_medic[master_medic]>></a> 
-<a href="EXEC: msg $Ð±Ð¾ÐµÑ†_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $Ð±Ð¾ÐµÑ†_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_fighter[master_fighter]>></a> 
-<a href="EXEC: msg $Ð¼Ð°Ð³_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $Ð¼Ð°Ð³_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_mage[master_mage]>></a>
-<a href="EXEC: msg $Ð´Ð¾Ð¼Ð¸Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $Ð´Ð¾Ð¼Ð¸Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_domination[master_domination]>></a>
-<a href="EXEC: msg $Ñ„Ð»Ð°Ð³ÐµÐ»Ñ�Ñ†Ð¸Ñ�_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $Ñ„Ð»Ð°Ð³ÐµÐ»Ñ�Ñ†Ð¸Ñ�_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_flagelation[master_flagelation]>></a>
-<a href="EXEC: msg $Ð¿Ð°Ð»Ð°Ñ‡_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $Ð¿Ð°Ð»Ð°Ñ‡_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_torture[master_torture]>></a> 
-<a href="EXEC: msg $Ð±Ð¾Ð½Ð´Ð°Ð¶_Ñ�Ð¿Ñ€Ð°Ð²ÐºÐ° & $info_text = $Ð±Ð¾Ð½Ð´Ð°Ð¶_Ñ�Ð¾Ð²ÐµÑ‚ & gt $curloc"><<$master_bondage[master_bondage]>></a>
+<a href="EXEC: msg $учитель_справка & $info_text = $учитель_совет & gt $curloc"><<$master_tutor[master_tutor]>></a> 
+<a href="EXEC: msg $дворецкий_справка & $info_text = $дворецкий_совет & gt $curloc"><<$master_butler[master_butler]>></a> 
+<a href="EXEC: msg $артдиректор_справка & $info_text = $артдиректор_совет & gt $curloc"><<$master_artdirector[master_artdirector]>></a> 
+<a href="EXEC: msg $медик_справка & $info_text = $медик_совет & gt $curloc"><<$master_medic[master_medic]>></a> 
+<a href="EXEC: msg $боец_справка & $info_text = $боец_совет & gt $curloc"><<$master_fighter[master_fighter]>></a> 
+<a href="EXEC: msg $маг_справка & $info_text = $маг_совет & gt $curloc"><<$master_mage[master_mage]>></a>
+<a href="EXEC: msg $доминирование_справка & $info_text = $доминирование_совет & gt $curloc"><<$master_domination[master_domination]>></a>
+<a href="EXEC: msg $флагеляция_справка & $info_text = $флагеляция_совет & gt $curloc"><<$master_flagelation[master_flagelation]>></a>
+<a href="EXEC: msg $палач_справка & $info_text = $палач_совет & gt $curloc"><<$master_torture[master_torture]>></a> 
+<a href="EXEC: msg $бондаж_справка & $info_text = $бондаж_совет & gt $curloc"><<$master_bondage[master_bondage]>></a>
 
 <u>SEX-TECHNIQUES</u>
 <<$master_petting[master_petting]>> 
@@ -132,7 +132,6 @@ END
 <<$master_fetish[master_fetish]>> 
 </div>'
 
-*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !OBJECTIVES TAB
 IF master_stat_screen = 1:
@@ -163,12 +162,12 @@ If master_stat_screen = 2:
 	END
     *p '<div id = "center_text_column_1">'
         *p '<div style = "text-align: center;"><u>MY EQUIPMENT</u></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 1 & dynamic $master_armor_list"><u>Armour:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$master_armor]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 2 & dynamic $master_wpn_list_large"><u>Shoulder holster:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$master_back_wpn]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 3 & dynamic $master_wpn_list"><u>Left hand:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$master_left_wpn]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 4 & dynamic $master_wpn_list_2"><u>Right hand:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$master_right_wpn]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 5 & dynamic $master_wpn_list_small"><u>Sleeve holster:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$master_arm_wpn]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 6 & dynamic $master_wpn_list_small_2"><u>Boot holster:</u> <<$Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ_Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð°[$master_leg_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 1 & dynamic $master_armor_list"><u>Armour:</u> <<$название_предмета[$master_armor]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 2 & dynamic $master_wpn_list_large"><u>Shoulder holster:</u> <<$название_предмета[$master_back_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 3 & dynamic $master_wpn_list"><u>Left hand:</u> <<$название_предмета[$master_left_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 4 & dynamic $master_wpn_list_2"><u>Right hand:</u> <<$название_предмета[$master_right_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 5 & dynamic $master_wpn_list_small"><u>Sleeve holster:</u> <<$название_предмета[$master_arm_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 6 & dynamic $master_wpn_list_small_2"><u>Boot holster:</u> <<$название_предмета[$master_leg_wpn]>></a></div>'
         *p '<br>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 7 & dynamic $master_cloth_list"><u>Clothes:</u> <<$item_name[$master_cloth]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 8 & dynamic $master_head_list"><u>Headgear:</u> <<$item_name[$master_head_gear]>></a></div>'

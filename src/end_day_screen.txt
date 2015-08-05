@@ -59,25 +59,11 @@ IF assistant_auto_tentacle = 1:
  jump 'loop'
 END
 
-IF slave_auto_wash = 1:
- $special_bg = $washing[slave_type] 
- $place = 'bathroom'  
- $text = '<<$slave_washes_master>>'
- slave_auto_wash = 0
- jump 'loop'
-END
 IF assistant_auto_wash = 1:
  $special_bg = $washing[assistant_type] 
  $place = 'bathroom'  
  $text = '<<$assistant_washes_master>>'
  assistant_auto_wash = 0
- jump 'loop'
-END
-IF assistant_washs_slave = 1:
- $special_bg = $lesbo_bath[assistant_type] 
- $place = 'bathroom'  
- $text = '<<$assistant_wash_slave>>'
- assistant_washs_slave = 0
  jump 'loop'
 END
 
@@ -213,7 +199,7 @@ END
 IF end_of_the_day = 1:
  $text = $nothing_special
  $place = 'bedroom'
- ! Ð²ÐµÑ€Ð½ÑƒÐ», Ð±Ð¸Ñ‚Ñ‹Ñ… Ð¸ÐºÐ¾Ð½Ð¾Ðº Ð±Ñ‹Ñ‚ÑŒ Ð½Ðµ Ð´Ð¾Ð»Ð¶Ð½Ð¾
+ ! вернул, битых иконок быть не должно
  $special_bg = ''   
  end_of_the_day = 0
  jump 'loop'  
@@ -230,21 +216,21 @@ END
 IF slave_attack = 1:
  slave["virtue"] = 0
  slave["sin"] = 5
- ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑ�Ñ‚Ð²Ð¾_Ð²Ñ€Ð°Ð³Ð¾Ð² = 1
- $Ð²Ñ€Ð°Ð³[1] = 'Ð²Ð¾Ñ�Ð¿Ð¸Ñ‚ÑƒÐµÐ¼Ð°Ñ�'
+ количество_врагов = 1
+ $враг[1] = 'воспитуемая'
  slave["beaten"] = 1
  slave['beaten_ever'] = 1
  get_girl = 0
  $fight_return = 'end_day_screen'
  fighting_expirience = slave["gladiatrix"]
  msg '  You wake up from feeling threatened and instinctively roll off the bed. Where you had just laid is stuck a knife!. Looks like <<$slave_name>> stole it from the kitchen and decided to kill you!'
- gt 'Ð½Ð°Ñ‡Ð°Ñ‚ÑŒ_Ð±Ð¾Ð¹' 
+ gt 'начать_бой' 
 END
 
 IF slave_escape = 1:
  $text = '   While you were sleeping, <<$slave_name>> managed to steal the key to the door and slide out onto the street. By morning she had vanished. It''s unlikely she will be able to survive alone on the street, but you have to buy a new slave...'
  slave_state = CONST_INT['no_slave']
- !Ð½Ð¾Ð²Ñ‹Ð¹ Ð¼ÑƒÐ´Ð»ÐµÑ‚ Ð´Ð»Ñ� Ð¾Ð±Ð¾Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ� Ñ�Ð±ÐµÐ¶Ð°Ð²ÑˆÐ¸Ñ… Ñ€Ð°Ð±Ñ‹Ð½ÑŒ
+ !новый мудлет для обозначения сбежавших рабынь
  master_mood['neg_escape'] = 1
  gs '$mod_master_drop', 1
  jump 'loop'  

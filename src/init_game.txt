@@ -28,14 +28,13 @@ master_penetration = 3
 master_fetish = 3
 
 !other settings
-stock_limit = 15
+stock_limit = 300
 
 bath = 1
 kitchen = 1
 dungeon = 1
 lab = 1
 library = 1
-barn = 1
 
 flute = 1
 guitar = 1
@@ -52,16 +51,16 @@ polypusvermin = 1
 
 cooked_food = -1
 sparks = 1000
-$Ð·Ð°Ñ‰Ð¸Ñ‚Ð°[0] = 'Ð±Ð»Ð¾Ðº'
+$защита[0] = 'блок'
 
-$Ñ�ÑƒÐ¿ÐµÑ€ÑƒÐ´Ð°Ñ€[1] = ''
-$Ñ�ÑƒÐ¿ÐµÑ€ÑƒÐ´Ð°Ñ€[2] = ''
-$Ñ�ÑƒÐ¿ÐµÑ€ÑƒÐ´Ð°Ñ€[3] = ''
-$Ñ�ÑƒÐ¿ÐµÑ€ÑƒÐ´Ð°Ñ€[4] = ''
-$Ñ�ÑƒÐ¿ÐµÑ€ÑƒÐ´Ð°Ñ€[5] = ''
+$суперудар[1] = ''
+$суперудар[2] = ''
+$суперудар[3] = ''
+$суперудар[4] = ''
+$суперудар[5] = ''
 
-$master_wpn = 'Ð±ÐµÐ·Ð¾Ñ€ÑƒÐ¶Ð½Ñ‹Ð¹'
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_wpn = 'безоружный'
+$master_armor = 'без_брони'
 $master_scnd = ''
 
 $master_back_wpn = ''
@@ -76,8 +75,8 @@ $master_earring = 'none'
 $master_amulet = 'none'
 $master_ring = 'none'
 
-$assistant["armor"] = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
-$slave["armor"] = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$assistant["armor"] = 'без_брони'
+$slave["armor"] = 'без_брони'
 
 $estate = 'white_house'
 $starting_area = 'White Town'
@@ -100,7 +99,7 @@ $preset_name[4] = 'Preset 4'
 $preset_name[5] = 'Preset 5'
 $preset_name[6] = 'Preset 6'
 
-!ÐšÐ²ÐµÑ�Ñ‚Ñ‹
+!Квесты
 active[$quest[1]] = 1
 active[$quest[3]] = 1
 

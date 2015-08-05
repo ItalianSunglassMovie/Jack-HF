@@ -31,10 +31,10 @@ master_oral = 2
 master_penetration = 4
 master_fetish = 3
 
-$master_armor = 'Ñ�Ð»ÑŒÑ‡ÑƒÐ³Ð°'
+$master_armor = 'эльчуга'
 $master_cloth = 'regal_suit'
-$master_right_wpn = 'ÑˆÐ¿Ð°Ð³Ð°'
-sparks = 5000
+$master_right_wpn = 'шпага'
+sparks = 2000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -70,10 +70,10 @@ master_oral = 2
 master_penetration = 4
 master_fetish = 4
 
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_armor = 'без_брони'
 $master_cloth = 'man_rugs'
-$master_right_wpn = 'ÐºÐ½ÑƒÑ‚'
-sparks = 4500
+$master_right_wpn = 'кнут'
+sparks = 1000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -108,10 +108,10 @@ master_oral = 2
 master_penetration = 4
 master_fetish = 2
 
-$master_armor = 'Ñ�Ñ‡ÑƒÐ³Ð°'
+$master_armor = 'ячуга'
 $master_cloth = 'aketon'
-$master_right_wpn = 'Ð±Ð°Ñ�Ñ‚Ð°Ñ€Ð´'
-sparks = 4000
+$master_right_wpn = 'бастард'
+sparks = 1000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -146,10 +146,10 @@ master_oral = 4
 master_penetration = 5
 master_fetish = 5
 
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_armor = 'без_брони'
 $master_cloth = 'fancy_suit'
-$master_right_wpn = 'ÐºÐ°Ñ�Ñ‚ÐµÑ‚'
-sparks = 3500
+$master_right_wpn = 'кастет'
+sparks = 1000
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -184,10 +184,10 @@ master_oral = 1
 master_penetration = 3
 master_fetish = 0
 
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_armor = 'без_брони'
 $master_cloth = 'livery'
 $master_right_wpn = ''
-sparks = 3000
+sparks = 1000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -223,10 +223,10 @@ master_oral = 1
 master_penetration = 3
 master_fetish = 0
 
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_armor = 'без_брони'
 $master_cloth = 'formal_suit'
 $master_right_wpn = ''
-sparks = 2500
+sparks = 1000
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -261,10 +261,10 @@ master_oral = 1
 master_penetration = 3
 master_fetish = 0
 
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_armor = 'без_брони'
 $master_cloth = 'medic_robes'
 $master_right_wpn = ''
-sparks = 2000
+sparks = 1000
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -299,10 +299,10 @@ master_oral = 2
 master_penetration = 3
 master_fetish = 1
 
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_armor = 'без_брони'
 $master_cloth = 'formal_suit'
 $master_right_wpn = ''
-sparks = 1500
+sparks = 1000
 
 faction_fame['taurus'] = 1
 faction_fame['serpis'] = 0
@@ -337,7 +337,7 @@ master_oral = 1
 master_penetration = 2
 master_fetish = 0
 
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_armor = 'без_брони'
 $master_cloth = 'comfy_robes'
 $master_right_wpn = ''
 sparks = 1000
@@ -375,10 +375,10 @@ master_oral = 0
 master_penetration = 0
 master_fetish = 5
 
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_armor = 'без_брони'
 $master_cloth = 'man_rugs'
 $master_right_wpn = ''
-sparks = 500
+sparks = 200
 
 faction_fame['serpis'] = 1
 faction_fame['taurus'] = 0
@@ -415,10 +415,10 @@ master_oral = 0
 master_penetration = 0
 master_fetish = 0
 
-$master_armor = 'Ð±ÐµÐ·_Ð±Ñ€Ð¾Ð½Ð¸'
+$master_armor = 'без_брони'
 $master_cloth = 'wizard_robes'
 $master_right_wpn = ''
-sparks = 2500
+sparks = 1000
 
 faction_fame['serpis'] = 1
 } 
@@ -452,7 +452,7 @@ master_fetish = 3
 faction_fame['kamira'] = 1
 } 
 
-!Ð”Ñ€ÑƒÐ³Ð¸Ðµ Ñ‚Ñ€ÐµÐ½ÐµÑ€Ñ‹
+!Другие тренеры
 $trainer_id[1] = 'mistress_angelika'
 $trainer_id[2] = 'goji'
 $trainer_id[3] = 'avgia'
@@ -490,19 +490,19 @@ trainer_enchanter_rating[''] = 0
 trainer_artist_rating[''] = 0
 trainer_concubine_rating[''] = 0
 
-$npc_name['Ð³Ð¾Ñ�Ð¿Ð¾Ð¶Ð°_Ð°Ð½Ð³ÐµÐ»Ð¸ÐºÐ°'] = 'Mistress Angelika'
-$npc_status['Ð³Ð¾Ñ�Ð¿Ð¾Ð¶Ð°_Ð°Ð½Ð³ÐµÐ»Ð¸ÐºÐ°'] = 'Slavers Guild Master 
+$npc_name['госпожа_ангелика'] = 'Mistress Angelika'
+$npc_status['госпожа_ангелика'] = 'Slavers Guild Master 
 Neutrals'
-$npc_image['Ð³Ð¾Ñ�Ð¿Ð¾Ð¶Ð°_Ð°Ð½Ð³ÐµÐ»Ð¸ÐºÐ°'] = 'mistress_angelika'
-$npc_info['Ð³Ð¾Ñ�Ð¿Ð¾Ð¶Ð°_Ð°Ð½Ð³ÐµÐ»Ð¸ÐºÐ°'] = 'It seems from this lady depends on the final decision about my entry into the guild. Most likely, this is just a formality, but it is necessary to remain vigilant. She looks like a person who does not forgive weakness and enjoys suffering neighbors...
+$npc_image['госпожа_ангелика'] = 'mistress_angelika'
+$npc_info['госпожа_ангелика'] = 'It seems from this lady depends on the final decision about my entry into the guild. Most likely, this is just a formality, but it is necessary to remain vigilant. She looks like a person who does not forgive weakness and enjoys suffering neighbors...
    What the hell?! She looks like a complete bitch, though sexy.'
-npc_attitude['Ð³Ð¾Ñ�Ð¿Ð¾Ð¶Ð°_Ð°Ð½Ð³ÐµÐ»Ð¸ÐºÐ°'] = 11
+npc_attitude['госпожа_ангелика'] = 11
 
 $npc_image['mistress_angelika'] = 'mistress_angelika'
 $npc_name['mistress_angelika'] = 'Mistress Angelika'
 $npc_status['mistress_angelika'] = 'Guild Master 
 Slavers (Neutrals)'
-$npc_alignment['mistress_angelika'] = 'Ð½ÐµÐ¹Ñ‚Ñ€Ð°Ð»Ñ‹'
+$npc_alignment['mistress_angelika'] = 'нейтралы'
 $npc_info['mistress_angelika'] = '   Your old friend teacher. I think she bluff in communication, but on the other hand what else to expect from a professional dominant mistress... This work spoils character. She''s quite nice actually.'
 npc_attitude['mistress_angelika'] = 11
 npc_reveal['mistress_angelika'] = 0
@@ -659,46 +659,4 @@ trainer_concubine_rating['giess'] = 3
 $npc_name['ling'] = 'Master Ling Vao'
 trainer_rating['ling'] = 2
 trainer_refferent_rating['ling'] = 0
-trainer_pet_rating['ling'] = 2
-trainer_nurse_rating['ling'] = 0
-trainer_maid_rating['ling'] = 0
-trainer_gladiatrix_rating['ling'] = 3
-trainer_enchanter_rating['ling'] = 2
-trainer_artist_rating['ling'] = 2
-trainer_concubine_rating['ling'] = 2
-
-$npc_name['minosia'] = 'Mistress Minos'
-trainer_rating['minosia'] = 2
-trainer_refferent_rating['minosia'] = 0
-trainer_pet_rating['minosia'] = 2
-trainer_nurse_rating['minosia'] = 0
-trainer_maid_rating['minosia'] = 0
-trainer_gladiatrix_rating['minosia'] = 3
-trainer_enchanter_rating['minosia'] = 0
-trainer_artist_rating['minosia'] = 0
-trainer_concubine_rating['minosia'] = 2
-
-$npc_name['rabban'] = 'The Beast Rabban'
-trainer_rating['rabban'] = 1
-trainer_refferent_rating['rabban'] = 0
-trainer_pet_rating['rabban'] = 0
-trainer_nurse_rating['rabban'] = 0
-trainer_maid_rating['rabban'] = 2
-trainer_gladiatrix_rating['rabban'] = 3
-trainer_enchanter_rating['rabban'] = 0
-trainer_artist_rating['rabban'] = 0
-trainer_concubine_rating['rabban'] = 2
-
-$npc_name['sheepherd'] = 'Master Sheppard'
-trainer_rating['sheepherd'] = 1
-trainer_refferent_rating['sheepherd'] = 0
-trainer_pet_rating['sheepherd'] = 2
-trainer_nurse_rating['sheepherd'] = 0
-trainer_maid_rating['sheepherd'] = 2
-trainer_gladiatrix_rating['sheepherd'] = 2
-trainer_enchanter_rating['sheepherd'] = 0
-trainer_artist_rating['sheepherd'] = 0
-trainer_concubine_rating['sheepherd'] = 2
-
---- #masters_base ---------------------------------
-
+trainer_
