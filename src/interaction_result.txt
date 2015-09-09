@@ -54,7 +54,7 @@ IF $interaction_type = 'spell_cast':
   if master_mage = 3: spell_effectiveness = 6
   if master_mage = 4: spell_effectiveness = 8
   if master_mage = 5: spell_effectiveness = 10 
-  if master_mage = 6: spell_effectiveness = 10   
+  if master_mage = 6: spell_effectiveness = 12   
   spell_effectiveness -= slave['ego']
  END
  dynamic $special_part 
@@ -93,6 +93,59 @@ IF $interaction_type = 'make_assistant_do':
  dynamic '<<$target_skill>> += skill_rise'  
 END
 
+!interaction type - order for slave and assistant
+IF $interaction_type = 'make_slave_assistant_do':
+ txt_count = 1
+ IF res < 0: 
+  $text[1] = $refuse_txt
+  $interaction_type = 'talk'
+  dynamic $sin_gained_now 
+  else
+  $text[1] = $done_txt
+  tutor_modifier = master_tutor 
+  if master_mood < 0: tutor_modifier += master_mood
+  if master_mood > master_tutor: tutor_modifier += 1
+  tutor_modifier += slave["intellect"] - 3
+  tutor_modifier += misc_bonus
+  if tutor_modifier < 0: tutor_modifier = 1
+  if diligence < talent_bonus: diligence = talent_bonus 
+  skill_rise = tutor_modifier * diligence
+  if talent_bonus > 0 and $slave['pos_job'] < 1: $slave['pos_job'] = 1
+  if slave[$target_affinity] > 0: slave['pos_job'] = 1
+  if slave[$target_affinity] < 0: slave['neg_job'] = 1 & gs '$mod_slave_drop', 1
+  if skill_rise > 16: skill_rise = 16
+  if skill_rise < 2: skill_rise = 2
+  if teacher_potential > 0 and diligence > 2: master_tutor_rate += 1
+  IF diligence = 0: 
+   skill_rise = 1 
+   IF slave["virtue"] < 2:
+    slave["virtue"] = 0
+    if slave["sin"] < 1: slave["sin"] = 1     
+    if sententia_veritas = 1: slave["sin"] = 5
+   END
+   else
+    dynamic $virtue_gained_now
+  END
+  IF talent_bonus > 0: 
+   IF slave["mood"] > 0:
+    slave_rate["mood"] += slave["mood"]
+    else
+    slave_rate["mood"] += 1
+   END
+  END
+  master_hygiene_rate += add_master_hygiene
+  slave_rate["hygiene"] += add_slave_hygiene
+  assistant_rate["hygiene"] += add_assistant_hygiene
+  house_mess_rate += add_house_mess
+  dynamic $slave_energy_drop
+  dynamic $assistant_energy_drop
+  dynamic $master_energy_drop
+  dynamic '<<$target_skill>> += skill_rise'
+  dynamic '<<$target_skill_two>> += skill_rise'
+  dynamic $special_part
+ END
+END
+
 !interaction type - personal lesson
 IF $interaction_type = 'master_teaches_slave':
  diligence = complex_diligence
@@ -100,7 +153,7 @@ IF $interaction_type = 'master_teaches_slave':
  teacher_potential = couch_skill - slave_skill
  IF teacher_potential < 1:
   $interaction_type = 'talk'
-  $text[1] = '<<$slave_name>> trained too well, as the best of your own knowledge of the subject. Maybe you should start to develop your own skills...'
+  $text[1] = '<<$slave_name>> trained too well, and has the best of your own knowledge on the subject. Maybe you should start to develop your own skills...'
   txt = 1
   menu_form = 0
   GT 'interaction_screen'
@@ -178,8 +231,9 @@ IF $interaction_type = 'assistant_teaches_slave':
   if diligence < talent_bonus: diligence = talent_bonus 
   skill_rise = tutor_modifier * diligence
   if talent_bonus > 0 and $slave['pos_job'] < 1: $slave['pos_job'] = 1 
-  if skill_rise < 1: skill_rise = 1
   if skill_rise > 16: skill_rise = 16
+  if $target_skill = 'slave_rate["stamina"]': skill_rise = skill_rise/4
+  if skill_rise < 2: skill_rise = 2
   IF diligence = 0: 
    skill_rise = 1 
    IF slave["virtue"] < 2:
@@ -224,8 +278,9 @@ IF  $interaction_type = 'couch_teaches_slave':
  if diligence < talent_bonus: diligence = talent_bonus 
  skill_rise = tutor_modifier * diligence
  if talent_bonus > 0 and $slave['pos_job'] < 1: $slave['pos_job'] = 1 
- if skill_rise < 1: skill_rise = 1
  if skill_rise > 16: skill_rise = 16
+ if $target_skill = 'slave_rate["stamina"]': skill_rise = skill_rise/4
+ if skill_rise < 2: skill_rise = 2
  IF interaction = 1721: 
   skill_rise = slave["energy"] + diligence + talent_bonus
  END
@@ -309,12 +364,13 @@ IF  $interaction_type = 'school_class':
  txt_count = 2
  if diligence > 5: diligence = 5
  if diligence < 0: diligence = 0
- IF assistant_supervise_rule = 0:
-  $text[1] = '   You escorting your slave personally to the Academy of St. Peter and pay for the selected lesson. Good to employ someone else, and laze yourself a few hours.'
-  dynamic $master_energy_drop
+ IF assistant_supervise_rule = 0 or assistant_state = 0:
+  $text[1] = '   You escorted <<$slave_name>> personally to the Academy of St. Peter and paid for the selected lesson. Good to employ someone else, and laze yourself a few hours.'
   else
-  $text[1] = '   Your assistant escorting slave to the Academy of St. Peter and watches there to ensure that she got on the necessary lessons and returned safely back.'  
+  IF assistant_supervise_rule = 1 and assistant_state = 1:
+  $text[1] = '   Your assistant escorted <<$slave_name>> to the Academy of St. Peter and watches there to ensure that she got on the necessary lessons and returned safely back.'  
   dynamic $assistant_energy_drop
+  END
  END
  $text[2] = '  <<$school_end[diligence]>>' 
  tutor_modifier = 4
@@ -324,8 +380,9 @@ IF  $interaction_type = 'school_class':
  if diligence < talent_bonus: diligence = talent_bonus 
  skill_rise = tutor_modifier * diligence
  if talent_bonus > 0 and $slave['pos_job'] < 1: $slave['pos_job'] = 1 
- if skill_rise < 1: skill_rise = 1
  if skill_rise > 16: skill_rise = 16
+ if $target_skill = 'slave_rate["stamina"]': skill_rise = skill_rise/4
+ if skill_rise < 2: skill_rise = 2
  IF interaction = 565: 
   skill_rise = slave["energy"] + diligence + talent_bonus
  END
@@ -462,8 +519,8 @@ IF $interaction_type = 'prise_erotic':
  master_hygiene_rate += add_master_hygiene 
 END
 
-!interaction type - compliment
-!repeat compliment fixed
+!Interaction type - Compliment
+!Repeat compliment fixed and has no penalty - crushboss
 IF $interaction_type = 'compliment':
  $interaction_type = 'talk'
  txt_count = 2
@@ -484,12 +541,14 @@ IF $interaction_type = 'compliment':
  END
  IF slave["passion_fame"] = 1 and $slave_psy_status ! 'broken': 
   slave_rate["mood"] += prise_potence
-  if slave['pos_prise'] < prise_level: slave['pos_prise'] = prise_level
+  slave['pos_prise'] += 2
   $text[2] = '  <<$compliment_plus>>'
  END 
- prise_succes = master_supermacy - already_done_curslave[interaction]
- gain = prise_level - 2
+ prise_succes = master_supermacy
+ gain = prise_level
  if gain < 0: gain = 1
+ if  prise_succes > 0 and prise_potence > 0: slave['neg_no_prise'] = 0
+ if slave['pos_prise'] < prise_level: slave['pos_prise'] = prise_level
  if  prise_succes > 0 and prise_potence > 0 and slave['pos_prise'] < gain: slave['pos_prise'] = gain
  if $special_text ! '': $text[2] = $special_text
  slave["virtue"] = 0
@@ -607,11 +666,6 @@ END
 IF $interaction_type = 'prisoner_torture':
  txt_count = 2
  fear_force += slave["sensitivity"] - 3
- IF slave["compassion"] = 1: 
-  $text[2] = '  <<$compassion_reaction["goodkind"]>>'
-  fear_force = torture_intensity*2
-  gs '$mod_slave_drop', torture_intensity
- END
  IF slave["compassion"] > 0: 
   $text[2] = '  <<$compassion_reaction["goodkind"]>>'
   fear_force = torture_intensity*2

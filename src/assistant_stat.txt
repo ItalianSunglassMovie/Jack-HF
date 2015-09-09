@@ -16,7 +16,7 @@ IF $assistant_info_text = '':
 		if slave_specialisation['artist'] = 1: $spec_list += ', artist'
 		if slave_specialisation['refferent'] = 1: $spec_list += ', assistant'
 		$assistant_info_text = '  [<<$assistant_name>>]
-<div style="font-size: 90%;">  - I checked the specialization of your slave, master. At this moment she meets the requirements for the following roles: <<$spec_list>>. To match a particular profession, slave should have any suitable skill at least at the <<$rating[3]>> level and also not less than her own rank.</div>'
+<div style="font-size: 90%;">  - I checked the specialization of your slave, master. At this moment she meets the requirements for the following roles: <<$spec_list>>. To match a particular profession, slave should have any suitable skill at least at the <<$rating[6]>> level and also not less than her own rank.</div>'
 		IF slave['brand'] = 0:
 			$assistant_info_text = '  [<<$assistant_name>>]
   - You should put on a brand to the slave before she is ready for sale, master. I also noticed that women already having a brand are more inclined to obey, than those which have not yet been branded.'
@@ -52,7 +52,8 @@ slot = 0
   assistant['domina'] = 0
   assistant['executive'] = 1  
  END
-  
+
+gs '$assistant_rank_stats'
 gs 'stats_layout'
 
 *p '<div id = "bookmark_one">Rules</div>'
@@ -61,27 +62,36 @@ gs 'stats_layout'
 *p '<div id = "bookmark_four">Aura</div>'
 *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & $assistant_info_text = '''' & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 
-*p '<div id="left_column">
-<u>SUMMARY</u>
-<<$beauty[assistant["beauty"]]>> 
-<<$stamina[assistant["stamina"]]>> 
-<<$exotic[assistant["exotic"]]>> 
-<<$fat[assistant["fat"]]>> 
-<<$sensitivity[assistant["sensitivity"]]>> 
-<<$style[assistant["style"]]>>
-<<$intellect[assistant["intellect"]]>> 
-<<$temper[assistant["temper"]]>> 
-<<$ego[assistant["ego"]]>> 
-<<$pride[assistant["pride"]]>> 
+GS '$assistant_traits'
+GS '$addon', 'info_box'
 
+*p '<div id="left_column">
+Name: &nbsp;<<$assistant_name>>
+Age: &nbsp;<<$assistant_age_name[assistant["age"]]>>
+Rank: &nbsp;<a href="EXEC: msg $assistant_rating_help"><<$rating[assistant_rating]>></a> &nbsp;&nbsp;Key: &nbsp;&nbsp;<a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1"><img src="content/pic/chart.png"></a><br>
+<u>ATTRIBUTES</u>
+<a href="EXEC: msg $красота_справка & msg $красота_справка_2"><img src="<<$info_box[assistant["beauty"]]>>"></a><a href="EXEC:$info_text = $красота_совет & gt $curloc">&nbsp;<<$beauty[assistant["beauty"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'stamina')
+*nl '<a href="EXEC: msg $здоровье_справка & msg $здоровье_справка_2"><img src="<<$info_box[assistant["stamina"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC:$info_text = $здоровье_совет & gt $curloc">&nbsp;<<$stamina[assistant["stamina"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'sensitivity')
+*nl '<a href="EXEC: msg $чувствительность_справка & msg $чувствительность_справка_2"><img src="<<$info_box[assistant["sensitivity"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $чувствительность_совет & gt $curloc">&nbsp;<<$sensitivity[assistant["sensitivity"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'temper')
+*nl '<a href="EXEC: msg $темперамент_справка & msg $темперамент_справка_2"><img src="<<$info_box[assistant["temper"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $темперамент_совет & gt $curloc">&nbsp;<<$temper[assistant["temper"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'intellect')
+*nl '<a href="EXEC: msg $ум_справка & msg $ум_справка_2"><img src="<<$info_box[assistant["intellect"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $ум_совет & gt $curloc">&nbsp;<<$intellect[assistant["intellect"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'ego')
+*nl '<a href="EXEC: msg $характер_справка & msg $характер_справка_2"><img src="<<$info_box[assistant["ego"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $характер_совет & gt $curloc">&nbsp;<<$ego[assistant["ego"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
+*nl '<a href="EXEC: msg $гордыня_справка & msg $гордыня_справка_2"><img src="<<$info_box_p[assistant["pride"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $гордыня_совет & gt $curloc">&nbsp;<<$pride[assistant["pride"]]>></a>'
+*nl '<a href="EXEC: msg $экзотичность_справка & msg $экзотичность_справка_2"><img src="<<$info_box[assistant["exotic"]]>>"></a> <a href="EXEC: $info_text = $экзотичность_совет & gt $curloc">&nbsp;<<$exotic[assistant["exotic"]]>></a>'
+*nl '<a href="EXEC: msg $жыр_справка & msg $жыр_справка_2"><img src="<<$info_box_f[assistant["fat"]]>>"></a> <a href="EXEC: $info_text = $жыр_совет & gt $curloc">&nbsp;<<$fat[assistant["fat"]]>></a>'
+*nl '<a href="EXEC: msg $стиль_справка & msg $стиль_справка_2"><img src="<<$info_box[assistant["style"]]>>"></a> <a href="EXEC: $info_text = $стиль_совет & gt $curloc">&nbsp;<<$style[assistant["style"]]>></a>'
+*nl '<a href="EXEC: msg $слава_справка & msg $слава_справка_2"><img src="<<$info_box[assistant["fame"]]>>"></a> <a href="EXEC: $info_text = $слава_совет & gt $curloc">&nbsp;<<$girl_fame[assistant["fame"]]>></a><br>
 <u>TRAITS</u>
-<<$assistant_features_list>>
+<font size = 3%><<$assistant_features_list>></font>
 </div>'
 
-!"
-ОСОБЕННОСТИ:
-<<$assistant_features_list>>
-"
+!*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !main tab
 !$assistant_info_text = ''&nbsp'' - info text will reset after switching
@@ -101,18 +111,24 @@ IF assistant_stat_screen = 0:
  *p '<div id="right_rules">
 Maid - 
 Cook - 
+Bath master - 
 Bath slave - 
 Accountant - 
 Supervise slave - 
 Alchemist - 
 Milkmaid - 
-<BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR>
 &nbsp&nbsp&nbsp<a style = "color: #FFD700;" href = "EXEC: dynamic $assistant_purge_rules & gt curloc"><u>Reset rules</u></a>
 </div>'  
 
- if sparks > 50: *p '<div id="left_padding">GROCERIES: <BR><BR><BR><BR><BR><BR><BR><BR>DERIVATIVES:<BR><BR><BR><BR><BR>MEAT:<BR><BR><BR><BR><BR></div>'  
- IF assistant_cleans_rule = 1:
+!Disable Slave identical rule if Assistant identical rule is selected - crushboss
+if assistant_washes_rule = 1 and assistant_state = 1: slave_washes_rule = 0
+if assistant_cleans_rule = 1 and assistant_state = 1: slave_cleans_rule = 0
+if assistant_cooks_rule = 1 and assistant_state = 1: slave_cooks_rule = 0
+if assistant_tentacle_rule = 1 and assistant_state = 1: slave_tentacle_rule = 0
 
+  If sparks > 50: *p '<div id="left_padding">GROCERIES: <BR><BR><BR><BR><BR><BR><BR><BR>DERIVATIVES:<BR><BR><BR><BR><BR>MEAT:<BR><BR><BR><BR><BR></div>'  
+ IF assistant_cleans_rule = 1:
   *p '<div id="chekbox_1r"><a href = "EXEC: assistant_cleans_rule = 0 & $assistant_info_text = $assistant_cleans_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
   *p '<div id="chekbox_1r"><a href = "EXEC: assistant_cleans_rule = 1 & $assistant_info_text = $assistant_cleans_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
@@ -122,32 +138,58 @@ Milkmaid -
   else
   *p '<div id="chekbox_2r"><a href = "EXEC: assistant_cooks_rule = 1 & $assistant_info_text = $assistant_cooks_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END
+ IF kitchen <= 0:
+    *p '<div id="chekbox_2r"><a href = "EXEC: msg $no_kitchen & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>'
+ END
  IF assistant_washes_rule = 1:
-  *p '<div id="chekbox_3r"><a href = "EXEC: assistant_washes_rule = 0 & $assistant_info_text = $assistant_washes_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_3r"><a href = "EXEC: assistant_washes_rule = 0 & $assistant_info_text = $assistant_washes_master_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_3r"><a href = "EXEC: assistant_washes_rule = 1 & $assistant_info_text = $assistant_washes_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
- END     
+  *p '<div id="chekbox_3r"><a href = "EXEC: assistant_washes_rule = 1 & $assistant_info_text = $assistant_washes_master_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF bath <= 0:
+    *p '<div id="chekbox_3r"><a href = "EXEC: msg $no_bath & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>'
+ END
+ IF assistant_washe_slave_rule = 1:
+  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_washe_slave_rule = 0 & $assistant_info_text = $assistant_washe_slave_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  else
+  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_washe_slave_rule = 1 & $assistant_info_text = $assistant_washe_slave_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF slave_state = CONST_INT['slave_exist'] ! 1:
+    *p '<div id="chekbox_4r"><a href = "EXEC: msg $no_slave & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>'
+ END
+ elseif bath <= 0:
+    *p '<div id="chekbox_4r"><a href = "EXEC: msg $no_bath & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>'
+ END
  IF assistant_account_rule = 1:
-  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_account_rule = 0 & $assistant_info_text = $assistant_account_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_account_rule = 0 & $assistant_info_text = $assistant_account_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_4r"><a href = "EXEC: assistant_account_rule = 1 & $assistant_info_text = $assistant_account_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_account_rule = 1 & $assistant_info_text = $assistant_account_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END     
  IF assistant_supervise_rule = 1:
-  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_supervise_rule = 0 & $assistant_info_text = $assistant_supervise_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_supervise_rule = 0 & $assistant_info_text = $assistant_supervise_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_5r"><a href = "EXEC: assistant_supervise_rule = 1 & $assistant_info_text = $assistant_supervise_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
- END     
+  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_supervise_rule = 1 & $assistant_info_text = $assistant_supervise_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF slave_state = CONST_INT['slave_exist'] ! 1:
+    *p '<div id="chekbox_6r"><a href = "EXEC: msg $no_slave & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>'
+ END
  IF assistant_alchemist_rule = 1:
-  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_alchemist_rule = 0 & $assistant_info_text = $assistant_alchemist_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_alchemist_rule = 0 & $assistant_info_text = $assistant_alchemist_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_6r"><a href = "EXEC: assistant_alchemist_rule = 1 & $assistant_info_text = $assistant_alchemist_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
- END   
+  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_alchemist_rule = 1 & $assistant_info_text = $assistant_alchemist_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF lab <= 0:
+   *p '<div id="chekbox_7r"><a href = "EXEC: msg $no_lab & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>'
+ END
  IF assistant_tentacle_rule = 1:
-  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_tentacle_rule = 0 & $assistant_info_text = $assistant_tentacle_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+  *p '<div id="chekbox_8r"><a href = "EXEC: assistant_tentacle_rule = 0 & $assistant_info_text = $assistant_tentacle_rule_abort & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
   else
-  *p '<div id="chekbox_7r"><a href = "EXEC: assistant_tentacle_rule = 1 & $assistant_info_text = $assistant_tentacle_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
- END   
-
+  *p '<div id="chekbox_8r"><a href = "EXEC: assistant_tentacle_rule = 1 & $assistant_info_text = $assistant_tentacle_rule & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+ END
+ IF pet_tentacle <= 0:
+    *p '<div id="chekbox_8r"><a href = "EXEC: msg $no_tentacle & gt curloc"><img src="content\pic\buttons\unactive_button.png"></a></div>'
+ END
+  
  if kitchen >= 0 and sparks > 50: *p '<div id="left_rules">
  - Vegetables
  - Flour and grains
@@ -288,14 +330,15 @@ If assistant_stat_screen = 1:
  *p '<div id = "stat_text"><center>
  <b><a href = "EXEC: msg $charm_help & gt curloc"><<$assistant_charm_stat>></a></b>
  <<$красота[assistant["beauty"]]>> = <<$природная_красота[assistant["base_beauty"]]>> + <<$пластика[assistant["beauty_enchanced"]]>> - (<<$шрамы[assistant["scares"]]>> + <<$синяки[assistant["bruises"]]>>)
- <<$экзотика[assistant["exotic"]]>> = <<$природная_экзотика[assistant["base_exotic"]]>> + <<$slave_tatoo[assistant["tatoo"]]>> + <<$пирсинг[assistant["piercing_count"]]>> + <<$wear[assistant["ex_count"]]>>
- <<$стиль[assistant["style"]]>> = <<$wear[assistant["st_count"]]>> + <<$slave_makeup[assistant["makeup"]]>> + <<$hair_style[assistant["hairstyle"]]>> + <<$мейкап[assistant["makeup_count"]]>> + <<$гигиена[assistant["hygiene"]]>> + <<$грация[assistant["grace_count"]]>></div>
+ <<$экзотика[assistant["exotic"]]>> = <<$природная_экзотика[assistant["base_exotic"]]>> + <<$slave_tatoo[assistant["tatoo"]]>> + <<$пирсинг[assistant["piercing_count"]]>> + <<$wear_ex[assistant["ex_count"]]>>
+ <<$стиль[assistant["style"]]>> = <<$wear_st[assistant["st_count"]]>> + <<$slave_makeup[assistant["makeup"]]>> + <<$hair_style[assistant["hairstyle"]]>> + <<$мейкап[assistant["makeup_count"]]>> + <<$гигиена[assistant["hygiene"]]>> + <<$грация[assistant["grace_count"]]>></div>
  </div>'
  *p '<div id = "upper_text">
 <<$slave_boobs[assistant["boobs"]]>>
 <<$slave_lactation[assistant["lactation"]]>>
 <<$niple_piercing[assistant["niple_piercing"]]>>
 <<$boobs_modification[assistant["breast_enchanced"]]>>
+<<$assistant_age_name[assistant["age"]]>>
 </div>'
  *p '<div id = "lower_text">
 <<$virginity[assistant_virginity]>>
@@ -321,9 +364,9 @@ IF assistant_stat_screen = 2:
     *p '<div id = "center_text_column_1">'
         *p '<div style = "text-align: center;"><u>ASSISTANT EQUIPMENT</u></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 40 & dynamic $assistant_armor_list"><u>Armour:</u> <<$название_предмета[$assistant["armor"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 41 & dynamic $assistant_wpn_list_large"><u>Shoulder holster:</u> <<$название_предмета[$assistant["back_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 42 & dynamic $assistant_wpn_list"><u>Left hand:</u> <<$название_предмета[$assistant["left_wpn"]]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 43 & dynamic $assistant_wpn_list_2"><u>Right hand:</u> <<$название_предмета[$assistant["right_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 41 & dynamic $assistant_wpn_list_large"><u>Shoulder Holster:</u> <<$название_предмета[$assistant["back_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 42 & dynamic $assistant_wpn_list"><u>Left Hand:</u> <<$название_предмета[$assistant["left_wpn"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 43 & dynamic $assistant_wpn_list_2"><u>Right Hand:</u> <<$название_предмета[$assistant["right_wpn"]]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 44 & dynamic $assistant_cloth_list"><u>Clothes:</u> <<$item_name[$assistant["cloth"]]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 45 & dynamic $assistant_head_list"><u>Headgear:</u> <<$item_name[$assistant["headband"]]>></a></div>'
         *p '<br>'
@@ -385,7 +428,7 @@ IF slave_state = CONST_INT['slave_exist']:
 <<$slave_xenophily[assistant["xenophily"]]>>
 </div>'
 
- IF house_mess > 0 and assistant["service"] > slave["service"]:
+ IF assistant["service"] > slave["service"]:
   *p '<div id="study_1"><a href = "EXEC: interaction = 4111 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
   else
   *p '<div id="study_1"><img src = "content/pic/buttons/study_gray.png"></div>'  
@@ -405,7 +448,7 @@ IF slave_state = CONST_INT['slave_exist']:
   else
   *p '<div id="study_4"><img src = "content/pic/buttons/study_gray.png"></div>'  
  END
- IF assistant["gladiatrix"] > slave["gladiatrix"]:  
+ IF slave["stamina"] >= 3 and assistant["gladiatrix"] > slave["gladiatrix"]:  
   *p '<div id="study_5"><a href = "EXEC: interaction = 4123 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
   else
   *p '<div id="study_5"><img src = "content/pic/buttons/study_gray.png"></div>'  
@@ -420,7 +463,7 @@ IF slave_state = CONST_INT['slave_exist']:
   else
   *p '<div id="study_7"><img src = "content/pic/buttons/study_gray.png"></div>'  
  END
- IF assistant["callisthenics"] > slave["callisthenics"]:  
+ IF slave["stamina"] >= 3 and assistant["callisthenics"] > slave["callisthenics"]:  
   *p '<div id="study_8"><a href = "EXEC: interaction = 4122 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
   else
   *p '<div id="study_8"><img src = "content/pic/buttons/study_gray.png"></div>'  
@@ -435,12 +478,12 @@ IF slave_state = CONST_INT['slave_exist']:
   else
   *p '<div id="study_10"><img src = "content/pic/buttons/study_gray.png"></div>'  
  END  
- IF assistant["pet"] > slave["pet"]: 
+ IF slave["stamina"] >= 3 and assistant["pet"] > slave["pet"]: 
   *p '<div id="study_11"><a href = "EXEC: interaction = 4141 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
   else
   *p '<div id="study_11"><img src = "content/pic/buttons/study_gray.png"></div>'  
  END    
- IF slave["stamina"] > 1 and assistant["dressage"] > slave["dressage"]:   
+ IF slave["stamina"] >= 3 and assistant["dressage"] > slave["dressage"]:   
   *p '<div id="study_12"><a href = "EXEC: interaction = 4143 & gt ''interaction''"><img src = "content/pic/buttons/study_button.png"></a></div>'
   else
   *p '<div id="study_12"><img src = "content/pic/buttons/study_gray.png"></div>'  
@@ -474,6 +517,9 @@ IF slave_state = CONST_INT['slave_exist']:
 END
 
 *p '<div id="info"><<$assistant_info_text>></div>'
+
+!Used for debugging variables I need to track - crushboss
+!msg '<<$assistant_ava>>.jpg'
 
 --- assistant_stat ---------------------------------
 

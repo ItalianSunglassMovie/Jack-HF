@@ -1,0 +1,34 @@
+# stock_to_slave_testing
+!Slave Equipped Armor, Weapons, and Cloth
+$slave["wpn"] = 'катана'
+$slave["scnd"] = ''
+$slave["armor"] = 'плейт'
+$slave["right_wpn"] = 'катана'
+$slave["left_wpn"] = 'кинжал'
+$slave["back_wpn"] = 'фламберг'
+$slave["cloth"] = 'leather_corset'
+
+!Slave Rules
+slave_sleep_condition = 1
+slave_food_type = 2
+slave_eats_remains = 1
+slave_food_portion = 4
+slave_washes_rule = 1
+blowjob_rule = 1
+v_balls_rule = 1
+force_rules = 1
+if pet_tentacle > 0 and assistant_state ! 1: stock_tentacle_rule = 1
+
+!Slave Misc Attributes
+if slave["age"] ! CONST_INT['loli_age']: slave['fertility'] = -1
+slave["fertility_revealed"] = 1
+if slave['arena_level'] < 4: slave['arena_level'] = 4
+if race_win_ratio < 4: race_win_ratio = 4
+slave['pos_slave_winner'] = slave['sensitivity']
+if slave['has_ride_win'] < 1: slave['has_ride_win'] = 1
+slave_rate['fame'] += 15
+if cheat_j = 1: slave_rate['fame'] += 25
+!slave['brand'] = 2
+
+--- stock_to_slave_testing ---------------------------------
+

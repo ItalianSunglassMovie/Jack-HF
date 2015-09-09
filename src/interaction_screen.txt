@@ -6,7 +6,10 @@ npc = 0
 *p '<div id = "text"><<$text[txt]>></div>'
 
 IF $interaction_type = 'talk':
- if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+npc = 1
+$npc_id = '<<$slave_name>>'
+! if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
 END
 
 IF $interaction_type = 'talk_assistant':
@@ -27,7 +30,7 @@ END
 IF $interaction_type = 'special_talk':
  npc = 1
 END
-IF interaction = 5416:
+IF interaction = 5416 or interaction = 5418 or interaction = menu_threesome or interaction = menu_threesome_noassistant:
  if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$lesbian[slave_type]>>.gif"></div>'
 END
 

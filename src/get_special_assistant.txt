@@ -17,6 +17,12 @@ assistant["ego"] = seed_ego[assistant_type]
 assistant["pride"] = seed_pride[assistant_type]
 assistant["intellect"] = seed_intellect[assistant_type]
 
+assistant["fat"] = seed_fat[assistant_type]
+assistant["exotic"] = seed_exotic[assistant_type]
+assistant_rate['fame'] = seed_fame_rate[assistant_type]
+assistant['fertility'] = seed_fertility[assistant_type]
+assistant["fertility_revealed"] = seed_fertility_revealed[assistant_type]
+
 assistant["custom"] = seed_custom[assistant_type]
 assistant["moral"] = seed_moral[assistant_type]
 assistant["instinct"] = seed_instinct[assistant_type]
@@ -47,7 +53,7 @@ assistant["sub_asslik"] = seed_sub_asslik[assistant_type]
 assistant["sub_vaginal"] = seed_sub_vaginal[assistant_type]
 assistant["sub_anal"] = seed_sub_anal[assistant_type]
 assistant["sub_fisting"] = seed_sub_fisting[assistant_type]
-assistant["anal_stretch"]= seed_anal_stretch[assistant_type]
+assistant["anal_stretch"] = seed_anal_stretch[assistant_type]
 assistant["sub_seduce"] = seed_sub_seduce[assistant_type]
 assistant["sub_masturbation"] = seed_sub_masturbation[assistant_type]
 assistant["sub_dildo"] = seed_sub_dildo[assistant_type]
@@ -70,16 +76,69 @@ assistant["sub_tentacles"] = seed_sub_tentacles[assistant_type]
 assistant["sub_arachnidspider"] = seed_sub_arachnidSpider[assistant_type]
 assistant["sub_polypusvermin"] = seed_sub_polypusvermin[assistant_type]
 
-assistant["fat"] = seed_fat[assistant_type]
-assistant["metabolism"] = 3
+IF seed_metabolism > 0:
+ assistant["metabolism"] = seed_metabolism[assistant_type]
+else
+ assistant["metabolism"] = 3
+END
 
-assistant["scares"] = assistant_scares[assistant_type]
-assistant_virginity = seed_virginity[assistant_type] 
+assistant["scares"] = seed_assistant_scares[assistant_type]
+assistant["bruises"] = seed_assistant_bruises[assistant_type]
 
-!traits
-assistant["boobs"] = seed_boobs[assistant_type]
-assistant_virginity = seed_virginity[assistant_type]
-display_psy_status = 1
+!Trait Affinities
+assistant["sport_affinity"] = seed_sport_affinity[assistant_type]
+assistant["expression_affinity"] = seed_expression_affinity[assistant_type]
+assistant["pet_affinity"] = seed_pet_affinity[assistant_type]
+assistant["dressage_affinity"] = seed_dressage_affinity[assistant_type] 
+assistant["nurse_affinity"] = seed_nurse_affinity[assistant_type]
+assistant["service_affinity"] = seed_service_affinity[assistant_type]
+assistant["cook_affinity"] = seed_cook_affinity[assistant_type]
+assistant["gladiatrix_affinity"] = seed_gladiatrix_affinity[assistant_type]
+assistant["enchanter_affinity"] = seed_enchanter_affinity[assistant_type]
+assistant["vocal_affinity"] = seed_vocal_affinity[assistant_type]
+assistant["music_affinity"] = seed_music_affinity[assistant_type]
+assistant["callisthenics_affinity"] = seed_callisthenics_affinity[assistant_type]
+assistant["secretary_affinity"] = seed_secretary_affinity[assistant_type]  
+assistant["sport_affinity_revealed"] = seed_sport_affinity_revealed[assistant_type]
+assistant["expression_affinity_revealed"] = seed_expression_affinity_revealed[assistant_type]
+assistant["pet_affinity_revealed"] = seed_pet_affinity_revealed[assistant_type]
+assistant["dressage_affinity_revealed"] = seed_dressage_affinity_revealed[assistant_type] 
+assistant["nurse_affinity_revealed"] = seed_nurse_affinity_revealed[assistant_type]
+assistant["service_affinity_revealed"] = seed_service_affinity_revealed[assistant_type]
+assistant["cook_affinity_revealed"] = seed_cook_affinity_revealed[assistant_type]
+assistant["gladiatrix_affinity_revealed"] = seed_gladiatrix_affinity_revealed[assistant_type]
+assistant["enchanter_affinity_revealed"] = seed_enchanter_affinity_revealed[assistant_type]
+assistant["vocal_affinity_revealed"] = seed_vocal_affinity_revealed[assistant_type]
+assistant["music_affinity_revealed"] = seed_music_affinity_revealed[assistant_type]
+assistant["callisthenics_affinity_revealed"] = seed_callisthenics_affinity_revealed[assistant_type]
+assistant["secretary_affinity_revealed"] = seed_secretary_affinity_revealed[assistant_type]
+
+!Traits Specials
+assistant["memory"] = seed_memory[assistant_type]
+assistant["meekness"] = seed_meekness[assistant_type]
+assistant["selfesteem"] = seed_selfesteem[assistant_type]
+assistant["voice"] = seed_voice[assistant_type]
+assistant["compassion"] = seed_compassion[assistant_type]
+assistant["courage"] = seed_courage[assistant_type]
+assistant["grace"] = seed_grace[assistant_type]
+assistant["nymphomania"] = seed_nymphomania[assistant_type]
+assistant["exhibitionism"] = seed_exhibitionism[assistant_type]
+assistant["preversion"] = seed_preversion[assistant_type]
+assistant["masohism"] = seed_masohism[assistant_type]
+assistant["homosexualism"] = seed_homosexualism[assistant_type]
+assistant["memory_revealed"] = seed_memory_revealed[assistant_type]
+assistant["meekness_revealed"] = seed_meekness_revealed[assistant_type]
+assistant["selfesteem_revealed"] = seed_selfesteem_revealed[assistant_type]
+assistant["voice_revealed"] = seed_voice_revealed[assistant_type]
+assistant["compassion_revealed"] = seed_compassion_revealed[assistant_type]
+assistant["courage_revealed"] = seed_courage_revealed[assistant_type]
+assistant["grace_revealed"] = seed_grace_revealed[assistant_type]
+assistant["nymphomania_revealed"] = seed_nymphomania_revealed[assistant_type]
+assistant["exhibitionism_revealed"] = seed_exhibitionism_revealed[assistant_type]
+assistant["preversion_revealed"] = seed_preversion_revealed[assistant_type]
+assistant["masohism_revealed"] = seed_masohism_revealed[assistant_type]
+assistant["homosexualism_revealed"] = seed_homosexualism_revealed[assistant_type]
+assistant["metabolism_revealed"] = seed_metabolism_revealed[assistant_type]
 
 !background
 $assistant_world_description = $stock_world_description[assistant_type]
@@ -87,26 +146,33 @@ $assistant_family_description = $stock_family_description[assistant_type]
 $assistant_occupation_description = $stock_occupation_description[assistant_type]
 $assistant_name = $seed_name[assistant_type]
 
+!Illness and Disease
 assistant['ill'] = seed_ill[assistant_type]
 assistant['parasite'] = seed_parasite[assistant_type]
+
+!Anatomy
+assistant["boobs"] = seed_boobs[assistant_type]
+assistant_virginity = seed_virginity[assistant_type]
+display_psy_status = 1
 $assistant['boobs_img'] = $seed_boobs_img[assistant_type]
 $assistant['pussy_img'] = $seed_pussy_img[assistant_type]
-assistant['brand'] = 1
+assistant['brand'] = 2
 
 !stats alignment
-assistant["energy"] = 3
+assistant["energy"] = 5
 assistant["hygiene"] = 1
-assistant["exotic"] = seed_exotic[assistant_type]
 assistant["bcheck"] = 0
 
 assistant["neg_slave"] = 0
 assistant['cycle_day'] = RAND (1,28)
 assistant["calories"] = 3
 
+!Images
 $assistant['fullimage'] = $fullimage[assistant_type]
 $assistant['ava'] = $seed_ava[assistant_type]
 $assistant['ava_gray'] = $seed_ava_gray[assistant_type]
 $assistant['ava_clear'] = $seed_ava_clear[assistant_type]
+$assistant_ava = $seed_ava_clear[assistant_type]
 
 !equip
 $assistant["wpn"] = 'кинжал'
@@ -117,29 +183,37 @@ $assistant["back_wpn"] = ''
 $assistant["left_wpn"] = ''
 $assistant["right_wpn"] = ''
 $assistant["arm_wpn"] = ''
-$assistant["leg_wpn"] = 'кинжал'
+$assistant["leg_wpn"] = ''
 
 $assistant["cloth"] = 'leather_corset'
 
+assistant_state = 1
 assistant['newness'] = 1
 
-if slave["bruises"] = 1: slave_rate["bruises"] = 10
-if slave["bruises"] = 2: slave_rate["bruises"] = 20
-if slave["bruises"] = 3: slave_rate["bruises"] = 40
-if slave["bruises"] = 4: slave_rate["bruises"] = 80
-if slave["bruises"] = 5: slave_rate["bruises"] = 160
+!Testing Code - Disable for release - crushboss
+if cheat_i = 1: gs 'assistant_testing'
+!End of Testing Code
 
-if slave["scares"] = 1: slave_rate["scares"] = 10
-if slave["scares"] = 2: slave_rate["scares"] = 20
-if slave["scares"] = 3: slave_rate["scares"] = 40
-if slave["scares"] = 4: slave_rate["scares"] = 80
-if slave["scares"] = 5: slave_rate["scares"] = 160
+if assistant["bruises"] = 0: assistant_rate["bruises"] = 0
+if assistant["bruises"] = 1: assistant_rate["bruises"] = 10
+if assistant["bruises"] = 2: assistant_rate["bruises"] = 20
+if assistant["bruises"] = 3: assistant_rate["bruises"] = 40
+if assistant["bruises"] = 4: assistant_rate["bruises"] = 80
+if assistant["bruises"] = 5: assistant_rate["bruises"] = 160
 
-if slave["hygiene"] = 1: slave_rate["hygiene"] = 10
-if slave["hygiene"] = 2: slave_rate["hygiene"] = 20
-if slave["hygiene"] = 3: slave_rate["hygiene"] = 40
-if slave["hygiene"] = 4: slave_rate["hygiene"] = 80
-if slave["hygiene"] = 5: slave_rate["hygiene"] = 160
+if assistant["scares"] = 0: assistant_rate["scares"] = 0
+if assistant["scares"] = 1: assistant_rate["scares"] = 10
+if assistant["scares"] = 2: assistant_rate["scares"] = 20
+if assistant["scares"] = 3: assistant_rate["scares"] = 40
+if assistant["scares"] = 4: assistant_rate["scares"] = 80
+if assistant["scares"] = 5: assistant_rate["scares"] = 160
+
+if assistant["hygiene"] = 0: assistant_rate["hygiene"] = 0
+if assistant["hygiene"] = 1: assistant_rate["hygiene"] = 10
+if assistant["hygiene"] = 2: assistant_rate["hygiene"] = 20
+if assistant["hygiene"] = 3: assistant_rate["hygiene"] = 40
+if assistant["hygiene"] = 4: assistant_rate["hygiene"] = 80
+if assistant["hygiene"] = 5: assistant_rate["hygiene"] = 160
 
 IF assistant["bcheck"] = 0:
  assistant["bcheck"] = 1
@@ -154,6 +228,16 @@ IF assistant["bcheck"] = 0:
  if assistant_rate["beauty"] >= 80: assistant["base_beauty"] = 4
  if assistant_rate["beauty"] >= 160: assistant["base_beauty"] = 5
 END
+
+!For future use so seed_exotic can be used in the slave files - crushboss
+if assistant["exotic"] = 0: assistant_rate["exotic"] = 0
+if assistant["exotic"] = 1: assistant_rate["exotic"] = 10
+if assistant["exotic"] = 2: assistant_rate["exotic"] = 20
+if assistant["exotic"] = 3: assistant_rate["exotic"] = 40
+if assistant["exotic"] = 4: assistant_rate["exotic"] = 80
+if assistant["exotic"] = 5: assistant_rate["exotic"] = 160
+
+assistant["base_exotic"] = assistant["exotic"]
 
 gs '#txt'
 gs '#txt_2'

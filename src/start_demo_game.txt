@@ -6,7 +6,7 @@ day = 1
 decade = 0
 decadecount = 1
 ride_count = 1
-auction_count = 9
+auction_count = 7
 gladi_count = 4
 
 bath = 1

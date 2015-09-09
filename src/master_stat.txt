@@ -18,14 +18,6 @@ IF exam_in_progress = 1:
  *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 END
 
-!'
- IF slave["stamina"] > 1:
-  $middle_text_list += {<a href = 'EXEC: interaction = 1221 & gt "interaction"'>Гимнастика<BR></a>}
-  else
-  $middle_text_list += '<font color="#C0C0C0">Гимнастика<BR></font>'
- END
-'
-
 !Формируем список на обучение
 $left_text_list = ''
 $middle_text_list = '' 
@@ -33,16 +25,16 @@ $right_text_list = ''
  
  if kitchen > 0: $left_text_list += '<u>CRYOSTORE</u> [<<frige_items>>/<<estate_size[$estate]>>]:
 Vegetables х<<frige["vegetables"]>>
-Flour and grains х<<frige["flower"]>>
-Herbs and spices х<<frige["spice"]>>
-Cheese and butter х<<frige["cheese"]>>
+Flour and Grains х<<frige["flower"]>>
+Herbs and Spices х<<frige["spice"]>>
+Cheese and Butter х<<frige["cheese"]>>
 Alcohol х<<frige["alcohol"]>>
 Eggs х<<frige["eggs"]>>
 Milk х<<frige["milk"]>>
 Cream х<<frige["cream"]>>
-Chopped meat х<<frige["mince"]>>
+Chopped Meat х<<frige["mince"]>>
 Tenderloin х<<frige["meat"]>>
-Virgin meat х<<frige["virgin_meat"]>><br>'
+Virgin Meat х<<frige["virgin_meat"]>><br>'
 if spawn_semen > 0: $left_text_list += 'Spawn''s semen x<<spawn_semen>>'
 
 IF lab > 0: 
@@ -79,7 +71,7 @@ Water of Lethe x<<вода_леты>>
 ' 
 END
 
-$right_text_list += '<u>HOUSE</u>[<<house_items>>/<<estate_size[$estate]>>]:
+$right_text_list += '<u>HOUSE</u> [<<house_items>>/<<estate_size[$estate]>>]:
 <<$furniture_list>><br>'
 
 !STORAGE TAB
@@ -99,7 +91,8 @@ If master_stat_screen = 0:
 END
 
 *p '<div id="left_column">
-<u>CHARACTERISTICS</u>
+Slaver: &nbsp;<<$master_name>><br>
+<u>CHARACTERISTICS</u>&nbsp;<a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1"><img src="content/pic/chart.png"></a>
 <<$master_wounds[master_wounds]>>
 <a href="EXEC: msg $strength_chart & $info_text = $strength_help & gt $curloc"><<$master_str[master_str]>></a>
 <a href="EXEC: msg $charisma_chart & $info_text = $charisma_help & gt $curloc"><<$master_cha[master_cha]>></a>
@@ -109,7 +102,6 @@ END
 <a href="EXEC: msg $wealth_chart & $info_text = $wealth_help & gt $curloc"><<$master_wealth[master_wealth]>></a>
 <a href="EXEC: msg $hygiene_chart & $info_text = $hygiene_help & gt $curloc"><<$boy_hygiene[master_hygiene]>></a>
 <a href="EXEC: msg $mood_chart & $info_text = $mood_help & gt $curloc"><<$boy_mood[master_mood_plus]>></a>
-
 </div>'
 
 *p '<div id="right_column">
@@ -132,6 +124,7 @@ END
 <<$master_fetish[master_fetish]>> 
 </div>'
 
+!*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !OBJECTIVES TAB
 IF master_stat_screen = 1:
@@ -163,11 +156,11 @@ If master_stat_screen = 2:
     *p '<div id = "center_text_column_1">'
         *p '<div style = "text-align: center;"><u>MY EQUIPMENT</u></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 1 & dynamic $master_armor_list"><u>Armour:</u> <<$название_предмета[$master_armor]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 2 & dynamic $master_wpn_list_large"><u>Shoulder holster:</u> <<$название_предмета[$master_back_wpn]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 3 & dynamic $master_wpn_list"><u>Left hand:</u> <<$название_предмета[$master_left_wpn]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 4 & dynamic $master_wpn_list_2"><u>Right hand:</u> <<$название_предмета[$master_right_wpn]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 5 & dynamic $master_wpn_list_small"><u>Sleeve holster:</u> <<$название_предмета[$master_arm_wpn]>></a></div>'
-        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 6 & dynamic $master_wpn_list_small_2"><u>Boot holster:</u> <<$название_предмета[$master_leg_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 2 & dynamic $master_wpn_list_large"><u>Shoulder Holster:</u> <<$название_предмета[$master_back_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 3 & dynamic $master_wpn_list"><u>Left Hand:</u> <<$название_предмета[$master_left_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 4 & dynamic $master_wpn_list_2"><u>Right Hand:</u> <<$название_предмета[$master_right_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 5 & dynamic $master_wpn_list_small"><u>Sleeve Holster:</u> <<$название_предмета[$master_arm_wpn]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 6 & dynamic $master_wpn_list_small_2"><u>Boot Holster:</u> <<$название_предмета[$master_leg_wpn]>></a></div>'
         *p '<br>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 7 & dynamic $master_cloth_list"><u>Clothes:</u> <<$item_name[$master_cloth]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 8 & dynamic $master_head_list"><u>Headgear:</u> <<$item_name[$master_head_gear]>></a></div>'
@@ -197,5 +190,8 @@ END
 
 *p '<div id="info"><<$info_text>></div>'
 
+!Debug - Testing Variables - crushboss
+!msg '<<master_fighter_rate>>'
+!msg '<<tentacle_hp>>'
 --- master_stat ---------------------------------
 

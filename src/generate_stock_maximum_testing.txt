@@ -1,0 +1,155 @@
+# generate_stock_maximum_testing
+!Temporary code for testing - crushboss
+
+!Slave Attributes and Skills
+stock["fat"] = RAND (1,2)
+stock["beauty"] = 5
+stock["sub_vaginal"] = 5
+stock["sub_fisting"] = 5
+stock["sub_threesome"] = 5
+stock["sub_dp"] = 5
+stock["sub_tp"] = 5
+stock["sub_gangbang"] = 5
+stock["sub_zoosex"] = 5
+stock["sub_bestiality"] = 5
+stock["sub_horse"] = 5
+stock["sub_tentacles"] = 5
+stock["sub_arachnidspider"] = 5
+stock["sub_polypusvermin"] = 5
+stock["sub_hug"] = 5
+stock["sub_kiss"] = 5
+stock["sub_bj"] = 5
+stock["sub_vaginal"] = 5
+stock["sub_anal"] = 5
+stock["sub_exhibit"] = 5
+stock["sub_humiliation"] = 5
+stock["sub_hj"] = 5
+stock["sub_fj"] = 5
+stock["sub_pazuri"] = 5
+stock["sub_thongue"] = 5
+stock["sub_dt"] = 5
+stock["sub_asslik"] = 5
+stock["anal_stretch"] = stock["sub_anal"]
+if stock["anal_stretch"] > 5: stock["anal_stretch"] = 5
+stock["sub_seduce"] = 5
+stock["sub_masturbation"] = 5
+stock["sub_dildo"] = 5
+stock["sub_enema"] = 5
+stock["sub_mazo"] = 5
+stock["sub_selfpain"] = 5
+stock["sub_piss"] = 5
+stock["sub_kopro"] = 5
+stock["sub_bukake"] = 5
+stock["stamina"] = 5
+stock["sensitivity"] = 5
+stock["temper"] = 5
+stock["ego"] = 5
+stock["pride"] = 0
+stock["intellect"] = 5
+stock["service"] = 5
+stock["expression"] = 5
+stock["secretary"] = 5
+stock["callisthenics"] = 5
+stock["gladiatrix"] = 5
+stock["cook"] = 5
+stock["dressage"] = 5
+stock["pet"] = 5
+stock["nurse"] = 5
+stock["enchanter"] = 5
+stock["vocal"] = 5
+stock["music"] = 5
+stock["custom"] = 5
+stock["moral"] = 5
+stock["rational"] = 5
+stock["instinct"] = 5
+stock["exotic"] = 5
+stock["energy"] = 5
+stock["bruises"] = 0
+stock["scares"] = 0
+stock["fear"] = 0
+stock["angst"] = 0
+stock["spoil"] = 0
+stock["arousal"] = 0
+stock["hygiene"] = 0
+stock['ill'] = 0
+stock['issues'] = 0
+
+!Slave Piercings
+stock["niple_piercing"] = 1
+stock["clit_piercing"] = 1
+stock["ear_piercing"] = 1
+stock["thongue_piercing"] = 1
+stock["belly_piercing"] = 1
+stock["nosdril_piercing"] = 1
+stock["nose_piercing"] = 1
+stock["full_piercing"] = 1
+stock["piercings"] = 7
+stock["piercing_count"] = 4
+
+!Slave Clothing Inventory
+stock_inventory['common_apron'] = 1
+stock_inventory['maid_dress'] = 1
+stock_inventory['nurse_dress'] = 1
+stock_inventory['enchanter_robe'] = 1
+stock_inventory['leotard'] = 1
+stock_inventory['chainmail_bikini'] = 1
+stock_inventory['laced_underwear'] = 1
+stock_inventory['bellydance'] = 1
+stock_inventory['leather_corset'] = 1
+stock_inventory['anal_tail'] = 1
+stock_inventory['exotic_wig'] = 1
+stock_inventory['pony_plume'] = 1
+stock_inventory['incrusted_earrings'] = 4
+stock_inventory['golden_collar'] = 1
+stock_inventory['leather_gloves'] = 1
+stock_inventory['ponygirl_harness'] = 1
+stock_inventory['nipple_chain'] = 1
+stock_inventory['high_heels'] = 1
+stock_inventory['high_boots'] = 1
+stock_inventory['hoofed_boots'] = 1
+stock_inventory['incrusted_ring'] = 4
+
+!Slave Makeup and Tattoos
+stock["makeup"] = 3
+stock["fiend_tattoo"] = 1
+stock["tatoo"] = 5
+stock["manicure"] = 5
+stock["parfume"] = 1
+stock["hygiene"] = 0
+stock_rate["hygiene"] = 0
+stock["epilation"] = 12
+stock["hairstyle"] = 7
+stock["pos_gentle"] = 2
+stock['pos_slave_clean'] = 1
+
+!Slave Equipped Gear
+$stock["earrings"] = 'incrusted_earrings'
+$stock["collar"] = 'golden_collar'
+$stock["headband"] = 'exotic_wig'
+$stock["gloves"] = 'leather_gloves'
+$stock["nipplerings"] = 'nipple_chain'
+$stock["clitring"] = 'incrusted_earrings'
+$stock["boots"] = 'high_boots'
+$stock["ring_left"] = 'incrusted_ring'
+$stock["ring_right"] = 'incrusted_ring'
+
+!Slave Rules
+stock_sleep_condition = 1
+stock_food_type = 2
+stock_eats_remains = 1
+stock_food_portion = 4
+stock_washes_rule = 1
+blowjob_rule = 1
+v_balls_rule = 1
+force_rules = 1
+if pet_tentacle > 0 and assistant_state ! 1: stock_tentacle_rule = 1
+
+!Misc
+stock['brand'] = 3
+
+!Pet Fiend
+if pet_tentacle < 1: pet_tentacle = 1
+tentacle_size = 4
+
+--- generate_stock_maximum_testing ---------------------------------
+

@@ -54,7 +54,7 @@ END
 IF interaction = 1114:
  $text[1] = $no_like
  if slave['obedience'] > 3: $text[1] = $no_like_gentle 
- IF slave["sport_affinity"] = 2:
+ IF slave["sport_affinity"] > 0:
   $text[1] = $sport_like
  END  
  IF slave["expression_affinity"] > 0:

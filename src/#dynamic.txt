@@ -125,6 +125,11 @@ $get_frige_space = {
     frige_space = estate_size[$estate] - frige_items
 }
 
+$get_lab_space = {
+	lab_items = lab_store["slime"] + lab_store["kanabis"] + lab_store["koffe"] + lab_store["meth"] + lab_store["opium"] + вакхический_нектар + тонизируюзщий_эликсир + целительный_бальзам + афродизиак + мощный_афодизиак + приворотное_зелье + вода_леты
+	lab_space = estate_size[$estate] - lab_items
+}
+	
 $slave_pass_out = {
 IF slave_state ! CONST_INT['no_slave']:
  if slave["energy"] = -5: slave_state = CONST_INT['slave_faint']
@@ -133,7 +138,7 @@ IF slave_state ! CONST_INT['no_slave']:
   else
   if slave["energy"] > -5: slave_state = CONST_INT['slave_exist']
  END
- IF slave["stamina"] = 0 and slave_rate["stamina"] < 0 and slave['starvation'] > 50: 
+ IF slave["stamina"] = 0 and slave_rate["stamina"] <= 0 and slave['starvation'] > 50: 
   slave_state = CONST_INT['no_slave']
   master_mood['neg_slave_starved'] = 1
   if exam_in_progress ! 1: msg 'Your slave died from starvation. You sold her body to the butcher for 5 sparks.'
@@ -158,7 +163,7 @@ IF prisoner_state ! 0:
   else
   if prisoner["energy"] > -5: prisoner_state = 1
  END
- IF prisoner["stamina"] = 0 and prisoner_rate["stamina"] < 0 and prisoner['starvation'] > 50:
+ IF prisoner["stamina"] = 0 and prisoner_rate["stamina"] <= 0 and prisoner['starvation'] > 50:
   prisoner_state = 0
   msg 'Your prisoner died from starvation, forgotten in dungeon cage. You sold her body to the butcher for 5 sparks.'
   sparks += 5
@@ -345,6 +350,7 @@ IF orgasm_prohibited = 0:
   sin_gained = max (1, slave["moral"])
   if sin_gained > 5: sin_gained = 5
   slave['neg_horny'] = 0
+  slave['pos_orgasm'] += 1
   IF sin_gained >= slave["virtue"]:
    slave["virtue"] = 0
    if sin_gained > slave["sin"]: slave["sin"] = sin_gained
@@ -563,7 +569,6 @@ $sex_diligence = {
  END
 }
 
-!TODO: strange stamina gain
 $slave_energy_drop = {
 slave["energy"] -= 1
 if slave["energy"] < -5: slave["energy"] = -5
@@ -589,10 +594,9 @@ IF master_excitement > 0:
  if ejaculation_intensity > master_mood['pos_statisfied']: master_mood['pos_statisfied'] = ejaculation_intensity
 END
 master_excitement -= ejaculation_intensity
-IF master_excitement > 0: master_libido += ejaculation_intensity
-IF master_excitement < 0: master_libido -= 1
+IF master_excitement > 0: master_libido_rate += ejaculation_intensity*5
+IF master_excitement < 0: master_libido_rate -= 15
 if master_excitement < -5: master_excitement = -5
-if master_excitement < 0: dynamic $master_energy_drop
 }
 
 $house_cleaning = {
@@ -604,12 +608,15 @@ $house_cleaning = {
     if house_mess = 5: house_mess_rate = 160
 }
 
+!Strange stamina gain fixed - added damage = 0 since the variable kept building and never reset - crushboss
 $slave_damaged = {
+damage = 0
 damage += slave["sensitivity"] + slave["hygiene"] - slave["stamina"]
 slave_rate["stamina"] -= damage
 if damage < 0: damage = 0
 if bruising = 1: slave_rate["bruises"] += damage*3
 if scarification = 1: slave_rate["scares"] += damage
+damage = 0
 }
 
 $slave_fights_back = {
@@ -640,6 +647,7 @@ slave["beaten"] = 1
 slave['beaten_ever'] = 1
 slave['neg_forced'] = 1
 if damage > 0: gs '$mod_slave_drop', damage
+damage = 0
 }
 
 
@@ -1007,7 +1015,7 @@ if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''сти
 if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_3_change">Brass Knuckles [<<кастет>>]</a>'
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_3_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_3_change">Stunner [<<глушилка>>]</a>'
-if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_3_change">Butcher''s cleaver [<<тесак>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_3_change">Butcher''s Cleaver [<<тесак>>]</a>'
 if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_3_change">Sturdy Shield [<<щит>>]</a>'
 gt curloc
 }
@@ -1031,7 +1039,7 @@ if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''сти
 if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_4_change">Brass Knuckles [<<кастет>>]</a>'
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_4_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_4_change">Stunner [<<глушилка>>]</a>'
-if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_4_change">Butcher''s cleaver [<<тесак>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_4_change">Butcher''s Cleaver [<<тесак>>]</a>'
 if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_4_change">Sturdy Shield [<<щит>>]</a>'
 gt curloc
 }
@@ -1044,7 +1052,7 @@ if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''сти
 if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_5_change">Brass Knuckles [<<кастет>>]</a>'
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_5_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_5_change">Stunner [<<глушилка>>]</a>'
-if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_5_change">Butcher''s cleaver [<<тесак>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_5_change">Butcher''s Cleaver [<<тесак>>]</a>'
 if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_5_change">Sturdy Shield [<<щит>>]</a>'
 gt curloc
 }
@@ -1057,7 +1065,7 @@ if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''сти
 if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_6_change">Brass Knuckles [<<кастет>>]</a>'
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_6_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_6_change">Stunner [<<глушилка>>]</a>'
-if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_6_change">Butcher''s cleaver [<<тесак>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_6_change">Butcher''s Cleaver [<<тесак>>]</a>'
 if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_6_change">Sturdy Shield [<<щит>>]</a>'
 gt curloc
 }
@@ -1109,12 +1117,12 @@ gt curloc
 $slave_armor_list = {
 $equip_choice = ''
 $equip_choice += '<a href = "EXEC: $new_item = ''без_брони'' & dynamic $slot_20_change">Remove armor</a>'
-if комбез > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''комбез'' & dynamic $slot_20_change">Aramid suit [<<комбез>>]</a>'
-if кожан > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кожан'' & dynamic $slot_20_change">Leather armor [<<кожан>>]</a>'
-if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эльчуга'' & dynamic $slot_20_change">Elven chainmail [<<эльчуга>>]</a>'
-if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_20_change">Yatserin mail [<<ячуга>>]</a>'
-if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_20_change">Combined armor [<<полудоспех>>]</a>'
-if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_20_change">Gothic plate [<<плейт>>]</a>'
+if комбез > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''комбез'' & dynamic $slot_20_change">Aramid Suit [<<комбез>>]</a>'
+if кожан > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кожан'' & dynamic $slot_20_change">Leather Armor [<<кожан>>]</a>'
+if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эльчуга'' & dynamic $slot_20_change">Elven Chainmail [<<эльчуга>>]</a>'
+if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_20_change">Yatserin Mail [<<ячуга>>]</a>'
+if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_20_change">Combined Armor [<<полудоспех>>]</a>'
+if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_20_change">Gothic Plate [<<плейт>>]</a>'
 gt curloc
 }
 
@@ -1132,7 +1140,7 @@ if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпаг
 if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_21_change">Rapier [<<рапира>>]</a>'
 if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_21_change">Koncerz [<<кончар>>]</a>'
 if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_21_change">Gladius [<<гладиус>>]</a>'
-if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_21_change">Bastard sword [<<бастард>>]</a>'
+if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_21_change">Bastard Sword [<<бастард>>]</a>'
 if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_21_change">Warpick [<<клевец>>]</a>'
 if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_21_change">Machete [<<мачете>>]</a>'
 if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_21_change">Katana [<<катана>>]</a>'
@@ -1160,7 +1168,7 @@ if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''сти
 if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_22_change">Brass Knuckles [<<кастет>>]</a>'
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_22_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_22_change">Stunner [<<глушилка>>]</a>'
-if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_22_change">Butcher''s cleaver [<<тесак>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_22_change">Butcher''s Cleaver [<<тесак>>]</a>'
 if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_22_change">Sturdy Shield [<<щит>>]</a>'
 gt curloc
 }
@@ -1184,7 +1192,7 @@ if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''сти
 if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_23_change">Brass Knuckles [<<кастет>>]</a>'
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_23_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_23_change">Stunner [<<глушилка>>]</a>'
-if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_23_change">Butcher''s cleaver [<<тесак>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_23_change">Butcher''s Cleaver [<<тесак>>]</a>'
 gt curloc
 }
 
@@ -1233,6 +1241,7 @@ $equip_choice = ''
 $equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_26_change">Remove earrings</a>'
 if slave_inventory['plain_earring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_earring'' & dynamic $slot_26_change">Shiny Earrings <<slave_inventory["plain_earring"]>></a>'
 if slave_inventory['incrusted_earrings'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_earrings'' & dynamic $slot_26_change">Gemstone Earrings <<slave_inventory["incrusted_earrings"]>></a>'
+if slave["ear_piercing"] = 0: $equip_choice = 'Ears are not pierced'
 gt curloc
 }
 
@@ -1314,12 +1323,12 @@ gt curloc
 $assistant_armor_list = {
 $equip_choice = ''
 $equip_choice += '<a href = "EXEC: $new_item = ''без_брони'' & dynamic $slot_40_change">Remove armor</a>'
-if комбез > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''комбез'' & dynamic $slot_40_change">Aramid suit [<<комбез>>]</a>'
-if кожан > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кожан'' & dynamic $slot_40_change">Leather armor [<<кожан>>]</a>'
-if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эльчуга'' & dynamic $slot_40_change">Elven chainmail [<<эльчуга>>]</a>'
-if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_40_change">Yatserin mail [<<ячуга>>]</a>'
-if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_40_change">Combined armor [<<полудоспех>>]</a>'
-if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_40_change">Gothic plate [<<плейт>>]</a>'
+if комбез > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''комбез'' & dynamic $slot_40_change">Aramid Suit [<<комбез>>]</a>'
+if кожан > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кожан'' & dynamic $slot_40_change">Leather Armor [<<кожан>>]</a>'
+if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эльчуга'' & dynamic $slot_40_change">Elven Chainmail [<<эльчуга>>]</a>'
+if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_40_change">Yatserin Mail [<<ячуга>>]</a>'
+if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_40_change">Combined Armor [<<полудоспех>>]</a>'
+if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_40_change">Gothic Plate [<<плейт>>]</a>'
 gt curloc
 }
 
@@ -1365,7 +1374,7 @@ if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''сти
 if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_42_change">Brass Knuckles [<<кастет>>]</a>'
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_42_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_42_change">Stunner [<<глушилка>>]</a>'
-if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_42_change">Butcher''s cleaver [<<тесак>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_42_change">Butcher''s Cleaver [<<тесак>>]</a>'
 if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_42_change">Sturdy Shield [<<щит>>]</a>'
 gt curloc
 }
@@ -1389,7 +1398,7 @@ if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''сти
 if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кастет'' & dynamic $slot_43_change">Brass Knuckles [<<кастет>>]</a>'
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_43_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_43_change">Stunner [<<глушилка>>]</a>'
-if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_43_change">Butcher''s cleaver [<<тесак>>]</a>'
+if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_43_change">Butcher''s Cleaver [<<тесак>>]</a>'
 if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_43_change">Sturdy Shield [<<щит>>]</a>'
 gt curloc
 }
@@ -1438,6 +1447,7 @@ $equip_choice = ''
 $equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_46_change">Remove earrings</a>'
 if assistant_inventory['plain_earring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''plain_earring'' & dynamic $slot_46_change">Shiny Earrings <<slave_inventory["plain_earring"]>></a>'
 if assistant_inventory['incrusted_earrings'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''incrusted_earrings'' & dynamic $slot_46_change">Gemstone Earrings <<slave_inventory["incrusted_earrings"]>></a>'
+if assistant["ear_piercing"] = 0: $equip_choice = 'Ears are not pierced'
 gt curloc
 }
 
@@ -1944,6 +1954,7 @@ $assistant_purge_rules = {
 	assistant_cleans_rule = 0
 	assistant_cooks_rule = 0
 	assistant_washes_rule = 0
+	assistant_washe_slave_rule = 0
     assistant_account_rule = 0
 	assistant_supervise_rule = 0
 	assistant_tentacle_rule = 0
@@ -2083,7 +2094,6 @@ vitamin = 0
 
 !for controlling starting reputation
 $rise_rep = {
-IF $estate = 'white_house': msg "This stat is at maximum level."
 IF $estate = 'korvus_house':
  IF hero_points >= 10:
   hero_points -= 10
@@ -2141,7 +2151,6 @@ END
 }
 
 $lower_rep = {
-IF $estate = 'slum_house': msg "This stat is now at the minimum level."
 IF $estate = 'kamira_house':
  hero_points += 10
  $estate = 'slum_house'
@@ -2179,7 +2188,6 @@ END
 }
 
 $rise_str = {
-if master_str >= 5: msg "This stat is now at the maximum level."
 IF master_str = 4:
  IF hero_points >= 80:
   master_str = 5
@@ -2223,7 +2231,6 @@ END
 }
 
 $lower_str = {
-if master_str <= 1: msg "This stat is now at a minimum level."
 IF master_str = 2:
  master_str = 1
  hero_points += 10
@@ -2243,7 +2250,6 @@ END
 }
 
 $rise_cha = {
-if master_cha >= 5: msg "This stat is now at the maximum level."
 IF master_cha = 4:
  IF hero_points >= 80:
   master_cha = 5
@@ -2287,7 +2293,6 @@ END
 }
 
 $lower_cha = {
-if master_cha <= 0: msg "This stat is now at a minimum level."
 IF master_cha = 1:
  master_cha = 0
  hero_points += 10
@@ -2312,7 +2317,6 @@ END
 
 
 $rise_libido = {
-if master_libido >= 5: msg "This stat is now at the maximum level."
 IF master_libido = 4:
  IF hero_points >= 80:
   master_libido = 5
@@ -2356,7 +2360,6 @@ END
 }
 
 $lower_libido = {
-if master_libido <= 0: msg "This stat is now at a minimum level."
 IF master_libido = 1:
  master_libido = 0
  hero_points += 10
@@ -2380,7 +2383,6 @@ END
 }
 
 $rise_tutor = {
-if master_tutor >= 5: msg "This stat is now at the maximum level."
 IF master_tutor = 4:
  IF hero_points >= 80:
   master_tutor = 5
@@ -2424,7 +2426,6 @@ END
 }
 
 $lower_tutor = {
-if master_tutor <= 0: msg "This stat is now at a minimum level."
 IF master_tutor = 1:
  master_tutor = 0
  hero_points += 10
@@ -2448,7 +2449,6 @@ END
 }
 
 $rise_butler = {
-if master_butler >= 5: msg "This stat is now at the maximum level."
 IF master_butler = 4:
  IF hero_points >= 80:
   master_butler = 5
@@ -2492,7 +2492,6 @@ END
 }
 
 $lower_butler = {
-if master_butler <= 0: msg "This stat is now at a minimum level."
 IF master_butler = 1:
  master_butler = 0
  hero_points += 10
@@ -2516,7 +2515,6 @@ END
 }
 
 $rise_medic = {
-if master_medic >= 5: msg "This stat is now at the maximum level."
 IF master_medic = 4:
  IF hero_points >= 80:
   master_medic = 5
@@ -2560,7 +2558,6 @@ END
 }
 
 $lower_medic = {
-if master_medic <= 0: msg "This stat is now at a minimum level."
 IF master_medic = 1:
  master_medic = 0
  hero_points += 10
@@ -2584,7 +2581,6 @@ END
 }
 
 $rise_artdirector = {
-if master_artdirector >= 5: msg "This stat is now at the maximum level."
 IF master_artdirector = 4:
  IF hero_points >= 80:
   master_artdirector = 5
@@ -2628,7 +2624,6 @@ END
 }
 
 $lower_artdirector = {
-if master_artdirector <= 0: msg "This stat is now at a minimum level."
 IF master_artdirector = 1:
  master_artdirector = 0
  hero_points += 10
@@ -2652,7 +2647,6 @@ END
 }
 
 $rise_fighter = {
-if master_fighter >= 5: msg "This stat is now at the maximum level."
 IF master_fighter = 4:
  IF hero_points >= 80:
   master_fighter = 5
@@ -2696,7 +2690,6 @@ END
 }
 
 $lower_fighter = {
-if master_fighter <= 0: msg "This stat is now at a minimum level."
 IF master_fighter = 1:
  master_fighter = 0
  hero_points += 10
@@ -2720,7 +2713,6 @@ END
 }
 
 $rise_mage = {
-if master_mage >= 5: msg "This stat is now at the maximum level."
 IF master_mage = 4:
  IF hero_points >= 80:
   master_mage = 5
@@ -2764,7 +2756,6 @@ END
 }
 
 $lower_mage = {
-if master_mage <= 0: msg "This stat is now at a minimum level."
 IF master_mage = 1:
  master_mage = 0
  hero_points += 10
@@ -2788,7 +2779,6 @@ END
 }
 
 $rise_domination = {
-if master_domination >= 5: msg "This stat is now at the maximum level."
 IF master_domination = 4:
  IF hero_points >= 80:
   master_domination = 5
@@ -2832,7 +2822,6 @@ END
 }
 
 $lower_domination = {
-if master_domination <= 0: msg "This stat is now at a minimum level."
 IF master_domination = 1:
  master_domination = 0
  hero_points += 10
@@ -2856,7 +2845,6 @@ END
 }
 
 $rise_flagelation = {
-if master_flagelation >= 5: msg "This stat is now at the maximum level."
 IF master_flagelation = 4:
  IF hero_points >= 80:
   master_flagelation = 5
@@ -2900,7 +2888,6 @@ END
 }
 
 $lower_flagelation = {
-if master_flagelation <= 0: msg "This stat is now at a minimum level."
 IF master_flagelation = 1:
  master_flagelation = 0
  hero_points += 10
@@ -2924,7 +2911,6 @@ END
 }
 
 $rise_torture = {
-if master_torture >= 5: msg "This stat is now at the maximum level."
 IF master_torture = 4:
  IF hero_points >= 80:
   master_torture = 5
@@ -2968,7 +2954,6 @@ END
 }
 
 $lower_torture = {
-if master_torture <= 0: msg "This stat is now at a minimum level."
 IF master_torture = 1:
  master_torture = 0
  hero_points += 10
@@ -2992,7 +2977,6 @@ END
 }
 
 $rise_bondage = {
-if master_bondage >= 5: msg "This stat is now at the maximum level."
 IF master_bondage = 4:
  IF hero_points >= 80:
   master_bondage = 5
@@ -3036,7 +3020,6 @@ END
 }
 
 $lower_bondage = {
-if master_bondage <= 0: msg "This stat is now at a minimum level."
 IF master_bondage = 1:
  master_bondage = 0
  hero_points += 10
@@ -3060,7 +3043,6 @@ END
 }
 
 $rise_petting = {
-if master_petting >= 5: msg "This stat is now at the maximum level."
 IF master_petting = 4:
  IF hero_points >= 80:
   master_petting = 5
@@ -3104,7 +3086,6 @@ END
 }
 
 $lower_petting = {
-if master_petting <= 0: msg "This stat is now at a minimum level."
 IF master_petting = 1:
  master_petting = 0
  hero_points += 10
@@ -3128,7 +3109,6 @@ END
 }
 
 $rise_penetration = {
-if master_penetration >= 5: msg "This stat is now at the maximum level."
 IF master_penetration = 4:
  IF hero_points >= 80:
   master_penetration = 5
@@ -3172,7 +3152,6 @@ END
 }
 
 $lower_penetration = {
-if master_penetration <= 0: msg "This stat is now at a minimum level."
 IF master_penetration = 1:
  master_penetration = 0
  hero_points += 10
@@ -3196,7 +3175,6 @@ END
 }
 
 $rise_oral = {
-if master_oral >= 5: msg "This stat is now at the maximum level."
 IF master_oral = 4:
  IF hero_points >= 80:
   master_oral = 5
@@ -3240,7 +3218,6 @@ END
 }
 
 $lower_oral = {
-if master_oral <= 0: msg "This stat is now at a minimum level."
 IF master_oral = 1:
  master_oral = 0
  hero_points += 10
@@ -3264,7 +3241,6 @@ END
 }
 
 $rise_fetish = {
-if master_fetish >= 5: msg "This stat is now at the maximum level."
 IF master_fetish = 4:
  IF hero_points >= 80:
   master_fetish = 5
@@ -3308,7 +3284,6 @@ END
 }
 
 $lower_fetish = {
-if master_fetish <= 0: msg "This stat is now at a minimum level."
 IF master_fetish = 1:
  master_fetish = 0
  hero_points += 10

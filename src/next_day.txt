@@ -13,6 +13,16 @@ npc = 0
 city_random_event = 0
 base_score += master_mood
 
+gs '$newloc'
+
+!Set base rules if you own a pet Fiend - crushboss
+if assistant_tentacle_rule = 1 and assistant_state = 1: slave_tentacle_rule = 0
+if slave_state = CONST_INT['no_exist']: slave_tentacle_rule = 0
+if slave_tentacle_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_tentacle_rule = 0
+if assistant_state ! 1: assistant_tentacle_rule = 0
+if pet_tentacle > 0 and assistant_state = 1 and slave_tentacle_rule ! 1: assistant_tentacle_rule = 1
+if pet_tentacle > 0 and slave_state = CONST_INT['slave_exist'] and assistant_state ! 1: slave_tentacle_rule = 1
+
 debt_count -= 1
 if debt_count < 0 and debt > 0:
 	dynamic $death, 'As in any other city, in Eternal Rome it is reckless to forget to repay money you have borrowed. You died a disgraceful death at the hand of the moneylender''s henchmen...'
@@ -33,13 +43,13 @@ sl_txt = 0
 IF gladi_count > 0:
  gladi_count -= 1
  else
- gladi_count = 10
+ gladi_count = 7
 END 
 
 IF ride_count > 0:
  ride_count -= 1
  else
- ride_count = 10
+ ride_count = 7
  !Creating a route to the next race
  $trace[1] = 'ride_start'
  i = 1
@@ -125,6 +135,9 @@ IF slave['angst'] > a:
  if chance < slave['angst']: slave_suicide = 1
 END
 
+if bull_ring_on = 1 and master_energy < 0: master_energy = 0
+
+!Slave Cook rule
 IF slave_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and slave["energy"] > 0 and slave["obedience"] > slave["pride"] and slave_state = CONST_INT['slave_exist']:
  slave_auto_cook = 1
  cooked_food = slave["cook"]
@@ -133,6 +146,37 @@ IF slave_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and slave["energy"]
  slave["energy"] -= 1
 END
 
+!Slave Tentacle rule - crushboss
+IF slave_tentacle_rule = 1 and pet_tentacle > 0  and slave["energy"] >= 0 and slave_state = CONST_INT['slave_exist']:
+ IF tentacle_state = 1 or spawn_milked = 0:
+  slave_auto_tentacle = 1
+  slave["energy"] -= 1 
+  slave_rate["hygiene"] += 20
+  tentacle_hp += 2
+  IF slave["sub_tentacles"] > tentacle_size: 
+   spawn_milked = 1
+   tentacle_state = 2
+   tentacle_hp += 2
+   spawn_semen += semen_gain[tentacle_size]
+  END
+ END 
+END
+
+!Slave washes master - Bath Rule - Slave
+IF slave["energy"] >= 0 and slave_washes_rule = 1 and master_hygiene > 0 and bath > 0 and slave_state = CONST_INT['slave_exist']:
+ slave_auto_wash = 1
+ house_mess_rate += 3
+ slave_rate["hygiene"] = 0
+ slave["hygiene"] = 0
+ slave["pos_slave_clean"] = 1
+ slave_rate["arousal"] -= master_libido
+ master_hygiene_rate = 0 
+ master_hygiene = 0
+ master_mood['pos_self_clean'] = 1
+ master_mood_rate += min (slave["petting"], slave["oral"])
+END
+
+!Slave Clean rule
 IF slave_cleans_rule = 1 and house_mess > 1 and slave["energy"] > 0 and slave["obedience"] > slave["pride"] and slave_state = CONST_INT['slave_exist']:
  slave_auto_clean = 1
  slave_rate["service"] += 1
@@ -141,19 +185,22 @@ IF slave_cleans_rule = 1 and house_mess > 1 and slave["energy"] > 0 and slave["o
  slave["energy"] -= 1
 END
 
+previous_energy = slave["energy"]
+
 IF slave["energy"] > 0 and slave_state = CONST_INT['slave_exist']:
  free_time = slave["energy"]
- slave["energy"] = 0
 END
 
-IF free_time > 0 and slave_state = CONST_INT['slave_exist']:
- IF bath > 0 and slave["hygiene"] > 1:
-  slave_auto_bathing = 1
-  free_time -= 1
-  slave_rate["mood"] += slave["hygiene"]
-  slave["pos_slave_clean"] = 1
-  slave_rate["hygiene"] = 0
-  slave["hygiene"] = 0  
+!Slave will wash herself if the assistant doesnt wash slave and the master is clean if the bath slave rule is enabled - crushboss
+IF previous_energy >= 0 and slave_state = CONST_INT['slave_exist'] and assistant_washe_slave_rule ! 1:
+ IF bath > 0 and slave["hygiene"] > 0:
+  IF slave_washes_rule ! 1 or master_hygiene = 0:
+   slave_auto_bathing = 1
+   slave_rate["mood"] += slave["hygiene"]
+   slave["pos_slave_clean"] = 1
+   slave_rate["hygiene"] = 0
+   slave["hygiene"] = 0
+  END  
  END
 END
 
@@ -163,23 +210,11 @@ IF free_time > 0 and slave_state = CONST_INT['slave_exist']:
  slave_rate["mood"] += free_time
 END
 
-if slave_well_rested >= slave["stamina"]: slave_rate["stamina"] += 1
+if slave_well_rested >= slave["stamina"]: slave_rate["stamina"] += 2
 if slave["energy"] >= 0 and slave_well_rested > 0: slave["pos_well_rested"] = 1
 slave["energy"] += slave_well_rested
 if slave["energy"] > 5: slave["energy"] = 5
 slave_well_rested = 0
-
-IF slave_tentacle_rule = 1 and spawn_milked = 0 and pet_tentacle > 0  and slave["energy"] > 0 and slave_state = CONST_INT['slave_exist']:
- slave_auto_tentacle = 1
- slave["energy"] -= 1 
- slave_rate["hygiene"] += 20
- tentacle_hp += 1
- IF slave["sub_tentacles"] > tentacle_size: 
-  spawn_milked = 1
-  tentacle_hp += 1
-  spawn_semen += semen_gain[tentacle_size]
- END 
-END
 
 !independent assistant actions
 IF assistant_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and assistant["energy"] > 0:
@@ -190,30 +225,57 @@ IF assistant_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and assistant["
  assistant["energy"] -= 1
 END
 
-IF assistant_tentacle_rule = 1 and spawn_milked = 0 and pet_tentacle > 0  and assistant["energy"] > 0 and assistant_state > 0:
- assistant_auto_tentacle = 1
- assistant["energy"] -= 1 
- assistant_rate["hygiene"] += 20
- tentacle_hp += 1
- IF assistant["sub_tentacles"] > tentacle_size: 
-  spawn_milked = 1
-  tentacle_hp += 1
-  spawn_semen += semen_gain[tentacle_size]
+!Assistant Tentacle rule - crushboss
+IF assistant_tentacle_rule = 1 and pet_tentacle > 0 and assistant["energy"] >= 0 and assistant_state ! 0:
+ IF tentacle_state = 1 or spawn_milked = 0:
+  assistant_auto_tentacle = 1
+  assistant["energy"] -= 1 
+  assistant_rate["hygiene"] += 20
+  tentacle_hp += 2
+  IF assistant["sub_tentacles"] > tentacle_size: 
+   spawn_milked = 1
+   tentacle_state = 2
+   tentacle_hp += 2
+   spawn_semen += semen_gain[tentacle_size]
+  END
  END 
 END
 
-
-IF assistant_washes_rule = 1 and master_hygiene > 1 and bath > 0  and assistant["energy"] > 0:
- assistant_auto_wash = 1
- house_mess_rate += 3  
- assistant["energy"] -= 1 
- assistant_rate["hygiene"] = 0
- master_hygiene_rate = 0
- assistant["hygiene"] = 0
- master_hygiene = 0  
- master_mood_rate += min (assistant["petting"], assistant["oral"]) 
+!Tentacle state - milked or needs milking
+IF pet_tentacle = 0:
+ tentacle_state = 0
+ else
+ if spawn_milked = 0: tentacle_state = 1
+ if spawn_milked = 1: tentacle_state = 2
 END
 
+!Assistant washes master - Bath Rule - Assistant
+IF assistant["energy"] >= 0 and assistant_washes_rule = 1 and master_hygiene > 0 and bath > 0:
+ assistant_auto_wash = 1
+ house_mess_rate += 3
+ assistant_rate["hygiene"] = 0
+ assistant["hygiene"] = 0
+ assistant_rate["arousal"] -= master_libido
+ master_hygiene_rate = 0
+ master_hygiene = 0
+ master_mood['pos_self_clean'] = 1
+ master_mood_rate += min (assistant["petting"], assistant["oral"])
+END
+
+!Assistant washes slave - Bath Slave Rule - Assistant
+IF assistant["energy"] >= 0 and assistant_washe_slave_rule = 1 and bath > 0 and slave["hygiene"] > 0:
+ assistant_washs_slave = 1
+ slave_auto_bathing = 0
+ house_mess_rate += 3
+ assistant_rate["hygiene"] = 0
+ assistant["hygiene"] = 0
+ slave_rate["mood"] += slave["hygiene"]
+ slave_rate["hygiene"] = 0
+ slave["hygiene"] = 0
+ slave["pos_slave_clean"] = 1
+END
+
+!Assistant Clean rule
 IF assistant_cleans_rule = 1 and house_mess > 1 and assistant["energy"] > 0:
  assistant_auto_clean = 1
  assistant_rate["service"] += 1
@@ -222,10 +284,37 @@ IF assistant_cleans_rule = 1 and house_mess > 1 and assistant["energy"] > 0:
  assistant["energy"] -= 1
 END
 
-show_food = 1
-!CHECK: crutch for older versions, otherwise the food will be all-time F- level
-gs '#food_base'
+!Master will make a meal if no one else does so he eats well
+IF master_energy >= 0 and cooked_food <= 0 and kitchen > 0:
+ master_auto_cook = 1
+ $interaction_type = 'special' 
+ if cooked_food < master_butler: cooked_food = master_butler
+ if master_butler = 6: cooked_food = 5
+ master_butler_rate += 1
+ house_mess_rate += 5
+ master_hygiene_rate += 5 
+ master_mood['neg_cook'] = 3 + brand_reputation - master_butler
+ dynamic $master_energy_drop
+ npc = 0
+END
 
+!Master will clean the house if no one else does and it is really messy
+IF master_energy > 0 and house_mess > 3:
+ master_auto_clean = 1
+ $interaction_type = 'special' 
+ master_butler_rate += 1
+ master_mood['neg_cleaning'] = 1 + brand_reputation
+ dynamic $master_energy_drop
+ master_hygiene_rate += house_mess + 2 
+ house_mess -= master_butler
+ if house_mess < 0: house_mess = 0
+ dynamic $house_cleaning 
+ npc = 0 
+END
+
+!CHECK: crutch for older versions, otherwise the food will be all-time F- level
+show_food = 1
+gs '#food_base'
 gs '$food_choice'
 
 !buying food
@@ -293,12 +382,28 @@ dynamic $get_frige_space
 IF frige_space < 5 and frige["mince"] > 10: frige["mince"] = 10
 dynamic $get_frige_space 
 
-!daily libido changes
-IF master_mood > 0: master_libido_rate += 1
-IF master_mood < 0: master_libido_rate -= 1
+!Daily libido changes - crushboss
+IF master_mood > 0 and master_libido >= 4 and master_energy >= 0:
+ master_libido_rate += 3
+ ELSEIF master_mood > 0 and master_libido >= 2 and master_energy >= 0:
+  master_libido_rate += 2
+ ELSE
+  master_libido_rate += 1
+END
+
+!Stat adjustments for master - End of day
+IF master_energy >= 1: master_libido_rate += master_energy
+IF master_energy < 0: master_libido_rate -= 3
+IF master_mood < 0: master_libido_rate -= 2
 IF master_ill > 6: master_libido_rate -= 5
 master_libido_rate -= master_wounds
 IF master_excitement = 5 AND chimera_gem_on = 0: master_libido_rate -= 2
+IF chimera_gem_on = 1:
+ if master_libido < 2: master_libido = 2
+ if master_libido_rate < 5: master_libido_rate = 5
+ if master_excitement < 5: master_excitement = 5
+ if master_wounds > 0: master_wounds_rate -= 1
+END
 
 !reseting and lowering vars
 killvar 'already_done_today'
@@ -345,9 +450,6 @@ if slave["hairstyle"] > 0: slave["hairstyle"] -= 1
 
 ! fixed the typo, by Lyazar
 if slave_inventory["parfume"] > 0: slave["parfume"] = 1
-
-slave_rate["hygiene"] += 5
-slave_rate["hygiene"] += slave["wounds"]
 
 !daily bonuses
 slave_rate["temper"] += daily_bonus["temper"]
@@ -415,8 +517,14 @@ END
 
 IF slave["calories"] < 0 and slave["fat"] > 0:
  slave_rate["fat"] -= slave["metabolism"]
+ slave_rate["fat"] += slave["calories"]
  slave["calories"] += slave["metabolism"]
  if slave["calories"] > 0: slave["calories"] = 0
+ IF slave_rate["fat"] <= -25 and slave["fat"] > 0:
+  slave["fat"] -= 1
+  slave_rate["fat"] = 0
+  slave["calories"] = 0
+ END
 END
 
 IF slave["calories"] < 0:
@@ -466,7 +574,8 @@ ELSE
  END
 END
 
-slave_rate["rational"] += slave['starvation']
+!Fixed a nasty rational drain bug with the code fix below - crushboss
+if slave['starvation'] > 0: slave_rate["rational"] += slave['starvation']
 
 eaten_food = 0
 if slave_food_portion = 1: eaten_food = food_need + slave["stamina"] - slave["metabolism"]
@@ -627,8 +736,9 @@ if slave["moral"] > slave["fear"] and slave["fear"] > 0: slave["fear"] -= 1
 slave_rate["spoil"] -= 1 + slave["fear"] + slave["moral"]
 
 !brand effect
+slave['brand'] = tattoo_brand
 IF slave['brand'] > 0: slave_rate["custom"] += 1
-IF slave['brand'] = 1: slave_rate["custom"] += 1
+IF slave['brand'] = 2: slave_rate["custom"] += 1
 IF slave['brand'] = 3: slave_rate["custom"] += 1
 
 !Forgotten sins and merits
@@ -651,8 +761,7 @@ IF slave["sin"] > 0:
  slave["sin"] = 0
 END
 
-
-!counting the arousal and mood
+!counting arousal and mood
 slave_rate["mood"] += slave["moral"] + (slave["stamina"] - 3) + slave["energy"] + daily_bonus["mood"] - slave["arousal"] - slave["fear"] - slave["spoil"] - slave["angst"] - slave["hygiene"] - (house_mess - 1) - slave["mood"]
 
 if slave['moral'] > 0: slave['pos_moral'] = slave['moral']
@@ -672,274 +781,328 @@ if slave["nymphomania"] > 1: slave['neg_horny'] = 1
 if slave["nymphomania"] < 0: slave['neg_horny'] = 0
 
 
-!change stats under the influence of the established rules
+!Change stats under the influence of the established rules
 
-!TODO: check else, strange, it might dont work properly by Lyazar
-!remembering the rules of fainted slave
-IF slave_state ! CONST_INT['slave_exist']:
- if silence_rule = 1: silence_rule = 2
- if master_rule = 1: master_rule = 2
- if shit_prohibited = 1: shit_prohibited = 2
- if orgasm_prohibited = 1: orgasm_prohibited = 2
- if slave['rule_shit'] = 1: slave['rule_shit'] = 2
- if pet_rule = 1: pet_rule = 2  
- if blowjob_rule = 1: blowjob_rule = 2
- if pissuar_rule = 1: pissuar_rule = 2
- if shit_prohibited = 1: shit_prohibited = 2
- if toilet_rule = 1: toilet_rule = 2  
- if slave['rule_cook'] = 1: slave['rule_cook'] = 2
- if slave['rule_wash'] = 1: slave['rule_wash'] = 2
- if slave['rule_tentacle'] = 1: slave['rule_tentacle'] = 2
- if v_balls_rule = 1: v_balls_rule = 2
- if slave['rule_force'] = 1: slave['rule_force'] = 2
- else
- if silence_rule = 2: silence_rule = 1
- if master_rule = 2: master_rule = 1
- if shit_prohibited = 2: shit_prohibited = 1
- if orgasm_prohibited = 2: orgasm_prohibited = 1
- if slave['rule_shit'] = 2: slave['rule_shit'] = 1
- if pet_rule = 2: pet_rule = 1  
- if blowjob_rule = 2: blowjob_rule = 1
- if pissuar_rule = 2: pissuar_rule = 1
- if shit_prohibited = 2: shit_prohibited = 1
- if toilet_rule = 2: toilet_rule = 1   
- if slave['rule_cook'] = 2: slave['rule_cook'] = 1
- if slave['rule_wash'] = 2: slave['rule_wash'] = 1
- if slave['rule_tentacle'] = 2: slave['rule_tentacle'] = 1
- if v_balls_rule = 2: v_balls_rule = 1
- if slave['rule_force'] = 2: slave['rule_force'] = 1
+!Clear the rules if no slave exists - crushboss
+IF slave_state = CONST_INT['no_slave']:
+ silence_rule = 0
+ master_rule = 0
+ rule_masturbation = 0
+ orgasm_prohibited = 0
+ shit_prohibited = 0
+ pet_rule = 0  
+ blowjob_rule = 0
+ pissuar_rule = 0
+ toilet_rule = 0
+ slave_cleans_rule = 0  
+ slave_cooks_rule = 0
+ slave_washes_rule = 0
+ slave_tentacle_rule = 0
+ v_balls_rule = 0
+ force_rules = 0
+ slave_account_rule = 0
 END
 
 $force_msg  = ''
-!self explanatory
+
+!Ensure all variables are set to zero - sanity check - probably unnecessary - crushboss
+rules_broken = 0
+num_rules_broken = 0
+num_rules_wanttobreak = 0
+silence_rule_res = 0
+master_rule_res = 0
+shit_prohibited_res = 0
+pet_rule_res = 0
+blowjob_rule_res = 0
+pissuar_rule_res = 0
+toilet_rule_res = 0
+v_balls_rule_res = 0
+iwanttobreakbutcant_silence_rule = 0
+iwanttobreakbutcant_master_rule = 0
+iwanttobreakbutcant_shit_prohibited = 0
+iwanttobreakbutcant_pet_rule = 0
+iwanttobreakbutcant_blowjob_rule = 0
+iwanttobreakbutcant_pissuar_rule = 0
+iwanttobreakbutcant_toilet_rule = 0
+iwanttobreakbutcant_v_balls = 0
+unenforced_silence_rule_broken = 0
+unenforced_master_rule_broken = 0
+unenforced_shit_prohibited_broken = 0
+unenforced_pet_rule_broken = 0
+unenforced_blowjob_rule_broken = 0
+unenforced_pissuar_rule_broken = 0
+unenforced_toilet_rule_broken = 0
+unenforced_v_balls_rule_broken = 0
+
+!Rewrote most of the rule code - was a total mess - crushboss
+!rule_masturbation is not handled here but later in next_day and end_day_screen - crushboss
+!orgasm_prohibited rule is not handled here but in #dynamic and in the sexy_time_engine - crushboss
+!All the other rules that require special handling are handled in this section - crushboss
 IF silence_rule = 1: 
  silence_rule_res = slave["obedience"] - slave["temper"]
  IF force_rules = 1 and inventory['secure_gag'] = 1: 
-  if silence_rule_res < 0: slave['neg_rules'] = 1
-  silence_rule_res = 0
+  IF silence_rule_res < 0:
+   slave['neg_rules'] = 1
+   iwanttobreakbutcant_silence_rule = 1
+   num_rules_wanttobreak += 1
+  END
   slave_rate["mood"] -= slave["temper"] - slave["moral"] 
   $force_msg += 'Кляп работает <br>'
  END
- else
- silence_rule_res = 0 
+ ELSEIF silence_rule_res < 0 and iwanttobreakbutcant_silence_rule ! 1:
+  unenforced_silence_rule_broken = 1
+  num_rules_broken += 1
+ END
 END
-if master_rule = 1:
+IF master_rule = 1:
  master_rule_res = slave["obedience"] - slave["pride"] - 1
- IF force_rules = 1 and assistant_state = 1: 
-  if master_rule_res < 0: slave['neg_rules'] = 1   
-  master_rule_res = 0
+ IF force_rules = 1: 
+  IF master_rule_res < 0:
+   slave['neg_rules'] = 1
+   iwanttobreakbutcant_master_rule = 1
+   num_rules_wanttobreak += 1
+  END   
   slave_rate["mood"] -= slave["ego"] + slave["pride"] - slave["moral"]
  END
- else
- master_rule_res = 0 
+ ELSEIF master_rule_res < 0 and iwanttobreakbutcant_master_rule ! 1:
+  unenforced_master_rule_broken = 1
+  num_rules_broken += 1
+ END
 END
 IF shit_prohibited = 1:
- shit_prohibited_res = slave["obedience"] - slave["ego"] - 1 - slave["preversion"]
+ shit_prohibited_res = slave["obedience"] + slave["preversion"] + master_supermacy - slave["ego"] - slave["pride"] 
  IF force_rules = 1 and inventory['anal_plug'] > 0: 
-  if shit_prohibited_res < 0: slave['neg_rules'] = 1 
-  shit_prohibited_res = 0
+  IF shit_prohibited_res < 0:
+   slave['neg_rules'] = 1
+   iwanttobreakbutcant_shit_prohibited = 1
+   num_rules_wanttobreak += 1
+  END
   slave_rate["mood"] -= slave["ego"] - slave["moral"]
  END
- else
- shit_prohibited_res = 0 
+ ELSEIF shit_prohibited_res < 0 and iwanttobreakbutcant_shit_prohibited ! 1:
+  unenforced_shit_prohibited_broken = 1
+  num_rules_broken += 1
+ END
 END
 IF pet_rule = 1:
- pet_rule_res = slave["obedience"] - slave["ego"] - slave["pride"] - slave["pet_affinity"]*3
+ pet_rule_res = slave["obedience"] + slave["pet_affinity"] + slave["pet"] - slave["ego"] - slave["pride"] 
  IF force_rules = 1 and inventory['petsuit'] > 0: 
-  if pet_rule_res < 0: slave['neg_rules'] = 1  
-  pet_rule_res = 0
+  IF pet_rule_res < 0:
+   slave['neg_rules'] = 1
+   iwanttobreakbutcant_pet_rule = 1
+   num_rules_wanttobreak += 1
+  END
   slave_rate["mood"] -= slave["ego"] + slave["pride"] - slave["moral"]
  END
- else
- pet_rule_res = 0 
+ ELSEIF pet_rule_res < 0 and iwanttobreakbutcant_pet_rule ! 1:
+  unenforced_pet_rule_broken = 1 
+  num_rules_broken += 1
+ END
 END
 IF blowjob_rule = 1:
- blowjob_rule_res = slave["obedience"] + slave["sub_bj"] + slave["arousal"] - slave["pride"] - 4 
- IF force_rules = 1 and assistant_state = 1: 
-  if blowjob_rule_res < 0: slave['neg_rules'] = 1   
-  blowjob_rule_res = 0
-  slave_rate["mood"] -= 5 + slave["temper"] + slave["pride"] - slave["moral"] - slave["sub_bj"] 
+ blowjob_rule_res = slave["obedience"] + slave["sub_bj"] + slave["nymphomania"] + slave["arousal"] - slave["pride"] - 4 
+ IF force_rules = 1: 
+  IF blowjob_rule_res < 0:
+   slave['neg_rules'] = 1
+   iwanttobreakbutcant_blowjob_rule = 1
+   num_rules_wanttobreak += 1
+  END
+  slave_rate["mood"] -= 5 + slave["temper"] + slave["pride"] + slave["ego"] + slave["angst"] - slave["moral"] - slave["sub_bj"] - slave["instinct"] - slave["custom"] - slave["nymphomania"] - slave["preversion"] - slave["meekness"]
  END
- else
- blowjob_rule_res = 0 
+ ELSEIF blowjob_rule_res < 0 and iwanttobreakbutcant_blowjob_rule ! 1:
+  unenforced_blowjob_rule_broken = 1  
+  num_rules_broken += 1
+ END
 END
 IF pissuar_rule = 1:
- pissuar_rule_res = slave["obedience"] + slave["sub_piss"] - slave["pride"] - slave["ego"] - 3 - slave["preversion"]
+ pissuar_rule_res = slave["obedience"] + slave["sub_piss"] + slave["preversion"] - slave["pride"] - slave["ego"] - 3 
  IF force_rules = 1 and inventory['pissuar_stable'] = 1: 
-  if pissuar_rule_res < 0: slave['neg_rules'] = 1    
-  pissuar_rule_res = 0
+  IF pissuar_rule_res < 0:
+   slave['neg_rules'] = 1
+   iwanttobreakbutcant_pissuar_rule = 1
+   num_rules_wanttobreak += 1
+  END    
   slave_rate["mood"] -= 3 + slave["ego"] + slave["pride"] - slave["moral"] - slave["sub_piss"]
  END
- else
- pissuar_rule_res = 0 
+ ELSEIF pissuar_rule_res < 0 and iwanttobreakbutcant_pissuar_rule ! 1:
+  unenforced_pissuar_rule_broken = 1 
+  num_rules_broken += 1
+ END
 END
 IF toilet_rule = 1:
- toilet_rule_res = slave["obedience"] + slave["sub_kopro"] - slave["pride"] - slave["ego"] - 6 - slave["preversion"]
+ toilet_rule_res = slave["obedience"] + slave["sub_kopro"] + slave["preversion"] - slave["pride"] - slave["ego"] - 6 
  IF force_rules = 1 and inventory['toilet_stable'] = 1: 
-  if toilet_rule_res < 0: slave['neg_rules'] = 1     
-  toilet_rule_res = 0
+  IF toilet_rule_res < 0:
+   slave['neg_rules'] = 1
+   iwanttobreakbutcant_toilet_rule = 1
+   num_rules_wanttobreak += 1
+  END
   slave_rate["mood"] -= 6 + slave["ego"] + slave["pride"] - slave["moral"] - slave["sub_kopro"]
  END
- else
- toilet_rule_res = 0
+ ELSEIF toilet_rule_res < 0 and iwanttobreakbutcant_toilet_rule ! 1:
+  unenforced_toilet_rule_broken = 1
+  num_rules_broken += 1
+ END
 END
-!v_balls_rule = 1 - added effect for this rule
 IF v_balls_rule = 1:
- v_balls_rule_res = slave["obedience"] + slave["sub_vaginal"] - slave["pride"]*2 - slave["ego"] - 4
- IF force_rules = 1 and assistant_state = 1:
-  if v_balls_rule_res < 0: slave['neg_rules'] = 1
-  v_balls_rule_res = 0
+ v_balls_rule_res = slave["obedience"] + slave["sub_vaginal"] + slave["nymphomania"] + slave["preversion"] - slave["pride"] - slave["ego"] - 2
+ IF force_rules = 1:
+  IF v_balls_rule_res < 0:
+   slave['neg_rules'] = 1
+   iwanttobreakbutcant_v_balls = 1
+   num_rules_wanttobreak += 1
+  END
   slave_rate["mood"] -= 4 + slave["pride"] + slave["ego"] - slave["moral"] - slave["sub_vaginal"]
  END
- else
- v_balls_rule_res = 0
+ ELSEIF v_balls_rule_res < 0 and iwanttobreakbutcant_v_balls ! 1:
+  unenforced_v_balls_rule_broken = 1
+  num_rules_broken += 1
+ END
 END
 
-rules_res = min (silence_rule_res, master_rule_res, shit_prohibited_res, pet_rule_res, blowjob_rule_res, pissuar_rule_res, toilet_rule_res, v_balls_rule_res)
-rules_broken = iif(rules_res < 0, 1, 0)
+!Handle results when slave breaks one or more rules - crushboss
+if num_rules_broken > 0: rules_broken = 1
 
 IF rules_broken = 1:
  sin_gained = max (1, slave["obedience"])
- IF sin_gained > 5: sin_gained = 5
+ if sin_gained > 5: sin_gained = 5
  IF sin_gained >= slave["virtue"]:
   slave["virtue"] = 0
   if sin_gained > slave["sin"]: slave["sin"] = sin_gained
   if sententia_veritas = 1: slave["sin"] = 5
+  slave_rate["custom"] -= num_rules_broken
+  slave_rate["instinct"] -= slave["temper"]
+  slave_rate["rational"] -= slave["ego"]
  END 
- 
- IF silence_rule = 1:
+ IF silence_rule = 1 and unenforced_silence_rule_broken = 1:
   slave_rate["expression"] += 1
   slave_rate["temper"] += 1
   slave_rate["ego"] += 1  
-  slave_rate["custom"] -= 1
  END
- IF master_rule = 1:
-  slave_rate["pride"] += 1
+ IF master_rule = 1 and unenforced_master_rule_broken = 1:
+  slave_rate["pride"] += 5
   slave_rate["ego"] += 1  
-  slave_rate["custom"] -= 1 
-  slave_rate["instinct"] -= slave["temper"]
-  slave_rate["rational"] -= slave["ego"]  
  END
- IF shit_prohibited = 1:
+ IF shit_prohibited = 1 and unenforced_shit_prohibited_broken = 1:
   slave_rate["ego"] += 1
-  slave_rate["custom"] -= 1   
  END
- IF pet_rule = 1:
-  slave_rate["pride"] += 1 
+ IF pet_rule = 1 and unenforced_pet_rule_broken = 1:
+  slave_rate["pride"] += 5 
   slave_rate["ego"] += 1
-  slave_rate["custom"] -= 1    
  END
- IF blowjob_rule = 1:
-  slave_rate["pride"] += 1 
+ IF blowjob_rule = 1 and unenforced_blowjob_rule_broken = 1:
+  slave_rate["pride"] += 5 
   slave_rate["ego"] += 1
-  slave_rate["custom"] -= 1   
  END
- IF pissuar_rule = 1:
-  slave_rate["pride"] += 1 
+ IF pissuar_rule = 1 and unenforced_pissuar_rule_broken = 1:
+  slave_rate["pride"] += 5 
   slave_rate["ego"] += 1
-  slave_rate["custom"] -= 1    
  END
- IF toilet_rule = 1:
-  slave_rate["pride"] += 1 
+ IF toilet_rule = 1 and unenforced_toilet_rule_broken = 1:
+  slave_rate["pride"] += 5 
   slave_rate["ego"] += 1
-  slave_rate["custom"] -= 1    
  END
- IF v_balls_rule = 1:
-  slave_rate["pride"] += 1
+ IF v_balls_rule = 1 and unenforced_v_balls_rule_broken = 1:
+  slave_rate["pride"] += 5
   slave_rate["ego"] += 1  
-  slave_rate["custom"] -= 1
  END
-
- ELSE
- IF silence_rule = 1:
-  slave_rate["callisthenics"] += 1
-  slave_rate["custom"] += 1  
-  slave_rate["sensitivity"] += 1
-  slave_rate["temper"] -= 1
-  slave_rate["pride"] -= 1
-  else
-  if slave["expression"] < master_artdirector: slave_rate["expression"] += 1
- END
- IF master_rule = 1:
-  IF master_supermacy > 0:
-   slave_rate["instinct"] += master_supermacy
-   slave_rate["rational"] += master_supermacy
-   else
-   slave_rate["instinct"] += 1
-   slave_rate["rational"] += 1
-  END
-  slave_rate["pride"] -= 1
-  slave_rate["custom"] += 1
-  else
-  if slave['pride'] > slave['moral'] and slave['pride'] < slave['ego']: slave_rate["pride"] += slave['pride']
-  slave_rate["mood"] += 1
-  slave_rate["instinct"] -= slave["temper"]
-  slave_rate["rational"] -= slave["ego"]   
- END
- IF shit_prohibited = 1:
-  slave_rate["stamina"] -= 1
-  slave_rate["custom"] += 2
-  if master_supermacy > 0: slave_rate["pride"] -= master_supermacy
-  if master_supermacy <= 0: slave_rate["pride"] -= 1  
- END
- IF pet_rule = 1:
-  slave_rate["custom"] += 1 
-  slave_rate["ego"] -= 1
-  slave_rate["callisthenics"] += 1
-  slave_rate["pet"] += 2
-  slave_rate["dressage"] += 1
-  if master_supermacy > 0: slave_rate["pride"] -= master_supermacy
-  if master_supermacy <= 0: slave_rate["pride"] -= 1   
-  slave_rate["hygiene"] += 10  
-  if slave["pet"] >= brand_reputation AND slave["pet"] > 0: master_mood['pos_good_pet'] = 1
- END
- IF blowjob_rule = 1:
-  if master_excitement > 0: master_mood_rate += slave["sub_bj"]
-  if slave["sub_bj"] > 1 and master_excitement > 0: master_mood['pos_good_morning'] = 1
-  master_excitement -= 1
-  slave["sub_bj_xp"] += 1
-  slave_concentration += 1
-  slave_rate["custom"] += 1 
-  slave_rate["pride"] -= 1 
-  slave_rate["hygiene"] += 5  
- END
- IF pissuar_rule = 1:
-  master_mood_rate += slave["sub_piss"] - 3
-  if slave["preversion"] < 1: slave['neg_disgust'] = 1
-  if slave["sub_piss"] > 2: master_mood['pos_toilet'] = 1
-  slave["sub_piss_xp"] += 1
-  slave["preversion_xp"] += 1
-  slave_rate["mood"] -= 4 - slave["sub_piss"] - slave["moral"]
-  if slave["sub_piss"] < 4 and slave["preversion"] < 1: slave["neg_rules"] = 1
-  slave_rate["custom"] += 1 
-  if slave["sub_piss"] < 3: slave["sub_piss"] += 1
-  if master_supermacy > 0: slave_rate["pride"] -= master_supermacy * slave["pride"]
-  if master_supermacy <= 0: slave_rate["pride"] -= slave["pride"]     
-  slave_rate["hygiene"] += 15  
-  slave_rate['stamina'] -= 1
- END
- IF toilet_rule = 1:
-  if slave["preversion"] < 2: slave['neg_disgust'] = 1
-  master_mood_rate += slave["sub_kopro"] - 3
-  slave["preversion_xp"] += 1  
-  if slave["sub_kopro"] > 3: master_mood['pos_toilet'] += 1  
-  slave_rate["mood"] -= 5 - slave["sub_kopro"] - slave["moral"]
-  if slave["sub_kopro"] < 4 and slave["preversion"] < 2: slave["neg_rules"] = 1  
-  slave_rate["custom"] += 1 
-  if slave["sub_kopro"] < 3: slave["sub_kopro"] += 1
-  if master_supermacy > 0: slave_rate["pride"] -= master_supermacy * slave["pride"] * 2
-  if master_supermacy <= 0: slave_rate["pride"] -= slave["pride"] * 2   
-  slave_rate["hygiene"] += 40 
-  slave_rate['stamina'] -= 6 - slave['stamina']
- END
- IF v_balls_rule = 1:
-  slave["sub_vaginal_xp"] += 1
-  slave_rate["arousal"] += 3
-  slave_rate["sensitivity"] += 1
-  slave_rate["pride"] -= 1 
-  slave_rate["hygiene"] += 5 
- END 
 END
+
+!Bonuses for Rules followed - crushboss
+IF silence_rule = 1 and silence_rule_res >= 0:
+ slave_rate["callisthenics"] += 1
+ slave_rate["custom"] += 1  
+ slave_rate["sensitivity"] += 1
+ slave_rate["temper"] -= 1
+ slave_rate["pride"] -= 1
+ if slave["expression"] < master_artdirector: slave_rate["expression"] += 1
+END
+IF master_rule = 1 and master_rule_res >= 0:
+ IF master_supermacy > 0:
+  slave_rate["instinct"] += master_supermacy
+  slave_rate["rational"] += master_supermacy
+  else
+  slave_rate["instinct"] += 1
+  slave_rate["rational"] += 1
+ END
+ slave_rate["pride"] -= 1
+ slave_rate["custom"] += 1
+ slave_rate["mood"] += 1
+END
+IF shit_prohibited = 1 and shit_prohibited_res >= 0:
+ slave_rate["stamina"] -= 1
+ slave_rate["custom"] += 2
+ if master_supermacy > 0: slave_rate["pride"] -= master_supermacy
+ if master_supermacy <= 0: slave_rate["pride"] -= 1  
+END
+IF pet_rule = 1 and pet_rule_res >= 0:
+ slave_rate["custom"] += 1 
+ slave_rate["ego"] -= 1
+ slave_rate["callisthenics"] += 1
+ slave_rate["pet"] += 2
+ slave_rate["dressage"] += 1
+ if master_supermacy > 0: slave_rate["pride"] -= master_supermacy
+ if master_supermacy <= 0: slave_rate["pride"] -= 1   
+ slave_rate["hygiene"] += 10  
+ if slave["pet"] >= brand_reputation AND slave["pet"] > 0: master_mood['pos_good_pet'] = 1
+END
+IF blowjob_rule = 1 and blowjob_rule_res >= 0:
+ if master_excitement > 0: master_mood_rate += slave["sub_bj"]
+ if slave["sub_bj"] > 1 and master_excitement > 0: master_mood['pos_good_morning'] = 1
+ master_excitement -= 1
+ slave["sub_bj_xp"] += 1
+ slave_concentration += 1
+ slave_rate["custom"] += 1
+ slave_rate["rational"] += 1
+ slave_rate["instinct"] += 1
+ slave_rate["pride"] -= 1
+ slave_rate["hygiene"] += 5 
+END
+IF pissuar_rule = 1 and pissuar_rule_res >= 0:
+ master_mood_rate += slave["sub_piss"] - 3
+ if slave["preversion"] < 1: slave['neg_disgust'] = 1
+ if slave["sub_piss"] > 2: master_mood['pos_toilet'] = 1
+ slave["sub_piss_xp"] += 1
+ slave["preversion_xp"] += 1
+ slave_rate["mood"] -= 4 - slave["sub_piss"] - slave["moral"]
+ if slave["sub_piss"] < 4 and slave["preversion"] < 1: slave["neg_rules"] = 1
+ slave_rate["custom"] += 1 
+ if slave["sub_piss"] < 3: slave["sub_piss"] += 1
+ if master_supermacy > 0: slave_rate["pride"] -= master_supermacy * slave["pride"]
+ if master_supermacy <= 0: slave_rate["pride"] -= slave["pride"]     
+ slave_rate["hygiene"] += 15  
+ slave_rate['stamina'] -= 1
+END
+IF toilet_rule = 1 and toilet_rule_res >= 0:
+ if slave["preversion"] < 2: slave['neg_disgust'] = 1
+ master_mood_rate += slave["sub_kopro"] - 3
+ slave["preversion_xp"] += 1  
+ if slave["sub_kopro"] > 3: master_mood['pos_toilet'] += 1  
+ slave_rate["mood"] -= 5 - slave["sub_kopro"] - slave["moral"]
+ if slave["sub_kopro"] < 4 and slave["preversion"] < 2: slave["neg_rules"] = 1  
+ slave_rate["custom"] += 1 
+ if slave["sub_kopro"] < 3: slave["sub_kopro"] += 1
+ if master_supermacy > 0: slave_rate["pride"] -= master_supermacy * slave["pride"] * 2
+ if master_supermacy <= 0: slave_rate["pride"] -= slave["pride"] * 2   
+ slave_rate["hygiene"] += 40 
+ slave_rate['stamina'] -= 6 - slave['stamina']
+END
+IF v_balls_rule = 1 and v_balls_rule_res >= 0:
+ slave["sub_vaginal_xp"] += 1
+ slave_rate["arousal"] += 3
+ slave_rate["sensitivity"] += 1
+ slave_rate["pride"] -= 1 
+ slave_rate["hygiene"] += 5 
+END 
+
+!Penalties and Bonuses for forcing rules that the slave hates - crushboss
+IF num_rules_wanttobreak > 0:
+ slave_rate["angst"] += num_rules_wanttobreak*5
+ slave_rate["moral"] -= num_rules_wanttobreak*5
+ slave_rate["rational"] += num_rules_wanttobreak*3
+ slave_rate["pride"] -= num_rules_wanttobreak*3
+ slave_rate["custom"] += num_rules_wanttobreak
+END  
 
 !rest conditions
 IF slave_sleep_condition = -2:
@@ -996,14 +1159,20 @@ IF slave_sleep_condition = 1:
  slave_rate["mood"] += slave["moral"]
  slave_rate["mood"] -= slave["pride"]
  slave_rate["spoil"] += 1
- slave["energy"] += 1  
+ slave["energy"] += 1
+ IF slave["pride"] < 2 and slave["angst"] <= 0 and slave["mood"] > 3:
+  slave_rate["moral"] += 2
+  slave_rate["instinct"] += 1
+  slave['pos_sleep'] = 1
+ END
 END
 
 IF slave_sleep_condition = 2:
  slave_rate["mood"] += slave['sensitivity']
  if slave['sensitivity'] > 0: slave['pos_sleep'] = 1  
  slave["energy"] += 1  
- slave_rate["spoil"] += 1 
+ slave_rate["spoil"] += 1
+ slave_rate["instinct"] += 1 
 END
 
 !Angst does the dirty work
@@ -1022,13 +1191,12 @@ IF slave["energy"] = -5 and slave["stamina"] > 0:
  slave["energy"] = -4
 END
 
-
 IF slave["angst"] > 0: 
  gs '$mod_slave_drop', slave["angst"]
  if slave["angst"] > slave["temper"]: slave["neg_angst"] = slave["angst"]
 END
 
-!chance of dying at the zero value of health
+!chance of dying at zero value health
 !base - 14% - min 6% max 20%
 IF slave_state = CONST_INT['slave_faint'] and slave["stamina"] = 0:
  dprob_max = 7
@@ -1041,6 +1209,10 @@ IF slave_state = CONST_INT['slave_faint'] and slave["stamina"] = 0:
   slave_died = 1
  END
 END
+
+!Love begins with true devotion - crushboss
+if slave_state = CONST_INT['slave_exist'] and slave["moral"] >= 5 and master_str >= 5 and master_domination >= 5 and master_cha >= 5: slave['pos_slave_love'] = 100
+if assistant_state = 1 and assistant["moral"] >= 5 and master_str >= 5 and master_domination >= 5 and master_cha >= 5: assistant['pos_slave_love'] = 100
 
 !master part
 estate_quality = estate_prestige[$estate] + interior_prestige[$study] + interior_prestige[$bath] + interior_prestige[$bed] - house_mess
@@ -1056,7 +1228,7 @@ IF master_mood['pos_show'] < a:
  gs '$mod_master_drop', 1
 END
 
-!treat wounds
+!treat wounds and illness effects
 healing = master_medic + assistant["nurse"]
 IF master_wounds_rate > 0:
  master_wounds_rate -= master_str + master_mood + healing - master_hygiene + 1
@@ -1081,7 +1253,12 @@ if house_mess < 2: master_str_rate += 1
 if master_str < cooked_food: master_str_rate += cooked_food - master_str
 if master_mood > master_str: master_str_rate += 1
 if assistant["nurse"] > master_str: master_str_rate += 1
+IF snake_amulet_on = 1:
+ master_str_rate += 1
+ master_domination_rate += 1
+END
 
+!Addiction
 if master_str < master_alco_addiction: master_str_rate -= 2
 
 IF master_drunk > 0:
@@ -1129,22 +1306,13 @@ master_energised = 0
 if master_mood['neg_wounded'] < master_wounds: master_mood['neg_wounded'] = master_wounds
 
 !rise arousal
+if master_excitement < -5: master_excitement = -5
 if master_excitement < 5: master_excitement += master_libido
 if master_excitement > 5: master_excitement = 5
-
-
-!"skills degradation
-i = 0
-:loop1
-i += 1
-
-dynamic '
-IF <<$matribute[i]>> < 5: 
- <<$mrate[i]>> -= 0
-END
-'
-
-IF i < 12: jump 'loop1'"
+if master_excitement_rate < -5: master_excitement_rate = -5
+if master_libido > 5: master_libido = 5
+if master_libido < 0: master_libido = 0
+if master_libido_rate <= 1: master_libido_rate = 2
 
 !prisoner part
 if prisoner['neg_prisoner'] < 0: prisoner['neg_prisoner'] = 0
@@ -1366,7 +1534,6 @@ assistant_rate["hygiene"] = 0
 assistant_food_cost = 2
 if assistant_state ! 0: total_food_cost += assistant_food_cost
 
-
 assistant['milk_gain'] = 0
 IF assistant['lactation'] > 0:
  assistant['milk_gain'] = assistant["boobs"] + assistant["stamina"] - 3
@@ -1390,7 +1557,7 @@ IF assistant_rate["fear"] > 0:
  assistant_rate["fear"] -= 2
 END 
 
-!heal
+!healing, addiction, wounds, illness
 IF assistant['koffe_addiction'] > 20:
  if lab_store["koffe"] > 0: lab_store["koffe"] -= 1
 END
@@ -1450,14 +1617,39 @@ IF assistant['pregnant'] > 3 and assistant['fertility'] = 1:
  if assistant_virginity < 2: assistant_virginity = 2
 END
 
-!Normalize mood and arousal
-if assistant["mood"] ! 0: assistant_prev["mood"] = assistant["mood"]
-assistant["mood"] = 0
-assistant_rate["mood"] = 0
-
-if assistant["arousal"] ! 0: assistant_prev["arousal"] = assistant["arousal"]
-assistant["arousal"] = 0
-assistant_rate["arousal"] = 0
+!Normalize mood, arousal, and hygiene for assistant - crushboss
+IF assistant_state = 1:
+ if assistant["mood"] ! 0: assistant_prev["mood"] = assistant["mood"]
+ if assistant["mood"] < 2: assistant["mood"] = 2
+ assistant_rate["mood"] += 5 + assistant["mood"]
+ IF assistant_rate["mood"] >= 50:
+  assistant["mood"] += 1
+  assistant_rate["mood"] = 0
+ END
+ IF assistant_rate["mood"] <= -10:
+  assistant["mood"] -= 1
+  assistant_rate["mood"] = 0
+ END
+ if assistant["mood"] > 5: assistant["mood"] = 5
+END
+IF assistant_state = 1:
+ if assistant["arousal"] ! 0: assistant_prev["arousal"] = assistant["arousal"]
+ if assistant["arousal"] < 2: assistant["arousal"] = 2
+ assistant_rate["arousal"] += 5 + assistant["arousal"]
+ IF assistant_rate["arousal"] >= 50:
+  assistant["arousal"] += 1
+  assistant_rate["arousal"] = 0
+ END
+ IF assistant_rate["arousal"] <= -10:
+  assistant["arousal"] -= 1
+  assistant_rate["arousal"] = 0
+ END
+ if assistant["arousal"] > 5: assistant["arousal"] = 5
+END
+IF assistant_state = 1 and assistant_washes_rule ! 1 and assistant_washe_slave_rule ! 1 and assistant["hygiene"] > 0 and bath > 0:
+ assistant_rate["hygiene"] = 0
+ assistant["hygiene"] = 0
+END
 
 !lowering spoil
 assistant_rate["spoil"] -= 1 + assistant["fear"]
@@ -1467,9 +1659,14 @@ assistant["virtue"] = 0
 assistant["sin"] = 0
 assistant["calories"] = 4
 
-!Appears dirt in the house
+!Dirt and Hygiene from sleep, time, and normal house use - crushboss
 house_mess_rate += 5
 master_hygiene_rate += 5
+master_hygiene_rate += master_wounds
+slave_rate["hygiene"] += 5
+slave_rate["hygiene"] += slave["wounds"]
+assistant_rate["hygiene"] += 5
+assistant_rate["hygiene"] += assistant["wounds"]
 
 !food reset
 master_food_cost = IIF(cooked_food < 1, 2, 0)
@@ -1483,9 +1680,16 @@ cooked_food = -1
 !Define the action at the end of the day
 !added check for slave status 
 !does she want to masturbate
-IF slave["arousal"] > slave["pride"] and slave["arousal"] > 1 and slave_state = CONST_INT['slave_exist']: slave_will_masturbate = 1
+!Added check for energy level of slave and increased the minimum arousal level to 3 - crushboss
+slave_will_masturbate = 0
+slave_masturbating_anyway = 0
+IF slave["arousal"] > slave["pride"] and slave["arousal"] > 2 and slave_state = CONST_INT['slave_exist'] and previous_energy >= 0:
+ slave_will_masturbate = 1
+ else
+ slave_will_masturbate = 0
+END
 !is there a rule against it
-IF rule_masturbation = 1 AND slave_will_masturbate = 1: 
+IF rule_masturbation = 1 AND slave_will_masturbate = 1 and previous_energy >= 0: 
  slave_masturbating_anyway = 1
  slave_will_masturbate = 0
 END
@@ -1510,8 +1714,6 @@ END
 IF slave_masturbating_anyway = 1 AND slave["caught_masturbating"] > 0:
  slave_masturbating_anyway = 0
 END
-slave["caught_masturbating"] -= 1
-
 
 IF slave['pregnant'] >= 40 and slave['pregnant_revealed'] = 0: slave['pregnant_revealed'] = 1
 IF assistant['pregnant'] >= 40 and assistant['pregnant_revealed'] = 0: assistant['pregnant_revealed'] = 1
@@ -1562,7 +1764,6 @@ IF pet_tentacle > 0:
  END 
 END
 
-
 txt_count = 1000
 txt = 1
 menu_form = 0
@@ -1572,7 +1773,7 @@ menu_form = 0
 !lillimerge: sententia_veritas disabling moved to here
 sententia_veritas = 0
 
-!loss condition in tutorial if slave is kill
+!loss condition in tutorial if slave is killed
 IF exam_in_progress = 1:
  IF slave["stamina"] = 0:
   txt = 1
@@ -1688,7 +1889,7 @@ IF barn_cow = 1:
  END
 END
 
-!eggs.
+!eggs
 IF barn_harpy = 1:
  !calculate egg amount
  a = RAND (3,6)
@@ -1962,6 +2163,39 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    virgin_meat_gain -= 5
   END
  END
+ IF frige_space >= 7 AND estate_size[$estate] = 70:
+  mince_gain += frige["mince"]
+  frige["mince"] = 0
+  IF mince_gain < 7:
+   frige["mince"] = mince_gain
+   mince_gain = 0
+   ELSE
+   frige["mince"] = 7
+   mince_gain -= 7
+  END
+ END
+ IF frige_space >= 7 AND estate_size[$estate] = 70:
+  meat_gain += frige["meat"]
+  frige["meat"] = 0
+  IF meat_gain < 7:
+   frige["meat"] = meat_gain
+   meat_gain = 0
+   ELSE
+   frige["meat"] = 7
+   meat_gain -= 7
+  END
+ END
+ IF frige_space >= 7 AND estate_size[$estate] = 70:
+  virgin_meat_gain += frige["virgin_meat"]
+  frige["virgin_meat"] = 0
+  IF virgin_meat_gain < 7:
+   frige["virgin_meat"] = virgin_meat_gain
+   virgin_meat_gain = 0
+   ELSE
+   frige["virgin_meat"] = 7
+   virgin_meat_gain -= 7
+  END
+ END
  IF frige_space >= 10 AND estate_size[$estate] = 100:
   mince_gain += frige["mince"]
   frige["mince"] = 0
@@ -2027,7 +2261,73 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
    frige["virgin_meat"] = 15
    virgin_meat_gain -= 15
   END
- END 
+ END
+ IF frige_space >= 20 AND estate_size[$estate] = 200:
+  mince_gain += frige["mince"]
+  frige["mince"] = 0
+  IF mince_gain < 20:
+   frige["mince"] = mince_gain
+   mince_gain = 0
+   ELSE
+   frige["mince"] = 20
+   mince_gain -= 20
+  END
+ END
+ IF frige_space >= 20 AND estate_size[$estate] = 200:
+  meat_gain += frige["meat"]
+  frige["meat"] = 0
+  IF meat_gain < 20:
+   frige["meat"] = meat_gain
+   meat_gain = 0
+   ELSE
+   frige["meat"] = 20
+   meat_gain -= 20
+  END
+ END
+ IF frige_space >= 20 AND estate_size[$estate] = 200:
+  virgin_meat_gain += frige["virgin_meat"]
+  frige["virgin_meat"] = 0
+  IF virgin_meat_gain < 20:
+   frige["virgin_meat"] = virgin_meat_gain
+   virgin_meat_gain = 0
+   ELSE
+   frige["virgin_meat"] = 20
+   virgin_meat_gain -= 20
+  END
+ END
+ IF frige_space >= 25 AND estate_size[$estate] = 250:
+  mince_gain += frige["mince"]
+  frige["mince"] = 0
+  IF mince_gain < 25:
+   frige["mince"] = mince_gain
+   mince_gain = 0
+   ELSE
+   frige["mince"] = 25
+   mince_gain -= 25
+  END
+ END
+ IF frige_space >= 25 AND estate_size[$estate] = 250:
+  meat_gain += frige["meat"]
+  frige["meat"] = 0
+  IF meat_gain < 25:
+   frige["meat"] = meat_gain
+   meat_gain = 0
+   ELSE
+   frige["meat"] = 25
+   meat_gain -= 25
+  END
+ END
+ IF frige_space >= 25 AND estate_size[$estate] = 250:
+  virgin_meat_gain += frige["virgin_meat"]
+  frige["virgin_meat"] = 0
+  IF virgin_meat_gain < 25:
+   frige["virgin_meat"] = virgin_meat_gain
+   virgin_meat_gain = 0
+   ELSE
+   frige["virgin_meat"] = 25
+   virgin_meat_gain -= 25
+  END
+ END
  barn_pig_profit += mince_gain + meat_gain*2 + virgin_meat_gain*4
 END
 

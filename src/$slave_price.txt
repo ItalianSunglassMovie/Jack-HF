@@ -1,62 +1,9 @@
 # $slave_price
 !BASE PRICE
-!stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
+price = 0
+haggling_limit = 0
 
-stock_base_price = 5
-if stock["stamina"] < 3: stock_base_price -= 5
-if stock["stamina"] > 2: stock_base_price += 5
-if stock["stamina"] > 3: stock_base_price += 10
-if stock["stamina"] > 4: stock_base_price += 20
-if stock["beauty"] < 2: stock_base_price -= 5
-if stock["beauty"] > 1: stock_base_price += 5
-if stock["beauty"] > 2: stock_base_price += 10
-if stock["beauty"] > 3: stock_base_price += 20
-if stock["beauty"] > 4: stock_base_price += 40
-if stock["fat"] = 1: stock_base_price += 5
-if stock["fat"] > 2: stock_base_price -= 5
-if stock["fat"] > 3: stock_base_price -= 10
-if stock["fat"] > 4: stock_base_price -= 20
-if stock["scares"] > 0: stock_base_price -= 5
-if stock["scares"] > 1: stock_base_price -= 10
-if stock["scares"] > 2: stock_base_price -= 20
-if stock["scares"] > 3: stock_base_price -= 40
-if stock["scares"] > 4: stock_base_price -= 80
-if stock["bruises"] > 1: stock_base_price -= 5
-if stock["bruises"] > 2: stock_base_price -= 10
-if stock["bruises"] > 3: stock_base_price -= 20
-if stock["bruises"] > 4: stock_base_price -= 40
-if stock["style"] > 0: stock_base_price += 5
-if stock["style"] > 1: stock_base_price += 10
-if stock["style"] > 2: stock_base_price += 20
-if stock["style"] > 3: stock_base_price += 40
-if stock["style"] > 4: stock_base_price += 80
-if stock["exotic"] > 0: stock_base_price += 5
-if stock["exotic"] > 1: stock_base_price += 10
-if stock["exotic"] > 2: stock_base_price += 20
-if stock["exotic"] > 3: stock_base_price += 40
-if stock["exotic"] > 4: stock_base_price += 80
-if stock["sensitivity"] < 3: stock_base_price -= 5
-if stock["sensitivity"] > 3: stock_base_price += 5
-if stock["sensitivity"] > 4: stock_base_price += 10
-if stock["intellect"] < 3: stock_base_price -= 5
-if stock["intellect"] > 4: stock_base_price += 10
-if stock["temper"] > 3: stock_base_price += 5
-if stock["temper"] > 4: stock_base_price += 10
-if stock["ego"] < 2: stock_base_price -= 5
-if stock["ego"] > 3: stock_base_price += 5
-if stock["pride"] < 2: stock_base_price += 5
-if stock["pride"] > 3: stock_base_price -= 5
-if stock["pride"] > 4: stock_base_price -= 10
-if stock_virginity < 2: stock_base_price += 5
-if stock["grace"] = 1: stock_base_price += 5
-if stock["grace"] = -1: stock_base_price -= 5
-if stock["voice"] > 0: stock_base_price += 5
-if stock["voice"] < 0: stock_base_price -= 5
-if stock_base_price < 5: stock_base_price = 5
-price = (stock_base_price*3)/2
-
-if price < 1: price = 1
-halfprice = price/2
+gs '$newloc'
 
 !price for slave 
 slave_base_price = 5
@@ -69,7 +16,9 @@ if slave["beauty"] > 1: slave_base_price += 5
 if slave["beauty"] > 2: slave_base_price += 10
 if slave["beauty"] > 3: slave_base_price += 20
 if slave["beauty"] > 4: slave_base_price += 40
-if slave["fat"] = 1: slave_base_price += 5
+if slave["fat"] < 1: slave_base_price -= 10
+if slave["fat"] = 1: slave_base_price += 10
+if slave["fat"] = 2: slave_base_price += 10
 if slave["fat"] > 2: slave_base_price -= 5
 if slave["fat"] > 3: slave_base_price -= 10
 if slave["fat"] > 4: slave_base_price -= 20
@@ -97,11 +46,11 @@ if slave["sensitivity"] > 3: slave_base_price += 5
 if slave["sensitivity"] > 4: slave_base_price += 10
 if slave["intellect"] < 3: slave_base_price -= 5
 if slave["intellect"] > 4: slave_base_price += 10
-if slave["temper"] > 3: slave_base_price += 5
-if slave["temper"] > 4: slave_base_price += 10
-if slave["ego"] < 2: slave_base_price -= 5
-if slave["ego"] > 3: slave_base_price += 5
-if slave["pride"] < 2: slave_base_price += 5
+if slave["temper"] > 3: slave_base_price += 10
+if slave["temper"] > 4: slave_base_price += 20
+if slave["ego"] < 2: slave_base_price -= 20
+if slave["ego"] > 3: slave_base_price += 40
+if slave["pride"] < 2: slave_base_price += 15
 if slave["pride"] > 3: slave_base_price -= 5
 if slave["pride"] > 4: slave_base_price -= 10
 if virginity < 2: slave_base_price += 5
@@ -112,13 +61,16 @@ if slave["voice"] < 0: slave_base_price -= 5
 if slave_base_price < 5: slave_base_price = 5
 slaveprice = (slave_base_price*3)/2
 
-if slaveprice < 1: slaveprice = 1
+if slaveprice < 1: slaveprice = 5
 
 !RATING
 killvar 'slave_specialisation'
 
+atribute_sum = 0
 max_skill = 0
 max_sex = 0
+skill_sum = 0
+sex_sum = 0
 
 atribute_sum = slave["stamina"]
 atribute_sum += slave["sensitivity"]
@@ -152,6 +104,40 @@ if slave["callisthenics"] >= 5: max_skill += 1
 skill_sum += slave["secretary"]
 if slave["secretary"] >= 5: max_skill += 1
 
+!Calculate sex skills - Slave
+if slave["sub_hj"] < slave["petting"]: slave["sub_hj"] = slave["petting"]
+slave["petting"] = (slave["sub_hj"] + slave["sub_fj"] + slave["sub_hug"] + slave["sub_pazuri"])/4
+
+if slave["sub_bj"] < slave["sub_dt"]: slave["sub_bj"] = slave["sub_dt"]
+if slave["sub_bj"] < slave["sub_bukake"]: 
+ if slave["sub_bj"] < 3: slave["sub_bj"] = slave["sub_bukake"]
+END
+if slave["sub_bj"] < slave["orgy"]: slave["sub_bj"] = slave["orgy"]
+if slave["sub_thongue"] < slave["oral"]: slave["sub_thongue"] = slave["oral"]
+slave["oral"] = (slave["sub_kiss"] + slave["sub_thongue"] + slave["sub_bj"] + slave["sub_dt"] + slave["sub_asslik"])/5
+
+if slave["sub_anal"] < slave["anal_stretch"]: slave["sub_anal"] = slave["anal_stretch"]
+if slave["sub_anal"] > 1 and slave["anal_stretch"] = 0: slave["anal_stretch"] = 1
+if slave["sub_vaginal"] < slave["orgy"]: slave["sub_vaginal"] = slave["orgy"]
+if slave["sub_anal"] < slave["orgy"]: slave["sub_anal"] = slave["orgy"]
+slave["penetration"] = (slave["sub_vaginal"] + slave["sub_anal"] + slave["sub_fisting"] + slave["anal_stretch"])/4
+
+if slave["sub_exhibit"] < slave["roleplay"]: slave["sub_exhibit"] = slave["roleplay"]
+if slave["sub_masturbation"] < slave["sub_dildo"]: slave["sub_masturbation"] = slave["sub_dildo"]
+slave["roleplay"] = (slave["sub_seduce"] + slave["sub_masturbation"] + slave["sub_dildo"] + slave["sub_exhibit"] + slave["sub_humiliation"])/5
+
+if slave["sub_mazo"] < slave["sub_selfpain"]: slave["sub_mazo"] = slave["sub_selfpain"]
+if slave["sub_piss"] < slave["sub_kopro"]: slave["sub_piss"] = slave["sub_kopro"]
+slave["fetishism"] = (slave["sub_enema"] + slave["sub_mazo"] + slave["sub_selfpain"] + slave["sub_piss"] + slave["sub_kopro"])/5
+
+if slave["sub_tp"] < slave["sub_gangbang"]: slave["sub_tp"] = slave["sub_gangbang"]
+if slave["sub_dp"] < slave["sub_tp"]: slave["sub_dp"] = slave["sub_tp"]
+sperm_shwallow = slave["sub_bj"] - 2
+if slave["sub_bukake"] < sperm_shwallow: slave["sub_bukake"] = sperm_shwallow
+slave["orgy"] = (slave["sub_threesome"] + slave["sub_dp"] + slave["sub_tp"] + slave["sub_gangbang"] + slave["sub_bukake"])/5
+
+slave["xenophily"] = (slave["sub_arachnidspider"] + slave["sub_polypusvermin"] + slave["sub_zoosex"] + slave["sub_bestiality"] + slave["sub_horse"] + slave["sub_tentacles"])/6
+
 sex_sum = slave["oral"]
 if slave["oral"] >= 5: max_sex += 1
 sex_sum += slave["penetration"]
@@ -168,23 +154,66 @@ sex_sum += slave["roleplay"]
 if slave["roleplay"] >= 5: max_sex += 1
 if sex_sum > 9: slave_specialisation['concubine'] = 1
 
+!Calculate Slave Rating
 rating = 0
+maxsum = 0
 maxsum = max_skill + max_sex 
-slave_relative_obedience = slave["fear"] + slave["instinct"] + slave["rational"] + slave["custom"] + slave["moral"] - slave["spoil"] - 1
-IF sex_sum >= 0 and skill_sum >= 5 and atribute_sum >= 8 and max_skill >= 0 and max_sex >= 0 and slave["beauty"] >= 1:
+!slave_relative_obedience = slave["fear"] + slave["instinct"] + slave["rational"] + slave["custom"] + slave["moral"] - slave["spoil"] - 1
+
+slave_obedience_bonus = 0 + slave["meekness"]
+if slave["courage"] = 2: slave["fear"] = 0
+if slave["courage"] = 0: slave_obedience_bonus += slave["fear"]
+if slave["courage"] = -1: slave_obedience_bonus += slave["fear"]*2
+slave["obedience"] = slave_obedience_bonus + slave["moral"] + slave["fear"] + slave["custom"] + slave["rational"] + slave["instinct"] + slave_mood_bonus - slave["spoil"] - rebell[$slave_psy_basic]
+slave_relative_obedience = slave_obedience_bonus + slave["moral"] + slave["fear"] + slave["custom"] + slave["rational"] + slave["instinct"] + slave_mood_bonus - slave["spoil"] - rebell[$slave_psy_basic]
+if $slave_psy_status = 'broken': slave["obedience"] = 100
+
+assistant_obedience_bonus = 0 + assistant["meekness"]
+if assistant["courage"] = 2: assistant["fear"] = 0
+if assistant["courage"] = 0: assistant_obedience_bonus += assistant["fear"]
+if assistant["courage"] = -1: assistant_obedience_bonus += assistant["fear"]*2
+assistant["obedience"] = assistant_obedience_bonus + assistant["moral"] + assistant["fear"] + assistant["custom"] + assistant["rational"] + assistant["instinct"] + assistant_mood_bonus - assistant["spoil"] - rebell[$assistant_psy_basic]
+if $assistant_psy_status = 'broken': assistant["obedience"] = 100
+
+!D-
+IF sex_sum >= 0 and skill_sum >= 5 and atribute_sum >= 6 and max_skill >= 0 and max_sex >= 0 and slave["beauty"] >= 1:
  if slave_relative_obedience >= 1: rating = 1
 END
-IF sex_sum >= 5 and skill_sum >= 10 and atribute_sum >= 12 and max_skill >= 0 and max_sex >= 0 and slave["beauty"] >= 2:
+!D+
+IF sex_sum >= 0 and skill_sum >= 10 and atribute_sum >= 8 and max_skill >= 0 and max_sex >= 0 and slave["beauty"] >= 1:
  if slave_relative_obedience >= 5: rating = 2
 END
-IF sex_sum >= 12 and skill_sum >= 15 and atribute_sum >= 14 and max_skill >= 0 and max_sex >= 0 and slave["beauty"] >= 3:
- if maxsum >= 1: rating = 3
+!C-
+IF sex_sum >= 2 and skill_sum >= 15 and atribute_sum >= 10 and max_skill >= 0 and max_sex >= 0 and slave["beauty"] >= 2:
+ if slave_relative_obedience >= 6: rating = 3
 END
-IF sex_sum >= 15 and skill_sum >= 20 and atribute_sum >= 16 and max_skill >= 1 and max_sex >= 1 and slave["beauty"] >= 4:
+!C+
+IF sex_sum >= 4 and skill_sum >= 18 and atribute_sum >= 12 and max_skill >= 0 and max_sex >= 0 and slave["beauty"] >= 2:
  if slave["moral"] >= 1: rating = 4
 END
-IF sex_sum >= 25 and skill_sum >= 30 and atribute_sum >= 18 and max_skill >= 1 and max_sex >= 1 and slave["beauty"] >= 5:
- if slave["moral"] >= 4 and maxsum >= 3: rating = 5
+!B-
+IF sex_sum >= 8 and skill_sum >= 20 and atribute_sum >= 13 and max_skill >= 2 and max_sex >= 1 and slave["beauty"] >= 3:
+ if slave["moral"] >= 2: rating = 5
+END
+!B+
+IF sex_sum >= 10 and skill_sum >= 22 and atribute_sum >= 14 and max_skill >= 2 and max_sex >= 1 and slave["beauty"] >= 3:
+ if slave["moral"] >= 3: rating = 6
+END
+!A-
+IF sex_sum >= 15 and skill_sum >= 24 and atribute_sum >= 15 and max_skill >= 3 and max_sex >= 2 and slave["beauty"] >= 4:
+ if slave["moral"] >= 4: rating = 7
+END
+!A+
+IF sex_sum >= 18 and skill_sum >= 26 and atribute_sum >= 16 and max_skill >= 3 and max_sex >= 2 and slave["beauty"] >= 4:
+ if slave["moral"] >= 4: rating = 8
+END
+!S-
+IF sex_sum >= 20 and skill_sum >= 28 and atribute_sum >= 18 and max_skill >= 4 and max_sex >= 3 and slave["beauty"] >= 5:
+ if slave["moral"] >= 5: rating = 9
+END
+!S+
+IF sex_sum >= 25 and skill_sum >= 30 and atribute_sum >= 20 and max_skill >= 5 and max_sex >= 4 and slave["beauty"] >= 5:
+ if slave["moral"] >= 5: rating = 10
 END
 
 IF $slave_psy_status = 'broken': rating -= 1
@@ -194,75 +223,122 @@ if rating < 0: rating = 0
 
 $rating_help = '<center><u>To Do:</u></center>'
 
+!F-
 IF rating = 0:
- if skill_sum < 5: $rating_help += '- Teach this slave some common skills<br>'  
- if atribute_sum < 8: $rating_help += '- Develop this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
  if slave["beauty"] < 1: $rating_help += '- This slave is not beautiful enough to rank higher<br>'  
+ if skill_sum < 5: $rating_help += '- Teach this slave some common skills<br>'  
+ if atribute_sum < 6: $rating_help += '- Develop this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
  if slave_relative_obedience < 1: $rating_help += '- This slave needs to learn obedience<br>'   
 END
-
+!D-
 IF rating = 1:
- if sex_sum < 5: $rating_help += '- Teach this slave some sexual skills<br>' 
+ if slave["beauty"] < 1: $rating_help += '- This slave is not beautiful enough to rank higher<br>'  
  if skill_sum < 10: $rating_help += '- Teach this slave some common skills<br>'  
- if atribute_sum < 12: $rating_help += '- Further develop this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
- if slave["beauty"] < 2: $rating_help += '- This slave is not beautiful enough to rank higher<br>'  
+ if atribute_sum < 8: $rating_help += '- Further develop this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
  if slave_relative_obedience < 5: $rating_help += '- This slave needs to be more obedient<br>'    
 END
-
+!D+
 IF rating = 2:
- if sex_sum < 12: $rating_help += '- Improve this slave''s sexual skills<br>' 
+ if slave["beauty"] < 2: $rating_help += '- This slave is cute, but not cute enough to rank higher<br>'  
+ if sex_sum < 2: $rating_help += '- Improve this slave''s sexual skills<br>' 
  if skill_sum < 15: $rating_help += '- Improve this slave''s common skills<br>'  
- if atribute_sum < 14: $rating_help += '- Enhance this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
- if slave["beauty"] < 3: $rating_help += '- This slave is cute, but not cute enough to rank higher<br>'  
- if maxsum < 1: $rating_help += '- This slave should master a skill<br>'  
+ if atribute_sum < 10: $rating_help += '- Enhance this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'
+ if slave_relative_obedience < 6: $rating_help += '- This slave needs to be more obedient<br>'  
 END
-
+!C-
 IF rating = 3:
- if sex_sum < 15: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
- if skill_sum < 20: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
- if atribute_sum < 16: $rating_help += '<div style="font-size: 90%;">- Further enhance <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
- if slave["beauty"] < 4: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
- if max_skill < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a common skill</div>' 
- if max_sex < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a sexual skill</div>' 
- if slave["moral"] < 1: $rating_help += '<div style="font-size: 90%;">- Encourage this slave`s sense of loyalty</div>'    
+ if slave["beauty"] < 2: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
+ if sex_sum < 4: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
+ if skill_sum < 18: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
+ if atribute_sum < 12: $rating_help += '<div style="font-size: 90%;">- Further enhance <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
+ if slave["moral"] < 1: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
 END
-
+!C+
 IF rating = 4:
+ if slave["beauty"] < 3: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
+ if sex_sum < 8: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
+ if skill_sum < 20: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
+ if atribute_sum < 13: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
+ if slave["moral"] < 2: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>'
+ if max_skill < 2: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 2 common skills</div>' 
+ if max_sex < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 1 sexual skills</div>'  
+END
+!B-
+IF rating = 5:
+ if slave["beauty"] < 3: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
+ if sex_sum < 10: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
+ if skill_sum < 22: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
+ if atribute_sum < 14: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
+ if slave["moral"] < 3: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
+ if max_skill < 2: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 2 common skills</div>' 
+ if max_sex < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 1 sexual skills</div>'   
+END
+!B+
+IF rating = 6:
+ if slave["beauty"] < 4: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
+ if sex_sum < 15: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
+ if skill_sum < 24: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
+ if atribute_sum < 15: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
+ if slave["moral"] < 4: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
+ if max_skill < 3: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 3 common skills</div>' 
+ if max_sex < 2: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 2 sexual skills</div>' 
+END
+!A-
+IF rating = 7:
+ if slave["beauty"] < 4: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
+ if sex_sum < 18 $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
+ if skill_sum < 26: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
+ if atribute_sum < 16: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
+ if slave["moral"] < 4: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
+ if max_skill < 3: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 3 common skills</div>' 
+ if max_sex < 2: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 2 sexual skills</div>' 
+END
+!A+
+IF rating = 8:
+ if slave["beauty"] < 5: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
+ if sex_sum < 20: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
+ if skill_sum < 28: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
+ if atribute_sum < 18: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
+ if slave["moral"] < 5: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
+ if max_skill < 4: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 4 common skills</div>' 
+ if max_sex < 3: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 3 sexual skills</div>'
+END
+!S-
+IF rating = 9:
+ if slave["beauty"] < 5: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
  if sex_sum < 25: $rating_help += '<div style="font-size: 90%;">- Perfect this slave''s sexual skills</div>' 
  if skill_sum < 30: $rating_help += '<div style="font-size: 90%;">- Perfect this slave''s common skills</div>'  
- if atribute_sum < 18: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
- if slave["beauty"] < 5: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
- if max_skill < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a common skill</div>' 
- if max_sex < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a sexual skill</div>' 
- if slave["moral"] < 4: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
- if maxsum < 3: $rating_help += '<div style="font-size: 90%;">- This slave should master some more skills</div>'     
+ if atribute_sum < 20: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
+ if slave["moral"] < 5: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
+ if max_skill < 5: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 5 common skills</div>' 
+ if max_sex < 4: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 4 sexual skills</div>'
 END
-
-IF rating = 5:
- $rating_help += '- Cannot get better than this'
+!S+
+IF rating = 10:
+ $rating_help += '- Maximum slave rating achieved!<br>- <<$slave_name>> is truly a masterpiece!'
 END
 
 if $slave_psy_status = 'broken': $rating_help += '- Slave''s spirit is broken'
 
 !specialization
 slave_specialisation['none'] = 1
-if slave["expression"] > 2 and slave["expression"] >= rating: slave_specialisation['refferent'] = 1
-if slave["pet"] > 2 and slave["pet"] >= rating: slave_specialisation['pet'] = 1
-if slave["dressage"] > 2 and slave["dressage"] >= rating: slave_specialisation['pet'] = 1
-if slave["nurse"] > 2 and slave["nurse"] >= rating: slave_specialisation['nurse'] = 1
-if slave["service"] > 2 and slave["service"] >= rating: slave_specialisation['maid'] = 1
-if slave["cook"] > 2 and slave["cook"] >= rating: slave_specialisation['maid'] = 1
-if slave["gladiatrix"] > 2 and slave["gladiatrix"] >= rating: slave_specialisation['gladiatrix'] = 1
-if slave["enchanter"] > 2 and slave["enchanter"] >= rating: slave_specialisation['enchanter'] = 1
-if slave["vocal"] > 2 and slave["vocal"] >= rating: slave_specialisation['artist'] = 1
-if slave["music"] > 2 and slave["music"] >= rating: slave_specialisation['artist'] = 1
-if slave["callisthenics"] > 2 and slave["callisthenics"] >= rating: slave_specialisation['artist'] = 1
-if slave["secretary"] > 2 and slave["secretary"] >= rating: slave_specialisation['refferent'] = 1
+if slave["expression"] > 2 and slave["expression"] >= rating/2: slave_specialisation['refferent'] = 1
+if slave["pet"] > 2 and slave["pet"] >= rating/2: slave_specialisation['pet'] = 1
+if slave["dressage"] > 2 and slave["dressage"] >= rating/2: slave_specialisation['pet'] = 1
+if slave["nurse"] > 2 and slave["nurse"] >= rating/2: slave_specialisation['nurse'] = 1
+if slave["service"] > 2 and slave["service"] >= rating/2: slave_specialisation['maid'] = 1
+if slave["cook"] > 2 and slave["cook"] >= rating/2: slave_specialisation['maid'] = 1
+if slave["gladiatrix"] > 2 and slave["gladiatrix"] >= rating/2: slave_specialisation['gladiatrix'] = 1
+if slave["enchanter"] > 2 and slave["enchanter"] >= rating/2: slave_specialisation['enchanter'] = 1
+if slave["vocal"] > 2 and slave["vocal"] >= rating/2: slave_specialisation['artist'] = 1
+if slave["music"] > 2 and slave["music"] >= rating/2: slave_specialisation['artist'] = 1
+if slave["callisthenics"] > 2 and slave["callisthenics"] >= rating/2: slave_specialisation['artist'] = 1
+if slave["secretary"] > 2 and slave["secretary"] >= rating/2: slave_specialisation['refferent'] = 1
 
 !charm
-if slave["fat"] = 0: relative_fat = 1
+if slave["fat"] = 0: relative_fat = 6
 if slave["fat"] = 1: relative_fat = -1
-if slave["fat"] = 2: relative_fat = 1
+if slave["fat"] = 2: relative_fat = 0
 if slave["fat"] = 3: relative_fat = 3
 if slave["fat"] = 4: relative_fat = 6
 if slave["fat"] = 5: relative_fat = 10
@@ -274,11 +350,11 @@ if charm >= 6: $charm_stat = $_font_col_rep[1] + 'Charm' + $_font_closer
 if charm >= 12: $charm_stat = $_font_col_rep[2] + 'Charm' + $_font_closer
 if charm >= 16: $charm_stat = $_font_col_rep[3] + 'Charm' + $_font_closer
 if charm >= 20: $charm_stat = $_font_col_rep[4] + 'Charm' + $_font_closer
-if charm >= 40: $charm_stat = $_font_col_rep[5] + 'Charm' + $_font_closer
+if charm >= 38: $charm_stat = $_font_col_rep[5] + 'Charm' + $_font_closer
 
-if assistant["fat"] = 0: assistant_relative_fat = 1
+if assistant["fat"] = 0: assistant_relative_fat = 6
 if assistant["fat"] = 1: assistant_relative_fat = -1
-if assistant["fat"] = 2: assistant_relative_fat = 1
+if assistant["fat"] = 2: assistant_relative_fat = 0
 if assistant["fat"] = 3: assistant_relative_fat = 3
 if assistant["fat"] = 4: assistant_relative_fat = 6
 if assistant["fat"] = 5: assistant_relative_fat = 10

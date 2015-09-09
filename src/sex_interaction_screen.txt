@@ -6,29 +6,6 @@ npc = 0
 *p '<div id = "text"><<$text[txt]>></div>'
 if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 
-!'
-$sex_master_stat = ''
-$sex_master_stat = 'Возбуждение:  <<$sex_pc_excitement[sex["pc_excitement_state"]]>><br>'
-$sex_master_stat += 'Энергия:       <<$sex_pc_energy[sex["pc_energy_state"]]>><br>'
-$sex_master_stat += 'Интерес:       <<$sex_pc_interest[sex["pc_interest_state"]]>><br>'
-$sex_master_stat += 'Запас семени:<<$sex_pc_boner[sex["pc_boner"]]>><br>'
-
-$sex_info = '<BR>  Выносливость: <<$sex_girl_stamina[sex["girl_energy_state"]]>><br>'
-$sex_info += '<<$sex_girl_arousal[sex["girl_excitement"]]>><br>'
-$sex_info += '<<$sex_girl_concentration[sex["girl_attention"]]>><br>'
-$sex_info += '<<$sex_girl_openmind[sex["girl_openmind"]]>><br>'
-!$sex_info += '<<$sex_girl_pain[sex["girl_pain"]]>><br>'
-
-*p '<div id = "side_ava_up"><img src = "<<$master_ava>>"></div>'
-*p '<div id = "side_ava_down"><img src = "<<$slave["ava"]>>.jpg"></div>'
-
-$info_bar = ''
-*p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$master_name>></div></center></div>'
-*p '<div id = "side_panel_down"><center><div style="font-size: 50px;"><<$slave_name>></div></center></div>'
-*p '<div id = "side_stats_up"><<$sex_master_stat>></div>'  
-*p '<div id = "side_stats_down"><<$sex_info>></div>'  
-'
-
 $info_bar = ''
 *p '<div id = "side_panel_main">
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<u>Result</u>

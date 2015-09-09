@@ -47,7 +47,12 @@ gs '#суперудары'
 gs '#боевые_предметы'
 gs '#dynamic'
 
-$combatant_ava = '<<$slave["ava_clear"]>>.jpg'
+!$combatant_ava = '<<$slave["ava_clear"]>>.jpg'
+!if $combatant_ava = '' or $combatant_ava = '0': $combatant_ava = '<<$slave_ava>>.jpg'
+$combatant_ava = '<<$slave_ava>>.jpg'
+$combatant_ava = '<<$slave_ava>>.jpg'
+!msg 'Let the fight begin!
+  <<$combatant_ava>>'
 $combatant_name = $slave_name 
 $броня = $armor[$g_type]
 $оружие = $style_wpn[$g_type]

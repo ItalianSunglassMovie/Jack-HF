@@ -2,6 +2,7 @@
 !CALCULATION OF COMBAT RESULTS
 !turns off all sounds after the fight
 CLOSE ALL
+sparring_practice = 0
 
 !for arena fight
 IF $fight_return = 'Start':
@@ -51,55 +52,70 @@ IF $fight_return = 'Start':
  gt 'interaction_city'
 END
 
-!for arena training
+!Sparring Practice
 IF colloseum_fight > 0:
- if combatant = 0: dynamic $master_energy_drop
- if combatant = 1: dynamic $slave_energy_drop
- if combatant = 2: dynamic $assistant_energy_drop 
- combatant = 0 
+ IF combatant = 0:
+  dynamic $master_energy_drop 
+  interaction_city = 1296
+ END 
+ IF combatant = 1:
+  dynamic $slave_energy_drop
+  interaction_city = 1297
+ END
+ IF combatant = 2:
+  dynamic $assistant_energy_drop
+  interaction_city = 1298
+ END
+ copyarr '$display_options', '$colloseum_options'
+ gs '_layout'
+ gt 'interaction_city'
+ combatant = '' 
  colloseum_fight = 0
+ $fight_return = ''
  sp_txt = 1
- copyarr '$display_options', '$colloseum_options' 
+ get_initial_slave = 0 
  gt 'shop_general'
 END
 
 !misc
-IF $враг[1] = 'воспитуемая':
- energy_max = slave["energy"]
- if выносливость_врага[1] < 5: slave["energy"] = -5
- if выносливость_врага[1] >= 10: slave["energy"] = -4
- if выносливость_врага[1] >= 20: slave["energy"] = -3
- if выносливость_врага[1] >= 30: slave["energy"] = -2
- if выносливость_врага[1] >= 40: slave["energy"] = -1
- if выносливость_врага[1] >= 50: slave["energy"] = 0
- if выносливость_врага[1] >= 55: slave["energy"] = 1
- if выносливость_врага[1] >= 60: slave["energy"] = 2
- if выносливость_врага[1] >= 65: slave["energy"] = 3
- if выносливость_врага[1] >= 70: slave["energy"] = 4
- if выносливость_врага[1] >= 75: slave["energy"] = 5
- if slave["energy"] > energy_max: slave["energy"] = energy_max
+IF sparring_practice = 0:
+ IF $враг[1] = 'воспитуемая':
+  energy_max = slave["energy"]
+  if выносливость_врага[1] < 5: slave["energy"] = -5
+  if выносливость_врага[1] >= 10: slave["energy"] = -4
+  if выносливость_врага[1] >= 20: slave["energy"] = -3
+  if выносливость_врага[1] >= 30: slave["energy"] = -2
+  if выносливость_врага[1] >= 40: slave["energy"] = -1
+  if выносливость_врага[1] >= 50: slave["energy"] = 0
+  if выносливость_врага[1] >= 55: slave["energy"] = 1
+  if выносливость_врага[1] >= 60: slave["energy"] = 2
+  if выносливость_врага[1] >= 65: slave["energy"] = 3
+  if выносливость_врага[1] >= 70: slave["energy"] = 4
+  if выносливость_врага[1] >= 75: slave["energy"] = 5
+  if slave["energy"] > energy_max: slave["energy"] = energy_max
 
- bash_damage_done = базовая_выносливость['воспитуемая'] - выносливость_врага[1]
- house_mess_rate += bash_damage_done
- slave_rate["hygiene"] += bash_damage_done
- master_hygiene_rate += bash_damage_done
+  bash_damage_done = базовая_выносливость['воспитуемая'] - выносливость_врага[1]
+  house_mess_rate += bash_damage_done
+  slave_rate["hygiene"] += bash_damage_done
+  master_hygiene_rate += bash_damage_done
 
- lethal_damage_done = базовое_здоровье['воспитуемая'] - здоровье_врага[1]
- if lethal_damage_done > 0: slave_rate["wounds"] += 10
- if lethal_damage_done > базовое_здоровье['воспитуемая']/4: slave_rate["wounds"] += 10 
- if lethal_damage_done > базовое_здоровье['воспитуемая']/3: slave_rate["wounds"] += 20 
- if lethal_damage_done > базовое_здоровье['воспитуемая']/2: slave_rate["wounds"] += 40 
- if lethal_damage_done > базовое_здоровье['воспитуемая'] - 2: slave_rate["wounds"] += 80   
+  lethal_damage_done = базовое_здоровье['воспитуемая'] - здоровье_врага[1]
+  if lethal_damage_done > 0: slave_rate["wounds"] += 10
+  if lethal_damage_done > базовое_здоровье['воспитуемая']/4: slave_rate["wounds"] += 10 
+  if lethal_damage_done > базовое_здоровье['воспитуемая']/3: slave_rate["wounds"] += 20 
+  if lethal_damage_done > базовое_здоровье['воспитуемая']/2: slave_rate["wounds"] += 40 
+  if lethal_damage_done > базовое_здоровье['воспитуемая'] - 2: slave_rate["wounds"] += 80   
 
- if lethal_damage_done > slave["stamina"]: slave_rate["stamina"] -= 100000
+  if lethal_damage_done > slave["stamina"]: slave_rate["stamina"] -= 100000
 
- psy_damage_done = базовый_дух['воспитуемая'] - дух_врага[1]
- slave_rate["mood"] -= psy_damage_done*2
+  psy_damage_done = базовый_дух['воспитуемая'] - дух_врага[1]
+  slave_rate["mood"] -= psy_damage_done*2
 
- pure_bashing_damage = bash_damage_done - lethal_damage_done
- if pure_bashing_damage < 0: pure_bashing_damage = 0
- slave_rate["bruises"] += pure_bashing_damage*2
- slave_rate["stamina"] -= pure_bashing_damage
+  pure_bashing_damage = bash_damage_done - lethal_damage_done
+  if pure_bashing_damage < 0: pure_bashing_damage = 0
+  slave_rate["bruises"] += pure_bashing_damage*2
+  slave_rate["stamina"] -= pure_bashing_damage
+ END
 END
 
 !additional results of the battle for the opponents
@@ -131,47 +147,47 @@ IF $итог_боя = 'победа':
  END
 END
 
-
 IF $враг[1] = 'воспитуемая':
  slave["beaten"] = 1
  slave["beaten_ever"] += 1
  slave_rate["fear"] += 10
  slave_rate["instinct"] += 5
- 
  if выносливость_врага[1] <= 0: slave_state = CONST_INT['slave_faint']
  if здоровье_врага[1] <= 0: dynamic $slave_killed
 END
 
-letal_damage_recived = макс_здоровье_игрока - здоровье_игрока
-bash_damage_recived = макс_выносливость_игрока - выносливость_игрока
-IF дух_игрока < норм_дух_игрока:
-psy_damage_recived = норм_дух_игрока - дух_игрока
+IF sparring_practice = 0:
+ letal_damage_recived = макс_здоровье_игрока - здоровье_игрока
+ bash_damage_recived = макс_выносливость_игрока - выносливость_игрока
+ IF дух_игрока < норм_дух_игрока:
+ psy_damage_recived = норм_дух_игрока - дух_игрока
+ END
+
+ master_mood_rate -= psy_damage_recived
+
+ if letal_damage_recived > master_str_rate: master_wounds_rate += 10
+ if letal_damage_recived > макс_здоровье_игрока/4: master_wounds_rate += 10 
+ if letal_damage_recived > макс_здоровье_игрока/3: master_wounds_rate += 20 
+ if letal_damage_recived > макс_здоровье_игрока/2: master_wounds_rate += 40 
+ if letal_damage_recived > макс_здоровье_игрока - 2: master_wounds_rate += 80  
+ if master_wounds_rate > 0: master_mood['neg_wounded'] = 1
 END
 
-master_mood_rate -= psy_damage_recived
-
-if letal_damage_recived > master_str_rate: master_wounds_rate += 10
-if letal_damage_recived > макс_здоровье_игрока/4: master_wounds_rate += 10 
-if letal_damage_recived > макс_здоровье_игрока/3: master_wounds_rate += 20 
-if letal_damage_recived > макс_здоровье_игрока/2: master_wounds_rate += 40 
-if letal_damage_recived > макс_здоровье_игрока - 2: master_wounds_rate += 80  
-if master_wounds_rate > 0: master_mood['neg_wounded'] = 1
-
-IF combatant = 0:
- energy_max = master_energy 
- if выносливость_игрока < 5: master_energy = -5
- if выносливость_игрока >= 10: master_energy = -4
- if выносливость_игрока >= 20: master_energy = -3
- if выносливость_игрока >= 30: master_energy = -2
- if выносливость_игрока >= 40: master_energy = -1
- if выносливость_игрока >= 50: master_energy = 0
- if выносливость_игрока >= 55: master_energy = 1
- if выносливость_игрока >= 60: master_energy = 2
- if выносливость_игрока >= 65: master_energy = 3
- if выносливость_игрока >= 70: master_energy = 4
- if выносливость_игрока >= 75: master_energy = 5
- if master_energy > energy_max: master_energy = energy_max
-END 
+!IF combatant = 0:
+! energy_max = master_energy 
+! if выносливость_игрока < 5: master_energy = -5
+! if выносливость_игрока >= 10: master_energy = -4
+! if выносливость_игрока >= 20: master_energy = -3
+! if выносливость_игрока >= 30: master_energy = -2
+! if выносливость_игрока >= 40: master_energy = -1
+! if выносливость_игрока >= 50: master_energy = 0
+! if выносливость_игрока >= 55: master_energy = 1
+! if выносливость_игрока >= 60: master_energy = 2
+! if выносливость_игрока >= 65: master_energy = 3
+! if выносливость_игрока >= 70: master_energy = 4
+! if выносливость_игрока >= 75: master_energy = 5
+! if master_energy > energy_max: master_energy = energy_max
+!END 
 
 menu_form = 0
 
@@ -204,8 +220,6 @@ IF get_girl = 1:
   interaction_city = 119
  END
 END
-
-
 
 gt 'hard_return'
 

@@ -1,6 +1,6 @@
 # $guild_auction
 !Auction of branded slaves
-auction_count = 10
+auction_count = 7
 killvar '$auction_flow'
 u = 2
 

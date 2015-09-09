@@ -659,4 +659,46 @@ trainer_concubine_rating['giess'] = 3
 $npc_name['ling'] = 'Master Ling Vao'
 trainer_rating['ling'] = 2
 trainer_refferent_rating['ling'] = 0
-trainer_
+trainer_pet_rating['ling'] = 2
+trainer_nurse_rating['ling'] = 0
+trainer_maid_rating['ling'] = 0
+trainer_gladiatrix_rating['ling'] = 3
+trainer_enchanter_rating['ling'] = 2
+trainer_artist_rating['ling'] = 2
+trainer_concubine_rating['ling'] = 2
+
+$npc_name['minosia'] = 'Mistress Minos'
+trainer_rating['minosia'] = 2
+trainer_refferent_rating['minosia'] = 0
+trainer_pet_rating['minosia'] = 2
+trainer_nurse_rating['minosia'] = 0
+trainer_maid_rating['minosia'] = 0
+trainer_gladiatrix_rating['minosia'] = 3
+trainer_enchanter_rating['minosia'] = 0
+trainer_artist_rating['minosia'] = 0
+trainer_concubine_rating['minosia'] = 2
+
+$npc_name['rabban'] = 'The Beast Rabban'
+trainer_rating['rabban'] = 1
+trainer_refferent_rating['rabban'] = 0
+trainer_pet_rating['rabban'] = 0
+trainer_nurse_rating['rabban'] = 0
+trainer_maid_rating['rabban'] = 2
+trainer_gladiatrix_rating['rabban'] = 3
+trainer_enchanter_rating['rabban'] = 0
+trainer_artist_rating['rabban'] = 0
+trainer_concubine_rating['rabban'] = 2
+
+$npc_name['sheepherd'] = 'Master Sheppard'
+trainer_rating['sheepherd'] = 1
+trainer_refferent_rating['sheepherd'] = 0
+trainer_pet_rating['sheepherd'] = 2
+trainer_nurse_rating['sheepherd'] = 0
+trainer_maid_rating['sheepherd'] = 2
+trainer_gladiatrix_rating['sheepherd'] = 2
+trainer_enchanter_rating['sheepherd'] = 0
+trainer_artist_rating['sheepherd'] = 0
+trainer_concubine_rating['sheepherd'] = 2
+
+--- #masters_base ---------------------------------
+

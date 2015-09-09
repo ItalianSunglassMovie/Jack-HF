@@ -441,6 +441,65 @@ master_medic = master_medic_own + boost_up['master_medic']
 master_fighter = master_fighter_own + boost_up['master_fighter']
 master_mage = master_mage_own + boost_up['master_mage']
 
+!Master Skillups - Temporary hack until real system can be fixed or put in place - crushboss
+IF master_flagelation_rate >= 20: 
+ master_flagelation += 1
+ master_flagelation_rate = 0
+END
+IF master_torture_rate >= 20: 
+ master_torture += 1
+ master_torture_rate = 0
+END
+IF master_bondage_rate >= 20:
+ master_bondage += 1
+ master_bondage_rate = 0
+END
+IF master_petting_rate >= 20: 
+ master_petting += 1
+ master_petting_rate = 0
+END
+IF master_penetration_rate >= 20: 
+ master_penetration += 1
+ master_penetration_rate = 0
+END
+IF master_oral_rate >= 20: 
+ master_oral += 1
+ master_oral_rate = 0
+END
+IF master_fetish_rate >= 20: 
+ master_fetish += 1
+ master_fetish_rate = 0
+END
+IF master_tutor_rate >= 20: 
+ master_tutor += 1
+ master_tutor_rate = 0
+END
+IF master_butler_rate >= 20: 
+ master_butler += 1
+ master_butler_rate = 0
+END
+IF master_artdirector_rate >= 20: 
+ master_artdirector += 1
+ master_artdirector_rate = 0
+END
+IF master_medic_rate >= 20: 
+ master_medic += 1
+ master_medic_rate = 0
+END
+IF master_mage_rate >= 20: 
+ master_mage += 1
+ master_mage_rate = 0
+END
+IF master_domination_rate >= 40:
+ master_domination += 1
+ master_domination_rate = 0
+END
+IF master_fighter_rate >= 40: 
+ master_fighter += 1
+ master_fighter_rate = 0
+END
+
+!Characteristic Alignment for Master
 if master_str > 5: master_str = 5
 if master_str < 0: master_str = 0
 if master_cha > 5: master_cha = 5
@@ -449,34 +508,54 @@ if master_style > 5: master_style = 5
 if master_style < 0: master_style = 0
 if master_libido > 5: master_libido = 5
 if master_libido < 0: master_libido = 0
+if master_libido_rate <= 1: master_libido_rate = 2
 if master_tutor > 5: master_tutor = 5
 if master_tutor < 0: master_tutor = 0
+if master_tutor_rate < 0: master_tutor_rate = 0
 if master_fighter > 6: master_fighter = 6
 if master_fighter < 0: master_fighter = 0
+if master_fighter_rate < 0: master_fighter_rate = 0
 if master_butler > 6: master_butler = 6
 if master_butler < 0: master_butler = 0
+if master_butler_rate < 0: master_butler_rate = 0
 if master_artdirector > 6: master_artdirector = 6
 if master_artdirector < 0: master_artdirector = 0
+if master_artdirector_rate < 0: master_artdirector_rate = 0
 if master_medic > 6: master_medic = 6
 if master_medic < 0: master_medic = 0
+if master_medic_rate < 0: master_medic_rate = 0
 if master_mage > 6: master_mage = 6
 if master_mage < 0: master_mage = 0
+if master_mage_rate < 0: master_mage_rate = 0
 if master_torture > 5: master_torture = 5
 if master_torture < 0: master_torture = 0
+if master_torture_rate < 0: master_torture_rate = 0
 if master_domination > 5: master_domination = 5
 if master_domination < 0: master_domination = 0
+if master_domination_rate < 0: master_domination_rate = 0
 if master_bondage > 5: master_bondage = 5
 if master_bondage < 0: master_bondage = 0
+if master_bondage_rate < 0: master_bondage_rate = 0
 if master_flagelation > 5: master_flagelation = 5
 if master_flagelation < 0: master_flagelation = 0
+if master_flagelation_rate < 0: master_flagelation_rate = 0
 if master_petting > 5: master_petting = 5
 if master_petting < 0: master_petting = 0
+if master_petting_rate < 0: master_petting_rate = 0
 if master_oral > 5: master_oral = 5
 if master_oral < 0: master_oral = 0
+if master_oral_rate < 0: master_oral_rate = 0
 if master_penetration > 5: master_penetration = 5
 if master_penetration < 0: master_penetration = 0
+if master_penetration_rate < 0: master_penetration_rate = 0
 if master_fetish > 5: master_fetish = 5
 if master_fetish < 0: master_fetish = 0
+if master_fetish_rate < 0: master_fetish_rate = 0
+if master_ill < 0: master_ill = 0
+if master_ill > 6: master_ill = 6
+if master_issues < 0: master_issues = 0
+if master_issues > 5: master_issues = 5
+if master_wounds > 5: master_wounds = 5
 
 --- $calculate_atributes ---------------------------------
 

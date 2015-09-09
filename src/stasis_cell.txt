@@ -30,17 +30,17 @@ END
 
 IF iced_state > 0:
  $info_bar = '
-<u>SUMMARY</u>
-<<$beauty[iced["beauty"]]>> 
-<<$stamina[iced["stamina"]]>>  
-<<$exotic[iced["exotic"]]>> 
-<<$fat[iced["fat"]]>> 
-<<$sensitivity[iced["sensitivity"]]>>  
-<<$style[iced["style"]]>> 
-<<$intellect[iced["intellect"]]>> 
-<<$temper[iced["temper"]]>> 
-<<$ego[iced["ego"]]>> 
-<<$pride[iced["pride"]]>> 
+<u>ATTRIBUTES</u>
+<<$beauty[iced["beauty"]]>>
+<<$stamina[iced["stamina"]]>>
+<<$sensitivity[iced["sensitivity"]]>>
+<<$temper[iced["temper"]]>>
+<<$intellect[iced["intellect"]]>>
+<<$ego[iced["ego"]]>>
+<<$pride[iced["pride"]]>>
+<<$exotic[iced["exotic"]]>>
+<<$fat[iced["fat"]]>>
+<<$style[iced["style"]]>>
 
 <u>TRAITS</u>
 <<$iced_features_list>>

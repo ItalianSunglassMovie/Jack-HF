@@ -1,6 +1,6 @@
 # main_menu
 !main menu of the game
-IF sound_on = 1 and achtung_pass = 1:
+IF sound_on = 1 and warning_pass = 1:
  play 'content/snd/mainscreen.mp3', music_volume, 'only, loop'
  else
  close 'content/snd/mainscreen.mp3'
@@ -20,18 +20,18 @@ MAINDESC_H = 798
 $text_display = ''
 FUNC('$menu', '===BEGIN===', 'mainmenu')
 FUNC('$menu', 'exec_options', $menu_item_Tutorial, 'gt "demo_intro"', 'Tutorial')
-FUNC('$menu', 'exec_options', $menu_item_Storyselect, 'gt "hero_customization"', 'Story select')
-FUNC('$menu', 'exec_options', $menu_item_Storycreate, 'gs "init_custom_game" & gt "hero_creation"', 'Story create')
-FUNC('$menu', 'exec_options', $menu_item_Sandbox, 'gt "hero_creation"', 'Sandbox')
+FUNC('$menu', 'exec_options', $menu_item_Storyselect, 'gt "hero_customization"', 'Story Select')
+FUNC('$menu', 'exec_options', $menu_item_Storycreate, 'gs "init_custom_game" & gt "hero_creation"', 'Story Create')
+FUNC('$menu', 'exec_options', $menu_item_Sandbox, 'gs "init_sandbox_game" & gt "hero_creation"', 'Sandbox')
 FUNC('$menu', 'exec_options', $menu_item_Controls, 'gt "controls"', 'Controls')
 FUNC('$menu', 'exec_options', $menu_item_Credits, 'gt "credits"', 'Credits')
-FUNC('$menu', 'exec_options', $menu_item_Aboutfix, 'gt "anonfix"', 'Aboutfix')
-FUNC('$menu', 'exec_options', $menu_item_Moddedby, 'gt "modded_by"', 'Moddedby')
+FUNC('$menu', 'exec_options', $menu_item_Aboutfix, 'gt "development"', 'Development')
+FUNC('$menu', 'exec_options', $menu_item_Moddedby, 'gt "modded_by"', 'Modded By')
 FUNC('$menu', '===END===')	
 *p '<div id = "main_menu"><<$text_display>></div>'
 
 !CLOSE ALL
 
-if achtung_pass = 0: gt 'achtung'
+if warning_pass = 0: gt 'warning'
 --- main_menu ---------------------------------
 

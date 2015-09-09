@@ -1,0 +1,20 @@
+# development
+!Development
+
+'<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
+'<div id = "title_scroll_text">Jack-o-nine-tails Game and Development Information:
+
+Repository is open to everyone to view and examine, however, experienced programmers only are invited to improve and complement the game. Beginners are welcome to help improve the quality of translation. You can find the repository <a href="http://github.com/ItalianSunglassMovie/Jack-HF">here</a>.
+
+Feel free to send me (crushboss) a private message on Hongfire if you wish to help.
+
+Current game development thread is <a href="http://www.hongfire.com/forum/showthread.php/441315-Free-Software-Jack-o-nine-tails-%28%C9%94%29/page16">here</a>.
+
+Current game play discussion (questions, bug reports, feature requests, etc.) can be found <a href="http://www.hongfire.com/forum/showthread.php/441353-Free-Software-Jack-o-nine-tails-%28%C9%94%29-%28thread-reboot-v2%29/page21">here</a>.
+
+Please report any reproducable bugs that you find in-game.  This helps to ensure cleaner releases in the future.  Happy Gaming!!!
+</div>'
+
+{<div id = "close_scroll"><a href = 'EXEC: gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
+--- development ---------------------------------
+

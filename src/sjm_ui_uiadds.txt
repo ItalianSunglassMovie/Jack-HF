@@ -1,17 +1,20 @@
 # sjm_UI_UIadds
-if inventory['stethoscope']<1:
+if inventory['stethoscope'] < 1:
 	inventory['stethoscope'] = 0
 end
+
+slave['brand'] = tattoo_brand
+
 ! Showing quarters buttons
 if $quick_move_action = "show" :
 	$tmp = '<div id = "qm_block">'
-		$tmp += '<div class="qm_title">Move</div>'
-		$tmp += '<div id = "qm_whitehall" class="tooltip-left segoe_print" tooltip-data="Move to White Hall"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 1 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_whitehall.png"></a></div>'
-		$tmp += '<div id = "qm_bull" class="tooltip-left segoe_print" class="tooltip-left" tooltip-data="Move to the Bull"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 2 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_thebull.png"></a></div>'
-		$tmp += '<div id = "qm_serpentine" class="tooltip-left segoe_print" tooltip-data="Move to Serpentine"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 3 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_serpentine.png"></a></div>'
-		$tmp += '<div id = "qm_outcasts" class="tooltip-left segoe_print" tooltip-data="Move to the Outcasts"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 4 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_outcast.png"></a></div>'
-		$tmp += '<div id = "qm_necropolis" class="tooltip-left segoe_print" tooltip-data="Move to Necropolis"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 5 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_necropolis.png"></a></div>'
-		$tmp += '<div id = "qm_fogs" class="tooltip-left segoe_print" tooltip-data="Move to the Fogs"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 6 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_thefogs.png"></a></div>'
+		$tmp += '<div class="qm_title">Travel</div>'
+		$tmp += '<div id = "qm_whitehall" class="tooltip-left segoe_print" tooltip-data="Travel to White Hall"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 1 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_whitehall.png"></a></div>'
+		$tmp += '<div id = "qm_bull" class="tooltip-left segoe_print" class="tooltip-left" tooltip-data="Travel to the Bull"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 2 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_thebull.png"></a></div>'
+		$tmp += '<div id = "qm_serpentine" class="tooltip-left segoe_print" tooltip-data="Travel to Serpentine"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 3 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_serpentine.png"></a></div>'
+		$tmp += '<div id = "qm_outcasts" class="tooltip-left segoe_print" tooltip-data="Travel to the Outcasts"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 4 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_outcast.png"></a></div>'
+		$tmp += '<div id = "qm_necropolis" class="tooltip-left segoe_print" tooltip-data="Travel to Necropolis"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 5 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_necropolis.png"></a></div>'
+		$tmp += '<div id = "qm_fogs" class="tooltip-left segoe_print" tooltip-data="Travel to the Fogs"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 6 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_thefogs.png"></a></div>'
 	$tmp += '</div>'
 	*p '<<$tmp>>'
 end
@@ -21,20 +24,24 @@ if $quick_move_action = "show" :
 		$tmp = ''
 		if slave["age"] = CONST_INT['milf_age']:
 			$tmp += '<div class = "slinfo_mature tooltip-left segoe_print" tooltip-data="Mature woman"><img src="content\pic\ui\jon-UIadds\info_mature.png"></div>'
-		elseif slave['fertility'] = -2: 
+		elseif slave["age"] = CONST_INT['loli_age']: 
 			$tmp += '<div class = "slinfo_mature tooltip-left segoe_print" tooltip-data="Lolita"><img src="content\pic\ui\jon-UIadds\info_immature.png"></div>'
-		else:
+		elseif slave["age"] = CONST_INT['young_age']:
 			$tmp += '<div class = "slinfo_mature tooltip-left segoe_print" tooltip-data="Young girl"><img src="content\pic\ui\jon-UIadds\info_young.png"></div>'
 		end
 		IF virginity < 2:
 			$tmp += '<div id = "slinfo_virgin" class="tooltip-left segoe_print" tooltip-data="Virgin"><img src="content\pic\ui\jon-UIadds\info_virgin.png"></div>'
 		else
-			$tmp += '<div id = "slinfo_virgin" class="tooltip-left segoe_print" tooltip-data="Not virgin"><img src="content\pic\ui\jon-UIadds\info_virginnot.png"></div>'
+			$tmp += '<div id = "slinfo_virgin" class="tooltip-left segoe_print" tooltip-data="Not a Virgin"><img src="content\pic\ui\jon-UIadds\info_virginnot.png"></div>'
 		end	
-		IF slave["fertility"] <0: 
-			if slave["fertility_revealed"] > 0 or slave["fertility"] = -2: 
-				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Not fertile"><img src="content\pic\ui\jon-UIadds\info_fertilenot.png"></div>'
-			else:
+		IF slave["fertility"] < 0: 
+			if slave["fertility_revealed"] > 0 and slave["fertility"] = -1: 
+				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Sterile"><img src="content\pic\ui\jon-UIadds\info_sterile.png"></div>'
+			elseif slave["fertility"] = -2 and slave["age"] = CONST_INT['loli_age']:
+				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Loli - Cannot get pregnant"><img src="content\pic\ui\jon-UIadds\info_fertilenot.png"></div>'
+			elseif slave["fertility"] = -1 and slave["fertility_revealed"] < 1:
+				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Not Fertile"><img src="content\pic\ui\jon-UIadds\info_fertilenot.png"></div>'
+			else
 				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Fertile"><img src="content\pic\ui\jon-UIadds\info_fertile.png"></div>'
 			end
 		elseif slave["fertility"] = 1: 
@@ -48,14 +55,16 @@ if $quick_move_action = "show" :
 		END
 		$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Future use"><img src="content\pic\ui\jon-UIadds\transparent.png"></div>'
 		$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Future use"><img src="content\pic\ui\jon-UIadds\transparent.png"></div>'
-		IF slave["brand"] = 3: 
-			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Magical brand"><img src="content\pic\ui\jon-UIadds\info_brand_magic.png"></div>'
-		elseif slave["brand"] = 2: 
-			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Tatoo brand"><img src="content\pic\ui\jon-UIadds\info_brand_tatoo.png"></div>'
-		elseif slave["brand"] = 1: 
+		IF slave['brand'] = 4: 
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Contract Brand"><img src="content\pic\ui\jon-UIadds\info_brand_contract.png"></div>'		
+		elseif slave['brand'] = 3: 
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Magical Brand"><img src="content\pic\ui\jon-UIadds\info_brand_magic.png"></div>'
+		elseif slave['brand'] = 2: 
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Tattoo of <<$master_name>>''s Brand"><img src="content\pic\ui\jon-UIadds\info_brand_tatoo.png"></div>'
+		elseif slave['brand'] = 1: 
 			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Branded"><img src="content\pic\ui\jon-UIadds\info_brand.png"></div>'
 		else
-			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Not branded"><img src="content\pic\ui\jon-UIadds\info_nobrand.png"></div>'
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Not Branded"><img src="content\pic\ui\jon-UIadds\info_nobrand.png"></div>'
 		END
 		*p '<div id = "slinfo_block"><<$tmp>></div>' 
 		
@@ -87,20 +96,24 @@ if $quick_move_action = "show" :
 		$tmp = ''
 		if assistant["age"] = CONST_INT['milf_age']:
 			$tmp += '<div id = "slinfo_mature" class="tooltip-left segoe_print" tooltip-data="Mature woman"><img src="content\pic\ui\jon-UIadds\info_mature.png"></div>'
-		elseif assistant['fertility'] = -2: 
+		elseif assistant["age"] = CONST_INT['loli_age']: 
 			$tmp += '<div id = "slinfo_mature" class="tooltip-left segoe_print" tooltip-data="Lolita"><img src="content\pic\ui\jon-UIadds\info_immature.png"></div>'
-		else:
+		elseif assistant["age"] = CONST_INT['young_age']:
 			$tmp += '<div id = "slinfo_mature" class="tooltip-left segoe_print" tooltip-data="Young girl"><img src="content\pic\ui\jon-UIadds\info_young.png"></div>'
 		end
 		IF assistant_virginity < 2:
 			$tmp += '<div id = "slinfo_virgin" class="tooltip-left segoe_print" tooltip-data="Virgin"><img src="content\pic\ui\jon-UIadds\info_virgin.png"></div>'
 		else
-			$tmp += '<div id = "slinfo_virgin" class="tooltip-left segoe_print" tooltip-data="Not virgin"><img src="content\pic\ui\jon-UIadds\info_virginnot.png"></div>'
+			$tmp += '<div id = "slinfo_virgin" class="tooltip-left segoe_print" tooltip-data="Not a Virgin"><img src="content\pic\ui\jon-UIadds\info_virginnot.png"></div>'
 		end	
-		IF assistant["fertility"] <0: 
-			if assistant["fertility_revealed"] > 0 or assistant["fertility"] = -2: 
+		IF assistant["fertility"] < 0: 
+			if assistant["fertility_revealed"] > 0 and assistant["fertility"] = -1: 
 				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Sterile"><img src="content\pic\ui\jon-UIadds\info_sterile.png"></div>'
-			else:
+			elseif assistant["fertility"] = -2 and assistant["age"] = CONST_INT['loli_age']:
+				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Loli - Cannot get pregnant"><img src="content\pic\ui\jon-UIadds\info_fertilenot.png"></div>'
+			elseif assistant["fertility"] = -1 and assistant["fertility_revealed"] < 1:
+				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Not Fertile"><img src="content\pic\ui\jon-UIadds\info_fertilenot.png"></div>'
+			else
 				$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Fertile"><img src="content\pic\ui\jon-UIadds\info_fertile.png"></div>'
 			end
 		elseif assistant["fertility"] = 1: 
@@ -115,15 +128,15 @@ if $quick_move_action = "show" :
 		$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Future use"><img src="content\pic\ui\jon-UIadds\transparent.png"></div>'
 		$tmp += '<div id = "slinfo_sterile" class="tooltip-left segoe_print" tooltip-data="Future use"><img src="content\pic\ui\jon-UIadds\transparent.png"></div>'
 		IF assistant["brand"] = 4: 
-			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Contract brand"><img src="content\pic\ui\jon-UIadds\info_brand_contract.png"></div>'
-		elseIF assistant["brand"] = 3: 
-			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Magical brand"><img src="content\pic\ui\jon-UIadds\info_brand_magic.png"></div>'
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Contract Brand"><img src="content\pic\ui\jon-UIadds\info_brand_contract.png"></div>'
+		elseif assistant["brand"] = 3: 
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Magical Brand"><img src="content\pic\ui\jon-UIadds\info_brand_magic.png"></div>'
 		elseif assistant["brand"] = 2: 
-			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Tatoo brand"><img src="content\pic\ui\jon-UIadds\info_brand_tatoo.png"></div>'
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Tattoo of <<$master_name>>''s Brand"><img src="content\pic\ui\jon-UIadds\info_brand_tatoo.png"></div>'
 		elseif assistant["brand"] = 1: 
 			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Branded"><img src="content\pic\ui\jon-UIadds\info_brand.png"></div>'
 		else
-			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Not branded"><img src="content\pic\ui\jon-UIadds\info_nobrand.png"></div>'
+			$tmp += '<div id = "slinfo_brand" class="tooltip-left segoe_print" tooltip-data="Not Branded"><img src="content\pic\ui\jon-UIadds\info_nobrand.png"></div>'
 		END
 		*p '<div id = "asinfo_block"><<$tmp>></div>' 
 		!----------------------- Cautious : the goal is just to inform the player of a risk, not more here

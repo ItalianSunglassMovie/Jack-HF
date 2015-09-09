@@ -1,0 +1,88 @@
+# moodlets
+!Process master, slave, and assistant moodlets
+
+!turn on masters permanent moodlets
+master_mood['a'] = 0
+estate_quality = estate_prestige[$estate] + interior_prestige[$study] + interior_prestige[$bath] + interior_prestige[$bed]
+estate_quality_modifier = estate_quality - brand_reputation 
+if estate_quality_modifier > 0: master_mood['pos_housing'] = 100
+if estate_quality_modifier >= 0: master_mood['neg_housing'] = 0
+if estate_quality_modifier < 0: master_mood['neg_housing'] = 100
+if estate_quality_modifier <= 0: master_mood['pos_housing'] = 0
+wealth_quality_modifier = master_wealth - brand_reputation - 1
+if wealth_quality_modifier > 0: master_mood['pos_wealth'] = 100 & master_mood['neg_wealth'] = 0
+if wealth_quality_modifier = 0: master_mood['pos_wealth'] = 0 & master_mood['neg_wealth'] = 0
+if wealth_quality_modifier < 0: master_mood['neg_wealth'] = 100 & master_mood['pos_wealth'] = 0
+
+master_mood['pos_house_clean'] = 0
+master_mood['neg_house_mess'] = 0
+if house_mess = 0: master_mood['pos_house_clean'] = 100 
+if house_mess > 0: master_mood['pos_house_clean'] = 0 
+if house_mess > 3: master_mood['neg_house_mess'] = 100  
+if house_mess <= 3: master_mood['neg_house_mess'] = 0  
+if master_hygiene > 1: master_mood['pos_self_clean'] = 0
+if master_hygiene > 3: master_mood['neg_dirty'] = 1
+if master_hygiene <= 3: master_mood['neg_dirty'] = 0
+
+if master_mood['pos_statisfied'] < 0: master_mood['pos_statisfied'] = 0
+if master_excitement > master_mood['pos_statisfied']: master_mood['neg_boner'] = master_excitement
+IF master_mood['pos_statisfied'] > 2: master_mood['neg_boner'] = 0
+if master_excitement <= master_mood['pos_statisfied']: master_mood['neg_boner'] = 0
+if master_excitement < -2: master_mood['neg_softcore'] = 100
+if master_excitement > -3: master_mood['neg_softcore'] = 0
+
+if master_energy >= master_str:
+	master_mood['pos_energy'] = 1
+else
+	if master_mood['neg_tired'] > 0 or master_mood['neg_drunk'] > 0 or master_mood['neg_wounded'] > 0 or master_mood['neg_no_koffe'] > 0 or master_mood['neg_no_meth'] > 0 or master_mood['neg_no_opium'] > 0 or master_mood['neg_master_ill'] > 0: master_mood['pos_energy'] = 0
+end 
+if master_energy < 0: master_mood['neg_tired'] = 100
+if master_energy > 0: master_mood['neg_tired'] = 0
+
+master_mood['pos_optimism'] = 0
+master_mood['neg_grumpy'] = 0
+master_mood['neg_alone'] = 0
+
+IF slave_state = CONST_INT['no_slave'] and assistant_state = 0: 
+ if alone_count > 2: master_mood['neg_alone'] = 100
+ else
+ master_mood['neg_alone'] = 0
+ alone_count = 0
+END
+
+!turn on slaves moodlets
+slave['neg_slave_mess'] = 0
+if house_mess > 3: slave['neg_slave_mess'] = 100  
+if slave["hygiene"] > 1: slave["pos_slave_clean"] = 0
+if slave["hygiene"] > 3: slave["neg_slave_dirty"] = 1
+if slave["hygiene"] <= 3: slave["neg_slave_dirty"] = 0
+if slave["arousal"] > slave["ego"]: slave["neg_horny"] = 1
+if slave["arousal"] > 3: slave["neg_horny"] = 1
+IF slave["energy"] < 0: 
+ slave["neg_exhausted"] = 1
+ else
+ slave["neg_exhausted"] = 0 
+END
+
+IF $slave["cloth"] = 'голая':
+ if slave['sub_exhibit'] < slave['ego']: slave['neg_naked'] = 1
+ else
+ slave['neg_naked'] = 0
+END
+
+!turn on assistant moodlets
+assistant['neg_slave_mess'] = 0
+if house_mess > 3: assistant['neg_slave_mess'] = 100  
+if assistant["hygiene"] > 1: assistant["pos_slave_clean"] = 0
+if assistant["hygiene"] > 3: assistant["neg_slave_dirty"] = 1
+if assistant["hygiene"] <= 3: assistant["neg_slave_dirty"] = 0
+if assistant["arousal"] > assistant["ego"]: assistant["neg_horny"] = 1
+if assistant["arousal"] > 3: assistant["neg_horny"] = 1
+IF assistant["energy"] < 0: 
+ assistant["neg_exhausted"] = 1
+ else
+ assistant["neg_exhausted"] = 0 
+END
+
+--- moodlets ---------------------------------
+

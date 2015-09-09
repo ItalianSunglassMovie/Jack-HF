@@ -33,7 +33,7 @@ if stat_importance['fetishism'] > slave['fetishism']: sl_txt = 102
 
 if slave[$npc_id] < 1: slave[$npc_id] = 0
 if byer_from_house = 0:
- charm_demand_max = 8 + demand_rating[$npc_id]*2
+ charm_demand_max = 8 + demand_rating[$npc_id]
  charm_demand = RAND (0,charm_demand_max)
  if charm_demand > charm: slave[$npc_id] = 1
  if slave[$npc_id] = 1: sl_txt = 103

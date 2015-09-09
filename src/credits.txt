@@ -11,7 +11,9 @@ If you want to support author in creating new games or just thank for this one, 
 all necessary information is available for this in blog.
 
 I want to express special gratitude to <a href="mailto:graylor@yandex.ru">Graylor</a> for creating non-obstructive player specially for this game.
+
 Thanks to the_vm, to the anon who made awesome grimdark interface and the rest of enthusiasts who make the current fixes and continue to develop the game.
+
 Also big thanks to those who helped out with creation interface decoration, text editing and beta-testing. I would not be able to do it alone.
 </div>'
 

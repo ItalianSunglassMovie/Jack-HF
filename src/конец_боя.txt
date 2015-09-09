@@ -89,7 +89,7 @@ END
 
 *p '<div id = "ally_def"><<$защита_описание[$защита[0]]>></div>'
 *p '<div id = "next_def"><a href="EXEC: dynamic $сменить_защиту"><img src = "content/pic/buttons/loop.png"></a></div>'
-*p '<div id = "enemy_def">Not defends</div>'
+*p '<div id = "enemy_def">Doesn''t defend</div>'
 
 *p '<div id = "ally_health"><img src = "content/pic/hart_red.png"></div>'
 *p '<div id = "ally_health"><<здоровье_игрока>></div>'

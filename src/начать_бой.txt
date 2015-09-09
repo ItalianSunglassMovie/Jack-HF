@@ -110,7 +110,9 @@ copyarr '$суперудар', '$master_spm'
 
 IF combatant = 1:
  $toplay = 'arena'
- $combatant_ava = '<<$slave["ava_clear"]>>.jpg'
+! $combatant_ava = '<<$slave["ava_clear"]>>.jpg'
+ $combatant_ava = '<<$slave_ava>>.jpg'
+ $combatant_ava = '<<$slave_ava>>.jpg'
  $combatant_name = $slave_name 
  $броня = $slave["armor"]
    
@@ -149,7 +151,9 @@ IF combatant = 1:
 END
 
 IF combatant = 2:
- $combatant_ava = '<<$assistant[''ava_clear'']>>.jpg'
+! $combatant_ava = '<<$assistant[''ava_clear'']>>.jpg'
+ $combatant_ava = '<<$assistant_ava>>.jpg'
+ $combatant_ava = '<<$assistant_ava>>.jpg'
  $combatant_name = $assistant_name 
  $броня = $assistant["armor"]
 

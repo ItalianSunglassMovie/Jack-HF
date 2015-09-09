@@ -1,6 +1,7 @@
 # choice_screen
 !yes/no choice screen
-GS '_layout'
+gs '$slave_price_stock'
+gs '_layout'
 
 IF not_safe = 1:
  not_safe = 0
@@ -51,17 +52,31 @@ Information for consideration:
  <<$npc_info[$npc_id]>>
 </div>'
 END
-IF npc = 9999:
-  *p '<div id = "interaction_stat_bar">
-<u>SUMMARY</u>
-<<$beauty[stock["beauty"]]>> 
-<<$stamina[stock["stamina"]]>> 
-<<$exotic[stock["exotic"]]>> 
-<<$fat[stock["fat"]]>> 
-<<$sensitivity[stock["sensitivity"]]>> 
-<<$style[stock["style"]]>> 
-<<$temper[stock["temper"]]>> 
 
+gs '$addon', 'info_box'
+gs '$slave_price_stock'
+
+IF npc = 9999:
+ *p '<div id = "interaction_stat_bar">
+Name: <<$stock_name>>
+Age: &nbsp;<<$slave_age_name[stock["age"]]>>
+Rank: &nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a> &nbsp;&nbsp;Key: &nbsp;&nbsp;<a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1"><img src="content/pic/chart.png"></a><br> 
+<u>ATTRIBUTES</u>
+<a href="EXEC: msg $красота_справка & msg $красота_справка_2"><img src="<<$info_box[stock["beauty"]]>>"></a><a href="EXEC:$info_text = $красота_совет & gt $curloc">&nbsp;<<$beauty[stock["beauty"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'stamina')
+*nl '<a href="EXEC: msg $здоровье_справка & msg $здоровье_справка_2"><img src="<<$info_box[stock["stamina"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC:$info_text = $здоровье_совет & gt $curloc">&nbsp;<<$stamina[stock["stamina"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'sensitivity')
+*nl '<a href="EXEC: msg $чувствительность_справка & msg $чувствительность_справка_2"><img src="<<$info_box[stock["sensitivity"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $чувствительность_совет & gt $curloc">&nbsp;<<$sensitivity[stock["sensitivity"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'temper')
+*nl '<a href="EXEC: msg $темперамент_справка & msg $темперамент_справка_2"><img src="<<$info_box[stock["temper"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $темперамент_совет & gt $curloc">&nbsp;<<$temper[stock["temper"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'intellect')
+*nl '<a href="EXEC: msg $ум_справка & msg $ум_справка_2"><img src="<<$info_box[stock["intellect"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $ум_совет & gt $curloc">&nbsp;<<$intellect[stock["intellect"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'ego')
+*nl '<a href="EXEC: msg $характер_справка & msg $характер_справка_2"><img src="<<$info_box[stock["ego"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $характер_совет & gt $curloc">&nbsp;<<$ego[stock["ego"]]>></a>'
+$tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
+*nl '<a href="EXEC: msg $гордыня_справка & msg $гордыня_справка_2"><img src="<<$info_box_p[stock["pride"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $гордыня_совет & gt $curloc">&nbsp;<<$pride[stock["pride"]]>></a>'
+*nl '<a href="EXEC: msg $экзотичность_справка & msg $экзотичность_справка_2"><img src="<<$info_box[stock["exotic"]]>>"></a> <a href="EXEC: $info_text = $экзотичность_совет & gt $curloc">&nbsp;<<$exotic[stock["exotic"]]>></a>'
+*nl '<a href="EXEC: msg $жыр_справка & msg $жыр_справка_2"><img src="<<$info_box_f[stock["fat"]]>>"></a> <a href="EXEC: $info_text = $жыр_совет & gt $curloc">&nbsp;<<$fat[stock["fat"]]>></a><br>
 <u>TRAITS</u>
 <<$stock_features_list>>
 </div>'

@@ -3,6 +3,8 @@ stock_pending = 1
 killvar 'stock'
 killvar 'stock_rate'
 
+gs 'get_stock_seed'
+
 $stock_epithet = 'affordable'
 $stock_occupation_auk = 'girl'
 $stock_world_auk = 'mysterious world'
@@ -20,15 +22,25 @@ IF no_milf = 1:
  if meta_type = 3: jump 'loop_meta'
 END
 
-!AddOn - Added max IDs for CUSTOM DATA compatiblity
-If loli_last > 199 : loli_last = 199
-If young_last > 499 : young_last = 499
-If milf_last > 699 : milf_last = 699
+!Testing Code - Remove for release - crushboss
+IF cheat_e = 1:
+ meta_type = 1
+ cheat_f = 0
+ cheat_g = 0
+ELSEIF cheat_f = 1:
+ meta_type = 2
+ cheat_e = 0
+ cheat_g = 0
+ELSEIF cheat_g = 1:
+ meta_type = 3
+ cheat_e = 0
+ cheat_f = 0
+END
+!End of testing code
 
-! 1 - loli, 2 - young, 3 - milf ?
-IF meta_type = 1: stock_type = RAND (1,loli_last)
-IF meta_type = 2: stock_type = RAND (201,young_last)
-IF meta_type = 3: stock_type = RAND (501,milf_last)
+IF meta_type = 1: stock_type = RAND (loli_first, loli_last)
+IF meta_type = 2: stock_type = RAND (young_first, young_last)
+IF meta_type = 3: stock_type = RAND (milf_first, milf_last)
 
 !Take specific slave
 IF special_stock > 0: 
@@ -45,6 +57,7 @@ stock["null"] = 0
 stock["age"] = seed_age[stock_type]
 
 if stock["age"] = CONST_INT['loli_age']: stock['fertility'] = -2
+if stock["age"] ! CONST_INT['loli_age']: stock['fertility'] = 0
 
 !BASE STATS
 stat_count = 7
@@ -63,6 +76,18 @@ if i < stat_count: jump 'loop'
 
 stock["fat"] = RAND (0,4)
 stock["metabolism"] = 3
+
+slave["exotic"] = seed_exotic[stock_type]
+slave["base_exotic"] = seed_exotic[stock_type]
+stock["exotic"] = seed_exotic[stock_type]
+
+!For future use so seed_exotic can be used in the slave files - crushboss
+if stock["exotic"] = 0: stock_rate["exotic"] = 0
+if stock["exotic"] = 1: stock_rate["exotic"] = 10
+if stock["exotic"] = 2: stock_rate["exotic"] = 20
+if stock["exotic"] = 3: stock_rate["exotic"] = 40
+if stock["exotic"] = 4: stock_rate["exotic"] = 80
+if stock["exotic"] = 5: stock_rate["exotic"] = 160
 
 !TRAITS
 stock["boobs"] = seed_boobs[stock_type]
@@ -1141,7 +1166,7 @@ END
 
 IF a = 7:
  chance = RAND (1,2)
- stock["preversion"] = IIF(chance = 1, -1, 2)
+ stock["preversion"] = IIF(chance = 2, -1, 2)
 END
 
 IF a = 8:
@@ -1216,7 +1241,7 @@ END
 
 IF a = 20:
  chance = RAND (1,2)
- stock["metabolism"] = IIF(chance = 1, 5, 5)
+ stock["metabolism"] = IIF(chance = 5, 1, 5)
 END
 
 IF a = 21:
@@ -1245,12 +1270,12 @@ IF a >= 22 and a < 30:
  if chance = 12: stock["secretary_affinity"] = 1  
 END
 
-IF a = 31:
- chance = RAND (1,2)
- stock["memory"] = IIF(chance = 1, -1, 1)
-END
+!IF a = 31:
+! chance = RAND (1,2)
+! stock["memory"] = IIF(chance = 1, -1, 1)
+!END
 
-IF a = 32:
+IF a = 31 or a = 32:
  chance = RAND (1,2)
  stock["meekness"] = IIF(chance = 2, -2, 2)
 END
@@ -1272,24 +1297,92 @@ END
 
 if i < 10: jump 'loop10'
 
-
-!characteristics alignment
 stock["energy"] = RAND (0,3)
 stock["hygiene"] = RAND (0,4)
+
+!Testing Code - Disable for release - crushboss
+if cheat_h = 1: gs 'generate_stock_testing'
+if cheat_j = 1: gs 'generate_stock_maximum_testing'
+!End of Testing Code
+
+!characteristic alignment
 if stock["beauty"] > 5: stock["beauty"] = 5
 if stock["beauty"] < 1: stock["beauty"] = 1
 if stock["stamina"] > 5: stock["stamina"] = 5
 if stock["stamina"] < 1: stock["stamina"] = 1
 if stock["sensitivity"] > 5: stock["sensitivity"] = 5
 if stock["sensitivity"] < 1: stock["sensitivity"] = 1
+if stock["temper"] > 5: stock["temper"] = 5
+if stock["temper"] < 1: stock["temper"] = 1
 if stock["pride"] > 5: stock["pride"] = 5
-if stock["pride"] < 1: stock["pride"] = 1
+if stock["pride"] < 0: stock["pride"] = 0
 if stock["ego"] > 5: stock["ego"] = 5
 if stock["ego"] < 1: stock["ego"] = 1
 if stock["intellect"] > 5: stock["intellect"] = 5
 if stock["intellect"] < 1: stock["intellect"] = 1
 if stock["style"] > 5: stock["style"] = 5
 if stock["style"] < 1: stock["style"] = 1
+if stock["exotic"] > 5: stock["exotic"] = 5
+if stock["exotic"] < 1: stock["exotic"] = 1
+if stock["fat"] > 5: stock["fat"] = 5
+if stock["fat"] < 0: stock["fat"] = 0
+if stock["fame"] > 5: stock["fame"] = 5
+if stock["fame"] < 0: stock["fame"] = 0
+if stock["custom"] > 5: stock["custom"] = 5
+if stock["custom"] < 0: stock["custom"] = 0
+if stock["moral"] > 5: stock["moral"] = 5
+if stock["moral"] < 0: stock["moral"] = 0
+if stock["rational"] > 5: stock["rational"] = 5
+if stock["rational"] < 0: stock["rational"] = 0
+if stock["instinct"] > 5: stock["instinct"] = 5
+if stock["instinct"] < 0: stock["instinct"] = 0
+if stock["service"] > 5: stock["service"] = 5
+if stock["expression"] > 5: stock["expression"] = 5
+if stock["nurse"] > 5: stock["nurse"] = 5
+if stock["cook"] > 5: stock["cook"] = 5
+if stock["gladiatrix"] > 5: stock["gladiatrix"] = 5
+if stock["enchanter"] > 5: stock["enchanter"] = 5
+if stock["vocal"] > 5: stock["vocal"] = 5
+if stock["music"] > 5: stock["music"] = 5
+if stock["callisthenics"] > 5: stock["callisthenics"] = 5
+if stock["secretary"] > 5: stock["secretary"] = 5
+if stock["dressage"] > 5: stock["dressage"] = 5
+if stock["pet"] > 5: stock["pet"] = 5
+if stock["sub_vaginal"] > 5: stock["sub_vaginal"] = 5
+if stock["sub_fisting"] > 5: stock["sub_fisting"] = 5
+if stock["sub_threesome"] > 5: stock["sub_threesome"] = 5
+if stock["sub_dp"] > 5: stock["sub_dp"] = 5
+if stock["sub_tp"] > 5: stock["sub_tp"] = 5
+if stock["sub_gangbang"] > 5: stock["sub_gangbang"] = 5
+if stock["sub_zoosex"] > 5: stock["sub_zoosex"] = 5
+if stock["sub_bestiality"] > 5: stock["sub_bestiality"] = 5
+if stock["sub_horse"] > 5: stock["sub_horse"] = 5
+if stock["sub_tentacles"] > 5: stock["sub_tentacles"] = 5
+if stock["sub_arachnidspider"] > 5: stock["sub_arachnidspider"] = 5
+if stock["sub_polypusvermin"] > 5: stock["sub_polypusvermin"] = 5
+if stock["sub_hug"] > 5: stock["sub_hug"] = 5
+if stock["sub_kiss"] > 5: stock["sub_kiss"] = 5
+if stock["sub_bj"] > 5: stock["sub_bj"] = 5
+if stock["sub_vaginal"] > 5: stock["sub_vaginal"] = 5
+if stock["sub_anal"] > 5: stock["sub_anal"] = 5
+if stock["sub_exhibit"] > 5: stock["sub_exhibit"] = 5
+if stock["sub_humiliation"] > 5: stock["sub_humiliation"] = 5
+if stock["sub_hj"] > 5: stock["sub_hj"] = 5
+if stock["sub_fj"] > 5: stock["sub_fj"] = 5
+if stock["sub_pazuri"] > 5: stock["sub_pazuri"] = 5
+if stock["sub_thongue"] > 5: stock["sub_thongue"] = 5
+if stock["sub_dt"] > 5: stock["sub_dt"] = 5
+if stock["sub_asslik"] > 5: stock["sub_asslik"] = 5
+if stock["anal_stretch"] > 5: stock["anal_stretch"] = 5
+if stock["sub_seduce"] > 5: stock["sub_seduce"] = 5
+if stock["sub_masturbation"] > 5: stock["sub_masturbation"] = 5
+if stock["sub_dildo"] > 5: stock["sub_dildo"] = 5
+if stock["sub_enema"] > 5: stock["sub_enema"] = 5
+if stock["sub_mazo"] > 5: stock["sub_mazo"] = 5
+if stock["sub_selfpain"] > 5: stock["sub_selfpain"] = 5
+if stock["sub_piss"] > 5: stock["sub_piss"] = 5
+if stock["sub_kopro"] > 5: stock["sub_kopro"] = 5
+if stock["sub_bukake"] > 5: stock["sub_bukake"] = 5
 
 if stock_rate["exotic"] >= 10: stock["exotic"] = 1
 if stock_rate["exotic"] >= 20: stock["exotic"] = 2
@@ -1297,26 +1390,13 @@ if stock_rate["exotic"] >= 40: stock["exotic"] = 3
 if stock_rate["exotic"] >= 80: stock["exotic"] = 4
 if stock_rate["exotic"] >= 160: stock["exotic"] = 5
 
-! For future use so seed_exotic can be used in the slave files - crushboss
-if stock["exotic"] = 1: stock_rate["exotic"] = 15
-if stock["exotic"] = 2: stock_rate["exotic"] = 30
-if stock["exotic"] = 3: stock_rate["exotic"] = 60
-if stock["exotic"] = 4: stock_rate["exotic"] = 120
-if stock["exotic"] = 5: stock_rate["exotic"] = 240
-
 if stock["stamina"] = 5: stock["metabolism"] += 1
 if stock["stamina"] = 1: stock["metabolism"] -= 1
 if stock["metabolism"] < 1: stock["metabolism"] = 1
 if stock["metabolism"] > 5: stock["metabolism"] = 5
-
-!'
-gen = RAND (1,12)
-if gen = 1: atribute = 1
-if gen > 1: atribute = 2
-if gen > 3: atribute = 3
-if gen > 9: atribute = 4
-if gen = 12: atribute = 5
-stock["metabolism"] = atribute'
+if stock["energy"] > stock["stamina"]: stock["energy"] = stock["stamina"]
+stock["base_exotic"] = stock["exotic"]
+stock_rate["stamina"] = 0
 
 !psy determination
 a = RAND (1,3)
@@ -1325,7 +1405,7 @@ if a = 2: $stock_psy_basic = 'soft'
 if a = 3: $stock_psy_basic = 'optimistic'
 if stock["sensitivity"] >= 4: $stock_psy_basic = 'lachrymose'
 a = stock["ego"] + stock["temper"] + stock["pride"]
-IF a > 20:
+IF a > 10:
  if stock["ego"] >= 4: $stock_psy_basic = 'resistant'
  if stock["temper"] >= 4: $stock_psy_basic = 'hateful'
  if stock["pride"] >= 4: $stock_psy_basic = 'arrogant'
@@ -1344,6 +1424,8 @@ $stock_fullimage = $fullimage[stock_type]
 $stock_ava = $seed_ava[stock_type]
 $stock_ava_gray = $seed_ava_gray[stock_type]
 
+if $stock_ava = '' or $stock_ava = '0': $stock_ava = "content/pic/girls/face/[stock_type]"
+
 !initialization
 IF stock["fat"] = 1: $stock_epithet = 'slender like a cypress'
 IF stock["beauty"] = 3: $stock_epithet = 'charming'
@@ -1357,64 +1439,7 @@ IF stock["stamina"] = 5: $stock_epithet = 'unusually strong and hardy'
 IF stock["beauty"] = 5: $stock_epithet = 'perfect as the stars themselves'
 IF stock["exotic"] >= 2: $stock_epithet = 'exotic'
 
-!BASE PRICE
-!stock["style"] = (stock["expression"] + stock["callisthenics"])/2 + stock["grace"]
-
-!TODO: сделать нормальный баланс цены
-!похожий код в $slave_price
-stock_base_price = 5
-if stock["stamina"] < 3: stock_base_price -= 5
-if stock["stamina"] > 2: stock_base_price += 5
-if stock["stamina"] > 3: stock_base_price += 10
-if stock["stamina"] > 4: stock_base_price += 20
-if stock["beauty"] < 2: stock_base_price -= 5
-if stock["beauty"] > 1: stock_base_price += 5
-if stock["beauty"] > 2: stock_base_price += 10
-if stock["beauty"] > 3: stock_base_price += 20
-if stock["beauty"] > 4: stock_base_price += 40
-if stock["fat"] = 1: stock_base_price += 5
-if stock["fat"] > 2: stock_base_price -= 5
-if stock["fat"] > 3: stock_base_price -= 10
-if stock["fat"] > 4: stock_base_price -= 20
-if stock["scares"] > 0: stock_base_price -= 5
-if stock["scares"] > 1: stock_base_price -= 10
-if stock["scares"] > 2: stock_base_price -= 20
-if stock["scares"] > 3: stock_base_price -= 40
-if stock["scares"] > 4: stock_base_price -= 80
-if stock["bruises"] > 1: stock_base_price -= 5
-if stock["bruises"] > 2: stock_base_price -= 10
-if stock["bruises"] > 3: stock_base_price -= 20
-if stock["bruises"] > 4: stock_base_price -= 40
-if stock["style"] > 0: stock_base_price += 5
-if stock["style"] > 1: stock_base_price += 10
-if stock["style"] > 2: stock_base_price += 20
-if stock["style"] > 3: stock_base_price += 40
-if stock["style"] > 4: stock_base_price += 80
-if stock["exotic"] > 0: stock_base_price += 5
-if stock["exotic"] > 1: stock_base_price += 10
-if stock["exotic"] > 2: stock_base_price += 20
-if stock["exotic"] > 3: stock_base_price += 40
-if stock["exotic"] > 4: stock_base_price += 80
-if stock["sensitivity"] < 3: stock_base_price -= 5
-if stock["sensitivity"] > 3: stock_base_price += 5
-if stock["sensitivity"] > 4: stock_base_price += 10
-if stock["intellect"] < 3: stock_base_price -= 5
-if stock["intellect"] > 4: stock_base_price += 10
-if stock["temper"] > 3: stock_base_price += 5
-if stock["temper"] > 4: stock_base_price += 10
-if stock["ego"] < 2: stock_base_price -= 5
-if stock["ego"] > 3: stock_base_price += 5
-if stock["pride"] < 4: stock_base_price += 5
-if stock["pride"] > 3: stock_base_price -= 5
-if stock["pride"] > 4: stock_base_price -= 10
-if stock_virginity < 2: stock_base_price += 5
-if stock["grace"] = 1: stock_base_price += 5
-if stock["grace"] = -1: stock_base_price -= 5
-if stock["voice"] > 0: stock_base_price += 5
-if stock["voice"] < 0: stock_base_price -= 5
-if stock_base_price < 5: stock_base_price = 5
-haggling_limit = stock_base_price/3
-!stock_base_price = 5
+gs '$slave_price_stock'
 
 !EQUIP
 $stock["wpn"] = 'безоружный'
@@ -1435,74 +1460,12 @@ stock['newness'] = 10 - brand_reputation
 $stock_features_list = ''
 IF stock["scares"] > 0: $stock_features_list += '<<$slave_scares[stock["scares"]]>><BR>'
 IF stock["bruises"] > 0: $stock_features_list += '<<$slave_bruises[stock["bruises"]]>><BR>'
-IF stock_virginity < 2: $stock_features_list += 'Virgin<BR>' 
-if stock['fertility'] = -2: $stock_features_list += 'Immature<BR>'
-IF stock["grace"] = 1: $stock_features_list += 'Graceful<BR>'
+!IF stock_virginity < 2: $stock_features_list += 'Virgin<BR>' 
+!if stock['fertility'] = -2: $stock_features_list += 'Immature<BR>'
+IF stock["grace"] = 1: $stock_features_list += '<font color="#0000CD">Graceful</font><BR>'
 IF stock["grace"] = -1: $stock_features_list += 'Clumsy<BR>'
-IF stock["voice"] > 0: $stock_features_list += 'Charming voice<BR>'
+IF stock["voice"] > 0: $stock_features_list += '<font color="#0000CD">Charming voice</font><BR>'
 IF stock["voice"] < 0: $stock_features_list += 'Hoarse voice<BR>'
-!'
-IF stock["nymphomania"] > 0: $stock_features_list += '<font color="#666666">Нимфоманка</font><BR>' 
-IF stock["nymphomania"] < 0: $stock_features_list += '<font color="#666666">Фригидная</font><BR>' 
-IF stock["masohism"] = 2: $stock_features_list += '<font color="#666666">Мазохистка</font><BR>'
-IF stock["masohism"] = 1: $stock_features_list += '<font color="#666666">Привычна к боли</font><BR>'
-IF stock["masohism"] = -1: $stock_features_list += '<font color="#666666">Боится боли</font><BR>'
-IF stock["exhibitionism"] = 2: $stock_features_list += '<font color="#666666">Эксгибиционистка</font><BR>'
-IF stock["exhibitionism"] = -1: $stock_features_list += '<font color="#666666">Стеснительная</font><BR>'
-IF stock["preversion"] = 2: $stock_features_list += '<font color="#666666">Извращенка</font><BR>'
-IF stock["preversion"] = -1: $stock_features_list += '<font color="#666666">Пуристка</font><BR>'
-IF stock["homosexualism"] = 2: $stock_features_list += '<font color="#666666">Лесбиянка</font><BR>'
-IF stock["homosexualism"] = 1: $stock_features_list += '<font color="#666666">Бисексуальная</font><BR>'
-IF stock["homosexualism"] = -1: $stock_features_list += '<font color="#666666">Гомофобка</font><BR>'
-IF stock["abuse_attitude"] = 2: $stock_features_list += '<font color="#666666">Пси-мазохистка</font><BR>'
-IF stock["abuse_attitude"] = -1: $stock_features_list += '<font color="#666666">Истеричка</font><BR>'
-IF stock["darkness_attitude"] = 2: $stock_features_list += '<font color="#666666">Дитя тьмы</font><BR>'
-IF stock["darkness_attitude"] = -1: $stock_features_list += '<font color="#666666">Боится темноты</font><BR>'
-IF stock["blood_attitude"] = 2: $stock_features_list += '<font color="#666666">Кровожадная</font><BR>'
-IF stock["blood_attitude"] = -1: $stock_features_list += '<font color="#666666">Боится вида крови</font><BR>'
-IF stock["fire_attitude"] = 2: $stock_features_list += '<font color="#666666">Пиромания</font><BR>'
-IF stock["fire_attitude"] = -1: $stock_features_list += '<font color="#666666">Пирофобия</font><BR>'
-IF stock["water_attitude"] = 2: $stock_features_list += '<font color="#666666">Дитя воды</font><BR>'
-IF stock["water_attitude"] = -1: $stock_features_list += '<font color="#666666">Гидрофобия</font><BR>'
-IF stock["vermin_attitude"] = 2: $stock_features_list += '<font color="#666666">Арахнофилия</font><BR>'
-IF stock["vermin_attitude"] = -1: $stock_features_list += '<font color="#666666">Арахнофобия</font><BR>'
-IF stock["deprivation_attitude"] = 2: $stock_features_list += '<font color="#666666">Любит беспомощность</font><BR>'
-IF stock["deprivation_attitude"] = -1: $stock_features_list += '<font color="#666666">Клаустрофобия</font><BR>'
-IF stock["passion_comfort"] = 1: $stock_features_list += '<font color="#666666">Ленивая</font><BR>'
-IF stock["passion_comfort"] = -1: $stock_features_list += '<font color="#666666">Гиперактивная</font><BR>'
-IF stock["passion_luxury"] = 1: $stock_features_list += '<font color="#666666">Любит роскошь</font><BR>'
-IF stock["passion_luxury"] = -1: $stock_features_list += '<font color="#666666">Аскетичная</font><BR>'
-IF stock["passion_sweets"] = 1: $stock_features_list += '<font color="#666666">Сладкоежка</font><BR>'
-IF stock["passion_sweets"] = -1: $stock_features_list += '<font color="#666666">Не любит сладкое</font><BR>'
-IF stock["passion_fame"] = 1: $stock_features_list += '<font color="#666666">Тщеславная</font><BR>'
-IF stock["passion_fame"] = -1: $stock_features_list += '<font color="#666666">Хикикомори</font><BR>'
-IF stock["courage"] = 1: $stock_features_list += '<font color="#666666">Храбрая</font><BR>'
-IF stock["courage"] = -1: $stock_features_list += '<font color="#666666">Трусиха</font><BR>'
-IF stock["metabolism"] = 5: $stock_features_list += '<font color="#666666">Мощный метаболизм</font><BR>'
-IF stock["metabolism"] = 4: $stock_features_list += '<font color="#666666">Хороший метаболизм</font><BR>'
-IF stock["metabolism"] = 2: $stock_features_list += '<font color="#666666">Ослабленный метаболизм</font><BR>'
-IF stock["metabolism"] = 1: $stock_features_list += '<font color="#666666">Слабый метаболизм</font><BR>'
-IF stock["sport_affinity"] = 1: $stock_features_list += '<font color="#666666">Спортивная</font><BR>'
-IF stock["sport_affinity"] = -1: $stock_features_list += '<font color="#666666">Апатичная</font><BR>'
-if stock["expression_affinity"]:  $stock_features_list += '<font color="#666666">Талант: оратор</font><BR>'
-if stock["pet_affinity"]:  $stock_features_list += '<font color="#666666">Талант: питомец</font><BR>'
-if stock["dressage_affinity"]:  $stock_features_list += '<font color="#666666">Brony</font><BR>' 
-if stock["nurse_affinity"]:  $stock_features_list += '<font color="#666666">Талант: медсестра</font><BR>'
-if stock["service_affinity"]:  $stock_features_list += '<font color="#666666">Талант: горничная</font><BR>'
-if stock["cook_affinity"]:  $stock_features_list += '<font color="#666666">Талант: кухарка</font><BR>'
-if stock["gladiatrix_affinity"]:  $stock_features_list += '<font color="#666666">Талант: воительница</font><BR>'
-if stock["enchanter_affinity"]:  $stock_features_list += '<font color="#666666">Талант: чародейка</font><BR>'
-if stock["vocal_affinity"]:  $stock_features_list += '<font color="#666666">Талант: певица</font><BR>'
-if stock["music_affinity"]: $stock_features_list += '<font color="#666666">Талант: музыкантка</font><BR>'
-if stock["callisthenics_affinity"]: $stock_features_list += '<font color="#666666">Талант: танцовщица</font><BR>'
-if stock["secretary_affinity"]: $stock_features_list += '<font color="#666666">Талант: секретарша</font><BR>'   
-IF stock["memory"] = 1: $stock_features_list += '<font color="#666666">Эйдетическая память</font><BR>'
-IF stock["memory"] = -1: $stock_features_list += '<font color="#666666">Забывчивая</font><BR>'
-IF stock["meekness"] > 0: $stock_features_list += '<font color="#666666">Дисциплинированная</font><BR>'
-IF stock["meekness"] < 0: $stock_features_list += '<font color="#666666">Своенравная</font><BR>'
-IF stock["selfesteem"] > 0: $stock_features_list += '<font color="#666666">Мания величия</font><BR>'
-IF stock["selfesteem"] < 0: $stock_features_list += '<font color="#666666">Комплекс вины</font><BR>'
-'
 
 gs '#txt'
 gs '#txt_2'

@@ -2,6 +2,8 @@
 !handling templates
 if sp_txt_is_set_from_save = 0: sp_txt = 1 
 
+slave['brand'] = tattoo_brand
+
 !interaction type - talk
 IF $interaction_type = 'standart':
  dynamic $special_part   
@@ -33,13 +35,21 @@ IF $interaction_type = 'byer_invitation':
  END
 END
 
-!interaction type - slave sell simple scheme
+!interaction type - slave sell simple scheme - Improved logic - crushboss
 IF $interaction_type = 'sell_slave_simple':
+ gs '$slave_price'
  txt_count = 1
  if slave_specialisation[$interesting_specialisation[$npc_id]] >= 1 and rating >= demand_rating[$npc_id] and slave[$npc_id] = 0: byer_interested = 1 
- n = 13 + 2 * demand_rating[$npc_id]
- demand = rand(0,n)
- if demand > charm and byer_interested = 1: byer_interested += no_charm_check
+ charm_demand_max = 15 + demand_rating[$npc_id]
+ charm_demand = RAND (5,charm_demand_max)
+ if charm_demand > charm and byer_interested = 1 and no_charm_check = 1: byer_interested = 1
+ if charm_demand > charm and byer_interested = 1 and no_charm_check = 0: byer_interested = 0
+! msg 'Slave Rating: <<rating>>'
+! msg 'Slave Charm: <<charm>>'
+! msg 'Charm Demand: <<charm_demand>>'
+! msg 'NPC ID: <<slave[$npc_id]>>'
+! msg 'Buyer Interested:  <<byer_interested>>'
+! msg 'No Charm check: <<no_charm_check>>'
  IF byer_interested = 1:
   npc_progress[$npc_id] = 2
   $text[1] = $buy_quote[$npc_id]
@@ -48,9 +58,9 @@ IF $interaction_type = 'sell_slave_simple':
   master_mood['pos_deal'] = 1
   IF fixed_brand_rise = 0:
   !was brand_rate, which broke leveling the rate of brand completely and did not give leveling
-   if brand_reputation <= demand_rating[$npc_id]: brand_rate += demand_rating[$npc_id]
+   if brand_reputation <= demand_rating[$npc_id]/2: brand_rate += demand_rating[$npc_id]/2
    !if faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: dynamic $rise_faction_fame
-   IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: 
+   IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]/2: 
     no_rise = 0
     if $npc_alignment[$npc_id] = 'taurus' and faction_fame['kamira'] > 2: no_rise = 0
     if $npc_alignment[$npc_id] = 'serpis' and faction_fame['korvus'] > 2: no_rise = 0
@@ -63,22 +73,28 @@ IF $interaction_type = 'sell_slave_simple':
    brand_rate += fixed_brand_rise
   END
   else
-  if demand > charm: $text[1] = $refuse_charm_quote[$npc_id] 
+  if charm_demand > charm: $text[1] = $refuse_charm_quote[$npc_id] 
   if slave_specialisation[$interesting_specialisation[$npc_id]] < 1: $text[1] = $refuse_skill_quote[$npc_id]  
   if demand_rating[$npc_id] > rating: $text[1] = $refuse_level_quote[$npc_id]  
   if slave[$npc_id] = 1: $text[1] = $refuse_again_quote[$npc_id]
-  if demand > charm: slave[$npc_id] = 1
+  if charm_demand > charm: slave[$npc_id] = 1
+ END
+ daycount += 1
+ IF daycount >= 10:
+  slave[$npc_id] = 0
+  daycount = 0
  END
 END
 
 !interaction type - slave sell to clients from houses, new scheme
 IF $interaction_type = 'sell_slave_house':
+ gs '$slave_price'
  txt_count = 1
  if slave_specialisation[$interesting_specialisation[$npc_id]] >= 1 and rating >= demand_rating[$npc_id] and slave[$npc_id] = 0: byer_interested = 1 
- charm_demand_max = 8 + demand_rating[$npc_id]*2
- charm_demand = RAND (0,charm_demand_max)
- !charm_demand = 0
- if charm_demand > charm and byer_interested = 1: byer_interested = 0
+ charm_demand_max = 15 + demand_rating[$npc_id]
+ charm_demand = RAND (5,charm_demand_max)
+ if charm_demand > charm and byer_interested = 1 and no_charm_check = 1: byer_interested = 1
+ if charm_demand > charm and byer_interested = 1 and no_charm_check = 0: byer_interested = 0
  IF byer_interested = 1:
   byer_from_house = 1
   gt 'slave_sell'
@@ -89,6 +105,11 @@ IF $interaction_type = 'sell_slave_house':
   if slave[$npc_id] = 1: $text[1] = $refuse_again_quote[$npc_id]
   if charm_demand > charm: slave[$npc_id] = 1
  END
+ daycount += 1
+ IF daycount >= 10:
+  slave[$npc_id] = 0
+  daycount = 0
+ END
 END
 
 !interaction type - slave sold to clients from houses, new scheme
@@ -98,12 +119,12 @@ IF $interaction_type = 'slave_sold_house':
   npc_progress[$npc_id] = 2
   IF fixed_brand_rise = 0:
    IF have_discounted = 1:
-    if brand_reputation <= demand_rating[$npc_id]: brand_rate += demand_rating[$npc_id]*2
+    if brand_reputation <= demand_rating[$npc_id]/2: brand_rate += demand_rating[$npc_id]
     have_discounted = 0
     else
-    if brand_reputation <= demand_rating[$npc_id]: brand_rate += demand_rating[$npc_id]
+    if brand_reputation <= demand_rating[$npc_id]/2: brand_rate += demand_rating[$npc_id]/2
    END
-   IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: 
+   IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]/2: 
     no_rise = 0
     if $npc_alignment[$npc_id] = 'taurus' and faction_fame['kamira'] > 2: no_rise = 0
     if $npc_alignment[$npc_id] = 'serpis' and faction_fame['korvus'] > 2: no_rise = 0
@@ -112,7 +133,7 @@ IF $interaction_type = 'slave_sold_house':
     if noble_status > 0 and faction_fame[$npc_alignment[$npc_id]] = 5: no_rise = 1
     if no_rise = 0: faction_fame[$npc_alignment[$npc_id]] += 1
    END
-   IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: 
+   IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]/2: 
     no_rise = 0
     if $npc_alignment[$npc_id] = 'taurus' and faction_fame['kamira'] > 2: no_rise = 0
     if $npc_alignment[$npc_id] = 'serpis' and faction_fame['korvus'] > 2: no_rise = 0
@@ -145,14 +166,14 @@ IF $interaction_type = 'sell_slave_complex':
   slave_state = CONST_INT['no_slave']
   master_mood['pos_deal'] = 3
   !fixed code for kings
-  IF demand_rating[$npc_id] = 5:
+  IF demand_rating[$npc_id] = 10:
    brand_rate += 20
    else
    brand_rate += demand_rating[$npc_id]
   END
   
   !faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: dynamic $rise_faction_fame
-   IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]: 
+   IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]/2: 
     no_rise = 0
     if $npc_alignment[$npc_id] = 'taurus' and faction_fame['kamira'] > 2: no_rise = 0
     if $npc_alignment[$npc_id] = 'serpis' and faction_fame['korvus'] > 2: no_rise = 0
@@ -163,7 +184,7 @@ IF $interaction_type = 'sell_slave_complex':
    END  
   npc_progress[$npc_id] = 2
   active[$quest[5]] = 0
-  if noble_status = 0 and demand_rating[$npc_id] = 5: noble_status = 1
+  if noble_status = 0 and demand_rating[$npc_id] = 10: noble_status = 1
   else
   if sl_txt = 103: $text[1] = $refuse_charm_quote[$npc_id]  
   if sl_txt = 102: $text[1] = $refuse_skill_quote[$npc_id]  
@@ -339,7 +360,7 @@ IF $interaction_type = 'moneylender':
  sparks += loan 
 END
 
-!interaction type - byu item for current slave
+!interaction type - buy item for current slave
 IF $interaction_type = 'buy_item':
  txt_count = 1
  $return_lock  = 'shop_general'  
@@ -348,6 +369,7 @@ IF $interaction_type = 'buy_item':
  $text[1] = $item_description[$item_id]
  IF sparks >= item_price[$item_id]: 
   $do_buy = {
+  if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
   sparks -= item_price[$item_id]
   slave_inventory[$item_id] += 1} 
   gt 'item_buy' 
@@ -356,7 +378,7 @@ IF $interaction_type = 'buy_item':
  END
 END
 
-!interaction type - purchase item to the home
+!interaction type - purchase item for the home
 IF $interaction_type = 'buy_item_home':
  txt_count = 1
  $return_lock  = 'shop_general'  
@@ -365,6 +387,7 @@ IF $interaction_type = 'buy_item_home':
  $text[1] = $item_description[$item_id]
  IF sparks >= item_price[$item_id]: 
   $do_buy = {
+  if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
   sparks -= item_price[$item_id]
   inventory[$item_id] += 1} 
   gt 'item_buy' 
@@ -374,7 +397,6 @@ IF $interaction_type = 'buy_item_home':
 END
 
 IF $interaction_type = 'buy_item_personal':
- if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume 
  txt_count = 1
  $return_lock  = 'shop_general'  
  $picture_type = 'pic_jpg'
@@ -382,6 +404,7 @@ IF $interaction_type = 'buy_item_personal':
  $text[1] = $item_description[$item_id]
  IF sparks >= item_price[$item_id]: 
   $do_buy = {
+ if sound_on = 1: play 'content\snd\kkm.mp3', sound_volume
  sparks -= item_price[$item_id]
  dynamic '<<$item_id>> += multiple'} 
   gt 'item_buy' 

@@ -26,7 +26,7 @@ IF prisoner_state ! 0 and slave_state ! CONST_INT['no_slave']:
 END
 
 IF prisoner_state > 0:
- $info_bar = '<br><u>SUMMARY</u>
+ $info_bar = '<br><u>ATTRIBUTES</u>
 <<$beauty[prisoner["beauty"]]>>
 <<$stamina[prisoner["stamina"]]>>
 <<$sensitivity[prisoner["sensitivity"]]>>

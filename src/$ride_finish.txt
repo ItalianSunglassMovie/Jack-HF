@@ -1,7 +1,7 @@
 # $ride_finish
 !end of the chariot race
 CLOSE ALL
-ride_count = 10
+ride_count = 7
 sp_txt = 0
 
 !Creating a route to the next race

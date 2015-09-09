@@ -13,6 +13,252 @@ MSG_OK_Y = 340
 MSG_X = 200
 !init vars
 if hero_choice = 0: hero_choice = 1
+
+IF $master_name = 'ScarletWitch' and cheat_all < 1:
+ cheat_a = 2
+ cheat_b = 2
+ cheat_c = 2
+ cheat_h = 2
+ cheat_i = 2
+ cheat_all = 1
+END
+
+IF ($master_name = 'CrushBoss' and cheat_a < 1) or cheat_a = 2:
+ hero_choice = 3
+ hero_points = 0
+ master_str = 5
+ master_cha = 5
+ master_libido = 5
+ master_tutor = 5
+ master_fighter = 5
+ master_butler = 5
+ master_artdirector = 5
+ master_medic = 5
+ master_mage = 5
+ master_torture = 5
+ master_domination = 5
+ master_bondage = 5
+ master_flagelation = 5
+ master_petting = 5
+ master_oral = 5
+ master_penetration = 5
+ master_fetish = 5
+ master_excitement = 5
+ cheat_a = 1
+END
+
+IF ($master_name = 'Thor' and cheat_b < 1) or cheat_b = 2:
+ !Estate
+ $estate = 'white_house'
+ faction_fame['neutral'] = 1
+ faction_fame['korvus'] = 0
+ $starting_area = 'White Town'
+ estate_prestige['white_house'] = 4
+ estate_size['white_house'] = 250
+ estate_cost_main['white_house'] = 150
+ estate_cost_bouduar['white_house'] = 25
+ estate_cost_dungeon['white_house'] = 25
+ estate_cost_lab['white_house'] = 50
+ estate_location['white_house'] = 1
+ $estate_study_name['white_house'] = 'Hall'
+ $estate_study_location['white_house'] = 'Vatican Suburbs'
+ $estate_bed_name['white_house'] = 'Bedroom'
+ $estate_bed_location['white_house'] = 'Vatican Suburbs'
+ $estate_bath_name['white_house'] = 'Bathroom'
+ $estate_bath_location['white_house'] = 'Vatican Suburbs'
+ $estate_bouduar_name['white_house'] = 'Boudoir'
+ $estate_bouduar_location['white_house'] = 'Vatican Suburbs'
+ $estate_kitchen_name['white_house'] = 'Kitchen'
+ $estate_kitchen_location['white_house'] = 'Vatican Suburbs'
+ $estate_dungeon_name['white_house'] = 'Dungeon'
+ $estate_dungeon_location['white_house'] = 'Vatican Suburbs'
+ $estate_lab_name['white_house'] = 'Lab'
+ $estate_lab_location['white_house'] = 'Vatican Suburbs'
+  
+ !Extended Rental
+ extended_rental_cheat = 5
+ lab = 1
+ bouduar = 1
+ dungeon = 1
+ barn = 1
+ bath = 1
+ kitchen = 1
+ library = 1
+ pen = 1
+ svine = 1
+ arachnidSpider = 1
+ polypusvermin = 1
+ 
+ !Estate Interiors
+ $study = 'classic'
+ $bg['study'] = $interior_study[$study]
+ $bg['home_lux'] = $interior_bg[$study]
+ $place_info['study'] = $interior_study_info[$study]
+ $interior_bg['classic'] = 'study_large'
+ $interior_study['classic'] = 'study'
+ $interior_study_info['classic'] = '   '
+ 
+ $bed = 'stylish'
+ $bg['bedroom'] = $interior_bed[$bed]
+ $place_info['bedroom'] = $interior_bed_info[$bed]
+ $interior_bed['stylish'] = 'interiors\stylish_bed'
+ $interior_bed_info['stylish'] = '   '
+ 
+ $bath = 'gothic'
+ $bg['bathroom'] = $interior_bath[$bath]
+ $place_info['bathroom'] = $interior_bath_info[$bath]
+ $interior_bath['gothic'] = 'interiors\gothic_bath'
+ $interior_bath_info['gothic'] = '   '
+ 
+ $dungeon = 'executor'
+ $bg['dungeon'] = $interior_dungeon[$dungeon]
+ $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
+ $interior_dungeon['executor'] = 'interiors\executor_dungeon'
+ $interior_dungeon_info['executor'] = '   '
+ 
+ $kitchen = 'basic'
+ $bg['kitchen'] = $interior_kitchen[$kitchen]
+ $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
+ $interior_kitchen['basic'] = 'kitchen'
+ $interior_kitchen_info['basic'] = '   '
+ 
+ $lab = 'basic'
+ $bg['lab'] = $interior_lab[$lab]
+ $place_info['lab'] = $interior_lab_info[$lab]
+ $interior_lab['basic'] = 'interiors\basic_lab'
+ $interior_lab_info['basic'] = '   '
+ 
+ $bouduar = 'gothic'
+ $bg['bouduar'] = $interior_bouduar[$bouduar]
+ $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
+ $interior_bouduar['gothic'] = 'interiors\gothic_bouduar'
+ $interior_bouduar_info['gothic'] = '   '
+
+ !Starting Money
+ sparks = 25000
+
+ !Standard of Living, Brand Rate, & Misc
+ master_wealth_target = 6
+ brand_rate += 50
+ cheat_b = 1
+END
+
+IF ($master_name = 'Hulk' and $estate = 'white_house' and cheat_c < 1) or cheat_c = 2:
+ !Stat adjustments
+ master_str = 5
+ master_libido = 5
+ master_domination = 5
+ 
+ !Weapon and Armor Inventory
+ плейт = 6
+ бастард = 6
+ катана = 6
+ кинжал = 6
+ стилет = 6
+ тесак = 6
+ фламберг = 6
+ нагината = 6
+
+ !Master Clothing Inventory
+! comfy_robes = 1
+! fancy_suit = 1
+ regal_suit = 1
+ formal_suit = 1
+ aketon = 1
+ livery = 1
+ medic_robes = 1
+ wizard_robes = 1
+ !raven_crown = 1
+ !chimera_earring = 1
+ !snake_amulet = 1
+ !bull_ring = 1
+
+ !Master Armor, Weapons, and Clothing Equipped
+ $master_wpn = 'бастард'
+ $master_scnd = ''
+ $master_cloth = 'aketon'
+ !$master_head_gear = 'raven_crown'
+ !$master_earring = 'chimera_earring'
+ !$master_amulet = 'snake_amulet'
+ !$master_ring = 'bull_ring'
+ $master_armor = 'плейт'
+ $master_back_wpn = 'нагината'
+ $master_left_wpn = 'тесак'
+ $master_right_wpn = 'бастард'
+ $master_arm_wpn = 'кинжал'
+ $master_leg_wpn = 'стилет'
+
+ !Master Frige Inventory
+ frige["vegetables"] = 30
+ frige["flower"] = 25
+ frige["spice"] = 30
+ frige["cheese"] = 25
+ frige["eggs"] = 25
+ frige["milk"] = 25
+ frige["cream"] = 25
+ frige["mince"] = 25
+ frige["meat"] = 30
+ frige["alcohol"] = 60
+ spawn_semen = 120
+
+ !Lab Inventory
+ lab_store["slime"] = 12
+ lab_store["kanabis"] = 30
+ lab_store["koffe"] = 30
+ lab_store["meth"] = 30
+ lab_store["opium"] = 30
+
+ !BSDM Inventory
+ inventory['deprivation_suit'] = 1
+ inventory['vaginal_balls'] = 1
+ inventory['anal_plug'] = 1
+ inventory['secure_gag'] = 1
+ inventory['chastity_belt'] = 1
+ inventory['pissuar_stable'] = 1
+ inventory['toilet_stable'] = 1
+ inventory['stethoscope'] = 1
+ vibrator = 1
+ cheat_c = 1
+END
+
+IF $master_name = 'BruceLee' and cheat_d < 1:
+ sparks = 5000
+ hero_points = 1600
+ master_fighter = 5
+ cheat_d = 1
+END
+
+IF ($master_name = 'loli' and cheat_e < 1) or cheat_e = 2:
+cheat_e = 1
+cheat_f = 0
+cheat_g = 0
+END
+
+IF ($master_name = 'young' and cheat_f < 1) or cheat_f = 2:
+cheat_f = 1
+cheat_e = 0
+cheat_g = 0
+END
+
+IF ($master_name = 'mature' and cheat_g < 1) or cheat_g = 2:
+cheat_g = 1
+cheat_e = 0
+cheat_f = 0
+END
+
+IF ($master_name = 'Elektra' and cheat_h < 1) or cheat_h = 2:
+cheat_h = 1
+END
+
+IF ($master_name = 'Isabella' and cheat_i < 1) or cheat_i = 2:
+cheat_i = 1
+END
+
+IF ($master_name = 'Deathstrike' and cheat_j < 1) or cheat_j = 2:
+cheat_j = 1
+cheat_h = 0
+END
+
 $master_ava = $sepia_ava_path[hero_choice]
 $master_ava_color = $clear_ava_path[hero_choice]
 

@@ -1,12 +1,12 @@
 # end_day_screen
 GS '_layout'
 
-IF slave_auto_bathing = 1:
- $special_bg = $bathing_alone[slave_type] 
- $place = 'bathroom'  
- $text = '<<$bathing_slave_alone[$slave_psy_status]>>'
- slave_auto_bathing = 0
- jump 'loop'
+IF slave_auto_rest = 1:
+ $text = $slave_rest
+ $special_bg = $rest[slave_type]  
+ $place = 'bedroom'
+ slave_auto_rest = 0
+ jump 'loop' 
 END
 
 IF slave_auto_cook = 1:
@@ -15,18 +15,7 @@ IF slave_auto_cook = 1:
  $text = '  <<$slave_cook_description[slave["cook"]]>>'
  assistant_auto_cook = 0
  slave_auto_cook = 0
- jump 'loop'
-END
-
-IF slave_auto_tentacle = 1:
- $special_bg = $tentacles[slave_type] 
- $place = 'study'  
- IF slave["sub_tentacles"] > tentacle_size: 
-  $text = '  <<$slave_name>> takes a bucket-pot and goes to the fiend pen. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milks them directly into the bucket.'   
-  else
-  $text = '  <<$slave_name>> takes a bucket-pot and goes to the fiend pen. Nevertheless, her efforts to milk the thing leads to nothing. Braided with powerful tentacles, your slave completely loses touch with reality and gets orgasm after orgasm until the fiend pumps her holes with seed.'
- END
- slave_auto_tentacle = 0
+ master_auto_cook = 0
  jump 'loop'
 END
 
@@ -35,6 +24,18 @@ IF assistant_auto_cook = 1:
  $place = 'kitchen'  
  $text = '  <<$assistant_cook_description[assistant["cook"]]>>'
  assistant_auto_cook = 0
+ master_auto_cook = 0
+ slave_auto_cook = 0
+ jump 'loop'
+END
+
+IF master_auto_cook = 1:
+ $special_bg = $interior_kitchen[$kitchen] 
+ $place = 'kitchen'
+ $text = '  <<$master_cook_description[master_butler]>>'
+ master_auto_cook = 0
+ assistant_auto_cook = 0
+ slave_auto_cook = 0
  jump 'loop'
 END
 
@@ -47,15 +48,83 @@ IF show_food = 1:
  jump 'loop'
 END
 
+IF slave_auto_tentacle = 1:
+ $special_bg = $tentacles[slave_type] 
+ $place = 'study'  
+ IF slave["sub_tentacles"] > tentacle_size: 
+  $text = '  <<$slave_name>> takes a bucket-pot and goes to the fiend pen. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milks them directly into the bucket.'   
+  spawn_milked = 1
+  tentacle_state = 2
+  else
+  $text = '  <<$slave_name>> takes a bucket-pot and goes to the fiend pen. Nevertheless, her efforts to milk the thing leads to nothing. Braided with powerful tentacles, your slave completely loses touch with reality and gets orgasm after orgasm until the fiend pumps her holes with seed.'
+  spawn_milked = 0
+  tentacle_state = 1
+ END
+ slave_auto_tentacle = 0
+ assistant_auto_tentacle = 0
+ jump 'loop'
+END
+
 IF assistant_auto_tentacle = 1:
  $special_bg = $tentacles[assistant_type] 
  $place = 'study'  
  IF assistant["sub_tentacles"] > tentacle_size: 
   $text = '  <<$assistant_name>> takes a bucket-pot and goes to the fiend pen. Thanks to previous experience, she manages not to lose control. While some insatiable slippery tentacles penetrate all her holes, she grabs the other feelers and milks them directly into the bucket.'  
+  spawn_milked = 1
+  tentacle_state = 2
   else
   $text = '  <<$assistant_name>> takes a bucket-pot and goes to the fiend pen. Nevertheless, her efforts to milk the thing leads to nothing. Braided with powerful tentacles, your assistant completely loses touch with reality and gets orgasm after orgasm until the fiend pumps her holes with seed.'
+  spawn_milked = 0
+  tentacle_state = 1
  END
  assistant_auto_tentacle = 0
+ slave_auto_tentacle = 0
+ jump 'loop'
+END
+
+IF slave_auto_clean = 1:
+ $special_bg = $cleaning[slave_type] 
+ $place = 'study'  
+ $text = '  <<$slave_cleans_description[slave["service"]]>>'
+ assistant_auto_clean = 0
+ slave_auto_clean = 0
+ master_auto_clean = 0
+ jump 'loop'
+END
+
+IF assistant_auto_clean = 1:
+ $special_bg = $cleaning[assistant_type] 
+ $place = 'study'  
+ $text = '  <<$assistant_cleans_description[assistant["service"]]>>'
+ assistant_auto_clean = 0
+ slave_auto_clean = 0
+ master_auto_clean = 0
+ jump 'loop'
+END
+
+IF master_auto_clean = 1:
+ $special_bg = $interior_study[$study] 
+ $place = 'study'
+ $text = '	<<$master_clean_description[master_butler]>>'
+ master_auto_clean = 0
+ assistant_auto_clean = 0
+ slave_auto_clean = 0
+ jump 'loop'
+END
+
+IF slave_auto_bathing = 1:
+ $special_bg = $bathing_alone[slave_type] 
+ $place = 'bathroom'  
+ $text = '<<$bathing_slave_alone[$slave_psy_status]>>'
+ slave_auto_bathing = 0
+ jump 'loop'
+END
+
+IF slave_auto_wash = 1:
+ $special_bg = $washing[slave_type] 
+ $place = 'bathroom'  
+ $text = '<<$slave_washes_master>>'
+ slave_auto_wash = 0
  jump 'loop'
 END
 
@@ -67,32 +136,15 @@ IF assistant_auto_wash = 1:
  jump 'loop'
 END
 
-IF slave_auto_clean = 1:
- $special_bg = $cleaning[slave_type] 
- $place = 'study'  
- $text = '  <<$slave_cleans_description[slave["service"]]>>'
- assistant_auto_clean = 0
- slave_auto_clean = 0 
+IF assistant_washs_slave = 1:
+ $special_bg = $lesbo_bath[assistant_type] 
+ $place = 'bathroom'  
+ $text = '<<$assistant_wash_slave>>'
+ assistant_washs_slave = 0
  jump 'loop'
 END
 
-IF assistant_auto_clean = 1:
- $special_bg = $cleaning[assistant_type] 
- $place = 'study'  
- $text = '  <<$assistant_cleans_description[assistant["service"]]>>'
- assistant_auto_clean = 0
- jump 'loop'
-END
-
-IF slave_auto_rest = 1:
- $text = $slave_rest
- $special_bg = $rest[slave_type]  
- $place = 'bedroom'
- slave_auto_rest = 0
- jump 'loop' 
-END
-
-IF slave_will_masturbate = 1:
+IF slave_will_masturbate = 1 and previous_energy >= 0:
  $place = 'bedroom'
  $special_bg = $masturbation[slave_type]   
  if slave["sub_masturbation"] < 1: slave["sub_masturbation"] = 1 else slave["sub_masturbation_xp"] += 1
@@ -127,7 +179,7 @@ IF slave_will_masturbate = 1:
  jump 'loop'  
 END
 
-IF slave_masturbating_anyway = 1:
+IF slave_masturbating_anyway = 1 and previous_energy >= 0:
  $place = 'bedroom'
  $special_bg = $masturbation[slave_type]
  IF slave["sub_masturbation"] < 1: slave["sub_masturbation"] = 1 ELSE slave["sub_masturbation_xp"] += 1
@@ -171,6 +223,8 @@ IF slave_masturbating_anyway = 1:
  slave_masturbating_anyway = 0
  jump 'loop'
 END
+
+if slave["caught_masturbating"] > 0 and previous_energy >= 0: slave["caught_masturbating"] -= 1
 
 IF tentacle_grow_event = 1:
  $text = '<<$tentacle_grow[tentacle_size]>>'
@@ -367,6 +421,53 @@ IF exam_in_progress = 1:
  GT 'menu_form'
 END
 
+!Clean slate for new day - sanity check - probably unnecessary - crushboss
+slave_well_rested = 0
+free_time = 0
+rules_broken = 0
+num_rules_broken = 0
+num_rules_wanttobreak = 0
+slave_will_masturbate = 0
+slave_masturbating_anyway = 0
+silence_rule_res = 0
+master_rule_res = 0
+shit_prohibited_res = 0
+pet_rule_res = 0
+blowjob_rule_res = 0
+pissuar_rule_res = 0
+toilet_rule_res = 0
+v_balls_rule_res = 0
+iwanttobreakbutcant_silence_rule = 0
+iwanttobreakbutcant_master_rule = 0
+iwanttobreakbutcant_shit_prohibited = 0
+iwanttobreakbutcant_pet_rule = 0
+iwanttobreakbutcant_blowjob_rule = 0
+iwanttobreakbutcant_pissuar_rule = 0
+iwanttobreakbutcant_toilet_rule = 0
+iwanttobreakbutcant_v_balls = 0
+unenforced_silence_rule_broken = 0
+unenforced_master_rule_broken = 0
+unenforced_shit_prohibited_broken = 0
+unenforced_pet_rule_broken = 0
+unenforced_blowjob_rule_broken = 0
+unenforced_pissuar_rule_broken = 0
+unenforced_toilet_rule_broken = 0
+unenforced_v_balls_rule_broken = 0
+a = 0
+
+!Reset text variables - crushboss
+txt count = 0
+$text[0] = ''
+$text[1] = ''
+$text[2] = ''
+$text[3] = ''
+$text[4] = ''
+$text[5] = ''
+$text[6] = ''
+$text[7] = ''
+$text[8] = ''
+$text[9] = ''
+
 :loop
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
@@ -375,17 +476,17 @@ if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>
 if jpg = 1: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>' & jpg = 0
 
 $info_bar = '
-<u>SUMMARY:</u>&nbsp;<<$rating[rating]>>
-<<$beauty[slave["beauty"]]>> 
-<<$stamina[slave["stamina"]]>> 
-<<$exotic[slave["exotic"]]>> 
-<<$fat[slave["fat"]]>> 
-<<$sensitivity[slave["sensitivity"]]>> 
-<<$style[slave["style"]]>> 
-<<$intellect[slave["intellect"]]>> 
-<<$temper[slave["temper"]]>> 
-<<$ego[slave["ego"]]>> 
-<<$pride[slave["pride"]]>> 
+<u>ATTRIBUTES:</u>&nbsp;<<$rating[rating]>>
+<<$beauty[slave["beauty"]]>>
+<<$stamina[slave["stamina"]]>>
+<<$sensitivity[slave["sensitivity"]]>>
+<<$temper[slave["temper"]]>>
+<<$intellect[slave["intellect"]]>>
+<<$ego[slave["ego"]]>>
+<<$pride[slave["pride"]]>>
+<<$exotic[slave["exotic"]]>>
+<<$fat[slave["fat"]]>>
+<<$style[slave["style"]]>>
 
 <u>TRAITS</u>
 <<$features_list>>'

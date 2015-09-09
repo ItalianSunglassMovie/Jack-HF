@@ -38,20 +38,20 @@ $экзотичность_совет = "   [EXOTICISM TIPS]
 $жыр_справка = '<center>PHYSIQUE<br>
 <font color="#cd0000">Obese</font>
 <font color="#C71585">Overweight</font>
-<font color="#4B0082">Plump</font>
-<font color="#0000CD">Underweight</font>
+<font color="#4B0082">Underweight</font>
+<font color="#0000CD">Healthy Weight</font>
 <font color="#008080">Voluptuous</font>
-<font color="#008000">Healthy weight</font></center>'
+<font color="#008000">Model</font></center>'
 $жыр_справка_2 = "  You can get more mince from fat slaves but they are not attractive. Weedy starvelings aren't attractive as well, but you can't get a lot meat from them either. It's better to keep your slave slim, but not skinny."
 $жыр_совет = "   [PHYSIQUE TIPS]
 <div style='font-size: 95%;'>   Extra weight is generally harmful, as well as a lack of it. To keep your slave slim you need to balance her nutrition that way that it is sufficient, but not excessive. The more your slave works and the more endurant she is - the more food she needs. Physical exercises don't decrease weight directly but are a good way to burn extra calories. Actively involved in sports slave should be well fed slave.</div>"
 
 $чувствительность_справка = '<center>EMPATHY<br>
-<font color="#cd0000">Uncaring</font>
+<font color="#cd0000">Heartless</font>
 <font color="#C71585">Callous</font>
 <font color="#4B0082">Insensitive</font>
 <font color="#0000CD">Sensitive</font>
-<font color="#008080">Caring</font>	
+<font color="#008080">Caring</font>
 <font color="#008000">Nurturing</font></center>'
 $чувствительность_справка_2 = '  On one hand the gentle slave is easier affected by stress and stung by punishments. On the other hand she is turned on much faster and more lively, which makes her attractive for customers.'
 $чувствительность_совет = "   [EMPATHY TIPS]
@@ -105,20 +105,20 @@ $гордыня_справка = '<center>PRIDE<br>
 <font color="#cd0000">Arrogant</font>
 <font color="#C71585">Haughty</font>
 <font color="#4B0082">Proud</font>
-<font color="#0000CD">Fastidious</font>
+<font color="#0000CD">Timid</font>
 <font color="#008080">Open</font>
 <font color="#008000">Unashamed</font></center>'
-$гордыня_справка_2 = '  Pride prevents slave from being open and enjoying sex, causes her to resist your will, refuse humiliating orders.'
+$гордыня_справка_2 = '  Pride prevents slave from being open and enjoying sex, causes her to resist your will, and refuse humiliating orders.'
 $гордыня_совет = '   [PRIDE TIPS]
    Pride is harmful both in training and in the sale, so you should work on her openness. Force her to do dirty, perverted and degrading things, and assign strict rules. Eventually pride will be broken and the slave will become more open. But do not overdo it, as with pride, you can break the very slave.'
 
 $слава_справка = '<center>FAME IN ROME<br>
 <font color="#cd0000">Unknown</font>
-<font color="#C71585">Well-known</font>
-<font color="#4B0082">Celebrity</font>
-<font color="#0000CD">Illustrious</font>
-<font color="#008080">Superstar</font>
-<font color="#008000">Legend of Rome</font></center>'
+<font color="#C71585">Rumored</font>
+<font color="#4B0082">Recognized</font>
+<font color="#0000CD">Celebrity</font>
+<font color="#008080">Famous</font>
+<font color="#008000">Legendary</font></center>'
 $слава_справка_2 = "  Famous slaves are much more expensive. Your slave's rank won't be lower than level of her fame, even if she lacks other attributes, beauty included."
 $слава_совет = '   [FAME TIPS]
    Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena coliseum.'
@@ -127,14 +127,14 @@ $калории_совет = '   [WHAT CALORIES DOES?]
 <div style="font-size: 83%;">   Calories represent how your slave fed. If the number of calories less than zero - slave will starve and she will lose weight (f), but if slave is fat enough - she will begin to lose weight without starvation if her calories was equal to zero. Each active action consumes calories, the more calories left - the faster slave will get fat and gain weight, and vice versa. The amount of calories also determine slave health, it is important not to give her to starve herself. If you change her physique, fat meter will reset.</div>'
 
 !CHARACTERISTICS HELP
-$strength_help = '<center>STRENGTH<br>
+$strength_chart = '<center>STRENGTH<br>
 <font color="#cd0000">Helpless</font>
 <font color="#C71585">Weak</font>
 <font color="#4B0082">Unfit</font>
 <font color="#0000CD">Strong</font>
 <font color="#008080">Conditioned</font>
 <font color="#008000">Herculean</font></center>'
-$strength_chart = "   [STRENGTH TIPS]
+$strength_help = "   [STRENGTH TIPS]
   Strength commands respect. It is very important for a trainer to be strong. Strength affects the force of your blows in combat, your endurance in daily tasks and the submissiveness of your slaves. Increase strength by eating well, paying attention to hygiene, avoiding exhaustion and staying positive."
 
 $charisma_chart = '<center>PERSONALITY<br>
@@ -181,12 +181,12 @@ $wealth_chart = '<center>STANDARD OF LIVING<br>
 <font color="#cd0000">Impoverished</font>
 <font color="#C71585">Poor</font>
 <font color="#4B0082">Basic</font>
-<font color="#0000CD">Comfortableoff</font>
+<font color="#0000CD">Comfortable</font>
 <font color="#008080">Respectable</font>
 <font color="#008000">Luxurious</font>
 <font color="#008000">Extravagant</font></center>'
 $wealth_help = "   [STANDARD OF LIVING TIPS]
-  All the wealth in the world will do nothing to improve your standing if you live like a beggar and never improve your lot in life. Set the standard of living in the menu under 'Domestic Issues'. A standard of living a little above your fame is optimal, but beware of the expense. Assigning a good accountant can optimize your costs."
+  All the wealth in the world will do nothing to improve your standing if you live like a beggar and never improve your lot in life. Set the standard of living in the menu under 'Domestic Issues'. A standard of living a little above your fame is optimal, but beware of the expense. Assigning a good accountant can optimize your costs. Note: Changes occur next decade."
 
 $hygiene_chart = '<center>HYGIENE<br>
 <font color="#cd0000">Disgusting</font>
@@ -200,7 +200,7 @@ $hygiene_help = "   [HYGIENE TIPS]
 
 $mood_chart = '<center>MOOD
 If mood is indicated with <font color="#cd0000">red</font> — it means that you feel miserable and efficiency of all actions decreases.
-Vice versa, <font color="#008000">green</font> mood improves performance and contributes to the success.</center>'
+Vice versa, <font color="#008000">green</font> mood helps improves performance and contributes to success.</center>'
 $mood_help = "     [MOOD TIPS]
    It's important to always maintain good mood. You can always view your diary to see a list of things that make trainer happy or unhappy. Solve problems without delay and look for the positive in life. Mood depends on virtually all that is happening to you!"
 
@@ -295,17 +295,19 @@ $бондаж_справка = '<center>BINDING<br>
 $бондаж_совет = '  Binding allows you to leave a slave unattended to receive punishment from the rope. Proper painful or erotic bondage can be very effective as an educational or exciting action. Skill develops automatically when applied.'
 
 !OTHER TIPS
-$атрибуты_справка = 'Basic attribute reflects the total of: Endurance, Empathy, Temperament, Intellect, Nature and Pride (lower pride is more desirable).'
+$атрибуты_справка = 'Basic attribute reflects the total of: Endurance, Empathy, Temperament, Intellect, Nature, and Pride (lower pride is more desirable).'
 
 $no_money_school = '  I do not have enough money to send my slave to school.'
 
 $no_money_coach= '  I do not have enough money to hire a tutor for my slave.'
 
-$no_bouduar = '  I now have no boudoir to put the slave in. I must hire the realtor in her office in the White City. '
+$no_bouduar = '  I do not have a boudoir for my slave to sleep in. I must talk to the realtor in the White City Trade Square to purchase one.'
 
-$no_tentacle = '  I have no fiend to milk, i need to procure one'
+$no_tentacle = '  I have no fiend to milk, I need to procure one.'
 
-$no_vballs = '  I do not have the necessary item for this rule, i must procure the vaginal beads from Poison in the necropolis.'
+$no_spawn_semen = '  I have run out of spawn semen (Fiend''s cum) to feed my slave.'
+
+$no_vballs = '  I do not have the necessary item for this rule, I must procure the vaginal beads from Poison in the Necropolis or you must take the slave''s virginity first.'
 
 $no_vballs_virgin = '  The slave should be deflowered before using this item.'
 
@@ -315,15 +317,17 @@ $no_assistant = '  I have no assistant to tutor my slave.'
 
 $no_house_mess = '  The house is not dirty enough to teach the slave to clean.'
 
-$no_kitchen = '  This house has no kitchen, maybe i should change residence.'
+$no_kitchen = '  This house has no kitchen, maybe I should change residence.'
 
-$no_lab = '  This house has no laboratory. I must hire the realtor in her office in the White Town.'
+$no_lab = '  This house has no laboratory. I must talk to the realtor in the White City Trade Square to purchase one.'
+
+$no_slave = '  I have no slave to assist, I need to procure one.'
 
 $no_slave_stamina = '  With such health the slave should be lying in bed, not engaged in sports!'
 
 $no_bath = '  This house has no bath. Living in a house without a bath is a bad idea.'
 
-$no_creature = '  I don`t have necessary creature for this lesson.'
+$no_creature = '  I don`t have the necessary creature for this lesson.'
 
 $presets_help = '<div style="font-size: 90%;">The presets memorize the current state of the slave rules. Click on the box next to a preset to activate it. To change the preset name, click on its name. To save a preset, press the [Save] button of the desired preset. The "reset" resets the current rules, but not presets.</div>'
 
@@ -383,16 +387,6 @@ $бондаж_с_справка = '<div style="font-size: 95%;">  Binding allows
 $секс_техники_с_справка = '  Different sex techniques will increase the effectiveness of training relevant skills and with due skill sexual partner will have more excitement.'
 
 $patrician_mode_help = '  Patrician mode characters stats with an increased cash budget, an assistant and top tier equipment, as well as the reputation of the houses which allows to buy any home and of course the status of partician.'
-
-!"
-$ = '<center>КРАСОТА<br>
-<font color="#cd0000">Изуродована</font>
-<font color="#C71585">Дурнушка</font>
-<font color="#4B0082">Миловидная</font>
-<font color="#0000CD">Привлекательная</font>
-<font color="#008080">Красавица</font>
-<font color="#008000">Королева</font></center>'
-$ = '  '"
 
 --- #help_msg ---------------------------------
 

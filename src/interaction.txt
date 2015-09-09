@@ -27,7 +27,6 @@ sex_acceptance = 0
 erotic_stimulation = 0
 final_stimulation = 0
 orgastic = 0
-sex_acceptance = 0
 orgasm_description = 0    
 talent_bonus = 0
 rise_modifer = 0
@@ -53,6 +52,9 @@ couch_skill = 0
 slave_skill = 0
 $target_skill = 'dump' 
 $target_skill_two = 'dudump'
+$subskill_xp = 'dump'
+$subskill_two = 'dudump'
+$subskill_two_xp = 'dudump'
 $target_affinity = 'dump' 
 $prise_type = ''
 prise_level = 0
@@ -69,6 +71,8 @@ $special_part = ''
 $special_bg = ''   
 $special_text = ''
 npc = 1
+
+slave['brand'] = tattoo_brand
 
 needle_progression = 0
 if master_torture = 1: needle_progression = 2
@@ -235,7 +239,7 @@ END
 IF interaction = 68:
  $interaction_type = 'spell_cast' 
  sparks -= 25
- slave["brand"] = 3
+ slave['brand'] = 3
  IF slave['neg_spellbound'] >= 0:
   slave['neg_spellbound'] += 1
   else
@@ -395,7 +399,7 @@ IF interaction = 1121:
    $special_part = {
    slave_rate["rational"] += reasoning_effect
    if slave_rate["rational"] < 0: slave_rate["rational"] = 0
-   if reasoning_effect >= master_cha: master_cha_rate += 1
+   if reasoning_effect >= master_cha: master_cha_rate += 2
    }  
   END
   else
@@ -408,7 +412,7 @@ END
 IF interaction = 1122:
  repulse = -2
  $interaction_type = 'talk' 
- cheer_effect = 1 + master_supermacy + slave["moral"] - already_done_curslave[interaction]
+ cheer_effect = 1 + master_supermacy + slave["moral"] - already_done_curslave[interaction]/2
  if already_done_today[interaction] > 0: cheer_effect = 0 
  if cheer_effect >= 5: cheer_rate = 3  
  if cheer_effect < 5: cheer_rate = 2 
@@ -422,8 +426,10 @@ IF interaction = 1122:
  master_half_action += 1 
  $special_part = {
   slave_rate["mood"] += cheer_effect
-  IF cheer_rate > 0: 
-   if cheer_effect > master_cha: master_cha_rate += 1
+  IF cheer_rate > 0:
+   slave['neg_no_prise'] = 0
+   slave['pos_prise'] = master_cha 
+   if cheer_effect > master_cha: master_cha_rate += 2
    gs '$mod_slave_rise', cheer_rate
   END
   }  
@@ -532,7 +538,7 @@ IF interaction = 22:
   IF $potion_base = 'spirit' and slave['enchanter'] > 1: $get_pot = 'афродизиак'
   IF $potion_base = 'slime' and slave['enchanter'] > 2: $get_pot = 'мощный_афодизиак'  
  END  
- $text[1] = '   When all components are properly mixed, it''s time to most critical process. Need to refine and distill mix using alchemical equipment, and then saturate the potion with the power of sparks, so that magic gains strength.' 
+ $text[1] = '   When all components are properly mixed, it''s time for the most critical process.  I need to refine and distill the mix using alchemical equipment, and then saturate the potion with the power of sparks, so that magic gains strength.' 
  $text[2] = $get_pot_description[$get_pot]
  IF $get_pot = 'самогон':
   frige["alcohol"] += 1
@@ -655,14 +661,13 @@ IF interaction = 338:
 END
 
 !masters interaction
-!master washes himself
+!master washes himself - no bath rule - menu_take_bath
 IF interaction = 34:
  $interaction_type = 'special_jpg' 
  master_hygiene_rate = 0
  master_hygiene = 0 
  master_mood['pos_self_clean'] = 1
  house_mess_rate += 3
- dynamic $master_energy_drop
  txt_count = 1
  g = RAND(1,3)
  if g = 1: $special_bg = 'scene\master_bathing'
@@ -686,7 +691,7 @@ IF interaction = menu_Prepare_meal:
  txt_count = 1
  $text[1] = '<<$master_cook_description[master_butler]>>'
  $place = 'kitchen' 
- npc = 0  
+ npc = 0
 END
 
 !master clean the house
@@ -744,6 +749,11 @@ END
 IF interaction = menu_assistant_active_sex:
  $place = 'bedroom'
  $sex_partner = 'assistant' 
+ master_penetration_rate += 3
+ master_oral_rate += 3
+ master_petting_rate += 3
+ master_fetish_rate += 2
+ master_domination_rate += 1
  gt 'sex_initiate'
 END
 
@@ -767,7 +777,14 @@ IF interaction = menu_assistant_relaxed_Vaginal:
  $text[1] = $assistant_seduction[assistant["roleplay"]]
  $text[2] = $assistant_foreplay[assistant["oral"]]
  $text[3] = $assistant_fuck[assistant["penetration"]]
- dynamic $master_energy_drop 
+ dynamic $master_energy_drop
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 1
+  master_penetration_rate += 2
+  assistant_rate["arousal"] -= ejaculation_intensity*3
+  assistant['neg_horny'] = 0
+  assistant['pos_gentle'] = 1
+ END 
  if ejaculation_intensity > 0: dynamic $master_ejaculate  
  if erotic_stimulation > 0: dynamic $erotic_stimulation
  IF orgastic > 0:
@@ -812,7 +829,14 @@ IF interaction = menu_assistant_relaxed_Anal:
  $text[1] = $assistant_seduction_anal[assistant["roleplay"]]
  $text[2] = $assistant_foreplay_anal[assistant["oral"]]
  $text[3] = $assistant_fuck_anal[assistant["penetration"]]
- dynamic $master_energy_drop 
+ dynamic $master_energy_drop
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 1
+  master_penetration_rate += 2
+  assistant_rate["arousal"] -= ejaculation_intensity*3
+  assistant['neg_horny'] = 0
+  assistant['pos_gentle'] = 1
+ END 
  if ejaculation_intensity > 0: dynamic $master_ejaculate  
  if erotic_stimulation > 0: dynamic $erotic_stimulation
  IF orgastic > 0:
@@ -855,7 +879,14 @@ IF interaction = menu_assistant_relaxed_Oral:
  $text[1] = $assistant_seduction_oral[assistant["roleplay"]]
  $text[2] = $assistant_foreplay_oral[assistant["oral"]]
  $text[3] = $assistant_fuck_oral[assistant["oral"]]
- dynamic $master_energy_drop 
+ dynamic $master_energy_drop
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 1
+  master_oral_rate += 2
+  assistant_rate["arousal"] -= ejaculation_intensity*3
+  assistant['neg_horny'] = 0
+  assistant['pos_gentle'] = 1
+ END 
  if ejaculation_intensity > 0: dynamic $master_ejaculate  
  if erotic_stimulation > 0: dynamic $erotic_stimulation
  IF orgastic > 0:
@@ -913,26 +944,38 @@ END
 
 !Slave doing gymnastics
 IF interaction = menu_gymnastics_S:
- repulse = 1
  $interaction_type = 'make_slave_do'
- $special_bg = $gym[slave_type]  
+ g = RAND(1,5)
+ if g = 1: $special_bg = $gymnastics[slave_type]
+ if g = 2: $special_bg = 'girls\scene\gymnastics_8'
+ if g = 3: $special_bg = 'girls\scene\gymnastics_9'
+ if g = 4: $special_bg = 'girls\scene\gymnastics_13'
+ if g = 5: $special_bg = 'girls\scene\gymnastics_15'
+ repulse = 1
+ complex_repulse = 1  
+ if slave['energy'] > 3: complex_repulse = 0
+ if slave['energy'] < 0: complex_repulse -= slave['energy'] 
+ if slave["sport_affinity"] < 0: complex_repulse += 2    
+ if slave["sport_affinity"] > 0: talent_bonus = 5
+ if slave["sport_affinity"] < 0: talent_bonus = -3     
  $refuse_txt = '  <<$slave_name>> refuses to do gymnastics. Looks like she needs to be taught a lesson of obedience.'
+ $target_skill = 'slave_rate["stamina"]'   
  slave_skill = slave["stamina"]
+ misc_bonus = learn_bonus["stamina"]
+ skill_rise = 2
  $done_txt = '  <<$work_out_description[slave_skill]>>'
  sin_potential = 4
- add_house_mess = 3
- add_slave_hygiene = slave_skill + 2
- skill_rise = slave_skill - 2
- $target_skill = 'slave_rate["stamina"]'
+ add_slave_hygiene += 5
+ add_house_mess += 3
  $target_affinity = 'sport_affinity'   
  $special_part = {
- if slave["sport_affinity_revealed"] = 0: slave["sport_affinity_revealed"] = 1
+ if slave["sport_affinity_revealed"] = 0 and slave["sport_affinity"] = 1: slave["sport_affinity_revealed"] = 1
  slave["calories"] -= 2
  }
  if hall = 1:  $place = 'hall'  
 END
 
-!slave washes herself
+!slave washes herself - no bath rule
 IF interaction = menu_bath_S:
  $interaction_type = 'special' 
  $special_bg = $bathing_alone[slave_type]  
@@ -941,7 +984,6 @@ IF interaction = menu_bath_S:
  slave["hygiene"] = 0 
  slave['pos_slave_clean'] = 1
  house_mess_rate += 3 
- dynamic $slave_energy_drop
  if slave["parfume"] = 1: slave["parfume"] = 0 
  $text[1] = '<<$bathing_slave_alone[$slave_psy_status]>>'
  $place = 'bathroom'  
@@ -965,8 +1007,10 @@ IF interaction = 5411:
  master_mood_rate += slave["petting"] + oral_wash
  $text[2] = $oral_wash_description[oral_wash]
  slave_rate["hygiene"] = 0
- master_hygiene_rate = 0
  slave["hygiene"] = 0
+ slave["pos_slave_clean"] = 1
+ slave_rate["arousal"] -= master_libido 
+ master_hygiene_rate = 0
  master_hygiene = 0 
  master_mood['pos_self_clean'] = 1
  a = max (slave["oral"], slave["petting"]) 
@@ -1064,13 +1108,14 @@ IF interaction = 54133:
  slave_rate["callisthenics"] += concert_quality
  master_mood_rate += concert_quality*3 
  if concert_quality > 0: master_mood['pos_show'] = 1 + concert_quality - brand_reputation 
- if strip_ability > master_excitement: master_excitement += 1
- if strip_ability > master_libido: master_libido_rate += 1
+ if strip_ability >= master_excitement and master_excitement < 5: master_excitement += 2
+ if strip_ability >= master_libido: master_libido_rate += 15
+ if master_excitement > 5: master_excitement = 5
  }
  if hall = 1:  $place = 'hall'   
 END
 
-!ero show
+!erotic show
 IF interaction = 54134:
  repulse = 3
  $interaction_type = 'make_slave_do'
@@ -1089,8 +1134,9 @@ IF interaction = 54134:
  slave_rate["expression"] += concert_quality
  master_mood_rate += concert_quality*3 
  if concert_quality > 0: master_mood['pos_show'] = 1 + concert_quality - brand_reputation 
- if erotic_ability > master_excitement: master_excitement += 1 
- if erotic_ability > master_libido: master_libido_rate += 1
+ if erotic_ability >= master_excitement and master_excitement < 5: master_excitement += 2
+ if erotic_ability >= master_libido: master_libido_rate += 15
+ if master_excitement > 5: master_excitement = 5
  }
  if hall = 1:  $place = 'hall'   
 END
@@ -1113,8 +1159,8 @@ IF interaction = 54135:
  $special_bg = $lesbian[slave_type]    
  slave["calories"] -= 1
  if concert_quality > 0: master_mood['pos_show'] = 2 + concert_quality - brand_reputation 
- if erotic_ability > master_excitement: master_excitement += 2 
- if erotic_ability > master_libido: master_libido_rate += 2
+ if erotic_ability >= master_excitement and master_excitement < 5: master_excitement += 2 
+ if erotic_ability >= master_libido: master_libido_rate += 15
  if master_excitement > 5: master_excitement = 5
  }
  if hall = 1:  $place = 'hall'   
@@ -1150,11 +1196,18 @@ IF interaction = 5414:
  $text[1] = $slave_seduction[slave["roleplay"]]
  $text[2] = $slave_foreplay[slave["oral"]]
  $text[3] = $slave_fuck[slave["penetration"]]
- dynamic $master_energy_drop 
+ dynamic $master_energy_drop
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 1
+  master_penetration_rate += 2
+  slave_rate["arousal"] -= ejaculation_intensity*3
+  slave['neg_horny'] = 0
+  slave['pos_gentle'] = 1
+ END 
  if ejaculation_intensity > 0: dynamic $master_ejaculate  
  if erotic_stimulation > 0: dynamic $erotic_stimulation
  IF orgastic > 0:
-  IF final_stimulation > 0: 
+  IF final_stimulation > 0:
    dynamic $slave_orgasm
    txt_count = 4
    $text[4] = '  <<$orgasm_description[orgasm_description]>>'
@@ -1206,7 +1259,14 @@ IF interaction = 54141:
  $text[1] = $slave_seduction_anal[slave["roleplay"]]
  $text[2] = $slave_foreplay_anal[slave["oral"]]
  $text[3] = $slave_fuck_anal[slave["penetration"]]
- dynamic $master_energy_drop 
+ dynamic $master_energy_drop
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 1
+  master_penetration_rate += 2
+  slave_rate["arousal"] -= ejaculation_intensity*3
+  slave['neg_horny'] = 0
+  slave['pos_gentle'] = 1
+ END 
  if ejaculation_intensity > 0: dynamic $master_ejaculate  
  if erotic_stimulation > 0: dynamic $erotic_stimulation
  IF orgastic > 0:
@@ -1255,7 +1315,14 @@ IF interaction = 54142:
  $text[1] = $slave_seduction_oral[slave["roleplay"]]
  $text[2] = $slave_foreplay_oral[slave["oral"]]
  $text[3] = $slave_fuck_oral[slave["oral"]]
- dynamic $master_energy_drop 
+ dynamic $master_energy_drop
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 1
+  master_oral_rate += 2
+  slave_rate["arousal"] -= ejaculation_intensity*3
+  slave['neg_horny'] = 0
+  slave['pos_gentle'] = 1
+ END 
  if ejaculation_intensity > 0: dynamic $master_ejaculate  
  if erotic_stimulation > 0: dynamic $erotic_stimulation
  IF orgastic > 0:
@@ -1280,20 +1347,96 @@ IF interaction = 5415:
  IF res < 0: 
   $refuse_txt = '<<$slave_name>> refuses to have sex with you. Well, if she prefers rape - it is easy to arrange...'
   dynamic $sin_gained_now 
-  else 
+  else
+  master_penetration_rate += 3
+  master_oral_rate += 3
+  master_petting_rate += 3
+  master_fetish_rate += 2
+  master_domination_rate += 1
   gt 'sex_initiate'
  END
 END
 
-!threesome
-IF interaction = 5416:
+!Threesome - non-lesson type - with assistant - similar to relaxed vaginal, anal, and oral sex
+IF interaction = menu_threesome:
+ repulse = 5
+ lesbian = 1
+ $interaction_type = 'make_slave_assistant_do'
+ $target_skill = 'slave_rate["sub_threesome"]'
+ $target_skill_two = 'assistant_rate["sub_threesome"]'
+ $subskill = 'slave["sub_threesome"]'
+ $subskill_xp = 'slave["sub_threesome_xp"]'
+ $subskill_two = 'assistant["sub_threesome"]'
+ $subskill_two_xp = 'assistant["sub_threesome_xp"]'
+ $target_affinity = 'nymphomania'  
+ if slave["nymphomania"] > 0: repulse -= 3
+ if slave["nymphomania"] < 0: repulse += 1
+ $special_bg = $lesbian[slave_type]
+ $refuse_txt = '<<$slave_name>> refuses to have sex with you. Well, if she prefers rape - it is easy to arrange...'
+ sex_ability = (assistant["roleplay"] + assistant["oral"] + assistant["penetration"] + slave["roleplay"] + slave["oral"] + slave["penetration"])/6
+ sex_quality = max (1, sex_ability)
+ if sex_quality < 5: sex_quality += 1
+ sin_potential = 6
+ add_master_hygiene = 8 
+ add_slave_hygiene = 8
+ add_assistant_hygiene = 8 
+ add_house_mess = 6
+ $special_part = {
+ if slave["nymphomania_revealed"] = 0: slave["nymphomania_revealed"] = 1
+ if slave["homosexualism_revealed"] = 0:  slave["homosexualism_revealed"] = 1 
+ if slave["sub_threesome"] < 1: slave["sub_threesome"] += 1
+ if assistant["sub_threesome"] < 1: assistant["sub_threesome"] += 1
+ slave["calories"] -= 1
+ erotic_stimulation = master_fetish
+ orgastic = 1
+ ejaculation_intensity = sex_quality
+ if ejaculation_intensity < 2: ejaculation_intensity = 2
+ $play_sound[1] = '<<$slopy[0]>>' 
+ txt_count = 1
+ a = RAND(1,4)
+ $text[1] = $trio_sex_description[a]
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 1
+  master_penetration_rate += 2
+ END 
+ if ejaculation_intensity > 0: dynamic $master_ejaculate  
+ if erotic_stimulation > 0: dynamic $erotic_stimulation
+ IF orgastic > 0:
+  IF final_stimulation > 0: 
+   dynamic $slave_orgasm
+   txt_count = 2
+   $text[2] = '  <<$orgasm_description[orgasm_description]>>'
+  END
+ END
+ IF virginity < 2:
+  virginity = 2
+  slave['neg_defloration'] = slave["sensitivity"] + slave['pride'] - slave["moral"] - slave["arousal"]
+  if slave['neg_defloration'] > 0: gs '$mod_slave_drop', slave['neg_defloration']  
+ END
+ if slave['ovulation'] > 0 and slave['pregnant'] < 1: slave['pregnant'] = 1
+ IF slave['ill'] > 0:
+  a = RAND (1,6)
+  if a > master_str and master_ill = 0: master_ill = 1
+ END 
+ IF master_ill > 0:
+  a = RAND (1,6)
+  if a > slave['stamina'] and slave['ill'] = 0: slave['ill'] = 1
+ END 
+ npc = 0
+ $special_bg = $lesbo[slave_type]  
+ }  
+ $place = 'bedroom'    
+END
+
+!Threesome - non-lesson type - no assistant required - similar to relaxed vaginal, anal, and oral sex - option added - crushboss
+IF interaction = menu_threesome_noassistant:
  repulse = 5
  if slave["nymphomania"] > 0: repulse -= 3
  if slave["nymphomania"] < 0: repulse += 1
  $interaction_type = 'make_slave_do'
  $special_bg = $lesbian[slave_type]  
  $refuse_txt = '<<$slave_name>> refuses to have sex with you. Well, if she prefers rape - it is easy to arrange...'
- sex_ability = (assistant["roleplay"] + assistant["oral"] + assistant["penetration"] + slave["roleplay"] + slave["oral"] + slave["penetration"])/6
+ sex_ability = (slave["roleplay"] + slave["oral"] + slave["penetration"])/3
  sex_quality = max (1, sex_ability)
  if sex_quality < 5: sex_quality += 1
  sin_potential = 6
@@ -1301,20 +1444,23 @@ IF interaction = 5416:
  add_master_hygiene = 15 
  add_slave_hygiene = 15
  $special_part = {
- if slave["nymphomania_revealed"] = 0: slave["nymphomania_revealed"] = 1 
- if slave["sub_threesome"] < 1: assistant["sub_threesome"] += 1 
- if assistant["sub_threesome"] < 1: assistant["sub_threesome"] += 1 
+ if slave["nymphomania_revealed"] = 0: slave["nymphomania_revealed"] = 1
+ if slave["homosexualism_revealed"] = 0:  slave["homosexualism_revealed"] = 1
+ if slave["sub_threesome"] < 1: slave["sub_threesome"] += 1  
  slave["sub_threesome_xp"] += sex_quality
- assistant["sub_threesome_xp"] += sex_quality
  slave["calories"] -= 1
  erotic_stimulation = master_fetish
  orgastic = 1
  ejaculation_intensity = sex_quality
+ $play_sound[1] = '<<$slopy[0]>>' 
  txt_count = 1
  a = RAND(1,4)
- $play_sound[1] = '<<$slopy[0]>>'
  $text[1] = $trio_sex_description[a]
- dynamic $master_energy_drop 
+ dynamic $master_energy_drop
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 1
+  master_penetration_rate += 2
+ END 
  if ejaculation_intensity > 0: dynamic $master_ejaculate  
  if erotic_stimulation > 0: dynamic $erotic_stimulation
  IF orgastic > 0:
@@ -1361,12 +1507,16 @@ IF interaction = 161:
  orgastic = 1
  $special_part = {   
  if slave["nymphomania_revealed"] = 0: slave["nymphomania_revealed"] = 1  
- master_penetration_rate += 1
  slave_rate["custom"] += 1
  slave_rate["pride"] -= 1 
  slave_rate["ego"] -= 1 
  slave_rate["temper"] -= 1   
- slave_rate["angst"] += 1 
+ slave_rate["angst"] += 1
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 2
+  master_penetration_rate += 1
+  slave_rate["arousal"] -= ejaculation_intensity*3
+ END 
  if final_stimulation <= 0: slave_rate["mood"] -= 5 + slave["sensitivity"]
  IF slave["sub_vaginal"] < 2:
   slave["sub_vaginal"] += 1
@@ -1416,7 +1566,12 @@ IF interaction = 162:
  slave_rate["pride"] -= 5 
  slave_rate["ego"] -= 1 
  slave_rate["temper"] -= 1   
- slave_rate["angst"] += 1 
+ slave_rate["angst"] += 1
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 2
+  master_oral_rate += 1
+  slave_rate["arousal"] -= ejaculation_intensity*3
+ END 
  IF slave["sub_dt"] < 3:
   slave["sub_dt"] += 1
   else
@@ -1449,12 +1604,16 @@ IF interaction = 163:
  rape_fear = 5 - slave["sub_anal"]
  $special_part = {   
  if slave["masohism_revealed"] = 0: slave["masohism_revealed"] = 1   
- master_penetration_rate += 1
  slave_rate["custom"] += 1
  slave_rate["pride"] -= 3
  slave_rate["ego"] -= 2 
  slave_rate["temper"] -= 2   
- slave_rate["angst"] += 2 
+ slave_rate["angst"] += 2
+ IF ejaculation_intensity > 0 and erotic_stimulation > 0:
+  master_domination_rate += 2
+  master_penetration_rate += 1
+  slave_rate["arousal"] -= ejaculation_intensity*3
+ END 
  IF slave["sub_anal"] < 2:
   slave["sub_anal"] += 1
   else
@@ -1507,33 +1666,33 @@ END
 
 !Personal lesson on cooking
 IF interaction = 1212:
- IF kitchen < 1: 
+ IF kitchen < 1:
   $info_text = 'You do not have your own kitchen, so you can not cook and conduct cooking lessons at home.'
   gt 'slave_stat'
  END
  $interaction_type = 'master_teaches_slave'
- $special_bg = $cooking[slave_type] 
+ $special_bg = $cooking[slave_type]
  repulse = 0
  complex_repulse = 0 
- if slave["cook_affinity"] < 0: complex_repulse += 2     
- if slave["cook_affinity"] > 0: talent_bonus = 5   
+ if slave["cook_affinity"] < 0: complex_repulse += 2
+ if slave["cook_affinity"] > 0: talent_bonus = 5
  sin_potential = 3
- add_house_mess = 1
  couch_skill = master_butler
- $target_skill = 'slave_rate["cook"]'   
+ $target_skill = 'slave_rate["cook"]'
  misc_bonus = learn_bonus["cook"]
- slave_skill = slave["cook"] 
+ slave_skill = slave["cook"]
  $text[1] = '  <<$cook_lesson_description[slave_skill]>>'
  $text[2] = '  <<$lesson_diligence[diligence]>>'
  add_master_hygiene = 2
  add_slave_hygiene = house_mess + 2
- add_house_mess += 2
+ add_house_mess = 2
  $special_part = {
  master_butler_rate += 1
- if slave["cook_affinity_revealed"] = 0: slave["cook_affinity_revealed"] = 1     
+ if slave["cook_affinity_revealed"] = 0: slave["cook_affinity_revealed"] = 1    
  if cooked_food < slave["cook"]: cooked_food = slave["cook"]
- } 
- $place = 'kitchen'    
+ if cooked_food < 1: cooked_food = 1
+ }
+ $place = 'kitchen'
 END
 
 !Personal lesson on medicine
@@ -1592,27 +1751,34 @@ END
 !Personal lesson on gymnastics
 IF interaction = 1221:
  $interaction_type = 'master_teaches_slave'
- $special_bg = $gymnastics[slave_type]  
+ g = RAND(1,5)
+ if g = 1: $special_bg = $gymnastics[slave_type]
+ if g = 2: $special_bg = 'girls\scene\gymnastics_8'
+ if g = 3: $special_bg = 'girls\scene\gymnastics_9'
+ if g = 4: $special_bg = 'girls\scene\gymnastics_13'
+ if g = 5: $special_bg = 'girls\scene\gymnastics_15'
  repulse = 1
  complex_repulse = 1  
  if slave['energy'] > 3: complex_repulse = 0
  if slave['energy'] < 0: complex_repulse -= slave['energy'] 
  if slave["sport_affinity"] < 0: complex_repulse += 2    
- if slave["sport_affinity"] > 0: talent_bonus = 5    
+ if slave["sport_affinity"] > 0: talent_bonus = 5
+ if slave["sport_affinity"] < 0: talent_bonus = -3   
  sin_potential = 4
  couch_skill = master_str
  $target_skill = 'slave_rate["stamina"]'  
  slave_skill = slave["stamina"] 
- misc_bonus = learn_bonus["stamina"]    
+ misc_bonus = learn_bonus["stamina"]  
  $text[1] = '  <<$gym_lesson_description[slave_skill]>>'
  $text[2] = '  <<$lesson_diligence[diligence]>>'
- add_master_hygiene = 5
- add_slave_hygiene = 5
- add_house_mess = 2
+ skill_rise = 2
+ add_master_hygiene += 5
+ add_slave_hygiene += 5
+ add_house_mess += 3
+ $target_affinity = 'sport_affinity'
  $special_part = { 
-  if slave["sport_affinity_revealed"] = 0: slave["sport_affinity_revealed"] = 1      
+  if slave["sport_affinity_revealed"] = 0 and slave["sport_affinity"] = 1: slave["sport_affinity_revealed"] = 1      
   slave["calories"] -= 2
-  slave_rate["callisthenics"] += 1  
   master_domination_rate += 1   
   master_str_rate += 1
   }
@@ -1640,7 +1806,6 @@ IF interaction = 1222:
  $special_part = {  
   if slave["callisthenics_affinity_revealed"] = 0: slave["callisthenics_affinity_revealed"] = 1    
   slave["calories"] -= 1
-  slave_rate["stamina"] += 1
   master_artdirector_rate += 1  
   }
   if hall = 1:  $place = 'hall'    
@@ -1667,7 +1832,6 @@ IF interaction = 1223:
  $special_part = {  
   if slave["gladiatrix_affinity_revealed"] = 0: slave["gladiatrix_affinity_revealed"] = 1     
   slave["calories"] -= 2
-  slave_rate["stamina"] += 1
   if diligence > 2 and slave["gladiatrix"] < 5: slave_rate["ego"] += 1
   master_fighter_rate += 1  
   master_str_rate += 1
@@ -1696,8 +1860,6 @@ IF interaction = 1224:
  $special_part = {  
  if slave["dressage_affinity_revealed"] = 0:  slave["dressage_affinity_revealed"] = 1
   slave["calories"] -= 1
-  slave_rate["stamina"] += 1
-  slave_rate["callisthenics"] += 1  
   master_artdirector_rate += 1  
   }
   if hall = 1:  $place = 'hall'    
@@ -1724,7 +1886,6 @@ IF interaction = 1225:
  $special_part = {  
  if slave["dressage_affinity_revealed"] = 0:  slave["dressage_affinity_revealed"] = 1 
   slave["calories"] -= 2
-  slave_rate["stamina"] += 2
   master_domination_rate += 1  
   }
   if hall = 1:  $place = 'hall'    
@@ -2358,7 +2519,7 @@ IF interaction = 1334:
 END
 
 !Personal lesson on threesome
-IF interaction = 1341:
+IF interaction = 5420:
  $interaction_type = 'self_sex_lesson'
  $subskill = 'slave["sub_threesome"]'
  $subskill_xp = 'slave["sub_threesome_xp"]'  
@@ -2376,6 +2537,49 @@ IF interaction = 1341:
  add_house_mess = 6
  ejaculation_intensity = 2
  erotic_stimulation = (master_penetration + assistant["oral"] + assistant["petting"])/2
+ orgastic = 1
+ if slave["sub_threesome"] >= 5: $interaction_type = 'completed' 
+ $special_part = {   
+ if slave["nymphomania_revealed"] = 0:  slave["nymphomania_revealed"] = 1   
+ if slave["homosexualism_revealed"] = 0:  slave["homosexualism_revealed"] = 1  
+ master_penetration_rate += 1
+ IF virginity < 2:
+  virginity = 2
+  slave['neg_defloration'] = slave["sensitivity"] + slave['pride'] - slave["moral"] - slave["arousal"]
+  if slave['neg_defloration'] > 0: gs '$mod_slave_drop', slave['neg_defloration']  
+ END
+ if slave['ovulation'] > 0 and slave['pregnant'] < 1: slave['pregnant'] = 1
+ IF slave['ill'] > 0:
+  a = RAND (1,6)
+  if a > master_str and master_ill = 0: master_ill = 1
+ END 
+ IF master_ill > 0:
+  a = RAND (1,6)
+  if a > slave['stamina'] and slave['ill'] = 0: slave['ill'] = 1
+ END  
+ }   
+ $place = 'bedroom'    
+END
+
+!Personal lesson on threesome - no assistant - option added - crushboss
+IF interaction = 5422:
+ $interaction_type = 'self_sex_lesson'
+ $subskill = 'slave["sub_threesome"]'
+ $subskill_xp = 'slave["sub_threesome_xp"]'  
+ lesbian = 1
+ repulse = 4
+ if slave["nymphomania"] > 0: repulse -= 1  
+ if slave["homosexualism"] > 0: repulse -= 1  
+ rise_difficulty = 7 + slave["sub_threesome"]
+ $text[1] = '  <<$threesome_noassistant_description[slave["sub_threesome"]]>>'
+ $play_sound[2] = '<<$fuck_sound[slave["age"]]>>'
+ $special_bg = $lesbian[slave_type]   
+ couch_skill = (1 + master_penetration + master_artdirector)/2
+ add_master_hygiene = 8 
+ add_slave_hygiene = 8 
+ add_house_mess = 6
+ ejaculation_intensity = 2
+ erotic_stimulation = (master_penetration + master_petting + master_oral + slave["penetration"] + slave["oral"] + slave["petting"])/4
  orgastic = 1
  if slave["sub_threesome"] >= 5: $interaction_type = 'completed' 
  $special_part = {   
@@ -2980,7 +3184,10 @@ IF interaction = 1511:
  if prise_potence < 10: date_succes = 3
  if prise_potence < 5: date_succes = 2  
  if prise_potence <= 1: date_succes = 1
- if date_succes > 2: slave['promise_reward'] = 0 
+ IF date_succes > 2:
+  slave['promise_reward'] = 0
+  slave_rate["moral"] += 1
+ END 
  prise_cost = 0 
  add_master_hygiene = 1  
  add_slave_hygiene = 1 
@@ -3003,7 +3210,10 @@ IF interaction = 1512:
  if prise_potence < 10: date_succes = 3
  if prise_potence < 5: date_succes = 2  
  if prise_potence <= 1: date_succes = 1
- if date_succes > 2: slave['promise_reward'] = 0  
+ IF date_succes > 2:
+  slave['promise_reward'] = 0
+  slave_rate["moral"] += 1
+ END  
  prise_cost = 0
  add_master_hygiene = 4  
  add_slave_hygiene = 4 
@@ -3029,7 +3239,10 @@ IF interaction = 1513:
  if prise_potence < 10: date_succes = 3
  if prise_potence < 5: date_succes = 2  
  if prise_potence <= 1: date_succes = 1
- if date_succes > 2: slave['promise_reward'] = 0  
+ IF date_succes > 2:
+  slave['promise_reward'] = 0
+  slave_rate["moral"] += 2
+ END 
  prise_cost = 2
  master_hygiene = 1
  slave["hygiene"] = 1
@@ -3054,7 +3267,10 @@ IF interaction = 1514:
  if prise_potence < 10: date_succes = 3
  if prise_potence < 5: date_succes = 2  
  if prise_potence <= 1: date_succes = 1
- if date_succes > 2: slave['promise_reward'] = 0  
+ IF date_succes > 2:
+  slave['promise_reward'] = 0
+  slave_rate["moral"] += 2
+ END 
  prise_cost = 4
  add_master_hygiene = 2  
  add_slave_hygiene = 2 
@@ -3083,6 +3299,10 @@ IF interaction = 1515:
  if prise_potence < 10: date_succes = 3
  if prise_potence < 5: date_succes = 2  
  if prise_potence <= 1: date_succes = 1
+ IF date_succes > 2:
+  slave['promise_reward'] = 0
+  slave_rate["moral"] += 2
+ END  
  prise_cost = 8 
  add_master_hygiene = 3  
  add_slave_hygiene = 3 
@@ -3174,10 +3394,15 @@ IF interaction = 1525:
  $place = 'garden'    
  $special_part = {
 slave_rate["fear"] -= slave["fear"]*2 
-slave_rate["angst"] -= slave["angst"]*2 
+slave_rate["angst"] -= slave["angst"]*2
+slave_rate["spoil"] -= slave["spoil"]*2 
 slave_well_rested = slave["energy"]
-slave_rate["sensitivity"] += 1
-slave["energy"] = 0 
+slave_rate["sensitivity"] += 2
+slave_rate["ego"] += 2
+slave_rate["rational"] += 1
+slave_rate["moral"] += 1
+slave_rate["pride"] -= 1
+slave["energy"] -= 2 
 if slave['pos_games'] < 5: slave['pos_games'] = 5
 } 
 END
@@ -3197,7 +3422,9 @@ IF interaction = 1526:
  slave_rate["hygiene"] = 0
  slave["pos_slave_clean"] = 1
  if slave["parfume"] = 1: slave["parfume"] = 0
- slave_rate["sensitivity"] += 1
+ slave_rate["sensitivity"] += 2
+ slave_rate["ego"] += 1
+ slave_rate["rational"] += 1
  sparks -= 2
  dynamic $slave_energy_drop
  if slave['pos_games'] < 1: slave['pos_games'] = 1
@@ -3218,10 +3445,12 @@ IF interaction = 1527:
  $special_part = {
 slave_rate["angst"] -= slave["angst"]
 slave_well_rested += 1
-slave_rate["ego"] += 1
-slave_rate["temper"] += 1
+slave_rate["ego"] += 2
+slave_rate["sensitivity"] += 2
+slave_rate["rational"] += 1
+slave_rate["moral"] += 1
 sparks -= 5
-slave["energy"] = 0 
+slave["energy"] -= 2 
 slave['pos_games'] = slave["ego"] + slave["temper"] + slave["sensitivity"]
 } 
 END
@@ -3233,7 +3462,8 @@ IF interaction = 1531:
  prise_level = 1
  erotic_stimulation = (master_oral + slave["arousal"])/2
  $text[1] = $prise_erotic[prise_level]
- $play_sound[2] = '<<$kiss_sound[slave["age"]]>>' 
+ $play_sound[2] = '<<$kiss_sound[slave["age"]]>>'
+ slave_rate["moral"] += 1 
  orgastic = 0  
  add_slave_hygiene = 2 
  add_master_hygiene = 2 
@@ -3243,7 +3473,7 @@ IF interaction = 1531:
  master_petting_rate += 1  
 END
 
-!Sensual massage
+!Sensual massage - improved - added some healing effects - crushboss
 IF interaction = 1532:
  $interaction_type = 'prise_erotic'
  $special_bg = $hug[slave_type]    
@@ -3260,8 +3490,15 @@ IF interaction = 1532:
   if slave["energy"] < 5: slave["energy"] += 1
  END
  $place = 'bedroom'     
- if slave["passion_comfort_revealed"] = 0:  slave["passion_comfort_revealed"] = 1 
- master_petting_rate += 2   
+ if slave["passion_comfort_revealed"] = 0:  slave["passion_comfort_revealed"] = 1
+ slave_rate["sensitivity"] += 2
+ slave_rate["instinct"] += 1
+ slave_rate["moral"] += 2 
+ slave_rate["arousal"] += master_str + master_domination
+ master_petting_rate += 2
+ if slave["bruises"] > 0 or slave_rate["bruises"] > 0: slave_rate["bruises"] -= slave["bruises"]
+ if slave["angst"] > 0 or slave_rate["angst"] > 0: slave_rate["angst"] -= slave["angst"]
+ if master_petting > 3 and slave["angst"] < 2: slave['neg_pain'] = 0
 END
 
 !Petting
@@ -3290,6 +3527,7 @@ IF interaction = 1534:
  erotic_stimulation = (master_petting + slave["arousal"])*3
  $text[1] = $prise_erotic[prise_level]
  orgastic = 1
+ slave_rate["moral"] += 1
  add_slave_hygiene = 10 
  add_master_hygiene = 5  
  add_house_mess = 15
@@ -3309,6 +3547,7 @@ IF interaction = 1535:
  erotic_stimulation = (master_oral + slave["arousal"])*4
  $text[1] = $prise_erotic[prise_level]
  orgastic = 1
+ slave_rate["moral"] += 1
  add_slave_hygiene = 2 
  add_master_hygiene = 10  
  add_house_mess = 10
@@ -3591,9 +3830,15 @@ IF interaction = 1555:
  prise_level = 5 
  slave['promise_gift'] = 0 
  prise_potence = 32
- prise_cost = 16 
+ prise_cost = 25 
  add_slave_hygiene = 2 
- add_house_mess = 2 
+ add_house_mess = 2
+ slave_rate["rational"] += 1
+ slave_rate["instinct"] += 1
+ slave_rate["custom"] += 1
+ slave_rate["moral"] += 1
+ slave_rate["ego"] += 1
+ slave_rate["sensitivity"] += 1 
  $text[1] = '  <<$sweets_description[5]>>' 
  IF kitchen > 0:  $place = 'kitchen'    
  if slave["passion_sweets_revealed"] = 0:  slave["passion_sweets_revealed"] = 1  
@@ -3604,7 +3849,7 @@ END
 IF interaction = 1561:
  $interaction_type = 'compliment'
  prise_level = 1
- prise_potence = master_cha/2
+ prise_potence = master_cha
  $text[1] = '  <<$compliment_description[1]>>'
  if slave["abuse_attitude_revealed"] = 0:  slave["abuse_attitude_revealed"] = 1  
 END
@@ -3613,7 +3858,7 @@ END
 IF interaction = 1562:
  $interaction_type = 'compliment'
  prise_level = 2 
- prise_potence = master_cha
+ prise_potence = master_cha*2
  $text[1] = '  <<$compliment_description[2]>>' 
  if slave["abuse_attitude_revealed"] = 0:  slave["abuse_attitude_revealed"] = 1   
 END
@@ -3622,7 +3867,7 @@ END
 IF interaction = 1563:
  $interaction_type = 'compliment'
  prise_level = 3 
- prise_potence = master_cha*2
+ prise_potence = master_cha*3
  $text[1] = '  <<$compliment_description[3]>>' 
  if slave["abuse_attitude_revealed"] = 0:  slave["abuse_attitude_revealed"] = 1   
 END
@@ -4941,21 +5186,25 @@ IF interaction = 1721:
  sin_potential = 4
  $target_skill = 'slave_rate["stamina"]'   
  slave_skill = slave["stamina"]
- misc_bonus = learn_bonus["stamina"]     
+ misc_bonus = learn_bonus["stamina"]
+ skill_rise = 2    
  repulse = 3
  complex_repulse = 2
- if slave["sport_affinity"] < 0: complex_repulse += 1
- if slave["sport_affinity"] > 0: talent_bonus = 5  
+ if slave['energy'] > 3: complex_repulse = 0
+ if slave['energy'] < 0: complex_repulse -= slave['energy'] 
+ if slave["sport_affinity"] < 0: complex_repulse += 2    
+ if slave["sport_affinity"] > 0: talent_bonus = 5
+ if slave["sport_affinity"] < 0: talent_bonus = -3 
  $text[1] = '  <<$stamina_couch>>'
  $text[2] = '  <<$couch_teaches>>'
  $couch = 'geralt'
- add_slave_hygiene += 10
- add_house_mess += 5
+ add_slave_hygiene += 5
+ add_house_mess += 3
+ $target_affinity = 'sport_affinity'
  $special_part = {  
   sparks -= couch_price[slave["stamina"]]
   slave["calories"] -= 2
-  slave_rate["callisthenics"] += 1   
-  if slave["sport_affinity_revealed"] = 0:  slave["sport_affinity_revealed"] = 1 
+  if slave["sport_affinity_revealed"] = 0 and slave["sport_affinity"] = 1: slave["sport_affinity_revealed"] = 1 
   }
 END
 
@@ -4979,7 +5228,6 @@ IF interaction = 1722:
  $special_part = {  
   sparks -= couch_price[slave["callisthenics"]]   
   slave["calories"] -= 1
-  slave_rate["stamina"] += 1   
   if slave["callisthenics_affinity_revealed"] = 0:  slave["callisthenics_affinity_revealed"] = 1 
   }
 END
@@ -5005,7 +5253,6 @@ IF interaction = 1723:
   sparks -= couch_price[slave["gladiatrix"]]    
   slave["calories"] -= 2
   if diligence > 2 and slave["gladiatrix"] < 5: slave_rate["ego"] += 1
-  slave_rate["stamina"] += 1   
   if slave["gladiatrix_affinity_revealed"] = 0:  slave["gladiatrix_affinity_revealed"] = 1 
   }
 END
@@ -5030,8 +5277,6 @@ IF interaction = 1724:
  $special_part = {  
   sparks -= couch_price[slave["dressage"]]     
   slave["calories"] -= 1
-  slave_rate["stamina"] += 1   
-  slave_rate["callisthenics"] += 1  
   if slave["dressage_affinity_revealed"] = 0:  slave["dressage_affinity_revealed"] = 1 
   }
 END
@@ -5734,22 +5979,25 @@ IF interaction = 4121:
  $interaction_type = 'assistant_teaches_slave'
  $special_bg = $gymnastics[slave_type]  
  repulse = 1
- if slave["sport_affinity"] > 0: repulse -= 1    
- if slave["sport_affinity"] < 0: repulse += 1    
- if slave["sport_affinity"] > 0: talent_bonus = 3     
+ complex_repulse = 1  
+ if slave['energy'] > 3: complex_repulse = 0
+ if slave['energy'] < 0: complex_repulse -= slave['energy'] 
+ if slave["sport_affinity"] < 0: complex_repulse += 2    
+ if slave["sport_affinity"] > 0: talent_bonus = 5   
  if slave["sport_affinity"] < 0: talent_bonus = -3  
  sin_potential = 4
- couch_skill = master_str
  $target_skill = 'slave_rate["stamina"]' 
  $target_skill_two = 'assistant_rate["stamina"]'   
- slave_skill = slave["stamina"] 
- add_master_hygiene = 5
- add_slave_hygiene = 5
- add_house_mess = 2
+ slave_skill = slave["stamina"]
+ misc_bonus = learn_bonus["stamina"]
+ skill_rise = 2
+ add_assistant_hygiene += 5
+ add_slave_hygiene += 5
+ add_house_mess += 3
+ $target_affinity = 'sport_affinity'
  $special_part = { 
   slave["calories"] -= 2
-  slave_rate["callisthenics"] += 1 
-  master_str_rate += 1
+  if slave["sport_affinity_revealed"] = 0 and slave["sport_affinity"] = 1: slave["sport_affinity_revealed"] = 1 
   }
   if hall = 1:  $place = 'hall'    
 END
@@ -5769,7 +6017,6 @@ IF interaction = 4122:
  add_house_mess += 2
  $special_part = {  
   slave["calories"] -= 1
-  slave_rate["stamina"] += 1
   }
   if hall = 1:  $place = 'hall'    
 END
@@ -5789,7 +6036,6 @@ IF interaction = 4123:
  add_house_mess += 5
  $special_part = {  
   slave["calories"] -= 2
-  slave_rate["stamina"] += 1
   if diligence > 2 and slave["gladiatrix"] < 5: slave_rate["ego"] += 1
   assistant_rate["stamina"] += 1
   }
@@ -5902,9 +6148,9 @@ IF interaction = menu_Milk_A:
  END
  add_house_mess = 0
  $special_part = {
- if already_done_today[interaction] = 0: tentacle_hp += 1
+ if already_done_today[interaction] = 0: tentacle_hp += 2
  IF assistant["sub_tentacles"] > tentacle_size: 
-  tentacle_hp += 1
+  tentacle_hp += 2
   spawn_milked = 1
   spawn_semen += semen_gain[tentacle_size]
  IF assistant_virginity < 2: 
@@ -6001,16 +6247,23 @@ IF interaction = 565:
  sin_potential = 4
  $target_skill = 'slave_rate["stamina"]'   
  slave_skill = slave["stamina"]
- misc_bonus = learn_bonus["stamina"]     
+ misc_bonus = learn_bonus["stamina"]
+ skill_rise = 2     
  repulse = 1
- complex_repulse = 1
- if slave["stamina_affinity"] < 0: complex_repulse += 2
- if slave["stamina_affinity"] > 0: talent_bonus = 5  
- add_slave_hygiene += 10
+ complex_repulse = 1 
+ if slave['energy'] > 3: complex_repulse = 0
+ if slave['energy'] < 0: complex_repulse -= slave['energy'] 
+ if slave["sport_affinity"] < 0: complex_repulse += 2    
+ if slave["sport_affinity"] > 0: talent_bonus = 5
+ if slave["sport_affinity"] < 0: talent_bonus = -3   
+ sin_potential = 4
+ add_slave_hygiene += 5
+ add_house_mess += 3
+ $target_affinity = 'sport_affinity'
  $special_part = {  
+  if slave["sport_affinity_revealed"] = 0 and slave["sport_affinity"] = 1: slave["sport_affinity_revealed"] = 1      
   slave["calories"] -= 2
   sparks -= school_price[slave["stamina"]]    
-  if slave["stamina_affinity_revealed"] = 0:  slave["stamina_affinity_revealed"] = 1 
   }
 END
 
@@ -6028,7 +6281,6 @@ IF interaction = 566:
  if slave["callisthenics_affinity"] > 0: talent_bonus = 5  
  add_slave_hygiene += 5
  $special_part = {  
-  slave_rate["stamina"] += 1
   slave["calories"] -= 1 
   sparks -= school_price[slave["callisthenics"]]    
   if slave["callisthenics_affinity_revealed"] = 0:  slave["callisthenics_affinity_revealed"] = 1 
@@ -6050,7 +6302,6 @@ IF interaction = 567:
  add_slave_hygiene += 10
  $special_part = {  
   slave["calories"] -= 1
-  slave_rate["stamina"] += 1  
   sparks -= school_price[slave["gladiatrix"]]    
   if diligence > 2 and slave["gladiatrix"] < 5: slave_rate["ego"] += 1
   if slave["gladiatrix_affinity_revealed"] = 0:  slave["gladiatrix_affinity_revealed"] = 1 
@@ -6072,8 +6323,6 @@ IF interaction = 568:
  add_slave_hygiene += 5
  $special_part = {  
   slave["calories"] -= 1
-  slave_rate["stamina"] += 1  
-  slave_rate["callisthenics"] += 1    
   sparks -= school_price[slave["dressage"]]    
   if slave["dressage_affinity_revealed"] = 0:  slave["dressage_affinity_revealed"] = 1 
   }
@@ -6194,10 +6443,10 @@ IF interaction = menu_Milk_S:
  add_slave_hygiene = 20
  $target_affinity = 'preversion'
  $special_part = {
- if already_done_today[interaction] = 0: tentacle_hp += 1
+ if already_done_today[interaction] = 0: tentacle_hp += 2
  IF slave["sub_tentacles"] > tentacle_size: 
   spawn_milked = 1
-  tentacle_hp += 1
+  tentacle_hp += 2
   spawn_semen += semen_gain[tentacle_size]
  END 
  IF slave["sub_tentacles"] < 1: 
@@ -6386,7 +6635,7 @@ IF interaction = 9911:
  npc = 1
  $npc_id = 'ester'
  slave_state = CONST_INT['no_slave']
- IF slave["brand"] > 0:
+ IF slave['brand'] > 0:
   ransom = common_price[rating]
   else
   ransom = 50

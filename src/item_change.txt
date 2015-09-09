@@ -31,6 +31,7 @@ IF slot = 6:
 END
 
 IF slot = 7:
+ dynamic $item_property_off[$master_cloth]
  dynamic '<<$master_cloth>> += 1'
  $master_cloth = $new_item
  dynamic $item_property[$master_cloth]

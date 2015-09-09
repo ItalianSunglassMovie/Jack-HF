@@ -1,5 +1,5 @@
 # init_game
-!settings for master stats for a sandbox mode
+!settings for master stats
 $master_ava = 'content\pic\master\master_noble_sepia.jpg'
 $master_ava_color = 'content\pic\master\master_noble.jpg'
 $master_name = 'Jack'
@@ -28,13 +28,14 @@ master_penetration = 3
 master_fetish = 3
 
 !other settings
-stock_limit = 300
+stock_limit = 15
 
 bath = 1
 kitchen = 1
 dungeon = 1
 lab = 1
 library = 1
+barn = 0
 
 flute = 1
 guitar = 1
@@ -42,12 +43,12 @@ piano = 1
 cello = 1
 violin = 1
 
-svine = 1
+svine = 0
 horse = 1
 dog = 1
 $dog_name = 'Jake'
-arachnidSpider = 1
-polypusvermin = 1
+arachnidSpider = 0
+polypusvermin = 0
 
 cooked_food = -1
 sparks = 1000
@@ -89,8 +90,36 @@ faction_fame['kamira'] = 0
 
 vibrator = 1
 get_initial_slave = 1
-
 brand_rate = 0
+
+!Game Option Variables
+nsfw = 0
+no_loli = 0
+no_milf = 0
+no_mindbreak = 0
+no_guro = 0
+
+!Initialize Cheat Variables - crushboss
+cheat_a = 0
+cheat_b = 0
+cheat_c = 0
+cheat_d = 0
+cheat_e = 0
+cheat_f = 0
+cheat_g = 0
+cheat_h = 0
+cheat_i = 0
+cheat_j = 0
+cheat_ioff = 0
+cheat_all = 0
+extended_rental_cheat = 0
+
+!Initialize Variables - crushboss
+daycount = 0
+slave[$npc_id] = 0
+demand_rating[$npc_id] = 0
+purse = 0
+a = 0
 
 $preset_name[1] = 'Preset 1'
 $preset_name[2] = 'Preset 2'

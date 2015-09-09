@@ -1,6 +1,6 @@
 # init_custom_game
 get_initial_slave = 0
-hero_points = 600
+hero_points = 800
 
 master_str = 1
 master_cha = 0
@@ -29,5 +29,6 @@ $starting_area = 'Slum'
 
 custom_game = 1
 patrician_mode_off = 1
+
 --- init_custom_game ---------------------------------
 

@@ -1,5 +1,6 @@
 # slave_to_assistant
-!move slave an assistant or or vice versa
+!move slave to assistant or vice versa
+tattoo_brand = 0
 
 temp = slave_state
 slave_state = assistant_state
@@ -73,6 +74,7 @@ $temp_family_description = $slave_family_description
 $temp_occupation_description = $slave_occupation_description
 $temp_psy_basic = $slave_psy_basic 
 temp_virginity = virginity
+$temp_ava = $slave_ava
 
 $slave_psy_basic = $assistant_psy_basic
 $slave_world_description = $assistant_world_description
@@ -80,6 +82,7 @@ $slave_family_description = $assistant_family_description
 $slave_occupation_description = $assistant_occupation_description
 $slave_psy_basic = $assistant_psy_basic 
 virginity = assistant_virginity
+$slave_ava = $assistant_ava
 
 $assistant_psy_basic = $temp_psy_basic
 $assistant_world_description = $temp_world_description
@@ -87,6 +90,7 @@ $assistant_family_description = $temp_family_description
 $assistant_occupation_description = $temp_occupation_description
 $assistant_psy_basic = $temp_psy_basic 
 assistant_virginity = temp_virginity
+$assistant_ava = $temp_ava
 
 tempo["mood"] = slave_prev["mood"]
 tempo["arousal"] = slave_prev["mood"]
@@ -212,6 +216,24 @@ END
 gs '#txt'
 gs '#txt_2'
 gs '$newloc'
+
+!Set base rules if you own a pet Fiend - crushboss
+if assistant_tentacle_rule = 1 and assistant_state = 1: slave_tentacle_rule = 0
+if slave_state = CONST_INT['no_exist']: slave_tentacle_rule = 0
+if slave_tentacle_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_tentacle_rule = 0
+if assistant_state ! 1: assistant_tentacle_rule = 0
+if pet_tentacle > 0 and assistant_state = 1 and slave_tentacle_rule ! 1: assistant_tentacle_rule = 1
+if pet_tentacle > 0 and slave_state = CONST_INT['slave_exist'] and assistant_state ! 1: slave_tentacle_rule = 1
+
+!Fixes the starving message you get on the 2nd day of getting a new slave or assistant - crushboss
+IF slave_state = CONST_INT['slave_exist']:
+ slave["calories"] = 14
+ slave_rate["fat"] = 2
+ slave['neg_hungry'] = 0
+ slave['starvation'] = 0
+END
+
 GT 'menu_form'
+
 --- slave_to_assistant ---------------------------------
 

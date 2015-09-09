@@ -93,7 +93,7 @@ dynamic "$stock_name = 'Object №<<oin>>'"
 stock['ill'] = 0
 stock['parasite'] = 0
 
-!characteristics alignment
+!characteristic alignment
 stock["energy"] = 3
 stock["hygiene"] = 1
 stock["exotic"] = 0
@@ -123,6 +123,10 @@ $stock["leg_wpn"] = ''
 $stock["cloth"] = 'лохмотья'
 
 stock['newness'] = 1
+
+if stock["energy"] > stock["stamina"]: stock["energy"] = stock["stamina"]
+stock["base_exotic"] = stock["exotic"]
+stock_rate["stamina"] = 0
 
 gs '#txt'
 gs '#txt_2'

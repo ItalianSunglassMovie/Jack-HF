@@ -2,8 +2,7 @@
 killall
 
 usehtml = 1
-debug = 1
-!debug = 1
+debug = 0
 sound_on = 1
 music_volume = 100
 sound_volume = 100
@@ -22,6 +21,35 @@ $FNAME = 'Consolas'
 $counter = '$counter'
 $onobjsel = '$objsel'
 !$ongload = '$check_load'
+
+!Game Option Variables
+nsfw = 0
+no_loli = 0
+no_milf = 0
+no_mindbreak = 0
+no_guro = 0
+
+!Initialize Cheat Variables - crushboss
+cheat_a = 0
+cheat_b = 0
+cheat_c = 0
+cheat_d = 0
+cheat_e = 0
+cheat_f = 0
+cheat_g = 0
+cheat_h = 0
+cheat_i = 0
+cheat_j = 0
+cheat_ioff = 0
+cheat_all = 0
+extended_rental_cheat = 0
+
+!Initialize Variables - crushboss
+daycount = 0
+slave[$npc_id] = 0
+demand_rating[$npc_id] = 0
+purse = 0
+a = 0
 
 gs '#simple_npc'
 gs '#dynamic'

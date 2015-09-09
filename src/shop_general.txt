@@ -23,16 +23,16 @@ IF $place = 'gastronom':
  dynamic $get_frige_space
  $place_info['gastronom'] = 'CURRENT STOCK [<<frige_items>>/<<estate_size[$estate]>>]:
 Vegetables х<<frige["vegetables"]>>
-Grains and flour х<<frige["flower"]>>
-Herbs and spices - <<frige["spice"]>>
-Cheese and butter - <<frige["cheese"]>>
-Alcohol - <<frige["alcohol"]>>
-Eggs - <<frige["eggs"]>>
-Milk - <<frige["milk"]>>
-Cream - <<frige["cream"]>>
-Mincemeat - <<frige["mince"]>>
-Tenderloin - <<frige["meat"]>>
-Virgin meat - <<frige["virgin_meat"]>><br> '
+Grains and Flour х<<frige["flower"]>>
+Herbs and Spices x<<frige["spice"]>>
+Cheese and Butter x<<frige["cheese"]>>
+Alcohol x<<frige["alcohol"]>>
+Eggs x<<frige["eggs"]>>
+Milk x<<frige["milk"]>>
+Cream x<<frige["cream"]>>
+Mincemeat x<<frige["mince"]>>
+Tenderloin x<<frige["meat"]>>
+Virgin Meat x<<frige["virgin_meat"]>><br> '
 END
 
 !счетчик мяса будет отображаться когда спускаешься к мяснику

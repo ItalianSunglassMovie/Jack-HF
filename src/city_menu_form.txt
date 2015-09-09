@@ -29,6 +29,14 @@ IF exam_in_progress = 1:
  END
 END
 
+IF $estate = 'slum_house':
+  bath = 0
+  kitchen = 0
+ else
+  bath = 1
+  kitchen = 1
+END
+
 !'Menu option - empty
  $text_display += {<br><div id="under_gray">Деалать <br></div>}
 
@@ -64,9 +72,9 @@ IF city_form = 0:
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
-  FUNC('$menu', 'city_form', $menu_item_town, menu_town, 'White town')
+  FUNC('$menu', 'city_form', $menu_item_town, menu_town, 'White Town')
   FUNC('$menu', 'city_form', $menu_item_Bull, menu_Bull, 'Quarter of the Bull')
-  FUNC('$menu', 'city_form', $menu_item_Serpentine, menu_Serpentine, 'Serpentine quarter')
+  FUNC('$menu', 'city_form', $menu_item_Serpentine, menu_Serpentine, 'Serpentine Quarter')
   FUNC('$menu', 'city_form', $menu_item_Outcasts, menu_Outcasts, 'Quarter of the Outcasts')
   FUNC('$menu', 'city_form', $menu_item_Necropolis, menu_Necropolis, 'Necropolis')
   FUNC('$menu', 'city_form', $menu_item_Border, menu_Border, 'Border of the Fogs')
@@ -81,12 +89,12 @@ IF city_form = 1:
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
-  FUNC('$menu', 'city_form', $menu_item_square, menu_square, 'Trade square')
-  FUNC('$menu', 'interaction_city', $menu_item_guild, menu_guild, 'The slavers guild')
+  FUNC('$menu', 'city_form', $menu_item_square, menu_square, 'Trade Square')
+  FUNC('$menu', 'interaction_city', $menu_item_guild, menu_guild, 'The Slavers Guild')
   FUNC('$menu', 'interaction_city', $menu_item_Colosseum, menu_Colosseum, 'Colosseum')
-  FUNC('$menu', 'interaction_city', $menu_item_Central, menu_Central, 'Central forum')
+  FUNC('$menu', 'interaction_city', $menu_item_Central, menu_Central, 'Central Forum')
   FUNC('$menu', 'interaction_city', $menu_item_Vatican, menu_Vatican, 'The Vatican')
-  FUNC('$menu', 'city_form', $menu_item_Leavewhite, menu_Leavewhite, 'Leave the quarter')
+  FUNC('$menu', 'city_form', $menu_item_Leavewhite, menu_Leavewhite, 'Leave the Quarter')
 
   FUNC('$menu', '===END===')
 END
@@ -97,22 +105,22 @@ IF city_form = 11:
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   IF $estate = 'white_house':
-    FUNC('$menu', 'goto_city', $menu_item_apartmentwhite_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your apartment')
+    FUNC('$menu', 'goto_city', $menu_item_apartmentwhite_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your Apartment')
   END
   IF slave_state = CONST_INT['no_slave']: 
-    FUNC('$menu', 'goto_city', $menu_item_marketbuy, menu_market, 'txt = 1', 'slave_auction_buy', 'Slave market')
-  ELSEIF slave_state = CONST_INT['slave_exist']:
-    FUNC('$menu', 'goto_city', $menu_item_marketsell, menu_market, 'txt = 1', 'slave_auction_sell', 'Slave market')
+    FUNC('$menu', 'goto_city', $menu_item_marketbuy, menu_market, 'txt = 1', 'slave_auction_buy', 'Slave Market')
+  ELSEIF slave_state ! CONST_INT['no_slave']:
+    FUNC('$menu', 'goto_city', $menu_item_marketsell, menu_market, 'txt = 1', 'slave_auction_sell', 'Slave Market')
   ELSE
-    FUNC('$menu', 'city_form', $menu_item_nomarket, empty, 'Slave market')
+    FUNC('$menu', 'city_form', $menu_item_nomarket, empty, 'Slave Market')
   END
   FUNC('$menu', 'interaction_city', $menu_item_Gastronomicon, menu_Gastronomicon, 'Gastronomicon')
-  FUNC('$menu', 'interaction_city', $menu_item_laid, menu_laid, 'Salon Elven laid')
+  FUNC('$menu', 'interaction_city', $menu_item_laid, menu_laid, 'Salon Elven Laid')
   FUNC('$menu', 'interaction_city', $menu_item_Quint, menu_Quint, 'Boutique of Servilia Quint')
-  FUNC('$menu', 'interaction_city', $menu_item_treasury, menu_treasury, 'Ashura`s treasury')
-  FUNC('$menu', 'interaction_city', $menu_item_armory, menu_armory, 'Manhunter`s armory')
-  FUNC('$menu', 'interaction_city', $menu_item_office, menu_office, 'Real estate office')
-  FUNC('$menu', 'city_form', $menu_item_Leavesquare, menu_Leavesquare, 'Leave the trade square')
+  FUNC('$menu', 'interaction_city', $menu_item_treasury, menu_treasury, 'Ashura`s Treasury')
+  FUNC('$menu', 'interaction_city', $menu_item_armory, menu_armory, 'Manhunter`s Armory')
+  FUNC('$menu', 'interaction_city', $menu_item_office, menu_office, 'Real Estate Office')
+  FUNC('$menu', 'city_form', $menu_item_Leavesquare, menu_Leavesquare, 'Leave the Trade Square')
 
   FUNC('$menu', '===END===')
 END
@@ -123,11 +131,11 @@ IF city_form = 2:
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
-  FUNC('$menu', 'city_form', $menu_item_ResidencesBull, menu_ResidencesBull, 'Residences area')
+  FUNC('$menu', 'city_form', $menu_item_ResidencesBull, menu_ResidencesBull, 'Residences Area')
   FUNC('$menu', 'interaction_city', $menu_item_Salon, menu_Salon, 'Salon of Madame Jofre')
-  FUNC('$menu', 'interaction_city', $menu_item_club, menu_club, 'Gentleman`s club')
-  FUNC('$menu', 'interaction_city', $menu_item_palace, menu_palace, 'White palace')
-  FUNC('$menu', 'city_form', $menu_item_Leavetaurus_district, menu_Leavetaurus_district, 'Leave the quarter')
+  FUNC('$menu', 'interaction_city', $menu_item_club, menu_club, 'Gentleman`s Club')
+  FUNC('$menu', 'interaction_city', $menu_item_palace, menu_palace, 'White Palace')
+  FUNC('$menu', 'city_form', $menu_item_Leavetaurus_district, menu_Leavetaurus_district, 'Leave the Quarter')
 
   FUNC('$menu', '===END===')
 END
@@ -138,39 +146,39 @@ IF city_form = 21:
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   if $estate = 'taurus_house':
-    FUNC('$menu', 'interaction_city', $menu_item_apartmenttaurus_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your apartment')
+    FUNC('$menu', 'goto_city', $menu_item_apartmenttaurus_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your Apartment')
   END
   IF npc_progress['don_castilio'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_castilio, menu_castilio, 'don castilio')
+    FUNC('$menu', 'interaction_city', $menu_item_castilio, menu_castilio, 'Don Castilio')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_castilio_gray, menu_castilio, 'don castilio')
+    FUNC('$menu', 'interaction_city', $menu_item_castilio_gray, menu_castilio, 'Don Castilio')
   END
   IF npc_progress['don_diego'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_diego, menu_diego, 'don diego')
+    FUNC('$menu', 'interaction_city', $menu_item_diego, menu_diego, 'Don Diego')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_diego_gray, menu_diego, 'don diego')
+    FUNC('$menu', 'interaction_city', $menu_item_diego_gray, menu_diego, 'Don Diego')
   END
   IF npc_progress['magister_gilmeritus'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_gilmeritus, menu_gilmeritus, 'magister gilmeritus')
+    FUNC('$menu', 'interaction_city', $menu_item_gilmeritus, menu_gilmeritus, 'Magister Gilmeritus')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_gilmeritus_gray, menu_gilmeritus, 'magister gilmeritus')
+    FUNC('$menu', 'interaction_city', $menu_item_gilmeritus_gray, menu_gilmeritus, 'Magister Gilmeritus')
   END
   IF npc_progress['sir_toughbar'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_toughbar, menu_toughbar, 'sir toughbar')
+    FUNC('$menu', 'interaction_city', $menu_item_toughbar, menu_toughbar, 'Sir Toughbar')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_toughbar_gray, menu_toughbar, 'sir toughbar')
+    FUNC('$menu', 'interaction_city', $menu_item_toughbar_gray, menu_toughbar, 'Sir Toughbar')
   END
   IF npc_progress['lady_edna'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_edna, menu_edna, 'lady edna')
+    FUNC('$menu', 'interaction_city', $menu_item_edna, menu_edna, 'Lady Edna')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_edna_gray, menu_edna, 'lady edna')
+    FUNC('$menu', 'interaction_city', $menu_item_edna_gray, menu_edna, 'Lady Edna')
   END
   IF npc_progress['lady_suinton'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_suinton, menu_suinton, 'lady suinton')
+    FUNC('$menu', 'interaction_city', $menu_item_suinton, menu_suinton, 'Lady Suinton')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_suinton_gray, menu_suinton, 'lady suinton')
+    FUNC('$menu', 'interaction_city', $menu_item_suinton_gray, menu_suinton, 'Lady Suinton')
   END
-  FUNC('$menu', 'city_form', $menu_item_taurus_street, menu_taurus_street, 'To the central street')
+  FUNC('$menu', 'city_form', $menu_item_taurus_street, menu_taurus_street, 'To the Central Street')
 
   FUNC('$menu', '===END===')
 END
@@ -182,10 +190,10 @@ IF city_form = 3:
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   FUNC('$menu', 'city_form', $menu_item_Anthill, menu_Anthill, 'Anthill')
-  FUNC('$menu', 'interaction_city', $menu_item_hip, menu_hip, 'Virgin`s hip')
+  FUNC('$menu', 'interaction_city', $menu_item_hip, menu_hip, 'Virgin`s Hip')
   FUNC('$menu', 'city_form', $menu_item_Technosphere, menu_Technosphere, 'Technosphere')
-  FUNC('$menu', 'interaction_city', $menu_item_spires, menu_spires, 'Administrative spires')
-  FUNC('$menu', 'city_form', $menu_item_Leaveserpis_district, menu_Leaveserpis_district, 'Leave the quarter')
+  FUNC('$menu', 'interaction_city', $menu_item_spires, menu_spires, 'Administrative Spires')
+  FUNC('$menu', 'city_form', $menu_item_Leaveserpis_district, menu_Leaveserpis_district, 'Leave the Quarter')
 
   FUNC('$menu', '===END===')
 END
@@ -196,44 +204,44 @@ IF city_form = 31:
   FUNC('$menu', '===BEGIN===', 'column_0') 
   
   IF $estate = 'serpis_house':
-    FUNC('$menu', 'goto_city', $menu_item_apartmentserpis_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your apartment')
+    FUNC('$menu', 'goto_city', $menu_item_apartmentserpis_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your Apartment')
   END
   IF npc_progress['lao_van'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_van, menu_van, 'lao van')
+    FUNC('$menu', 'interaction_city', $menu_item_van, menu_van, 'Lao Van')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_van_gray, menu_van, 'lao van')
+    FUNC('$menu', 'interaction_city', $menu_item_van_gray, menu_van, 'Lao Van')
   END
   IF npc_progress['mister_grease'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_grease, menu_grease, 'mister grease')
+    FUNC('$menu', 'interaction_city', $menu_item_grease, menu_grease, 'Mister Grease')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_grease_gray, menu_grease, 'mister grease')
+    FUNC('$menu', 'interaction_city', $menu_item_grease_gray, menu_grease, 'Mister Grease')
   END
   IF npc_progress['archmage_zephiros'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_zephiros, menu_zephiros, 'archmage zephiros')
+    FUNC('$menu', 'interaction_city', $menu_item_zephiros, menu_zephiros, 'Archmage Zephiros')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_zephiros_gray, menu_zephiros, 'archmage zephiros')
+    FUNC('$menu', 'interaction_city', $menu_item_zephiros_gray, menu_zephiros, 'Archmage Zephiros')
   END
   IF npc_progress['piter_viabu'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_viabu, menu_viabu, 'piter viabu')
+    FUNC('$menu', 'interaction_city', $menu_item_viabu, menu_viabu, 'Piter Viabu')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_viabu_gray, menu_viabu, 'piter viabu')
+    FUNC('$menu', 'interaction_city', $menu_item_viabu_gray, menu_viabu, 'Piter Viabu')
   END
   IF npc_progress['mister_lardbag'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_lardbag, menu_lardbag, 'mister lardbag')
+    FUNC('$menu', 'interaction_city', $menu_item_lardbag, menu_lardbag, 'Mister Lardbag')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_lardbag_gray, menu_lardbag, 'mister lardbag')
+    FUNC('$menu', 'interaction_city', $menu_item_lardbag_gray, menu_lardbag, 'Mister Lardbag')
   END
   IF npc_progress['krull'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_krull, menu_krull, 'krull')
+    FUNC('$menu', 'interaction_city', $menu_item_krull, menu_krull, 'Krull')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_krull_gray, menu_krull, 'krull')
+    FUNC('$menu', 'interaction_city', $menu_item_krull_gray, menu_krull, 'Krull')
   END
   IF npc_progress['avek_plesir'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_plesir, menu_plesir, 'avek plesir')
+    FUNC('$menu', 'interaction_city', $menu_item_plesir, menu_plesir, 'Avek Plesir')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_plesir_gray, menu_plesir, 'avek plesir')
+    FUNC('$menu', 'interaction_city', $menu_item_plesir_gray, menu_plesir, 'Avek Plesir')
   END
-  FUNC('$menu', 'city_form', $menu_item_serpis_street, menu_serpis_street, 'To the central street')
+  FUNC('$menu', 'city_form', $menu_item_serpis_street, menu_serpis_street, 'To the Central Street')
   FUNC('$menu', '===END===')
 END
 IF city_form = 31:
@@ -242,39 +250,39 @@ IF city_form = 31:
   FUNC('$menu', '===BEGIN===', 'column_1') 
   
   IF npc_progress['green_mamba'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_mamba, menu_mamba, 'green mamba')
+    FUNC('$menu', 'interaction_city', $menu_item_mamba, menu_mamba, 'Green Mamba')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_mamba_gray, menu_mamba, 'green mamba')
+    FUNC('$menu', 'interaction_city', $menu_item_mamba_gray, menu_mamba, 'Green Mamba')
   END
   IF npc_progress['leonid_alexandriatos'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_alexandriatos, menu_alexandriatos, 'leonid alexandriatos')
+    FUNC('$menu', 'interaction_city', $menu_item_alexandriatos, menu_alexandriatos, 'Leonid Alexandriatos')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_alexandriatos_gray, menu_alexandriatos, 'leonid alexandriatos')
+    FUNC('$menu', 'interaction_city', $menu_item_alexandriatos_gray, menu_alexandriatos, 'Leonid Alexandriatos')
   END
   IF npc_progress['lucius_patricius'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_patricius, menu_patricius, 'lucius patricius')
+    FUNC('$menu', 'interaction_city', $menu_item_patricius, menu_patricius, 'Lucius Patricius')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_patricius_gray, menu_patricius, 'lucius patricius')
+    FUNC('$menu', 'interaction_city', $menu_item_patricius_gray, menu_patricius, 'Lucius Patricius')
   END
   IF npc_progress['singh_khan'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_khan, menu_khan, 'singh khan')
+    FUNC('$menu', 'interaction_city', $menu_item_khan, menu_khan, 'Singh Khan')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_khan_gray, menu_khan, 'singh khan')
+    FUNC('$menu', 'interaction_city', $menu_item_khan_gray, menu_khan, 'Singh Khan')
   END
   IF npc_progress['frogger'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_frogger, menu_frogger, 'frogger')
+    FUNC('$menu', 'interaction_city', $menu_item_frogger, menu_frogger, 'Frogger')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_frogger_gray, menu_frogger, 'frogger')
+    FUNC('$menu', 'interaction_city', $menu_item_frogger_gray, menu_frogger, 'Frogger')
   END
   IF npc_progress['dofine_tutti'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_tutti, menu_tutti, 'dofine tutti')
+    FUNC('$menu', 'interaction_city', $menu_item_tutti, menu_tutti, 'Dofine Tutti')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_tutti_gray, menu_tutti, 'dofine tutti')
+    FUNC('$menu', 'interaction_city', $menu_item_tutti_gray, menu_tutti, 'Dofine Tutti')
   END
   IF npc_progress['earl_gray'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_earl, menu_earl, 'earl gray')
+    FUNC('$menu', 'interaction_city', $menu_item_earl, menu_earl, 'Earl Gray')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_earl_gray, menu_earl, 'earl gray')
+    FUNC('$menu', 'interaction_city', $menu_item_earl_gray, menu_earl, 'Earl Gray')
   END
   FUNC('$menu', '===END===')
 END
@@ -285,14 +293,14 @@ IF city_form = 33:
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
   
-  FUNC('$menu', 'interaction_city', $menu_item_Medical_center, menu_Medical_center, 'Medical center')
+  FUNC('$menu', 'interaction_city', $menu_item_Medical_center, menu_Medical_center, 'Medical Center')
   IF sparks > 0:
-    FUNC('$menu', 'interaction_city', $menu_item_Cryostatic, menu_Cryostatic, 'Cryostatic store')
+    FUNC('$menu', 'interaction_city', $menu_item_Cryostatic, menu_Cryostatic, 'Cryostatic Store')
   ELSE
-    FUNC('$menu', 'city_form', $menu_item_Cryostatic_gray, empty, 'Cryostatic store')
+    FUNC('$menu', 'city_form', $menu_item_Cryostatic_gray, empty, 'Cryostatic Store')
   END
-  FUNC('$menu', 'interaction_city', $menu_item_Library, menu_Library, 'Library terminal')
-  FUNC('$menu', 'city_form', $menu_item_Leave_technodrom, menu_Leave_technodrom, 'Leave the technosphere')
+  FUNC('$menu', 'interaction_city', $menu_item_Library, menu_Library, 'Library Terminal')
+  FUNC('$menu', 'city_form', $menu_item_Leave_technodrom, menu_Leave_technodrom, 'Leave the Technosphere')
 
   FUNC('$menu', '===END===')
 END
@@ -303,12 +311,12 @@ IF city_form = 4:
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
   
-  FUNC('$menu', 'city_form', $menu_item_Resident_kamira_district, menu_Resident_kamira_district, 'Residential area')
+  FUNC('$menu', 'city_form', $menu_item_Resident_kamira_district, menu_Resident_kamira_district, 'Residential Area')
   FUNC('$menu', 'interaction_city', $menu_item_Uncle_Bo, menu_Uncle_Bo, 'Patterns of Uncle Bo')
   FUNC('$menu', 'interaction_city', $menu_item_Mystra, menu_Mystra, 'The Rarity Of Mystra')
-  FUNC('$menu', 'interaction_city', $menu_item_animal_farm, menu_animal_farm, 'Public animal farm')
+  FUNC('$menu', 'interaction_city', $menu_item_animal_farm, menu_animal_farm, 'Public Animal Farm')
   FUNC('$menu', 'interaction_city', $menu_item_Citadel, menu_Citadel, 'Tierra del Citadel')
-  FUNC('$menu', 'city_form', $menu_item_Leavekamira_district, menu_Leavekamira_district, 'Leave the quarter')
+  FUNC('$menu', 'city_form', $menu_item_Leavekamira_district, menu_Leavekamira_district, 'Leave the Quarter')
 
   FUNC('$menu', '===END===')
 END
@@ -319,39 +327,39 @@ IF city_form = 41:
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   if $estate = 'kamira_house':
-    FUNC('$menu', 'goto_city', $menu_item_apartmentkamira_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your apartment')
+    FUNC('$menu', 'goto_city', $menu_item_apartmentkamira_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your Apartment')
   end
   IF npc_progress['gloth_prisonguard'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_gloth, menu_gloth, 'gloth prisonguard')
+    FUNC('$menu', 'interaction_city', $menu_item_gloth, menu_gloth, 'Glot Prisonguard')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_gloth_gray, menu_gloth, 'gloth prisonguard')
+    FUNC('$menu', 'interaction_city', $menu_item_gloth_gray, menu_gloth, 'Glot Prisonguard')
   END
   IF npc_progress['bullhorn'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_bullhorn, menu_bullhorn, 'bullhorn')
+    FUNC('$menu', 'interaction_city', $menu_item_bullhorn, menu_bullhorn, 'Bullhorn')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_bullhorn_gray, menu_bullhorn, 'bullhorn')
+    FUNC('$menu', 'interaction_city', $menu_item_bullhorn_gray, menu_bullhorn, 'Bullhorn')
   END
   IF npc_progress['arbue'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_arbue, menu_arbue, 'arbue')
+    FUNC('$menu', 'interaction_city', $menu_item_arbue, menu_arbue, 'Arbue')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_arbue_gray, menu_arbue, 'arbue')
+    FUNC('$menu', 'interaction_city', $menu_item_arbue_gray, menu_arbue, 'Arbue')
   END
   IF npc_progress['magnaga'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_magnaga, menu_magnagae, 'magnaga')
+    FUNC('$menu', 'interaction_city', $menu_item_magnaga, menu_magnagae, 'Magnaga')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_magnaga_gray, menu_magnaga, 'magnaga')
+    FUNC('$menu', 'interaction_city', $menu_item_magnaga_gray, menu_magnaga, 'Magnaga')
   END
   IF npc_progress['kratos'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_kratos, menu_kratos, 'kratos')
+    FUNC('$menu', 'interaction_city', $menu_item_kratos, menu_kratos, 'Kratos')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_kratos_gray, menu_kratos, 'kratos')
+    FUNC('$menu', 'interaction_city', $menu_item_kratos_gray, menu_kratos, 'Kratos')
   END
   IF npc_progress['mikkey'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_mikkey, menu_mikkey, 'mikkey')
+    FUNC('$menu', 'interaction_city', $menu_item_mikkey, menu_mikkey, 'Mikkey')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_mikkey_gray, menu_mikkey, 'mikkey')
+    FUNC('$menu', 'interaction_city', $menu_item_mikkey_gray, menu_mikkey, 'Mikkey')
   END
-  FUNC('$menu', 'city_form', $menu_item_kamira_street, menu_kamira_street, 'To the central street')
+  FUNC('$menu', 'city_form', $menu_item_kamira_street, menu_kamira_street, 'To the Central Street')
   FUNC('$menu', '===END===')
 END
 IF city_form = 41:
@@ -359,34 +367,34 @@ IF city_form = 41:
   FUNC('$menu', '===BEGIN===', 'column_1') 
 
   IF npc_progress['sfinga'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_sfinga, menu_sfinga, 'sfinga')
+    FUNC('$menu', 'interaction_city', $menu_item_sfinga, menu_sfinga, 'Sfinga')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_sfinga_gray, menu_sfinga, 'sfinga')
+    FUNC('$menu', 'interaction_city', $menu_item_sfinga_gray, menu_sfinga, 'Sfinga')
   END
   IF npc_progress['lady_mordhulla'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_mordhulla, menu_mordhulla, 'lady mordhulla')
+    FUNC('$menu', 'interaction_city', $menu_item_mordhulla, menu_mordhulla, 'Lady Mordhulla')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_mordhulla_gray, menu_mordhulla, 'lady mordhulla')
+    FUNC('$menu', 'interaction_city', $menu_item_mordhulla_gray, menu_mordhulla, 'Lady Mordhulla')
   END
   IF npc_progress['kurfilinn'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_kurfilinn, menu_kurfilinn, 'kurfilinn')
+    FUNC('$menu', 'interaction_city', $menu_item_kurfilinn, menu_kurfilinn, 'Kurfilinn')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_kurfilinn_gray, menu_kurfilinn, 'kurfilinn')
+    FUNC('$menu', 'interaction_city', $menu_item_kurfilinn_gray, menu_kurfilinn, 'Kurfilinn')
   END
   IF npc_progress['prince_charming'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_charming, menu_charming, 'prince charming')
+    FUNC('$menu', 'interaction_city', $menu_item_charming, menu_charming, 'Prince Charming')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_charming_gray, menu_charming, 'prince charming')
+    FUNC('$menu', 'interaction_city', $menu_item_charming_gray, menu_charming, 'Prince Charming')
   END
   IF npc_progress['lord_pira'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_pira, menu_pira, 'lord pira')
+    FUNC('$menu', 'interaction_city', $menu_item_pira, menu_pira, 'Lord Pira')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_pira_gray, menu_pira, 'lord pira')
+    FUNC('$menu', 'interaction_city', $menu_item_pira_gray, menu_pira, 'Lord Pira')
   END
   IF npc_progress['countess_bathory'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_bathory, menu_bathory, 'countess bathory')
+    FUNC('$menu', 'interaction_city', $menu_item_bathory, menu_bathory, 'Countess Bathory')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_bathory_gray, menu_bathory, 'countess bathory')
+    FUNC('$menu', 'interaction_city', $menu_item_bathory_gray, menu_bathory, 'Countess Bathory')
   END
   FUNC('$menu', '===END===')
 END
@@ -397,11 +405,11 @@ IF city_form = 5:
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
-  FUNC('$menu', 'city_form', $menu_item_Residenceskorvus_district, menu_Residenceskorvus_district, 'Residences area')
-  FUNC('$menu', 'interaction_city', $menu_item_Steel, menu_Steel, 'Steel rose')
-  FUNC('$menu', 'interaction_city', $menu_item_theatre, menu_theatre, 'Anatomical theater')
+  FUNC('$menu', 'city_form', $menu_item_Residenceskorvus_district, menu_Residenceskorvus_district, 'Residences Area')
+  FUNC('$menu', 'interaction_city', $menu_item_Steel, menu_Steel, 'Steel Rose')
+  FUNC('$menu', 'interaction_city', $menu_item_theatre, menu_theatre, 'Anatomical Theater')
   FUNC('$menu', 'interaction_city', $menu_item_Tower, menu_Tower, 'Raven Tower')
-  FUNC('$menu', 'city_form', $menu_item_Leavekorvus_district, menu_Leavekorvus_district, 'Leave the quarter')
+  FUNC('$menu', 'city_form', $menu_item_Leavekorvus_district, menu_Leavekorvus_district, 'Leave the Quarter')
 
   FUNC('$menu', '===END===')
 END
@@ -412,39 +420,39 @@ IF city_form = 51:
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   if $estate = 'korvus_house':
-    FUNC('$menu', 'goto_city', $menu_item_apartmentkorvus_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your apartment')
+    FUNC('$menu', 'goto_city', $menu_item_apartmentkorvus_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your Apartment')
   end
   IF npc_progress['wight'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_wight, menu_wight, 'wight')
+    FUNC('$menu', 'interaction_city', $menu_item_wight, menu_wight, 'Wight')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_wight_gray, menu_wight, 'wight')
+    FUNC('$menu', 'interaction_city', $menu_item_wight_gray, menu_wight, 'Wight')
   END
   IF npc_progress['lestor'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_lestor, menu_lestor, 'lestor')
+    FUNC('$menu', 'interaction_city', $menu_item_lestor, menu_lestor, 'Lestor')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_lestor_gray, menu_lestor, 'lestor')
+    FUNC('$menu', 'interaction_city', $menu_item_lestor_gray, menu_lestor, 'Lestor')
   END
   IF npc_progress['paral_itch'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_itch, menu_itch, 'paral itch')
+    FUNC('$menu', 'interaction_city', $menu_item_itch, menu_itch, 'Paral Itch')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_itch_gray, menu_itch, 'paral itch')
+    FUNC('$menu', 'interaction_city', $menu_item_itch_gray, menu_itch, 'Paral Itch')
   END
   IF npc_progress['draugr'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_draugr, menu_draugr, 'draugr')
+    FUNC('$menu', 'interaction_city', $menu_item_draugr, menu_draugr, 'Draugr')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_draugr_gray, menu_draugr, 'draugr')
+    FUNC('$menu', 'interaction_city', $menu_item_draugr_gray, menu_draugr, 'Draugr')
   END
   IF npc_progress['scarlet'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_scarlet, menu_scarlet, 'scarlet')
+    FUNC('$menu', 'interaction_city', $menu_item_scarlet, menu_scarlet, 'Scarlet')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_scarlet_gray, menu_scarlet, 'scarlet')
+    FUNC('$menu', 'interaction_city', $menu_item_scarlet_gray, menu_scarlet, 'Scarlet')
   END
   IF npc_progress['mad_baron'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_baron, menu_baron, 'mad baron')
+    FUNC('$menu', 'interaction_city', $menu_item_baron, menu_baron, 'Mad Baron')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_baron_gray, menu_baron, 'mad baron')
+    FUNC('$menu', 'interaction_city', $menu_item_baron_gray, menu_baron, 'Mad Baron')
   END
-  FUNC('$menu', 'city_form', $menu_item_korvus_street, menu_korvus_street, 'To the central street')
+  FUNC('$menu', 'city_form', $menu_item_korvus_street, menu_korvus_street, 'To the Central Street')
   FUNC('$menu', '===END===')
 END
 IF city_form = 51:
@@ -453,29 +461,29 @@ IF city_form = 51:
   FUNC('$menu', '===BEGIN===', 'column_1') 
 
   IF npc_progress['faceless'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_faceless, menu_faceless, 'faceless')
+    FUNC('$menu', 'interaction_city', $menu_item_faceless, menu_faceless, 'Faceless')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_faceless_gray, menu_faceless, 'faceless')
+    FUNC('$menu', 'interaction_city', $menu_item_faceless_gray, menu_faceless, 'Faceless')
   END
   IF npc_progress['donna_venturi'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_venturi, menu_venturi, 'donna venturi')
+    FUNC('$menu', 'interaction_city', $menu_item_venturi, menu_venturi, 'Donna Venturi')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_venturi_gray, menu_venturi, 'donna venturi')
+    FUNC('$menu', 'interaction_city', $menu_item_venturi_gray, menu_venturi, 'Donna Venturi')
   END
   IF npc_progress['lady_yasmenia'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_yasmenia, menu_yasmenia, 'lady yasmenia')
+    FUNC('$menu', 'interaction_city', $menu_item_yasmenia, menu_yasmenia, 'Lady Yasmenia')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_yasmenia_gray, menu_yasmenia, 'lady yasmenia')
+    FUNC('$menu', 'interaction_city', $menu_item_yasmenia_gray, menu_yasmenia, 'Lady Yasmenia')
   END
   IF npc_progress['count_yagellon'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_yagellon, menu_yagellon, 'count yagellon')
+    FUNC('$menu', 'interaction_city', $menu_item_yagellon, menu_yagellon, 'Count Yagellon')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_yagellon_gray, menu_yagellon, 'count yagellon')
+    FUNC('$menu', 'interaction_city', $menu_item_yagellon_gray, menu_yagellon, 'Count Yagellon')
   END
   IF npc_progress['baron_imladis'] ! 2:
-    FUNC('$menu', 'interaction_city', $menu_item_imladis, menu_imladis, 'baron imladis')
+    FUNC('$menu', 'interaction_city', $menu_item_imladis, menu_imladis, 'Baron Imladis')
   ELSE
-    FUNC('$menu', 'interaction_city', $menu_item_imladis_gray, menu_imladis, 'baron imladis')
+    FUNC('$menu', 'interaction_city', $menu_item_imladis_gray, menu_imladis, 'Baron Imladis')
   END
   FUNC('$menu', '===END===')
 END
@@ -487,13 +495,13 @@ IF city_form = 6:
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   IF master_energy > 0:
-    FUNC('$menu', 'interaction_city', $menu_item_Patrol, menu_Patrol, 'Patrol border of Fogs')
+    FUNC('$menu', 'interaction_city', $menu_item_Patrol, menu_Patrol, 'Patrol Border of Fogs')
   ELSE
-    FUNC('$menu', 'city_form', $menu_item_Patrol_gray, empty, 'Patrol border of Fogs')
+    FUNC('$menu', 'city_form', $menu_item_Patrol_gray, empty, 'Patrol Border of Fogs')
   END
-  FUNC('$menu', 'interaction_city', $menu_item_Smuggler, menu_Smuggler, 'Smuggler`s rendezvous')
-  FUNC('$menu', 'interaction_city', $menu_item_Moneylender, menu_Moneylender, 'Moneylender`s home')
-  FUNC('$menu', 'interaction_city', $menu_item_camp, menu_camp, 'Base camp')
+  FUNC('$menu', 'interaction_city', $menu_item_Smuggler, menu_Smuggler, 'Smuggler`s Rendezvous')
+  FUNC('$menu', 'interaction_city', $menu_item_Moneylender, menu_Moneylender, 'Moneylender`s Home')
+  FUNC('$menu', 'interaction_city', $menu_item_camp, menu_camp, 'Base Camp')
   FUNC('$menu', 'city_form', $menu_item_Slums, menu_Slums, 'Slums')
   FUNC('$menu', 'city_form', $menu_item_Walktocity, menu_Walktocity, 'Walk to the city')
 
@@ -506,13 +514,13 @@ IF city_form = 61:
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
   if $estate = 'slum_house':
-    FUNC('$menu', 'goto_city', $menu_item_apartmentslum_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your shack')
+    FUNC('$menu', 'goto_city', $menu_item_apartmentslum_house, 0, 'menu_form = 0 & city_form', 'menu_form', 'Your Shack')
   END
-  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar house')
-  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar house')
-  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar house')
-  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar house')
-  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar house')
+  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar House')
+  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar House')
+  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar House')
+  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar House')
+  FUNC('$menu', 'city_form', $menu_item_Unfamiliar_gray, empty, 'Unfamiliar House')
   FUNC('$menu', 'city_form', $menu_item_city_gate, menu_city_gate, 'To city gate')
 
   FUNC('$menu', '===END===')

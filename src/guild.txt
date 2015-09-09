@@ -1,4 +1,12 @@
 # guild
+IF slave_offered_to_subpurchaser = 1:
+ slave_offered_to_subpurchaser = 0
+ if rating > 0:
+  txt = 2
+  gt 'choice_screen'
+ end
+END
+
 !SLAVERS GUILD
 GS '_layout'
 gs '$slave_price'
@@ -6,29 +14,28 @@ npc = 0
 $place = 'guild_hall'
 $text_display = '<br>'
 
+slave['brand'] = tattoo_brand
 
 IF sp_txt = 1:
-FUNC('$menu', '===BEGIN===', 'column_0')
- IF contract['active'] = 1: FUNC('$menu', 'interaction_city', $menu_item_Close_contract, menu_Close_contract, 'Close contract')
- if contract['active'] = 2: FUNC('$menu', 'location_gray', $menu_item_Close_contract_gray, empty, 'Contract work')
- if contract['active'] = 0 and slave_state ! CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_Contract_work, menu_Contract_work, 'Contract work')
- if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_D_rank, menu_D_rank, 'Contract work - D rank')
- if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_C_rank, menu_C_rank, 'Contract work - C rank')
- if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_B_rank, menu_B_rank, 'Contract work - B rank')
+ FUNC('$menu', '===BEGIN===', 'column_0')
+ IF contract['active'] = 1: FUNC('$menu', 'interaction_city', $menu_item_close_contract, menu_close_contract, 'Turn in Contract/ANGELIKA')
+ if contract['active'] = 2: FUNC('$menu', 'location_gray', $menu_item_close_contract_gray, empty, 'Turn in Contract/ANGELIKA')
+ if contract['active'] = 0 and slave_state ! CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_contract_work, menu_contract_work, 'Contract Work')
+ if contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'exec_options', $menu_item_contract_list, 'sp_txt = 2 & gt $curloc', 'Contract List')
  IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0:
-  FUNC('$menu', 'interaction_city', $menu_item_subpurchaser, menu_subpurchaser, 'Talk to subpurchaser')
+  FUNC('$menu', 'interaction_city', $menu_item_subpurchaser, menu_subpurchaser, 'Talk to Subpurchaser')
   else
-  FUNC('$menu', 'location_gray', $menu_item_subpurchaser_gray, empty, 'Talk to subpurchaser')
+  FUNC('$menu', 'location_gray', $menu_item_subpurchaser_gray, empty, 'Talk to Subpurchaser')
  END
- FUNC('$menu', 'interaction_city', $menu_item_Talk_expert, menu_Talk_expert, 'Talk to expert')
+ FUNC('$menu', 'interaction_city', $menu_item_Talk_expert, menu_Talk_expert, 'Talk to Expert')
  IF auction_count = 0: 
   IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and rating > 0:
-   FUNC('$menu', 'interaction_city', $menu_item_Auction_slaves, menu_Auction_slaves, 'Auction of branded slaves')
+   FUNC('$menu', 'interaction_city', $menu_item_Auction_slaves, menu_Auction_slaves, 'Auction of Branded Slaves')
    else
-   FUNC('$menu', 'location_gray', $menu_item_Auction_slaves_gray, empty, 'Auction of branded slaves')
+   FUNC('$menu', 'location_gray', $menu_item_Auction_slaves_gray, empty, 'Auction of Branded Slaves')
   END 
   else
-  FUNC('$menu', 'location_gray', $menu_item_Auction_slaves_gray, empty, 'Days to auction: <<auction_count>>')
+  FUNC('$menu', 'location_gray', $menu_item_Auction_slaves_gray, empty, 'Days to Auction: <<auction_count>>')
  END
 	!Strec - jon_UIadds addition (begin)
 	if inventory['stethoscope']<1 and sparks>100:
@@ -37,8 +44,29 @@ FUNC('$menu', '===BEGIN===', 'column_0')
 	end
 	!Strec - jon_UIadds addition (end)
  FUNC('$menu', 'city_form', $menu_item_Leaveguild, menu_Leaveguild, 'Leave')
-FUNC('$menu', '===END===')
+ FUNC('$menu', '===END===')
 END
+
+IF sp_txt = 2:
+ FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', '===BEGIN===', 'column_0')
+ if brand_reputation >= 0 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_D1_rank, menu_D1_rank, 'Contract work - D- rank')
+ if brand_reputation >= 1 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_D2_rank, menu_D2_rank, 'Contract work - D+ rank')
+ if brand_reputation >= 2 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_C1_rank, menu_C1_rank, 'Contract work - C- rank')
+ if brand_reputation >= 2 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_C2_rank, menu_C2_rank, 'Contract work - C+ rank')
+ if brand_reputation >= 3 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_B1_rank, menu_B1_rank, 'Contract work - B- rank')
+ FUNC('$menu', 'exec_options', $menu_item_Contracts_back, 'sp_txt = 1 & gt $curloc', 'Back')
+ FUNC('$menu', '===END===')
+ FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', '===BEGIN===', 'column_1')
+ if brand_reputation >= 3 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_B2_rank, menu_B2_rank, 'Contract work - B+ rank')
+ if brand_reputation >= 4 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_A1_rank, menu_A1_rank, 'Contract work - A- rank')
+ if brand_reputation >= 4 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_A2_rank, menu_A2_rank, 'Contract work - A+ rank')
+ if brand_reputation >= 5 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_S1_rank, menu_S1_rank, 'Contract work - S- rank')
+ if brand_reputation >= 5 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_S2_rank, menu_S2_rank, 'Contract work - S+ rank')
+ FUNC('$menu', '===END===')
+END
+
 
 $text[txt] = $guild[sp_txt]
 
@@ -72,5 +100,6 @@ Information for consideration:
 END
 
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
+
 --- guild ---------------------------------
 

@@ -48,25 +48,28 @@ Probably worth trying. Raising such slave should not be too difficult. But this 
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
-$quest_description[9] = '  Master Valios, necromancer studying fiends of the Fogs, promised me a magical artifact in exchange for full-grown and living fiend. Growing such a creature is not easy, but when its life cycle is about to end it becomes useless anyway. And this «raven crown» thing is tempting. Necromancer says that it gives a permanent auspex and also creates an aura of power.
+$quest_description[9] = '  Master Valios, necromancer studying fiends of the Fogs, promised me a magical artifact in exchange for full-grown and living fiend. Growing such a creature is not easy, but when its life cycle is about to end it becomes useless anyway. And this «Raven Crown» thing is tempting. Necromancer says that it gives a permanent auspex and also creates an aura of power.
 When I have a living seasoned fiend, grown to the leviathan form, it is necessary to look for him at the Central forum.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 
-$quest_description[10] = '  I received a contract in the guild for training a slave as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font>, she must have at least <<$rating[contract["level"]]>> <font color="#0000CD"> rank</font> or higher.
-
-<u>Reminder, not to forget!</u>
+$quest_description[10] = '  I received a contract in the guild for training a slave as <font color="#0000CD"><<$slave_type_name[$specialisation[specialisation]]>></font>, she must meet the rank requirement as requested.
 
 <a href = "EXEC: msg $specialisation_help">Tip on specializations</a>
 
-To prepare a slave on a specific specialization, I need to train her profile skill to at least <font color="#0000CD">average</font> level. Concubines also requires the sum of sex techniques more than nine. If I have an assistant, she will tell when the slave will correspond to specialization.
+To prepare a slave on a specific specialization, I need to train her profile skill to at least <font color="#0000CD">average</font> level. Concubines also requires the sum of sex techniques to be more than nine. If I have an assistant, she will tell me when the slave will correspond to specialization.
 
 Usual time limit on the contract:
-When ordering <<$rating[1]>>-rank: 25 days, 
-When ordering <<$rating[2]>>-rank: 50 days,
-When ordering <<$rating[3]>>-rank: 120 days,
-When ordering <<$rating[4]>>-rank: 250 days,
-When ordering <<$rating[5]>>-rank: 500 days.
+When ordering <<$rating[1]>>-rank: 20 days, 
+When ordering <<$rating[2]>>-rank: 30 days,
+When ordering <<$rating[3]>>-rank: 45 days,
+When ordering <<$rating[4]>>-rank: 60 days,
+When ordering <<$rating[5]>>-rank: 75 days.
+When ordering <<$rating[6]>>-rank: 90 days, 
+When ordering <<$rating[7]>>-rank: 115 days,
+When ordering <<$rating[8]>>-rank: 130 days,
+When ordering <<$rating[9]>>-rank: 145 days,
+When ordering <<$rating[10]>>-rank: 160 days.
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 

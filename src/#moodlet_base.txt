@@ -147,7 +147,7 @@ $mood_description['pos_'] = ''
 $mood_description['neg_housing'] = 'I live in decrepit shack. No conditions for work and rest.'
 $mood_description['neg_house_mess'] = 'The house is a mess and dirt. Just disgusting to be in here.'
 $mood_description['neg_boner'] = 'My pants are bursting from the boner. I need urgently to relieve stress.'
-$mood_description['neg_softcore'] = 'Looks like I had too much of sex. Enough is enough, I need a rest.'
+$mood_description['neg_softcore'] = 'Looks like I had too much sex. I had a blast but I need a rest.'
 $mood_description['neg_rebell'] = "Slave doesn't listen me at all. There's still a lot of work to be done..."
 $mood_description['neg_cook'] = 'To eat properly, I have to tinker in the kitchen with pans and dishes. What the hell?'
 $mood_description['neg_cleaning'] = "I hate messing around in the mud. I'm a fucking slave trainer. What, there's no one in this house to clean up?!"
@@ -179,7 +179,7 @@ $mood_description['neg_slave_died'] = 'I didn''t save the slave. Maybe I had to 
 
 !positive slave moodlet
 $mood_description['pos_prise'] = '   [<<$slave_name>>]
-- Fair words please the conversation :3'
+- Fair words please the conversation.'
 $mood_description['pos_slave_date'] = '   [<<$slave_name>>]
 - I loved our walk. I would like to spend time together some another time!'
 $mood_description['pos_reward'] = '   [<<$slave_name>>]
@@ -243,9 +243,9 @@ $mood_description['neg_disgust'] = '   [<<$slave_name>>]
 $mood_description['neg_sick'] = "   [<<$slave_name>>]
 - I feel really bad. I'm dizzy."
 $mood_description['neg_menstruation'] = '   [<<$slave_name>>]
-- I have these days... stomach ache. So the mood is not very much.'
+- I have these days... during my period(PMS). So my mood isn''t the best and I''m moody.'
 $mood_description['neg_slave_food'] = '   [<<$slave_name>>]
-- That food you are giving me, it is not quite tasty. To tell the truth, it is so vile that it is easier to stay hungry than to push it in a throat...'
+- That food you are giving me, it is not very good. To tell the truth, it is so vile that it is easier to stay hungry than to push it down my throat...'
 $mood_description['neg_slave_dirty'] = "   [<<$slave_name>>]
 - I'm itchy from the dirt and bad smell. It would be nice to wash..."
 $mood_description['neg_slave_mess'] = '   [<<$slave_name>>]

@@ -1,8 +1,8 @@
 # hard_return
 !Return through the extra location for the benefit of proper display characteristics
-sbros = 1
+IF cheat_j ! 1: sbros = 1
 
-if get_initial_slave = 1: 
+IF get_initial_slave = 1 and cheat_j ! 1: 
  slave["beauty"] = 1
  slave['custom'] = 5
  slave['instinct'] = 5
@@ -58,8 +58,15 @@ if get_initial_slave = 1:
  if slave["courage"] = -1: slave_obedience_bonus += slave["fear"]*2
  slave["obedience"] = slave_obedience_bonus + slave["moral"] + slave["fear"] + slave["custom"] + slave["rational"] + slave["instinct"] + slave_mood_bonus - slave["spoil"] - rebell[$slave_psy_basic]
 
+ assistant_obedience_bonus = 0 + assistant["meekness"]
+ if assistant["courage"] = 2: assistant["fear"] = 0
+ if assistant["courage"] = 0: assistant_obedience_bonus += assistant["fear"]
+ if assistant["courage"] = -1: assistant_obedience_bonus += assistant["fear"]*2
+ assistant["obedience"] = assistant_obedience_bonus + assistant["moral"] + assistant["fear"] + assistant["custom"] + assistant["rational"] + assistant["instinct"] + assistant_mood_bonus - assistant["spoil"] - rebell[$assistant_psy_basic]
+ if $assistant_psy_status = 'broken': assistant["obedience"] = 100
+
  slave["sub_vaginal"] = 3
- slave["brand"] = 1
+ slave['brand'] = 1
  
  IF virginity = 0 or meta_type = 1: 
   slave['parasite'] = 0
@@ -91,6 +98,8 @@ if get_initial_slave = 1:
  !otherwise no energy waste during the rapid transition to a market on the first day in the free mode
  stock_pending = 0
  gs 'slave_to_assistant'
+ else
+ get_initial_slave = 0
 END
 
 gs '$newloc'

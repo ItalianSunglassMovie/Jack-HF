@@ -29,7 +29,8 @@ END
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
 
-if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
+!Commented out - doesn''t work here, must be placed in interaction_city_result for each $do_buy section - crushboss
+!if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 
 *p {<div id = "approve"><a href = 'EXEC: dynamic $do_buy & gt $return_lock'><img src="content\pic\buttons\approve.png"></a></div>}
 *p {<div id = "deny"><a href = 'EXEC: gt $return_lock'><img src="content\pic\buttons\deny.png"></a></div>}

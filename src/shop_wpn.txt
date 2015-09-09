@@ -8,6 +8,8 @@ $text_display = ''
 
 if sp_txt = 0: sp_txt = 1
 
+slave['brand'] = tattoo_brand
+
 IF sp_txt = 1: 
  FUNC('$menu', 'spacer', 3)
 
@@ -29,8 +31,8 @@ IF sp_txt = 2:
 
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Secondary, 'sp_txt = 11 & gt $curloc', 'Secondary')
- FUNC('$menu', 'exec_options', $menu_item_Onehanded, 'sp_txt = 12 & gt $curloc', 'One-handed')
- FUNC('$menu', 'exec_options', $menu_item_Twohanded, 'sp_txt = 13 & gt $curloc', 'Two-handed')
+ FUNC('$menu', 'exec_options', $menu_item_Onehanded, 'sp_txt = 12 & gt $curloc', 'One-Handed')
+ FUNC('$menu', 'exec_options', $menu_item_Twohanded, 'sp_txt = 13 & gt $curloc', 'Two-Handed')
  FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 1 & gt $curloc', 'Other goods')
  FUNC('$menu', '===END===')
 END
@@ -41,10 +43,10 @@ IF sp_txt = 11:
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Daggerbuy, 'sp_txt = 111 & gt $curloc', 'Dagger (10$)')
  FUNC('$menu', 'exec_options', $menu_item_Stiletto, 'sp_txt = 112 & gt $curloc', 'Stiletto (10$)')
- FUNC('$menu', 'exec_options', $menu_item_knuckles, 'sp_txt = 113 & gt $curloc', 'Brass knuckles (10$)')
+ FUNC('$menu', 'exec_options', $menu_item_knuckles, 'sp_txt = 113 & gt $curloc', 'Brass Knuckles (10$)')
  FUNC('$menu', 'exec_options', $menu_item_Lashbuy, 'sp_txt = 114 & gt $curloc', 'Lash (10$)')
  FUNC('$menu', 'exec_options', $menu_item_Stunner, 'sp_txt = 115 & gt $curloc', 'Stunner (10$)')
- FUNC('$menu', 'exec_options', $menu_item_cleaver, 'sp_txt = 116 & gt $curloc', 'Butcher`s cleaver (20$)')
+ FUNC('$menu', 'exec_options', $menu_item_cleaver, 'sp_txt = 116 & gt $curloc', 'Butcher`s Cleaver (20$)')
  FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
  FUNC('$menu', '===END===')
 END
@@ -57,7 +59,7 @@ IF sp_txt = 111:
   else
   $shop_wpn[111] = $shop_wpn_deny 
  END
- FUNC('$menu', 'spacer', 4)
+ FUNC('$menu', 'spacer', 1)
 
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
@@ -150,7 +152,7 @@ IF sp_txt = 12:
 
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Whipbuy, 'sp_txt = 121 & gt $curloc', 'Whip (50$)')
- FUNC('$menu', 'exec_options', $menu_item_Epee, 'sp_txt = 122 & gt $curloc', 'Epee (50$')
+ FUNC('$menu', 'exec_options', $menu_item_Epee, 'sp_txt = 122 & gt $curloc', 'Epee (50$)')
  FUNC('$menu', 'exec_options', $menu_item_Rapier, 'sp_txt = 123 & gt $curloc', 'Rapier (50$)')
  FUNC('$menu', 'exec_options', $menu_item_Koncerz, 'sp_txt = 124 & gt $curloc', 'Koncerz (50$)')
  FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
@@ -159,7 +161,7 @@ IF sp_txt = 12:
 
  FUNC('$menu', '===BEGIN===', 'column_1') 
  FUNC('$menu', 'exec_options', $menu_item_Gladius, 'sp_txt = 125 & gt $curloc', 'Gladius (50$)')
- FUNC('$menu', 'exec_options', $menu_item_Bastardsword, 'sp_txt = 126 & gt $curloc', 'Bastard sword (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Bastardsword, 'sp_txt = 126 & gt $curloc', 'Bastard Sword (100$)')
  FUNC('$menu', 'exec_options', $menu_item_Machete, 'sp_txt = 127 & gt $curloc', 'Machete (50$)')
  FUNC('$menu', 'exec_options', $menu_item_Katana, 'sp_txt = 128 & gt $curloc', 'Katana (100$)')
  FUNC('$menu', 'exec_options', $menu_item_Baton, 'sp_txt = 129 & gt $curloc', 'Baton (25$)')
@@ -311,15 +313,15 @@ IF sp_txt = 129:
 END
 
 IF sp_txt = 13:
- FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', 'spacer', 2)
 
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Flamberge, 'sp_txt = 131 & gt $curloc', 'Flamberge (200$)')
  FUNC('$menu', 'exec_options', $menu_item_Naginata, 'sp_txt = 132 & gt $curloc', 'Naginata (200$)')
  FUNC('$menu', 'exec_options', $menu_item_Morningstar, 'sp_txt = 133 & gt $curloc', 'Morningstar (150$)')
  FUNC('$menu', 'exec_options', $menu_item_Greataxe, 'sp_txt = 134 & gt $curloc', 'Greataxe (100$)')
- FUNC('$menu', 'exec_options', $menu_item_Baseballbat, 'sp_txt = 135 & gt $curloc', 'Baseball bat (100$)')
- FUNC('$menu', 'exec_options', $menu_item_Cattleprod, 'sp_txt = 136 & gt $curloc', 'Cattle prod (150$)')
+ FUNC('$menu', 'exec_options', $menu_item_Baseballbat, 'sp_txt = 135 & gt $curloc', 'Baseball Bat (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Cattleprod, 'sp_txt = 136 & gt $curloc', 'Cattle Prod (150$)')
  FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
  FUNC('$menu', '===END===')
 END
@@ -421,16 +423,16 @@ IF sp_txt = 136:
 END
 
 IF sp_txt = 3:
- FUNC('$menu', 'spacer', 1)
+ FUNC('$menu', 'spacer', 2)
 
  FUNC('$menu', '===BEGIN===', 'column_0') 
- FUNC('$menu', 'exec_options', $menu_item_Aramid, 'sp_txt = 21 & gt $curloc', 'Aramid suit(100$)')
- FUNC('$menu', 'exec_options', $menu_item_Leather, 'sp_txt = 22 & gt $curloc', 'Leather armor(400$)')
- FUNC('$menu', 'exec_options', $menu_item_Elven, 'sp_txt = 23 & gt $curloc', 'Elven chainmail(250$)')
- FUNC('$menu', 'exec_options', $menu_item_Yatserin, 'sp_txt = 24 & gt $curloc', 'Yatserin mail(300$)')
- FUNC('$menu', 'exec_options', $menu_item_Combined, 'sp_txt = 25 & gt $curloc', 'Combined armor(800$)')
- FUNC('$menu', 'exec_options', $menu_item_Gothicbuy, 'sp_txt = 26 & gt $curloc', 'Gothic plate(1000$)')
- FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 1 & gt $curloc', 'other goods')
+ FUNC('$menu', 'exec_options', $menu_item_Aramid, 'sp_txt = 21 & gt $curloc', 'Aramid Suit (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Leather, 'sp_txt = 22 & gt $curloc', 'Leather Armor (400$)')
+ FUNC('$menu', 'exec_options', $menu_item_Elven, 'sp_txt = 23 & gt $curloc', 'Elven Chainmail (250$)')
+ FUNC('$menu', 'exec_options', $menu_item_Yatserin, 'sp_txt = 24 & gt $curloc', 'Yatserin Mail (300$)')
+ FUNC('$menu', 'exec_options', $menu_item_Combined, 'sp_txt = 25 & gt $curloc', 'Combined Armor (800$)')
+ FUNC('$menu', 'exec_options', $menu_item_Gothicbuy, 'sp_txt = 26 & gt $curloc', 'Gothic Plate (1000$)')
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 1 & gt $curloc', 'Other goods')
  FUNC('$menu', '===END===')
 END
 

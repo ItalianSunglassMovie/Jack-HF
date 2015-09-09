@@ -15,8 +15,14 @@ dynamic $assistant_pass_out
 dynamic $master_pass_out
 !knout and whip check
 dynamic $toolsequipped
+
+slave['brand'] = tattoo_brand
+
+!check assistant rating
+if assistant_state = 1: gs '$assistant_rank_stats'
+
 !check slave rating
-gs '$slave_price'
+if slave_state = CONST_INT['slave_exist']: gs '$slave_price'
 
 teach_stat_screen = 0
 master_stat_screen = 0
@@ -36,6 +42,10 @@ sp_txt = 0
 
 gs '$moodlets_account'
 quest_description_mode = 0
+
+!Testing Code - Remove for release - crushboss 
+if slave_state = CONST_INT['no_exist'] and cheat_j = 1: get_initial_slave = 1
+!End of testing code
 
 !Тестовые значения
 IF get_initial_slave = 1:
@@ -113,7 +123,7 @@ IF menu_form = 0:
   IF sparks > 0:
     FUNC('$menu', 'menu_form', $menu_item_cast_spell, menu_cast_spell, 'Cast a spell',  'Cast a spell')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_cast_spell_gray, empty, 'Cast a spell',  'not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_cast_spell_gray, empty, 'Cast a spell',  'Not enough sparks')
   END
   
   IF assistant_state = 1:
@@ -253,15 +263,15 @@ IF menu_form = 4:
   END
   
   IF pet_tentacle > 0 and spawn_milked = 0:
-    FUNC('$menu', 'goto', $menu_item_Milk_A, menu_Milk_A, 'interaction', 'interaction', 'Milk the Fiend', 'Order <<$assistant_name>> to Milk the fiend')
+    FUNC('$menu', 'goto', $menu_item_Milk_A, menu_Milk_A, 'interaction', 'interaction', 'Milk the Fiend', 'Order <<$assistant_name>> to Milk the Fiend')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Milk_A_gray, empty, 'Milk the Fiend', 'You do not own a Fiend')
   END
   
-  FUNC('$menu', 'goto', $menu_item_assistant_active_sex, menu_assistant_active_sex, 'interaction', 'interaction', 'Active sex', 'Have active sex with  <<$assistant_name>>')
-  FUNC('$menu', 'goto', $menu_item_assistant_relaxed_Vaginal, menu_assistant_relaxed_Vaginal, 'interaction', 'interaction', 'Relaxed vaginal sex', 'Have relaxed vaginal sex with <<$assistant_name>>')
-  FUNC('$menu', 'goto', $menu_item_assistant_relaxed_Anal, menu_assistant_relaxed_Anal, 'interaction', 'interaction', 'Relaxed Anal sex', 'Have relaxed anal sex with <<$assistant_name>>')
-  FUNC('$menu', 'goto', $menu_item_assistant_relaxed_Oral, menu_assistant_relaxed_Oral, 'interaction', 'interaction', 'Relaxed Oral sex', 'Have relaxed oral sex with <<$assistant_name>>')
+  FUNC('$menu', 'goto', $menu_item_assistant_active_sex, menu_assistant_active_sex, 'interaction', 'interaction', 'Active Sex', 'Have Active Sex with  <<$assistant_name>>')
+  FUNC('$menu', 'goto', $menu_item_assistant_relaxed_Vaginal, menu_assistant_relaxed_Vaginal, 'interaction', 'interaction', 'Relaxed Vaginal Sex', 'Have Relaxed Vaginal Sex with <<$assistant_name>>')
+  FUNC('$menu', 'goto', $menu_item_assistant_relaxed_Anal, menu_assistant_relaxed_Anal, 'interaction', 'interaction', 'Relaxed Anal Sex', 'Have Relaxed Anal Sex with <<$assistant_name>>')
+  FUNC('$menu', 'goto', $menu_item_assistant_relaxed_Oral, menu_assistant_relaxed_Oral, 'interaction', 'interaction', 'Relaxed Oral Sex', 'Have Relaxed Oral Sex with <<$assistant_name>>')
 
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Assistant_assignments"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
@@ -283,10 +293,10 @@ IF menu_form = 5:
     FUNC('$menu', 'exec', $menu_item_classes_S_gray, empty, 'Attend classes', 'Not enough sparks')
   END
   
-  IF slave["stamina"] > 4:
-    FUNC('$menu', 'goto', $menu_item_gymnastics_S, menu_gymnastics_S, 'interaction', 'interaction', 'gymnastics', 'Order <<$slave_name>> to do some gymnastics')
+  IF slave["stamina"] >= 1:
+    FUNC('$menu', 'goto', $menu_item_gymnastics_S, menu_gymnastics_S, 'interaction', 'interaction', 'Gymnastics', 'Order <<$slave_name>> to do some gymnastics')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_gymnastics_S_gray, empty, 'gymnastics', $text_feeble)
+    FUNC('$menu', 'exec', $menu_item_gymnastics_S_gray, empty, 'Gymnastics', $text_feeble)
   END
   
   IF house_mess > 0:
@@ -301,18 +311,18 @@ IF menu_form = 5:
     FUNC('$menu', 'exec', $menu_item_dinner_S_gray, empty, 'Prepare dinner', 'Dinner already been prepared')
   END
   
-  IF bath > 0 and slave['hygiene'] > 1:
+  IF bath > 0 and slave['hygiene'] > 0:
     FUNC('$menu', 'goto', $menu_item_bath_S, menu_bath_S, 'interaction', 'interaction', 'Take a bath', 'Order <<$slave_name>> to take a bath')
   ELSE
     FUNC('$menu', 'exec', $menu_item_bath_S_gray, empty, 'Take a bath', '<<$slave_name>> is all clean and fresh')
   END
   
   IF pet_tentacle > 0 and spawn_milked = 0:
-    FUNC('$menu', 'goto', $menu_item_Milk_S, menu_Milk_S, 'interaction', 'interaction', 'Milk the fiend', 'Order <<$slave_name>> to milk the Fiend')
+    FUNC('$menu', 'goto', $menu_item_Milk_S, menu_Milk_S, 'interaction', 'interaction', 'Milk the Fiend', 'Order <<$slave_name>> to milk the Fiend')
   ELSEIF pet_tentacle = 0:
-    FUNC('$menu', 'exec', $menu_item_Milk_S_gray, empty, 'Milk the fiend', 'You do not own a Fiend')
+    FUNC('$menu', 'exec', $menu_item_Milk_S_gray, empty, 'Milk the Fiend', 'You do not own a Fiend')
   ELSEIF spawn_milked = 1:
-    FUNC('$menu', 'exec', $menu_item_Milk_S_gray, empty, 'Milk the fiend', 'The fiend is satisfied')
+    FUNC('$menu', 'exec', $menu_item_Milk_S_gray, empty, 'Milk the Fiend', 'The Fiend is satisfied')
   END
   
   FUNC('$menu', 'menu_form', $menu_item_Serve_S, menu_Serve_S, 'Serve me', 'Order <<$slave_name>> to serve you')
@@ -334,23 +344,23 @@ IF menu_form = 6:
   FUNC('$menu', 'goto', $menu_item_spellbook, menu_spellbook, 'interaction', 'interaction', 'Spellbook', 'Read about the spells')
 
   IF auspex = 0 and slave_state = CONST_INT['slave_exist']:
-    FUNC('$menu', 'goto', $menu_item_Auspex, menu_Auspex, 'interaction', 'interaction', 'Auspex', 'allows master to read the aura of a slave or assistant (cost 2$to cast)')
+    FUNC('$menu', 'goto', $menu_item_Auspex, menu_Auspex, 'interaction', 'interaction', 'Auspex', 'Allows master to read the aura of a slave or assistant (costs 2$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave'] and assistant_state = 0:
     FUNC('$menu', 'exec', $menu_item_Auspex_gray, empty, 'Auspex', 'No slave or assistant available to cast Auspex on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
     FUNC('$menu', 'exec', $menu_item_Auspex_gray, empty, 'Auspex', '<<$slave_name>> is unconscious')
   ELSEIF auspex = 0 and assistant_state = 1:
-    FUNC('$menu', 'goto', $menu_item_Auspex, menu_Auspex, 'interaction', 'interaction', 'Auspex', 'allows master to read the aura of a slave or assistant (cost 2$to cast)')
+    FUNC('$menu', 'goto', $menu_item_Auspex, menu_Auspex, 'interaction', 'interaction', 'Auspex', 'Allows master to read the aura of a slave or assistant (costs 2$ to cast)')
   ELSEIF sparks < 2:
-    FUNC('$menu', 'exec', $menu_item_Auspex_gray, empty, 'Auspex', 'not enough sparks to cast Auspex')
+    FUNC('$menu', 'exec', $menu_item_Auspex_gray, empty, 'Auspex', 'Not enough sparks to cast Auspex')
   ELSEIF $master_head_gear = 'raven_crown':
-    FUNC('$menu', 'exec', $menu_item_Auspex_gray, empty, 'Auspex', 'Raven crown is equiped, you don`t need to cast Auspex to read the aura anymore')
+    FUNC('$menu', 'exec', $menu_item_Auspex_gray, empty, 'Auspex', 'Raven Crown is equiped, you don`t need to cast Auspex to read auras anymore')
   ELSEIF auspex = 1:
-    FUNC('$menu', 'exec', $menu_item_Auspex_gray, empty, 'Auspex', 'the spell is active, can`t be casted more than once a day')
+    FUNC('$menu', 'exec', $menu_item_Auspex_gray, empty, 'Auspex', 'The spell is already active, it can`t be casted more than once a day')
   END
   
   IF slave_state = CONST_INT['slave_exist'] and sparks > 5 and master_mage > 0 and slave["virtue"] > 0:
-    FUNC('$menu', 'goto', $menu_item_Delikacia, menu_Delikacia, 'interaction', 'interaction', 'Delikacia', 'Causes pleasure to the slave according to their merit, but reduces sexual arousal greatly (cost 5$cast)')
+    FUNC('$menu', 'goto', $menu_item_Delikacia, menu_Delikacia, 'interaction', 'interaction', 'Delikacia', 'Causes pleasure to the slave according to their merit, but reduces sexual arousal greatly (costs 5$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave']:
     FUNC('$menu', 'exec', $menu_item_Delikacia_gray, empty, 'Delikacia', 'No slave available to cast Delikacia on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
@@ -364,7 +374,7 @@ IF menu_form = 6:
   END
   
   IF slave_state = CONST_INT['slave_exist'] and sparks > 5 and master_mage > 0 and slave["sin"] > 0:
-    FUNC('$menu', 'goto', $menu_item_Cruciato, menu_Cruciato, 'interaction', 'interaction', 'Cruciato', 'Inflicts pain on the slave according to their guilt (cost 5$cast)')
+    FUNC('$menu', 'goto', $menu_item_Cruciato, menu_Cruciato, 'interaction', 'interaction', 'Cruciato', 'Inflicts pain on the slave according to their guilt (costs 5$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave']:
     FUNC('$menu', 'exec', $menu_item_Cruciato_gray, empty, 'Cruciato', 'No slave available to cast Cruciato on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
@@ -378,7 +388,7 @@ IF menu_form = 6:
   END
   
   IF already_done_today[64] = 0 and slave["virtue"] = 0 and slave["sin"] = 0 and slave_state = CONST_INT['slave_exist']: 
-    FUNC('$menu', 'goto', $menu_item_Sententia_veritas, menu_Sententia_veritas, 'interaction', 'interaction', 'Sententia veritas', 'If <<$slave_name>> has no merit or guilt, increases degree of merit or guilt at the next receiving (cost 5$cast)')
+    FUNC('$menu', 'goto', $menu_item_Sententia_veritas, menu_Sententia_veritas, 'interaction', 'interaction', 'Sententia veritas', 'If <<$slave_name>> has no merit or guilt, increases degree of merit or guilt at the next receiving (costs 5$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave']:
     FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'No slave available to cast Sententia veritas on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
@@ -388,62 +398,62 @@ IF menu_form = 6:
   ELSEIF slave["sin"] = 1:
     FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', '<<$slave_name>> feels guilt, spell can`t be casted')
   ELSEIF already_done_today[64] = 1:
-    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'the spell is active, can`t be casted more than once a day')
+    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'The spell is active, can`t be casted more than once a day')
   ELSEIF sparks < 5:
     FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'Not enough sparks to cast this spell')
   ELSEIF master_mage = 0:
-    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'your magic skill isn`t high enough to cast this spell')
+    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'Your magic skill isn`t high enough to cast this spell')
   END
   
   IF already_done_today[65] = 0 and slave_state = CONST_INT['slave_exist']: 
-    FUNC('$menu', 'goto', $menu_item_Magna_Magnifika, menu_Magna_Magnifika, 'interaction', 'interaction', 'Magna Magnifika', 'Strengthens the caster''s aura depending on the magical powers of the caster (cost 5$to cast)')
+    FUNC('$menu', 'goto', $menu_item_Magna_Magnifika, menu_Magna_Magnifika, 'interaction', 'interaction', 'Magna Magnifika', 'Strengthens the caster''s aura depending on the magical powers of the caster (costs 5$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave']:
     FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'No slave available to cast Magna Magnifika on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
     FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', '<<$slave_name>> is unconscious')
   ELSEIF already_done_today[65] = 1:
-    FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'the spell is active, can`t be casted more than once a day')
+    FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'The spell is already active, it can`t be casted more than once a day')
   ELSEIF sparks < 5:
     FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'Not enough sparks to cast this spell')
   ELSEIF master_mage = 0:
-    FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'your magic skill isn`t high enough to cast this spell')
+    FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'Your magic skill isn`t high enough to cast this spell')
   END
   
   IF already_done_today[66] = 0 and slave_state = CONST_INT['slave_exist']: 
-    FUNC('$menu', 'goto', $menu_item_Tremedio, menu_Tremedio, 'interaction', 'interaction', 'Tremedio', 'Causes the slave to be deeply afraid of the slaver (cost 5$to cast)')
+    FUNC('$menu', 'goto', $menu_item_Tremedio, menu_Tremedio, 'interaction', 'interaction', 'Tremedio', 'Causes the slave to be deeply afraid of the slaver (costs 5$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave']:
     FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'No slave available to cast Tremedio on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
     FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', '<<$slave_name>> is unconscious')
   ELSEIF already_done_today[66] = 1:
-    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'the spell is active, can`t be casted more than once a day')
+    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'The spell is already active, it can`t be casted more than once a day')
   ELSEIF sparks < 5:
     FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'Not enough sparks to cast this spell')
   ELSEIF master_mage = 0:
-    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'your magic skill isn`t high enough to cast this spell')
+    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'Your magic skill isn`t high enough to cast this spell')
   END
   
   IF already_done_today[67] = 0 and slave_state = CONST_INT['slave_exist']: 
-    FUNC('$menu', 'goto', $menu_item_Domini_Dictum, menu_Domini_Dictum, 'interaction', 'interaction', 'Domini Dictum', 'Causes the slave to follow all orders of the slaver if slavers magic force is stronger than slaves aura (cost 5$to cast)')
+    FUNC('$menu', 'goto', $menu_item_Domini_Dictum, menu_Domini_Dictum, 'interaction', 'interaction', 'Domini Dictum', 'Causes the slave to follow all orders of the slaver if slavers magic force is stronger than slaves aura (costs 5$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave']:
     FUNC('$menu', 'exec', $menu_item_Domini_Dictum_gray, empty, 'Domini Dictum', 'No slave available to cast Domini Dictum on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
     FUNC('$menu', 'exec', $menu_item_Domini_Dictum_gray, empty, 'Domini Dictum', '<<$slave_name>> is unconscious')
   ELSEIF already_done_today[66] = 1:
-    FUNC('$menu', 'exec', $menu_item_Domini_Dictum_gray, empty, 'Domini Dictum', 'the spell is active, can`t be casted more than once a day')
+    FUNC('$menu', 'exec', $menu_item_Domini_Dictum_gray, empty, 'Domini Dictum', 'The spell is already active, it can`t be casted more than once a day')
   ELSEIF sparks < 5:
     FUNC('$menu', 'exec', $menu_item_Domini_Dictum_gray, empty, 'Domini Dictum', 'Not enough sparks to cast this spell')
   ELSEIF master_mage = 0:
-    FUNC('$menu', 'exec', $menu_item_Domini_Dictum_gray, empty, 'Domini Dictum', 'your magic skill isn`t high enough to cast this spell')
+    FUNC('$menu', 'exec', $menu_item_Domini_Dictum_gray, empty, 'Domini Dictum', 'Your magic skill isn`t high enough to cast this spell')
   END
   
-  IF master_mage >= 4 and slave_state = CONST_INT['slave_exist'] and sparks >= 25 and slave["brand"] = 0:
-    FUNC('$menu', 'goto', $menu_item_Adverto_Servili, menu_Adverto_Servili, 'interaction', 'interaction', 'Adverto Servili', 'Puts on a magic seal on the slave, making it difficult for them to run away (magic brand-cost 25$to cast)')
+  IF master_mage >= 4 and slave_state = CONST_INT['slave_exist'] and sparks >= 25 and slave['brand'] = 0:
+    FUNC('$menu', 'goto', $menu_item_Adverto_Servili, menu_Adverto_Servili, 'interaction', 'interaction', 'Adverto Servili', 'Puts on a magic seal on the slave, making it difficult for them to run away (magic brand - costs 25$ to cast)')
   ELSEIF master_mage < 4:
-    FUNC('$menu', 'exec', $menu_item_Adverto_Servili_gray, empty, 'Adverto Servili', 'master magic skill must be Magister or Archmage to be able to cast this spell')
+    FUNC('$menu', 'exec', $menu_item_Adverto_Servili_gray, empty, 'Adverto Servili', 'Master magic skill must be Magister or Archmage to be able to cast this spell')
   ELSEIF sparks < 25:
     FUNC('$menu', 'exec', $menu_item_Adverto_Servili_gray, empty, 'Adverto Servili', 'Not enough sparks to cast this spell')
-  ELSEIF slave["brand"] = 1:
+  ELSEIF slave['brand'] = 1:
     FUNC('$menu', 'exec', $menu_item_Adverto_Servili_gray, empty, 'Adverto Servili', '<<$slave_name>> is already branded')
   ELSEIF slave_state = CONST_INT['no_slave']:
     FUNC('$menu', 'exec', $menu_item_Adverto_Servili_gray, empty, 'Adverto Servili', 'No slave available to cast Adverto Servili on')
@@ -463,8 +473,8 @@ IF menu_form = menu_talk:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
 
-  FUNC('$menu', 'menu_form', $menu_item_Ask, menu_Ask, 'Ask', 'ask <<$slave_name>> a question')
-  FUNC('$menu', 'menu_form', $menu_item_Affect, menu_Affect, 'Affect', 'affect <<$slave_name>> psychologically')
+  FUNC('$menu', 'menu_form', $menu_item_Ask, menu_Ask, 'Ask', 'Ask <<$slave_name>> a question')
+  FUNC('$menu', 'menu_form', $menu_item_Affect, menu_Affect, 'Affect', 'Affect <<$slave_name>> psychologically')
 
   FUNC('$menu', '===END===')
 
@@ -481,13 +491,13 @@ IF menu_form = menu_lesson:
 
   FUNC('$menu', 'menu_form', $menu_item_Applied_skills, menu_Applied_skills, 'Applied skills', 'Teach <<$slave_name>> common skills')
 
-  IF slave["stamina"] > 1:
+  IF slave["stamina"] >= 1:
     FUNC('$menu', 'menu_form', $menu_item_Physical_development, menu_Physical_development, 'Physical development', 'Teach <<$slave_name>> common skills')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Physical_development_gray, empty, 'Physical development', $text_feeble)
   END
   
-  FUNC('$menu', 'menu_form', $menu_item_Creative_development, menu_Creative_development, 'Creative development', 'strengthen <<$slave_name>>`s sense of art and creativity')
+  FUNC('$menu', 'menu_form', $menu_item_Creative_development, menu_Creative_development, 'Creative development', 'Strengthen <<$slave_name>>`s sense of art and creativity')
   FUNC('$menu', 'menu_form', $menu_item_Special_skills, menu_Special_skills, 'Applied skills', 'Teach <<$slave_name>> a special skill')
 
   FUNC('$menu', '===END===')
@@ -513,7 +523,7 @@ IF menu_form = menu_sex_edu:
 
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Sexed"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
- $text_display += {<br><div id="cancel_Sexed"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Canecl" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+ $text_display += {<br><div id="cancel_Sexed"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
 END
 
 !main menu - Slave activities - Punish
@@ -559,7 +569,7 @@ IF menu_form = menu_punish:
   IF prisoner_state = 1 and prisoner["energy"] > -4:
     FUNC('$menu', 'menu_form', $menu_item_Example_punishment, menu_Example_punishment, 'Example of punishment', 'Show <<$slave_name>> example of punishment')
   ELSEIF prisoner_state = 0:
-    FUNC('$menu', 'exec', $menu_item_Example_punishment_gray, empty, 'Example of punishment', 'no prisoner in dungeon')
+    FUNC('$menu', 'exec', $menu_item_Example_punishment_gray, empty, 'Example of punishment', 'No prisoner in dungeon')
   ELSEIF prisoner["energy"] = -4:
     FUNC('$menu', 'menu_form', $menu_item_Example_punishment, menu_Example_punishment, 'Example of punishment', $text_exhausted_prisoner)
   END
@@ -576,20 +586,20 @@ IF menu_form = menu_reward:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
 
-  FUNC('$menu', 'menu_form', $menu_item_Moral_encouragement, menu_Moral_encouragement, 'Moral encouragement', 'reward <<$slave_name>> with kind words')
+  FUNC('$menu', 'menu_form', $menu_item_Moral_encouragement, menu_Moral_encouragement, 'Moral encouragement', 'Reward <<$slave_name>> with kind words')
   IF slave["energy"] > -4: 
-    FUNC('$menu', 'menu_form', $menu_item_Spend_time, menu_Spend_time, 'Spend time together', 'take <<$slave_name>> on a date as a reward for her good behavior')
+    FUNC('$menu', 'menu_form', $menu_item_Spend_time, menu_Spend_time, 'Spend time together', 'Take <<$slave_name>> on a date as a reward for her good behavior')
   ELSE
     FUNC('$menu', 'menu_form', $menu_item_Spend_time, menu_Moral_encouragement, 'Spend time together', $text_exhausted)
   END
   IF slave["energy"] > 0: 
-    FUNC('$menu', 'menu_form', $menu_item_free_time, menu_free_time, 'Give free time', 'Reward <<$slave_name>> some free time for her good behavior')
+    FUNC('$menu', 'menu_form', $menu_item_free_time, menu_free_time, 'Give free time', 'Reward <<$slave_name>> with some free time for her good behavior')
   ELSE
     FUNC('$menu', 'menu_form', $menu_item_free_time, empty, 'Give free time', $text_exhausted)
   END
-  FUNC('$menu', 'menu_form', $menu_item_Erotic_reward, menu_Erotic_reward, 'Erotic reward', 'Give <<$slave_name>> eroctic reward for her good behavior')
-  FUNC('$menu', 'menu_form', $menu_item_Make_gift, menu_Make_gift, 'Make a gift', 'give <<$slave_name>> a gift for her good behavior')
-  FUNC('$menu', 'menu_form', $menu_item_Sweet_treat, menu_Sweet_treat, 'Sweet treat', 'Give <<$slave_name>> Sweet treat for her good behavior')
+  FUNC('$menu', 'menu_form', $menu_item_Erotic_reward, menu_Erotic_reward, 'Erotic reward', 'Give <<$slave_name>> an eroctic reward for her good behavior')
+  FUNC('$menu', 'menu_form', $menu_item_Make_gift, menu_Make_gift, 'Make a gift', 'Give <<$slave_name>> a gift for her good behavior')
+  FUNC('$menu', 'menu_form', $menu_item_Sweet_treat, menu_Sweet_treat, 'Sweet treat', 'Give <<$slave_name>> a Sweet treat for her good behavior')
 
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Reward"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
@@ -603,17 +613,17 @@ IF menu_form = menu_sex:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
 
-  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Vaginal_sex, menu_slave_Relaxed_Vaginal_sex, 'interaction', 'interaction', 'Relaxed Vaginal sex', 'Have a Relaxed vaginal sex with <<$slave_name>>')
-  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Anal_sex, menu_slave_Relaxed_Anal_sex, 'interaction', 'interaction', 'Relaxed Anal sex', 'Have a Relaxed Anal sex with <<$slave_name>>')
-  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Oral_sex, menu_slave_Relaxed_Oral_sex, 'interaction', 'interaction', 'Relaxed Oral sex', 'Have a Relaxed Oral sex with <<$slave_name>>')
-  FUNC('$menu', 'goto', $menu_item_slave_Active_sex, menu_slave_Active_sex, 'interaction', 'interaction', 'Active sex', 'Have active sex with <<$slave_name>>')
+  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Vaginal_sex, menu_slave_Relaxed_Vaginal_sex, 'interaction', 'interaction', 'Relaxed Vaginal Sex', 'Have Relaxed Vaginal Sex with <<$slave_name>>')
+  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Anal_sex, menu_slave_Relaxed_Anal_sex, 'interaction', 'interaction', 'Relaxed Anal Sex', 'Have Relaxed Anal Sex with <<$slave_name>>')
+  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Oral_sex, menu_slave_Relaxed_Oral_sex, 'interaction', 'interaction', 'Relaxed Oral Sex', 'Have Relaxed Oral Sex with <<$slave_name>>')
+  FUNC('$menu', 'goto', $menu_item_slave_Active_sex, menu_slave_Active_sex, 'interaction', 'interaction', 'Active Sex', 'Have Active Sex with <<$slave_name>>')
 
-  IF assistant_state = 1 and assistant["energy"] > -4 and slave["energy"] > -4:
-    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome, 'interaction', 'interaction', 'Threesome', 'Have a thresome sex with <<$slave_name>> and <<$assistant_name>>')
-  ELSEIF assistant_state = 0:
-    FUNC('$menu', 'exec', $menu_item_Threesome_gray, empty, 'Threesome', 'you don`t have assistant')
-  ELSEIF slave["energy"] = -4:
-    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome, 'interaction', 'interaction', 'Threesome', $text_exhausted)
+  IF assistant_state = 1 and slave_state = CONST_INT['slave_exist'] and assistant["energy"] > -2 and slave["energy"] > -2:
+    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome, 'interaction', 'interaction', 'Threesome', 'Have a threesome with <<$slave_name>> and <<$assistant_name>>')
+  ELSEIF assistant_state = 0 and slave_state = CONST_INT['slave_exist'] and slave["energy"] > -2:
+    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome_noassistant, 'interaction', 'interaction', 'Threesome', 'Have a threesome with <<$slave_name>> and Gloria from the Real Estate Office or Angelika from the Guild')
+  ELSEIF slave["energy"] <= -2:
+    FUNC('$menu', 'exec', $menu_item_Threesome_grey, empty, 'Threesome', $text_exhausted)
   END 
   
   IF master_excitement > 0:
@@ -621,9 +631,9 @@ IF menu_form = menu_sex:
     FUNC('$menu', 'goto', $menu_item_Oral_Rape, menu_Oral_Rape, 'interaction', 'interaction', 'Oral Rape', 'Rape <<$slave_name>> orally')
     FUNC('$menu', 'goto', $menu_item_Anal_Rape, menu_Anal_Rape, 'interaction', 'interaction', 'Anal Rape', 'Rape <<$slave_name>> anally')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Vaginal_Rape_gray, empty, 'Vaginal Rape', 'your sexual excitements are low')
-    FUNC('$menu', 'exec', $menu_item_Oral_Rape_gray, empty, 'Oral Rape', 'your sexual excitements are low')
-    FUNC('$menu', 'exec', $menu_item_Anal_Rape_gray, empty, 'Anal Rape', 'your sexual excitements are low')
+    FUNC('$menu', 'exec', $menu_item_Vaginal_Rape_gray, empty, 'Vaginal Rape', 'your sexual excitement is low')
+    FUNC('$menu', 'exec', $menu_item_Oral_Rape_gray, empty, 'Oral Rape', 'your sexual excitement is low')
+    FUNC('$menu', 'exec', $menu_item_Anal_Rape_gray, empty, 'Anal Rape', 'your sexual excitement is low')
   END
 
   FUNC('$menu', '===END===')
@@ -661,23 +671,23 @@ IF menu_form = menu_tutor:
   ELSEIF slave['secretary'] = 5:
     FUNC('$menu', 'exec', $menu_item_Clerical_tutor_gray, empty, 'Clerical work', '<<$slave_name>> is skilled enough at clerical work, she doesn`t need anymore teaching')
   END
-  IF slave["stamina"] > 3 and slave['stamina'] < 5: 
+  IF slave["stamina"] >= 1 and slave['stamina'] <= 5: 
     FUNC('$menu', 'goto', $menu_item_Gymnastics_tutor, menu_Gymnastics_tutor, 'interaction', 'interaction', 'Gymnastics', 'Invite a Gymnastics tutor for <<$slave_name>>(<<$couch_price[slave["stamina"]]>>)')
-  ELSEIF slave["stamina"] <= 3:
+  ELSEIF slave["stamina"] < 1:
     FUNC('$menu', 'exec', $menu_item_Gymnastics_tutor_gray, empty, 'Gymnastics', $text_feeble)
-  ELSEIF slave['stamina'] = 5:
+  ELSEIF slave['stamina'] > 5:
     FUNC('$menu', 'exec', $menu_item_Gymnastics_tutor_gray, empty, 'Gymnastics', '<<$slave_name>> is skilled enough at Gymnastics, she doesn`t need anymore teaching')
   END
-  IF slave["stamina"] > 3 and slave['callisthenics'] < 5: 
+  IF slave["stamina"] >= 3 and slave['callisthenics'] < 5: 
     FUNC('$menu', 'goto', $menu_item_Choreography_tutor, menu_Choreography_tutor, 'interaction', 'interaction', 'Choreography', 'Invite a Choreography tutor for <<$slave_name>>(<<$couch_price[slave["callisthenics"]]>>)')
-  ELSEIF slave["stamina"] <= 3:
+  ELSEIF slave["stamina"] < 3:
     FUNC('$menu', 'exec', $menu_item_Choreography_tutor_gray, empty, 'Choreography', $text_feeble)
   ELSEIF slave['callisthenics'] = 5:
     FUNC('$menu', 'exec', $menu_item_Choreography_tutor_gray, empty, 'Choreography', '<<$slave_name>> is skilled enough at Choreography, she doesn`t need anymore teaching')
   END
-  IF slave["stamina"] > 3 and slave['gladiatrix'] < 5: 
+  IF slave["stamina"] >= 3 and slave['gladiatrix'] < 5: 
     FUNC('$menu', 'goto', $menu_item_gladiatrix_tutor, menu_gladiatrix_tutor, 'interaction', 'interaction', 'Martial arts', 'Invite a Martial arts tutor for <<$slave_name>>(<<$couch_price[slave["gladiatrix"]]>>)')
-  ELSEIF slave["stamina"] <= 3:
+  ELSEIF slave["stamina"] < 3:
     FUNC('$menu', 'exec', $menu_item_gladiatrix_tutor_gray, empty, 'Martial arts', $text_feeble)
   ELSEIF slave['gladiatrix'] = 5:
     FUNC('$menu', 'exec', $menu_item_gladiatrix_tutor_gray, empty, 'Martial arts', '<<$slave_name>> is skilled enough at Martial arts, she doesn`t need anymore teaching')
@@ -692,16 +702,16 @@ IF menu_form = menu_tutor:
   
   FUNC('$menu', '===BEGIN===', 'column_1')
 
-  IF slave["stamina"] > 3 and slave['dressage'] < 5: 
+  IF slave["stamina"] >= 3 and slave['dressage'] < 5: 
     FUNC('$menu', 'goto', $menu_item_Dressage_tutor, menu_Dressage_tutor, 'interaction', 'interaction', 'Dressage', 'Invite a Dressage tutor for <<$slave_name>>(<<$couch_price[slave["dressage"]]>>)')
-  ELSEIF slave["stamina"] <= 3:
+  ELSEIF slave["stamina"] < 3:
     FUNC('$menu', 'exec', $menu_item_Dressage_tutor_gray, empty, 'Dressage', $text_feeble)
   ELSEIF slave['dressage'] = 5:
     FUNC('$menu', 'exec', $menu_item_Dressage_tutor_gray, empty, 'Dressage', '<<$slave_name>> is skilled enough at Dressage, she doesn`t need anymore teaching')
   END
-  IF slave["stamina"] > 3 and slave['pet'] < 5: 
+  IF slave["stamina"] >= 3 and slave['pet'] < 5: 
     FUNC('$menu', 'goto', $menu_item_Taming_tutor, menu_Taming_tutor, 'interaction', 'interaction', 'Taming', 'Invite a Taming tutor for <<$slave_name>>(<<$couch_price[slave["pet"]]>>)')
-  ELSEIF slave["stamina"] <= 3:
+  ELSEIF slave["stamina"] < 3:
     FUNC('$menu', 'exec', $menu_item_Taming_tutor_gray, empty, 'Taming', $text_feeble)
   ELSEIF slave['pet'] = 5:
     FUNC('$menu', 'exec', $menu_item_Taming_tutor_gray, empty, 'Taming', '<<$slave_name>> is skilled enough at Taming, she doesn`t need anymore teaching')
@@ -771,14 +781,14 @@ IF menu_form = menu_Accounting:
   IF $bill_message ! '':
     FUNC('$menu', 'exec', $menu_item_financial_report, 'msg $bill_message', 'Financial report', 'View financial report')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Financial_report_gray, empty, 'Financial report', 'there is no reports to view yet')
+    FUNC('$menu', 'exec', $menu_item_Financial_report_gray, empty, 'Financial report', 'There are no reports to view yet')
   END
   $tooltip_increase = 'Increase standard of living ,the increase will cost extra sparks at the end of the decade'
   $tooltip_decrease = 'Decrease standard of living ,the decrease will save extra sparks at the end of the decade'
   IF master_wealth_target = 0:
     FUNC('$menu', 'exec', $menu_item_Impoverished, empty, 'Impoverished', 'Standard of Living: Impoverished')
     FUNC('$menu', 'goto', $menu_item_Increase, menu_IncreaseImpoverished, 'master_wealth_target', 'menu_form', 'Increase', $tooltip_increase)
-    FUNC('$menu', 'exec', $menu_item_Decrease_gray, empty, 'Decrease', 'standard of living is at it`s minimum')
+    FUNC('$menu', 'exec', $menu_item_Decrease_gray, empty, 'Decrease', 'Standard of living is at it`s minimum')
   END   
   IF master_wealth_target = 1:
     FUNC('$menu', 'exec', $menu_item_Poor, empty, 'Poor', 'Standard of Living: Poor')
@@ -807,27 +817,27 @@ IF menu_form = menu_Accounting:
   END   
   IF master_wealth_target = 6:
     FUNC('$menu', 'exec', $menu_item_Extravagant, empty, 'Extravagant', 'Standard of Living: Extravagant')
-    FUNC('$menu', 'exec', $menu_item_Increase_gray, empty, 'Increase', 'standard of living is at it`s maximum')
+    FUNC('$menu', 'exec', $menu_item_Increase_gray, empty, 'Increase', 'Standard of living is at it`s maximum')
     FUNC('$menu', 'goto', $menu_item_Decrease, menu_DecreaseExtravagant, 'master_wealth_target', 'menu_form', 'Decrease', $tooltip_decrease)
   END  
   IF assistant_account_rule = 1 or slave_account_rule = 1:
     FUNC('$menu', 'goto', $menu_item_accounting_personally, 0, 'assistant_account_rule = 0 & slave_account_rule', 'menu_form', 'Do accounting personally', 'Do accounting personally')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_accounting_personally_gray, empty, 'Do accounting personally', 'You doing accounting personally')
+    FUNC('$menu', 'exec', $menu_item_accounting_personally_gray, empty, 'Do accounting personally', 'You are doing the accounting personally')
   END
   IF slave_state = CONST_INT['slave_exist'] and slave_account_rule = 0: 
     FUNC('$menu', 'goto', $menu_item_accounting_slave, menu_accounting_slave, 'slave_account_rule', 'menu_form', 'Accountant:slave', 'Assign <<$slave_name>> as your accountant')
   ELSEIF slave_state = CONST_INT['slave_exist'] and slave_account_rule = 1: 
-    FUNC('$menu', 'goto', $menu_item_accounting_slave_gray, menu_accounting_slave_stop, 'slave_account_rule', 'menu_form', 'Accountant:slave', 'Order <<$slave_name>> to stop accounting')
+    FUNC('$menu', 'goto', $menu_item_accounting_slave_gray, menu_accounting_slave_stop, 'slave_account_rule', 'menu_form', 'Accountant: Slave', 'Order <<$slave_name>> to stop accounting')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_accounting_slave_gray, empty, 'Accountant:slave', 'no slave available')
+    FUNC('$menu', 'exec', $menu_item_accounting_slave_gray, empty, 'Accountant: Slave', 'No slave available')
   END
   IF assistant_state = 1 and assistant_account_rule = 0:
-    FUNC('$menu', 'goto', $menu_item_accounting_assistant, menu_accounting_assistant, 'assistant_account_rule', 'menu_form', 'Accountant:assistant', 'Assign <<$assistant_name>> as your accountant')
+    FUNC('$menu', 'goto', $menu_item_accounting_assistant, menu_accounting_assistant, 'assistant_account_rule', 'menu_form', 'Accountant: Assistant', 'Assign <<$assistant_name>> as your accountant')
   ELSEIF assistant_state = 1 and assistant_account_rule = 1: 
-    FUNC('$menu', 'goto', $menu_item_accounting_assistant_gray, menu_accounting_assistant_stop, 'assistant_account_rule', 'menu_form', 'Accountant:assistant', 'Order <<$assistant_name>> to stop accounting')
+    FUNC('$menu', 'goto', $menu_item_accounting_assistant_gray, menu_accounting_assistant_stop, 'assistant_account_rule', 'menu_form', 'Accountant: Assistant', 'Order <<$assistant_name>> to stop doing the accounting')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_accounting_assistant_gray, empty, 'Accountant:assistant', 'no assistant available')
+    FUNC('$menu', 'exec', $menu_item_accounting_assistant_gray, empty, 'Accountant:assistant', 'No assistant available')
   END
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Accounting"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 3 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
@@ -876,9 +886,9 @@ IF menu_form = menu_Business:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF barn = 1:
-    FUNC('$menu', 'menu_form', $menu_item_barn, menu_barn, 'The barn', 'Go to the barn')
+    FUNC('$menu', 'menu_form', $menu_item_barn, menu_barn, 'The Barn', 'Go to the Barn')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_barn_gray, empty, 'The barn', 'you don`t own a barn')
+    FUNC('$menu', 'exec', $menu_item_barn_gray, empty, 'The Barn', 'You don`t own a Barn')
   END
   FUNC('$menu', 'menu_form', $menu_item_Reports, menu_Reports, 'Reports', 'Barn business reports')
 
@@ -893,29 +903,29 @@ IF menu_form = menu_Take_drug:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF lab_store["koffe"] > 0:
-    FUNC('$menu', 'goto', $menu_item_camra_master, menu_camra_master, 'interaction', 'interaction', 'Drink camra', 'Drink camra (<<lab_store["koffe"]>>)')
+    FUNC('$menu', 'goto', $menu_item_camra_master, menu_camra_master, 'interaction', 'interaction', 'Drink Camra', 'Drink Camra (<<lab_store["koffe"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_camra_master_gray, empty, 'Drink camra', 'you ran out of camra')
+    FUNC('$menu', 'exec', $menu_item_camra_master_gray, empty, 'Drink camra', 'You ran out of Camra')
   END
   IF lab_store["kanabis"] > 0:
-    FUNC('$menu', 'goto', $menu_item_datura_master, menu_datura_master, 'interaction', 'interaction', 'Take datura', 'Take datura (<<lab_store["kanabis"]>>)')
+    FUNC('$menu', 'goto', $menu_item_datura_master, menu_datura_master, 'interaction', 'interaction', 'Take Datura', 'Take Datura (<<lab_store["kanabis"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_datura_master_gray, empty, 'Take datura', 'you ran out of datura')
+    FUNC('$menu', 'exec', $menu_item_datura_master_gray, empty, 'Take Datura', 'You ran out of Datura')
   END
   IF frige["alcohol"] > 0:
-    FUNC('$menu', 'goto', $menu_item_alcohol_master, menu_alcohol_master, 'interaction', 'interaction', 'Drink alcohol', 'Drink alcohol (<<frige["alcohol"]>>)')
+    FUNC('$menu', 'goto', $menu_item_alcohol_master, menu_alcohol_master, 'interaction', 'interaction', 'Drink Alcohol', 'Drink Alcohol (<<frige["alcohol"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_alcohol_master_gray, empty, 'Drink alcohol', 'you ran out of alcohol')
+    FUNC('$menu', 'exec', $menu_item_alcohol_master_gray, empty, 'Drink Alcohol', 'You ran out of Alcohol')
   END
   IF lab_store["meth"] > 0:
-    FUNC('$menu', 'goto', $menu_item_pollen_master, menu_pollen_master, 'interaction', 'interaction', 'Smell pollen', 'Smell pollen (<<lab_store["meth"]>>)')
+    FUNC('$menu', 'goto', $menu_item_pollen_master, menu_pollen_master, 'interaction', 'interaction', 'Smell Pollen', 'Smell Pollen (<<lab_store["meth"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_pollen_master_gray, empty, 'Smell pollen', 'you ran out of pollen')
+    FUNC('$menu', 'exec', $menu_item_pollen_master_gray, empty, 'Smell Pollen', 'You ran out of Pollen')
   END
   IF lab_store["opium"] > 0:
-    FUNC('$menu', 'goto', $menu_item_oblivion_master, menu_oblivion_master, 'interaction', 'interaction', 'Dive into oblivion', 'take dose of essense of oblivion (<<lab_store["opium"]>>)')
+    FUNC('$menu', 'goto', $menu_item_oblivion_master, menu_oblivion_master, 'interaction', 'interaction', 'Dive into Oblivion', 'Take a dose of Essense of Oblivion (<<lab_store["opium"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_oblivion_master_gray, empty, 'Dive into oblivion', 'you ran out of essense of oblivion')
+    FUNC('$menu', 'exec', $menu_item_oblivion_master_gray, empty, 'Dive into Oblivion', 'You ran out of Essense of Oblivion')
   END
   
   FUNC('$menu', '===END===')
@@ -980,7 +990,7 @@ IF menu_form = menu_lesson_S_A:
 
   FUNC('$menu', 'menu_form', $menu_item_Applied_skills_A, menu_Applied_skills_A, 'Applied skills', 'Order <<$assistant_name>> to teach <<$slave_name>> Applied skills')
 
-  IF slave["stamina"] > 3:
+  IF slave["stamina"] >= 1:
     FUNC('$menu', 'menu_form', $menu_item_Physical_development_A, menu_Physical_development_A, 'Physical development', 'Order <<$assistant_name>> to teach <<$slave_name>> Physical development skills')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Physical_development_A_gray, empty, 'Physical development', '<<$slave_name>> is too feeble to do this task, improve her endurance first')
@@ -1020,21 +1030,21 @@ IF menu_form = menu_classes_S:
   ELSE
     FUNC('$menu', 'exec', $menu_item_Clerical_school_gray, empty, 'Clerical work lesson', '<<$slave_name>> is skilled enough at Clerical work, she doesn`t need anymore teaching')
   END 
-  IF slave["stamina"] > 3 and slave['stamina'] < 5: 
-    FUNC('$menu', 'goto', $menu_item_Sport_school, menu_Sport_school, 'interaction', 'interaction', 'Sport class', '<<$slave_name>> takes Sports class at school(<<$school_price[slave["stamina"]]>>)')
-  ELSEIF slave["stamina"] < 3:
-    FUNC('$menu', 'exec', $menu_item_Sport_school_gray, empty, 'Sport class', $text_feeble)
-  ELSEIF slave['stamina'] = 5:
-    FUNC('$menu', 'exec', $menu_item_Sport_school_gray, empty, 'Sport class', '<<$slave_name>> is skilled enough at Sports, she doesn`t need anymore teaching')
+  IF slave["stamina"] >= 1 and slave['stamina'] <= 5: 
+    FUNC('$menu', 'goto', $menu_item_Sport_school, menu_Sport_school, 'interaction', 'interaction', 'Sports & Fitness', '<<$slave_name>> takes Sports class at school(<<$school_price[slave["stamina"]]>>)')
+  ELSEIF slave["stamina"] < 1:
+    FUNC('$menu', 'exec', $menu_item_Sport_school_gray, empty, 'Sports & Fitness', $text_feeble)
+  ELSEIF slave['stamina'] > 5:
+    FUNC('$menu', 'exec', $menu_item_Sport_school_gray, empty, 'Sports & Fitness', '<<$slave_name>> is skilled enough at Sports, she doesn`t need anymore teaching')
   END 
-  IF slave["stamina"] > 3 and slave['callisthenics'] < 5: 
+  IF slave["stamina"] >= 3 and slave['callisthenics'] < 5: 
     FUNC('$menu', 'goto', $menu_item_Choreography_school, menu_Choreography_school, 'interaction', 'interaction', 'Choreography class', '<<$slave_name>> takes Choreography class at school(<<$school_price[slave["callisthenics"]]>>)')
   ELSEIF slave["stamina"] < 3:
     FUNC('$menu', 'exec', $menu_item_Choreography_school_gray, empty, 'Choreography class', $text_feeble)
   ELSEIF slave['callisthenics'] = 5:
     FUNC('$menu', 'exec', $menu_item_Choreography_school_gray, empty, 'Choreography class', '<<$slave_name>> is skilled enough at Choreography, she doesn`t need anymore teaching')
   END 
-  IF slave["stamina"] > 3 and slave['gladiatrix'] < 5: 
+  IF slave["stamina"] >= 3 and slave['gladiatrix'] < 5: 
     FUNC('$menu', 'goto', $menu_item_gladiatrix_school, menu_gladiatrix_school, 'interaction', 'interaction', 'Martial arts lesson', '<<$slave_name>> takes Martial arts lesson at school(<<$school_price[slave["gladiatrix"]]>>)')
   ELSEIF slave["stamina"] < 3:
     FUNC('$menu', 'exec', $menu_item_gladiatrix_school_gray, empty, 'Martial arts lesson', $text_feeble)
@@ -1049,14 +1059,14 @@ END
 IF menu_form = menu_classes_S:
 
   FUNC('$menu', '===BEGIN===', 'column_1')
-  IF slave["stamina"] > 3 and slave['dressage'] < 5: 
+  IF slave["stamina"] >= 3 and slave['dressage'] < 5: 
     FUNC('$menu', 'goto', $menu_item_Dressage_school, menu_Dressage_school, 'interaction', 'interaction', 'Dressage lesson', '<<$slave_name>> takes Dressage lesson at school(<<$school_price[slave["dressage"]]>>)')
   ELSEIF slave["stamina"] < 3:
     FUNC('$menu', 'exec', $menu_item_Dressage_school_gray, empty, 'Dressage lesson', $text_feeble)
   ELSEIF slave['dressage'] = 5:
     FUNC('$menu', 'exec', $menu_item_Dressage_school_gray, empty, 'Dressage lesson', '<<$slave_name>> is skilled enough at Dressage, she doesn`t need anymore teaching')
   END 
-  IF slave["stamina"] > 3 and slave['pet'] < 5: 
+  IF slave["stamina"] >= 3 and slave['pet'] < 5: 
     FUNC('$menu', 'goto', $menu_item_Taming_school, menu_Taming_school, 'interaction', 'interaction', 'Taming lesson', '<<$slave_name>> takes Taming lesson at school(<<$school_price[slave["pet"]]>>)')
   ELSEIF slave["stamina"] < 3:
     FUNC('$menu', 'exec', $menu_item_Taming_school_gray, empty, 'Taming lesson', $text_feeble)
@@ -1097,29 +1107,29 @@ IF menu_form = menu_drug_S:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF lab_store["koffe"] > 0:
-    FUNC('$menu', 'goto', $menu_item_camra_slave, menu_camra_slave, 'interaction', 'interaction', 'Drink camra', 'order <<$slave_name>> to take Drink camra (<<lab_store["koffe"]>>)')
+    FUNC('$menu', 'goto', $menu_item_camra_slave, menu_camra_slave, 'interaction', 'interaction', 'Drink Camra', 'Order <<$slave_name>> to drink Camra (<<lab_store["koffe"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_camra_slave_gray, empty, 'Drink camra', 'you ran out of camra')
+    FUNC('$menu', 'exec', $menu_item_camra_slave_gray, empty, 'Drink Camra', 'You ran out of Camra')
   END 
   IF lab_store["kanabis"] > 0:
-    FUNC('$menu', 'goto', $menu_item_Datura_slave, menu_Datura_slave, 'interaction', 'interaction', 'Blaze it', 'order <<$slave_name>> to smoke Datura (<<lab_store["kanabis"]>>)')
+    FUNC('$menu', 'goto', $menu_item_Datura_slave, menu_Datura_slave, 'interaction', 'interaction', 'Blaze it', 'Order <<$slave_name>> to smoke Datura (<<lab_store["kanabis"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Datura_slave_gray, empty, 'Blaze it', 'you ran out of Datura')
+    FUNC('$menu', 'exec', $menu_item_Datura_slave_gray, empty, 'Blaze it', 'You ran out of Datura')
   END 
   IF frige["alcohol"] > 0:
-    FUNC('$menu', 'goto', $menu_item_Alcohol_slave, menu_Alcohol_slave, 'interaction', 'interaction', 'Chug', 'order <<$slave_name>> to drink Alcohol (<<lab_store["alcohol"]>>)')
+    FUNC('$menu', 'goto', $menu_item_Alcohol_slave, menu_Alcohol_slave, 'interaction', 'interaction', 'Chug', 'Order <<$slave_name>> to drink Alcohol (<<frige["alcohol"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Alcohol_slave_gray, empty, 'Chug', 'you ran out of Alcohol')
+    FUNC('$menu', 'exec', $menu_item_Alcohol_slave_gray, empty, 'Chug', 'You ran out of Alcohol')
   END 
   IF lab_store["meth"] > 0:
-    FUNC('$menu', 'goto', $menu_item_pollen_slave, menu_pollen_slave, 'interaction', 'interaction', 'Smell pollen', 'order <<$slave_name>> to smell Pollen (<<lab_store["meth"]>>)')
+    FUNC('$menu', 'goto', $menu_item_pollen_slave, menu_pollen_slave, 'interaction', 'interaction', 'Smell Pollen', 'Order <<$slave_name>> to smell Pollen (<<lab_store["meth"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_pollen_slave_gray, empty, 'Smell pollen', 'you ran out of pollen')
+    FUNC('$menu', 'exec', $menu_item_pollen_slave_gray, empty, 'Smell Pollen', 'You ran out of Pollen')
   END 
   IF lab_store["opium"] > 0:
-    FUNC('$menu', 'goto', $menu_item_oblivion_slave, menu_oblivion_slave, 'interaction', 'interaction', 'Your dose of happiness', 'order <<$slave_name>> to take a dose of Essense of oblivion (<<lab_store["opium"]>>)')
+    FUNC('$menu', 'goto', $menu_item_oblivion_slave, menu_oblivion_slave, 'interaction', 'interaction', 'Your Dose of Happiness', 'Order <<$slave_name>> to take a dose of Essense of Oblivion (<<lab_store["opium"]>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_oblivion_slave_gray, empty, 'Your dose of happiness', 'you ran out of Essense of oblivion')
+    FUNC('$menu', 'exec', $menu_item_oblivion_slave_gray, empty, 'Your Dose of Happiness', 'You ran out of Essense of Oblivion')
   END 
 
   FUNC('$menu', '===END===')
@@ -1135,39 +1145,39 @@ IF menu_form = menu_potion_S:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF вакхический_нектар > 0:
-    FUNC('$menu', 'goto', $menu_item_nectar_slave, menu_nectar_slave, 'interaction', 'interaction', 'Bacchic nectar', 'order <<$slave_name>> to drink Bacchic Nectar potion (<<вакхический_нектар>>)')
+    FUNC('$menu', 'goto', $menu_item_nectar_slave, menu_nectar_slave, 'interaction', 'interaction', 'Bacchic nectar', 'Order <<$slave_name>> to drink a Bacchic Nectar potion (<<вакхический_нектар>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_nectar_slave_gray, empty, 'Bacchic nectar', 'you ran out of Bacchic Nectar potions')
+    FUNC('$menu', 'exec', $menu_item_nectar_slave_gray, empty, 'Bacchic nectar', 'You ran out of Bacchic Nectar potions')
   END 
   IF тонизируюзщий_эликсир > 0:
-    FUNC('$menu', 'goto', $menu_item_elixir_slave, menu_elixir_slave, 'interaction', 'interaction', 'Tonic elixir', 'order <<$slave_name>> to drink Tonic Elixir potion (<<тонизируюзщий_эликсир>>)')
+    FUNC('$menu', 'goto', $menu_item_elixir_slave, menu_elixir_slave, 'interaction', 'interaction', 'Tonic elixir', 'Order <<$slave_name>> to drink a Tonic Elixir potion (<<тонизируюзщий_эликсир>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_elixir_slave_gray, empty, 'Tonic elixir', 'you ran out of Tonic Elixir potions')
+    FUNC('$menu', 'exec', $menu_item_elixir_slave_gray, empty, 'Tonic elixir', 'You ran out of Tonic Elixir potions')
   END 
   IF целительный_бальзам > 0:
-    FUNC('$menu', 'goto', $menu_item_Balm_slave, menu_Balm_slave, 'interaction', 'interaction', 'Miracle Balm', 'order <<$slave_name>> to drink Miracle Balm potion (<<целительный_бальзам>>)')
+    FUNC('$menu', 'goto', $menu_item_Balm_slave, menu_Balm_slave, 'interaction', 'interaction', 'Miracle Balm', 'Order <<$slave_name>> to drink a Miracle Balm potion (<<целительный_бальзам>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Balm_slave_gray, empty, 'Miracle Balm', 'you ran out of Miracle Balm potions')
+    FUNC('$menu', 'exec', $menu_item_Balm_slave_gray, empty, 'Miracle Balm', 'You ran out of Miracle Balm potions')
   END 
   IF афродизиак > 0:
-    FUNC('$menu', 'goto', $menu_item_Aphrodisiac_slave, menu_Aphrodisiac_slave, 'interaction', 'interaction', 'Aphrodisiac', 'order <<$slave_name>> to drink Aphrodisiac potion (<<афродизиак>>)')
+    FUNC('$menu', 'goto', $menu_item_Aphrodisiac_slave, menu_Aphrodisiac_slave, 'interaction', 'interaction', 'Aphrodisiac', 'Order <<$slave_name>> to drink an Aphrodisiac potion (<<афродизиак>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Aphrodisiac_slave_gray, empty, 'Aphrodisiac', 'you ran out of Aphrodisiac potions')
+    FUNC('$menu', 'exec', $menu_item_Aphrodisiac_slave_gray, empty, 'Aphrodisiac', 'You ran out of Aphrodisiac potions')
   END 
   IF мощный_афодизиак > 0:
-    FUNC('$menu', 'goto', $menu_item_PowerfulAphrodisiac_slave, menu_PowerfulAphrodisiac_slave, 'interaction', 'interaction', 'Powerful Aphrodisiac', 'order <<$slave_name>> to drink Powerful Aphrodisiac potion (<<мощный_афодизиак>>)')
+    FUNC('$menu', 'goto', $menu_item_PowerfulAphrodisiac_slave, menu_PowerfulAphrodisiac_slave, 'interaction', 'interaction', 'Powerful Aphrodisiac', 'Order <<$slave_name>> to drink a Powerful Aphrodisiac potion (<<мощный_афодизиак>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_PowerfulAphrodisiac_slave_gray, empty, 'Powerful Aphrodisiac', 'you ran out of Powerful Aphrodisiac potions')
+    FUNC('$menu', 'exec', $menu_item_PowerfulAphrodisiac_slave_gray, empty, 'Powerful Aphrodisiac', 'You ran out of Powerful Aphrodisiac potions')
   END 
   IF приворотное_зелье > 0:
-    FUNC('$menu', 'goto', $menu_item_Philtre_slave, menu_Philtre_slave, 'interaction', 'interaction', 'Philtre', 'order <<$slave_name>> to drink Philtre potion (<<приворотное_зелье>>)')
+    FUNC('$menu', 'goto', $menu_item_Philtre_slave, menu_Philtre_slave, 'interaction', 'interaction', 'Philtre', 'Order <<$slave_name>> to drink a Philtre potion (<<приворотное_зелье>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Philtre_slave_gray, empty, 'Philtre', 'you ran out of Philtre potions')
+    FUNC('$menu', 'exec', $menu_item_Philtre_slave_gray, empty, 'Philtre', 'You ran out of Philtre potions')
   END 
   IF вода_леты > 0:
-    FUNC('$menu', 'goto', $menu_item_Lethe_slave, menu_Lethe_slave, 'interaction', 'interaction', 'Water of Lethe', 'order <<$slave_name>> to drink Water of Lethe potion (<<вода_леты>>)')
+    FUNC('$menu', 'goto', $menu_item_Lethe_slave, menu_Lethe_slave, 'interaction', 'interaction', 'Water of Lethe', 'Order <<$slave_name>> to drink a Water of Lethe potion (<<вода_леты>>)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Lethe_slave_gray, empty, 'Water of Lethe', 'you ran out of Water of Lethe potions')
+    FUNC('$menu', 'exec', $menu_item_Lethe_slave_gray, empty, 'Water of Lethe', 'You ran out of Water of Lethe potions')
   END 
 
   FUNC('$menu', '===END===')
@@ -1256,12 +1266,12 @@ IF menu_form = 122:
   FUNC('$menu', 'goto', $menu_item_ConductChoreography, menu_ConductChoreography, 'interaction', 'interaction', 'Choreography', 'Train <<$slave_name>> Choreography')
   FUNC('$menu', 'goto', $menu_item_ConductMartialarts, menu_ConductMartialarts, 'interaction', 'interaction', 'Martial arts', 'Train <<$slave_name>> Martial arts')
 
-  IF slave["stamina"] > 3: 
+  IF slave["stamina"] >= 3: 
     FUNC('$menu', 'goto', $menu_item_ConductDressage, menu_ConductDressage, 'interaction', 'interaction', 'Dressage', 'Train <<$slave_name>> Dressage')
   ELSE
     FUNC('$menu', 'exec', $menu_item_ConductDressage_gray, empty, 'Dressage', $text_feeble)
   END
-  IF slave["stamina"] > 4:
+  IF slave["stamina"] >= 4:
     FUNC('$menu', 'goto', $menu_item_ConductHarness, menu_ConductHarness, 'interaction', 'interaction', 'Harness', 'Train <<$slave_name>> Harness')
   ELSE
     FUNC('$menu', 'exec', $menu_item_ConductHarness_gray, empty, 'Harness', $text_feeble)
@@ -1340,7 +1350,7 @@ IF menu_form = 1233:
     FUNC('$menu', 'exec', $menu_item_Violin_gray, empty, 'Violin', '<<$slave_name>> has mastered this instrument')
   END
   IF flute > 0 and slave["music"] < 4:
-    FUNC('$menu', 'goto', $menu_item_Flute, menu_Flute, 'interaction', 'interaction', 'Block flute', 'Teach <<$slave_name>> how to play the Block flute')
+    FUNC('$menu', 'goto', $menu_item_Flute, menu_Flute, 'interaction', 'interaction', 'Block flute', 'Teach <<$slave_name>> how to play the Block Flute')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Flute_gray, empty, 'Block flute', '<<$slave_name>> has mastered this instrument')
   END
@@ -1363,22 +1373,22 @@ IF menu_form = 131:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF slave["sub_hj"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Handjob, menu_Handjob, 'interaction', 'interaction', 'Handjob', 'Teach <<$slave_name>> sexed lesson (Handjob)')
+    FUNC('$menu', 'goto', $menu_item_Handjob, menu_Handjob, 'interaction', 'interaction', 'Handjob', 'Teach <<$slave_name>> sex lesson (Handjob)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Handjob_gray, empty, 'Handjob', $text_skilledsex)
   END
   IF slave["sub_fj"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Footjob, menu_Footjob, 'interaction', 'interaction', 'Footjob', 'Teach <<$slave_name>> sexed lesson (Footjob)')
+    FUNC('$menu', 'goto', $menu_item_Footjob, menu_Footjob, 'interaction', 'interaction', 'Footjob', 'Teach <<$slave_name>> sex lesson (Footjob)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Footjob_gray, empty, 'Footjob', $text_skilledsex)
   END
   IF slave["sub_hug"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Rubbing, menu_Rubbing, 'interaction', 'interaction', 'Rubbing', 'Teach <<$slave_name>> sexed lesson (Rubbing)')
+    FUNC('$menu', 'goto', $menu_item_Rubbing, menu_Rubbing, 'interaction', 'interaction', 'Rubbing', 'Teach <<$slave_name>> sex lesson (Rubbing)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Rubbing_gray, empty, 'Rubbing', $text_skilledsex)
   END
   IF slave["sub_pazuri"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Paizuri, menu_Paizuri, 'interaction', 'interaction', 'Paizuri', 'Teach <<$slave_name>> sexed lesson (Paizuri)')
+    FUNC('$menu', 'goto', $menu_item_Paizuri, menu_Paizuri, 'interaction', 'interaction', 'Paizuri', 'Teach <<$slave_name>> sex lesson (Paizuri)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Paizuri_gray, empty, 'Paizuri', $text_skilledsex)
   END
@@ -1395,27 +1405,27 @@ IF menu_form = 132:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   if slave["sub_kiss"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Kissing, menu_Kissing, 'interaction', 'interaction', 'Kissing', 'Teach <<$slave_name>> sexed lesson (Kissing)')
+    FUNC('$menu', 'goto', $menu_item_Kissing, menu_Kissing, 'interaction', 'interaction', 'Kissing', 'Teach <<$slave_name>> sex lesson (Kissing)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Kissing_gray, empty, 'Kissing', $text_skilledsex)
   END
   if slave["sub_thongue"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Licking, menu_Licking, 'interaction', 'interaction', 'Licking', 'Teach <<$slave_name>> sexed lesson (Licking)')
+    FUNC('$menu', 'goto', $menu_item_Licking, menu_Licking, 'interaction', 'interaction', 'Licking', 'Teach <<$slave_name>> sex lesson (Licking)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Licking_gray, empty, 'Licking', $text_skilledsex)
   END
   if slave["sub_bj"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Blowjob, menu_Blowjob, 'interaction', 'interaction', 'Blowjob', 'Teach <<$slave_name>> sexed lesson (Blowjob)')
+    FUNC('$menu', 'goto', $menu_item_Blowjob, menu_Blowjob, 'interaction', 'interaction', 'Blowjob', 'Teach <<$slave_name>> sex lesson (Blowjob)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Blowjob_gray, empty, 'Blowjob', $text_skilledsex)
   END
   if slave["sub_dt"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Deepthroat, menu_Deepthroat, 'interaction', 'interaction', 'Deepthroat', 'Teach <<$slave_name>> sexed lesson (Deepthroat)')
+    FUNC('$menu', 'goto', $menu_item_Deepthroat, menu_Deepthroat, 'interaction', 'interaction', 'Deepthroat', 'Teach <<$slave_name>> sex lesson (Deepthroat)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Deepthroat_gray, empty, 'Deepthroat', $text_skilledsex)
   END
   if slave["sub_asslik"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Rimming, menu_Rimming, 'interaction', 'interaction', 'Rimming', 'Teach <<$slave_name>> sexed lesson (Rimming)')
+    FUNC('$menu', 'goto', $menu_item_Rimming, menu_Rimming, 'interaction', 'interaction', 'Rimming', 'Teach <<$slave_name>> sex lesson (Rimming)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Rimming_gray, empty, 'Rimming', $text_skilledsex)
   END
@@ -1432,22 +1442,22 @@ IF menu_form = 133:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   if slave["sub_vaginal"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Vaginal, menu_Vaginal, 'interaction', 'interaction', 'Vaginal sex', 'Teach <<$slave_name>> sexed lesson (Vaginal sex)')
+    FUNC('$menu', 'goto', $menu_item_Vaginal, menu_Vaginal, 'interaction', 'interaction', 'Vaginal sex', 'Teach <<$slave_name>> sex lesson (Vaginal sex)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Vaginal_gray, empty, 'Vaginal sex', $text_skilledsex)
   END
   if slave["sub_anal"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Anal, menu_Anal, 'interaction', 'interaction', 'Anal sex', 'Teach <<$slave_name>> sexed lesson (Anal sex)')
+    FUNC('$menu', 'goto', $menu_item_Anal, menu_Anal, 'interaction', 'interaction', 'Anal sex', 'Teach <<$slave_name>> sex lesson (Anal sex)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Anal_gray, empty, 'Anal sex', $text_skilledsex)
   END
   if slave["sub_fisting"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Fisting, menu_Fisting, 'interaction', 'interaction', 'Fisting', 'Teach <<$slave_name>> sexed lesson (Fisting)')
+    FUNC('$menu', 'goto', $menu_item_Fisting, menu_Fisting, 'interaction', 'interaction', 'Fisting', 'Teach <<$slave_name>> sex lesson (Fisting)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Fisting_gray, empty, 'Fisting', $text_skilledsex)
   END
   if slave["anal_stretch"] < 5:
-    FUNC('$menu', 'goto', $menu_item_AnalFisting, menu_AnalFisting, 'interaction', 'interaction', 'Anal Fisting', 'Teach <<$slave_name>> sexed lesson (Anal fisting)')
+    FUNC('$menu', 'goto', $menu_item_AnalFisting, menu_AnalFisting, 'interaction', 'interaction', 'Anal Fisting', 'Teach <<$slave_name>> sex lesson (Anal fisting)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_AnalFisting_gray, empty, 'Anal Fisting', $text_skilledsex)
   END
@@ -1464,29 +1474,29 @@ IF menu_form = 134:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF assistant_state = 1 and slave["sub_threesome"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome, 'interaction', 'interaction', 'Threesome', 'Teach <<$slave_name>> sexed lesson (Threesome)')
-  ELSEIF assistant_state = 0:
-    FUNC('$menu', 'exec', $menu_item_Threesome_gray, empty, 'Threesome', 'You have no assistant to perfrom this lesson')
+    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome_personal, 'interaction', 'interaction', 'Threesome', 'Teach <<$slave_name>> sex lesson (Threesome)')
+  ELSEIF assistant_state = 0 and slave["sub_threesome"] < 5:
+    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome_noassistant_personal, 'interaction', 'interaction', 'Threesome', 'Teach <<$slave_name>> sex lesson (Threesome)')
   ELSEIF slave["sub_threesome"] = 5:
     FUNC('$menu', 'exec', $menu_item_Threesome_gray, empty, 'Threesome', $text_skilledsex)
   END
   if slave["sub_dp"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Double, menu_Double, 'interaction', 'interaction', 'Double penetration', 'Teach <<$slave_name>> sexed lesson (Double penetration)')
+    FUNC('$menu', 'goto', $menu_item_Double, menu_Double, 'interaction', 'interaction', 'Double penetration', 'Teach <<$slave_name>> sex lesson (Double penetration)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Double_gray, empty, 'Double penetration', $text_skilledsex)
   END
   if slave["sub_tp"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Triple, menu_Triple, 'interaction', 'interaction', 'Triple penetration', 'Teach <<$slave_name>> sexed lesson (Triple penetration)')
+    FUNC('$menu', 'goto', $menu_item_Triple, menu_Triple, 'interaction', 'interaction', 'Triple penetration', 'Teach <<$slave_name>> sex lesson (Triple penetration)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Triple_gray, empty, 'Triple penetration', $text_skilledsex)
   END
   if slave["sub_gangbang"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Gangbang, menu_Gangbang, 'interaction', 'interaction', 'Gangbang', 'Teach <<$slave_name>> sexed lesson (Gangbang)')
+    FUNC('$menu', 'goto', $menu_item_Gangbang, menu_Gangbang, 'interaction', 'interaction', 'Gangbang', 'Teach <<$slave_name>> sex lesson (Gangbang)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Gangbang_gray, empty, 'Gangbang', $text_skilledsex)
   END
   if slave["sub_bukake"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Bukkake, menu_Bukkake, 'interaction', 'interaction', 'Bukkake', 'Teach <<$slave_name>> sexed lesson (Bukkake)')
+    FUNC('$menu', 'goto', $menu_item_Bukkake, menu_Bukkake, 'interaction', 'interaction', 'Bukkake', 'Teach <<$slave_name>> sex lesson (Bukkake)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Bukkake_gray, empty, 'Bukkake', $text_skilledsex)
   END
@@ -1503,40 +1513,40 @@ IF menu_form = 135:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   if dog > 0 and slave["sub_zoosex"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Dog, menu_Dog, 'interaction', 'interaction', 'Dog mating', 'Teach <<$slave_name>> sexed lesson (Dog mating)')
+    FUNC('$menu', 'goto', $menu_item_Dog, menu_Dog, 'interaction', 'interaction', 'Dog mating', 'Teach <<$slave_name>> sex lesson (Dog mating)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Dog_gray, empty, 'Dog mating', $text_skilledsex)
   END
   if svine > 0 and slave["sub_bestiality"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Pig, menu_Pig, 'interaction', 'interaction', 'Pig mating', 'Teach <<$slave_name>> sexed lesson (Pig mating)')
+    FUNC('$menu', 'goto', $menu_item_Pig, menu_Pig, 'interaction', 'interaction', 'Pig mating', 'Teach <<$slave_name>> sex lesson (Pig mating)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Pig_gray, empty, 'Pig mating', $text_skilledsex)
   END
   if horse > 0 and slave["sub_horse"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Horse, menu_Horse, 'interaction', 'interaction', 'Horse mating', 'Teach <<$slave_name>> sexed lesson (Horse mating)')
+    FUNC('$menu', 'goto', $menu_item_Horse, menu_Horse, 'interaction', 'interaction', 'Horse mating', 'Teach <<$slave_name>> sex lesson (Horse mating)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Horse_gray, empty, 'Horse mating', $text_skilledsex)
   END
   if pet_tentacle > 0 and slave["sub_tentacles"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Fiend, menu_Fiend, 'interaction', 'interaction', 'Fiend mating', 'Teach <<$slave_name>> sexed lesson (Fiend mating)')
+    FUNC('$menu', 'goto', $menu_item_Fiend, menu_Fiend, 'interaction', 'interaction', 'Fiend mating', 'Teach <<$slave_name>> sex lesson (Fiend mating)')
   ELSEIF pet_tentacle = 0:
     FUNC('$menu', 'exec', $menu_item_Fiend_gray, empty, 'Fiend mating', 'You don`t own a fiend pet')
   ELSEIF slave["sub_tentacles"] = 5:
     FUNC('$menu', 'exec', $menu_item_Fiend_gray, empty, 'Fiend mating', $text_skilledsex)
   END
   if arachnidSpider > 0 and dungeon = 1 and slave["sub_arachnidSpider"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Spider, menu_Spider, 'interaction', 'interaction', 'Spider mating', 'Teach <<$slave_name>> sexed lesson (Spider mating)')
+    FUNC('$menu', 'goto', $menu_item_Spider, menu_Spider, 'interaction', 'interaction', 'Spider mating', 'Teach <<$slave_name>> sex lesson (Spider mating)')
   ELSEIF dungeon = 0:
     FUNC('$menu', 'exec', $menu_item_Spider_gray, empty, 'Spider mating', 'You don`t own a dungeon')
   ELSEIF slave["sub_arachnidSpider"] = 5:
     FUNC('$menu', 'exec', $menu_item_Spider_gray, empty, 'Spider mating', $text_skilledsex)
   END
   if polypusvermin > 0 and dungeon = 1 and slave["sub_polypusvermin"] < 5:
-    FUNC('$menu', 'goto', $menu_item_polypus, menu_polypus, 'interaction', 'interaction', 'Sea tentacle mating', 'Teach <<$slave_name>> sexed lesson (Sea tentacle mating)')
+    FUNC('$menu', 'goto', $menu_item_polypus, menu_polypus, 'interaction', 'interaction', 'Sea Tentacle mating', 'Teach <<$slave_name>> sex lesson (Sea Tentacle mating)')
   ELSEIF dungeon = 0:
-    FUNC('$menu', 'exec', $menu_item_polypus_gray, empty, 'Sea tentacle mating', 'You don`t own a dungeon')
+    FUNC('$menu', 'exec', $menu_item_polypus_gray, empty, 'Sea Tentacle mating', 'You don`t own a dungeon')
   ELSEIF slave["sub_polypusvermin"] = 5:
-    FUNC('$menu', 'exec', $menu_item_polypus_gray, empty, 'Sea tentacle mating', $text_skilledsex)
+    FUNC('$menu', 'exec', $menu_item_polypus_gray, empty, 'Sea Tentacle mating', $text_skilledsex)
   END
 
   FUNC('$menu', '===END===')
@@ -1546,32 +1556,32 @@ END
 
 !main menu - Slave activities - Sex - Fetishism
 IF menu_form = 136:
-  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
-
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+   
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF bath > 0 and slave["sub_enema"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Enema, menu_Enema, 'interaction', 'interaction', 'Enema', 'Teach <<$slave_name>> sexed lesson (Enema)')
+    FUNC('$menu', 'goto', $menu_item_Enema, menu_Enema, 'interaction', 'interaction', 'Enema', 'Teach <<$slave_name>> sex lesson (Enema)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Enema_gray, empty, 'Enema', $text_skilledsex)
   END
   IF slave["sub_mazo"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Masochism, menu_Masochism, 'interaction', 'interaction', 'Masochism', 'Teach <<$slave_name>> sexed lesson (Masochism)')
+    FUNC('$menu', 'goto', $menu_item_Masochism, menu_Masochism, 'interaction', 'interaction', 'Masochism', 'Teach <<$slave_name>> sex lesson (Masochism)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Masochism_gray, empty, 'Masochism', $text_skilledsex)
   END
   IF slave["sub_selfpain"] < 5:
-    FUNC('$menu', 'goto', $menu_item_selfpain, menu_selfpain, 'interaction', 'interaction', 'Self torture', 'Teach <<$slave_name>> sexed lesson (Self torture)')
+    FUNC('$menu', 'goto', $menu_item_selfpain, menu_selfpain, 'interaction', 'interaction', 'Self torture', 'Teach <<$slave_name>> sex lesson (Self torture)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_selfpain_gray, empty, 'Self torture', $text_skilledsex)
   END
   IF bath > 0 and slave["sub_piss"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Golden, menu_Golden, 'interaction', 'interaction', 'Golden shower', 'Teach <<$slave_name>> sexed lesson (Golden shower)')
+    FUNC('$menu', 'goto', $menu_item_Golden, menu_Golden, 'interaction', 'interaction', 'Golden shower', 'Teach <<$slave_name>> sex lesson (Golden shower)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Golden_gray, empty, 'Golden shower', $text_skilledsex)
   END
   IF bath > 0 and slave["sub_kopro"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Scat, menu_Scat, 'interaction', 'interaction', 'Scat', 'Teach <<$slave_name>> sexed lesson (Scat)')
+    FUNC('$menu', 'goto', $menu_item_Scat, menu_Scat, 'interaction', 'interaction', 'Scat', 'Teach <<$slave_name>> sex lesson (Scat)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Scat_gray, empty, 'Scat', $text_skilledsex)
   END
@@ -1588,27 +1598,27 @@ IF menu_form = 137:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF slave["sub_seduce"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Seduction, menu_Seduction, 'interaction', 'interaction', 'Seduction', 'Teach <<$slave_name>> sexed lesson (Seduction)')
+    FUNC('$menu', 'goto', $menu_item_Seduction, menu_Seduction, 'interaction', 'interaction', 'Seduction', 'Teach <<$slave_name>> sex lesson (Seduction)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Seduction_gray, empty, 'Seduction', $text_skilledsex)
   END
   IF slave["sub_masturbation"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Masturbation, menu_Masturbation, 'interaction', 'interaction', 'Masturbation', 'Teach <<$slave_name>> sexed lesson (Masturbation)')
+    FUNC('$menu', 'goto', $menu_item_Masturbation, menu_Masturbation, 'interaction', 'interaction', 'Masturbation', 'Teach <<$slave_name>> sex lesson (Masturbation)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Masturbation_gray, empty, 'Masturbation', $text_skilledsex)
   END
   IF slave["sub_dildo"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Dildo, menu_Dildo, 'interaction', 'interaction', 'Dildo', 'Teach <<$slave_name>> sexed lesson (Dildo)')
+    FUNC('$menu', 'goto', $menu_item_Dildo, menu_Dildo, 'interaction', 'interaction', 'Dildo', 'Teach <<$slave_name>> sex lesson (Dildo)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Dildo_gray, empty, 'Dildo', $text_skilledsex)
   END
   IF slave["sub_exhibit"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Exhibitionism, menu_Exhibitionism, 'interaction', 'interaction', 'Exhibitionism', 'Teach <<$slave_name>> sexed lesson (Exhibitionism)')
+    FUNC('$menu', 'goto', $menu_item_Exhibitionism, menu_Exhibitionism, 'interaction', 'interaction', 'Exhibitionism', 'Teach <<$slave_name>> sex lesson (Exhibitionism)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Exhibitionism_gray, empty, 'Exhibitionism', $text_skilledsex)
   END
   IF slave["sub_humiliation"] < 5:
-    FUNC('$menu', 'goto', $menu_item_Worship, menu_Worship, 'interaction', 'interaction', 'Worship and humiliation', 'Teach <<$slave_name>> sexed lesson (Worship and humiliation)')
+    FUNC('$menu', 'goto', $menu_item_Worship, menu_Worship, 'interaction', 'interaction', 'Worship and humiliation', 'Teach <<$slave_name>> sex lesson (Worship and humiliation)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Worship_gray, empty, 'Worship and humiliation', $text_skilledsex)
   END
@@ -1815,10 +1825,10 @@ IF menu_form = 147:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   FUNC('$menu', 'goto', $menu_item_Naked_walk, menu_Naked_walk, 'interaction', 'interaction', 'Naked walk', 'Take <<$slave_name>> for naked walk (=1)')
-  FUNC('$menu', 'goto', $menu_item_podium, menu_podium, 'interaction', 'interaction', 'Shameful podium', 'put <<$slave_name>> on the slave market''s podium (=2)')
-  FUNC('$menu', 'goto', $menu_item_canvas, menu_canvas, 'interaction', 'interaction', 'Living canvas', 'put <<$slave_name>> on the street as a Living canvas (=3)')
-  FUNC('$menu', 'goto', $menu_item_Public_use, menu_Public_use, 'interaction', 'interaction', 'Public use', 'put <<$slave_name>> on the street for Public use (=4)')
-  FUNC('$menu', 'goto', $menu_item_Public_toilet, menu_Public_toilet, 'interaction', 'interaction', 'Public toilet', 'put <<$slave_name>> on the street as a Public toilet (=5)')
+  FUNC('$menu', 'goto', $menu_item_podium, menu_podium, 'interaction', 'interaction', 'Shameful podium', 'Put <<$slave_name>> on the slave market''s podium (=2)')
+  FUNC('$menu', 'goto', $menu_item_canvas, menu_canvas, 'interaction', 'interaction', 'Living canvas', 'Put <<$slave_name>> on the street as a Living canvas (=3)')
+  FUNC('$menu', 'goto', $menu_item_Public_use, menu_Public_use, 'interaction', 'interaction', 'Public use', 'Put <<$slave_name>> on the street for Public use (=4)')
+  FUNC('$menu', 'goto', $menu_item_Public_toilet, menu_Public_toilet, 'interaction', 'interaction', 'Public toilet', 'Put <<$slave_name>> on the street as a Public toilet (=5)')
 
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Shaming"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 14 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
@@ -1849,19 +1859,19 @@ IF menu_form = 151:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   FUNC('$menu', 'goto', $menu_item_Stroll, menu_Stroll, 'interaction', 'interaction', 'Stroll on the roof', 'Stroll with <<$slave_name>> on the roof (=1)')
-  FUNC('$menu', 'goto', $menu_item_Walk_city, menu_Walk_city, 'interaction', 'interaction', 'Walk around the city', 'take <<$slave_name>> for a Walk around the city (=2)')
+  FUNC('$menu', 'goto', $menu_item_Walk_city, menu_Walk_city, 'interaction', 'interaction', 'Walk around the city', 'Take <<$slave_name>> for a Walk around the city (=2)')
   IF sparks >= 2 and already_done_today[1513] = 0: 
-    FUNC('$menu', 'goto', $menu_item_beach, menu_beach, 'interaction', 'interaction', 'Go to the beach', 'take <<$slave_name>> to the beach (2 sparks) (=3)')
+    FUNC('$menu', 'goto', $menu_item_beach, menu_beach, 'interaction', 'interaction', 'Go to the beach', 'Take <<$slave_name>> to the beach (2 sparks) (=3)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_beach_gray, empty, 'Go to the beach', 'You already went to the beach today')
   END
   IF sparks >= 4 and already_done_today[1514] = 0: 
-    FUNC('$menu', 'goto', $menu_item_theater, menu_theater, 'interaction', 'interaction', 'Go to the theater', 'take <<$slave_name>> to the theater (4 sparks) (=4)')
+    FUNC('$menu', 'goto', $menu_item_theater, menu_theater, 'interaction', 'interaction', 'Go to the theater', 'Take <<$slave_name>> to the theater (4 sparks) (=4)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_theater_gray, empty, 'Go to the theater', 'You already went to the theater today')
   END
   IF sparks >= 8 and already_done_today[1515] = 0: 
-    FUNC('$menu', 'goto', $menu_item_restaurant, menu_restaurant, 'interaction', 'interaction', 'Go to a restaurant', 'take <<$slave_name>> to a restaurant (8 sparks) (=5)')
+    FUNC('$menu', 'goto', $menu_item_restaurant, menu_restaurant, 'interaction', 'interaction', 'Go to a restaurant', 'Take <<$slave_name>> to a restaurant (8 sparks) (=5)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_restaurant_gray, empty, 'Go to a restaurant', 'You already went to the restaurant today')
   END
@@ -1881,37 +1891,37 @@ IF menu_form = 152:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF slave["energy"] >= 1:
-    FUNC('$menu', 'goto', $menu_item_hour_rest, menu_hour_rest, 'interaction', 'interaction', 'An hour of rest', 'Reward <<$slave_name>> A hour of rest (=1)')
+    FUNC('$menu', 'goto', $menu_item_hour_rest, menu_hour_rest, 'interaction', 'interaction', 'An hour of rest', 'Reward <<$slave_name>> with an hour of rest (=1)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_hour_rest_gray, empty, 'An hour of rest', '<<$slave_name>> feels tired, she needs to take a bit of rest')
   END
   IF slave["energy"] >= 1 and boardgames >= 0:
-    FUNC('$menu', 'goto', $menu_item_hour_fun, menu_hour_fun, 'interaction', 'interaction', 'An hour of fun', 'Reward <<$slave_name>> A hour of fun (=2)')
+    FUNC('$menu', 'goto', $menu_item_hour_fun, menu_hour_fun, 'interaction', 'interaction', 'An hour of fun', 'Reward <<$slave_name>> with an hour of fun (=2)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_hour_fun_gray, empty, 'An hour of fun', '<<$slave_name>> feels tired, she needs to take a bit of rest')
   END
-  IF slave["energy"] >= 1:
+  IF slave["energy"] >= 2:
     FUNC('$menu', 'goto', $menu_item_day_rest, menu_day_rest, 'interaction', 'interaction', 'Rest till evening', 'Reward <<$slave_name>> Rest till evening (=3)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_day_rest_gray, empty, 'Rest till evening', '<<$slave_name>> feels tired, she needs to take a bit of rest')
   END
-  IF slave["energy"] >= 1 and boardgames >= 0:
+  IF slave["energy"] >= 2 and boardgames >= 0:
     FUNC('$menu', 'goto', $menu_item_day_Fun, menu_day_Fun, 'interaction', 'interaction', 'Fun till evening', 'Reward <<$slave_name>> Fun till evening (=4)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_day_Fun_gray, empty, 'Fun till evening', '<<$slave_name>> feels tired, she needs to take a bit of rest')
   END
-  IF slave["energy"] >= 1: 
-    FUNC('$menu', 'goto', $menu_item_Gethsemane, menu_Gethsemane, 'interaction', 'interaction', 'Garden of Gethsemane', 'Reward <<$slave_name>> a free time at the Garden of Gethsemane (=5)')
+  IF slave["energy"] >= 2: 
+    FUNC('$menu', 'goto', $menu_item_Gethsemane, menu_Gethsemane, 'interaction', 'interaction', 'Garden of Gethsemane', 'Reward <<$slave_name>> with free time at the Garden of Gethsemane (=5)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Gethsemane_gray, empty, 'Garden of Gethsemane', '<<$slave_name>> feels tired, she needs to take a bit of rest')
   END
   IF slave["energy"] >= 1 and sparks >= 2:
-    FUNC('$menu', 'goto', $menu_item_springs, menu_springs, 'interaction', 'interaction', 'Hot springs', 'Reward <<$slave_name>> a free time at the Hot springs(=2)')
+    FUNC('$menu', 'goto', $menu_item_springs, menu_springs, 'interaction', 'interaction', 'Hot springs', 'Reward <<$slave_name>> with free time at the Hot springs(=2)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_springs_gray, empty, 'Hot springs', '<<$slave_name>> feels tired, she needs to take a bit of rest')
   END
-  IF slave["energy"] >= 1 and sparks >= 5:  
-    FUNC('$menu', 'goto', $menu_item_Goldencage, menu_Goldencage, 'interaction', 'interaction', 'Golden cage', 'Reward <<$slave_name>> a day off at the Golden cage(=5)')
+  IF slave["energy"] >= 2 and sparks >= 5:  
+    FUNC('$menu', 'goto', $menu_item_Goldencage, menu_Goldencage, 'interaction', 'interaction', 'Golden cage', 'Reward <<$slave_name>> with free time at the Golden cage(=5)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Goldencage_gray, empty, 'Golden cage', '<<$slave_name>> feels tired, she needs to take a bit of rest')
   END
@@ -1928,17 +1938,17 @@ IF menu_form = 153:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF slave["obedience"] > 0:
-    FUNC('$menu', 'goto', $menu_item_hug, menu_hug, 'interaction', 'interaction', 'Gentle hug', 'Reward <<$slave_name>> with Gentle hug (=1)')
+    FUNC('$menu', 'goto', $menu_item_hug, menu_hug, 'interaction', 'interaction', 'Gentle hug', 'Reward <<$slave_name>> with a Gentle hug (=1)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_hug_gray, empty, 'Gentle hug', '<<$slave_name>>`s obedience level is low')
   END
   IF slave["obedience"] > 1:
-    FUNC('$menu', 'goto', $menu_item_Sensual, menu_Sensual, 'interaction', 'interaction', 'Sensual massage', 'Reward <<$slave_name>> with Sensual massage (=2)')
+    FUNC('$menu', 'goto', $menu_item_Sensual, menu_Sensual, 'interaction', 'interaction', 'Sensual massage', 'Reward <<$slave_name>> with a Sensual massage (=2)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Sensual_gray, empty, 'Sensual massage', '<<$slave_name>>`s obedience level is low')
   END
   IF slave["obedience"] > 2 and slave["arousal"] >= 1:
-    FUNC('$menu', 'goto', $menu_item_eroPetting, menu_eroPetting, 'interaction', 'interaction', 'Petting', 'Reward <<$slave_name>> with erotic Petting (=3)')
+    FUNC('$menu', 'goto', $menu_item_eroPetting, menu_eroPetting, 'interaction', 'interaction', 'Petting', 'Reward <<$slave_name>> with an erotic Petting (=3)')
   ELSE
     FUNC('$menu', 'exec', $menu_item_eroPetting_gray, empty, 'Petting', '<<$slave_name>>`s arousal or obedience level is low')
   END
@@ -1965,29 +1975,29 @@ IF menu_form = 154:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF sparks >= 2:
-    FUNC('$menu', 'goto', $menu_item_Bouquet, menu_Bouquet, 'interaction', 'interaction', 'Bouquet of flowers', 'Gift <<$slave_name>> a Bouquet (2 sparks) (=1)')
+    FUNC('$menu', 'goto', $menu_item_Bouquet, menu_Bouquet, 'interaction', 'interaction', 'Bouquet of flowers ($2)', 'Gift <<$slave_name>> a Bouquet ($2)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Bouquet_gray, empty, 'Bouquet of flowers', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_Bouquet_gray, empty, 'Bouquet of flowers ($2)', 'Not enough sparks')
   END
   IF sparks >= 5:
-    FUNC('$menu', 'goto', $menu_item_Perfume, menu_Perfume, 'interaction', 'interaction', 'Perfume', 'Gift <<$slave_name>> a Perfume (5 sparks) (=2)')
+    FUNC('$menu', 'goto', $menu_item_Perfume, menu_Perfume, 'interaction', 'interaction', 'Perfume ($5)', 'Gift <<$slave_name>> a Perfume ($5)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Perfume_gray, empty, 'Perfume', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_Perfume_gray, empty, 'Perfume ($5)', 'Not enough sparks')
   END
   IF sparks >= 9:
-    FUNC('$menu', 'goto', $menu_item_plaid, menu_plaid, 'interaction', 'interaction', 'Warm plaid', 'Gift <<$slave_name>> a Warm plaid (9 sparks) (=3)')
+    FUNC('$menu', 'goto', $menu_item_plaid, menu_plaid, 'interaction', 'interaction', 'Warm plaid ($9)', 'Gift <<$slave_name>> a Warm plaid ($9)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_plaid_gray, empty, 'Warm plaid', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_plaid_gray, empty, 'Warm plaid ($9)', 'Not enough sparks')
   END
   IF sparks >= 15:
-    FUNC('$menu', 'goto', $menu_item_toy, menu_toy, 'interaction', 'interaction', 'Plush toy', 'Gift <<$slave_name>> a Plush toy (15 sparks) (=4)')
+    FUNC('$menu', 'goto', $menu_item_toy, menu_toy, 'interaction', 'interaction', 'Plush toy ($15)', 'Gift <<$slave_name>> a Plush toy ($15)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_toy_gray, empty, 'Plush toy', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_toy_gray, empty, 'Plush toy ($15)', 'Not enough sparks')
   END
   IF sparks >= 50 and slave['pony'] = 0:
-    FUNC('$menu', 'goto', $menu_item_pony, menu_pony, 'interaction', 'interaction', 'Mini pony', 'Gift <<$slave_name>> a Mini pony (50 sparks) (=5)')
+    FUNC('$menu', 'goto', $menu_item_pony, menu_pony, 'interaction', 'interaction', 'Mini pony ($50)', 'Gift <<$slave_name>> a Mini pony ($50)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_pony_gray, empty, 'Mini pony', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_pony_gray, empty, 'Mini pony ($50)', 'Not enough sparks')
   END
   FUNC('$menu', 'menu_form', $menu_item_Jewelry, menu_Jewelry, 'Jewelry', 'Gift <<$slave_name>> Jewelers')
   FUNC('$menu', 'menu_form', $menu_item_Clothes, menu_Clothes, 'Clothes', 'Gift <<$slave_name>> Clothes')
@@ -2005,29 +2015,29 @@ IF menu_form = 1546:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF sparks >= 3:
-    FUNC('$menu', 'goto', $menu_item_Headband, menu_Headband, 'interaction', 'interaction', 'Headband', 'Gift <<$slave_name>> a Headband (3 sparks) (=1)')
+    FUNC('$menu', 'goto', $menu_item_Headband, menu_Headband, 'interaction', 'interaction', 'Headband ($3)', 'Gift <<$slave_name>> a Headband ($3)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Headband_gray, empty, 'Headband', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_Headband_gray, empty, 'Headband ($3)', 'Not enough sparks')
   END
   IF sparks >= 3:
-    FUNC('$menu', 'goto', $menu_item_earrings, menu_earrings, 'interaction', 'interaction', 'Sparkly earrings', 'Gift <<$slave_name>> a Sparkly earrings (3 sparks) (=2)')
+    FUNC('$menu', 'goto', $menu_item_earrings, menu_earrings, 'interaction', 'interaction', 'Sparkly Earrings ($3)', 'Gift <<$slave_name>> a Sparkly earrings ($3)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_earrings_gray, empty, 'Sparkly earrings', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_earrings_gray, empty, 'Sparkly Earrings ($3)', 'Not enough sparks')
   END
   IF sparks >= 5:
-    FUNC('$menu', 'goto', $menu_item_ring, menu_ring, 'interaction', 'interaction', 'A ring with a gem', 'Gift <<$slave_name>> a Gem ring (5 sparks) (=3)')
+    FUNC('$menu', 'goto', $menu_item_ring, menu_ring, 'interaction', 'interaction', 'A Ring with a Gem ($5)', 'Gift <<$slave_name>> a Gem ring ($5)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_ring_gray, empty, 'A ring with a gem', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_ring_gray, empty, 'A Ring with a Gem ($5)', 'Not enough sparks')
   END
   IF sparks >= 10:
-    FUNC('$menu', 'goto', $menu_item_necklace, menu_necklace, 'interaction', 'interaction', 'Sparkling necklace', 'Gift <<$slave_name>> a Sparkling necklace (10 sparks) (=4)')
+    FUNC('$menu', 'goto', $menu_item_necklace, menu_necklace, 'interaction', 'interaction', 'Sparkling Necklace ($10)', 'Gift <<$slave_name>> a Sparkling necklace ($10)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_necklace_gray, empty, 'Sparkling necklace', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_necklace_gray, empty, 'Sparkling Necklace ($10)', 'Not enough sparks')
   END
   IF sparks >= 20:
-    FUNC('$menu', 'goto', $menu_item_tiara, menu_tiara, 'interaction', 'interaction', 'Precious tiara', 'Gift <<$slave_name>> a Precious tiara (20 sparks) (=5)')
+    FUNC('$menu', 'goto', $menu_item_tiara, menu_tiara, 'interaction', 'interaction', 'Precious Tiara ($20)', 'Gift <<$slave_name>> a Precious tiara ($20)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_tiara_gray, empty, 'Precious tiara', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_tiara_gray, empty, 'Precious Tiara ($20)', 'Not enough sparks')
   END
 
   FUNC('$menu', '===END===')
@@ -2043,29 +2053,29 @@ IF menu_form = 1547:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF sparks >= 5:
-    FUNC('$menu', 'goto', $menu_item_slippers, menu_slippers, 'interaction', 'interaction', 'Soft slippers', 'Gift <<$slave_name>> a  pair of Soft slippers (5 sparks) (=1)')
+    FUNC('$menu', 'goto', $menu_item_slippers, menu_slippers, 'interaction', 'interaction', 'Soft Slippers ($5)', 'Gift <<$slave_name>> a  pair of Soft slippers ($5)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_slippers_gray, empty, 'Soft slippers', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_slippers_gray, empty, 'Soft Slippers ($5)', 'Not enough sparks')
   END
   IF sparks >= 5:
-    FUNC('$menu', 'goto', $menu_item_Sundress, menu_Sundress, 'interaction', 'interaction', 'Sundress', 'Gift <<$slave_name>> a sundress (5 sparks) (=2)')
+    FUNC('$menu', 'goto', $menu_item_Sundress, menu_Sundress, 'interaction', 'interaction', 'Sundress ($5)', 'Gift <<$slave_name>> a sundress ($5)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Sundress_gray, empty, 'Sundress', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_Sundress_gray, empty, 'Sundress ($5)', 'Not enough sparks')
   END
   IF sparks >= 10:
-    FUNC('$menu', 'goto', $menu_item_Gown, menu_Gown, 'interaction', 'interaction', 'Gown', 'Gift <<$slave_name>> a gown (10 sparks) (=3)')
+    FUNC('$menu', 'goto', $menu_item_Gown, menu_Gown, 'interaction', 'interaction', 'Gown ($10)', 'Gift <<$slave_name>> a gown ($10)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Gown_gray, empty, 'Gown', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_Gown_gray, empty, 'Gown ($10)', 'Not enough sparks')
   END
   IF sparks >= 50:
-    FUNC('$menu', 'goto', $menu_item_Gorgeous, menu_Gorgeous, 'interaction', 'interaction', 'Gorgeous dress', 'Gift <<$slave_name>> a gorgeous dress (50 sparks) (=4)')
+    FUNC('$menu', 'goto', $menu_item_Gorgeous, menu_Gorgeous, 'interaction', 'interaction', 'Gorgeous Dress ($50)', 'Gift <<$slave_name>> a gorgeous dress ($50)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Gorgeous_gray, empty, 'Gorgeous dress', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_Gorgeous_gray, empty, 'Gorgeous Dress ($50)', 'Not enough sparks')
   END
   IF sparks >= 100:
-    FUNC('$menu', 'goto', $menu_item_Wedding, menu_Wedding, 'interaction', 'interaction', 'Wedding dress', 'Gift <<$slave_name>> a wedding dress (100 sparks) (=5)')
+    FUNC('$menu', 'goto', $menu_item_Wedding, menu_Wedding, 'interaction', 'interaction', 'Wedding Dress ($100)', 'Gift <<$slave_name>> a wedding dress ($100)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Wedding_gray, empty, 'Wedding dress', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_Wedding_gray, empty, 'Wedding Dress ($100)', 'Not enough sparks')
   END
 
   FUNC('$menu', '===END===')
@@ -2081,29 +2091,29 @@ IF menu_form = 155:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF sparks >= 1:
-    FUNC('$menu', 'goto', $menu_item_chokolate, menu_chokolate, 'interaction', 'interaction', 'chokolate', 'Gift <<$slave_name>> a Sweet treat of Chocolate (1 sp) (=1)')
+    FUNC('$menu', 'goto', $menu_item_chokolate, menu_chokolate, 'interaction', 'interaction', 'Chocolate ($1)', 'Gift <<$slave_name>> a Sweet treat of Chocolate ($1)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_chokolate_gray, empty, 'chokolate', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_chokolate_gray, empty, 'Chocolate ($1)', 'Not enough sparks')
   END
   IF sparks >= 2:
-    FUNC('$menu', 'goto', $menu_item_cake, menu_cake, 'interaction', 'interaction', 'Cream cake', 'Gift <<$slave_name>> a Sweet treat of Cream cake (2 sp) (=2)')
+    FUNC('$menu', 'goto', $menu_item_cake, menu_cake, 'interaction', 'interaction', 'Cream Cake ($2)', 'Gift <<$slave_name>> a Sweet treat of Cream Cake ($2)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_cake_gray, empty, 'Cream cake', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_cake_gray, empty, 'Cream Cake ($2)', 'Not enough sparks')
   END
   IF sparks >= 4:
-    FUNC('$menu', 'goto', $menu_item_sundae, menu_sundae, 'interaction', 'interaction', 'Banana sundae', 'Gift <<$slave_name>> a Sweet treat of Banana sundae (4 sp) (=3)')
+    FUNC('$menu', 'goto', $menu_item_sundae, menu_sundae, 'interaction', 'interaction', 'Banana Sundae ($4)', 'Gift <<$slave_name>> a Sweet treat of Banana Sundae ($4)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_sundae_gray, empty, 'Banana sundae', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_sundae_gray, empty, 'Banana Sundae ($4)', 'Not enough sparks')
   END
   IF sparks >= 8:
-    FUNC('$menu', 'goto', $menu_item_Euphorijelly, menu_Euphorijelly, 'interaction', 'interaction', 'Euphorijelly', 'Gift <<$slave_name>> a Sweet treat of Euphorijelly (8 sp) (=4)')
+    FUNC('$menu', 'goto', $menu_item_Euphorijelly, menu_Euphorijelly, 'interaction', 'interaction', 'Euphorijelly ($8)', 'Gift <<$slave_name>> a Sweet treat of Euphorijelly ($8)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Euphorijelly_gray, empty, 'Euphorijelly', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_Euphorijelly_gray, empty, 'Euphorijelly ($8)', 'Not enough sparks')
   END
-  IF sparks >= 16:
-    FUNC('$menu', 'goto', $menu_item_ambrosia, menu_ambrosia, 'interaction', 'interaction', 'Vesturian ambrosia', 'Gift <<$slave_name>> a Sweet treat of (16 sp) (=5)')
+  IF sparks >= 25:
+    FUNC('$menu', 'goto', $menu_item_ambrosia, menu_ambrosia, 'interaction', 'interaction', 'Vesturian Ambrosia ($25)', 'Gift <<$slave_name>> a Sweet treat of Vesturian Ambrosia ($25)')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_ambrosia_gray, empty, 'Vesturian ambrosia', 'Not enough sparks')
+    FUNC('$menu', 'exec', $menu_item_ambrosia_gray, empty, 'Vesturian Ambrosia ($25)', 'Not enough sparks')
   END
 
   FUNC('$menu', '===END===')
@@ -2184,11 +2194,11 @@ IF menu_form = 412:
 
   FUNC('$menu', '===BEGIN===', 'column_0')
 
-  IF assistant["stamina"] > slave["stamina"] and slave["stamina"] > 1: 
+  IF assistant["stamina"] >= slave["stamina"] and slave["stamina"] >= 1: 
     FUNC('$menu', 'goto', $menu_item_A_Gymnastics, menu_A_Gymnastics, 'interaction', 'interaction', 'Gymnastics', 'Order <<$assistant_name>> to teach <<$slave_name>> Gymnastics')
   ELSEIF assistant["stamina"] = 0:
     FUNC('$menu', 'exec', $menu_item_A_Gymnastics_gray, empty, 'Gymnastics', '<<$assistant_name>> is unskilled at all Gymnastics')
-  ELSEIF slave["stamina"] < 3:
+  ELSEIF slave["stamina"] < 1:
     FUNC('$menu', 'exec', $menu_item_A_Gymnastics_gray, empty, 'Gymnastics', $text_feeble)
   ELSE
     FUNC('$menu', 'exec', $menu_item_A_Gymnastics_gray, empty, 'Gymnastics', '<<$slave_name>> is as skilled if not more than <<$assistant_name>> at Gymnastics')
@@ -2306,10 +2316,10 @@ IF menu_form = menu_Serve_S:
   END
   FUNC('$menu', 'goto', $menu_item_Massage, menu_Massage, 'interaction', 'interaction', 'Massage me', 'Order <<$slave_name>> to make you a massage')
   FUNC('$menu', 'menu_form', $menu_item_Entertain, menu_Entertain, 'Entertain me', 'Order <<$slave_name>> to entertain you')
-  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Vaginal_sex, menu_slave_Relaxed_Vaginal_sex, 'interaction', 'interaction', 'Relaxed Vaginal sex', 'have relaxed vaginal sex with <<$slave_name>>')
-  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Anal_sex, menu_slave_Relaxed_Anal_sex, 'interaction', 'interaction', 'Relaxed Anal sex', 'have relaxed Anal sex with <<$slave_name>>')
-  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Oral_sex, menu_slave_Relaxed_Oral_sex, 'interaction', 'interaction', 'Relaxed Oral sex', 'have relaxed Oral sex with <<$slave_name>>')
-  FUNC('$menu', 'goto', $menu_item_slave_Active_sex, menu_slave_Active_sex, 'interaction', 'interaction', 'Active sex', 'have Active sex with <<$slave_name>>')
+  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Vaginal_sex, menu_slave_Relaxed_Vaginal_sex, 'interaction', 'interaction', 'Relaxed Vaginal Sex', 'have Relaxed Vaginal Sex with <<$slave_name>>')
+  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Anal_sex, menu_slave_Relaxed_Anal_sex, 'interaction', 'interaction', 'Relaxed Anal Sex', 'have Relaxed Anal Sex with <<$slave_name>>')
+  FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Oral_sex, menu_slave_Relaxed_Oral_sex, 'interaction', 'interaction', 'Relaxed Oral Sex', 'have Relaxed Oral Sex with <<$slave_name>>')
+  FUNC('$menu', 'goto', $menu_item_slave_Active_sex, menu_slave_Active_sex, 'interaction', 'interaction', 'Active Sex', 'have Active Sex with <<$slave_name>>')
 
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Serveme"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
@@ -2322,13 +2332,13 @@ IF menu_form = 5413:
 
   FUNC('$menu', '===BEGIN===', 'column_0')
 
-  FUNC('$menu', 'goto', $menu_item_Concert, menu_Concert, 'interaction', 'interaction', 'Concert', 'Order <<$slave_name>> to play a music Concert for your entertainment')
-  FUNC('$menu', 'goto', $menu_item_Acrobatics, menu_Acrobatics, 'interaction', 'interaction', 'Acrobatics', 'Order <<$slave_name>> to do some Acrobatics your entertainment')
-  FUNC('$menu', 'goto', $menu_item_Striptease, menu_Striptease, 'interaction', 'interaction', 'Striptease', 'Order <<$slave_name>> to do some Striptease your entertainment')
-  FUNC('$menu', 'goto', $menu_item_Eroticalshow, menu_Eroticalshow, 'interaction', 'interaction', 'Erotical show', 'Order <<$slave_name>> to do erotical show act for your entertainment')
+  FUNC('$menu', 'goto', $menu_item_Concert, menu_Concert, 'interaction', 'interaction', 'Concert', 'Order <<$slave_name>> to perform a Music Concert for your entertainment')
+  FUNC('$menu', 'goto', $menu_item_Acrobatics, menu_Acrobatics, 'interaction', 'interaction', 'Acrobatics', 'Order <<$slave_name>> to do some Acrobatics for your entertainment')
+  FUNC('$menu', 'goto', $menu_item_Striptease, menu_Striptease, 'interaction', 'interaction', 'Striptease', 'Order <<$slave_name>> to do a Striptease for your entertainment')
+  FUNC('$menu', 'goto', $menu_item_Eroticalshow, menu_Eroticalshow, 'interaction', 'interaction', 'Erotic Show', 'Order <<$slave_name>> to do an Erotical Show act for your entertainment')
 
   IF assistant_state = 1:
-    FUNC('$menu', 'goto', $menu_item_Lesbianshow, menu_Lesbianshow, 'interaction', 'interaction', 'Lesbian show', 'Order <<$slave_name>> and <<$assistant_name>> to do lesbian show act for your entertainment')
+    FUNC('$menu', 'goto', $menu_item_Lesbianshow, menu_Lesbianshow, 'interaction', 'interaction', 'Lesbian show', 'Order <<$slave_name>> and <<$assistant_name>> to do lesbian show for your entertainment')
   ELSE
     FUNC('$menu', 'exec', $menu_item_Lesbianshow_gray, empty, 'Lesbian show', 'No assistant available')
   END
@@ -2441,7 +2451,7 @@ IF menu_form = 3001:
   IF barn_farmhand = 1 and slave_state = CONST_INT['no_slave']:
     FUNC('$menu', 'goto', $menu_item_Retfarmhand, menu_Retfarmhand, 'interaction', 'interaction', 'Retrieve your farmhand', 'Retrieve your farmhand')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_Retfarmhand_gray, empty, 'Retrieve your farmhand', 'no farmhand available')
+    FUNC('$menu', 'exec', $menu_item_Retfarmhand_gray, empty, 'Retrieve your farmhand', 'No farmhand available')
   END
 !Cow
   IF barn_cow = 0 AND slave_state > CONST_INT['no_slave']:
@@ -2517,9 +2527,9 @@ IF menu_form = 3003:
   FUNC('$menu', '===BEGIN===', 'column_0')
 
   IF barn_report_available = 1:
-    FUNC('$menu', 'exec', $menu_item_barn_accounts, 'msg $barn_accounts', 'Financial report', 'View barn accounts')
+    FUNC('$menu', 'exec', $menu_item_barn_accounts, 'msg $barn_accounts', 'Financial report', 'View Barn accounts')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_barn_accounts_gray, empty, 'Financial report', 'there is no barn accounts to view yet')
+    FUNC('$menu', 'exec', $menu_item_barn_accounts_gray, empty, 'Financial report', 'There are no Barn accounts to view yet')
   END
  
   FUNC('$menu', '===END===')

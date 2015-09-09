@@ -11,6 +11,8 @@ $place = 'slave_stage'
 GS '_layout'
 GS '$slave_price'
 
+slave['brand'] = tattoo_brand
+
 sell_price = slaveprice/2
 if sell_price < 1: sell_price = 1
 
@@ -18,32 +20,31 @@ $npc_id = 'фарид_аукционщик'
 npc = 1
 txt_count = 6
 
-$text[1] = '[FARID]
+$text[0] = '[FARID]
   <font color="#660000">- Oh! This is my good friend <<$master_name>>!!! Always glad to see you, my dear! Well, who did you bring with you? This is one of your pupils? Wah, so lovely!
 </font>'
-$text[2] = '  <font color="#191970">- Without you nowhere, Farid. Be a friend, look what its worth? I would have passed it to you for sale if we split the difference.
+$text[1] = '<<$master_name>>
+  <font color="#191970">- Hi Farid. Be a friend and see what she''s truly worth? I would like to pass her to you for sale if we split the difference.
 </font>'
-
 IF slave['brand'] = 0:
- $text[3] = '[FARID]
-  <font color="#660000">- Not branded? Well this is my profile, yes, but there will not come a lot, you know. I will evaluate only her appearance... Well, show yourself, sweet...
+ $text[2] = '[FARID]
+  <font color="#660000">- Not branded? Well this is my profile, yes, but I will not pay a lot, you know. I will evaluate only her appearance... Well, show yourself, sweet...
 </font>'
- else
- $text[3] = '[FARID]
-  <font color="#660000">- Оh! The girl is branded! Not quite my profile, but for you I will find way to sell her, my dear. Tell me what you taught her? How she behaves?
+ ELSEIF slave['brand'] > 0 and brand_reputation > 3:
+ $text[2] = '[FARID]
+  <font color="#660000">- Оh! The girl is branded! Not quite my profile, but for you I will find way to sell her, my dear. Tell me what you taught her? How does she behave?
 </font>'
- if brand_reputation <= 3: $text[3] = '[FARID]
+ ELSEIF slave['brand'] > 0 and brand_reputation <= 3:
+ $text[2] = '[FARID]
   <font color="#660000">- Well, this is bad... The girl is branded! Not my profile. I cannot take her, my dear. Would be happy to, but I can`t. The Guild would pull the skin off of me for such things.
-</font>' & text_count = 3
+</font>' & txt_count = 2
 END
-
-$text[4] = '[FARID]
+$text[3] = '[FARID]
   <font color="#660000">- Yeah... Yeah... Well, I see. Not to be left without a penny, I''ll give you <<sell_price>> sparks for her. More sparks? No, my dear, I can`t.
 </font>'
-
-$text[5] = '  <a href = ''EXEC: gt "slave_auction_sell_end"''><font color="#228B22">- Robbing in broad daylight, Farid. Oh well... deal!
+$text[4] = '  <a href = ''EXEC: gt "slave_auction_sell_end"''><font color="#228B22">- Robbing in broad daylight, Farid. Oh well... deal!
 </font></a>
-  <a href = ''EXEC: gt "city_menu_form"''><font color="#B22222">- This is awful! Being blindfolded I can find a better buyer.
+  <a href = ''EXEC: gt "city_menu_form"''><font color="#B22222">- This is awful! Being bent over with no lube, I can find a better buyer.
 </font></a>'
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
@@ -68,13 +69,13 @@ Information for consideration:
 </div>' 
 END
 
-IF brand_reputation <= 0 and slave['brand'] > 0 and txt > 2: txt = 7
+IF brand_reputation <= 0 and slave['brand'] > 0 and txt > 2: txt = 5
 
-if txt > 1 and txt <= 4: addobj '<img src = "content\pic\buttons\back_button.png">'
+if txt > 0 and txt <= 3: addobj '<img src = "content\pic\buttons\back_button.png">'
 
-if txt <= 4: addobj '<img src = "content\pic\buttons\forward_button.png">'
+if txt <= 3: addobj '<img src = "content\pic\buttons\forward_button.png">'
 
-if txt = 7: addobj '<img src = "content\pic\buttons\forward_button.png">'
+if txt = 5: addobj '<img src = "content\pic\buttons\forward_button.png">'
 
 --- slave_auction_sell ---------------------------------
 

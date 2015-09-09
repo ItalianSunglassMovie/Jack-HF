@@ -39,19 +39,19 @@ GS '$newloc'
 *p '<div id = "text"><<$text[txt]>></div>'
 
 *p '<div id = "interaction_stat_bar">
-<u>SUMMARY:</u>
-<<$beauty[seed_beauty[slave_type]]>> 
-<<$stamina[seed_stamina[slave_type]]>> 
-<<$exotic[seed_exotic[slave_type]]>> 
-<<$fat[seed_fat[slave_type]]>> 
-<<$sensitivity[seed_sensitivity[slave_type]]>> 
-<<$style[seed_style[slave_type]]>> 
-<<$intellect[seed_intellect[slave_type]]>> 
-<<$temper[seed_temper[slave_type]]>> 
-<<$ego[seed_ego[slave_type]]>> 
-<<$pride[seed_pride[slave_type]]>> 
+<u>ATTRIBUTES</u>
+<<$beauty[seed_beauty[slave_type]]>>
+<<$stamina[seed_stamina[slave_type]]>>
+<<$sensitivity[seed_sensitivity[slave_type]]>>
+<<$temper[seed_temper[slave_type]]>>
+<<$intellect[seed_intellect[slave_type]]>>
+<<$ego[seed_ego[slave_type]]>>
+<<$pride[seed_pride[slave_type]]>>
+<<$exotic[seed_exotic[slave_type]]>>
+<<$fat[seed_fat[slave_type]]>>
+<<$style[seed_style[slave_type]]>>
 
-<u>TRAITS:</u>
+<u>TRAITS</u>
 <<$features_list>>
 </div>'
 --- choose_the_girl ---------------------------------

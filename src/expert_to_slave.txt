@@ -2,6 +2,7 @@
 !Expert sends found slave to master
 slave_state = CONST_INT['slave_exist']
 search['active'] = 0
+tattoo_brand = 0
 
 slave_type = selected_type
 $slave_type = $selected_type
@@ -56,6 +57,11 @@ if slave["hygiene"] = 4: slave_rate["hygiene"] = 80
 if slave["hygiene"] = 5: slave_rate["hygiene"] = 160
 
 master_mood['pos_new_slave'] = 6 - brand_reputation
+if slave["energy"] > slave["stamina"]: slave["energy"] = slave["stamina"]
+slave["base_exotic"] = slave["exotic"]
+slave_rate["stamina"] = 0
+if slave['age'] = CONST_INT['loli_age']: slave["fertility_revealed"] = 1
+slave_state = CONST_INT['slave_exist']
 
 gs '#txt'
 gs '#txt_2'

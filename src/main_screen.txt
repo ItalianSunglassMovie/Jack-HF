@@ -134,23 +134,6 @@ ACT '6':
  gt curloc
 END
 
-!TODO: Delete if the new version below works
-!IF assistant_state = 1:
-! *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
-! *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
- <<$cooked_food[cooked_food_plus]>>
- Energy <<$stars[assistant_energy_plus]>>
- <<$tentacle_state[tentacle_state]>>
-</div>'
-! else
-! *p '<div id = "assistant_short_ava"><img src = "content/pic/blank_ava.jpg"></div>'
-! *p '<div id = "assistant_short_stat"><<$house_mess[house_mess]>>
- <<$cooked_food[cooked_food_plus]>>
- 
- <<$tentacle_state[tentacle_state]>>
-</div>'
-!END
-
 IF pet_tentacle = 0:
  IF assistant_state = 1:
   *p '<div id = "assistant_short_ava"><a href = "EXEC: gt ''assistant_stat''"><img src = "<<$assistant[''ava'']>>.jpg"></a></div>'
@@ -187,10 +170,10 @@ END
 
 IF cooked_food < 1 and kitchen > 0: 
  IF slave_state = CONST_INT['slave_exist'] and slave_cooks_rule = 1:
-  *p {<div id="fast_cook"><a href = "EXEC: interaction = 53 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+  *p {<div id="fast_cook"><a href = "EXEC: interaction = menu_dinner_S & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
   else
   IF assistant_cooks_rule = 1: *p {<div id="fast_cook"><a href = "EXEC: interaction = 43 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
-  IF assistant_cooks_rule = 0: *p {<div id="fast_cook"><a href = "EXEC: interaction = 35 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
+  IF assistant_cooks_rule = 0 OR assistant_state = 0: *p {<div id="fast_cook"><a href = "EXEC: interaction = 35 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
  END
 END
 
@@ -205,10 +188,10 @@ END
 
 IF house_mess > 1: 
  IF slave_state = CONST_INT['slave_exist'] and slave_cleans_rule = 1:
-  *p {<div id="fast_clean"><a href = "EXEC: interaction = 51 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+  *p {<div id="fast_clean"><a href = "EXEC: interaction = menu_tidy_S & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
   else
   if assistant_cleans_rule = 1: *p {<div id="fast_clean"><a href = "EXEC: interaction = 42 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
-  if assistant_cleans_rule = 0: *p {<div id="fast_clean"><a href = "EXEC: interaction = 36 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
+  if assistant_cleans_rule = 0 OR assistant_state = 0: *p {<div id="fast_clean"><a href = "EXEC: interaction = 36 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
  END
 END
 
@@ -251,8 +234,6 @@ IF slave_state = CONST_INT['slave_faint']:
 </div>'
 END
 
-IF slave["hygiene"] > 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 52 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
-
 IF slave_state = CONST_INT['slave_exist']:
  IF exam_in_progress = 1:
   if slave["sin"] >= 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
@@ -284,10 +265,17 @@ IF cryo_intro = 1:
  END
 END
 
-IF master_hygiene > 1 and slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: 
+
+IF master_hygiene > 0 and slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: 
  *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}   
  else
- if master_hygiene > 1 and bath > 0: *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 34 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+ if master_hygiene > 0 and bath > 0: *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 34 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+END
+
+IF master_hygiene > 0 and slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist'] and bath > 0:
+ *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+ else
+ if slave["hygiene"] > 0 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = menu_bath_S & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}
 END
 
 IF master_excitement > 0: 
@@ -304,7 +292,12 @@ IF master_excitement > 0:
 END
 
 !exchange button for the slave with assistant
-IF slave_state = CONST_INT['slave_exist'] and slave["moral"] >= 3 and assistant_state = 1:*p  {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+IF slave_state = CONST_INT['slave_exist'] and slave["moral"] >= 3:
+ *p  {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+END
+IF slave_state ! CONST_INT['slave_exist'] and assistant["moral"] >= 3:
+ *p  {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+END
 
 !showing spell state 
 $active_spell = ''
@@ -331,7 +324,7 @@ if gladi_count = 0:
  *p '<div id = "gladi_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Fights in the Coliseum will start in <<gladi_count>> days"><img src="content\pic\ui overhaul\watch the battle_gray.png"></a></div>'
 end
 if auction_count = 0:
- *p '<div id = "auction_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Auction begins today!" href =  "EXEC: interaction_city = 112 & gt ''interaction_city''"><img src="content\pic\ui overhaul\auction.png"></a></div>'
+ *p '<div id = "auction_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Auction begins today!" href =  "EXEC: interaction_city = 117 & gt ''interaction_city''"><img src="content\pic\ui overhaul\auction.png"></a></div>'
  else
  *p '<div id = "auction_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Auction begins in <<auction_count>> days"><img src="content\pic\ui overhaul\auction_gray.png"></a></div>'
 end
@@ -477,5 +470,7 @@ $quick_move_action = "show"
 gs 'sjm_UI_UIadds'
 !Strec - jon_UIadds addition (end)
 
+!Debug code for tracking variables
+!msg '<<slave_rate["stamina"]>>'
 --- main_screen ---------------------------------
 

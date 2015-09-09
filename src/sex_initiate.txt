@@ -295,11 +295,20 @@ IF master_str = 4: sex['pc_energy'] = 65
 IF master_str >= 5: sex['pc_energy'] = 75
 sex['pc_energy'] += master_energy * 5
 IF sex['pc_energy'] < 1: sex['pc_energy'] = 1
+if chimera_gem_on = 1: sex['pc_energy'] += 25
 
 !CUM BUILDUP
-sex['pc_boner'] = master_excitement
-sex['base_boner'] = master_excitement
-if sex['pc_boner'] < 0: sex['pc_boner'] = 1
+IF chimera_gem_on = 1:
+ master_excitement = 5
+ sex['pc_boner'] = master_excitement
+ sex['base_boner'] = master_excitement
+ pc_boner_plus = master_excitement
+END
+
+IF sex['pc_boner'] <= 0:
+ sex['pc_boner'] = 1
+ pc_boner_plus = 1
+END
 
 !EXCITMENT
 if master_excitement <= -5: sex['pc_excitement'] = -25
@@ -339,9 +348,10 @@ if sex['girl_exotic'] >= 3: sex['pc_interest'] += 10
 if sex['girl_exotic'] >= 4: sex['pc_interest'] += 10
 if sex['girl_exotic'] >= 5: sex['pc_interest'] += 15
 
-if sex['girl_fat'] = 1: sex['pc_interest'] += 10
+if sex['girl_fat'] = 1 or sex['girl_fat'] = 2: sex['pc_interest'] += 20
 if sex['girl_fat'] >= 3: sex['pc_interest'] -= 5
 if sex['girl_fat'] >= 4: sex['pc_interest'] -= 10
+if sex['girl_fat'] = 0: sex['pc_interest'] -= 10
 if sex['girl_fat'] >= 5: sex['pc_interest'] -= 25
 
 if sex['girl_dirty'] = 0 : sex['pc_interest'] += 5

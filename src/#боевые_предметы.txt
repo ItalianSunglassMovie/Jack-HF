@@ -8,7 +8,7 @@ $описание_предмета['none'] = ''
 
 !UNARMED ['безоружный']
 $описание_предмета['безоружный'] = 'Your only weapon - your own fists.'
-$название_предмета['безоружный'] = 'fist'
+$название_предмета['безоружный'] = 'Fist'
 базовый_вред['безоружный'] = base_str
 $тип_вреда['безоружный'] = 'дробящий'
 $класс_оружия['безоружный'] = 'безоружный'
@@ -32,7 +32,7 @@ $ключевое_слово_5['безоружный'] = 'нет'
 
 !Brass Knuckles ['кастет']
 $описание_предмета['кастет'] = 'Ergonomic brass knuckles of heavy tungsten alloy has a high specific weight, hardness, resistance to abrasion and impact.'
-$название_предмета['кастет'] = 'brass knuckles'
+$название_предмета['кастет'] = 'Brass Knuckles'
 базовый_вред['кастет'] = base_str + 1 
 $тип_вреда['кастет'] = 'дробящий'
 $класс_оружия['кастет'] = 'легкое_оружие'
@@ -65,7 +65,7 @@ $вторичная_атака_текст['кастет'] = "You strongly swing 
 
 !DAGGER ['кинжал']
 $описание_предмета['кинжал'] = 'High class dagger of branded surgical steel. Useful as a weapon of self-defense, and to cut meat.'
-$название_предмета['кинжал'] = 'dagger'
+$название_предмета['кинжал'] = 'Dagger'
 базовый_вред['кинжал'] = base_str + 1 
 $тип_вреда['кинжал'] = 'режущий'
 $класс_оружия['кинжал'] = 'легкое_оружие'
@@ -98,7 +98,7 @@ $ключевое_слово_5['кинжал'] ='нет'
 
 !STILETTO ['стилет']
 $описание_предмета['стилет'] = 'Thin and sturdy faceted blade, designed for applying extremely precise thrusts. Damage does not depend on physical strength.'
-$название_предмета['стилет'] = 'stiletto'
+$название_предмета['стилет'] = 'Stiletto'
 базовый_вред['стилет'] = 4 
 $тип_вреда['стилет'] = 'колющий'
 $класс_оружия['стилет'] = 'легкое_оружие'
@@ -165,7 +165,7 @@ $ключевое_слово_5['гладиус'] = 'нет'
 
 !STUNNER ['глушилка']
 $описание_предмета['глушилка'] = 'Short wooden stick with a leather wrap. Ineffective weapon in the confrontation with a serious opponent, but it can help to cut down a woman without causing excessive damage to her.'
-$название_предмета['глушилка'] = 'stunner'
+$название_предмета['глушилка'] = 'Stunner'
 базовый_вред['глушилка'] = base_str + 1
 $тип_вреда['глушилка'] = 'дробящий'
 $класс_оружия['глушилка'] = 'оружие'
@@ -198,7 +198,7 @@ $ключевое_слово_5['глушилка'] = 'нет'
 
 !LASH ['нагайка']
 $описание_предмета['нагайка'] = 'Short lash with a worsening in the end. Designed to warn the horses. But it warn people even better - they have lower pain threshold.'
-$название_предмета['нагайка'] = 'lash'
+$название_предмета['нагайка'] = 'Lash'
 базовый_вред['нагайка'] = 1 + base_flagelation
 $тип_вреда['нагайка'] = 'психический'
 $класс_оружия['нагайка'] = 'легкое_оружие'
@@ -230,8 +230,8 @@ $ключевое_слово_4['нагайка'] = 'нет'
 $ключевое_слово_5['нагайка'] = 'нет'
 
 !CLEAVER ['тесак']
-$описание_предмета['тесак'] = 'This short but heavy butcher''s cleaver is ideal to hack veins and bones when butchering. But it will also fit for the fight too.'
-$название_предмета['тесак'] = 'butcher''s cleaver'
+$описание_предмета['тесак'] = 'This short but heavy Butcher''s Cleaver is ideal to hack veins and bones when butchering. But it will also fit for the fight too.'
+$название_предмета['тесак'] = 'Butcher''s Cleaver'
 базовый_вред['тесак'] = (base_str*2)-1
 $тип_вреда['тесак'] = 'рубящий'
 $класс_оружия['тесак'] = 'легкое_оружие'
@@ -264,7 +264,7 @@ $вторичная_атака_текст['тесак'] = "Investing all your <f
 
 !WHIPSAW ['пилохлыст']
 $описание_предмета['пилохлыст'] = 'Combat whip composed of jagged steel elements.'
-$название_предмета['пилохлыст'] = 'whipsaw'
+$название_предмета['пилохлыст'] = 'Whipsaw'
 базовый_вред['пилохлыст'] = 3 + base_flagelation
 $тип_вреда['пилохлыст'] = 'рубящий'
 $класс_оружия['пилохлыст'] = 'оружие'
@@ -289,7 +289,7 @@ $ключевое_слово_5['пилохлыст'] = 'нет'
 
 !WHIP ['кнут']
 $описание_предмета['кнут'] = 'Long whip woven from durable leather and horsehair. Although usually this tool used by shepherds, this sample was made especially for the slaves punishment.'
-$название_предмета['кнут'] = 'whip'
+$название_предмета['кнут'] = 'Whip'
 базовый_вред['кнут'] = 3 + base_flagelation
 $тип_вреда['кнут'] = 'психический'
 $класс_оружия['кнут'] = 'оружие'
@@ -314,7 +314,7 @@ $ключевое_слово_5['кнут'] = 'нет'
 
 !GLADIUS ['гладиус']
 $описание_предмета['гладиус'] = 'This short sword is the weapon of the Roman legionaries and gladiators. It is well suited for combat in tight formation, or an enclosed space.'
-$название_предмета['гладиус'] = 'gladius'
+$название_предмета['гладиус'] = 'Gladius'
 базовый_вред['гладиус'] = base_str + 3
 $тип_вреда['гладиус'] = 'колющий'
 $класс_оружия['гладиус'] = 'оружие'
@@ -339,7 +339,7 @@ $ключевое_слово_5['гладиус'] = 'нет'
 
 !ÉPÉE, Epee ['шпага']
 $описание_предмета['шпага'] = 'Gorgeous weapon with a long narrow blade of branded steel and developed hilt.'
-$название_предмета['шпага'] = 'épée'
+$название_предмета['шпага'] = 'Epée'
 базовый_вред['шпага'] = base_str + 2
 $тип_вреда['шпага'] = 'колющий'
 $класс_оружия['шпага'] = 'оружие'
@@ -364,7 +364,7 @@ $ключевое_слово_5['шпага'] = 'нет'
 
 !RAPIER ['рапира']
 $описание_предмета['рапира'] = 'This weapon with a long, flexible, and thin blade is designed for thrusting. Damage does not depend on physical strength.'
-$название_предмета['рапира'] = 'rapier'
+$название_предмета['рапира'] = 'Rapier'
 базовый_вред['рапира'] = 5
 $тип_вреда['рапира'] = 'колющий'
 $класс_оружия['рапира'] = 'оружие'
@@ -389,7 +389,7 @@ $ключевое_слово_5['рапира'] = 'нет'
 
 !TRIDENT ['трезубец']
 $описание_предмета['трезубец'] = 'Combat fork with three serrated cusps.'
-$название_предмета['трезубец'] = 'trident'
+$название_предмета['трезубец'] = 'Trident'
 базовый_вред['трезубец'] = base_str + 3
 $тип_вреда['трезубец'] = 'колющий'
 $класс_оружия['трезубец'] = 'оружие'
@@ -414,7 +414,7 @@ $ключевое_слово_5['трезубец'] = 'нет'
 
 !KONCERZ ['кончар']
 $описание_предмета['кончар'] = 'Heavy thrust sword with a long blade of faceted powder cermet.'
-$название_предмета['кончар'] = 'koncerz'
+$название_предмета['кончар'] = 'Koncerz'
 базовый_вред['кончар'] = base_str + 3
 $тип_вреда['кончар'] = 'колющий'
 $класс_оружия['кончар'] = 'оружие'
@@ -439,7 +439,7 @@ $ключевое_слово_5['кончар'] = 'нет'
 
 !BASTARD SWORD ['бастард']
 $описание_предмета['бастард'] = 'Straight bastard sword made of high quality steel. Luxuriously decorated and looks very chivalrous.'
-$название_предмета['бастард'] = 'bastard sword'
+$название_предмета['бастард'] = 'Bastard Sword'
 базовый_вред['бастард'] = base_str + 3
 $тип_вреда['бастард'] = 'рубящий'
 $класс_оружия['бастард'] = 'оружие'
@@ -464,7 +464,7 @@ $ключевое_слово_5['бастард'] = 'нет'
 
 !MACHETE ['мачете']
 $описание_предмета['мачете'] = 'This huge knife used in many worlds for cutting through the tropical undergrowth. But to cut people with it convenient too.'
-$название_предмета['мачете'] = 'machete'
+$название_предмета['мачете'] = 'Machete'
 базовый_вред['мачете'] = base_str + 3
 $тип_вреда['мачете'] = 'рубящий'
 $класс_оружия['мачете'] = 'оружие'
@@ -489,7 +489,7 @@ $ключевое_слово_5['мачете'] = 'нет'
 
 !KATANA ['катана']
 $описание_предмета['катана'] = 'Many believe that katana is a perfect weapon - mainly because of the beautiful contours.'
-$название_предмета['катана'] = 'katana'
+$название_предмета['катана'] = 'Katana'
 базовый_вред['катана'] = base_str + 3
 $тип_вреда['катана'] = 'рубящий'
 $класс_оружия['катана'] = 'оружие'
@@ -514,7 +514,7 @@ $ключевое_слово_5['катана'] = 'нет'
 
 !BATON ['демократизатор']
 $описание_предмета['демократизатор'] = 'Baton of a rigid polymer, similar to rubber, but is more resistant to frost. Police from technologically advanced worlds uses this things.'
-$название_предмета['демократизатор'] = 'baton'
+$название_предмета['демократизатор'] = 'Baton'
 базовый_вред['демократизатор'] = base_str + 3
 $тип_вреда['демократизатор'] = 'дробящий'
 $класс_оружия['демократизатор'] = 'оружие'
@@ -539,7 +539,7 @@ $ключевое_слово_5['демократизатор'] = 'нет'
 
 !STOOL ['табуретка']
 $описание_предмета['табуретка'] = 'Ordinary wooden stool.'
-$название_предмета['табуретка'] = 'stool'
+$название_предмета['табуретка'] = 'Stool'
 базовый_вред['табуретка'] = base_str + 2
 $тип_вреда['табуретка'] = 'дробящий'
 $класс_оружия['табуретка'] = 'оружие'
@@ -567,7 +567,7 @@ $ключевое_слово_5['табуретка'] = 'нет'
 
 !FLAMBERGE ['фламберг']
 $описание_предмета['фламберг'] = 'Two-handed sword with a wavy blade. Such weapon leaves terrible scars. And it looks impressive...'
-$название_предмета['фламберг'] = 'flamberge'
+$название_предмета['фламберг'] = 'Flamberge'
 базовый_вред['фламберг'] = base_str + 5
 $тип_вреда['фламберг'] = 'рубящий'
 $класс_оружия['фламберг'] = 'тяжелое_оружие'
@@ -591,7 +591,7 @@ $ключевое_слово_5['фламберг'] = 'нет'
 
 !NAGINATA ['нагината']
 $описание_предмета['нагината'] = 'Straight scythe with a round hilt at the base of the blade. In its homeland this weapon considered as feminine.'
-$название_предмета['нагината'] = 'naginata'
+$название_предмета['нагината'] = 'Naginata'
 базовый_вред['нагината'] = base_str + 5
 $тип_вреда['нагината'] = 'рубящий'
 $класс_оружия['нагината'] = 'тяжелое_оружие'
@@ -616,7 +616,7 @@ $ключевое_слово_5['нагината'] = 'нет'
 
 !BAT ['бита']
 $описание_предмета['бита'] = 'In fact, this thing is designed for ball games. But you''ve seen a lot of baseball bats, but never seen the baseballs...'
-$название_предмета['бита'] = 'baseball bat'
+$название_предмета['бита'] = 'Baseball Bat'
 базовый_вред['бита'] = base_str + 5
 $тип_вреда['бита'] = 'дробящий'
 $класс_оружия['бита'] = 'тяжелое_оружие'
@@ -641,7 +641,7 @@ $ключевое_слово_5['бита'] = 'нет'
 
 !MORNINGSTAR ['моргенштерн']
 $описание_предмета['моргенштерн'] = 'Handle and chain on which hangs a small steel ball bristling with sharp needles. Frightens.'
-$название_предмета['моргенштерн'] = 'morningstar'
+$название_предмета['моргенштерн'] = 'Morningstar'
 базовый_вред['моргенштерн'] = base_str + 6
 $тип_вреда['моргенштерн'] = 'колющий'
 $класс_оружия['моргенштерн'] = 'тяжелое_оружие'
@@ -666,7 +666,7 @@ $ключевое_слово_5['моргенштерн'] = 'нет'
 
 !GREATAXE ['грейтекс']
 $описание_предмета['грейтекс'] = 'Two-handed axe on long pole, ideal for tree felling and for overly riotous heads.'
-$название_предмета['грейтекс'] = 'greataxe'
+$название_предмета['грейтекс'] = 'Greataxe'
 базовый_вред['грейтекс'] = base_str + 5
 $тип_вреда['грейтекс'] = 'рубящий'
 $класс_оружия['грейтекс'] = 'тяжелое_оружие'
@@ -691,7 +691,7 @@ $ключевое_слово_5['грейтекс'] = 'нет'
 
 !CATTLE PROD ['скотобой']
 $описание_предмета['скотобой'] = 'Shocker device on a long stick. Hit with it feels like an electric, although in fact it is stinging glands from fogs fiend.'
-$название_предмета['скотобой'] = 'cattle prod'
+$название_предмета['скотобой'] = 'Cattle Prod'
 базовый_вред['скотобой'] = base_str + 5
 $тип_вреда['скотобой'] = 'психический'
 $класс_оружия['скотобой'] = 'тяжелое_оружие'
@@ -825,7 +825,7 @@ $ключевое_слово_5['без_брони'] = 'нет'
 
 !Aramid suit ['комбез']
 $описание_предмета['комбез'] = 'This tight suit is made of aramid fibers, which are a lot more durable than steel. Armor fitted on the figure by means of numerous straps and velcro.'
-$название_предмета['комбез'] = 'Aramid suit'
+$название_предмета['комбез'] = 'Aramid Suit'
 $броня_надеть['комбез'] = {
 модификатор_колющий -= 1
 модификатор_рубящий -= 1
@@ -853,7 +853,7 @@ $ключевое_слово_5['комбез'] = 'нет'
 
 !Leather armor ['кожан']
 $описание_предмета['кожан'] = 'This thick leather armor made of megalodon`s chemically treated skin. With a little weight, it has a very considerable durability and unlike metal armor, can reliably protect against fire, cold and electricity.'
-$название_предмета['кожан'] = 'Leather armor'
+$название_предмета['кожан'] = 'Leather Armor'
 $броня_надеть['кожан'] = {
 модификатор_колющий -= 3
 модификатор_рубящий -= 2
@@ -879,7 +879,7 @@ $ключевое_слово_5['кожан'] = 'нет'
 
 !Elven chainmail ['эльчуга']
 $описание_предмета['эльчуга'] = 'This chainmail woven of fine titanium rings that provides it with extraordinary ease and flexibility in a very considerable durability. In some places, the weaving made in the form of floral ornament.'
-$название_предмета['эльчуга'] = 'Elven chainmail'
+$название_предмета['эльчуга'] = 'Elven Chainmail'
 $броня_надеть['эльчуга'] = {
 модификатор_рубящий -= 4
 модификатор_колющий -= 2
@@ -889,7 +889,7 @@ $броня_надеть['эльчуга'] = {
 }
 $броня_снять['эльчуга'] = {
 модификатор_рубящий += 4
-модификатор_колющий -= 2
+модификатор_колющий += 2
 модификатор_холод -= 2
 модификатор_огонь -= 2
 модификатор_молния -= 2
@@ -906,7 +906,7 @@ $ключевое_слово_5['эльчуга'] = 'нет'
 
 !Yatserin mail ['ячуга']
 $описание_предмета['ячуга'] = 'This chainmail of high-strength steel has a particularly dense weave, which somewhat reduces the flexibility and increases the weight, but it gives superior protection from the cutting hits, but also thrusts.'
-$название_предмета['ячуга'] = 'Yatserin mail'
+$название_предмета['ячуга'] = 'Yatserin Mail'
 $броня_надеть['ячуга'] = {
 модификатор_рубящий -= 5
 модификатор_колющий -= 4
@@ -916,12 +916,12 @@ $броня_надеть['ячуга'] = {
 модификатор_молния += 1
 }
 $броня_снять['ячуга'] = {
-модификатор_рубящий += 4
+модификатор_рубящий += 5
 модификатор_колющий += 4
 модификатор_дробящий += 1
-модификатор_холод -= 2
-модификатор_огонь += 2
-модификатор_молния -= 2
+модификатор_холод -= 1
+модификатор_огонь -= 2
+модификатор_молния -= 1
 }
 $броня_эффект['ячуга'] = {}
 $ключевое_слово_1['ячуга'] = 'доспех'
@@ -932,7 +932,7 @@ $ключевое_слово_5['ячуга'] = 'нет'
 
 !Combined armor ['полудоспех']
 $описание_предмета['полудоспех'] = 'The basis of this armor is a damping aramid lining, closed from top with curly titanium plates, where needed special protection and mail web in places where needed maximum flexibility. All this provides the optimal amount of weight, protection and mobility.'
-$название_предмета['полудоспех'] = 'Combined armor'
+$название_предмета['полудоспех'] = 'Combined Armor'
 $броня_надеть['полудоспех'] = {
 модификатор_колющий -= 4
 модификатор_рубящий -= 4
@@ -960,7 +960,7 @@ $ключевое_слово_5['полудоспех'] = 'нет'
 
 !Gothic plate ['плейт']
 $описание_предмета['плейт'] = 'Full knight armor made of sintered armored metal-ceramic. Its angular shape gives maximum protection against all kinds of knives, but the high thermal and electrical conductivity create vulnerability for many magical attacks.'
-$название_предмета['плейт'] = 'Gothic plate'
+$название_предмета['плейт'] = 'Gothic Plate'
 $броня_надеть['плейт'] = {
 модификатор_колющий -= 5
 модификатор_рубящий -= 5
@@ -1002,7 +1002,7 @@ GT 'ход_противников'
 }
 
 !Tonic elixir ['тонизируюзщий_эликсир']
-$название_предмета['тонизируюзщий_эликсир'] = 'Tonic elixir'
+$название_предмета['тонизируюзщий_эликсир'] = 'Tonic Elixir'
 $описание_предмета['тонизируюзщий_эликсир'] = 'Disposable. In battle instantly recovers stamina and adds morale. Removes the "weakness" state. Gives the "acceleration" and "attention".'
 $применить['тонизируюзщий_эликсир'] = {
 тонизируюзщий_эликсир -= 1
@@ -1016,7 +1016,7 @@ GT 'ход_противников'
 }
 
 !Bacchic nectar ['вакхический_нектар']
-$название_предмета['вакхический_нектар'] = 'Bacchic nectar'
+$название_предмета['вакхический_нектар'] = 'Bacchic Nectar'
 $описание_предмета['вакхический_нектар'] = 'Disposable. In battle adds morale, removes the "severe pain", "weakness" and "stiffness" states. Gives the "fury", "adrenaline" and "distraction" states.'
 $применить['вакхический_нектар'] = {
 вакхический_нектар -= 1

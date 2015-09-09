@@ -47,7 +47,7 @@ if lecture = 100:
 </div>' 
   gs '$slave_price'
   IF rating >= 2:
-   $text[1] = 'According to my calculations slave already meets <<$rating[2]>> rank. I think it''s time to show her to Mistress Angelica and finish the exam.'
+   $text[1] = 'According to my calculations slave already meets <<$rating[8]>> rank. I think it''s time to show her to Mistress Angelica and finish the exam.'
    else
    $text[1] = 'It seems to me that my slave is not good enough yet, although I can ask Mistress Angelica to evaluate it. Or just remind me something from her lectures...'
   END
@@ -144,7 +144,7 @@ IF lecture = 5:
  txt_count = 6
  $text[1] = '<font color="#191970">- And what kind of exam, Mistress?</font>'
  $text[2] = '<font color="#8B0A50">- Exercise of a slave training for sale. We will give you the basic premise, a slave to choose, a set of clothes, a full refrigerator and funding in the amount of three hundred sparks. You''ll have to pay the rent and feed your slave.</font>'
- $text[3] = '<font color="#8B0A50">- These sparks will last about a month. More or less depending on your frugality. Anyway, during this time you will have to raise the rating of your slave at least to <<$rating[2]>> rank.</font>'
+ $text[3] = '<font color="#8B0A50">- These sparks will last about a month. More or less depending on your frugality. Anyway, during this time you will have to raise the rating of your slave at least to <<$rating[8]>> rank.</font>'
  $text[4] = '<font color="#8B0A50">- If by the time when you run out of sparks the girl has a bad rating - you failed your exam. If you your slave dies - you failed the exam too. Do you get it?</font>'
  $text[5] = '<font color="#191970">- Completely. That does not sound too difficult.</font>'
  if txt = 5: npc_attitude = 31

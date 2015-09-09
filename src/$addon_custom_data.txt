@@ -1,13 +1,4 @@
 # $addon_custom_data
-IF use_custom_data ! 1 AND $ARGS[0] = '' AND ARGS[0] = 0 :
-
-  loli_last = 58
-  young_last = 273
-  milf_last = 569
-
-END
-
-
 IF $ARGS[0] = 'toggle' :
 
   IF use_custom_data ! 1 :

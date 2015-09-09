@@ -9,10 +9,10 @@ IF $estate = 'slum_house':
   kitchen = 1
 END
 
-dungeon = 0
-bouduar = 0
-lab = 0
-library = 0
+ dungeon = 0
+ bouduar = 0
+ lab = 0
+ library = 0
 
 $study = $interior
 $bed = $interior
@@ -58,5 +58,6 @@ $bg['bouduar'] = $interior_bouduar[$interior]
 $place_name['bouduar'] = $estate_bouduar_name[$estate]
 $place_location['bouduar'] = $estate_bouduar_location[$estate]
 $place_info['bouduar'] = $interior_bouduar_info[$interior]
+
 --- new_estate ---------------------------------
 

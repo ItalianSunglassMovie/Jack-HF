@@ -1,24 +1,22 @@
 # modded_by
-!about the fix
+!Modded By
 
 '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
-'<div id = "title_scroll_text">This version based on patches from the_vm.
+'<div id = "title_scroll_text">Version - Jack HF (Hongfire edition) 1.5 - consists of:
 
-This version consist of
+the_vm Github commits, anon fixes and Grimdark interface
 
-the_vm Github commits
+Translation done by the_vm - Special thanks to jemand69 and Eldanesh69 for their hard work on proofreading, to Monceber for partial translation and showcasing this game to the western community, to BreezeIndigo for some decent ideas for the UI, and the ULMF forum in general for the support.
 
 hgg/mod v5, by Boney M
-
 N1nj4R4bb1D''s MOD
-
 Merged mods by Lillibilli v1.9
-
 sjm UIadds by Strec
-
-Interface visual imporvments by Powerairmax
-
+Interface visual improvements by Powerairmax
 Updated game engine by Beaver14
+Slave Packs by NewEra
+
+New features, improvements, bug fixes (tons), code cleanup, testing, and translation improvements by CrushBoss (current developer)
 
 </div>'
 

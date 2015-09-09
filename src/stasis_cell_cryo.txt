@@ -20,17 +20,17 @@ if iced_1_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$ice
 
 
  $info_bar = '
-<u>SUMMARY</u>
-<<$beauty[iced_1["beauty"]]>> 
-<<$stamina[iced_1["stamina"]]>>  
-<<$exotic[iced_1["exotic"]]>> 
-<<$fat[iced_1["fat"]]>> 
-<<$sensitivity[iced_1["sensitivity"]]>>  
-<<$style[iced_1["style"]]>> 
-<<$intellect[iced_1["intellect"]]>> 
-<<$temper[iced_1["temper"]]>> 
-<<$ego[iced_1["ego"]]>> 
-<<$pride[iced_1["pride"]]>> 
+<u>ATTRIBUTES</u>
+<<$beauty[iced_1["beauty"]]>>
+<<$stamina[iced_1["stamina"]]>>
+<<$sensitivity[iced_1["sensitivity"]]>>
+<<$temper[iced_1["temper"]]>>
+<<$intellect[iced_1["intellect"]]>>
+<<$ego[iced_1["ego"]]>>
+<<$pride[iced_1["pride"]]>>
+<<$exotic[iced_1["exotic"]]>>
+<<$fat[iced_1["fat"]]>>
+<<$style[iced_1["style"]]>>
 
 <u>TRAITS</u>
 <<$iced_1_features_list>>
@@ -54,17 +54,17 @@ if iced_2_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$ice
 
 
  $info_bar = '
-<u>SUMMARY</u>
-<<$beauty[iced_2["beauty"]]>> 
-<<$stamina[iced_2["stamina"]]>>  
-<<$exotic[iced_2["exotic"]]>> 
-<<$fat[iced_2["fat"]]>> 
-<<$sensitivity[iced_2["sensitivity"]]>>  
+<u>ATTRIBUTES</u>
+<<$beauty[iced_2["beauty"]]>>
+<<$stamina[iced_2["stamina"]]>>
+<<$sensitivity[iced_2["sensitivity"]]>>
+<<$temper[iced_2["temper"]]>>
+<<$intellect[iced_2["intellect"]]>>
+<<$ego[iced_2["ego"]]>>
+<<$pride[iced_2["pride"]]>>
+<<$exotic[iced_2["exotic"]]>>
+<<$fat[iced_2["fat"]]>>
 <<$style[iced_2["style"]]>> 
-<<$intellect[iced_2["intellect"]]>> 
-<<$temper[iced_2["temper"]]>> 
-<<$ego[iced_2["ego"]]>> 
-<<$pride[iced_2["pride"]]>> 
 
 <u>TRAITS</u>
 <<$iced_2_features_list>>
@@ -88,17 +88,17 @@ if iced_3_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$ice
 
 
  $info_bar = '
-<u>SUMMARY</u>
-<<$beauty[iced_3["beauty"]]>> 
-<<$stamina[iced_3["stamina"]]>>  
-<<$exotic[iced_3["exotic"]]>> 
-<<$fat[iced_3["fat"]]>> 
-<<$sensitivity[iced_3["sensitivity"]]>>  
+<u>ATTRIBUTES</u>
+<<$beauty[iced_3["beauty"]]>>
+<<$stamina[iced_3["stamina"]]>>
+<<$sensitivity[iced_3["sensitivity"]]>>
+<<$temper[iced_3["temper"]]>>
+<<$intellect[iced_3["intellect"]]>>
+<<$ego[iced_3["ego"]]>>
+<<$pride[iced_3["pride"]]>>
+<<$exotic[iced_3["exotic"]]>>
+<<$fat[iced_3["fat"]]>>
 <<$style[iced_3["style"]]>> 
-<<$intellect[iced_3["intellect"]]>> 
-<<$temper[iced_3["temper"]]>> 
-<<$ego[iced_3["ego"]]>> 
-<<$pride[iced_3["pride"]]>> 
 
 <u>TRAITS</u>
 <<$iced_3_features_list>>
@@ -122,17 +122,17 @@ if iced_4_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$ice
 
 
  $info_bar = '
-<u>SUMMARY</u>
-<<$beauty[iced_4["beauty"]]>> 
-<<$stamina[iced_4["stamina"]]>>  
-<<$exotic[iced_4["exotic"]]>> 
-<<$fat[iced_4["fat"]]>> 
-<<$sensitivity[iced_4["sensitivity"]]>>  
-<<$style[iced_4["style"]]>> 
-<<$intellect[iced_4["intellect"]]>> 
-<<$temper[iced_4["temper"]]>> 
-<<$ego[iced_4["ego"]]>> 
-<<$pride[iced_4["pride"]]>> 
+<u>ATTRIBUTES</u>
+<<$beauty[iced_4["beauty"]]>>
+<<$stamina[iced_4["stamina"]]>>
+<<$sensitivity[iced_4["sensitivity"]]>>
+<<$temper[iced_4["temper"]]>>
+<<$intellect[iced_4["intellect"]]>>
+<<$ego[iced_4["ego"]]>>
+<<$pride[iced_4["pride"]]>>
+<<$exotic[iced_4["exotic"]]>>
+<<$fat[iced_4["fat"]]>>
+<<$style[iced_4["style"]]>>
 
 <u>TRAITS</u>
 <<$iced_4_features_list>>
@@ -156,17 +156,17 @@ if iced_5_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$ice
 
 
  $info_bar = '
-<u>SUMMARY</u>
-<<$beauty[iced_5["beauty"]]>> 
-<<$stamina[iced_5["stamina"]]>>  
-<<$exotic[iced_5["exotic"]]>> 
-<<$fat[iced_5["fat"]]>> 
-<<$sensitivity[iced_5["sensitivity"]]>>  
-<<$style[iced_5["style"]]>> 
-<<$intellect[iced_5["intellect"]]>> 
-<<$temper[iced_5["temper"]]>> 
-<<$ego[iced_5["ego"]]>> 
-<<$pride[iced_5["pride"]]>> 
+<u>ATTRIBUTES</u>
+<<$beauty[iced_5["beauty"]]>>
+<<$stamina[iced_5["stamina"]]>>
+<<$sensitivity[iced_5["sensitivity"]]>>
+<<$temper[iced_5["temper"]]>>
+<<$intellect[iced_5["intellect"]]>>
+<<$ego[iced_5["ego"]]>>
+<<$pride[iced_5["pride"]]>>
+<<$exotic[iced_5["exotic"]]>>
+<<$fat[iced_5["fat"]]>>
+<<$style[iced_5["style"]]>>
 
 <u>TRAITS</u>
 <<$iced_5_features_list>>
@@ -190,17 +190,17 @@ if iced_6_state > 0: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$ice
 
 
  $info_bar = '
-<u>SUMMARY</u>
-<<$beauty[iced_6["beauty"]]>> 
-<<$stamina[iced_6["stamina"]]>>  
-<<$exotic[iced_6["exotic"]]>> 
-<<$fat[iced_6["fat"]]>> 
-<<$sensitivity[iced_6["sensitivity"]]>>  
-<<$style[iced_6["style"]]>> 
-<<$intellect[iced_6["intellect"]]>> 
-<<$temper[iced_6["temper"]]>> 
-<<$ego[iced_6["ego"]]>> 
-<<$pride[iced_6["pride"]]>> 
+<u>ATTRIBUTES</u>
+<<$beauty[iced_6["beauty"]]>>
+<<$stamina[iced_6["stamina"]]>>
+<<$sensitivity[iced_6["sensitivity"]]>>
+<<$temper[iced_6["temper"]]>>
+<<$intellect[iced_6["intellect"]]>>
+<<$ego[iced_6["ego"]]>>
+<<$pride[iced_6["pride"]]>>
+<<$exotic[iced_6["exotic"]]>>
+<<$fat[iced_6["fat"]]>>
+<<$style[iced_6["style"]]>>
 
 <u>TRAITS</u>
 <<$iced_6_features_list>>

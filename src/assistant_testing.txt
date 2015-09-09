@@ -1,0 +1,97 @@
+# assistant_testing
+IF assistant_state = 1:
+!Assistant Piercings
+assistant["niple_piercing"] = 1
+assistant["clit_piercing"] = 1
+assistant["ear_piercing"] = 1
+assistant["thongue_piercing"] = 1
+assistant["belly_piercing"] = 1
+assistant["nosdril_piercing"] = 1
+assistant["nose_piercing"] = 1
+assistant["full_piercing"] = 1
+assistant["piercings"] = 7
+assistant["piercing_count"] = 4
+
+!Assistant Clothing Inventory
+assistant_inventory['common_apron'] = 1
+assistant_inventory['maid_dress'] = 1
+assistant_inventory['nurse_dress'] = 1
+assistant_inventory['enchanter_robe'] = 1
+assistant_inventory['leotard'] = 1
+assistant_inventory['chainmail_bikini'] = 1
+assistant_inventory['laced_underwear'] = 1
+assistant_inventory['bellydance'] = 1
+assistant_inventory['leather_corset'] = 1
+assistant_inventory['anal_tail'] = 1
+assistant_inventory['exotic_wig'] = 1
+assistant_inventory['pony_plume'] = 1
+assistant_inventory['incrusted_earrings'] = 4
+assistant_inventory['golden_collar'] = 1
+assistant_inventory['leather_gloves'] = 1
+assistant_inventory['ponygirl_harness'] = 1
+assistant_inventory['nipple_chain'] = 1
+assistant_inventory['high_heels'] = 1
+assistant_inventory['high_boots'] = 1
+assistant_inventory['hoofed_boots'] = 1
+assistant_inventory['incrusted_ring'] = 4
+
+!Assistant Equipped Gear
+$assistant["wpn"] = 'катана'
+$assistant["scnd"] = ''
+$assistant["armor"] = 'плейт'
+$assistant["right_wpn"] = 'катана'
+$assistant["left_wpn"] = 'кинжал'
+$assistant["back_wpn"] = 'фламберг'
+$assistant["cloth"] = 'leather_corset'
+$assistant["earrings"] = 'incrusted_earrings'
+$assistant["collar"] = 'golden_collar'
+$assistant["headband"] = 'exotic_wig'
+$assistant["gloves"] = 'leather_gloves'
+$assistant["nipplerings"] = 'nipple_chain'
+$assistant["clitring"] = 'incrusted_earrings'
+$assistant["boots"] = 'high_boots'
+$assistant["ring_left"] = 'incrusted_ring'
+$assistant["ring_right"] = 'incrusted_ring'
+
+!Assistant Makeup and Tattoos
+assistant["makeup"] = 3
+assistant["fiend_tattoo"] = 1
+assistant["tatoo"] = 5
+assistant["manicure"] = 5
+assistant["parfume"] = 1
+assistant["hygiene"] = 0
+assistant_rate["hygiene"] = 0
+assistant["epilation"] = 12
+assistant["hairstyle"] = 7
+assistant["pos_gentle"] = 2
+assistant['pos_slave_clean'] = 1
+
+!Assistant Rules
+assistant_cleans_rule = 1
+assistant_cooks_rule = 1
+assistant_account_rule = 1
+assistant_supervise_rule = 1
+assistant_buy_vegetables = 1
+assistant_buy_flower = 1
+assistant_buy_spice = 1
+assistant_buy_cheese = 1
+assistant_buy_alcohol = 1
+assistant_buy_eggs = 1
+assistant_buy_milk = 1
+assistant_buy_cream = 1
+assistant_buy_mince = 1
+assistant_buy_meat = 1
+
+!Assistant Misc
+if assistant['arena_level'] < 4: assistant['arena_level'] = 4
+if assistant['has_ride_win'] < 1: assistant['has_ride_win'] = 1
+assistant_rate['fame'] += 15
+assistant['brand'] = 3
+
+!Pet Fiend
+if pet_tentacle < 1: pet_tentacle = 1
+if pet_tentacle > 0: assistant_tentacle_rule = 1
+END
+
+--- assistant_testing ---------------------------------
+

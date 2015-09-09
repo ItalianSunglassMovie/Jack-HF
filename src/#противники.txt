@@ -240,7 +240,7 @@ $бегство['голая_рабыня'] = 'Naked gladiatrix kneeling, begging
 
 !MISTRESS ['госпожа']
 $название_моба['госпожа'] = "Mistress"
-$описание_моба['госпожа'] = "Although the whip and not a deadly weapon, it is very often used in the battle of women gladiators. Every school graduate should be able to apply the painful blows with such weapon... and tolerate them."
+$описание_моба['госпожа'] = "Although the whip is not a deadly weapon, it is very often used in the battle of women gladiators. Every school graduate should be able to apply the painful blows with such a weapon... and tolerate them."
 $склонение_моб['госпожа'] = "mistress with a whip"
 $склонение_моба['госпожа'] = "mistress with a whip"
 $склонение_мобу['госпожа'] = "mistress with a whip"
@@ -312,7 +312,7 @@ $атака_2_бонус['шиноби'] = 'меткость'
 атака_2_длительность['шиноби'] = 5
 $атака_2_текст['шиноби'] = "Sword in the shinobi hands <font color='green'>spins</font> with the speed of the propeller."
 
-$смерть['шиноби'] = 'Defeated shinobi lying in a pool of her own blood.'
+$смерть['шиноби'] = 'Defeated shinobi lies in a pool of her own blood.'
 $отключка['шиноби'] = 'Beaten shinobi lies on the sand of the arena and can not get up to continue the fight.'
 $бегство['шиноби'] = 'Shinobi drops her weapons and surrenders at mercy of the winner.'
 
@@ -362,7 +362,7 @@ $атака_2_текст['амазонка'] = "Amazon trying to deal you <font 
 
 $смерть['амазонка'] = 'The lifeless body of the mighty amazon helplessly lying on the blood-soaked sand of the arena.'
 $отключка['амазонка'] = 'Amazon lying on the yellow sand of the arena unconscious.'
-$бегство['амазонка'] = 'Mighty amazon drops her weapon and surrenders at mercy of the winner.'
+$бегство['амазонка'] = 'Mighty amazon drops her weapon and surrenders at the mercy of the winner.'
 
 хрупкий['амазонка'] = 0
 тонкое_тело['амазонка'] = 0
@@ -409,7 +409,7 @@ $атака_2_бонус['латница'] = 'бешенство'
 $атака_2_текст['латница'] = "Ironclad deals <font color='green'>series</font> of fast attacks, trying to deprive you of balance."
 $смерть['латница'] = 'Ironclad''s lifeless body lying on the blood-soaked sand of the arena.'
 $отключка['латница'] = 'Ironclad lying on the ground unconscious.'
-$бегство['латница'] = 'Unable to endure the pain, ironclad surrender at mercy of the winner.'
+$бегство['латница'] = 'Unable to endure the pain, ironclad surrenders at mercy of the winner.'
 
 хрупкий['латница'] = 0
 тонкое_тело['латница'] = 0
@@ -1733,7 +1733,7 @@ $атака_2_текст['dimaher_b'] = "Gladiatrix <font color='green'>rotates<
 
 $смерть['dimaher_b'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['dimaher_b'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['dimaher_b'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['dimaher_b'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['dimaher_b'] = 0
 тонкое_тело['dimaher_b'] = 0
@@ -1784,7 +1784,7 @@ $атака_2_текст['dimaher_c'] = "Gladiatrix <font color='green'>rotates<
 
 $смерть['dimaher_c'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['dimaher_c'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['dimaher_c'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['dimaher_c'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['dimaher_c'] = 0
 тонкое_тело['dimaher_c'] = 0
@@ -1835,7 +1835,7 @@ $атака_2_текст['dimaher_d'] = "Gladiatrix <font color='green'>rotates<
 
 $смерть['dimaher_d'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['dimaher_d'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['dimaher_d'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['dimaher_d'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['dimaher_d'] = 0
 тонкое_тело['dimaher_d'] = 0
@@ -1886,7 +1886,7 @@ $атака_2_текст['dimaher_e'] = "Gladiatrix <font color='green'>rotates<
 
 $смерть['dimaher_e'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['dimaher_e'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['dimaher_e'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['dimaher_e'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['dimaher_e'] = 0
 тонкое_тело['dimaher_e'] = 0
@@ -1963,7 +1963,7 @@ $атака_2_текст['hoplite_b'] = "Gladiatrix deals <font color='green'>sw
 
 $смерть['hoplite_b'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['hoplite_b'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['hoplite_b'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['hoplite_b'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['hoplite_b'] = 0
 тонкое_тело['hoplite_b'] = 0
@@ -2014,7 +2014,7 @@ $атака_2_текст['hoplite_c'] = "Gladiatrix deals <font color='green'>sw
 
 $смерть['hoplite_c'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['hoplite_c'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['hoplite_c'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['hoplite_c'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['hoplite_c'] = 0
 тонкое_тело['hoplite_c'] = 0
@@ -2065,7 +2065,7 @@ $атака_2_текст['hoplite_d'] = "Gladiatrix deals <font color='green'>sw
 
 $смерть['hoplite_d'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['hoplite_d'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['hoplite_d'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['hoplite_d'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['hoplite_d'] = 0
 тонкое_тело['hoplite_d'] = 0
@@ -2116,7 +2116,7 @@ $атака_2_текст['hoplite_e'] = "Gladiatrix deals <font color='green'>sw
 
 $смерть['hoplite_e'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['hoplite_e'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['hoplite_e'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['hoplite_e'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['hoplite_e'] = 0
 тонкое_тело['hoplite_e'] = 0
@@ -2193,7 +2193,7 @@ $атака_2_текст['secutor_b'] = "Gladiatrix encounters your attack with 
 
 $смерть['secutor_b'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['secutor_b'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['secutor_b'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['secutor_b'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['secutor_b'] = 0
 тонкое_тело['secutor_b'] = 0
@@ -2244,7 +2244,7 @@ $атака_2_текст['secutor_c'] = "Gladiatrix encounters your attack with 
 
 $смерть['secutor_c'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['secutor_c'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['secutor_c'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['secutor_c'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['secutor_c'] = 0
 тонкое_тело['secutor_c'] = 0
@@ -2295,7 +2295,7 @@ $атака_2_текст['secutor_d'] = "Gladiatrix encounters your attack with 
 
 $смерть['secutor_d'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['secutor_d'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['secutor_d'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['secutor_d'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['secutor_d'] = 0
 тонкое_тело['secutor_d'] = 0
@@ -2346,7 +2346,7 @@ $атака_2_текст['secutor_e'] = "Gladiatrix encounters your attack with 
 
 $смерть['secutor_e'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['secutor_e'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['secutor_e'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['secutor_e'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['secutor_e'] = 0
 тонкое_тело['secutor_e'] = 0
@@ -2423,7 +2423,7 @@ $атака_2_текст['kimerian_b'] = "Blonde rotates axe at <font color='gre
 
 $смерть['kimerian_b'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['kimerian_b'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['kimerian_b'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['kimerian_b'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['kimerian_b'] = 0
 тонкое_тело['kimerian_b'] = 0
@@ -2474,7 +2474,7 @@ $атака_2_текст['kimerian_c'] = "White-haired girl rotates gigantic swo
 
 $смерть['kimerian_c'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['kimerian_c'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['kimerian_c'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['kimerian_c'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['kimerian_c'] = 0
 тонкое_тело['kimerian_c'] = 0
@@ -2525,7 +2525,7 @@ $атака_2_текст['kimerian_d'] = "Gladiatrix rotates her morningstar at 
 
 $смерть['kimerian_d'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['kimerian_d'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['kimerian_d'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['kimerian_d'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['kimerian_d'] = 0
 тонкое_тело['kimerian_d'] = 0
@@ -2576,7 +2576,7 @@ $атака_2_текст['kimerian_e'] = "Gladiatrix <font color='green'>at an i
 
 $смерть['kimerian_e'] = 'Defeated opponent lies in a pool of her own blood.'
 $отключка['kimerian_e'] = 'Beaten opponent lies on the sand of the arena and can not get up to continue the fight.'
-$бегство['kimerian_e'] = 'Opponent drops her weapons and surrender at mercy of the winner.'
+$бегство['kimerian_e'] = 'Opponent drops her weapons and surrenders at mercy of the winner.'
 
 хрупкий['kimerian_e'] = 0
 тонкое_тело['kimerian_e'] = 0

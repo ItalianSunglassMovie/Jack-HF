@@ -3,6 +3,7 @@
 
 slave_state = CONST_INT['slave_exist']
 stock = 0
+tattoo_brand = 0
 
 slave_type = stock_type
 $slave_type = $stock_type
@@ -14,7 +15,12 @@ killvar 'slave_inventory'
 killvar 'already_done_curslave'
 killvar 'already_gain_virtue'
 copyarr 'slave','stock'
+copyarr 'slave_rate','stock_rate'
+copyarr 'slave_inventory','stock_inventory'
+copyarr 'slave_ava','stock_ava'
 copyarr '$slave','$stock'
+copyarr '$slave_inventory','$stock_inventory'
+copyarr '$slave_ava','$stock_ava'
 
 $slave_name = $stock_name
 $slave_psy_basic = $stock_psy_basic
@@ -57,9 +63,26 @@ if slave["hygiene"] = 4: slave_rate["hygiene"] = 80
 if slave["hygiene"] = 5: slave_rate["hygiene"] = 160
 
 master_mood['pos_new_slave'] = 6 - brand_reputation
+if slave["energy"] > slave["stamina"]: slave["energy"] = slave["stamina"]
+slave["base_exotic"] = slave["exotic"]
+slave_rate["stamina"] = 0
+if slave['age'] = CONST_INT['loli_age']: slave["fertility_revealed"] = 1
+slave_state = CONST_INT['slave_exist']
+
+!Testing Code - Remove for Release - crushboss
+if cheat_h = 1 or cheat_j = 1: gs 'stock_to_slave_testing'
+!End of Testing Code
+
+!Fixes the starving message you get on the 2nd day of getting a new slave or assistant - crushboss
+slave["calories"] = 14
+slave_rate["fat"] = 2
+slave['neg_hungry'] = 0
+slave['starvation'] = 0
 
 gs '#txt'
 gs '#txt_2'
+
 if farid_potential_debt <= 0: GT 'pass_to_menu'
+
 --- stock_to_slave ---------------------------------
 

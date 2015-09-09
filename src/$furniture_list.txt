@@ -4,64 +4,64 @@ $furniture_list = ''
 house_items = 0
 
 IF flute > 0:
- $furniture_list += 'Flute х1 [0]<br>'
+ $furniture_list += 'Flute х1<br>'
  house_items += 0
 END
 
 IF violin > 0:
- $furniture_list += 'Violin х1 [1]<br>'
+ $furniture_list += 'Violin х1<br>'
  house_items += 1
 END
 
 IF guitar > 0:
- $furniture_list += 'Guitar  х1 [2]<br>'
+ $furniture_list += 'Guitar  х1<br>'
  house_items += 2
 END
 
 IF cello > 0:
- $furniture_list += 'Cello  х1 [4]<br>'
+ $furniture_list += 'Cello  х1<br>'
  house_items += 4
 END
 
 IF piano > 0:
- $furniture_list += 'Piano  х1 [20]<br>'
+ $furniture_list += 'Piano  х1<br>'
  house_items += 20
 END
 
 $furniture_list += '<br>'
 
 IF inventory['vaginal_balls'] = 1:
- $furniture_list += 'V-balls x1 [0]<br>'
+ $furniture_list += 'V-balls x1<br>'
  house_items += 0
 END
 
 IF inventory['anal_plug'] = 1:
- $furniture_list += 'Anal pear x1 [0]<br>'
+ $furniture_list += 'Anal Pear x1<br>'
  house_items += 0
 END
 
 IF inventory['secure_gag'] = 1:
- $furniture_list += 'Reliable gag x1 [0]<br>'
+ $furniture_list += 'Reliable Gag x1<br>'
  house_items += 0
 END
 
 IF inventory['chastity_belt'] = 1:
- $furniture_list += 'Chastity belt x1 [0]<br>'
+ $furniture_list += 'Chastity Belt x1<br>'
  house_items += 0
 END
 
 IF inventory['deprivation_suit'] = 1:
- $furniture_list += 'Deprivation suit x1 [2]<br>'
+ $furniture_list += 'Deprivation Suit x1<br>'
  house_items += 2
 END
 
 IF inventory['pissuar_stable'] = 1:
- $furniture_list += 'Urinal rack x1 [5]<br>'
+ $furniture_list += 'Urinal Rack x1<br>'
  house_items += 5
 END
 
 IF inventory['toilet_stable'] = 1:
- $furniture_list += 'Toilet seat x1 [10]<br>'
+ $furniture_list += 'Toilet Seat x1<br>'
  house_items += 10
 END
 

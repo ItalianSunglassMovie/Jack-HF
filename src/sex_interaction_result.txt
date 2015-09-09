@@ -39,10 +39,20 @@ END
 
 IF sex["climax_force"] > 0:
  txt_count += 1
+ IF $sex['partner'] = '':
+  slave['neg_horny'] = 0
+  slave['pos_gentle'] = 1
+ END
+ IF $sex['partner'] = 'assistant':
+  assistant['neg_horny'] = 0
+  assistant['pos_gentle'] = 1
+ END
  IF sex["climax_force"] = 1:
   $text[txt_count] = '   <<$sex_orgasm_clitoral>>'   
   sex['girl_excitement'] = 1
   sex["climax_buildup"] = 0
+  if $sex['partner'] = '': slave['pos_orgasm'] = 1
+  if $sex['partner'] = 'assistant': assistant['pos_orgasm'] = 1
  END
  IF sex["climax_force"] = 2:
   $text[txt_count] = '   <<$sex_orgasm_deep>>'  
@@ -74,6 +84,14 @@ IF sex["pc_energy"] <= 0:
  txt_count += 1
  $text[txt_count] = '  You are so tired and out of breath that you have no more strength and mood continue.'  
  $return_lock = 'sex_end' 
+END
+
+!Chimera Gem modifiers - crushboss
+IF chimera_gem_on = 1:
+ master_excitement = 5
+ sex["cum_buildup"] += master_excitement
+ sex['pc_boner'] = master_excitement
+ pc_boner_plus = master_excitement
 END
 
 GT 'sex_interaction_screen'
