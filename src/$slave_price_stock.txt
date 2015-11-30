@@ -1,125 +1,153 @@
 # $slave_price_stock
-!BASE PRICE
-price = 0
-haggling_limit = 0
-halfprice = 0
+!Stock Price Calculation
+!Created by crushboss
+killvar 'stock_specialisation'
 
-stock_base_price = 5
-if stock["stamina"] < 3: stock_base_price -= 5
-if stock["stamina"] > 2: stock_base_price += 5
-if stock["stamina"] > 3: stock_base_price += 10
-if stock["stamina"] > 4: stock_base_price += 20
-if stock["beauty"] < 2: stock_base_price -= 5
-if stock["beauty"] > 1: stock_base_price += 5
-if stock["beauty"] > 2: stock_base_price += 10
-if stock["beauty"] > 3: stock_base_price += 20
-if stock["beauty"] > 4: stock_base_price += 40
+!Variable Reset - crushboss
+price = 0
+halfprice = 0
+haggling_limit = 0
+stock_attribute_sum = 0
+stock_max_skill = 0
+stock_max_sex = 0
+stock_skill_sum = 0
+stock_sex_sum = 0
+stock_rating = 0
+stock_maxsum = 0
+stock_relative_rating = 0
+$stock_rating_help = ''
+
+!Price for stock - improved - crushboss
+stock_base_price = 20
+if stock["stamina"] < 2: stock_base_price -= 20
+if stock["stamina"] < 3: stock_base_price -= 40
+if stock["stamina"] > 2: stock_base_price += 10
+if stock["stamina"] > 3: stock_base_price += 20
+if stock["stamina"] > 4: stock_base_price += 30
+if stock["beauty"] < 3: stock_base_price -= 80
+if stock["beauty"] > 2: stock_base_price += 20
+if stock["beauty"] > 3: stock_base_price += 40
+if stock["beauty"] > 4: stock_base_price += 80
 if stock["fat"] < 1: stock_base_price -= 10
-if stock["fat"] = 1: stock_base_price += 10
-if stock["fat"] = 2: stock_base_price += 10
+if stock["fat"] = 1: stock_base_price += 20
+if stock["fat"] = 2: stock_base_price += 15
 if stock["fat"] > 2: stock_base_price -= 5
 if stock["fat"] > 3: stock_base_price -= 10
 if stock["fat"] > 4: stock_base_price -= 20
 if stock["scares"] > 0: stock_base_price -= 5
 if stock["scares"] > 1: stock_base_price -= 10
 if stock["scares"] > 2: stock_base_price -= 20
-if stock["scares"] > 3: stock_base_price -= 40
-if stock["scares"] > 4: stock_base_price -= 80
+if stock["scares"] > 4: stock_base_price -= 40
 if stock["bruises"] > 1: stock_base_price -= 5
 if stock["bruises"] > 2: stock_base_price -= 10
-if stock["bruises"] > 3: stock_base_price -= 20
-if stock["bruises"] > 4: stock_base_price -= 40
+if stock["bruises"] > 3: stock_base_price -= 15
+if stock["bruises"] > 4: stock_base_price -= 30
 if stock["style"] > 0: stock_base_price += 5
 if stock["style"] > 1: stock_base_price += 10
 if stock["style"] > 2: stock_base_price += 20
 if stock["style"] > 3: stock_base_price += 40
 if stock["style"] > 4: stock_base_price += 80
-if stock["exotic"] > 0: stock_base_price += 5
-if stock["exotic"] > 1: stock_base_price += 10
-if stock["exotic"] > 2: stock_base_price += 20
-if stock["exotic"] > 3: stock_base_price += 40
+if stock["exotic"] > 0: stock_base_price += 20
+if stock["exotic"] > 1: stock_base_price += 30
+if stock["exotic"] > 2: stock_base_price += 40
+if stock["exotic"] > 3: stock_base_price += 60
 if stock["exotic"] > 4: stock_base_price += 80
-if stock["sensitivity"] < 3: stock_base_price -= 5
-if stock["sensitivity"] > 3: stock_base_price += 5
-if stock["sensitivity"] > 4: stock_base_price += 10
-if stock["intellect"] < 3: stock_base_price -= 5
-if stock["intellect"] > 4: stock_base_price += 10
-if stock["temper"] > 3: stock_base_price += 10
-if stock["temper"] > 4: stock_base_price += 20
-if stock["ego"] < 2: stock_base_price -= 20
+if stock["sensitivity"] < 2: stock_base_price -= 20
+if stock["sensitivity"] < 3: stock_base_price -= 20
+if stock["sensitivity"] > 3: stock_base_price += 20
+if stock["sensitivity"] > 4: stock_base_price += 20
+if stock["intellect"] < 2: stock_base_price -= 40
+if stock["intellect"] < 3: stock_base_price -= 40
+if stock["intellect"] > 3: stock_base_price += 40
+if stock["intellect"] > 4: stock_base_price += 40
+if stock["temper"] < 2: stock_base_price -= 45
+if stock["temper"] < 3: stock_base_price -= 45
+if stock["temper"] > 2: stock_base_price += 20
+if stock["temper"] > 3: stock_base_price += 30
+if stock["temper"] > 4: stock_base_price += 40
+if stock["ego"] < 2: stock_base_price -= 80
+if stock["ego"] < 3: stock_base_price -= 40
+if stock["ego"] > 2: stock_base_price += 20
 if stock["ego"] > 3: stock_base_price += 40
-if stock["pride"] < 3: stock_base_price += 10
-if stock["pride"] > 3: stock_base_price -= 10
-if stock["pride"] > 4: stock_base_price -= 20
-if stock_virginity < 2: stock_base_price += 5
-if stock["grace"] = 1: stock_base_price += 5
-if stock["grace"] = -1: stock_base_price -= 5
-if stock["voice"] > 0: stock_base_price += 5
-if stock["voice"] < 0: stock_base_price -= 5
-if stock_base_price < 5: stock_base_price = 5
+if stock["ego"] > 4: stock_base_price += 80
+if stock["pride"] < 1: stock_base_price += 20
+if stock["pride"] < 2: stock_base_price += 20
+if stock["pride"] < 3: stock_base_price += 20
+if stock["pride"] > 3: stock_base_price -= 30
+if stock["pride"] > 4: stock_base_price -= 30
+if stock_virginity < 2: stock_base_price += 20
+if stock["grace"] = 1: stock_base_price += 10
+if stock["grace"] = -1: stock_base_price -= 10
+if stock["voice"] > 0: stock_base_price += 10
+if stock["voice"] < 0: stock_base_price -= 10
+if stock["fame"] > 0: stock_base_price += 10
+if stock["fame"] > 1: stock_base_price += 20
+if stock["fame"] > 2: stock_base_price += 30
+if stock["fame"] > 3: stock_base_price += 40
+if stock["fame"] > 4: stock_base_price += 80
+if stock_base_price < 20: stock_base_price = 20
+
+!Calculate stock price
 price = (stock_base_price*3)/2
 haggling_limit = stock_base_price/3
-
-if price < 1: price = 5
+if price < 30: price = 30
 halfprice = price/2
 
-!RATING
-killvar 'stock_specialisation'
+!Attribute Calculation for Rating
+stock_attribute_sum = stock["stamina"]
+stock_attribute_sum += stock["sensitivity"]
+stock_attribute_sum += stock["temper"]
+stock_attribute_sum += stock["intellect"]
+stock_attribute_sum += stock["ego"]
+stock_attribute_sum -= stock["pride"]
 
-atribute_sum = 0
-max_skill = 0
-max_sex = 0
-skill_sum = 0
-sex_sum = 0
+!Skill Calculation for Rating
+stock_skill_sum = stock["expression"]
+if stock["expression"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["pet"]
+if stock["pet"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["dressage"]
+if stock["dressage"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["nurse"]
+if stock["nurse"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["service"]
+if stock["service"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["cook"]
+if stock["cook"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["gladiatrix"]
+if stock["gladiatrix"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["enchanter"]
+if stock["enchanter"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["vocal"]
+if stock["vocal"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["music"]
+if stock["music"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["callisthenics"]
+if stock["callisthenics"] >= 5: stock_max_skill += 1
+stock_skill_sum += stock["secretary"]
+if stock["secretary"] >= 5: stock_max_skill += 1
 
-atribute_sum = stock["stamina"]
-atribute_sum += stock["sensitivity"]
-atribute_sum += stock["temper"]
-atribute_sum += stock["intellect"]
-atribute_sum += stock["ego"]
-atribute_sum -= stock["pride"]
-
-skill_sum = stock["expression"]
-if stock["expression"] >= 5: max_skill += 1
-skill_sum += stock["pet"]
-if stock["pet"] >= 5: max_skill += 1
-skill_sum += stock["dressage"]
-if stock["dressage"] >= 5: max_skill += 1
-skill_sum += stock["nurse"]
-if stock["nurse"] >= 5: max_skill += 1
-skill_sum += stock["service"]
-if stock["service"] >= 5: max_skill += 1
-skill_sum += stock["cook"]
-if stock["cook"] >= 5: max_skill += 1
-skill_sum += stock["gladiatrix"]
-if stock["gladiatrix"] >= 5: max_skill += 1
-skill_sum += stock["enchanter"]
-if stock["enchanter"] >= 5: max_skill += 1
-skill_sum += stock["vocal"]
-if stock["vocal"] >= 5: max_skill += 1
-skill_sum += stock["music"]
-if stock["music"] >= 5: max_skill += 1
-skill_sum += stock["callisthenics"]
-if stock["callisthenics"] >= 5: max_skill += 1
-skill_sum += stock["secretary"]
-if stock["secretary"] >= 5: max_skill += 1
-
-!Determine the slaves sex skills
+!Calculate sex skills - Stock - crushboss
 if stock["sub_hj"] < stock["petting"]: stock["sub_hj"] = stock["petting"]
 stock["petting"] = (stock["sub_hj"] + stock["sub_fj"] + stock["sub_hug"] + stock["sub_pazuri"])/4
 
 if stock["sub_bj"] < stock["sub_dt"]: stock["sub_bj"] = stock["sub_dt"]
-if stock["sub_bj"] < stock["sub_bukake"]: 
- if stock["sub_bj"] < 3: stock["sub_bj"] = stock["sub_bukake"]
-END
+if stock["sub_bj"] < stock["sub_bukake"]: stock["sub_bj"] = stock["sub_bukake"]
 if stock["sub_bj"] < stock["orgy"]: stock["sub_bj"] = stock["orgy"]
 if stock["sub_thongue"] < stock["oral"]: stock["sub_thongue"] = stock["oral"]
 stock["oral"] = (stock["sub_kiss"] + stock["sub_thongue"] + stock["sub_bj"] + stock["sub_dt"] + stock["sub_asslik"])/5
 
 if stock["sub_anal"] < stock["anal_stretch"]: stock["sub_anal"] = stock["anal_stretch"]
-if stock["sub_anal"] > 1 and stock["anal_stretch"] = 0: stock["anal_stretch"] = 1
-if stock["sub_vaginal"] < stock["orgy"]: stock["sub_vaginal"] = stock["orgy"]
-if stock["sub_anal"] < stock["orgy"]: stock["sub_anal"] = stock["orgy"]
+if stock["sub_anal"] < stock["sub_dp"]: stock["sub_anal"] = stock["sub_dp"]
+if stock["sub_anal"] < stock["sub_tp"]: stock["sub_anal"] = stock["sub_tp"]
+if stock["sub_anal"] < stock["sub_gangbang"]: stock["sub_anal"] = stock["sub_gangbang"]
+if stock["sub_anal"] > stock["anal_stretch"]: stock["anal_stretch"] = stock["sub_anal"] - 1
+if stock["sub_anal"] = 1 and stock["anal_stretch"] = 0: stock["anal_stretch"] = 1
+if stock["sub_vaginal"] < stock["sub_fisting"]: stock["sub_vaginal"] = stock["sub_fisting"]
+if stock["sub_vaginal"] < stock["sub_dp"]: stock["sub_vaginal"] = stock["sub_dp"]
+if stock["sub_vaginal"] < stock["sub_tp"]: stock["sub_vaginal"] = stock["sub_tp"]
+if stock["sub_vaginal"] < stock["sub_gangbang"]: stock["sub_vaginal"] = stock["sub_gangbang"]
+if stock["sub_vaginal"] > stock["sub_fisting"]: stock["sub_fisting"] = stock["sub_vaginal"] - 1
 stock["penetration"] = (stock["sub_vaginal"] + stock["sub_anal"] + stock["sub_fisting"] + stock["anal_stretch"])/4
 
 if stock["sub_exhibit"] < stock["roleplay"]: stock["sub_exhibit"] = stock["roleplay"]
@@ -132,221 +160,173 @@ stock["fetishism"] = (stock["sub_enema"] + stock["sub_mazo"] + stock["sub_selfpa
 
 if stock["sub_tp"] < stock["sub_gangbang"]: stock["sub_tp"] = stock["sub_gangbang"]
 if stock["sub_dp"] < stock["sub_tp"]: stock["sub_dp"] = stock["sub_tp"]
-sperm_shwallow = stock["sub_bj"] - 2
-if stock["sub_bukake"] < sperm_shwallow: stock["sub_bukake"] = sperm_shwallow
+stock_sperm_shwallow = stock["sub_bj"] - 2
+if stock["sub_bukake"] < stock_sperm_shwallow: stock["sub_bukake"] = stock_sperm_shwallow
 stock["orgy"] = (stock["sub_threesome"] + stock["sub_dp"] + stock["sub_tp"] + stock["sub_gangbang"] + stock["sub_bukake"])/5
 
 stock["xenophily"] = (stock["sub_arachnidspider"] + stock["sub_polypusvermin"] + stock["sub_zoosex"] + stock["sub_bestiality"] + stock["sub_horse"] + stock["sub_tentacles"])/6
 
-sex_sum = stock["oral"]
-if stock["oral"] >= 5: max_sex += 1
-sex_sum += stock["penetration"]
-if stock["penetration"] >= 5: max_sex += 1
-sex_sum += stock["petting"]
-if stock["petting"] >= 5: max_sex += 1
-sex_sum += stock["orgy"]
-if stock["orgy"] >= 5: max_sex += 1
-sex_sum += stock["xenophily"]
-if stock["xenophily"] >= 5: max_sex += 1
-sex_sum += stock["fetishism"]
-if stock["fetishism"] >= 5: max_sex += 1
-sex_sum += stock["roleplay"]
-if stock["roleplay"] >= 5: max_sex += 1
-if sex_sum > 9: stock_specialisation['concubine'] = 1
+!Calculate maxed sex skills
+stock_sex_sum = stock["oral"]
+if stock["oral"] >= 5: stock_max_sex += 1
+stock_sex_sum += stock["penetration"]
+if stock["penetration"] >= 5: stock_max_sex += 1
+stock_sex_sum += stock["petting"]
+if stock["petting"] >= 5: stock_max_sex += 1
+stock_sex_sum += stock["orgy"]
+if stock["orgy"] >= 5: stock_max_sex += 1
+stock_sex_sum += stock["xenophily"]
+if stock["xenophily"] >= 5: stock_max_sex += 1
+stock_sex_sum += stock["fetishism"]
+if stock["fetishism"] >= 5: stock_max_sex += 1
+stock_sex_sum += stock["roleplay"]
+if stock["roleplay"] >= 5: stock_max_sex += 1
 
-!Calculate stock Rating
-rating = 0
-maxsum = 0
-stock_relative_obedience = 0
-maxsum = max_skill + max_sex 
+stock_maxsum = stock_max_skill + stock_max_sex 
 
-stock_obedience_bonus = 0 + stock["meekness"]
-if stock["courage"] = 2: stock["fear"] = 0
-if stock["courage"] = 0: stock_obedience_bonus += stock["fear"]
-if stock["courage"] = -1: stock_obedience_bonus += stock["fear"]*2
-stock_relative_obedience = stock_obedience_bonus + stock["moral"] + stock["fear"] + stock["custom"] + stock["rational"] + stock["instinct"] - stock["spoil"] - 1
-
-assistant_obedience_bonus = 0 + assistant["meekness"]
-if assistant["courage"] = 2: assistant["fear"] = 0
-if assistant["courage"] = 0: assistant_obedience_bonus += assistant["fear"]
-if assistant["courage"] = -1: assistant_obedience_bonus += assistant["fear"]*2
-assistant["obedience"] = assistant_obedience_bonus + assistant["moral"] + assistant["fear"] + assistant["custom"] + assistant["rational"] + assistant["instinct"] + assistant_mood_bonus - assistant["spoil"] - rebell[$assistant_psy_basic]
-if $assistant_psy_status = 'broken': assistant["obedience"] = 100
+!Calculate Stock Rating
 
 !D-
-IF sex_sum >= 0 and skill_sum >= 5 and atribute_sum >= 6 and max_skill >= 0 and max_sex >= 0 and stock["beauty"] >= 1:
- if stock_relative_obedience >= 1: rating = 1
-END
+IF stock_attribute_sum >= 6 and (stock["beauty"] >= 1 or stock["fame"] >= 1): stock_rating = 1
 !D+
-IF sex_sum >= 0 and skill_sum >= 10 and atribute_sum >= 8 and max_skill >= 0 and max_sex >= 0 and stock["beauty"] >= 1:
- if stock_relative_obedience >= 5: rating = 2
-END
+IF stock_attribute_sum >= 8 and (stock["beauty"] >= 1 or stock["fame"] >= 1): stock_rating = 2
 !C-
-IF sex_sum >= 2 and skill_sum >= 15 and atribute_sum >= 10 and max_skill >= 0 and max_sex >= 0 and stock["beauty"] >= 2:
- if stock_relative_obedience >= 6: rating = 3
-END
+IF stock_attribute_sum >= 10 and (stock["beauty"] >= 2 or stock["fame"] >= 2): stock_rating = 3
 !C+
-IF sex_sum >= 4 and skill_sum >= 18 and atribute_sum >= 12 and max_skill >= 0 and max_sex >= 0 and stock["beauty"] >= 2:
- if stock["moral"] >= 1: rating = 4
-END
+IF stock_attribute_sum >= 12 and (stock["beauty"] >= 2 or stock["fame"] >= 2): stock_rating = 4
 !B-
-IF sex_sum >= 8 and skill_sum >= 20 and atribute_sum >= 13 and max_skill >= 2 and max_sex >= 1 and stock["beauty"] >= 3:
- if stock["moral"] >= 2: rating = 5
-END
+IF stock_attribute_sum >= 13 and (stock["beauty"] >= 3 or stock["fame"] >= 3): stock_rating = 5
 !B+
-IF sex_sum >= 10 and skill_sum >= 22 and atribute_sum >= 14 and max_skill >= 2 and max_sex >= 1 and stock["beauty"] >= 3:
- if stock["moral"] >= 3: rating = 6
-END
+IF stock_attribute_sum >= 14 and (stock["beauty"] >= 3 or stock["fame"] >= 3): stock_rating = 6
 !A-
-IF sex_sum >= 15 and skill_sum >= 24 and atribute_sum >= 15 and max_skill >= 3 and max_sex >= 2 and stock["beauty"] >= 4:
- if stock["moral"] >= 4: rating = 7
-END
+IF stock_attribute_sum >= 15 and (stock["beauty"] >= 4 or stock["fame"] >= 4): stock_rating = 7
 !A+
-IF sex_sum >= 18 and skill_sum >= 26 and atribute_sum >= 16 and max_skill >= 3 and max_sex >= 2 and stock["beauty"] >= 4:
- if stock["moral"] >= 4: rating = 8
-END
+IF stock_attribute_sum >= 16 and (stock["beauty"] >= 4 or stock["fame"] >= 4): stock_rating = 8
 !S-
-IF sex_sum >= 20 and skill_sum >= 28 and atribute_sum >= 18 and max_skill >= 4 and max_sex >= 3 and stock["beauty"] >= 5:
- if stock["moral"] >= 5: rating = 9
-END
+IF stock_attribute_sum >= 18 and (stock["beauty"] >= 5 or stock["fame"] >= 5): stock_rating = 9
 !S+
-IF sex_sum >= 25 and skill_sum >= 30 and atribute_sum >= 20 and max_skill >= 5 and max_sex >= 4 and stock["beauty"] >= 5:
- if stock["moral"] >= 5: rating = 10
-END
+IF stock_attribute_sum >= 20 and (stock["beauty"] >= 5 or stock["fame"] >= 5): stock_rating = 10
 
-IF $stock_psy_status = 'broken': rating -= 1
-if stock["fame"] > rating: rating = stock["fame"]
-if stock["stamina"] <= 0: rating = 0
-if rating < 0: rating = 0
+!Rating adjustments
+if stock_rating < 0: stock_rating = 0
+if stock_rating > 10: stock_rating = 10
 
-$rating_help = '<center><u>To Do:</u></center>'
+!Populate rating tooltip info - crushboss
+$stock_rating_help = '<center><u>To Do:</u></center>'
 
 !F-
-IF rating = 0:
- if stock["beauty"] < 1: $rating_help += '- This slave is not beautiful enough to rank higher<br>'  
- if skill_sum < 5: $rating_help += '- Teach this slave some common skills<br>'  
- if atribute_sum < 6: $rating_help += '- Develop this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
- if stock_relative_obedience < 1: $rating_help += '- This slave needs to learn obedience<br>'   
+IF stock_rating = 0:
+ if stock["beauty"] < 1 and stock["fame"] < 1: $stock_rating_help += '- <<$stock_name>> is either not beautiful enough or famous enough to rank higher<br>' 
+ if stock_attribute_sum < 6: $stock_rating_help += '- Develop <<$stock_name>>''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
 END
 !D-
-IF rating = 1:
- if stock["beauty"] < 1: $rating_help += '- This slave is not beautiful enough to rank higher<br>'  
- if skill_sum < 10: $rating_help += '- Teach this slave some common skills<br>'  
- if atribute_sum < 8: $rating_help += '- Further develop this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
- if stock_relative_obedience < 5: $rating_help += '- This slave needs to be more obedient<br>'    
+IF stock_rating = 1:
+ if stock["beauty"] < 1 and stock["fame"] < 1: $stock_rating_help += '- <<$stock_name>> is either not beautiful enough or famous enough to rank higher<br>'
+ if stock_attribute_sum < 8: $stock_rating_help += '- Further develop <<$stock_name>>''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'  
 END
 !D+
-IF rating = 2:
- if stock["beauty"] < 2: $rating_help += '- This slave is cute, but not cute enough to rank higher<br>'  
- if sex_sum < 2: $rating_help += '- Improve this slave''s sexual skills<br>' 
- if skill_sum < 15: $rating_help += '- Improve this slave''s common skills<br>'  
- if atribute_sum < 10: $rating_help += '- Enhance this slave''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'
- if stock_relative_obedience < 6: $rating_help += '- This slave needs to be more obedient<br>'  
+IF stock_rating = 2:
+ if stock["beauty"] < 2 and stock["fame"] < 2: $stock_rating_help += '- <<$stock_name>> is either not beautiful enough or famous enough to rank higher<br>'
+ if stock_attribute_sum < 10: $stock_rating_help += '- Enhance <<$stock_name>>''s <a href="EXEC: msg $атрибуты_справка">basic attributes</a><br>'
 END
 !C-
-IF rating = 3:
- if stock["beauty"] < 2: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
- if sex_sum < 4: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
- if skill_sum < 18: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
- if atribute_sum < 12: $rating_help += '<div style="font-size: 90%;">- Further enhance <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
- if stock["moral"] < 1: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
+IF stock_rating = 3:
+ if stock["beauty"] < 2 and stock["fame"] < 2: $stock_rating_help += '- <<$stock_name>> is either not beautiful enough or famous enough to rank higher<br>'
+ if stock_attribute_sum < 12: $stock_rating_help += '<div style="font-size: 90%;">- Further enhance <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
 END
 !C+
-IF rating = 4:
- if stock["beauty"] < 3: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
- if sex_sum < 8: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
- if skill_sum < 20: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
- if atribute_sum < 13: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
- if stock["moral"] < 2: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>'
- if max_skill < 2: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 2 common skills</div>' 
- if max_sex < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 1 sexual skills</div>'  
+IF stock_rating = 4:
+ if stock["beauty"] < 3 and stock["fame"] < 3: $stock_rating_help += '<div style="font-size: 90%;">- <<$stock_name>> is either not beautiful enough or famous enough to rank higher</div>'
+ if stock_attribute_sum < 13: $stock_rating_help += '<div style="font-size: 90%;">- Fully develop <<$stock_name>>`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
 END
 !B-
-IF rating = 5:
- if stock["beauty"] < 3: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
- if sex_sum < 10: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
- if skill_sum < 22: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
- if atribute_sum < 14: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
- if stock["moral"] < 3: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
- if max_skill < 2: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 2 common skills</div>' 
- if max_sex < 1: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 1 sexual skills</div>'   
+IF stock_rating = 5:
+ if stock["beauty"] < 3 and stock["fame"] < 3: $stock_rating_help += '<div style="font-size: 90%;">- <<$stock_name>> is either not beautiful enough or famous enough to rank higher</div>'
+ if stock_attribute_sum < 14: $stock_rating_help += '<div style="font-size: 90%;">- Fully develop <<$stock_name>>`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
 END
 !B+
-IF rating = 6:
- if stock["beauty"] < 4: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
- if sex_sum < 15: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
- if skill_sum < 24: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
- if atribute_sum < 15: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
- if stock["moral"] < 4: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
- if max_skill < 3: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 3 common skills</div>' 
- if max_sex < 2: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 2 sexual skills</div>' 
+IF stock_rating = 6:
+ if stock["beauty"] < 4 and stock["fame"] < 4: $stock_rating_help += '<div style="font-size: 90%;">- <<$stock_name>> is either not beautiful enough or famous enough to rank higher</div>'
+ if stock_attribute_sum < 15: $stock_rating_help += '<div style="font-size: 90%;">- Fully develop <<$stock_name>>`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
 END
 !A-
-IF rating = 7:
- if stock["beauty"] < 4: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
- if sex_sum < 18 $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
- if skill_sum < 26: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
- if atribute_sum < 16: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
- if stock["moral"] < 4: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
- if max_skill < 3: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 3 common skills</div>' 
- if max_sex < 2: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 2 sexual skills</div>' 
+IF stock_rating = 7:
+ if stock["beauty"] < 4 and stock["fame"] < 4: $stock_rating_help += '<div style="font-size: 90%;">- <<$stock_name>> is either not beautiful enough or famous enough to rank higher</div>'
+ if stock_attribute_sum < 16: $stock_rating_help += '<div style="font-size: 90%;">- Fully develop <<$stock_name>>`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
 END
 !A+
-IF rating = 8:
- if stock["beauty"] < 5: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
- if sex_sum < 20: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s sexual skills</div>' 
- if skill_sum < 28: $rating_help += '<div style="font-size: 90%;">- Further improve this slave''s common skills</div>'  
- if atribute_sum < 18: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
- if stock["moral"] < 5: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
- if max_skill < 4: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 4 common skills</div>' 
- if max_sex < 3: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 3 sexual skills</div>'
+IF stock_rating = 8:
+ if stock["beauty"] < 5 and stock["fame"] < 5: $stock_rating_help += '<div style="font-size: 90%;">- <<$stock_name>> is either not beautiful enough or famous enough to rank higher</div>'
+ if stock_attribute_sum < 18: $stock_rating_help += '<div style="font-size: 90%;">- Fully develop <<$stock_name>>`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
 END
 !S-
-IF rating = 9:
- if stock["beauty"] < 5: $rating_help += '<div style="font-size: 90%;">- This slave is not beautiful enough to rank higher</div>'  
- if sex_sum < 25: $rating_help += '<div style="font-size: 90%;">- Perfect this slave''s sexual skills</div>' 
- if skill_sum < 30: $rating_help += '<div style="font-size: 90%;">- Perfect this slave''s common skills</div>'  
- if atribute_sum < 20: $rating_help += '<div style="font-size: 90%;">- Fully develop this slave`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
- if stock["moral"] < 5: $rating_help += '<div style="font-size: 90%;">- Encourage a strong sense of loyalty in this slave</div>' 
- if max_skill < 5: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 5 common skills</div>' 
- if max_sex < 4: $rating_help += '<div style="font-size: 90%;">- This slave should master a total of 4 sexual skills</div>'
+IF stock_rating = 9:
+ if stock["beauty"] < 5 and stock["fame"] < 5: $stock_rating_help += '<div style="font-size: 90%;">- <<$stock_name>> is either not beautiful enough or famous enough to rank higher</div>'
+ if stock_attribute_sum < 20: $stock_rating_help += '<div style="font-size: 90%;">- Fully develop <<$stock_name>>`s <a href="EXEC: msg $атрибуты_справка">basic attributes</a></div>'  
 END
 !S+
-IF rating = 10:
- $rating_help += '- Maximum slave rating achieved! - <<$stock_name>> is truly a masterpiece!'
+if stock_rating = 10: $stock_rating_help += '- Maximum slave rating achieved! - <<$stock_name>> is truly a masterpiece!'
+
+!Specialization calculation - overhauled - crushboss
+stock_relative_rating = (stock_rating/2)
+stock_specialisation['none'] = 1
+IF stock["vocal"] > 2 and stock["vocal"] >= stock_relative_rating and stock["music"] > 2 and stock["music"] >= stock_relative_rating and stock["callisthenics"] > 2 and stock["callisthenics"] >= stock_relative_rating:
+ stock_specialisation['artist'] = 1
+ else
+ stock_specialisation['artist'] = 0
+END
+IF stock["secretary"] > 2 and stock["secretary"] >= stock_relative_rating and stock["expression"] > 2 and stock["expression"] >= stock_relative_rating:
+ stock_specialisation['refferent'] = 1
+ else
+ stock_specialisation['refferent'] = 0
+END
+IF stock["pet"] > 2 and stock["pet"] >= stock_relative_rating and stock["dressage"] > 2 and stock["dressage"] >= stock_relative_rating:
+ stock_specialisation['pet'] = 1
+ else
+ stock_specialisation['pet'] = 0
+END
+IF stock["service"] > 2 and stock["service"] >= stock_relative_rating and stock["cook"] > 2 and stock["cook"] >= stock_relative_rating:
+ stock_specialisation['servant'] = 1
+ else
+ stock_specialisation['servant'] = 0
+END
+IF stock["nurse"] > 2 and stock["nurse"] >= stock_relative_rating and stock["enchanter"] > 2 and stock["enchanter"] >= stock_relative_rating:
+ stock_specialisation['witchdoctor'] = 1
+ else
+ stock_specialisation['witchdoctor'] = 0
+END
+IF stock["gladiatrix"] > 2 and stock["gladiatrix"] >= stock_relative_rating and stock["stamina"] >= 5 and stock["ego"] > 2 and stock["ego"] >= stock_relative_rating and stock["temper"] > 2 and stock["temper"] >= stock_relative_rating:
+ stock_specialisation['gladiatrix'] = 1
+ else
+ stock_specialisation['gladiatrix'] = 0
+END
+IF stock_sex_sum > 14 and stock_sex_sum >= (stock_relative_rating*5) and stock["oral"] > 2 and stock["penetration"] > 2 and stock["petting"] > 2 and stock["orgy"] > 2 and stock["roleplay"] > 2:
+ stock_specialisation['concubine'] = 1
+ else
+ stock_specialisation['concubine'] = 0
 END
 
-!specialization
-stock_specialisation['none'] = 1
-if stock["expression"] > 2 and stock["expression"] >= rating/2: stock_specialisation['refferent'] = 1
-if stock["pet"] > 2 and stock["pet"] >= rating/2: stock_specialisation['pet'] = 1
-if stock["dressage"] > 2 and stock["dressage"] >= rating/2: stock_specialisation['pet'] = 1
-if stock["nurse"] > 2 and stock["nurse"] >= rating/2: stock_specialisation['nurse'] = 1
-if stock["service"] > 2 and stock["service"] >= rating/2: stock_specialisation['maid'] = 1
-if stock["cook"] > 2 and stock["cook"] >= rating/2: stock_specialisation['maid'] = 1
-if stock["gladiatrix"] > 2 and stock["gladiatrix"] >= rating/2: stock_specialisation['gladiatrix'] = 1
-if stock["enchanter"] > 2 and stock["enchanter"] >= rating/2: stock_specialisation['enchanter'] = 1
-if stock["vocal"] > 2 and stock["vocal"] >= rating/2: stock_specialisation['artist'] = 1
-if stock["music"] > 2 and stock["music"] >= rating/2: stock_specialisation['artist'] = 1
-if stock["callisthenics"] > 2 and stock["callisthenics"] >= rating/2: stock_specialisation['artist'] = 1
-if stock["secretary"] > 2 and stock["secretary"] >= rating/2: stock_specialisation['refferent'] = 1
+!Charm calculation
+if stock["fat"] = 0: stock_relative_fat = 6
+if stock["fat"] = 1: stock_relative_fat = -1
+if stock["fat"] = 2: stock_relative_fat = 0
+if stock["fat"] = 3: stock_relative_fat = 3
+if stock["fat"] = 4: stock_relative_fat = 6
+if stock["fat"] = 5: stock_relative_fat = 10
+stock_charm = stock["style"]*3 + stock["exotic"] + stock["moral"] + brand_reputation + stock["fame"]*2 - stock_relative_fat - stock["angst"] - stock["spoil"] - stock["scares"] - (stock["bruises"]+1)/2
+if stock_charm < 0: stock_charm = 0  
 
-!charm
-if stock["fat"] = 0: relative_fat = 6
-if stock["fat"] = 1: relative_fat = -1
-if stock["fat"] = 2: relative_fat = 0
-if stock["fat"] = 3: relative_fat = 3
-if stock["fat"] = 4: relative_fat = 6
-if stock["fat"] = 5: relative_fat = 10
-charm = stock["style"]*3 + stock["exotic"] + stock["moral"] + brand_reputation + stock["fame"]*2 - relative_fat - stock["angst"] - stock["spoil"] - stock["scares"] - (stock["bruises"]+1)/2
-if charm < 0: charm = 0  
+if stock_charm < 6: $stock_charm_stat = $_font_col_rep[0] + 'Charm' + $_font_closer
+if stock_charm >= 6: $stock_charm_stat = $_font_col_rep[1] + 'Charm' + $_font_closer
+if stock_charm >= 12: $stock_charm_stat = $_font_col_rep[2] + 'Charm' + $_font_closer
+if stock_charm >= 16: $stock_charm_stat = $_font_col_rep[3] + 'Charm' + $_font_closer
+if stock_charm >= 20: $stock_charm_stat = $_font_col_rep[4] + 'Charm' + $_font_closer
+if stock_charm >= 38: $stock_charm_stat = $_font_col_rep[5] + 'Charm' + $_font_closer
 
-if charm < 6: $charm_stat = $_font_col_rep[0] + 'Charm' + $_font_closer
-if charm >= 6: $charm_stat = $_font_col_rep[1] + 'Charm' + $_font_closer
-if charm >= 12: $charm_stat = $_font_col_rep[2] + 'Charm' + $_font_closer
-if charm >= 16: $charm_stat = $_font_col_rep[3] + 'Charm' + $_font_closer
-if charm >= 20: $charm_stat = $_font_col_rep[4] + 'Charm' + $_font_closer
-if charm >= 38: $charm_stat = $_font_col_rep[5] + 'Charm' + $_font_closer
+!Make sure variables are set to zero on new stock - bugfix - crushboss
+stock['beauty_enchanced'] = 0
+stock["bcheck"] = 0
+stock["echeck"] = 0
 
 --- $slave_price_stock ---------------------------------
 

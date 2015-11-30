@@ -1,5 +1,8 @@
 # slave_to_assistant
 !move slave to assistant or vice versa
+!Improved and added numerous fixes - crushboss
+!Added ava picture handling, milk gain handling, sandbox mode handling, calorie fix, pet Fiend rules handling, and initial slave and assistant rating handling - crushboss
+
 tattoo_brand = 0
 
 temp = slave_state
@@ -17,7 +20,7 @@ $assistant_type = $temp
 $temp_name = $slave_name
 $slave_name = $assistant_name
 $assistant_name = $temp_name 
-v_balls_rule = 0
+
 rules_broken = 0
 
 killvar 'temp'
@@ -98,6 +101,14 @@ slave["mood"] = assistant_prev["mood"]
 slave["arousal"] = assistant_prev["arousal"]
 assistant["mood"] = tempo["mood"]
 assistant["arousal"] = tempo["mood"]
+
+!Added fix for milk gain on slave/assistant switch - crushboss
+tempo['milk_gain'] = slave['milk_gain']
+slave['milk_gain'] = assistant['milk_gain']
+assistant['milk_gain'] = tempo['milk_gain']
+tempo['cream_gain'] = slave['cream_gain']
+slave['cream_gain'] = assistant['cream_gain']
+assistant['cream_gain'] = tempo['cream_gain']
 
 tmp = prise_promised
 prise_promised = prise_promised_assistant
@@ -199,7 +210,11 @@ temp = rule_masturbation
 rule_masturbation = assistant_rule_masturbation
 assistant_rule_masturbation = temp
 
-IF assistant["bcheck"] = 0:
+temp = force_rules
+force_rules = assistant_force_rules
+assistant_force_rules = temp
+
+IF assistant["bcheck"] = 0 and assistant_state = 1:
  assistant["bcheck"] = 1
  if assistant["beauty"] = 1: assistant_rate["beauty"] = 10
  if assistant["beauty"] = 2: assistant_rate["beauty"] = 20
@@ -215,7 +230,36 @@ END
 
 gs '#txt'
 gs '#txt_2'
+
+!Fixes a bug where the calorie count will get set to zero on slave/assistant switch - crushboss
+slave_calories = slave["calories"]
 gs '$newloc'
+slave["calories"] = slave_calories
+slave_calories = 0
+
+!Initialize assistant rules for sandbox mode - crushboss
+IF get_initial_slave = 1 and assistant_state = 1:
+ !Assistant Rules
+ assistant_cleans_rule = 1
+ assistant_cooks_rule = 1
+ assistant_account_rule = 1
+ assistant_alchemist_rule = 1
+ assistant_supervise_rule = 1
+ assistant_buy_vegetables = 1
+ assistant_buy_flower = 1
+ assistant_buy_spice = 1
+ assistant_buy_cheese = 1
+ assistant_buy_alcohol = 1
+ assistant_buy_eggs = 1
+ assistant_buy_milk = 1
+ assistant_buy_cream = 1
+ assistant_buy_mince = 1
+ assistant_buy_meat = 1
+ if pet_tentacle > 0: assistant_tentacle_rule = 1
+ !Reset get initial slave variables to prevent loop
+ get_initial_slave = 0
+ stock_pending = 0
+END
 
 !Set base rules if you own a pet Fiend - crushboss
 if assistant_tentacle_rule = 1 and assistant_state = 1: slave_tentacle_rule = 0
@@ -225,13 +269,8 @@ if assistant_state ! 1: assistant_tentacle_rule = 0
 if pet_tentacle > 0 and assistant_state = 1 and slave_tentacle_rule ! 1: assistant_tentacle_rule = 1
 if pet_tentacle > 0 and slave_state = CONST_INT['slave_exist'] and assistant_state ! 1: slave_tentacle_rule = 1
 
-!Fixes the starving message you get on the 2nd day of getting a new slave or assistant - crushboss
-IF slave_state = CONST_INT['slave_exist']:
- slave["calories"] = 14
- slave_rate["fat"] = 2
- slave['neg_hungry'] = 0
- slave['starvation'] = 0
-END
+!Fixes a bug with the initial slave and assistant ratings - crushboss
+change_loc = 1
 
 GT 'menu_form'
 

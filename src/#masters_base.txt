@@ -54,7 +54,7 @@ master_cha = 1
 master_style = 0
 master_libido = 3
 
-master_tutor = 0
+master_tutor = 1
 master_fighter = 3
 master_butler = 1
 master_artdirector = 0
@@ -354,12 +354,13 @@ Faction: Serpis Great House'
 $hero_difficulty[10] = '<font color="#cd0000">maximal difficulty</font>'
 $master_base_name[10] = 'Johny'
 $master_version_stats[10] = {
-master_str = 1
+master_str = 2
 master_cha = 1
 master_style = 0
 master_libido = 5
+master_libido_rate = 200
 
-master_tutor = 0
+master_tutor = 1
 master_fighter = 0
 master_butler = 0
 master_artdirector = 0
@@ -399,7 +400,7 @@ master_style = 0
 master_libido = 2
 master_energy = 2
 
-master_tutor = 0
+master_tutor = 1
 master_fighter = 0
 master_butler = 0
 master_artdirector = 0
@@ -472,13 +473,12 @@ $trainer_id[16] = 'rabban'
 $trainer_id[17] = 'sheepherd'
 
 $base_slave_type[1] = 'refferent'
-$base_slave_type[2] = 'pet'
-$base_slave_type[3] = 'nurse'
-$base_slave_type[4] = 'maid'
+$base_slave_type[2] = 'pet ponygirl'
+$base_slave_type[3] = 'witchdoctor'
+$base_slave_type[4] = 'servant'
 $base_slave_type[5] = 'gladiatrix'
-$base_slave_type[6] = 'enchanter'
-$base_slave_type[7] = 'artist'
-$base_slave_type[8] = 'concubine'
+$base_slave_type[6] = 'artist'
+$base_slave_type[7] = 'concubine'
 
 trainer_rating[''] = 1
 trainer_refferent_rating[''] = 0

@@ -1,4 +1,7 @@
 # assistant_testing
+!Assistant Testing Cheat
+!Created by crushboss
+
 IF assistant_state = 1:
 !Assistant Piercings
 assistant["niple_piercing"] = 1
@@ -8,9 +11,24 @@ assistant["thongue_piercing"] = 1
 assistant["belly_piercing"] = 1
 assistant["nosdril_piercing"] = 1
 assistant["nose_piercing"] = 1
+assistant["thongue_split"] = 1
+assistant["scarification"] = 1
 assistant["full_piercing"] = 1
-assistant["piercings"] = 7
-assistant["piercing_count"] = 4
+assistant["piercings"] = 9
+assistant["piercing_count"] = 5
+
+!Assistant Makeup and Tattoos
+assistant["makeup"] = 3
+assistant["fiend_tattoo"] = 1
+assistant["tatoo"] = 5
+assistant["manicure"] = 5
+assistant["parfume"] = 1
+assistant["hygiene"] = 0
+assistant_rate["hygiene"] = 0
+assistant["epilation"] = 12
+assistant["hairstyle"] = 7
+assistant["pos_gentle"] = 2
+assistant['pos_slave_clean'] = 1 
 
 !Assistant Clothing Inventory
 assistant_inventory['common_apron'] = 1
@@ -53,24 +71,19 @@ $assistant["boots"] = 'high_boots'
 $assistant["ring_left"] = 'incrusted_ring'
 $assistant["ring_right"] = 'incrusted_ring'
 
-!Assistant Makeup and Tattoos
-assistant["makeup"] = 3
-assistant["fiend_tattoo"] = 1
-assistant["tatoo"] = 5
-assistant["manicure"] = 5
-assistant["parfume"] = 1
-assistant["hygiene"] = 0
-assistant_rate["hygiene"] = 0
-assistant["epilation"] = 12
-assistant["hairstyle"] = 7
-assistant["pos_gentle"] = 2
-assistant['pos_slave_clean'] = 1
+!Pet Fiend
+IF pet_tentacle < 1:
+ pet_tentacle = 1
+ tentacle_size = 0
+ tentacle_hp = 0
+END
 
 !Assistant Rules
 assistant_cleans_rule = 1
 assistant_cooks_rule = 1
 assistant_account_rule = 1
 assistant_supervise_rule = 1
+assistant_alchemist_rule = 1
 assistant_buy_vegetables = 1
 assistant_buy_flower = 1
 assistant_buy_spice = 1
@@ -81,17 +94,24 @@ assistant_buy_milk = 1
 assistant_buy_cream = 1
 assistant_buy_mince = 1
 assistant_buy_meat = 1
+if pet_tentacle > 0: assistant_tentacle_rule = 1
 
 !Assistant Misc
-if assistant['arena_level'] < 4: assistant['arena_level'] = 4
-if assistant['has_ride_win'] < 1: assistant['has_ride_win'] = 1
+!if assistant['arena_level'] < 4: assistant['arena_level'] = 4
+!if assistant['has_ride_win'] < 1: assistant['has_ride_win'] = 1
 assistant_rate['fame'] += 15
 assistant['brand'] = 3
 
-!Pet Fiend
-if pet_tentacle < 1: pet_tentacle = 1
-if pet_tentacle > 0: assistant_tentacle_rule = 1
+!Testing new assistant buttons
+!Testing Code - remove for release
+assistant['fertility'] = 0
+!assistant['parasite'] = 1
+!assistant['ill'] = 1
+!assistant['pregnant'] = 1
+!assistant['wounds'] = 4
+!assistant_rate['wounds'] = 140
 END
+!End of testing code
 
 --- assistant_testing ---------------------------------
 

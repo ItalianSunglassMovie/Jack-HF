@@ -1,6 +1,6 @@
 # $food_choice
 !TODO: сделать из 5 циклов 1
-!Choose a dish for lunch
+!Choose a dish for dinner
 frige["none"] = 5
 $cooked_meal = 'консервы'
 end_rate = 0

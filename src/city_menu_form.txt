@@ -494,7 +494,7 @@ IF city_form = 6:
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
-  IF master_energy > 0:
+  IF master_energy > 2:
     FUNC('$menu', 'interaction_city', $menu_item_Patrol, menu_Patrol, 'Patrol Border of Fogs')
   ELSE
     FUNC('$menu', 'city_form', $menu_item_Patrol_gray, empty, 'Patrol Border of Fogs')
@@ -559,40 +559,40 @@ IF city_form = 1000:
   
   $setting_display_r += {<div id="under_gray">{ { { Content Options } } }<br></div>}
   IF nsfw ! 1:
-   $setting_display_r += {<br><div id="under">NSFW - Off<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display_r += {<br><div id="under">NSFW content is currently displayed (nudity on)<br><div id = "clear"><a href = 'EXEC: nsfw = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display_r += {<br><div id="under">NSFW - On<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display_r += {<br><div id="under">NSFW content is currently hidden (nudity off)<br><div id = "clear"><a href = 'EXEC: nsfw = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
   IF no_loli ! 1:
-   $setting_display_r += {<br><div id="under">Loli - On<br><div id = "clear"><a href = 'EXEC: no_loli = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display_r += {<br><div id="under">Loli aged slaves currently exist in game<br><div id = "clear"><a href = 'EXEC: no_loli = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display_r += {<br><div id="under">Loli - Off<br><div id = "clear"><a href = 'EXEC: no_loli = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display_r += {<br><div id="under">Loli aged slaves do not currently exist in game<br><div id = "clear"><a href = 'EXEC: no_loli = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
   IF no_milf ! 1:
-   $setting_display_r += {<br><div id="under">MILF - On<br><div id = "clear"><a href = 'EXEC: no_milf = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display_r += {<br><div id="under">MILF aged slaves currently exist in game<br><div id = "clear"><a href = 'EXEC: no_milf = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display_r += {<br><div id="under">MILF - Off<br><div id = "clear"><a href = 'EXEC: no_milf = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display_r += {<br><div id="under">MILF aged slaves do not currently exist in game<br><div id = "clear"><a href = 'EXEC: no_milf = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
   IF no_mindbreak ! 1:
-   $setting_display_r += {<br><div id="under">Mindbreak - On<br><div id = "clear"><a href = 'EXEC: no_mindbreak = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display_r += {<br><div id="under">Mindbreak is currently enabled<br><div id = "clear"><a href = 'EXEC: no_mindbreak = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display_r += {<br><div id="under">Mindbreak - Off<br><div id = "clear"><a href = 'EXEC: no_mindbreak = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display_r += {<br><div id="under">Mindbreak is currently disabled<br><div id = "clear"><a href = 'EXEC: no_mindbreak = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
   IF no_guro ! 1:
-   $setting_display_r += {<br><div id="under">Gore - On<br><div id = "clear"><a href = 'EXEC: dynamic $guro_off & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   $setting_display_r += {<br><div id="under">Gore is currently shown in game<br><div id = "clear"><a href = 'EXEC: dynamic $guro_off & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
    else
-   $setting_display_r += {<br><div id="under">Gore - Off<br><div id = "clear"><a href = 'EXEC: dynamic $guro_on & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
+   $setting_display_r += {<br><div id="under">Gore is currently not shown in game<br><div id = "clear"><a href = 'EXEC: dynamic $guro_on & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
   
   $setting_display_r += {<br><br><div id="under_gray">{ { { SOUND SETTINGS } } }<br></div>}
 
   $setting_display_c += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: city_form = $prev_city_form & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  !$setting_display_c2 += {<br><div id="under_gray"> Next <br></div>}
-  $setting_display_c2 += {<br><div id="under_gray"> Next <br><div id = "clear"><img src = "content\pic\clear.gif"></div></div>}
+!  $setting_display_c2 += {<br><div id="under_gray"> Next <br></div>}
+!  $setting_display_c2 += {<br><div id="under_gray"> Next <br><div id = "clear"><img src = "content\pic\clear.gif"></div></div>}
 END
 
 GT 'city_screen'

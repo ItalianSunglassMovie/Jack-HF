@@ -1,68 +1,76 @@
 # generate_stock_testing
+!Generate Stock Testing Cheat
+!Created by crushboss
+
 !Temporary code for testing - crushboss
 
 !Slave Attributes and Skills
 stock["fat"] = RAND (1,2)
-stock["beauty"] = RAND (4,5)
-stock["sub_vaginal"] += RAND (4,5)
-stock["sub_fisting"] += RAND (4,5)
-stock["sub_threesome"] += RAND (4,5)
-stock["sub_dp"] += RAND (4,5)
-stock["sub_tp"] += RAND (4,5)
-stock["sub_gangbang"] += RAND (4,5)
-stock["sub_zoosex"] += RAND (4,5)
-stock["sub_bestiality"] += RAND (4,5)
-stock["sub_horse"] += RAND (4,5)
-stock["sub_tentacles"] += RAND (4,5)
-stock["sub_arachnidspider"] += RAND (4,5)
-stock["sub_polypusvermin"] += RAND (4,5)
-stock["sub_hug"] += RAND (4,5)
-stock["sub_kiss"] += RAND (4,5)
-stock["sub_bj"] += RAND (4,5)
-stock["sub_vaginal"] += RAND (4,5) 
-stock["sub_anal"] += RAND (4,5)
-stock["sub_exhibit"] += RAND (4,5)
-stock["sub_humiliation"] += RAND (4,5)
-stock["sub_hj"] += RAND (4,5)
-stock["sub_fj"] += RAND (4,5)
-stock["sub_pazuri"] += RAND (4,5)
-stock["sub_thongue"] += RAND (4,5)
-stock["sub_dt"] += RAND (4,5)
-stock["sub_asslik"] += RAND (4,5)
+stock["beauty"] += RAND (2,3)
+stock["fame"] = RAND (1,3)
+stock["sub_vaginal"] += RAND (1,3)
+stock["sub_fisting"] += RAND (1,3)
+stock["sub_anal"] += RAND (1,4)
 stock["anal_stretch"] = stock["sub_anal"]
 if stock["anal_stretch"] > 5: stock["anal_stretch"] = 5
-stock["sub_seduce"] += RAND (4,5)
-stock["sub_masturbation"] += RAND (4,5)
-stock["sub_dildo"] += RAND (4,5)
-stock["sub_enema"] += RAND (4,5)
-stock["sub_mazo"] += RAND (3,5)
-stock["sub_selfpain"] += RAND (3,5)
-stock["sub_piss"] += RAND (2,3)
-stock["sub_kopro"] += RAND (2,3)
-stock["sub_bukake"] += RAND (4,5)
-stock["stamina"] += RAND (4,5)
-stock["sensitivity"] += RAND (3,4)
-stock["temper"] += RAND (3,4)
-stock["ego"] += RAND (3,4)
+
+stock["sub_threesome"] += RAND (1,3)
+stock["sub_dp"] += RAND (1,3)
+stock["sub_tp"] += RAND (1,3)
+stock["sub_gangbang"] += RAND (1,3)
+stock["sub_bukake"] += RAND (3,4)
+
+!stock["sub_zoosex"] += RAND (4,5)
+!stock["sub_bestiality"] += RAND (4,5)
+!stock["sub_horse"] += RAND (4,5)
+!stock["sub_tentacles"] += RAND (2,4)
+!stock["sub_arachnidspider"] += RAND (4,5)
+!stock["sub_polypusvermin"] += RAND (4,5)
+
+stock["sub_hug"] += RAND (3,5)
+stock["sub_kiss"] += RAND (3,5)
+stock["sub_bj"] += RAND (3,5)
+stock["sub_exhibit"] += RAND (3,5)
+stock["sub_humiliation"] += RAND (3,5)
+stock["sub_hj"] += RAND (3,5)
+stock["sub_fj"] += RAND (3,5)
+stock["sub_pazuri"] += RAND (3,5)
+stock["sub_thongue"] += RAND (3,5)
+stock["sub_dt"] += RAND (3,5)
+stock["sub_asslik"] += RAND (3,5)
+stock["sub_seduce"] += RAND (3,5)
+stock["sub_masturbation"] += RAND (3,5)
+stock["sub_dildo"] += RAND (3,5)
+
+!stock["sub_enema"] += RAND (4,5)
+!stock["sub_mazo"] += RAND (3,5)
+!stock["sub_selfpain"] += RAND (3,5)
+!stock["sub_piss"] += RAND (2,5)
+!stock["sub_kopro"] += RAND (2,5)
+
+stock["stamina"] += RAND (2,3)
+stock["sensitivity"] += RAND (2,3)
+stock["temper"] += RAND (2,3)
+stock["ego"] += RAND (2,3)
 stock["pride"] -= RAND (1,3)
-stock["intellect"] += RAND (3,4)
-stock["service"] += RAND (3,4)
-stock["expression"] += RAND (3,4)
-stock["secretary"] += RAND (3,4)
-stock["callisthenics"] += RAND (3,4)
-stock["gladiatrix"] += RAND (3,4)
-stock["cook"] += RAND (3,4)
-stock["dressage"] += RAND (3,4)
-stock["pet"] += RAND (3,4)
+stock["intellect"] += RAND (2,3)
+stock["service"] += RAND (2,5)
+stock["expression"] += RAND (2,5)
+stock["secretary"] += RAND (2,5)
+stock["callisthenics"] += RAND (2,5)
+if stock["age"] ! CONST_INT['loli_age']: stock["gladiatrix"] += RAND (3,4)
+stock["cook"] += RAND (2,5)
+if stock["age"] = CONST_INT['loli_age']: stock["dressage"] += RAND (0,4)
+if stock["age"] = CONST_INT['loli_age']: stock["pet"] += RAND (0,4)
 stock["nurse"] += RAND (3,4)
 stock["enchanter"] += RAND (3,4)
-stock["vocal"] += RAND (3,4)
-stock["music"] += RAND (3,4)
-stock["custom"] += RAND (3,4)
-stock["moral"] += RAND (4,5)
+stock["vocal"] += RAND (2,4)
+stock["music"] += RAND (2,4)
+stock["custom"] += RAND (2,3)
+stock["moral"] = RAND (2,3)
 stock["rational"] += RAND (2,3)
 stock["instinct"] += RAND (2,3)
-stock["exotic"] += RAND (2,4)
+stock["exotic"] += RAND (2,3)
 
 !Slave Piercings
 stock["niple_piercing"] = 1
@@ -72,11 +80,50 @@ stock["thongue_piercing"] = 1
 stock["belly_piercing"] = 1
 stock["nosdril_piercing"] = 1
 stock["nose_piercing"] = 1
+stock["thongue_split"] = 1
+stock["scarification"] = 1
 stock["full_piercing"] = 1
-stock["piercings"] = 7
-stock["piercing_count"] = 4
+stock["piercings"] = 9
+stock["piercing_count"] = 5
+
+!Slave Makeup and Tattoos
+IF stock["age"] ! CONST_INT['loli_age']:
+ stock["makeup"] = 3
+ stock["fiend_tattoo"] = 1
+ stock["tatoo"] = 5
+END
+stock["manicure"] = 5
+stock["parfume"] = 1
+stock["hygiene"] = 0
+stock_rate["hygiene"] = 0
+stock["epilation"] = 12
+stock["hairstyle"] = 7
+stock["pos_gentle"] = 2
+stock['pos_slave_clean'] = 1
 
 !Slave Clothing Inventory
+stock_inventory['maid_dress'] = 1
+stock_inventory['apron'] = 1
+stock_inventory['nurse_dress'] = 1
+stock_inventory['sailor_foku'] = 1
+stock_inventory['leotard'] = 1
+stock_inventory['chainmail_bikini'] = 1
+stock_inventory['sun_dress'] = 1
+stock_inventory['leather_corset'] = 1
+stock_inventory['fluffy_stepins'] = 1
+stock_inventory['high_boots'] = 1
+stock_inventory['sneakers'] = 1
+stock_inventory['tabi'] = 1
+stock_inventory['glasses'] = 1
+stock_inventory['nekomimi'] = 1
+stock_inventory['leather_gloves'] = 1
+stock_inventory['fluffy_gloves'] = 1
+stock_inventory['rubber_gloves'] = 1
+stock_inventory['plain_headband'] = 1
+stock_inventory['golden_collar'] = 1
+stock_inventory['leather_collar'] = 1
+stock_inventory['spiked_collar'] = 1
+stock_inventory['sun_dress'] = 1
 stock_inventory['common_apron'] = 1
 stock_inventory['maid_dress'] = 1
 stock_inventory['nurse_dress'] = 1
@@ -98,19 +145,6 @@ stock_inventory['high_heels'] = 1
 stock_inventory['high_boots'] = 1
 stock_inventory['hoofed_boots'] = 1
 stock_inventory['incrusted_ring'] = 4
-
-!Slave Makeup and Tattoos
-stock["makeup"] = 3
-stock["fiend_tattoo"] = 1
-stock["tatoo"] = 5
-stock["manicure"] = 5
-stock["parfume"] = 1
-stock["hygiene"] = 0
-stock_rate["hygiene"] = 0
-stock["epilation"] = 12
-stock["hairstyle"] = 7
-stock["pos_gentle"] = 2
-stock['pos_slave_clean'] = 1
 
 !Slave Equipped Gear
 $stock["earrings"] = 'incrusted_earrings'
@@ -134,9 +168,7 @@ v_balls_rule = 1
 force_rules = 1
 if pet_tentacle > 0 and assistant_state ! 1: stock_tentacle_rule = 1
 
-!Pet Fiend
-if pet_tentacle < 1: pet_tentacle = 1
-
+gs '#txt'
 gs '$slave_price_stock'
 
 --- generate_stock_testing ---------------------------------

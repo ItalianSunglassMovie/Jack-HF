@@ -91,8 +91,8 @@ if prisoner_state ! 0: *p '<div id = "prison_stat_bar"><<$info_bar>></div>'
 
 *p '<div id="text"><<$prisoner_info_text>></div>'
 
-IF pstarvation_varning = 1:
- pstarvation_varning = 0
+IF pstarvation_warning = 1:
+ pstarvation_warning = 0
  msg '    You notice signs of starvation on your prisoner. It seems that the food you are giving her is not enough. Maybe you even have to pull her out of the dungeon and feed her to satiety.'
 END
 

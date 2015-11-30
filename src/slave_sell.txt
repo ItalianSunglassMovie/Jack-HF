@@ -107,7 +107,7 @@ IF sl_txt = 102:
  if wizard_mode = 1: msg 'Disability: <<$flaw_msg>>'
 END
 
-IF sl_txt = 103:
+IF sl_txt = 103 or sl_txt = 104 or sl_txt = 105:
  $text[1] = '  The client examines the slave and refuses without even listening to price bids. It''s not about the quality of training, the client just didn''t like something in her. Well, the customer has the right to be choosy..'
  FUNC('$menu', 'spacer', 6)
 

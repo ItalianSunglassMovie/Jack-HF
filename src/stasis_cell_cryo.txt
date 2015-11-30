@@ -7,7 +7,7 @@ IF cryonum = 1:
 if iced_1_state = 0: 
  $text = '<<$cell_empty>>'
  else
- $text = '   <<$iced_1_name>> is suspended in stasis. She can stay like that unlimited time. Or as long as you spend a sparks to maintain operation of the apparatus.'
+ $text = '   <<$iced_1_name>> is suspended in stasis. She can stay like that for an unlimited time. Or as long as you spend the sparks to maintain operation of the apparatus.'
 END
 
 IF nsfw = 1:

@@ -1,8 +1,11 @@
 # get_stock_seed
+!Get Stock Seed
+!Written by crushboss
+!Gets slave data from slave.json files in the json folder
 $stock_psy_basic = $seed_psy_basic[stock_type]
 stock["age"] = seed_age[stock_type]
 
-!stats
+!Stats
 stock["beauty"] = seed_beauty[stock_type]
 stock["stamina"] = seed_stamina[stock_type]
 stock["sensitivity"] = seed_sensitivity[stock_type]
@@ -16,7 +19,6 @@ stock["exotic"] = seed_exotic[stock_type]
 stock_rate['fame'] = seed_fame_rate[stock_type]
 stock['fertility'] = seed_fertility[stock_type]
 stock["fertility_revealed"] = seed_fertility_revealed[stock_type]
-
 
 stock["custom"] = seed_custom[stock_type]
 stock["moral"] = seed_moral[stock_type]
@@ -73,9 +75,6 @@ stock["sub_polypusvermin"] = seed_sub_polypusvermin[stock_type]
 
 if seed_metabolism > 0: stock["metabolism"] = seed_metabolism[stock_type]
 
-stock["scares"] = seed_stock_scares[stock_type]
-stock["bruises"] = seed_stock_bruises[stock_type]
-
 !Trait Affinities
 stock["sport_affinity"] = seed_sport_affinity[stock_type]
 stock["expression_affinity"] = seed_expression_affinity[stock_type]
@@ -117,6 +116,9 @@ stock["exhibitionism"] = seed_exhibitionism[stock_type]
 stock["preversion"] = seed_preversion[stock_type]
 stock["masohism"] = seed_masohism[stock_type]
 stock["homosexualism"] = seed_homosexualism[stock_type]
+stock["abuse_attitude"] = seed_abuse_attitude[stock_type]
+stock["blood_attitude"] = seed_blood_attitude[stock_type]
+stock["passion_sweets"] = seed_passion_sweets[stock_type]
 stock["memory_revealed"] = seed_memory_revealed[stock_type]
 stock["meekness_revealed"] = seed_meekness_revealed[stock_type]
 stock["selfesteem_revealed"] = seed_selfesteem_revealed[stock_type]
@@ -131,10 +133,12 @@ stock["masohism_revealed"] = seed_masohism_revealed[stock_type]
 stock["homosexualism_revealed"] = seed_homosexualism_revealed[stock_type]
 stock["metabolism_revealed"] = seed_metabolism_revealed[stock_type]
 
-
-!Illness and Disease
+!Illness, Disease, Scars, Bruises, Psy
 stock['ill'] = seed_ill[stock_type]
 stock['parasite'] = seed_parasite[stock_type]
+stock["scares"] = seed_stock_scares[stock_type]
+stock["bruises"] = seed_stock_bruises[stock_type]
+$stock_psy_basic = $seed_psy_basic[stock_type]
 
 !Anatomy
 $stock_name = $seed_name[stock_type]
@@ -144,11 +148,31 @@ display_psy_status = 1
 $stock['boobs_img'] = $seed_boobs_img[stock_type]
 $stock['pussy_img'] = $seed_pussy_img[stock_type]
 
+!BACKGROUND
+$stock_world_description = $stock_world_description[stock_type]
+$stock_family_description = $stock_family_description[stock_type]
+$stock_occupation_description = $stock_occupation_description[stock_type]
+
 !Images
 $stock['fullimage'] = $fullimage[stock_type]
 $stock['ava'] = $seed_ava[stock_type]
 $stock['ava_gray'] = $seed_ava_gray[stock_type]
 $stock['ava_clear'] = $seed_ava_clear[stock_type]
+
+!Equipment
+$stock["wpn"] = 'безоружный'
+$stock["armor"] = 'без_брони'
+$stock["scnd"] = ''
+
+$stock["back_wpn"] = ''
+$stock["left_wpn"] = ''
+$stock["right_wpn"] = ''
+$stock["arm_wpn"] = ''
+$stock["leg_wpn"] = ''
+
+$stock["cloth"] = 'голая'
+
+$stock['newness'] = 10
 
 --- get_stock_seed ---------------------------------
 

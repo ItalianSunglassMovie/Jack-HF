@@ -1,6 +1,9 @@
 # init_custom_game
+!Initialize Custom Game
+
 get_initial_slave = 0
 hero_points = 800
+sparks = 1000
 
 master_str = 1
 master_cha = 0
@@ -8,7 +11,7 @@ master_style = 0
 master_libido = 0
 master_energy = 5
 
-master_tutor = 0
+master_tutor = 1
 master_fighter = 0
 master_butler = 0
 master_artdirector = 0
@@ -26,6 +29,9 @@ master_fetish = 0
 
 $estate = 'slum_house'
 $starting_area = 'Slum'
+
+$assistant["armor"] = 'без_брони'
+$slave["armor"] = 'без_брони'
 
 custom_game = 1
 patrician_mode_off = 1

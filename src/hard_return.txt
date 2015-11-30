@@ -1,105 +1,301 @@
 # hard_return
+!Hard return - Sandbox Mode - get_initial_slave
+!Overhauled by crushboss
 !Return through the extra location for the benefit of proper display characteristics
-IF cheat_j ! 1: sbros = 1
+sbros = 1
 
-IF get_initial_slave = 1 and cheat_j ! 1: 
- slave["beauty"] = 1
+IF get_initial_slave = 1: 
+ slave["beauty"] = RAND(3,4)
+ slave["sensitivity"] = RAND(3,5)
+ slave["intellect"] = RAND(3,5)
+ slave["pride"] = 0
+ slave["ego"] = RAND(3,4)
+ slave['stamina'] = 5
+ slave['temper'] = RAND(3,4)
  slave['custom'] = 5
  slave['instinct'] = 5
- slave["intellect"] = 4
  slave['rational'] = 5
  slave['moral'] = 5 
- slave["pride"] = 0
- slave["ego"] = 3
+ slave['cook'] = RAND(3,5)
+ slave['secretary'] = RAND(3,5)
+ slave['expression'] = RAND(3,5)
+ slave['service'] = RAND(3,5)
+ slave['nurse'] = RAND(3,5)
+ 
+ slave["sub_hj"] += RAND(1,4)
+ slave["sub_fj"] += RAND(1,4)
+ slave["sub_hug"] += RAND(1,4)
+ slave["sub_pazuri"] += RAND(1,4)
+ slave["sub_kiss"] += RAND(1,4)
+ slave["sub_thongue"] += RAND(1,4)
+ slave["sub_bj"] += RAND(1,4)
+ slave["sub_dt"] += RAND(1,4)
+ slave["sub_asslik"] += RAND(1,4)
+ slave["sub_seduce"] += RAND(1,4)
+ slave["sub_masturbation"] += RAND(1,4)
+ slave["sub_exhibit"] += RAND(1,4)
+ slave["sub_humiliation"] += RAND(1,4)
+
  slave["neg_slave"] = 0
- sparks = 10000
- npc_reveal['realtor'] = 1
+ slave['parasite'] = 0
+ slave['pregnant'] = 0
+ slave["fear"] = 0
+ slave["angst"] = 0
+ slave["spoil"] = 0
+ slave["arousal"] = 3
+ slave['ill'] = 0
+ slave['issues'] = 0
+ slave["scares"] = 0
+ slave["bruises"] = 0
+ slave_rate["scares"] = 0
+ slave_rate["bruises"] = 0
+ slave["energy"] = 5
+
+ slave["grace"] = RAND(0,1)
+ slave["voice"] = RAND(0,1)
+ slave["homosexualism"] = RAND(0,1)
+ slave["nurse_affinity"] = RAND(0,1)
+ slave["service_affinity"] = RAND(0,1)
+ slave["cook_affinity"] = RAND(0,1)
+ slave["vocal_affinity"] = RAND(0,1)
+ slave["callisthenics_affinity"] = RAND(0,1)
+ slave["nymphomania"] = 0
+
+ slave['brand'] = 2
+ tattoo_brand = slave['brand']
+ slave['fat'] = RAND(1,3)
+ slave["metabolism"] = RAND(3,5)
+ IF virginity <= 0:
+  a = RAND(1,20)
+  if a > 10: virginity = 2
+  a = 0
+ END
+ IF virginity <= 0:
+  slave['ill'] = 0
+  slave['parasite'] = 0
+  slave['pregnant'] = 0
+  slave["sub_vaginal"] = 0
+  slave["sub_vaginal_xp"] = 0
+  slave["sub_fisting"] = 0
+  slave["sub_fisting_xp"] = 0
+  slave["sub_threesome"] = 0
+  slave["sub_threesome_xp"] = 0
+  slave["sub_dp"] = 0
+  slave["sub_dp_xp"] = 0
+  slave["sub_tp"] = 0
+  slave["sub_tp_xp"] = 0
+  slave["sub_gangbang"] = 0
+  slave["sub_gangbang_xp"] = 0
+  slave["sub_bukake"] = 0
+  slave["sub_bukake_xp"] = 0
+  slave["sub_anal"] = 0
+  slave["sub_anal_xp"] = 0
+  slave["anal_stretch"] = 0  
+  slave["sub_zoosex"] = 0
+  slave["sub_zoosex_xp"] = 0
+  slave["sub_bestiality"] = 0
+  slave["sub_bestiality_xp"] = 0
+  slave["sub_horse"] = 0
+  slave["sub_horse_xp"] = 0
+  slave["sub_tentacles"] = 0
+  slave["sub_tentacles_xp"] = 0
+  slave["sub_arachnidspider"] = 0
+  slave["sub_arachnidspider_xp"] = 0
+  slave["sub_polypusvermin"] = 0
+  slave["sub_polypusvermin_xp"] = 0
+  else
+  slave["sub_anal"] += RAND(1,4)
+  slave["anal_stretch"] = slave["sub_anal"]
+  slave["sub_vaginal"] += RAND(1,4)
+  slave["sub_fisting"] += RAND(1,4)
+  slave["sub_threesome"] += RAND(1,4)
+  slave["sub_dp"] += RAND(1,4)
+  slave["sub_tp"] += RAND(1,4)
+  slave["sub_gangbang"] += RAND(1,4)
+ END
+
+ !Slave Piercings
+ slave["niple_piercing"] = 1
+ slave["clit_piercing"] = 1
+ slave["ear_piercing"] = 1
+ slave["thongue_piercing"] = 1
+ slave["belly_piercing"] = 1
+ slave["nosdril_piercing"] = 1
+ slave["nose_piercing"] = 1
+ slave["thongue_split"] = 1
+ slave["scarification"] = 1
+ slave["full_piercing"] = 1
+ slave["piercings"] = 9
+ slave["piercing_count"] = 5 
+
+ !Slave Clothing Inventory
+ slave_inventory['common_apron'] = 1
+ slave_inventory['maid_dress'] = 1
+ slave_inventory['nurse_dress'] = 1
+ slave_inventory['enchanter_robe'] = 1
+ slave_inventory['leotard'] = 1
+ slave_inventory['chainmail_bikini'] = 1
+ slave_inventory['laced_underwear'] = 1
+ slave_inventory['bellydance'] = 1
+ slave_inventory['leather_corset'] = 1
+ slave_inventory['anal_tail'] = 1
+ slave_inventory['exotic_wig'] = 1
+ slave_inventory['pony_plume'] = 1
+ slave_inventory['incrusted_earrings'] = 4
+ slave_inventory['golden_collar'] = 1
+ slave_inventory['leather_gloves'] = 1
+ slave_inventory['ponygirl_harness'] = 1
+ slave_inventory['nipple_chain'] = 1
+ slave_inventory['high_heels'] = 1
+ slave_inventory['high_boots'] = 1
+ slave_inventory['hoofed_boots'] = 1
+ slave_inventory['incrusted_ring'] = 4
+
+!Slave Makeup and Tattoos
+ if slave["age"] ! CONST_INT['loli_age']: slave["makeup"] = 3
+ slave["fiend_tattoo"] = 1
+ slave["tatoo"] = 5
+ slave["manicure"] = 5
+ slave["parfume"] = 1
+ slave["hygiene"] = 0
+ slave_rate["hygiene"] = 0
+ slave["epilation"] = 12
+ slave["hairstyle"] = 7
+ slave["pos_gentle"] = 2
+ slave['pos_slave_clean'] = 1
+
+ !Slave Equipped Gear
+ $slave["cloth"] = 'laced_underwear'
+ $slave["earrings"] = 'incrusted_earrings'
+ $slave["gloves"] = 'leather_gloves'
+ $slave["nipplerings"] = 'nipple_chain'
+ $slave["clitring"] = 'incrusted_earrings'
+ $slave["boots"] = 'high_boots'
+ $slave["ring_left"] = 'incrusted_ring'
+ $slave["ring_right"] = 'incrusted_ring'
+ 
+ !Weapon and Armor Inventory
+ плейт = 2
+ бастард = 2
+ катана = 2
+ кинжал = 2
+ стилет = 2
+ тесак = 2
+ фламберг = 2
+ нагината = 2
+
+ !Master Clothing Inventory
+ regal_suit = 1
+ formal_suit = 1
+ aketon = 1
+ livery = 1
+ medic_robes = 1
+ wizard_robes = 1
+
+ !Extended Rental
+ IF $estate ! 'slum_house':
+  lab = 1
+  dungeon = 1
+  barn = 1
+  bath = 1
+  kitchen = 1
+  library = 1
+  pen = 1
+  svine = 1
+  arachnidSpider = 1
+  polypusvermin = 1
+ END
+
+ !Master Frige Inventory
+ frige["vegetables"] = 10
+ frige["flower"] = 10
+ frige["spice"] = 10
+ frige["cheese"] = 10
+ frige["eggs"] = 10
+ frige["milk"] = 10
+ frige["cream"] = 10
+ frige["mince"] = 10
+ frige["meat"] = 20
+ frige["alcohol"] = 20
+ spawn_semen = 120
+
+ !Lab Inventory
+ lab_store["slime"] = 5
+ lab_store["kanabis"] = 5
+ lab_store["koffe"] = 5
+ lab_store["meth"] = 5
+ lab_store["opium"] = 5
+
+ !BSDM Inventory
+ inventory['deprivation_suit'] = 1
+ inventory['vaginal_balls'] = 1
+ inventory['anal_plug'] = 1
+ inventory['secure_gag'] = 1
+ inventory['chastity_belt'] = 1
+ inventory['pissuar_stable'] = 1
+ inventory['toilet_stable'] = 1
+ inventory['stethoscope'] = 1
+ vibrator = 1
+ 
+ !Slave Rules
+ slave_sleep_condition = 1
+ slave_food_type = 2
+ slave_eats_remains = 1
+ slave_food_portion = 4
+ slave_washes_rule = 1
+ blowjob_rule = 1
+ v_balls_rule = 1
+ force_rules = 1
+ if pet_tentacle > 0 and assistant_state ! 1: slave_tentacle_rule = 1  
+  
  noble_status = 1
+ npc_reveal['realtor'] = 1
  active[$quest[3]] = 0
  faction_fame['neutral'] = 1
  faction_fame['taurus'] = 1
  faction_fame['serpis'] = 1
  faction_fame['korvus'] = 1
  faction_fame['kamira'] = 1
- 
- slave['parasite'] = 0
- slave['ill'] = 0
- slave["scares"] = 0
- slave["bruises"] = 0
- slave_rate["scares"] = 0
- slave_rate["bruises"] = 0
- slave["energy"] = 5
- slave["hygiene"] = 0
- slave_rate["hygiene"] = 0
- 
+
+ !Master equipped inventory 
+ $master_wpn = 'бастард'
+ $master_scnd = ''
+ $master_cloth = 'aketon'
  $master_armor = 'плейт'
- $master_cloth = 'fancy_suit'
- 
  $master_back_wpn = 'грейтекс'
  $master_left_wpn = 'демократизатор'
- $master_right_wpn = 'кнут'
+ $master_right_wpn = 'бастард'
  $master_arm_wpn = 'нагайка'
  $master_leg_wpn = 'кинжал'
 
-
- slave_inventory['maid_dress'] = 1
-
- slave['stamina'] = 4
- slave['temper'] = 3
- slave['cook'] = 4
- slave['secretary'] = 4
- slave['expression'] = 3
- slave['service'] = 3
+ gs 'new_estate'
  
- !расчет подчиненности у стартовой ассистентки для корректного отображения
- slave_obedience_bonus = 0 + slave["meekness"]
- if slave["courage"] = 2: slave["fear"] = 0
- if slave["courage"] = 0: slave_obedience_bonus += slave["fear"]
- if slave["courage"] = -1: slave_obedience_bonus += slave["fear"]*2
- slave["obedience"] = slave_obedience_bonus + slave["moral"] + slave["fear"] + slave["custom"] + slave["rational"] + slave["instinct"] + slave_mood_bonus - slave["spoil"] - rebell[$slave_psy_basic]
-
- assistant_obedience_bonus = 0 + assistant["meekness"]
- if assistant["courage"] = 2: assistant["fear"] = 0
- if assistant["courage"] = 0: assistant_obedience_bonus += assistant["fear"]
- if assistant["courage"] = -1: assistant_obedience_bonus += assistant["fear"]*2
- assistant["obedience"] = assistant_obedience_bonus + assistant["moral"] + assistant["fear"] + assistant["custom"] + assistant["rational"] + assistant["instinct"] + assistant_mood_bonus - assistant["spoil"] - rebell[$assistant_psy_basic]
- if $assistant_psy_status = 'broken': assistant["obedience"] = 100
-
- slave["sub_vaginal"] = 3
- slave['brand'] = 1
- 
- IF virginity = 0 or meta_type = 1: 
-  slave['parasite'] = 0
-  slave['ill'] = 0
-  slave["sub_vaginal"] = 0
-  slave["sub_fisting"] = 0
-  slave["sub_threesome"] = 0
-  slave["sub_dp"] = 0
-  slave["sub_tp"] = 0
-  slave["sub_gangbang"] = 0
-  slave["sub_zoosex"] = 0
-  slave["sub_bestiality"] = 0
-  slave["sub_horse"] = 0
-  slave["sub_tentacles"] = 0
-  slave["sub_arachnidspider"] = 0
-  slave["sub_polypusvermin"] = 0
+ !Extended Rental
+ IF $estate ! 'slum_house':
+  lab = 1
+  dungeon = 1
+  barn = 1
+  bath = 1
+  kitchen = 1
+  library = 1
+  pen = 1
+  svine = 1
+  arachnidSpider = 1
+  polypusvermin = 1
  END
- 
- get_initial_slave = 0
- !lillimerge: added estate code here
+
  IF $estate = 'slum_house': $interior = 'slum_house'
  IF $estate = 'kamira_house': $interior = 'basic'
  IF $estate = 'serpis_house': $interior = 'econom'
  IF $estate = 'taurus_house': $interior = 'fort'
  IF $estate = 'korvus_house': $interior = 'gothic'
  IF $estate = 'white_house': $interior = 'elite'
- gs 'new_estate' 
- gs 'generate_stock' 
- !otherwise no energy waste during the rapid transition to a market on the first day in the free mode
- stock_pending = 0
+ 
  gs 'slave_to_assistant'
- else
+
+ ELSE
  get_initial_slave = 0
+ stock_pending = 0
 END
 
 gs '$newloc'

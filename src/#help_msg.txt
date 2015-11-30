@@ -9,7 +9,7 @@ $красота_справка = '<center>BEAUTY<br>
 <font color="#008080">Beautiful</font>
 <font color="#008000">Exquisite</font></center>
 '
-$красота_справка_2 = "  Natural beauty very strongly influences her market price. Your slave's rank will never rise higher than her beauty value. At auctions beautiful slaves are sold for higher prices."
+$красота_справка_2 = "  Natural beauty very strongly influences her market price. Your slave's rank will never rise higher than her beauty value or fame value (whichever is higher). At auctions beautiful slaves are sold for higher prices."
 $красота_совет = '   [BEAUTY TIPS]
    All your efforts to improve appearance of the slave will influence style, not beauty. Stylishness is important too, but the value of natural beauty is huge. You can increase beauty only by plastic surgery in technosphere and only once. Try to buy beautiful slaves if you intend to train them to high ranks. Beauty will decrease, if a slave has scars or bruises.'
 
@@ -20,7 +20,7 @@ $здоровье_справка = '<center>ENDURANCE<br>
 <font color="#0000CD">Healthy</font>
 <font color="#008080">Tough</font>
 <font color="#008000">Enduring</font></center>'
-$здоровье_справка_2 = '  Hardy slave can work well and hard and is more attractive for clients. Critical decrease of endurance can kill your slave.'
+$здоровье_справка_2 = '  Hardy slave can work well and hard and are more attractive for clients. Critical decrease of endurance can kill your slave.'
 $здоровье_совет = "   [ENDURANCE TIPS]
 <div style='font-size: 88%;'>   Endurance always comes handy. If your slave has weak endurance you need to feed her well; it's desirable to prescribe vitamins and not let her become exhausted (receive red energy stars). Assistant with high nurse skill can help too. To increase endurance of healthy slave, make her do sports, race and martial arts. You also need to heal her injuries and sicknesses in time, don't let her starve or overwork.</div>"
 
@@ -63,10 +63,10 @@ $стиль_справка = '<center>STYLE<br>
 <font color="#4B0082">Common</font>
 <font color="#0000CD">Stylish</font>
 <font color="#008080">Refined</font>
-<font color="#008000">Graceful</font></center>'
-$стиль_справка_2 = "  Slave's appearance is extremely important during the sales. Customers will like well-groomed and well-dressed slave, and sloppy slave can be turned down even if she fits to the requirements."
+<font color="#008000">Elegant</font></center>'
+$стиль_справка_2 = "  Slave's appearance is extremely important during the sale. Customers will like well-groomed and well-dressed slaves, and sloppy slaves can be turned down even if she fits the requirements."
 $стиль_совет = '   [STYLE TIPS]
-<div style="font-size: 88%;">   Style depends little on the natural abilities and skills, though it is influences by ability to communicate ("escort") and presence ("dancer"). Style suffers from dirt and sloppiness. Hairstyle, make up, perfume, beautiful clothes and jewelry -  all of these improve style and makes slave more attractive to customers. It is not necessary to constantly maintain style - it plays a role only when it is time to show girl to customer.</div>'
+<div style="font-size: 88%;">   Style depends little on the natural abilities and skills, though it is influences by ability to communicate ("escort") and presence ("dancer"). Style suffers from dirt and sloppiness. Hairstyle, make up, perfume, beautiful clothes and jewelry -  all of these improve style and makes the slave more attractive to customers. It is not necessary to constantly maintain style - it plays a role only when it is time to show the girl to the customer.</div>'
    
 $ум_справка = '<center>INTELLECT<br>
 <font color="#cd0000">Retarded</font>
@@ -88,7 +88,7 @@ $темперамент_справка = '<center>TEMPERAMENT<br>
 <font color="#008000">Passionate</font></center>'
 $темперамент_справка_2 = '  Temperamental slaves are uncontrollable and are less susceptible to education but they are passionate lovers and are more interesting for customers, as they have a bright personality. Calms ones are easier to control.'
 $темперамент_совет = '   [TEMPERAMENT TIPS]
-   Temperament is ambiguous feature. More emotional slaves are harder to control, but cold ones are less valuable. By suppressing initiative, driving her in depression and silencing her you will eventually lower her temperament. There are no good ways to increase it, but you can make a slave wear a spiked collar and boots.'
+   Temperament is ambiguous feature. More emotional slaves are harder to control, but cold ones are less valuable. By suppressing initiative, driving her in depression and silencing her you will eventually lower her temperament. Getting her to express herself or interact openly with the slaver will often increase temperament.'
    
 $характер_справка = '<center>NATURE<br>
 <font color="#cd0000">Spineless</font>
@@ -108,7 +108,7 @@ $гордыня_справка = '<center>PRIDE<br>
 <font color="#0000CD">Timid</font>
 <font color="#008080">Open</font>
 <font color="#008000">Unashamed</font></center>'
-$гордыня_справка_2 = '  Pride prevents slave from being open and enjoying sex, causes her to resist your will, and refuse humiliating orders.'
+$гордыня_справка_2 = '  Pride prevents a slave from being open and enjoying sex.  It also causes her to resist your will, and refuse humiliating orders.'
 $гордыня_совет = '   [PRIDE TIPS]
    Pride is harmful both in training and in the sale, so you should work on her openness. Force her to do dirty, perverted and degrading things, and assign strict rules. Eventually pride will be broken and the slave will become more open. But do not overdo it, as with pride, you can break the very slave.'
 
@@ -119,12 +119,12 @@ $слава_справка = '<center>FAME IN ROME<br>
 <font color="#0000CD">Celebrity</font>
 <font color="#008080">Famous</font>
 <font color="#008000">Legendary</font></center>'
-$слава_справка_2 = "  Famous slaves are much more expensive. Your slave's rank won't be lower than level of her fame, even if she lacks other attributes, beauty included."
+$слава_справка_2 = "  Famous slaves are much more expensive. Your slave's rank won't be lower than the level of her fame, even if she lacks other attributes, beauty included."
 $слава_совет = '   [FAME TIPS]
-   Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena coliseum.'
+   Fame is not the most important parameter for a slave. You can train wonderful product unconcerned about this. Fame will grow with victories in the arena and coliseum.'
 
 $калории_совет = '   [WHAT CALORIES DOES?]
-<div style="font-size: 83%;">   Calories represent how your slave fed. If the number of calories less than zero - slave will starve and she will lose weight (f), but if slave is fat enough - she will begin to lose weight without starvation if her calories was equal to zero. Each active action consumes calories, the more calories left - the faster slave will get fat and gain weight, and vice versa. The amount of calories also determine slave health, it is important not to give her to starve herself. If you change her physique, fat meter will reset.</div>'
+<div style="font-size: 83%;">   Calories represent how your slave fed. If the number of calories is less than zero - the slave will starve and she will lose weight (f), but if the slave is fat enough - she will begin to lose weight without starvation if her calories are equal to zero. Each active action consumes calories, the more calories left - the faster the slave will get fat and gain weight, and vice versa. The amount of calories also determine slave health, it is important not to starve her. If you change her physique, fat meter will reset.</div>'
 
 !CHARACTERISTICS HELP
 $strength_chart = '<center>STRENGTH<br>
@@ -175,7 +175,17 @@ $brand_chart = '<center>BRAND STATUS<br>
 <<$brand[4]>>
 <<$brand[5]>></center>'
 $brand_help = '   [BRAND STATUS TIPS]
-  For a member of the Guild of Trainers nothing is more important than the prestige of the training house. It is your brand, your trademark. The quality of the slaves you train will speak for your reputation. With fame, your personal status will rise, auctions become more successful and customers more accommodating.'
+  For a slaver in Eternal Rome, nothing is more important than building up your personal brand. It is your brand, your trademark. The quality of the slaves you train will speak for your reputation. With fame, your personal status will rise, and customers will be more accommodating.'
+
+$guild_brand_chart = '<center>GUILD REPUTATION<br>
+<<$guild_brand[0]>>
+<<$guild_brand[1]>>
+<<$guild_brand[2]>>
+<<$guild_brand[3]>>
+<<$guild_brand[4]>>
+<<$guild_brand[5]>></center>'
+$guild_brand_help = '   [BRAND STATUS TIPS]
+  For a member of the Guild of Trainers nothing is more important than the prestige of the training house. You are helping to build the brand of the very prestigous Slaver''s Guild in Eternal Rome. The quality of the slaves you train will speak for your reputation. With fame, your personal status will rise, auctions become more successful and other benefits may arise.'
 
 $wealth_chart = '<center>STANDARD OF LIVING<br>
 <font color="#cd0000">Impoverished</font>
@@ -319,15 +329,29 @@ $no_house_mess = '  The house is not dirty enough to teach the slave to clean.'
 
 $no_kitchen = '  This house has no kitchen, maybe I should change residence.'
 
+$max_skill = '	This skill is maxed and cannot be trained further.'
+
+$assistant_skill = '	Your assistant''s skill is not sufficient to train your slave further.'
+
 $no_lab = '  This house has no laboratory. I must talk to the realtor in the White City Trade Square to purchase one.'
 
 $no_slave = '  I have no slave to assist, I need to procure one.'
 
-$no_slave_stamina = '  With such health the slave should be lying in bed, not engaged in sports!'
+$no_slave_stamina = '  Your slave lacks the stamina to do this activity and shouldn''t be engaged in rigorous physical activities!  Try an introductory lesson in Gymnastics or Sports & Fitness to build stamina.'
 
 $no_bath = '  This house has no bath. Living in a house without a bath is a bad idea.'
 
-$no_creature = '  I don`t have the necessary creature for this lesson.'
+$no_creature = '  I don`t have the necessary creature and/or dwelling for this lesson.'
+
+$no_dungeon = '	I need a dungeon for this creature to live in.'
+
+$no_pen = '	I need a pen for the Fiend to live in.'
+
+$no_barn = '	I need a barn for this animal to live in.'
+
+$text_exhausted_prisoner = '<<$prisoner_name>> is too exhausted, if you force her to perfom this task she will fall unconscious'
+
+$text_exhausted = '<<$slave_name>> is too exhausted, if you force her to perfom this task she will fall unconscious'
 
 $presets_help = '<div style="font-size: 90%;">The presets memorize the current state of the slave rules. Click on the box next to a preset to activate it. To change the preset name, click on its name. To save a preset, press the [Save] button of the desired preset. The "reset" resets the current rules, but not presets.</div>'
 
@@ -386,7 +410,7 @@ $бондаж_с_справка = '<div style="font-size: 95%;">  Binding allows
 
 $секс_техники_с_справка = '  Different sex techniques will increase the effectiveness of training relevant skills and with due skill sexual partner will have more excitement.'
 
-$patrician_mode_help = '  Patrician mode characters stats with an increased cash budget, an assistant and top tier equipment, as well as the reputation of the houses which allows to buy any home and of course the status of partician.'
+$patrician_mode_help = '  Patrician mode characters start out with an increased cash budget, a good assistant and top tier equipment, as well as the reputation of the houses which allows you to buy any home and of course the status of partician.'
 
 --- #help_msg ---------------------------------
 

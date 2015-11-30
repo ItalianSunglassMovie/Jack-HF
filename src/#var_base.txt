@@ -162,15 +162,13 @@ prepay[8] = 920
 prepay[9] = 1080
 prepay[10] = 1200
 
-$specialisation[0] = 'None'
-$specialisation[1] = 'Refferent'
-$specialisation[2] = 'Pet'
-$specialisation[3] = 'Nurse'
-$specialisation[4] = 'Maid'
-$specialisation[5] = 'Gladiatrix'
-$specialisation[6] = 'Enchanter'
-$specialisation[7] = 'Artist'
-$specialisation[8] = 'Concubine'
+$specialisation[1] = 'refferent'
+$specialisation[2] = 'pet'
+$specialisation[3] = 'servant'
+$specialisation[4] = 'witchdoctor'
+$specialisation[5] = 'gladiatrix'
+$specialisation[6] = 'artist'
+$specialisation[7] = 'concubine'
 
 !GENERAL PICTURES
 $fullimage[0] = ''
@@ -847,20 +845,18 @@ $brand_fame[5] = $_font_col_rep[5] + 'Maybe I overestimating myself, but I think
 
 !show vars
 $slave_type_name['refferent'] = 'an assistant'
-$slave_type_name['pet'] = 'a pet'
-$slave_type_name['nurse'] = 'a nurse'
-$slave_type_name['maid'] = 'a maid'
+$slave_type_name['pet'] = 'a pet ponygirl'
+$slave_type_name['servant'] = 'a servant'
+$slave_type_name['witchdoctor'] = 'a witch doctor'
 $slave_type_name['gladiatrix'] = 'a gladiatrix'
-$slave_type_name['enchanter'] = 'an enchantress'
 $slave_type_name['artist'] = 'an artist'
 $slave_type_name['concubine'] = 'a concubine'
 
 $slave_type_name_sk['refferent'] = 'an assistant'
-$slave_type_name_sk['pet'] = 'a pet'
-$slave_type_name_sk['nurse'] = 'a nurse'
-$slave_type_name_sk['maid'] = 'a maid'
+$slave_type_name_sk['pet'] = 'a pet ponygirl'
+$slave_type_name_sk['servant'] = 'a servant'
+$slave_type_name_sk['witchdoctor'] = 'a witch doctor'
 $slave_type_name_sk['gladiatrix'] = 'a gladiatrix'
-$slave_type_name_sk['enchanter'] = 'an enchantress'
 $slave_type_name_sk['artist'] = 'an artist'
 $slave_type_name_sk['concubine'] = 'a concubine'
 
@@ -876,52 +872,111 @@ $rating[8] = dyneval($vb_cycle, 8, '<b><font color="#008080">A+</font></b>')
 $rating[9] = dyneval($vb_cycle, 9, '<b><font color="#2E8B57">S-</font></b>')
 $rating[10] = dyneval($vb_cycle, 10, '<b><font color="#008000">S+</font></b>')
 
+$assistant_rating[0] = dyneval($vb_cycle, 0, '<b><font color="#CD0000">F-</font></b>')
+$assistant_rating[1] = dyneval($vb_cycle, 1, '<b><font color="#ff004C">D-</font></b>')
+$assistant_rating[2] = dyneval($vb_cycle, 2, '<b><font color="#ff00A2">D+</font></b>')
+$assistant_rating[3] = dyneval($vb_cycle, 3, '<b><font color="#D805FF">C-</font></b>')
+$assistant_rating[4] = dyneval($vb_cycle, 4, '<b><font color="#05A1F6">C+</font></b>')
+$assistant_rating[5] = dyneval($vb_cycle, 5, '<b><font color="#0000CD">B-</font></b>')
+$assistant_rating[6] = dyneval($vb_cycle, 6, '<b><font color="#0000CD">B+</font></b>')
+$assistant_rating[7] = dyneval($vb_cycle, 7, '<b><font color="#23B4C4">A-</font></b>')
+$assistant_rating[8] = dyneval($vb_cycle, 8, '<b><font color="#008080">A+</font></b>')
+$assistant_rating[9] = dyneval($vb_cycle, 9, '<b><font color="#2E8B57">S-</font></b>')
+$assistant_rating[10] = dyneval($vb_cycle, 10, '<b><font color="#008000">S+</font></b>')
+
+$stock_rating[0] = dyneval($vb_cycle, 0, '<b><font color="#CD0000">F-</font></b>')
+$stock_rating[1] = dyneval($vb_cycle, 1, '<b><font color="#ff004C">D-</font></b>')
+$stock_rating[2] = dyneval($vb_cycle, 2, '<b><font color="#ff00A2">D+</font></b>')
+$stock_rating[3] = dyneval($vb_cycle, 3, '<b><font color="#D805FF">C-</font></b>')
+$stock_rating[4] = dyneval($vb_cycle, 4, '<b><font color="#05A1F6">C+</font></b>')
+$stock_rating[5] = dyneval($vb_cycle, 5, '<b><font color="#0000CD">B-</font></b>')
+$stock_rating[6] = dyneval($vb_cycle, 6, '<b><font color="#0000CD">B+</font></b>')
+$stock_rating[7] = dyneval($vb_cycle, 7, '<b><font color="#23B4C4">A-</font></b>')
+$stock_rating[8] = dyneval($vb_cycle, 8, '<b><font color="#008080">A+</font></b>')
+$stock_rating[9] = dyneval($vb_cycle, 9, '<b><font color="#2E8B57">S-</font></b>')
+$stock_rating[10] = dyneval($vb_cycle, 10, '<b><font color="#008000">S+</font></b>')
+
+$patrician_rating[0] = dyneval($vb_cycle, 0, '<b><font color="#CD0000">F-</font></b>')
+$patrician_rating[1] = dyneval($vb_cycle, 1, '<b><font color="#ff004C">D-</font></b>')
+$patrician_rating[2] = dyneval($vb_cycle, 2, '<b><font color="#ff00A2">D+</font></b>')
+$patrician_rating[3] = dyneval($vb_cycle, 3, '<b><font color="#D805FF">C-</font></b>')
+$patrician_rating[4] = dyneval($vb_cycle, 4, '<b><font color="#05A1F6">C+</font></b>')
+$patrician_rating[5] = dyneval($vb_cycle, 5, '<b><font color="#0000CD">B-</font></b>')
+$patrician_rating[6] = dyneval($vb_cycle, 6, '<b><font color="#0000CD">B+</font></b>')
+$patrician_rating[7] = dyneval($vb_cycle, 7, '<b><font color="#23B4C4">A-</font></b>')
+$patrician_rating[8] = dyneval($vb_cycle, 8, '<b><font color="#008080">A+</font></b>')
+$patrician_rating[9] = dyneval($vb_cycle, 9, '<b><font color="#2E8B57">S-</font></b>')
+$patrician_rating[10] = dyneval($vb_cycle, 10, '<b><font color="#008000">S+</font></b>')
+
+$food_quality[0] = dyneval($vb_cycle, 0, '<b><font color="#CD0000">F-</font></b>')
+$food_quality[1] = dyneval($vb_cycle, 1, '<b><font color="#ff004C">D-</font></b>')
+$food_quality[2] = dyneval($vb_cycle, 2, '<b><font color="#ff00A2">D+</font></b>')
+$food_quality[3] = dyneval($vb_cycle, 3, '<b><font color="#D805FF">C-</font></b>')
+$food_quality[4] = dyneval($vb_cycle, 4, '<b><font color="#05A1F6">C+</font></b>')
+$food_quality[5] = dyneval($vb_cycle, 5, '<b><font color="#0000CD">B-</font></b>')
+$food_quality[6] = dyneval($vb_cycle, 6, '<b><font color="#0000CD">B+</font></b>')
+$food_quality[7] = dyneval($vb_cycle, 7, '<b><font color="#23B4C4">A-</font></b>')
+$food_quality[8] = dyneval($vb_cycle, 8, '<b><font color="#008080">A+</font></b>')
+$food_quality[9] = dyneval($vb_cycle, 9, '<b><font color="#2E8B57">S-</font></b>')
+$food_quality[10] = dyneval($vb_cycle, 10, '<b><font color="#008000">S+</font></b>')
+
 common_price[0] = 5
 common_price[1] = 500
-common_price[2] = 1000
-common_price[3] = 2000
-common_price[4] = 3000
-common_price[5] = 4000
-common_price[6] = 5000
-common_price[7] = 6000
-common_price[8] = 7000
-common_price[9] = 8500
-common_price[10] = 10000
+common_price[2] = 750
+common_price[3] = 1000
+common_price[4] = 1500
+common_price[5] = 2000
+common_price[6] = 2500
+common_price[7] = 3000
+common_price[8] = 3500
+common_price[9] = 4000
+common_price[10] = 5000
 
-discount_price[0] = 1
-discount_price[1] = 300
-discount_price[2] = 600
-discount_price[3] = 1350
-discount_price[4] = 2000
-discount_price[5] = 2750
-discount_price[6] = 3300
-discount_price[7] = 4000
-discount_price[8] = 4600
-discount_price[9] = 5400
-discount_price[10] = 6000
+discount_price[0] = 5
+discount_price[1] = 350
+discount_price[2] = 525
+discount_price[3] = 750
+discount_price[4] = 1000
+discount_price[5] = 1400
+discount_price[6] = 1750
+discount_price[7] = 2100
+discount_price[8] = 2500
+discount_price[9] = 2800
+discount_price[10] = 3500
 
 auction_price[0] = 5
 auction_price[1] = 250
-auction_price[2] = 500
-auction_price[3] = 1000
-auction_price[4] = 1500
-auction_price[5] = 2000
-auction_price[6] = 2500
-auction_price[7] = 3000
-auction_price[8] = 3500
-auction_price[9] = 4250
-auction_price[10] = 5000
+auction_price[2] = 400
+auction_price[3] = 500
+auction_price[4] = 750
+auction_price[5] = 1000
+auction_price[6] = 1250
+auction_price[7] = 1500
+auction_price[8] = 1750
+auction_price[9] = 2000
+auction_price[10] = 2500
 
 auction_increment[1] = 25
-auction_increment[2] = 50
-auction_increment[3] = 100
-auction_increment[4] = 250
-auction_increment[5] = 500
-auction_increment[6] = 600
-auction_increment[7] = 800
-auction_increment[8] = 1000
-auction_increment[9] = 1200
-auction_increment[10] = 1400
+auction_increment[2] = 35
+auction_increment[3] = 50
+auction_increment[4] = 65
+auction_increment[5] = 80
+auction_increment[6] = 100
+auction_increment[7] = 175
+auction_increment[8] = 250
+auction_increment[9] = 375
+auction_increment[10] = 500
+
+auction_random[1] = 15
+auction_random[2] = 25
+auction_random[3] = 35
+auction_random[4] = 50
+auction_random[5] = 65
+auction_random[6] = 80
+auction_random[7] = 100
+auction_random[8] = 175
+auction_random[9] = 250
+auction_random[10] = 375
 
 base_charm[0] = 0
 base_charm[1] = 10
@@ -1062,7 +1117,7 @@ $style[1] = $_font_col_rep[1] + 'Unremarkable' + $_font_closer
 $style[2] = $_font_col_rep[2] + 'Common' + $_font_closer
 $style[3] = $_font_col_rep[3] + 'Stylish' + $_font_closer
 $style[4] = $_font_col_rep[4] + 'Refined' + $_font_closer
-$style[5] = $_font_col_rep[5] + 'Graceful' + $_font_closer
+$style[5] = $_font_col_rep[5] + 'Elegant' + $_font_closer
 
 $temper[0] = $_font_col_rep[0] + 'Apathetic' + $_font_closer
 $temper[1] = $_font_col_rep[1] + 'Cold' + $_font_closer
@@ -1224,6 +1279,18 @@ $slave_wounds[3] = $_font_col_rep[0] + 'Seriously Injured' + $_font_closer
 $slave_wounds[4] = $_font_col_rep[0] + 'Badly Wounded' + $_font_closer 
 $slave_wounds[5] = $_font_col_rep[0] + 'Mortally Wounded' + $_font_closer 
 
+$stock_wounds[1] = $_font_col_rep[2] + 'Lightly Injured' + $_font_closer 
+$stock_wounds[2] = $_font_col_rep[1] + 'Injured' + $_font_closer 
+$stock_wounds[3] = $_font_col_rep[0] + 'Seriously Injured' + $_font_closer 
+$stock_wounds[4] = $_font_col_rep[0] + 'Badly Wounded' + $_font_closer 
+$stock_wounds[5] = $_font_col_rep[0] + 'Mortally Wounded' + $_font_closer
+
+$assistant_wounds[1] = $_font_col_rep[2] + 'Lightly Injured' + $_font_closer 
+$assistant_wounds[2] = $_font_col_rep[1] + 'Injured' + $_font_closer 
+$assistant_wounds[3] = $_font_col_rep[0] + 'Seriously Injured' + $_font_closer 
+$assistant_wounds[4] = $_font_col_rep[0] + 'Badly Wounded' + $_font_closer 
+$assistant_wounds[5] = $_font_col_rep[0] + 'Mortally Wounded' + $_font_closer 
+
 $master_wounds[0] = $_font_col_rep[5] + 'Safe and Unharmed' + $_font_closer  
 $master_wounds[1] = $_font_col_rep[2] + 'Lightly Injured' + $_font_closer 
 $master_wounds[2] = $_font_col_rep[1] + 'Injured' + $_font_closer 
@@ -1237,11 +1304,35 @@ $slave_scares[3] = $_font_col_rep[0] + 'Scars' + $_font_closer
 $slave_scares[4] = $_font_col_rep[0] + 'Terrible Scars' + $_font_closer 
 $slave_scares[5] = $_font_col_rep[0] + 'Ugly Scars' + $_font_closer 
 
+$stock_scares[1] = $_font_col_rep[2] + 'Small Scar' + $_font_closer 
+$stock_scares[2] = $_font_col_rep[1] + 'Scar' + $_font_closer 
+$stock_scares[3] = $_font_col_rep[0] + 'Scars' + $_font_closer 
+$stock_scares[4] = $_font_col_rep[0] + 'Terrible Scars' + $_font_closer 
+$stock_scares[5] = $_font_col_rep[0] + 'Ugly Scars' + $_font_closer
+
+$assistant_scares[1] = $_font_col_rep[2] + 'Small Scar' + $_font_closer 
+$assistant_scares[2] = $_font_col_rep[1] + 'Scar' + $_font_closer 
+$assistant_scares[3] = $_font_col_rep[0] + 'Scars' + $_font_closer 
+$assistant_scares[4] = $_font_col_rep[0] + 'Terrible Scars' + $_font_closer 
+$assistant_scares[5] = $_font_col_rep[0] + 'Ugly Scars' + $_font_closer 
+
 $slave_bruises[1] = $_font_col_rep[2] + 'Bruise' + $_font_closer 
 $slave_bruises[2] = $_font_col_rep[1] + 'Bruises' + $_font_closer 
 $slave_bruises[3] = $_font_col_rep[0] + 'Traces of Beatings' + $_font_closer 
 $slave_bruises[4] = $_font_col_rep[0] + 'Traces of Beatings+' + $_font_closer 
 $slave_bruises[5] = $_font_col_rep[0] + 'Traces of Beatings++' + $_font_closer 
+
+$stock_bruises[1] = $_font_col_rep[2] + 'Bruise' + $_font_closer 
+$stock_bruises[2] = $_font_col_rep[1] + 'Bruises' + $_font_closer 
+$stock_bruises[3] = $_font_col_rep[0] + 'Traces of Beatings' + $_font_closer 
+$stock_bruises[4] = $_font_col_rep[0] + 'Traces of Beatings+' + $_font_closer 
+$stock_bruises[5] = $_font_col_rep[0] + 'Traces of Beatings++' + $_font_closer 
+
+$assistant_bruises[1] = $_font_col_rep[2] + 'Bruise' + $_font_closer 
+$assistant_bruises[2] = $_font_col_rep[1] + 'Bruises' + $_font_closer 
+$assistant_bruises[3] = $_font_col_rep[0] + 'Traces of Beatings' + $_font_closer 
+$assistant_bruises[4] = $_font_col_rep[0] + 'Traces of Beatings+' + $_font_closer 
+$assistant_bruises[5] = $_font_col_rep[0] + 'Traces of Beatings++' + $_font_closer 
 
 !starvation
 if slave["starvation"] >= 5: $slave_starvation = $_font_col_rep[2] + 'Slight Starvation' + $_font_closer
@@ -1258,8 +1349,7 @@ if prisoner["starvation"] >= 35: $prisoner_starvation = $_font_col_rep[0] + 'Hea
 if prisoner["starvation"] >= 50: $prisoner_starvation = $_font_col_rep[0] + 'Lethal Starvation' + $_font_closer
 
 !SANITY
-if sanity < 3: $slave_sanity = '<a style = "color: #cd0000;" href="EXEC: $info_text = $sanity_broken & gt $curloc">Sanity</a>'
-if sanity <= 5 and sanity > 2: $slave_sanity = '<a style = "color: #C71585;" href="EXEC: $info_text = $sanity_low & gt $curloc">Sanity</a>'
+!Moved to $slave_traits, $stock_traits, and $assistant_traits - crushboss
 
 $master_str[0] = dyneval($vb_cycle, 0, 'Helpless')
 $master_str[1] = dyneval($vb_cycle, 1, 'Weak')
@@ -1288,6 +1378,13 @@ $brand[2] = dyneval($vb_cycle, 2, 'Recognised')
 $brand[3] = dyneval($vb_cycle, 3, 'Celebrity')
 $brand[4] = dyneval($vb_cycle, 4, 'Famous')
 $brand[5] = dyneval($vb_cycle, 5, 'Legendary')
+
+$guild_brand[0] = dyneval($vb_cycle, 0, 'Guild Fall Guy')
+$guild_brand[1] = dyneval($vb_cycle, 1, 'Guild Punching Bag')
+$guild_brand[2] = dyneval($vb_cycle, 2, 'Guild Lacky')
+$guild_brand[3] = dyneval($vb_cycle, 3, 'Guild Hotshot')
+$guild_brand[4] = dyneval($vb_cycle, 4, 'Guild Muscle')
+$guild_brand[5] = dyneval($vb_cycle, 5, 'Guild Boss')
 
 $master_wealth[0] = dyneval($vb_cycle, 0, 'Impoverished')
 $master_wealth[1] = dyneval($vb_cycle, 1, 'Poor')
@@ -1502,7 +1599,7 @@ $slave_tatoo[3] = $_font_col_rep[3] + 'Colorful Tattoo' + $_font_closer
 $slave_tatoo[4] = $_font_col_rep[4] + 'Traced Body' + $_font_closer
 $slave_tatoo[5] = $_font_col_rep[5] + 'Adorned Body' + $_font_closer
 
-$slave_brand[0] = '<a href = "EXEC: interaction = 1811 & gt ''interaction''"><font color="#cd0000">No brand</font></a>'
+$slave_brand[0] = '<a href = "EXEC: interaction = 1811 & gt ''interaction''"><font color="#cd0000">No Brand</font></a>'
 $slave_brand[1] = $_font_col_rep[3] + 'Branded' + $_font_closer 
 $slave_brand[2] = $_font_col_rep[4] + 'Slave Brand' + $_font_closer 
 $slave_brand[3] = $_font_col_rep[5] + 'Magical Brand' + $_font_closer 
@@ -1544,6 +1641,7 @@ dynamic $vb_full_cycle, '$стиль', 6, 'Style'
 $грация[0] = $_font_col_rep[0] + 'Grace' + $_font_closer
 $грация[1] = $_font_col_rep[5] + 'Grace' + $_font_closer
 $грация[2] = $_font_col_rep[0] + 'Grace' + $_font_closer
+
 $гигиена[0] = $_font_col_rep[5] + 'Hygiene' + $_font_closer
 $гигиена[1] = $_font_col_rep[4] + 'Hygiene' + $_font_closer
 $гигиена[2] = $_font_col_rep[3] + 'Hygiene' + $_font_closer
@@ -1558,20 +1656,103 @@ $мейкап[3] = $_font_col_rep[5] + 'Beauty Extras' + $_font_closer
 
 !end of section for formulas
 
-dynamic $vb_full_cycle, '$service_lesson', 6, 'Housekeeping lesson'
-dynamic $vb_full_cycle, '$cook_lesson', 6, 'Cookery lesson'
-dynamic $vb_full_cycle, '$nurse_lesson', 6, 'Nurse training'
-dynamic $vb_full_cycle, '$dance_lesson', 6, 'Dance lesson'
-dynamic $vb_full_cycle, '$vocal_lesson', 6, 'Singing lesson'
-dynamic $vb_full_cycle, '$secretary_lesson', 6, 'Clerical work'
-dynamic $vb_full_cycle, '$exprtession_lesson', 6, 'Etiquette lesson'
-dynamic $vb_full_cycle, '$fight_lesson', 6, 'Martial Arts'
-dynamic $vb_full_cycle, '$music_lesson', 6, 'Music lesson'
-dynamic $vb_full_cycle, '$alchemy_lesson', 6, 'Alchemy'
-dynamic $vb_full_cycle, '$domestik_lesson', 6, 'Domestication'
-dynamic $vb_full_cycle, '$dressur_lesson', 6, 'Pet training'
-dynamic $vb_full_cycle, '$dressage_lesson', 6, 'Pony training'
-dynamic $vb_full_cycle, '$draft_lesson', 6, 'Harness training'
+$service_lesson[0] = dyneval($vb_cycle, 0, 'Housekeeping lesson F-')
+$service_lesson[1] = dyneval($vb_cycle, 1, 'Housekeeping lesson D-')
+$service_lesson[2] = dyneval($vb_cycle, 2, 'Housekeeping lesson C-')
+$service_lesson[3] = dyneval($vb_cycle, 3, 'Housekeeping lesson B+')
+$service_lesson[4] = dyneval($vb_cycle, 4, 'Housekeeping lesson A+')
+$service_lesson[5] = dyneval($vb_cycle, 5, 'Housekeeping lesson S+')
+
+$cook_lesson[0] = dyneval($vb_cycle, 0, 'Cookery lesson F-')
+$cook_lesson[1] = dyneval($vb_cycle, 1, 'Cookery lesson D-')
+$cook_lesson[2] = dyneval($vb_cycle, 2, 'Cookery lesson C-')
+$cook_lesson[3] = dyneval($vb_cycle, 3, 'Cookery lesson B+')
+$cook_lesson[4] = dyneval($vb_cycle, 4, 'Cookery lesson A+')
+$cook_lesson[5] = dyneval($vb_cycle, 5, 'Cookery lesson S+')
+
+$nurse_lesson[0] = dyneval($vb_cycle, 0, 'Nurse training F-')
+$nurse_lesson[1] = dyneval($vb_cycle, 1, 'Nurse training D-')
+$nurse_lesson[2] = dyneval($vb_cycle, 2, 'Nurse training C-')
+$nurse_lesson[3] = dyneval($vb_cycle, 3, 'Nurse training B+')
+$nurse_lesson[4] = dyneval($vb_cycle, 4, 'Nurse training A+')
+$nurse_lesson[5] = dyneval($vb_cycle, 5, 'Nurse training S+')
+
+$dance_lesson[0] = dyneval($vb_cycle, 0, 'Dance lesson F-')
+$dance_lesson[1] = dyneval($vb_cycle, 1, 'Dance lesson D-')
+$dance_lesson[2] = dyneval($vb_cycle, 2, 'Dance lesson C-')
+$dance_lesson[3] = dyneval($vb_cycle, 3, 'Dance lesson B+')
+$dance_lesson[4] = dyneval($vb_cycle, 4, 'Dance lesson A+')
+$dance_lesson[5] = dyneval($vb_cycle, 5, 'Dance lesson S+')
+
+$vocal_lesson[0] = dyneval($vb_cycle, 0, 'Singing lesson F-')
+$vocal_lesson[1] = dyneval($vb_cycle, 1, 'Singing lesson D-')
+$vocal_lesson[2] = dyneval($vb_cycle, 2, 'Singing lesson C-')
+$vocal_lesson[3] = dyneval($vb_cycle, 3, 'Singing lesson B+')
+$vocal_lesson[4] = dyneval($vb_cycle, 4, 'Singing lesson A+')
+$vocal_lesson[5] = dyneval($vb_cycle, 5, 'Singing lesson S+')
+
+$secretary_lesson[0] = dyneval($vb_cycle, 0, 'Clerical work F-')
+$secretary_lesson[1] = dyneval($vb_cycle, 1, 'Clerical work D-')
+$secretary_lesson[2] = dyneval($vb_cycle, 2, 'Clerical work C-')
+$secretary_lesson[3] = dyneval($vb_cycle, 3, 'Clerical work B+')
+$secretary_lesson[4] = dyneval($vb_cycle, 4, 'Clerical work A+')
+$secretary_lesson[5] = dyneval($vb_cycle, 5, 'Clerical work S+')
+
+$expression_lesson[0] = dyneval($vb_cycle, 0, 'Etiquette lesson F-')
+$expression_lesson[1] = dyneval($vb_cycle, 1, 'Etiquette lesson D-')
+$expression_lesson[2] = dyneval($vb_cycle, 2, 'Etiquette lesson C-')
+$expression_lesson[3] = dyneval($vb_cycle, 3, 'Etiquette lesson B+')
+$expression_lesson[4] = dyneval($vb_cycle, 4, 'Etiquette lesson A+')
+$expression_lesson[5] = dyneval($vb_cycle, 5, 'Etiquette lesson S+')
+
+$fight_lesson[0] = dyneval($vb_cycle, 0, 'Martial Arts F-')
+$fight_lesson[1] = dyneval($vb_cycle, 1, 'Martial Arts D-')
+$fight_lesson[2] = dyneval($vb_cycle, 2, 'Martial Arts C-')
+$fight_lesson[3] = dyneval($vb_cycle, 3, 'Martial Arts B+')
+$fight_lesson[4] = dyneval($vb_cycle, 4, 'Martial Arts A+')
+$fight_lesson[5] = dyneval($vb_cycle, 5, 'Martial Arts S+')
+
+$music_lesson[0] = dyneval($vb_cycle, 0, 'Music lesson F-')
+$music_lesson[1] = dyneval($vb_cycle, 1, 'Music lesson D-')
+$music_lesson[2] = dyneval($vb_cycle, 2, 'Music lesson C-')
+$music_lesson[3] = dyneval($vb_cycle, 3, 'Music lesson B+')
+$music_lesson[4] = dyneval($vb_cycle, 4, 'Music lesson A+')
+$music_lesson[5] = dyneval($vb_cycle, 5, 'Music lesson S+')
+
+$alchemy_lesson[0] = dyneval($vb_cycle, 0, 'Alchemy lesson F-')
+$alchemy_lesson[1] = dyneval($vb_cycle, 1, 'Alchemy lesson D-')
+$alchemy_lesson[2] = dyneval($vb_cycle, 2, 'Alchemy lesson C-')
+$alchemy_lesson[3] = dyneval($vb_cycle, 3, 'Alchemy lesson B+')
+$alchemy_lesson[4] = dyneval($vb_cycle, 4, 'Alchemy lesson A+')
+$alchemy_lesson[5] = dyneval($vb_cycle, 5, 'Alchemy lesson S+')
+
+$domestik_lesson[0] = dyneval($vb_cycle, 0, 'Pet training F-')
+$domestik_lesson[1] = dyneval($vb_cycle, 1, 'Pet training D-')
+$domestik_lesson[2] = dyneval($vb_cycle, 2, 'Pet training C-')
+$domestik_lesson[3] = dyneval($vb_cycle, 3, 'Pet training B+')
+$domestik_lesson[4] = dyneval($vb_cycle, 4, 'Pet training A+')
+$domestik_lesson[5] = dyneval($vb_cycle, 5, 'Pet training S+')
+
+$dressur_lesson[0] = dyneval($vb_cycle, 0, 'Pet Taming training F-')
+$dressur_lesson[1] = dyneval($vb_cycle, 1, 'Pet Taming training D-')
+$dressur_lesson[2] = dyneval($vb_cycle, 2, 'Pet Taming training C-')
+$dressur_lesson[3] = dyneval($vb_cycle, 3, 'Pet Taming training B+')
+$dressur_lesson[4] = dyneval($vb_cycle, 4, 'Pet Taming training A+')
+$dressur_lesson[5] = dyneval($vb_cycle, 5, 'Pet Taming training S+')
+
+$dressage_lesson[0] = dyneval($vb_cycle, 0, 'Pony training F-')
+$dressage_lesson[1] = dyneval($vb_cycle, 1, 'Pony training D-')
+$dressage_lesson[2] = dyneval($vb_cycle, 2, 'Pony training C-')
+$dressage_lesson[3] = dyneval($vb_cycle, 3, 'Pony training B+')
+$dressage_lesson[4] = dyneval($vb_cycle, 4, 'Pony training A+')
+$dressage_lesson[5] = dyneval($vb_cycle, 5, 'Pony training S+')
+
+$draft_lesson[0] = dyneval($vb_cycle, 0, 'Pony Harness training F-')
+$draft_lesson[1] = dyneval($vb_cycle, 1, 'Pony Harness training D-')
+$draft_lesson[2] = dyneval($vb_cycle, 2, 'Pony Harness training C-')
+$draft_lesson[3] = dyneval($vb_cycle, 3, 'Pony Harness training B+')
+$draft_lesson[4] = dyneval($vb_cycle, 4, 'Pony Harness training A+')
+$draft_lesson[5] = dyneval($vb_cycle, 5, 'Pony Harness training S+')
 
 dynamic $vb_full_cycle, '$_lesson', 6, 'Lesson'
 
@@ -1582,46 +1763,256 @@ $gym_lesson[3] = dyneval($vb_cycle, 3, 'Sports & Fitness B+')
 $gym_lesson[4] = dyneval($vb_cycle, 4, 'Sports & Fitness A+')
 $gym_lesson[5] = dyneval($vb_cycle, 5, 'Sports & Fitness S+')
 
-dynamic $vb_full_cycle, '$slave_sub_kiss', 6, 'Kissing'
-dynamic $vb_full_cycle, '$slave_sub_thongue', 6, 'Licking'
-dynamic $vb_full_cycle, '$slave_sub_bj', 6, 'Blowjob'
-dynamic $vb_full_cycle, '$slave_sub_dt', 6, 'Deep Throat'
-dynamic $vb_full_cycle, '$slave_sub_asslik', 6, 'Rimming'
+$slave_sub_kiss[0] = dyneval($vb_cycle, 0, 'Kissing F-')
+$slave_sub_kiss[1] = dyneval($vb_cycle, 1, 'Kissing D-')
+$slave_sub_kiss[2] = dyneval($vb_cycle, 2, 'Kissing C-')
+$slave_sub_kiss[3] = dyneval($vb_cycle, 3, 'Kissing B+')
+$slave_sub_kiss[4] = dyneval($vb_cycle, 4, 'Kissing A+')
+$slave_sub_kiss[5] = dyneval($vb_cycle, 5, 'Kissing S+')
 
-dynamic $vb_full_cycle, '$slave_sub_hj', 6, 'Handjob'
-dynamic $vb_full_cycle, '$slave_sub_fj', 6, 'Footjob'
-dynamic $vb_full_cycle, '$slave_sub_hug', 6, 'Rubbing'
-dynamic $vb_full_cycle, '$slave_sub_pazuri', 6, 'Titjob'
+$slave_sub_thongue[0] = dyneval($vb_cycle, 0, 'Licking F-')
+$slave_sub_thongue[1] = dyneval($vb_cycle, 1, 'Licking D-')
+$slave_sub_thongue[2] = dyneval($vb_cycle, 2, 'Licking C-')
+$slave_sub_thongue[3] = dyneval($vb_cycle, 3, 'Licking B+')
+$slave_sub_thongue[4] = dyneval($vb_cycle, 4, 'Licking A+')
+$slave_sub_thongue[5] = dyneval($vb_cycle, 5, 'Licking S+')
 
-dynamic $vb_full_cycle, '$slave_sub_vaginal', 6, 'Sex'
-dynamic $vb_full_cycle, '$slave_sub_anal', 6, 'Anal Sex'
-dynamic $vb_full_cycle, '$slave_sub_fisting', 6, 'Fisting'
-dynamic $vb_full_cycle, '$slave_anal_stretch', 6, 'Anal Fisting'
+$slave_sub_bj[0] = dyneval($vb_cycle, 0, 'Blowjob F-')
+$slave_sub_bj[1] = dyneval($vb_cycle, 1, 'Blowjob D-')
+$slave_sub_bj[2] = dyneval($vb_cycle, 2, 'Blowjob C-')
+$slave_sub_bj[3] = dyneval($vb_cycle, 3, 'Blowjob B+')
+$slave_sub_bj[4] = dyneval($vb_cycle, 4, 'Blowjob A+')
+$slave_sub_bj[5] = dyneval($vb_cycle, 5, 'Blowjob S+')
 
-dynamic $vb_full_cycle, '$slave_sub_seduce', 6, 'Seduction'
-dynamic $vb_full_cycle, '$slave_sub_masturbation', 6, 'Masturbation'
-dynamic $vb_full_cycle, '$slave_sub_dildo', 6, 'Dildo'
-dynamic $vb_full_cycle, '$slave_sub_exhibit', 6, 'Exhibitionism'
-dynamic $vb_full_cycle, '$slave_sub_humiliation', 6, 'Humiliation'
+$slave_sub_dt[0] = dyneval($vb_cycle, 0, 'Deep Throat F-')
+$slave_sub_dt[1] = dyneval($vb_cycle, 1, 'Deep Throat D-')
+$slave_sub_dt[2] = dyneval($vb_cycle, 2, 'Deep Throat C-')
+$slave_sub_dt[3] = dyneval($vb_cycle, 3, 'Deep Throat B+')
+$slave_sub_dt[4] = dyneval($vb_cycle, 4, 'Deep Throat A+')
+$slave_sub_dt[5] = dyneval($vb_cycle, 5, 'Deep Throat S+')
 
-dynamic $vb_full_cycle, '$slave_sub_enema', 6, 'Enema'
-dynamic $vb_full_cycle, '$slave_sub_mazo', 6, 'Masochism'
-dynamic $vb_full_cycle, '$slave_sub_selfpain', 6, 'Self-Torture'
-dynamic $vb_full_cycle, '$slave_sub_piss', 6, 'Golden Shower'
-dynamic $vb_full_cycle, '$slave_sub_kopro', 6, 'Scatology'
+$slave_sub_asslik[0] = dyneval($vb_cycle, 0, 'Rimming F-')
+$slave_sub_asslik[1] = dyneval($vb_cycle, 1, 'Rimming D-')
+$slave_sub_asslik[2] = dyneval($vb_cycle, 2, 'Rimming C-')
+$slave_sub_asslik[3] = dyneval($vb_cycle, 3, 'Rimming B+')
+$slave_sub_asslik[4] = dyneval($vb_cycle, 4, 'Rimming A+')
+$slave_sub_asslik[5] = dyneval($vb_cycle, 5, 'Rimming S+')
 
-dynamic $vb_full_cycle, '$slave_sub_threesome', 6, 'Threesome'
-dynamic $vb_full_cycle, '$slave_sub_dp', 6, 'Double Penetration'
-dynamic $vb_full_cycle, '$slave_sub_tp', 6, 'Triple Penetration'
-dynamic $vb_full_cycle, '$slave_sub_gangbang', 6, 'Gangbang'
-dynamic $vb_full_cycle, '$slave_sub_bukake', 6, 'Bukkake'
 
-dynamic $vb_full_cycle, '$slave_sub_zoosex', 6, 'Dog mating'
-dynamic $vb_full_cycle, '$slave_svinesex', 6, 'Pig mating'
-dynamic $vb_full_cycle, '$slave_horsesex', 6, 'Horse mating'
-dynamic $vb_full_cycle, '$slave_tentacle', 6, 'Fiend mating'
-dynamic $vb_full_cycle, '$slave_arachnidSpider', 6, 'Spider mating'
-dynamic $vb_full_cycle, '$slave_polypusvermin', 6, 'Sea Tentacle mating'
+$slave_sub_hj[0] = dyneval($vb_cycle, 0, 'Handjob F-')
+$slave_sub_hj[1] = dyneval($vb_cycle, 1, 'Handjob D-')
+$slave_sub_hj[2] = dyneval($vb_cycle, 2, 'Handjob C-')
+$slave_sub_hj[3] = dyneval($vb_cycle, 3, 'Handjob B+')
+$slave_sub_hj[4] = dyneval($vb_cycle, 4, 'Handjob A+')
+$slave_sub_hj[5] = dyneval($vb_cycle, 5, 'Handjob S+')
+
+$slave_sub_fj[0] = dyneval($vb_cycle, 0, 'Footjob F-')
+$slave_sub_fj[1] = dyneval($vb_cycle, 1, 'Footjob D-')
+$slave_sub_fj[2] = dyneval($vb_cycle, 2, 'Footjob C-')
+$slave_sub_fj[3] = dyneval($vb_cycle, 3, 'Footjob B+')
+$slave_sub_fj[4] = dyneval($vb_cycle, 4, 'Footjob A+')
+$slave_sub_fj[5] = dyneval($vb_cycle, 5, 'Footjob S+')
+
+$slave_sub_hug[0] = dyneval($vb_cycle, 0, 'Rubbing F-')
+$slave_sub_hug[1] = dyneval($vb_cycle, 1, 'Rubbing D-')
+$slave_sub_hug[2] = dyneval($vb_cycle, 2, 'Rubbing C-')
+$slave_sub_hug[3] = dyneval($vb_cycle, 3, 'Rubbing B+')
+$slave_sub_hug[4] = dyneval($vb_cycle, 4, 'Rubbing A+')
+$slave_sub_hug[5] = dyneval($vb_cycle, 5, 'Rubbing S+')
+
+$slave_sub_pazuri[0] = dyneval($vb_cycle, 0, 'Titjob F-')
+$slave_sub_pazuri[1] = dyneval($vb_cycle, 1, 'Titjob D-')
+$slave_sub_pazuri[2] = dyneval($vb_cycle, 2, 'Titjob C-')
+$slave_sub_pazuri[3] = dyneval($vb_cycle, 3, 'Titjob B+')
+$slave_sub_pazuri[4] = dyneval($vb_cycle, 4, 'Titjob A+')
+$slave_sub_pazuri[5] = dyneval($vb_cycle, 5, 'Titjob S+')
+
+
+$slave_sub_vaginal[0] = dyneval($vb_cycle, 0, 'Vaginal Sex F-')
+$slave_sub_vaginal[1] = dyneval($vb_cycle, 1, 'Vaginal Sex D-')
+$slave_sub_vaginal[2] = dyneval($vb_cycle, 2, 'Vaginal Sex C-')
+$slave_sub_vaginal[3] = dyneval($vb_cycle, 3, 'Vaginal Sex B+')
+$slave_sub_vaginal[4] = dyneval($vb_cycle, 4, 'Vaginal Sex A+')
+$slave_sub_vaginal[5] = dyneval($vb_cycle, 5, 'Vaginal Sex S+')
+
+$slave_sub_anal[0] = dyneval($vb_cycle, 0, 'Anal Sex F-')
+$slave_sub_anal[1] = dyneval($vb_cycle, 1, 'Anal Sex D-')
+$slave_sub_anal[2] = dyneval($vb_cycle, 2, 'Anal Sex C-')
+$slave_sub_anal[3] = dyneval($vb_cycle, 3, 'Anal Sex B+')
+$slave_sub_anal[4] = dyneval($vb_cycle, 4, 'Anal Sex A+')
+$slave_sub_anal[5] = dyneval($vb_cycle, 5, 'Anal Sex S+')
+
+$slave_sub_fisting[0] = dyneval($vb_cycle, 0, 'Fisting F-')
+$slave_sub_fisting[1] = dyneval($vb_cycle, 1, 'Fisting D-')
+$slave_sub_fisting[2] = dyneval($vb_cycle, 2, 'Fisting C-')
+$slave_sub_fisting[3] = dyneval($vb_cycle, 3, 'Fisting B+')
+$slave_sub_fisting[4] = dyneval($vb_cycle, 4, 'Fisting A+')
+$slave_sub_fisting[5] = dyneval($vb_cycle, 5, 'Fisting S+')
+
+$slave_anal_stretch[0] = dyneval($vb_cycle, 0, 'Anal Fisting F-')
+$slave_anal_stretch[1] = dyneval($vb_cycle, 1, 'Anal Fisting D-')
+$slave_anal_stretch[2] = dyneval($vb_cycle, 2, 'Anal Fisting C-')
+$slave_anal_stretch[3] = dyneval($vb_cycle, 3, 'Anal Fisting B+')
+$slave_anal_stretch[4] = dyneval($vb_cycle, 4, 'Anal Fisting A+')
+$slave_anal_stretch[5] = dyneval($vb_cycle, 5, 'Anal Fisting S+')
+
+
+$slave_sub_seduce[0] = dyneval($vb_cycle, 0, 'Seduction F-')
+$slave_sub_seduce[1] = dyneval($vb_cycle, 1, 'Seduction D-')
+$slave_sub_seduce[2] = dyneval($vb_cycle, 2, 'Seduction C-')
+$slave_sub_seduce[3] = dyneval($vb_cycle, 3, 'Seduction B+')
+$slave_sub_seduce[4] = dyneval($vb_cycle, 4, 'Seduction A+')
+$slave_sub_seduce[5] = dyneval($vb_cycle, 5, 'Seduction S+')
+
+$slave_sub_masturbation[0] = dyneval($vb_cycle, 0, 'Masturbation F-')
+$slave_sub_masturbation[1] = dyneval($vb_cycle, 1, 'Masturbation D-')
+$slave_sub_masturbation[2] = dyneval($vb_cycle, 2, 'Masturbation C-')
+$slave_sub_masturbation[3] = dyneval($vb_cycle, 3, 'Masturbation B+')
+$slave_sub_masturbation[4] = dyneval($vb_cycle, 4, 'Masturbation A+')
+$slave_sub_masturbation[5] = dyneval($vb_cycle, 5, 'Masturbation S+')
+
+$slave_sub_dildo[0] = dyneval($vb_cycle, 0, 'Dildo F-')
+$slave_sub_dildo[1] = dyneval($vb_cycle, 1, 'Dildo D-')
+$slave_sub_dildo[2] = dyneval($vb_cycle, 2, 'Dildo C-')
+$slave_sub_dildo[3] = dyneval($vb_cycle, 3, 'Dildo B+')
+$slave_sub_dildo[4] = dyneval($vb_cycle, 4, 'Dildo A+')
+$slave_sub_dildo[5] = dyneval($vb_cycle, 5, 'Dildo S+')
+
+$slave_sub_exhibit[0] = dyneval($vb_cycle, 0, 'Exhibitionism F-')
+$slave_sub_exhibit[1] = dyneval($vb_cycle, 1, 'Exhibitionism D-')
+$slave_sub_exhibit[2] = dyneval($vb_cycle, 2, 'Exhibitionism C-')
+$slave_sub_exhibit[3] = dyneval($vb_cycle, 3, 'Exhibitionism B+')
+$slave_sub_exhibit[4] = dyneval($vb_cycle, 4, 'Exhibitionism A+')
+$slave_sub_exhibit[5] = dyneval($vb_cycle, 5, 'Exhibitionism S+')
+
+$slave_sub_humiliation[0] = dyneval($vb_cycle, 0, 'Humiliation F-')
+$slave_sub_humiliation[1] = dyneval($vb_cycle, 1, 'Humiliation D-')
+$slave_sub_humiliation[2] = dyneval($vb_cycle, 2, 'Humiliation C-')
+$slave_sub_humiliation[3] = dyneval($vb_cycle, 3, 'Humiliation B+')
+$slave_sub_humiliation[4] = dyneval($vb_cycle, 4, 'Humiliation A+')
+$slave_sub_humiliation[5] = dyneval($vb_cycle, 5, 'Humiliation S+')
+
+
+$slave_sub_enema[0] = dyneval($vb_cycle, 0, 'Enema F-')
+$slave_sub_enema[1] = dyneval($vb_cycle, 1, 'Enema D-')
+$slave_sub_enema[2] = dyneval($vb_cycle, 2, 'Enema C-')
+$slave_sub_enema[3] = dyneval($vb_cycle, 3, 'Enema B+')
+$slave_sub_enema[4] = dyneval($vb_cycle, 4, 'Enema A+')
+$slave_sub_enema[5] = dyneval($vb_cycle, 5, 'Enema S+')
+
+$slave_sub_mazo[0] = dyneval($vb_cycle, 0, 'Masochism F-')
+$slave_sub_mazo[1] = dyneval($vb_cycle, 1, 'Masochism D-')
+$slave_sub_mazo[2] = dyneval($vb_cycle, 2, 'Masochism C-')
+$slave_sub_mazo[3] = dyneval($vb_cycle, 3, 'Masochism B+')
+$slave_sub_mazo[4] = dyneval($vb_cycle, 4, 'Masochism A+')
+$slave_sub_mazo[5] = dyneval($vb_cycle, 5, 'Masochism S+')
+
+$slave_sub_selfpain[0] = dyneval($vb_cycle, 0, 'Self-Torture F-')
+$slave_sub_selfpain[1] = dyneval($vb_cycle, 1, 'Self-Torture D-')
+$slave_sub_selfpain[2] = dyneval($vb_cycle, 2, 'Self-Torture C-')
+$slave_sub_selfpain[3] = dyneval($vb_cycle, 3, 'Self-Torture B+')
+$slave_sub_selfpain[4] = dyneval($vb_cycle, 4, 'Self-Torture A+')
+$slave_sub_selfpain[5] = dyneval($vb_cycle, 5, 'Self-Torture S+')
+
+$slave_sub_piss[0] = dyneval($vb_cycle, 0, 'Golden Shower F-')
+$slave_sub_piss[1] = dyneval($vb_cycle, 1, 'Golden Shower D-')
+$slave_sub_piss[2] = dyneval($vb_cycle, 2, 'Golden Shower C-')
+$slave_sub_piss[3] = dyneval($vb_cycle, 3, 'Golden Shower B+')
+$slave_sub_piss[4] = dyneval($vb_cycle, 4, 'Golden Shower A+')
+$slave_sub_piss[5] = dyneval($vb_cycle, 5, 'Golden Shower S+')
+
+$slave_sub_kopro[0] = dyneval($vb_cycle, 0, 'Scatology F-')
+$slave_sub_kopro[1] = dyneval($vb_cycle, 1, 'Scatology D-')
+$slave_sub_kopro[2] = dyneval($vb_cycle, 2, 'Scatology C-')
+$slave_sub_kopro[3] = dyneval($vb_cycle, 3, 'Scatology B+')
+$slave_sub_kopro[4] = dyneval($vb_cycle, 4, 'Scatology A+')
+$slave_sub_kopro[5] = dyneval($vb_cycle, 5, 'Scatology S+')
+
+
+$slave_sub_threesome[0] = dyneval($vb_cycle, 0, 'Threesome F-')
+$slave_sub_threesome[1] = dyneval($vb_cycle, 1, 'Threesome D-')
+$slave_sub_threesome[2] = dyneval($vb_cycle, 2, 'Threesome C-')
+$slave_sub_threesome[3] = dyneval($vb_cycle, 3, 'Threesome B+')
+$slave_sub_threesome[4] = dyneval($vb_cycle, 4, 'Threesome A+')
+$slave_sub_threesome[5] = dyneval($vb_cycle, 5, 'Threesome S+')
+
+$slave_sub_dp[0] = dyneval($vb_cycle, 0, 'Double Penetration F-')
+$slave_sub_dp[1] = dyneval($vb_cycle, 1, 'Double Penetration D-')
+$slave_sub_dp[2] = dyneval($vb_cycle, 2, 'Double Penetration C-')
+$slave_sub_dp[3] = dyneval($vb_cycle, 3, 'Double Penetration B+')
+$slave_sub_dp[4] = dyneval($vb_cycle, 4, 'Double Penetration A+')
+$slave_sub_dp[5] = dyneval($vb_cycle, 5, 'Double Penetration S+')
+
+$slave_sub_tp[0] = dyneval($vb_cycle, 0, 'Triple Penetration F-')
+$slave_sub_tp[1] = dyneval($vb_cycle, 1, 'Triple Penetration D-')
+$slave_sub_tp[2] = dyneval($vb_cycle, 2, 'Triple Penetration C-')
+$slave_sub_tp[3] = dyneval($vb_cycle, 3, 'Triple Penetration B+')
+$slave_sub_tp[4] = dyneval($vb_cycle, 4, 'Triple Penetration A+')
+$slave_sub_tp[5] = dyneval($vb_cycle, 5, 'Triple Penetration S+')
+
+$slave_sub_gangbang[0] = dyneval($vb_cycle, 0, 'Gangbang F-')
+$slave_sub_gangbang[1] = dyneval($vb_cycle, 1, 'Gangbang D-')
+$slave_sub_gangbang[2] = dyneval($vb_cycle, 2, 'Gangbang C-')
+$slave_sub_gangbang[3] = dyneval($vb_cycle, 3, 'Gangbang B+')
+$slave_sub_gangbang[4] = dyneval($vb_cycle, 4, 'Gangbang A+')
+$slave_sub_gangbang[5] = dyneval($vb_cycle, 5, 'Gangbang S+')
+
+$slave_sub_bukake[0] = dyneval($vb_cycle, 0, 'Bukkake F-')
+$slave_sub_bukake[1] = dyneval($vb_cycle, 1, 'Bukkake D-')
+$slave_sub_bukake[2] = dyneval($vb_cycle, 2, 'Bukkake C-')
+$slave_sub_bukake[3] = dyneval($vb_cycle, 3, 'Bukkake B+')
+$slave_sub_bukake[4] = dyneval($vb_cycle, 4, 'Bukkake A+')
+$slave_sub_bukake[5] = dyneval($vb_cycle, 5, 'Bukkake S+')
+
+
+$slave_sub_zoosex[0] = dyneval($vb_cycle, 0, 'Dog mating F-')
+$slave_sub_zoosex[1] = dyneval($vb_cycle, 1, 'Dog mating D-')
+$slave_sub_zoosex[2] = dyneval($vb_cycle, 2, 'Dog mating C-')
+$slave_sub_zoosex[3] = dyneval($vb_cycle, 3, 'Dog mating B+')
+$slave_sub_zoosex[4] = dyneval($vb_cycle, 4, 'Dog mating A+')
+$slave_sub_zoosex[5] = dyneval($vb_cycle, 5, 'Dog mating S+')
+
+$slave_svinesex[0] = dyneval($vb_cycle, 0, 'Pig mating F-')
+$slave_svinesex[1] = dyneval($vb_cycle, 1, 'Pig mating D-')
+$slave_svinesex[2] = dyneval($vb_cycle, 2, 'Pig mating C-')
+$slave_svinesex[3] = dyneval($vb_cycle, 3, 'Pig mating B+')
+$slave_svinesex[4] = dyneval($vb_cycle, 4, 'Pig mating A+')
+$slave_svinesex[5] = dyneval($vb_cycle, 5, 'Pig mating S+')
+
+$slave_horsesex[0] = dyneval($vb_cycle, 0, 'Horse mating F-')
+$slave_horsesex[1] = dyneval($vb_cycle, 1, 'Horse mating D-')
+$slave_horsesex[2] = dyneval($vb_cycle, 2, 'Horse mating C-')
+$slave_horsesex[3] = dyneval($vb_cycle, 3, 'Horse mating B+')
+$slave_horsesex[4] = dyneval($vb_cycle, 4, 'Horse mating A+')
+$slave_horsesex[5] = dyneval($vb_cycle, 5, 'Horse mating S+')
+
+$slave_tentacle[0] = dyneval($vb_cycle, 0, 'Fiend mating F-')
+$slave_tentacle[1] = dyneval($vb_cycle, 1, 'Fiend mating D-')
+$slave_tentacle[2] = dyneval($vb_cycle, 2, 'Fiend mating C-')
+$slave_tentacle[3] = dyneval($vb_cycle, 3, 'Fiend mating B+')
+$slave_tentacle[4] = dyneval($vb_cycle, 4, 'Fiend mating A+')
+$slave_tentacle[5] = dyneval($vb_cycle, 5, 'Fiend mating S+')
+
+$slave_arachnidSpider[0] = dyneval($vb_cycle, 0, 'Spider mating F-')
+$slave_arachnidSpider[1] = dyneval($vb_cycle, 1, 'Spider mating D-')
+$slave_arachnidSpider[2] = dyneval($vb_cycle, 2, 'Spider mating C-')
+$slave_arachnidSpider[3] = dyneval($vb_cycle, 3, 'Spider mating B+')
+$slave_arachnidSpider[4] = dyneval($vb_cycle, 4, 'Spider mating A+')
+$slave_arachnidSpider[5] = dyneval($vb_cycle, 5, 'Spider mating S+')
+
+$slave_polypusvermin[0] = dyneval($vb_cycle, 0, 'Sea T mating F-')
+$slave_polypusvermin[1] = dyneval($vb_cycle, 1, 'Sea T mating D-')
+$slave_polypusvermin[2] = dyneval($vb_cycle, 2, 'Sea T mating C-')
+$slave_polypusvermin[3] = dyneval($vb_cycle, 3, 'Sea T mating B+')
+$slave_polypusvermin[4] = dyneval($vb_cycle, 4, 'Sea T mating A+')
+$slave_polypusvermin[5] = dyneval($vb_cycle, 5, 'Sea T mating S+')
+
+$slave_polypusvermin_full[0] = dyneval($vb_cycle, 0, 'Sea Tentacle mating F-')
+$slave_polypusvermin_full[1] = dyneval($vb_cycle, 1, 'Sea Tentacle mating D-')
+$slave_polypusvermin_full[2] = dyneval($vb_cycle, 2, 'Sea Tentacle mating C-')
+$slave_polypusvermin_full[3] = dyneval($vb_cycle, 3, 'Sea Tentacle mating B+')
+$slave_polypusvermin_full[4] = dyneval($vb_cycle, 4, 'Sea Tentacle mating A+')
+$slave_polypusvermin_full[5] = dyneval($vb_cycle, 5, 'Sea Tentacle mating S+')
 
 $fff[0] = ''
 $fff[1] = ''
@@ -1629,6 +2020,133 @@ $fff[2] = ''
 $fff[3] = ''
 $fff[4] = ''
 $fff[5] = ''
+
+!Trophy Room - Background images - crushboss
+$trophy_bg[1] = 'trophy girl 01'
+$trophy_bg[2] = 'trophy girl 02'
+$trophy_bg[3] = 'trophy girl 03'
+$trophy_bg[4] = 'trophy girl 04'
+$trophy_bg[5] = 'trophy girl 05'
+$trophy_bg[6] = 'trophy girl 06'
+$trophy_bg[7] = 'trophy girl 07'
+$trophy_bg[8] = 'trophy girl 08'
+$trophy_bg[9] = 'trophy girl 09'
+$trophy_bg[10] = 'trophy girl 10'
+$trophy_bg[11] = 'trophy girl 11'
+$trophy_bg[12] = 'trophy girl 12'
+$trophy_bg[13] = 'trophy girl 13'
+$trophy_bg[14] = 'trophy girl 14'
+$trophy_bg[15] = 'trophy girl 15'
+$trophy_bg[16] = 'trophy girl 16'
+$trophy_bg[17] = 'trophy girl 17'
+$trophy_bg[18] = 'trophy girl 18'
+$trophy_bg[19] = 'trophy girl 19'
+$trophy_bg[20] = 'trophy girl 20'
+$trophy_bg[21] = 'trophy girl 21'
+$trophy_bg[22] = 'trophy girl 22'
+$trophy_bg[23] = 'trophy girl 23'
+$trophy_bg[24] = 'trophy girl 24'
+$trophy_bg[25] = 'trophy girl 25'
+$trophy_bg[26] = 'trophy girl 26'
+$trophy_bg[27] = 'trophy girl 27'
+$trophy_bg[28] = 'trophy girl 28'
+$trophy_bg[29] = 'trophy girl 29'
+$trophy_bg[30] = 'trophy girl 30'
+$trophy_bg[31] = 'trophy girl 31'
+$trophy_bg[32] = 'trophy girl 32'
+$trophy_bg[33] = 'trophy girl 33'
+$trophy_bg[34] = 'trophy girl 34'
+$trophy_bg[35] = 'trophy girl 35'
+$trophy_bg[36] = 'trophy girl 36'
+$trophy_bg[37] = 'trophy girl 37'
+$trophy_bg[38] = 'trophy girl 38'
+$trophy_bg[39] = 'trophy girl 39'
+$trophy_bg[40] = 'trophy girl 40'
+$trophy_bg[41] = 'trophy girl 41'
+$trophy_bg[42] = 'trophy girl 42'
+$trophy_bg[43] = 'trophy girl 43'
+$trophy_bg[44] = 'trophy girl 44'
+$trophy_bg[45] = 'trophy girl 45'
+$trophy_bg[46] = 'trophy girl 46'
+$trophy_bg[47] = 'trophy girl 47'
+$trophy_bg[48] = 'trophy girl 48'
+$trophy_bg[49] = 'trophy girl 49'
+$trophy_bg[50] = 'trophy girl 50'
+$trophy_bg[51] = 'trophy girl 51'
+$trophy_bg[52] = 'trophy girl 52'
+$trophy_bg[53] = 'trophy girl 53'
+$trophy_bg[54] = 'trophy girl 54'
+$trophy_bg[55] = 'trophy girl 55'
+$trophy_bg[56] = 'trophy girl 56'
+$trophy_bg[57] = 'trophy girl 57'
+$trophy_bg[58] = 'trophy girl 58'
+$trophy_bg[59] = 'trophy girl 59'
+$trophy_bg[60] = 'trophy girl 60'
+$trophy_bg[61] = 'trophy girl 61'
+$trophy_bg[62] = 'trophy girl 62'
+$trophy_bg[63] = 'trophy girl 63'
+$trophy_bg[64] = 'trophy girl 64'
+$trophy_bg[65] = 'trophy girl 65'
+$trophy_bg[66] = 'trophy girl 66'
+$trophy_bg[67] = 'trophy girl 67'
+$trophy_bg[68] = 'trophy girl 68'
+$trophy_bg[69] = 'trophy girl 69'
+$trophy_bg[70] = 'trophy girl 70'
+$trophy_bg[71] = 'trophy girl 71'
+$trophy_bg[72] = 'trophy girl 72'
+$trophy_bg[73] = 'trophy girl 73'
+$trophy_bg[74] = 'trophy girl 74'
+$trophy_bg[75] = 'trophy girl 75'
+$trophy_bg[76] = 'trophy girl 76'
+$trophy_bg[77] = 'trophy girl 77'
+$trophy_bg[78] = 'trophy girl 78'
+$trophy_bg[79] = 'trophy girl 79'
+$trophy_bg[80] = 'trophy girl 80'
+$trophy_bg[81] = 'trophy girl 81'
+$trophy_bg[82] = 'trophy girl 82'
+$trophy_bg[83] = 'trophy girl 83'
+$trophy_bg[84] = 'trophy girl 84'
+$trophy_bg[85] = 'trophy girl 85'
+$trophy_bg[86] = 'trophy girl 86'
+$trophy_bg[87] = 'trophy girl 87'
+$trophy_bg[88] = 'trophy girl 88'
+$trophy_bg[89] = 'trophy girl 89'
+$trophy_bg[90] = 'trophy girl 90'
+$trophy_bg[91] = 'trophy girl 91'
+$trophy_bg[92] = 'trophy girl 92'
+$trophy_bg[93] = 'trophy girl 93'
+$trophy_bg[94] = 'trophy girl 94'
+$trophy_bg[95] = 'trophy girl 95'
+$trophy_bg[96] = 'trophy girl 96'
+$trophy_bg[97] = 'trophy girl 97'
+$trophy_bg[98] = 'trophy girl 98'
+$trophy_bg[99] = 'trophy girl 99'
+$trophy_bg[100] = 'trophy girl 100'
+$trophy_bg[101] = 'trophy girl 101'
+$trophy_bg[102] = 'trophy girl 102'
+$trophy_bg[103] = 'trophy girl 103'
+$trophy_bg[104] = 'trophy girl 104'
+$trophy_bg[105] = 'trophy girl 105'
+$trophy_bg[106] = 'trophy girl 106'
+$trophy_bg[107] = 'trophy girl 107'
+$trophy_bg[108] = 'trophy girl 108'
+$trophy_bg[109] = 'trophy girl 109'
+$trophy_bg[110] = 'trophy girl 110'
+$trophy_bg[111] = 'trophy girl 111'
+$trophy_bg[112] = 'trophy girl 112'
+$trophy_bg[113] = 'trophy girl 113'
+$trophy_bg[114] = 'trophy girl 114'
+$trophy_bg[115] = 'trophy girl 115'
+$trophy_bg[116] = 'trophy girl 116'
+$trophy_bg[117] = 'trophy girl 117'
+$trophy_bg[118] = 'trophy girl 118'
+$trophy_bg[119] = 'trophy girl 119'
+$trophy_bg[120] = 'trophy girl 120'
+$trophy_bg[121] = 'trophy girl 121'
+$trophy_bg[122] = 'trophy girl 122'
+$trophy_bg[123] = 'trophy girl 123'
+$trophy_bg[124] = 'trophy girl 124'
+$trophy_bg[125] = 'trophy girl 125'
 
 --- #var_base ---------------------------------
 

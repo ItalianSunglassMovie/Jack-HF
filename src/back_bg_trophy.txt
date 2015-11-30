@@ -1,0 +1,8 @@
+# back_bg_trophy
+!Displays the previous Trophy background image - crushboss
+trophy_rand -= 1
+if trophy_rand < 1: trophy_rand = 118
+*p '<div id = "large_image"><img src="<<$trophyimage>><<$trophy_bg[trophy_rand]>>.jpg"></div>'
+if toggle_trophy = 0: gs 'trophy_room'
+--- back_bg_trophy ---------------------------------
+

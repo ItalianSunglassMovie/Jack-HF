@@ -151,14 +151,12 @@ IF slave_will_masturbate = 1 and previous_energy >= 0:
  IF orgasm_prohibited = 0:
   $text = 'You caught your slave during masturbation, but she does not stop it. Looking into your eyes <<$slave_name>> fingering more fiercely, her movements are sharp and jittery, and then she throws her head back and writhes in the orgasmic throes, uttering moans of pleasure.' 
   slave_rate["mood"] += slave["arousal"]
-  slave_rate["arousal"] -= slave["sub_masturbation"] * slave["arousal"]
-  if slave["sub_masturbation"] = 0: slave_rate["arousal"] -= slave["arousal"]
+  slave_rate["arousal"] -= ((slave["sub_masturbation"]*3) + (slave["arousal"]*3))
   if slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
   else
   IF rules_broken = 1 or slave["arousal"] > slave["obedience"]: 
-   $text = 'You caught your slave during masturbation, but she does not stop it. You let her continue, recalling however, that she cannot cum. Nevertheless, <<$slave_name>> can`t or doesn`t want to stop in time, and she can not hide moan of orgasm. Well, you have to punish her now...' 
-   slave_rate["arousal"] -= slave["sub_masturbation"] * slave["arousal"]
-   if slave["sub_masturbation"] = 0: slave_rate["arousal"] -= slave["arousal"]
+   $text = 'You caught your slave during masturbation, but she does not stop it. You let her continue, recalling however, that she cannot cum. Nevertheless, <<$slave_name>> can`t or doesn`t want to stop in time, and she can not hide her moan of orgasm. Well, you have to punish her now...' 
+   slave_rate["arousal"] -= ((slave["sub_masturbation"]*3) + (slave["arousal"]*3))
    if slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
    sin_gained = max (slave["moral"], 1)
    if sin_gained < 1: sin_gained = 1
@@ -168,8 +166,8 @@ IF slave_will_masturbate = 1 and previous_energy >= 0:
    END
    else
    $text = 'You caught your slave during masturbation, but she does not stop it. You let her continue, recalling however, that she cannot cum. Obeying your will <<$slave_name>> does not bring herself to climax, pausing at the end. Poor thing will exhaust herself...'
-   slave_rate["arousal"] += slave["sub_masturbation"] * slave["arousal"]
-   if slave["sub_masturbation"] = 0: slave_rate["arousal"] += slave["arousal"]
+   slave_rate["arousal"] += (slave["sub_masturbation"] * slave["arousal"])
+   if slave["sub_masturbation"] = 0: slave_rate["arousal"] += (slave["arousal"]*3)
    slave_cutom_rate += 1
    slave['neg_horny'] = 1
   END
@@ -185,7 +183,7 @@ IF slave_masturbating_anyway = 1 and previous_energy >= 0:
  IF slave["sub_masturbation"] < 1: slave["sub_masturbation"] = 1 ELSE slave["sub_masturbation_xp"] += 1
  IF slave["obedience"] + orgasm_prohibited >= slave["arousal"]:
   $text = 'You caught your slave during masturbation, and she stops immediately, knowing she broke the rules you set.' 
-  slave_rate["arousal"] += slave["sub_masturbation"] + slave["arousal"]
+  slave_rate["arousal"] += slave["sub_masturbation"] + (slave["arousal"]*3)
   slave['neg_horny'] = 1
   sin_gained = max (slave["moral"], 1)
   IF sin_gained < 1: sin_gained = 1
@@ -198,8 +196,7 @@ IF slave_masturbating_anyway = 1 and previous_energy >= 0:
  END
  IF slave["obedience"] + orgasm_prohibited < slave["arousal"]:
   $text = 'You caught your slave during masturbation, but she''s either too disobedient or too aroused to care that she''s breaking the rules you set. Her movements become sharp and jittery, and then she throws her head back and writhes in orgasmic throes, uttering moans of pleasure.' 
-  slave_rate["arousal"] -= slave["sub_masturbation"] * slave["arousal"]
-  IF slave["sub_masturbation"] = 0: slave_rate["arousal"] -= slave["arousal"]
+  slave_rate["arousal"] -= ((slave["sub_masturbation"]*3) + (slave["arousal"]*3))
   IF slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1  
   IF orgasm_prohibited = 0:
    sin_gained = max (slave["moral"], 2)
@@ -249,13 +246,17 @@ IF tentacle_death_event = 1:
  jump 'loop'  
 END
 
-
 IF end_of_the_day = 1:
  $text = $nothing_special
  $place = 'bedroom'
- ! вернул, битых иконок быть не должно
  $special_bg = ''   
  end_of_the_day = 0
+ daily_reward_count = 0
+ res = 0
+ diligence = 0
+ interaction = 0
+ interaction_city = 0
+ $interaction_type = ''
  jump 'loop'  
 END
 
@@ -287,6 +288,24 @@ IF slave_escape = 1:
  !новый мудлет для обозначения сбежавших рабынь
  master_mood['neg_escape'] = 1
  gs '$mod_master_drop', 1
+ slave_escape = 0
+ jump 'loop'  
+END
+
+!Magical Brand works like it should now - added code section - crushboss
+IF slave_escape = 2:
+ $text = '   While you were sleeping, <<$slave_name>> managed to steal the key to the door and slide out onto the street. By morning she had vanished. Due to her having your magical brand you easily track her down using magic and bring her back without incident...'
+ slave["virtue"] = 0
+ slave["sin"] = 5
+ master_mage_rate += master_mage
+ dynamic $master_energy_drop
+ dynamic $master_energy_drop
+ dynamic $slave_energy_drop
+ dynamic $slave_energy_drop
+ slave_rate["rational"] += 5
+ master_mood['neg_escape'] = 1
+ gs '$mod_master_drop', 1
+ slave_escape = 0
  jump 'loop'  
 END
 
@@ -303,10 +322,13 @@ IF menstruation = 1:
  jump 'loop'  
 END
 
+!Egglaying - fixed - crushboss
 IF egg_time = 1:
- if slave['egg_time'] > 0: $text = '<<$slave_name>> laid a fresh egg for you.<br>'
- if assistant['egg_time'] > 0: $text = '<<$assistant_name>> laid a fresh egg for you.<br>'
- if prisoner['egg_time'] > 0: $text = '<<$prisoner_name>> laid a fresh egg for you.<br>' 
+ $text = ''
+ if prisoner['egg_time'] > 0: $text = ' <<$prisoner_name>> laid a fresh egg for you.<br>'
+ if slave['egg_time'] > 0: $text = ' <<$slave_name>> laid a fresh egg for you.<br>'
+ if assistant['egg_time'] > 0: $text = ' <<$assistant_name>> laid a fresh egg for you.<br>'
+ if slave['egg_time'] > 0 and assistant['egg_time'] > 0: $text = ' <<$slave_name>> laid a fresh egg for you.<br> <<$assistant_name>> laid a fresh egg for you.<br>'
  $place = 'bedroom'
  if kitchen > 0: $place = 'kitchen'
  jpg = 1
@@ -325,11 +347,13 @@ IF egg_time = 1:
  jump 'loop'  
 END
 
-IF milking_time = 1:
- if slave['milk_gain'] > 0: $text += '<<$slave_name>> gives a <<slave["milk_gain"]>>00 grams of milk and <<slave["cream_gain"]>>00 grams of cream. <br>'
- if assistant['milk_gain'] > 0: $text += '<<$assistant_name>> gives a <<assistant["milk_gain"]>>00 grams of milk and <<assistant["cream_gain"]>>00 grams of cream. <br>'
- if prisoner['milk_gain'] > 0: $text += '<<$prisoner_name>> gives a <<prisoner["milk_gain"]>>00 grams of milk and <<prisoner["cream_gain"]>>00 grams of cream. <br>' 
- $text += '<br>The overall result of the morning milking: <<milk_bottle_plus>> btls. of milk and <<cream_bottle_plus>> btls. of cream.'
+!Milking - fixed and improved - crushboss
+IF milking_time = 1 and egg_time = 1:
+ if prisoner['milk_gain'] > 0: $text += ' <<$prisoner_name>> produces <<prisoner["milk_gain"]>>00 grams of milk and <<prisoner["cream_gain"]>>00 grams of cream. <br>'
+ if slave['milk_gain'] > 0: $text += ' <<$slave_name>> produces <<slave["milk_gain"]>>00 grams of milk and <<slave["cream_gain"]>>00 grams of cream. <br>'
+ if assistant['milk_gain'] > 0: $text += ' <<$assistant_name>> produces <<assistant["milk_gain"]>>00 grams of milk and <<assistant["cream_gain"]>>00 grams of cream. <br>'
+ if slave['milk_gain'] > 0 and assistant['milk_gain'] > 0: $text += ' <<$slave_name>> produces <<slave["milk_gain"]>>00 grams of milk and <<slave["cream_gain"]>>00 grams of cream. <br><<$assistant_name>> gives a <<assistant["milk_gain"]>>00 grams of milk and <<assistant["cream_gain"]>>00 grams of cream. <br>'
+ $text += '<br> The overall result of the morning milking: <<milk_bottle_plus>> bottles of milk and <<cream_bottle_plus>> bottles of cream.'
  $place = 'bedroom'
  if kitchen > 0: $place = 'kitchen'
  jpg = 1
@@ -360,29 +384,97 @@ IF milking_time = 1:
  jump 'loop'  
 END
 
+!Milking - fixed and improved - crushboss
+IF milking_time = 1 and egg_time = 0:
+ $text = ''
+ if prisoner['milk_gain'] > 0: $text = ' <<$prisoner_name>> produces <<prisoner["milk_gain"]>>00 grams of milk and <<prisoner["cream_gain"]>>00 grams of cream. <br>'
+ if slave['milk_gain'] > 0: $text = ' <<$slave_name>> produces <<slave["milk_gain"]>>00 grams of milk and <<slave["cream_gain"]>>00 grams of cream. <br>'
+ if assistant['milk_gain'] > 0: $text = ' <<$assistant_name>> produces <<assistant["milk_gain"]>>00 grams of milk and <<assistant["cream_gain"]>>00 grams of cream. <br>'
+ if slave['milk_gain'] > 0 and assistant['milk_gain'] > 0: $text = ' <<$slave_name>> produces <<slave["milk_gain"]>>00 grams of milk and <<slave["cream_gain"]>>00 grams of cream. <br><<$assistant_name>> gives a <<assistant["milk_gain"]>>00 grams of milk and <<assistant["cream_gain"]>>00 grams of cream. <br>'
+ $text += '<br> The overall result of the morning milking: <<milk_bottle_plus>> bottles of milk and <<cream_bottle_plus>> bottles of cream.'
+ $place = 'bedroom'
+ if kitchen > 0: $place = 'kitchen'
+ jpg = 1
+ g = RAND(1,6)
+ if g = 1: $special_bg = 'scene\milking'
+ if g = 2: $special_bg = 'scene\milking_2' 
+ if g = 3: $special_bg = 'scene\milking_3' 
+ if g = 4: $special_bg = 'scene\milking_4' 
+ if g = 5: $special_bg = 'scene\milking_5' 
+ if g = 6: $special_bg = 'scene\milking_6' 
+ IF frige_space > 0:
+  IF frige_space >= cream_bottle_plus:
+   frige["cream"] += cream_bottle_plus
+   else
+   frige["cream"] += frige_space
+  END
+ END
+ IF frige_space > 0:
+  IF frige_space >= milk_bottle_plus:
+   frige["milk"] += milk_bottle_plus
+   else
+   frige["milk"] += frige_space
+  END
+ END
+ milking_time = 0
+ milk_bottle_plus = 0
+ cream_bottle_plus = 0
+ jump 'loop'  
+END
+
+!Rules Broken Message - Improved and fixed - crushboss
 IF rules_broken_message = 1:
  $text = '   <<$slave_name>> does not even try to hide that she is disobeying the rules you set for her. It can not be ignored!'
  $place = 'study' 
  rules_broken_message = 0 
- $special_bg = $fullimage[slave_type]     
+ $special_bg = $fullimage[slave_type]
+ rules_broken_sin = 0
+ rules_broken_sin = max (slave["pride"],slave["temper"],slave["ego"],3)
+ if rules_broken_sin > 5: rules_broken_sin = 5
+ slave["sin"] = rules_broken_sin
+ rules_broken_sin = 0
  jump 'loop'  
 END
 
-IF starvation_varning = 1:
+!Starvation Warning Message - Improved and fixed - crushboss
+IF starvation_warning = 1 and slave_food_portion ! 4:
  $text = '    You notice signs of starvation on your slave. She obviously is not getting enough food, which will be detrimental to her health. It is necessary to increase her diet or reduce the load.'
- starvation_varning = 0
+ starvation_warning = 0
  $special_bg = $fullimage[slave_type]     
  jump 'loop'  
 END
 
-IF slave_suicide = 1:
- $text = '   You find your slave lying on the floor in a pool of blood. She''s not breathing. It happens sometimes, but every time is unpleasant - waste of sparks. Now I have to buy a new one...'
- $place = 'study' 
+!Slave Suicide Event - Overhauled - crushboss
+IF slave_suicide = 1 and assistant_supervise_rule = 1:
+ $place = 'study'
+ $text = '   Due to <<$assistant_name>>''s diligent supervision, she catches <<$slave_name>> attempting suicide and takes the bleeding knife away from her.  <<$assistant_name>> wakes you up and informs you of what just occurred.  <<$slave_name>> needs medical attention!' 
  slave_suicide = 0
- !CHECK: replace to slave_dead?
- slave_state = CONST_INT['no_slave']
- $special_bg = 'girls\scene\suicide'     
- jump 'loop'  
+ slave_rate["wounds"] += slave["stamina"]*25
+ slave["scares"] += RAND(0,3)
+ IF slave["sin"] < 3:
+  slave["sin"] = 3
+  else
+   slave["sin"] += 2
+   if slave["sin"] > 5: slave["sin"] = 5
+ END
+ dynamic $master_energy_drop
+ dynamic $slave_energy_drop
+ dynamic $slave_energy_drop
+ dynamic $assistant_energy_drop
+ master_mood['neg_escape'] = 1
+ gs '$mod_master_drop', 1
+ gs '$mod_slave_drop', 1
+ jump 'loop'
+ elseif slave_suicide = 1 and assistant_supervise_rule = 0:
+  $place = 'study'
+  $text = '   You find your slave lying on the floor in a pool of blood. She''s not breathing. It happens sometimes, but every time is unpleasant - waste of sparks. Now I have to buy a new one...'
+  slave_suicide = 0
+  slave_state = CONST_INT['no_slave']
+  master_mood['neg_slave_died'] = 1
+  dynamic $master_energy_drop
+  gs '$mod_master_drop', 1
+  $special_bg = 'girls\scene\suicide'
+  jump 'loop'  
 END
 
 IF slave_died = 1:
@@ -391,6 +483,16 @@ IF slave_died = 1:
  slave_state = CONST_INT['no_slave']
  master_mood['neg_slave_died'] = 1
  $special_bg = $fullimage[slave_type] 
+ jump 'loop'  
+END
+
+IF prisoner_died = 1:
+ $text = '   Your prisoner did not wake up. Her deplorable state finally made itself felt. Now I have to buy a new one...'
+ prisoner_died = 0
+ prisoner_state = 0
+ prisoner = 0
+ master_mood['neg_slave_died'] = 1
+ $special_bg = $fullimage[prisoner_type] 
  jump 'loop'  
 END
 
@@ -418,62 +520,17 @@ END
 IF exam_in_progress = 1:
  GT 'demo_menu_form'
  else
+ gs '$end_day_variable_reset'
+ gs '$combat_variable_reset'
  GT 'menu_form'
 END
-
-!Clean slate for new day - sanity check - probably unnecessary - crushboss
-slave_well_rested = 0
-free_time = 0
-rules_broken = 0
-num_rules_broken = 0
-num_rules_wanttobreak = 0
-slave_will_masturbate = 0
-slave_masturbating_anyway = 0
-silence_rule_res = 0
-master_rule_res = 0
-shit_prohibited_res = 0
-pet_rule_res = 0
-blowjob_rule_res = 0
-pissuar_rule_res = 0
-toilet_rule_res = 0
-v_balls_rule_res = 0
-iwanttobreakbutcant_silence_rule = 0
-iwanttobreakbutcant_master_rule = 0
-iwanttobreakbutcant_shit_prohibited = 0
-iwanttobreakbutcant_pet_rule = 0
-iwanttobreakbutcant_blowjob_rule = 0
-iwanttobreakbutcant_pissuar_rule = 0
-iwanttobreakbutcant_toilet_rule = 0
-iwanttobreakbutcant_v_balls = 0
-unenforced_silence_rule_broken = 0
-unenforced_master_rule_broken = 0
-unenforced_shit_prohibited_broken = 0
-unenforced_pet_rule_broken = 0
-unenforced_blowjob_rule_broken = 0
-unenforced_pissuar_rule_broken = 0
-unenforced_toilet_rule_broken = 0
-unenforced_v_balls_rule_broken = 0
-a = 0
-
-!Reset text variables - crushboss
-txt count = 0
-$text[0] = ''
-$text[1] = ''
-$text[2] = ''
-$text[3] = ''
-$text[4] = ''
-$text[5] = ''
-$text[6] = ''
-$text[7] = ''
-$text[8] = ''
-$text[9] = ''
 
 :loop
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 *p '<div id = "text"><<$text>></div>'
-if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
-if jpg = 1: if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>' & jpg = 0
+if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+if jpg = 1: if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>' & jpg = 0
 
 $info_bar = '
 <u>ATTRIBUTES:</u>&nbsp;<<$rating[rating]>>
@@ -491,7 +548,7 @@ $info_bar = '
 <u>TRAITS</u>
 <<$features_list>>'
 
-if npc = 0:
+IF npc = 0:
  $info_bar = ''
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div>
 <<$place_location[$place]>>

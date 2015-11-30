@@ -1,6 +1,17 @@
 # get_special_assistant
 !special assistant activation
+
+gs '#txt'
+gs '#txt_2'
+gs '#var_base'
+gs '#help_msg'
+gs '#item_base'
+gs '#dynamic'
+
+
 assistant_state = 1
+assistant["bcheck"] = 0
+assistant["echeck"] = 0
 $assistant_psy_basic = $seed_psy_basic[assistant_type]
 $assistant_type = 'unic'
 assistant["null"] = 0
@@ -161,8 +172,6 @@ assistant['brand'] = 2
 !stats alignment
 assistant["energy"] = 5
 assistant["hygiene"] = 1
-assistant["bcheck"] = 0
-
 assistant["neg_slave"] = 0
 assistant['cycle_day'] = RAND (1,28)
 assistant["calories"] = 3
@@ -229,7 +238,23 @@ IF assistant["bcheck"] = 0:
  if assistant_rate["beauty"] >= 160: assistant["base_beauty"] = 5
 END
 
-!For future use so seed_exotic can be used in the slave files - crushboss
+!Set base exotic rating after assistant creation
+IF assistant["echeck"] = 0:
+ assistant["echeck"] = 1
+ if assistant["exotic"] = 1: assistant["base_exotic"] = 1
+ if assistant["exotic"] = 2: assistant["base_exotic"] = 2
+ if assistant["exotic"] = 3: assistant["base_exotic"] = 3
+ if assistant["exotic"] = 4: assistant["base_exotic"] = 4
+ if assistant["exotic"] = 5: assistant["base_exotic"] = 5
+END
+
+IF assistant["base_exotic"] > 0: 
+  assistant["exotic"] = assistant["base_exotic"]
+  else
+  assistant["exotic"] = 0
+END
+
+!For future use so seed_exotic can be used in the assistant files - crushboss
 if assistant["exotic"] = 0: assistant_rate["exotic"] = 0
 if assistant["exotic"] = 1: assistant_rate["exotic"] = 10
 if assistant["exotic"] = 2: assistant_rate["exotic"] = 20
@@ -237,9 +262,11 @@ if assistant["exotic"] = 3: assistant_rate["exotic"] = 40
 if assistant["exotic"] = 4: assistant_rate["exotic"] = 80
 if assistant["exotic"] = 5: assistant_rate["exotic"] = 160
 
-assistant["base_exotic"] = assistant["exotic"]
+!Fixes a potential issue with Neoplasty being already done on Isabella
+assistant['beauty_enchanced'] = 0
 
 gs '#txt'
 gs '#txt_2'
+
 --- get_special_assistant ---------------------------------
 

@@ -51,37 +51,41 @@ IF slave_state = CONST_INT['no_slave'] and assistant_state = 0:
 END
 
 !turn on slaves moodlets
-slave['neg_slave_mess'] = 0
-if house_mess > 3: slave['neg_slave_mess'] = 100  
-if slave["hygiene"] > 1: slave["pos_slave_clean"] = 0
-if slave["hygiene"] > 3: slave["neg_slave_dirty"] = 1
-if slave["hygiene"] <= 3: slave["neg_slave_dirty"] = 0
-if slave["arousal"] > slave["ego"]: slave["neg_horny"] = 1
-if slave["arousal"] > 3: slave["neg_horny"] = 1
-IF slave["energy"] < 0: 
- slave["neg_exhausted"] = 1
- else
- slave["neg_exhausted"] = 0 
-END
+IF slave_state ! CONST_INT['no_exist']:
+ slave['neg_slave_mess'] = 0
+ if house_mess > 3: slave['neg_slave_mess'] = 100  
+ if slave["hygiene"] > 1: slave["pos_slave_clean"] = 0
+ if slave["hygiene"] > 3: slave["neg_slave_dirty"] = 1
+ if slave["hygiene"] <= 3: slave["neg_slave_dirty"] = 0
+ if slave["arousal"] > slave["ego"]: slave["neg_horny"] = 1
+ if slave["arousal"] > 3: slave["neg_horny"] = 1
+ IF slave["energy"] < 0: 
+  slave["neg_exhausted"] = 1
+  else
+  slave["neg_exhausted"] = 0 
+ END
 
-IF $slave["cloth"] = 'голая':
- if slave['sub_exhibit'] < slave['ego']: slave['neg_naked'] = 1
- else
- slave['neg_naked'] = 0
+ IF $slave["cloth"] = 'голая':
+  if slave['sub_exhibit'] < slave['ego']: slave['neg_naked'] = 1
+  else
+  slave['neg_naked'] = 0
+ END
 END
 
 !turn on assistant moodlets
-assistant['neg_slave_mess'] = 0
-if house_mess > 3: assistant['neg_slave_mess'] = 100  
-if assistant["hygiene"] > 1: assistant["pos_slave_clean"] = 0
-if assistant["hygiene"] > 3: assistant["neg_slave_dirty"] = 1
-if assistant["hygiene"] <= 3: assistant["neg_slave_dirty"] = 0
-if assistant["arousal"] > assistant["ego"]: assistant["neg_horny"] = 1
-if assistant["arousal"] > 3: assistant["neg_horny"] = 1
-IF assistant["energy"] < 0: 
- assistant["neg_exhausted"] = 1
- else
- assistant["neg_exhausted"] = 0 
+IF assistant_state = 1:
+ assistant['neg_slave_mess'] = 0
+ if house_mess > 3: assistant['neg_slave_mess'] = 100  
+ if assistant["hygiene"] > 1: assistant["pos_slave_clean"] = 0
+ if assistant["hygiene"] > 3: assistant["neg_slave_dirty"] = 1
+ if assistant["hygiene"] <= 3: assistant["neg_slave_dirty"] = 0
+ if assistant["arousal"] > assistant["ego"]: assistant["neg_horny"] = 1
+ if assistant["arousal"] > 3: assistant["neg_horny"] = 1
+ IF assistant["energy"] < 0: 
+  assistant["neg_exhausted"] = 1
+  else
+  assistant["neg_exhausted"] = 0 
+ END
 END
 
 --- moodlets ---------------------------------

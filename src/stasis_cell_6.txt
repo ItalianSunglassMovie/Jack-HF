@@ -1,0 +1,66 @@
+# stasis_cell_6
+$place = "stasis_cell"
+gs '_layout'
+
+cryo_cell_selected = 6
+
+IF iced_6_state = 0: 
+ $text = '<<$cell_empty>>'
+ else
+ $text = '   <<$iced_6_name>> is resting in a stasis state. She can stay like that for an unlimited time, or as long as you spend sparks to maintain the operation of the apparatus.'
+END
+
+IF nsfw = 1:
+ *p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+ else
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+END
+
+if iced_6_state > 0: if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$iced_6["fullimage"]>>.gif"></div>'
+*p '<div id = "text"><<$text>></div>'
+
+IF iced_6_state > 0 and slave_state = CONST_INT['no_slave']:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced_6''"><img src="content\pic\buttons\release.png"></a></div>'
+END
+
+IF iced_6_state = 0 and slave_state > CONST_INT['no_slave']:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced_6''"><img src="content\pic\buttons\imprison.png"></a></div>'
+END
+
+IF iced_6_state > 0 and slave_state > CONST_INT['no_slave']:
+ *p '<div id = "cell"><a href = "EXEC: gt ''slave_to_iced_6''"><img src="content\pic\buttons\cell_exchange.png"></a></div>'
+END
+
+IF iced_6_state > 0:
+ $info_bar = '
+<u>ATTRIBUTES</u>
+<<$beauty[iced_6["beauty"]]>>
+<<$stamina[iced_6["stamina"]]>>
+<<$sensitivity[iced_6["sensitivity"]]>>
+<<$temper[iced_6["temper"]]>>
+<<$intellect[iced_6["intellect"]]>>
+<<$ego[iced_6["ego"]]>>
+<<$pride[iced_6["pride"]]>>
+<<$exotic[iced_6["exotic"]]>>
+<<$fat[iced_6["fat"]]>>
+<<$style[iced_6["style"]]>>
+
+<u>TRAITS</u>
+<<$iced_6_features_list>>
+'
+ else
+ $info_bar = ''
+ *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div>
+<<$place_location[$place]>>
+
+ Information for consideration:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+END
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+*p '<div id = "close_far"><a href = "EXEC: menu_form = 0 & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
+
+--- stasis_cell_6 ---------------------------------
+

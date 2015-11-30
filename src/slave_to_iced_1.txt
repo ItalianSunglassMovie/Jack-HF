@@ -1,5 +1,7 @@
 # slave_to_iced_1
 !move slave to a cryo cell with replacement
+tattoo_brand = 0
+
 temp = slave_state
 slave_state = iced_1_state
 iced_1_state = temp
@@ -14,8 +16,8 @@ $iced_1_type = $temp
 
 $temp_name = $slave_name
 $slave_name = $iced_1_name
-$iced_1_name = $temp_name 
-v_balls_rule = 0
+$iced_1_name = $temp_name
+
 rules_broken = 0
 
 killvar 'temp'
@@ -72,6 +74,7 @@ $temp_family_description = $slave_family_description
 $temp_occupation_description = $slave_occupation_description
 $temp_psy_basic = $slave_psy_basic 
 temp_virginity = virginity
+$temp_ava = $slave_ava
 
 $slave_psy_basic = $iced_1_psy_basic
 $slave_world_description = $iced_1_world_description
@@ -79,6 +82,7 @@ $slave_family_description = $iced_1_family_description
 $slave_occupation_description = $iced_1_occupation_description
 $slave_psy_basic = $iced_1_psy_basic 
 virginity = iced_1_virginity
+$slave_ava = $iced_1_ava
 
 $iced_1_psy_basic = $temp_psy_basic
 $iced_1_world_description = $temp_world_description
@@ -86,6 +90,7 @@ $iced_1_family_description = $temp_family_description
 $iced_1_occupation_description = $temp_occupation_description
 $iced_1_psy_basic = $temp_psy_basic 
 iced_1_virginity = temp_virginity
+$iced_1_ava = $temp_ava
 
 tempo["mood"] = slave_prev["mood"]
 tempo["arousal"] = slave_prev["mood"]
@@ -194,10 +199,22 @@ temp = rule_masturbation
 rule_masturbation = iced_1_rule_masturbation
 iced_1_rule_masturbation = temp
 
+temp = force_rules
+force_rules = iced_1_force_rules
+iced_1_force_rules = temp
+
 gs '#txt'
 gs '#txt_2'
 gs '$newloc'
-sp_txt = 2
-GT 'shop_general'
+
+IF iced_1_state > 0: cryonum = 1
+
+IF $place = "stasis_cell":
+ GT 'menu_form'
+ else
+ sp_txt = 2
+ GT 'shop_general'
+END
+
 --- slave_to_iced_1 ---------------------------------
 

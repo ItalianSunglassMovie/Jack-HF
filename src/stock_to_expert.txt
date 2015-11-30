@@ -8,6 +8,8 @@ killvar 'selected'
 killvar 'selected_rate' 
 copyarr 'selected','stock'
 copyarr '$selected','$stock'
+copyarr 'selected','stock_ava'
+copyarr '$selected','$stock_ava'
 
 $selected_name = $stock_name
 $selected_psy_basic = $stock_psy_basic
@@ -45,6 +47,22 @@ if selected["hygiene"] = 2: selected_rate["hygiene"] = 20
 if selected["hygiene"] = 3: selected_rate["hygiene"] = 40
 if selected["hygiene"] = 4: selected_rate["hygiene"] = 80
 if selected["hygiene"] = 5: selected_rate["hygiene"] = 160
+
+!Make sure variables are set to zero on new stock - bugfix - crushboss
+selected['beauty_enchanced'] = 0
+selected["bcheck"] = 0
+selected["echeck"] = 0
+
+!Fix blank screen bug - crushboss
+$selected["wpn"] = 'безоружный'
+$selected["armor"] = 'без_брони'
+$selected["scnd"] = ''
+$selected["back_wpn"] = ''
+$selected["left_wpn"] = ''
+$selected["right_wpn"] = ''
+$selected["arm_wpn"] = ''
+$selected["leg_wpn"] = ''
+$selected["cloth"] = 'голая'
 
 gs '#txt'
 gs '#txt_2'

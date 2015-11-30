@@ -1,0 +1,639 @@
+# $calculate_attributes
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+*NL
+!Calculate rate stats and increases
+!Overhauled by crushboss
+gs '#var_base'
+gs '#help_msg'
+gs '#dynamic'
+
+!continuous
+i = 0
+n = arrsize('$cont_atr')
+n -= 1
+:slave_cont_loop
+i += 1
+
+slave[$cont_atr[i]] = 0
+if slave_rate[$cont_atr[i]] >= 10: slave[$cont_atr[i]] = 1
+if slave_rate[$cont_atr[i]] >= 20: slave[$cont_atr[i]] = 2
+if slave_rate[$cont_atr[i]] >= 40: slave[$cont_atr[i]] = 3
+if slave_rate[$cont_atr[i]] >= 80: slave[$cont_atr[i]] = 4
+if slave_rate[$cont_atr[i]] >= 160: slave[$cont_atr[i]] = 5
+if slave_rate[$cont_atr[i]] < 0: slave_rate[$cont_atr[i]] = 0
+
+prisoner[$cont_atr[i]] = 0
+if prisoner_rate[$cont_atr[i]] >= 10: prisoner[$cont_atr[i]] = 1
+if prisoner_rate[$cont_atr[i]] >= 20: prisoner[$cont_atr[i]] = 2
+if prisoner_rate[$cont_atr[i]] >= 40: prisoner[$cont_atr[i]] = 3
+if prisoner_rate[$cont_atr[i]] >= 80: prisoner[$cont_atr[i]] = 4
+if prisoner_rate[$cont_atr[i]] >= 160: prisoner[$cont_atr[i]] = 5
+if prisoner_rate[$cont_atr[i]] < 0: prisoner[$cont_atr[i]] = 0
+
+assistant[$cont_atr[i]] = 0
+if assistant_rate[$cont_atr[i]] >= 10: assistant[$cont_atr[i]] = 1
+if assistant_rate[$cont_atr[i]] >= 20: assistant[$cont_atr[i]] = 2
+if assistant_rate[$cont_atr[i]] >= 40: assistant[$cont_atr[i]] = 3
+if assistant_rate[$cont_atr[i]] >= 80: assistant[$cont_atr[i]] = 4
+if assistant_rate[$cont_atr[i]] >= 160: assistant[$cont_atr[i]] = 5
+if assistant_rate[$cont_atr[i]] < 0: assistant[$cont_atr[i]] = 0
+
+if i < n: jump 'slave_cont_loop'
+
+!Discrete field independence
+i = 0
+n = arrsize('$indep_atr')
+n -= 1
+:slave_independent_loop
+i += 1
+
+IF slave[$indep_atr[i]] = 0:
+ if slave_rate[$indep_atr[i]] <= -10: slave[$indep_atr[i]] = 0 & slave_rate[$indep_atr[i]] = -10
+ if slave_rate[$indep_atr[i]] >= 10: slave[$indep_atr[i]] = 1 & slave_rate[$indep_atr[i]] = 0 
+END
+IF slave[$indep_atr[i]] = 1:
+ if slave_rate[$indep_atr[i]] <= -10: slave[$indep_atr[i]] = 0 & slave_rate[$indep_atr[i]] = 0
+ if slave_rate[$indep_atr[i]] >= 10: slave[$indep_atr[i]] = 2 & slave_rate[$indep_atr[i]] = 0 
+END
+IF slave[$indep_atr[i]] = 2:
+ if slave_rate[$indep_atr[i]] <= -20: slave[$indep_atr[i]] = 1 & slave_rate[$indep_atr[i]] = 0
+ if slave_rate[$indep_atr[i]] >= 20: slave[$indep_atr[i]] = 3 & slave_rate[$indep_atr[i]] = 0 
+END
+IF slave[$indep_atr[i]] = 3:
+ if slave_rate[$indep_atr[i]] <= -40: slave[$indep_atr[i]] = 2 & slave_rate[$indep_atr[i]] = 0
+ if slave_rate[$indep_atr[i]] >= 40: slave[$indep_atr[i]] = 4 & slave_rate[$indep_atr[i]] = 0 
+END
+IF slave[$indep_atr[i]] = 4:
+ if slave_rate[$indep_atr[i]] <= -80: slave[$indep_atr[i]] = 3 & slave_rate[$indep_atr[i]] = 0
+ if slave_rate[$indep_atr[i]] >= 80: slave[$indep_atr[i]] = 5 & slave_rate[$indep_atr[i]] = 0 
+END
+IF slave[$indep_atr[i]] = 5:
+ if slave_rate[$indep_atr[i]] > 10: slave_rate[$indep_atr[i]] = 10
+ if slave_rate[$indep_atr[i]] <= -80: slave[$indep_atr[i]] = 4 & slave_rate[$indep_atr[i]] = 0  
+END
+
+IF assistant[$indep_atr[i]] = 0:
+ if assistant_rate[$indep_atr[i]] <= -10: assistant[$indep_atr[i]] = 0 & assistant_rate[$indep_atr[i]] = -10
+ if assistant_rate[$indep_atr[i]] >= 10: assistant[$indep_atr[i]] = 1 & assistant_rate[$indep_atr[i]] = 0 
+END
+IF assistant[$indep_atr[i]] = 1:
+ if assistant_rate[$indep_atr[i]] <= -10: assistant[$indep_atr[i]] = 0 & assistant_rate[$indep_atr[i]] = 0
+ if assistant_rate[$indep_atr[i]] >= 10: assistant[$indep_atr[i]] = 2 & assistant_rate[$indep_atr[i]] = 0 
+END
+IF assistant[$indep_atr[i]] = 2:
+ if assistant_rate[$indep_atr[i]] <= -20: assistant[$indep_atr[i]] = 1 & assistant_rate[$indep_atr[i]] = 0
+ if assistant_rate[$indep_atr[i]] >= 20: assistant[$indep_atr[i]] = 3 & assistant_rate[$indep_atr[i]] = 0 
+END
+IF assistant[$indep_atr[i]] = 3:
+ if assistant_rate[$indep_atr[i]] <= -40: assistant[$indep_atr[i]] = 2 & assistant_rate[$indep_atr[i]] = 0
+ if assistant_rate[$indep_atr[i]] >= 40: assistant[$indep_atr[i]] = 4 & assistant_rate[$indep_atr[i]] = 0 
+END
+IF assistant[$indep_atr[i]] = 4:
+ if assistant_rate[$indep_atr[i]] <= -80: assistant[$indep_atr[i]] = 3 & assistant_rate[$indep_atr[i]] = 0
+ if assistant_rate[$indep_atr[i]] >= 80: assistant[$indep_atr[i]] = 5 & assistant_rate[$indep_atr[i]] = 0 
+END
+IF assistant[$indep_atr[i]] = 5:
+ if assistant_rate[$indep_atr[i]] > 10: assistant_rate[$indep_atr[i]] = 10
+ if assistant_rate[$indep_atr[i]] <= -80: assistant[$indep_atr[i]] = 4 & assistant_rate[$indep_atr[i]] = 0  
+END
+
+IF prisoner[$indep_atr[i]] = 0:
+ if prisoner_rate[$indep_atr[i]] <= -10: prisoner[$indep_atr[i]] = 0 & prisoner_rate[$indep_atr[i]] = -10
+ if prisoner_rate[$indep_atr[i]] >= 10: prisoner[$indep_atr[i]] = 1 & prisoner_rate[$indep_atr[i]] = 0 
+END
+IF prisoner[$indep_atr[i]] = 1:
+ if prisoner_rate[$indep_atr[i]] <= -10: prisoner[$indep_atr[i]] = 0 & prisoner_rate[$indep_atr[i]] = 0
+ if prisoner_rate[$indep_atr[i]] >= 10: prisoner[$indep_atr[i]] = 2 & prisoner_rate[$indep_atr[i]] = 0 
+END
+IF prisoner[$indep_atr[i]] = 2:
+ if prisoner_rate[$indep_atr[i]] <= -20: prisoner[$indep_atr[i]] = 1 & prisoner_rate[$indep_atr[i]] = 0
+ if prisoner_rate[$indep_atr[i]] >= 20: prisoner[$indep_atr[i]] = 3 & prisoner_rate[$indep_atr[i]] = 0 
+END
+IF prisoner[$indep_atr[i]] = 3:
+ if prisoner_rate[$indep_atr[i]] <= -40: prisoner[$indep_atr[i]] = 2 & prisoner_rate[$indep_atr[i]] = 0
+ if prisoner_rate[$indep_atr[i]] >= 40: prisoner[$indep_atr[i]] = 4 & prisoner_rate[$indep_atr[i]] = 0 
+END
+IF prisoner[$indep_atr[i]] = 4:
+ if prisoner_rate[$indep_atr[i]] <= -80: prisoner[$indep_atr[i]] = 3 & prisoner_rate[$indep_atr[i]] = 0
+ if prisoner_rate[$indep_atr[i]] >= 80: prisoner[$indep_atr[i]] = 5 & prisoner_rate[$indep_atr[i]] = 0 
+END
+IF prisoner[$indep_atr[i]] = 5:
+ if prisoner_rate[$indep_atr[i]] > 10: prisoner_rate[$indep_atr[i]] = 10
+ if prisoner_rate[$indep_atr[i]] <= -80: prisoner[$indep_atr[i]] = 4 & prisoner_rate[$indep_atr[i]] = 0  
+END
+
+if i < n: jump 'slave_independent_loop'
+
+!Discrete, field dependence
+!Calculation talent
+affinity['expression'] = slave["expression_affinity"]
+affinity['pet'] = slave["pet_affinity"]
+affinity['dressage'] = slave["dressage_affinity"]
+affinity['nurse'] = slave["nurse_affinity"]
+affinity['service'] = slave["service_affinity"]
+affinity['cook'] = slave["cook_affinity"]
+affinity['gladiatrix'] = slave["gladiatrix_affinity"]
+affinity['enchanter'] = slave["enchanter_affinity"]
+affinity['vocal'] = slave["vocal_affinity"]
+affinity['music'] = slave["music_affinity"]
+affinity['callisthenics'] = slave["callisthenics_affinity"]
+affinity['secretary'] = slave["secretary_affinity"]
+
+i = 0
+slave_rm = 0
+assistant_rm = 0
+n = arrsize('$dep_atr')
+n -= 1
+:affinity_loop
+i += 1
+
+if affinity[$dep_atr[i]] <= 0: slave_rm += slave[$dep_atr[i]]
+assistant_rm += assistant[$dep_atr[i]]
+ 
+if i < n: jump 'affinity_loop'
+
+!The main calculation of discrete, semi-dependent
+i = 0
+:slave_dependent_loop
+i += 1
+srd1 = 5 
+srd2 = 10 
+srd3 = 20 
+srd4 = 40 
+
+IF affinity[$dep_atr[i]] <= 0:
+ srd1 += slave_rm/2
+ srd2 += slave_rm
+ srd3 += slave_rm*2
+ srd4 += slave_rm*3
+END
+
+ard1 = 5 + assistant_rm/2
+ard2 = 10 + assistant_rm
+ard3 = 20 + assistant_rm*2
+ard4 = 40 + assistant_rm*3 
+
+IF slave[$dep_atr[i]] = 0:
+ if slave_rate[$dep_atr[i]] < 0: slave_rate[$dep_atr[i]] = 0
+ if slave_rate[$dep_atr[i]] >= srd1: slave[$dep_atr[i]] = 1 & slave_rate[$dep_atr[i]] = 0 
+END
+IF slave[$dep_atr[i]] = 1:
+ if slave_rate[$dep_atr[i]] <= -srd1: slave[$dep_atr[i]] = 0 & slave_rate[$dep_atr[i]] = 0
+ if slave_rate[$dep_atr[i]] >= srd1: slave[$dep_atr[i]] = 2 & slave_rate[$dep_atr[i]] = 0 
+END
+IF slave[$dep_atr[i]] = 2:
+ if slave_rate[$dep_atr[i]] <= -srd2: slave[$dep_atr[i]] = 1 & slave_rate[$dep_atr[i]] = 0
+ if slave_rate[$dep_atr[i]] >= srd2: slave[$dep_atr[i]] = 3 & slave_rate[$dep_atr[i]] = 0 
+END
+IF slave[$dep_atr[i]] = 3:
+ if slave_rate[$dep_atr[i]] <= -srd3: slave[$dep_atr[i]] = 2 & slave_rate[$dep_atr[i]] = 0
+ if slave_rate[$dep_atr[i]] >= srd3: slave[$dep_atr[i]] = 4 & slave_rate[$dep_atr[i]] = 0 
+END
+IF slave[$dep_atr[i]] = 4:
+ if slave_rate[$dep_atr[i]] <= -srd4: slave[$dep_atr[i]] = 3 & slave_rate[$dep_atr[i]] = 0
+ if slave_rate[$dep_atr[i]] >= srd4: slave[$dep_atr[i]] = 5 & slave_rate[$dep_atr[i]] = 0 
+END
+IF slave[$dep_atr[i]] = 5:
+ if slave_rate[$dep_atr[i]] > 10: slave_rate[$dep_atr[i]] = 10
+ if slave_rate[$dep_atr[i]] < 0: slave_rate[$dep_atr[i]] = 0
+END
+
+IF assistant[$dep_atr[i]] = 0:
+ if assistant_rate[$dep_atr[i]] < 0: assistant_rate[$dep_atr[i]] = 0
+ if assistant_rate[$dep_atr[i]] >= srd1: assistant[$dep_atr[i]] = 1 & assistant_rate[$dep_atr[i]] = 0 
+END
+IF assistant[$dep_atr[i]] = 1:
+ if assistant_rate[$dep_atr[i]] <= -srd1: assistant[$dep_atr[i]] = 0 & assistant_rate[$dep_atr[i]] = 0
+ if assistant_rate[$dep_atr[i]] >= srd1: assistant[$dep_atr[i]] = 2 & assistant_rate[$dep_atr[i]] = 0 
+END
+IF assistant[$dep_atr[i]] = 2:
+ if assistant_rate[$dep_atr[i]] <= -srd2: assistant[$dep_atr[i]] = 1 & assistant_rate[$dep_atr[i]] = 0
+ if assistant_rate[$dep_atr[i]] >= srd2: assistant[$dep_atr[i]] = 3 & assistant_rate[$dep_atr[i]] = 0 
+END
+IF assistant[$dep_atr[i]] = 3:
+ if assistant_rate[$dep_atr[i]] <= -srd3: assistant[$dep_atr[i]] = 2 & assistant_rate[$dep_atr[i]] = 0
+ if assistant_rate[$dep_atr[i]] >= srd3: assistant[$dep_atr[i]] = 4 & assistant_rate[$dep_atr[i]] = 0 
+END
+IF assistant[$dep_atr[i]] = 4:
+ if assistant_rate[$dep_atr[i]] <= -srd4: assistant[$dep_atr[i]] = 3 & assistant_rate[$dep_atr[i]] = 0
+ if assistant_rate[$dep_atr[i]] >= srd4: assistant[$dep_atr[i]] = 5 & assistant_rate[$dep_atr[i]] = 0 
+END
+IF assistant[$dep_atr[i]] = 5:
+ if assistant_rate[$dep_atr[i]] > 10: assistant_rate[$dep_atr[i]] = 10
+ if assistant_rate[$dep_atr[i]] < 0: assistant_rate[$dep_atr[i]] = 0
+END
+
+if i < n: jump 'slave_dependent_loop'
+
+!Master Characteristic Increases and Skillups - New System - crushboss
+
+!Set Master Rates when slaver is first created - crushboss
+IF master_check = 0:
+ if master_libido = 1 and master_libido_rate < 15: master_libido_rate = 15
+ if master_libido = 2 and master_libido_rate < 30: master_libido_rate = 30
+ if master_libido = 3 and master_libido_rate < 60: master_libido_rate = 60
+ if master_libido = 4 and master_libido_rate < 100: master_libido_rate = 100
+ if master_libido = 5 and master_libido_rate < 180: master_libido_rate = 180
+ 
+ if master_excitement = 1 and master_excitement_rate < 15: master_excitement_rate = 15
+ if master_excitement = 2 and master_excitement_rate < 30: master_excitement_rate = 30
+ if master_excitement = 3 and master_excitement_rate < 60: master_excitement_rate = 60
+ if master_excitement = 4 and master_excitement_rate < 100: master_excitement_rate = 100
+ if master_excitement = 5 and master_excitement_rate < 180: master_excitement_rate = 180
+
+ if master_str = 1 and master_str_rate < 15: master_str_rate = 15
+ if master_str = 2 and master_str_rate < 30: master_str_rate = 30
+ if master_str = 3 and master_str_rate < 60: master_str_rate = 60
+ if master_str = 4 and master_str_rate < 100: master_str_rate = 100
+ if master_str = 5 and master_str_rate < 180: master_str_rate = 180
+
+ if master_cha = 1 and master_cha_rate < 10: master_cha_rate = 10
+ if master_cha = 2 and master_cha_rate < 20: master_cha_rate = 20
+ if master_cha = 3 and master_cha_rate < 40: master_cha_rate = 40
+ if master_cha = 4 and master_cha_rate < 80: master_cha_rate = 80
+ if master_cha = 5 and master_cha_rate < 120: master_cha_rate = 120
+ 
+ if master_fighter = 1 and master_fighter_rate < 15: master_fighter_rate = 15
+ if master_fighter = 2 and master_fighter_rate < 30: master_fighter_rate = 30
+ if master_fighter = 3 and master_fighter_rate < 60: master_fighter_rate = 60
+ if master_fighter = 4 and master_fighter_rate < 100: master_fighter_rate = 100
+ if master_fighter = 5 and master_fighter_rate < 180: master_fighter_rate = 180
+
+ if master_domination = 1 and master_domination_rate < 15: master_domination_rate = 15
+ if master_domination = 2 and master_domination_rate < 30: master_domination_rate = 30
+ if master_domination = 3 and master_domination_rate < 60: master_domination_rate = 60
+ if master_domination = 4 and master_domination_rate < 100: master_domination_rate = 100
+ if master_domination = 5 and master_domination_rate < 180: master_domination_rate = 180
+
+ if master_mage = 1 and master_mage_rate < 10: master_mage_rate = 10
+ if master_mage = 2 and master_mage_rate < 20: master_mage_rate = 20
+ if master_mage = 3 and master_mage_rate < 40: master_mage_rate = 40
+ if master_mage = 4 and master_mage_rate < 80: master_mage_rate = 80
+ if master_mage = 5 and master_mage_rate < 100: master_mage_rate = 100
+
+ if master_medic = 1 and master_medic_rate < 10: master_medic_rate = 10
+ if master_medic = 2 and master_medic_rate < 20: master_medic_rate = 20
+ if master_medic = 3 and master_medic_rate < 40: master_medic_rate = 40
+ if master_medic = 4 and master_medic_rate < 80: master_medic_rate = 80
+ if master_medic = 5 and master_medic_rate < 100: master_medic_rate = 100
+
+ if master_artdirector = 1 and master_artdirector_rate < 10: master_artdirector_rate = 10
+ if master_artdirector = 2 and master_artdirector_rate < 20: master_artdirector_rate = 20
+ if master_artdirector = 3 and master_artdirector_rate < 40: master_artdirector_rate = 40
+ if master_artdirector = 4 and master_artdirector_rate < 80: master_artdirector_rate = 80
+ if master_artdirector = 5 and master_artdirector_rate < 120: master_artdirector_rate = 120
+
+ if master_butler = 1 and master_butler_rate < 15: master_butler_rate = 15
+ if master_butler = 2 and master_butler_rate < 30: master_butler_rate = 30
+ if master_butler = 3 and master_butler_rate < 60: master_butler_rate = 60
+ if master_butler = 4 and master_butler_rate < 100: master_butler_rate = 100
+ if master_butler = 5 and master_butler_rate < 180: master_butler_rate = 180
+ 
+ if master_tutor = 1 and master_tutor_rate < 50: master_tutor_rate = 50
+ if master_tutor = 2 and master_tutor_rate < 100: master_tutor_rate = 100
+ if master_tutor = 3 and master_tutor_rate < 150: master_tutor_rate = 150
+ if master_tutor = 4 and master_tutor_rate < 200: master_tutor_rate = 200
+ if master_tutor = 5 and master_tutor_rate < 300: master_tutor_rate = 300
+ 
+ if master_bondage = 1 and master_bondage_rate < 10: master_bondage_rate = 10
+ if master_bondage = 2 and master_bondage_rate < 20: master_bondage_rate = 20
+ if master_bondage = 3 and master_bondage_rate < 40: master_bondage_rate = 40
+ if master_bondage = 4 and master_bondage_rate < 80: master_bondage_rate = 80
+ if master_bondage = 5 and master_bondage_rate < 100: master_bondage_rate = 100
+
+ if master_torture = 1 and master_torture_rate < 10: master_torture_rate = 10
+ if master_torture = 2 and master_torture_rate < 20: master_torture_rate = 20
+ if master_torture = 3 and master_torture_rate < 40: master_torture_rate = 40
+ if master_torture = 4 and master_torture_rate < 80: master_torture_rate = 80
+ if master_torture = 5 and master_torture_rate < 100: master_torture_rate = 100
+ 
+ if master_flagelation = 1 and master_flagelation_rate < 10: master_flagelation_rate = 10
+ if master_flagelation = 2 and master_flagelation_rate < 20: master_flagelation_rate = 20
+ if master_flagelation = 3 and master_flagelation_rate < 40: master_flagelation_rate = 40
+ if master_flagelation = 4 and master_flagelation_rate < 80: master_flagelation_rate = 80
+ if master_flagelation = 5 and master_flagelation_rate < 100: master_flagelation_rate = 100
+ 
+ if master_fetish = 1 and master_fetish_rate < 10: master_fetish_rate = 10
+ if master_fetish = 2 and master_fetish_rate < 20: master_fetish_rate = 20
+ if master_fetish = 3 and master_fetish_rate < 40: master_fetish_rate = 40
+ if master_fetish = 4 and master_fetish_rate < 80: master_fetish_rate = 80
+ if master_fetish = 5 and master_fetish_rate < 120: master_fetish_rate = 120
+ 
+ if master_oral = 1 and master_oral_rate < 10: master_oral_rate = 10
+ if master_oral = 2 and master_oral_rate < 20: master_oral_rate = 20
+ if master_oral = 3 and master_oral_rate < 40: master_oral_rate = 40
+ if master_oral = 4 and master_oral_rate < 80: master_oral_rate = 80
+ if master_oral = 5 and master_oral_rate < 120: master_oral_rate = 120
+ 
+ if master_penetration = 1 and master_penetration_rate < 10: master_penetration_rate = 10
+ if master_penetration = 2 and master_penetration_rate < 20: master_penetration_rate = 20
+ if master_penetration = 3 and master_penetration_rate < 40: master_penetration_rate = 40
+ if master_penetration = 4 and master_penetration_rate < 80: master_penetration_rate = 80
+ if master_penetration = 5 and master_penetration_rate < 120: master_penetration_rate = 120
+
+ if master_petting = 1 and master_petting_rate < 10: master_petting_rate = 10
+ if master_petting = 2 and master_petting_rate < 20: master_petting_rate = 20
+ if master_petting = 3 and master_petting_rate < 40: master_petting_rate = 40
+ if master_petting = 4 and master_petting_rate < 80: master_petting_rate = 80
+ if master_petting = 5 and master_petting_rate < 120: master_petting_rate = 120
+ master_check = 1
+END
+
+!Calculate all of master stats based on rate - crushboss 
+master_libido = 0
+if master_libido_rate >= 15: master_libido = 1
+if master_libido_rate >= 30: master_libido = 2
+if master_libido_rate >= 60: master_libido = 3
+if master_libido_rate >= 100: master_libido = 4
+if master_libido_rate >= 180: master_libido = 5
+
+master_excitement = 0
+if master_excitement_rate <= -15: master_excitement = -1 & master_excitement_plus = 6
+if master_excitement_rate <= -30: master_excitement = -2 & master_excitement_plus = 7
+if master_excitement_rate <= -60: master_excitement = -3 & master_excitement_plus = 8
+if master_excitement_rate <= -100: master_excitement = -4 & master_excitement_plus = 9
+if master_excitement_rate <= -180: master_excitement = -5 & master_excitement_plus = 10
+if master_excitement_rate < 15 and master_excitement_rate > -15: master_excitement = 0 & master_excitement_plus = 0
+if master_excitement_rate >= 15: master_excitement = 1 & master_excitement_plus = 1
+if master_excitement_rate >= 30: master_excitement = 2 & master_excitement_plus = 2
+if master_excitement_rate >= 60: master_excitement = 3 & master_excitement_plus = 3
+if master_excitement_rate >= 100: master_excitement = 4 & master_excitement_plus = 4
+if master_excitement_rate >= 180: master_excitement = 5 & master_excitement_plus = 5
+
+master_wounds = 0
+IF master_wounds_rate >= 10: master_wounds = 1
+IF master_wounds_rate >= 20: master_wounds = 2
+IF master_wounds_rate >= 40: master_wounds = 3
+IF master_wounds_rate >= 80: master_wounds = 4
+IF master_wounds_rate >= 160: master_wounds = 5
+
+master_hygiene = 0
+IF master_hygiene_rate >= 10: master_hygiene = 1
+IF master_hygiene_rate >= 20: master_hygiene = 2
+IF master_hygiene_rate >= 40: master_hygiene = 3
+IF master_hygiene_rate >= 60: master_hygiene = 4
+IF master_hygiene_rate >= 80: master_hygiene = 5
+
+house_mess = 0
+IF house_mess_rate >= 10: house_mess = 1
+IF house_mess_rate >= 20: house_mess = 2
+IF house_mess_rate >= 40: house_mess = 3
+IF house_mess_rate >= 60: house_mess = 4
+IF house_mess_rate >= 80: house_mess = 5
+
+master_str = 0
+IF master_str_rate >= 15: master_str = 1
+IF master_str_rate >= 30: master_str = 2
+IF master_str_rate >= 60: master_str = 3
+IF master_str_rate >= 100: master_str = 4
+IF master_str_rate >= 180: master_str = 5
+
+master_cha = 0
+IF master_cha_rate >= 10: master_cha = 1
+IF master_cha_rate >= 20: master_cha = 2
+IF master_cha_rate >= 40: master_cha = 3
+IF master_cha_rate >= 80: master_cha = 4
+IF master_cha_rate >= 120: master_cha = 5
+
+master_flagelation = 0
+IF master_flagelation_rate >= 10: master_flagelation = 1
+IF master_flagelation_rate >= 20: master_flagelation = 2
+IF master_flagelation_rate >= 40: master_flagelation = 3
+IF master_flagelation_rate >= 80: master_flagelation = 4
+IF master_flagelation_rate >= 100: master_flagelation = 5
+
+master_torture = 0
+IF master_torture_rate >= 10: master_torture = 1
+IF master_torture_rate >= 20: master_torture = 2
+IF master_torture_rate >= 40: master_torture = 3
+IF master_torture_rate >= 80: master_torture = 4
+IF master_torture_rate >= 100: master_torture = 5
+
+master_bondage = 0
+IF master_bondage_rate >= 10: master_bondage = 1
+IF master_bondage_rate >= 20: master_bondage = 2
+IF master_bondage_rate >= 40: master_bondage = 3
+IF master_bondage_rate >= 80: master_bondage = 4
+IF master_bondage_rate >= 100: master_bondage = 5
+
+master_petting = 0
+IF master_petting_rate >= 10: master_petting = 1
+IF master_petting_rate >= 20: master_petting = 2
+IF master_petting_rate >= 40: master_petting = 3
+IF master_petting_rate >= 80: master_petting = 4
+IF master_petting_rate >= 120: master_petting = 5
+
+master_penetration = 0
+IF master_penetration_rate >= 10: master_penetration = 1
+IF master_penetration_rate >= 20: master_penetration = 2
+IF master_penetration_rate >= 40: master_penetration = 3
+IF master_penetration_rate >= 80: master_penetration = 4
+IF master_penetration_rate >= 120: master_penetration = 5
+
+master_oral = 0
+IF master_oral_rate >= 10: master_oral = 1
+IF master_oral_rate >= 20: master_oral = 2
+IF master_oral_rate >= 40: master_oral = 3
+IF master_oral_rate >= 80: master_oral = 4
+IF master_oral_rate >= 120: master_oral = 5
+
+master_fetish = 0
+IF master_fetish_rate >= 10: master_fetish = 1
+IF master_fetish_rate >= 20: master_fetish = 2
+IF master_fetish_rate >= 40: master_fetish = 3
+IF master_fetish_rate >= 80: master_fetish = 4
+IF master_fetish_rate >= 120: master_fetish = 5
+
+master_tutor = 0
+IF master_tutor_rate >= 50: master_tutor = 1
+IF master_tutor_rate >= 100: master_tutor = 2
+IF master_tutor_rate >= 150: master_tutor = 3
+IF master_tutor_rate >= 200: master_tutor = 4
+IF master_tutor_rate >= 300: master_tutor = 5
+
+master_butler = 0
+master_butler_own = 0
+IF master_butler_rate >= 15: master_butler = 1 & master_butler_own = 1
+IF master_butler_rate >= 30: master_butler = 2 & master_butler_own = 2
+IF master_butler_rate >= 60: master_butler = 3 & master_butler_own = 3
+IF master_butler_rate >= 100: master_butler = 4 & master_butler_own = 4
+IF master_butler_rate >= 180: master_butler = 5 & master_butler_own = 5
+
+master_artdirector = 0
+master_artdirector_own = 0
+IF master_artdirector_rate >= 10: master_artdirector = 1 & master_artdirector_own = 1
+IF master_artdirector_rate >= 20: master_artdirector = 2 & master_artdirector_own = 2
+IF master_artdirector_rate >= 40: master_artdirector = 3 & master_artdirector_own = 3
+IF master_artdirector_rate >= 80: master_artdirector = 4 & master_artdirector_own = 4
+IF master_artdirector_rate >= 120: master_artdirector = 5 & master_artdirector_own = 5
+
+master_medic = 0
+master_medic_own = 0
+IF master_medic_rate >= 10: master_medic = 1 & master_medic_own = 1
+IF master_medic_rate >= 20: master_medic = 2 & master_medic_own = 2
+IF master_medic_rate >= 40: master_medic = 3 & master_medic_own = 3
+IF master_medic_rate >= 60: master_medic = 4 & master_medic_own = 4
+IF master_medic_rate >= 100: master_medic = 5 & master_medic_own = 5
+
+master_mage = 0
+master_mage_own = 0
+IF master_mage_rate >= 10: master_mage = 1 & master_mage_own = 1
+IF master_mage_rate >= 20: master_mage = 2 & master_mage_own = 2
+IF master_mage_rate >= 40: master_mage = 3 & master_mage_own = 3
+IF master_mage_rate >= 60: master_mage = 4 & master_mage_own = 4
+IF master_mage_rate >= 100: master_mage = 5 & master_mage_own = 5
+
+master_fighter = 0
+master_fighter_own = 0
+IF master_fighter_rate >= 15: master_fighter = 1 & master_fighter_own = 1
+IF master_fighter_rate >= 30: master_fighter = 2 & master_fighter_own = 2
+IF master_fighter_rate >= 60: master_fighter = 3 & master_fighter_own = 3
+IF master_fighter_rate >= 100: master_fighter = 4 & master_fighter_own = 4
+IF master_fighter_rate >= 180: master_fighter = 5 & master_fighter_own = 5
+
+master_domination = 0
+IF master_domination_rate >= 15: master_domination = 1
+IF master_domination_rate >= 30: master_domination = 2
+IF master_domination_rate >= 60: master_domination = 3
+IF master_domination_rate >= 100: master_domination = 4
+IF master_domination_rate >= 180: master_domination = 5
+
+brand_reputation = 0
+if brand_rate >= 5: brand_reputation = 1
+if brand_rate >= 10: brand_reputation = 2
+if brand_rate >= 20: brand_reputation = 3
+if brand_rate >= 40: brand_reputation = 4
+if brand_rate >= 80: brand_reputation = 5
+
+guild_reputation = 0
+if guild_reputation_rate >= 5: guild_reputation = 1
+if guild_reputation_rate >= 10: guild_reputation = 2
+if guild_reputation_rate >= 20: guild_reputation = 3
+if guild_reputation_rate >= 40: guild_reputation = 4
+if guild_reputation_rate >= 80: guild_reputation = 5
+
+!Counting master cloth characteristic boosts - crushboss
+killvar 'boost_up'
+dynamic $item_property[$master_cloth]
+
+IF boost_up['master_artdirector'] = 1: 
+ master_artdirector += 1
+END
+
+IF boost_up['master_fighter'] = 1: 
+ master_fighter += 1
+END
+
+IF boost_up['master_butler'] = 1: 
+ master_butler += 1
+END
+
+IF boost_up['master_medic'] = 1: 
+ master_medic += 1
+END
+
+IF boost_up['master_mage'] = 1: 
+ master_mage += 1
+END
+
+!Characteristic Alignment for Master - crushboss
+if house_mess < 0: house_mess = 0
+if house_mess_rate < 0: house_mess_rate = 0
+if master_hygiene_rate < 0: master_hygiene_rate = 0
+if master_excitement > 5: master_excitement = 5
+if master_excitement < -5: master_excitement = -5
+if master_excitement_rate < -200: master_excitement_rate = -200
+if master_excitement_rate > 200: master_excitement_rate = 200
+if master_excitement_plus > 10: master_excitement_plus = 10
+if master_excitement_plus < 0: master_excitement_plus = 0
+if master_str > 5: master_str = 5
+if master_str < 0: master_str = 0
+if master_str_rate < 0: master_str_rate = 0
+if master_cha > 5: master_cha = 5
+if master_cha < 0: master_cha = 0
+if master_cha_rate < 0: master_cha_rate = 0
+if master_style > 5: master_style = 5
+if master_style < 0: master_style = 0
+if master_style_rate < 0: master_style_rate = 0
+if master_libido > 5: master_libido = 5
+if master_libido < 0: master_libido = 0
+if master_libido_rate <= 1: master_libido_rate = 2
+if master_tutor > 5: master_tutor = 5
+if master_tutor < 0: master_tutor = 0
+if master_tutor_rate < 0: master_tutor_rate = 0
+if master_fighter > 6: master_fighter = 6
+if master_fighter < 0: master_fighter = 0
+if master_fighter_rate < 0: master_fighter_rate = 0
+if master_butler > 6: master_butler = 6
+if master_butler < 0: master_butler = 0
+if master_butler_rate < 0: master_butler_rate = 0
+if master_artdirector > 6: master_artdirector = 6
+if master_artdirector < 0: master_artdirector = 0
+if master_artdirector_rate < 0: master_artdirector_rate = 0
+if master_medic > 6: master_medic = 6
+if master_medic < 0: master_medic = 0
+if master_medic_rate < 0: master_medic_rate = 0
+if master_mage > 6: master_mage = 6
+if master_mage < 0: master_mage = 0
+if master_mage_rate < 0: master_mage_rate = 0
+if master_torture > 5: master_torture = 5
+if master_torture < 0: master_torture = 0
+if master_torture_rate < 0: master_torture_rate = 0
+if master_domination > 5: master_domination = 5
+if master_domination < 0: master_domination = 0
+if master_domination_rate < 0: master_domination_rate = 0
+if master_bondage > 5: master_bondage = 5
+if master_bondage < 0: master_bondage = 0
+if master_bondage_rate < 0: master_bondage_rate = 0
+if master_flagelation > 5: master_flagelation = 5
+if master_flagelation < 0: master_flagelation = 0
+if master_flagelation_rate < 0: master_flagelation_rate = 0
+if master_petting > 5: master_petting = 5
+if master_petting < 0: master_petting = 0
+if master_petting_rate < 0: master_petting_rate = 0
+if master_oral > 5: master_oral = 5
+if master_oral < 0: master_oral = 0
+if master_oral_rate < 0: master_oral_rate = 0
+if master_penetration > 5: master_penetration = 5
+if master_penetration < 0: master_penetration = 0
+if master_penetration_rate < 0: master_penetration_rate = 0
+if master_fetish > 5: master_fetish = 5
+if master_fetish < 0: master_fetish = 0
+if master_fetish_rate < 0: master_fetish_rate = 0
+if master_ill < 0: master_ill = 0
+if master_ill > 6: master_ill = 6
+if master_issues < 0: master_issues = 0
+if master_issues > 5: master_issues = 5
+if master_wounds > 5: master_wounds = 5
+if master_wounds_rate < 0: master_wounds_rate = 0
+if master_energy > 5: master_energy = 5
+if master_energy < -5: master_energy = -5
+
+!Calculate Master Supermacy
+master_supermacy = (master_cha + master_domination + master_style + master_str + slave['beaten_ever'] + magna_magnifika + item_supermacy_bonus) - (slave["temper"] + slave["ego"] + slave["pride"] + slave["stamina"] + (slave["intellect"] - 3))
+if $master_cloth = 'regal_suit': master_supermacy += 1
+if $master_cloth = 'comfy_robes': master_supermacy -= 1
+
+--- $calculate_attributes ---------------------------------
+

@@ -1,4 +1,6 @@
 # torture_result
+!Torture result - improved - crushboss
+
 fear_resistance = slave['ego']*2 + slave['temper']
 fear_resistance += slave['pride']
 fear_resistance -= slave['sensitivity']
@@ -16,18 +18,26 @@ IF torture_fear >= fear_resistance:
  torture_succed = 1 
  if torture_intensity > slave['fear']: torture_succed = 2
 END 
-if phobia = -1:
+IF phobia = -1:
     torture_succed = 2
 elseif phobia = 2:
     torture_succed = 0
-end
+END
 
-IF torture_succed > 0 and slave["sin"] < torture_intensity and already_done_today[interaction] = 0:
-  slave_rate["angst"] += torture_intensity + slave["sensitivity"]  
- else
+IF torture_succed > 0 and slave["sin"] < torture_intensity:
+  slave_rate["angst"] += torture_intensity + slave["sensitivity"] 
+ elseif torture_succed > 0 and slave["sin"] = torture_intensity and already_done_today[interaction] = 0:
   msm = min(master_supermacy,5)
   if master_supermacy > 0: slave_rate["instinct"] += msm + 1
   if master_supermacy <= 0: slave_rate["instinct"] += 1
+  IF msm > 0:
+   slave_rate["pride"] -= (torture_intensity + msm)
+   else
+   slave_rate["pride"] -= torture_intensity
+  END
+ elseif torture_succed > 0 and slave["sin"] > torture_intensity:
+  slave_rate["pride"] += 2
+  slave_rate["spoil"] += 2
 END
 
 IF torture_succed = 0 and slave['fear'] < torture_intensity and already_done_today[interaction] = 0: 

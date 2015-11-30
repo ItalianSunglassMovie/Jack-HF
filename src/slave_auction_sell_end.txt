@@ -1,4 +1,5 @@
 # slave_auction_sell_end
+guild_reputation_rate += rating/3
 slave_state = CONST_INT['no_slave']
 
 killvar 'slave'

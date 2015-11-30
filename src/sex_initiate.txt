@@ -11,7 +11,6 @@ deflorated = 0
 sex["climax_buildup"] = 0 
 $rise_skill = 'dump'
 
-
 $return_lock_prev = $return_lock
 $return_lock  = 'sex_screen'
 
@@ -300,6 +299,7 @@ if chimera_gem_on = 1: sex['pc_energy'] += 25
 !CUM BUILDUP
 IF chimera_gem_on = 1:
  master_excitement = 5
+ master_excitement_rate = 200
  sex['pc_boner'] = master_excitement
  sex['base_boner'] = master_excitement
  pc_boner_plus = master_excitement

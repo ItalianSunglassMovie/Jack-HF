@@ -1,0 +1,118 @@
+# $calculate_attributes_fast
+!$calculate_attributes_fast - created by crushboss
+
+!Calculate stats based on rate - crushboss 
+master_libido = 0
+if master_libido_rate >= 15: master_libido = 1
+if master_libido_rate >= 30: master_libido = 2
+if master_libido_rate >= 60: master_libido = 3
+if master_libido_rate >= 100: master_libido = 4
+if master_libido_rate >= 180: master_libido = 5
+
+master_excitement = 0
+if master_excitement_rate <= -15: master_excitement = -1 & master_excitement_plus = 6
+if master_excitement_rate <= -30: master_excitement = -2 & master_excitement_plus = 7
+if master_excitement_rate <= -60: master_excitement = -3 & master_excitement_plus = 8
+if master_excitement_rate <= -100: master_excitement = -4 & master_excitement_plus = 9
+if master_excitement_rate <= -180: master_excitement = -5 & master_excitement_plus = 10
+if master_excitement_rate < 15 and master_excitement_rate > -15: master_excitement = 0 & master_excitement_plus = 0
+if master_excitement_rate >= 15: master_excitement = 1 & master_excitement_plus = 1
+if master_excitement_rate >= 30: master_excitement = 2 & master_excitement_plus = 2
+if master_excitement_rate >= 60: master_excitement = 3 & master_excitement_plus = 3
+if master_excitement_rate >= 100: master_excitement = 4 & master_excitement_plus = 4
+if master_excitement_rate >= 180: master_excitement = 5 & master_excitement_plus = 5
+
+master_wounds = 0
+IF master_wounds_rate >= 10: master_wounds = 1
+IF master_wounds_rate >= 20: master_wounds = 2
+IF master_wounds_rate >= 40: master_wounds = 3
+IF master_wounds_rate >= 80: master_wounds = 4
+IF master_wounds_rate >= 160: master_wounds = 5
+
+master_hygiene = 0
+IF master_hygiene_rate >= 10: master_hygiene = 1
+IF master_hygiene_rate >= 20: master_hygiene = 2
+IF master_hygiene_rate >= 40: master_hygiene = 3
+IF master_hygiene_rate >= 60: master_hygiene = 4
+IF master_hygiene_rate >= 80: master_hygiene = 5
+
+house_mess = 0
+IF house_mess_rate >= 10: house_mess = 1
+IF house_mess_rate >= 20: house_mess = 2
+IF house_mess_rate >= 40: house_mess = 3
+IF house_mess_rate >= 60: house_mess = 4
+IF house_mess_rate >= 80: house_mess = 5
+
+!Characteristic Alignment for Master - crushboss
+if house_mess < 0: house_mess = 0
+if house_mess_rate < 0: house_mess_rate = 0
+if master_hygiene_rate < 0: master_hygiene_rate = 0
+if master_excitement > 5: master_excitement = 5
+if master_excitement < -5: master_excitement = -5
+if master_excitement_rate < -200: master_excitement_rate = -200
+if master_excitement_rate > 200: master_excitement_rate = 200
+if master_excitement_plus > 10: master_excitement_plus = 10
+if master_excitement_plus < 0: master_excitement_plus = 0
+if master_str > 5: master_str = 5
+if master_str < 0: master_str = 0
+if master_str_rate < 0: master_str_rate = 0
+if master_cha > 5: master_cha = 5
+if master_cha < 0: master_cha = 0
+if master_cha_rate < 0: master_cha_rate = 0
+if master_style > 5: master_style = 5
+if master_style < 0: master_style = 0
+if master_style_rate < 0: master_style_rate = 0
+if master_libido > 5: master_libido = 5
+if master_libido < 0: master_libido = 0
+if master_libido_rate <= 1: master_libido_rate = 2
+if master_tutor > 5: master_tutor = 5
+if master_tutor < 0: master_tutor = 0
+if master_tutor_rate < 0: master_tutor_rate = 0
+if master_fighter > 6: master_fighter = 6
+if master_fighter < 0: master_fighter = 0
+if master_fighter_rate < 0: master_fighter_rate = 0
+if master_butler > 6: master_butler = 6
+if master_butler < 0: master_butler = 0
+if master_butler_rate < 0: master_butler_rate = 0
+if master_artdirector > 6: master_artdirector = 6
+if master_artdirector < 0: master_artdirector = 0
+if master_artdirector_rate < 0: master_artdirector_rate = 0
+if master_medic > 6: master_medic = 6
+if master_medic < 0: master_medic = 0
+if master_medic_rate < 0: master_medic_rate = 0
+if master_mage > 6: master_mage = 6
+if master_mage < 0: master_mage = 0
+if master_mage_rate < 0: master_mage_rate = 0
+if master_torture > 5: master_torture = 5
+if master_torture < 0: master_torture = 0
+if master_torture_rate < 0: master_torture_rate = 0
+if master_domination > 5: master_domination = 5
+if master_domination < 0: master_domination = 0
+if master_domination_rate < 0: master_domination_rate = 0
+if master_bondage > 5: master_bondage = 5
+if master_bondage < 0: master_bondage = 0
+if master_bondage_rate < 0: master_bondage_rate = 0
+if master_flagelation > 5: master_flagelation = 5
+if master_flagelation < 0: master_flagelation = 0
+if master_flagelation_rate < 0: master_flagelation_rate = 0
+if master_petting > 5: master_petting = 5
+if master_petting < 0: master_petting = 0
+if master_petting_rate < 0: master_petting_rate = 0
+if master_oral > 5: master_oral = 5
+if master_oral < 0: master_oral = 0
+if master_oral_rate < 0: master_oral_rate = 0
+if master_penetration > 5: master_penetration = 5
+if master_penetration < 0: master_penetration = 0
+if master_penetration_rate < 0: master_penetration_rate = 0
+if master_fetish > 5: master_fetish = 5
+if master_fetish < 0: master_fetish = 0
+if master_fetish_rate < 0: master_fetish_rate = 0
+if master_ill < 0: master_ill = 0
+if master_ill > 6: master_ill = 6
+if master_issues < 0: master_issues = 0
+if master_issues > 5: master_issues = 5
+if master_wounds > 5: master_wounds = 5
+if master_wounds_rate < 0: master_wounds_rate = 0
+
+--- $calculate_attributes_fast ---------------------------------
+

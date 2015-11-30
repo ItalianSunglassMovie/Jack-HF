@@ -1,0 +1,12 @@
+# slave_auction_buyout
+!Slave buyout - created by crushboss
+IF sparks >= ((cur_stock_price*5)/2):
+ sparks -= ((cur_stock_price*5)/2)
+ auction_phase = 6
+ stock_sold = stock_limit + 1
+ else
+ msg 'You don''t have enough sparks to purchase this slave!'
+END
+GT 'slave_auction_buy'
+--- slave_auction_buyout ---------------------------------
+

@@ -318,8 +318,9 @@ IF sp_txt = 13:
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Flamberge, 'sp_txt = 131 & gt $curloc', 'Flamberge (200$)')
  FUNC('$menu', 'exec_options', $menu_item_Naginata, 'sp_txt = 132 & gt $curloc', 'Naginata (200$)')
- FUNC('$menu', 'exec_options', $menu_item_Morningstar, 'sp_txt = 133 & gt $curloc', 'Morningstar (150$)')
- FUNC('$menu', 'exec_options', $menu_item_Greataxe, 'sp_txt = 134 & gt $curloc', 'Greataxe (100$)')
+ FUNC('$menu', 'exec_options', $menu_item_Morningstar, 'sp_txt = 133 & gt $curloc', 'Morningstar (200$)')
+ FUNC('$menu', 'exec_options', $menu_item_Trident, 'sp_txt = 137 & gt $curloc', 'Trident (200$)')
+ FUNC('$menu', 'exec_options', $menu_item_Greataxe, 'sp_txt = 134 & gt $curloc', 'Greataxe (150$)')
  FUNC('$menu', 'exec_options', $menu_item_Baseballbat, 'sp_txt = 135 & gt $curloc', 'Baseball Bat (100$)')
  FUNC('$menu', 'exec_options', $menu_item_Cattleprod, 'sp_txt = 136 & gt $curloc', 'Cattle Prod (150$)')
  FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 2 & gt $curloc', 'Back')
@@ -360,7 +361,7 @@ END
 
 IF sp_txt = 133:
  IF sparks >= 150: 
-  sparks -= 150
+  sparks -= 200
   моргенштерн += 1
   $shop_wpn[133] = $shop_wpn_accept
   else
@@ -376,7 +377,7 @@ END
 
 IF sp_txt = 134:
  IF sparks >= 100: 
-  sparks -= 100
+  sparks -= 150
   грейтекс += 1
   $shop_wpn[134] = $shop_wpn_accept
   else
@@ -413,6 +414,22 @@ IF sp_txt = 136:
   $shop_wpn[136] = $shop_wpn_accept
   else
   $shop_wpn[136] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
+IF sp_txt = 137:
+ IF sparks >= 200: 
+  sparks -= 200
+  трезубец += 1
+  $shop_wpn[132] = $shop_wpn_accept
+  else
+  $shop_wpn[132] = $shop_wpn_deny 
  END
  FUNC('$menu', 'spacer', 4)
 

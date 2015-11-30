@@ -77,7 +77,7 @@ IF colloseum_fight > 0:
  gt 'shop_general'
 END
 
-!misc
+!slave battle misc
 IF sparring_practice = 0:
  IF $враг[1] = 'воспитуемая':
   energy_max = slave["energy"]
@@ -156,11 +156,11 @@ IF $враг[1] = 'воспитуемая':
  if здоровье_врага[1] <= 0: dynamic $slave_killed
 END
 
-IF sparring_practice = 0:
+IF combatant = 0 and sparring_practice = 0:
  letal_damage_recived = макс_здоровье_игрока - здоровье_игрока
  bash_damage_recived = макс_выносливость_игрока - выносливость_игрока
  IF дух_игрока < норм_дух_игрока:
- psy_damage_recived = норм_дух_игрока - дух_игрока
+  psy_damage_recived = норм_дух_игрока - дух_игрока
  END
 
  master_mood_rate -= psy_damage_recived
@@ -171,23 +171,36 @@ IF sparring_practice = 0:
  if letal_damage_recived > макс_здоровье_игрока/2: master_wounds_rate += 40 
  if letal_damage_recived > макс_здоровье_игрока - 2: master_wounds_rate += 80  
  if master_wounds_rate > 0: master_mood['neg_wounded'] = 1
+
+ energy_max = master_energy 
+ if выносливость_игрока < 5: master_energy = -5
+ if выносливость_игрока >= 10: master_energy = -4
+ if выносливость_игрока >= 20: master_energy = -3
+ if выносливость_игрока >= 30: master_energy = -2
+ if выносливость_игрока >= 40: master_energy = -1
+ if выносливость_игрока >= 50: master_energy = 0
+ if выносливость_игрока >= 55: master_energy = 1
+ if выносливость_игрока >= 60: master_energy = 2
+ if выносливость_игрока >= 65: master_energy = 3
+ if выносливость_игрока >= 70: master_energy = 4
+ if выносливость_игрока >= 75: master_energy = 5
+ if master_energy > energy_max: master_energy = energy_max
+ IF master_energy = energy_max:
+  dynamic $master_energy_drop
+  dynamic $master_energy_drop
+  dynamic $master_energy_drop
+ END
 END
 
-!IF combatant = 0:
-! energy_max = master_energy 
-! if выносливость_игрока < 5: master_energy = -5
-! if выносливость_игрока >= 10: master_energy = -4
-! if выносливость_игрока >= 20: master_energy = -3
-! if выносливость_игрока >= 30: master_energy = -2
-! if выносливость_игрока >= 40: master_energy = -1
-! if выносливость_игрока >= 50: master_energy = 0
-! if выносливость_игрока >= 55: master_energy = 1
-! if выносливость_игрока >= 60: master_energy = 2
-! if выносливость_игрока >= 65: master_energy = 3
-! if выносливость_игрока >= 70: master_energy = 4
-! if выносливость_игрока >= 75: master_energy = 5
-! if master_energy > energy_max: master_energy = energy_max
-!END 
+!Testing code - allows you to do lots of Fog Battles without wounds or fatigue - crushboss'
+if master_energy < 5: master_energy = 5
+master_wounds_rate = 0
+master_wounds = 0
+master_mood['neg_wounded'] = 0
+master_ill = 0
+master_issues = 0
+if master_hygiene > 1: master_hygiene = 1 & master_hygiene_rate = 15
+!End of testing code'
 
 menu_form = 0
 
@@ -196,32 +209,49 @@ IF $fight_return ! '':
  $fight_return = ''
 END
 
+!Slave won and get girl code - Overhauled - crushboss
 IF get_girl = 1:
- get_girl = 0
  :won_slave_calc
  gs 'generate_stock'
- won_slave_minimum_value -= 5
  IF stock_base_price < won_slave_minimum_value: jump 'won_slave_calc'
  IF won_slave['ill'] = 1:
   b = RAND (1,5)
   if stock['stamina'] < b: stock['ill'] = 1
  END
  IF won_slave['parasite'] = 1:
-  if stock['fertility'] >= 0: stock['parasite'] = 1
+  IF stock['fertility'] >= 0:
+   stock['parasite'] = 1
+   stock_virginity = 2
+  END 
  END
  IF won_slave['deflowered'] = 1:
   if stock_virginity < 2: stock_virginity = 2
  END
  IF slave_state = CONST_INT['no_slave']:
-  msg '   You bind a trophy girl you''ve got and make her your slave.'
+  msg '   You bind a trophy girl you''ve rescued and make her your slave.'
+  !Increased the chance of getting a virgin slave from the fog - trophy girl - crushboss
+  if won_slave['deflowered'] = 0 and won_slave['parasite'] = 0 and won_slave['ill'] = 0 and stock['parasite'] = 0 and stock['ill'] = 0 and stock['pregnant'] = 0 and stock["age"] ! CONST_INT['milf_age']: stock_virginity = 0
   gs 'stock_to_slave'
   else
+  get_girl = 0
+  won_slave['ill'] = 0
+  won_slave['deflowered'] = 0
+  won_slave['parasite'] = 0
   $return_lock = 'interaction_city'
   interaction_city = 119
  END
+ get_girl = 0
+ won_slave['ill'] = 0
+ won_slave['deflowered'] = 0
+ won_slave['parasite'] = 0
 END
 
-gt 'hard_return'
+!Reset and set vars - crushboss
+gs '$combat_variable_reset'
+sbros = 1
+
+gs '$newloc'
+gt '<<$return_lock>>'
 
 --- выход_из_боя ---------------------------------
 

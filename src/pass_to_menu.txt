@@ -1,8 +1,0 @@
-# pass_to_menu
-$slave_psy_status = $slave_psy_basic
-
-gt 'hard_return'
-
-
---- pass_to_menu ---------------------------------
-

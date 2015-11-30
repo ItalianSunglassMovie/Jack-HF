@@ -330,12 +330,26 @@ $washing_description[3] = '<<$slave_name>> abundantly watered you and herself fr
 $washing_description[4] = 'Carefully covering herself with thick soapsuds, <<$slave_name>> washes you with her own body, pressing and sliding along you. Of course, she does not forget to properly wash you between your legs. Gentle touchings of her hand full of foam are very skilled and pleasant.'
 $washing_description[5] = 'Carefully covering herself with thick soapsuds, <<$slave_name>> washes you with her own body, pressing and sliding along you. Of course, she does not forget to properly wash you between your legs and even runs her naughty soapy finger into your anus.'
 
+$washing_description_assistant[0] = '<<$assistant_name>> quickly washes herself in the shower, takes a washcloth and wipes you from all sides, and then douses you with water. Her actions have absolutely no tenderness or eroticism, which you consider to be a serious disadvantage. Slave must wash her master much more diligently.'
+$washing_description_assistant[1] = '<<$assistant_name>> washes you, using a washcloth, but also uses her hands a little. She touches your manhood with some hesitancy, and this washing does not deliver special pleasure.'
+$washing_description_assistant[2] = '<<$assistant_name>> carefully soaps you with her hands and rubs you without missing an inch. From time to time you feel the touch of her breasts or ass, though, in your opinion, it would be better if she rubbed on you a lot stronger. Nevertheless, this washing goes quite nicely.'
+$washing_description_assistant[3] = '<<$assistant_name>> abundantly watered you and herself from the shower, and then carefully shampooed and starts to rub your body, using her own chest as a washcloth. With such beautiful breasts it is much nicer to be washed this way than just yourself alone.'
+$washing_description_assistant[4] = 'Carefully covering herself with thick soapsuds, <<$assistant_name>> washes you with her own body, pressing and sliding along you. Of course, she does not forget to properly wash you between your legs. Gentle touchings of her hand full of foam are very skilled and pleasant.'
+$washing_description_assistant[5] = 'Carefully covering herself with thick soapsuds, <<$assistant_name>> washes you with her own body, pressing and sliding along you. Of course, she does not forget to properly wash you between your legs and even runs her naughty soapy finger into your anus.'
+
 $oral_wash_description[0] = 'To your fair displeasure <<$slave_name>> does not use her mouth in washing you. She never even kissed your body, despite the fact that she washed you up to shine. She should be more tender with her master.'
 $oral_wash_description[1] = 'In the process of washing <<$slave_name>> occasionally kisses your body, although these caresses are too indecisive to bring real pleasure. You also don`t get a blowjob.'
 $oral_wash_description[2] = 'Carefully washing your manhood, <<$slave_name>> hesitantly touching it with lips. She doesn`t take it deep in mouth, she more just kisses and licks it. But still it''s nice, you may even feel more cleaner.'
 $oral_wash_description[3] = '<<$slave_name>> doesn`t forget to caress your wet skin with her tongue, and, of course, showing particular attention to your penis and testicles. You get a very passionate and enjoyable blowjob. Absolutely necessary and proper addition to washing, in your opinion.'
 $oral_wash_description[4] = '<<$slave_name>> uses her skillful tongue as a second washcloth, for particularly sensitive areas of your body. She did not pay attention to the taste of soap and shampoo, and without the slightest disgust carefully licks your ass. In that way it certainly will be much more cleaner, baby!'
 $oral_wash_description[5] = '<<$slave_name>> stands in front of you on her knees and after taking a mouthful of shampoo, she deep swallows your instantly stiffening member. Although that trick is not easy to perform, it is clearly worth it. One can hardly find a better and more enjoyable way to wash this part of the body.'
+
+$oral_wash_description_assistant[0] = 'To your fair displeasure <<$assistant_name>> does not use her mouth in washing you. She never even kissed your body, despite the fact that she washed you up to shine. She should be more tender with her master.'
+$oral_wash_description_assistant[1] = 'In the process of washing <<$assistant_name>> occasionally kisses your body, although these caresses are too indecisive to bring real pleasure. You also don`t get a blowjob.'
+$oral_wash_description_assistant[2] = 'Carefully washing your manhood, <<$assistant_name>> hesitantly touching it with lips. She doesn`t take it deep in mouth, she more just kisses and licks it. But still it''s nice, you may even feel more cleaner.'
+$oral_wash_description_assistant[3] = '<<$assistant_name>> doesn`t forget to caress your wet skin with her tongue, and, of course, showing particular attention to your penis and testicles. You get a very passionate and enjoyable blowjob. Absolutely necessary and proper addition to washing, in your opinion.'
+$oral_wash_description_assistant[4] = '<<$assistant_name>> uses her skillful tongue as a second washcloth, for particularly sensitive areas of your body. She did not pay attention to the taste of soap and shampoo, and without the slightest disgust carefully licks your ass. In that way it certainly will be much more cleaner, baby!'
+$oral_wash_description_assistant[5] = '<<$assistant_name>> stands in front of you on her knees and after taking a mouthful of shampoo, she deep swallows your instantly stiffening member. Although that trick is not easy to perform, it is clearly worth it. One can hardly find a better and more enjoyable way to wash this part of the body.'
 
 $slave_massages_master[0] = '<<$slave_name>> asks you to sit down and begin to slightly massage your shoulders. Actually, this is all that she planned on her massage session, and even that she did in a bad way. Looks like she needs motivation - or training.'
 $slave_massages_master[1] = 'You undress and lie down on the bed. <<$slave_name>> puts on her hands a little bit of a massage oil and begins to knead your back. Overall pretty nice, but she missed a lot of places and finished too quickly.'
@@ -413,7 +427,7 @@ $slave_seduction_anal[1] = 'Seductively smiling, <<$slave_name>> slowly takes of
 $slave_seduction_anal[2] = 'With smooth and slow movements <<$slave_name>> removes her clothes and starts to fondle her breasts and pussy. She says that her actions are a result of having thoughts about having sex with you and asks, if will you allow her to make you feel good? Of course, you agree.'
 $slave_seduction_anal[3] = '<<$slave_name>> undresses, dancing gently, as if teasing you. Waiting until you stretch out your hand to her, she playfully bounces away and smiles slyly. Adopting the rules of the game, you roughly grab her hand and throw her on the bed. <<$slave_name>> screams in mock horror.'
 $slave_seduction_anal[4] = 'Stripped naked, <<$slave_name>> does not hurry to approach the bed. Staring you in the eye and passionately licking her lips, she begins to caress her body, kneading her nipples and poking fingers in her warm and oiled ass. Only when she sees that you are very interested, she lies down on top of you and fucks your brains out using her ass.'
-$slave_seduction_anal[5] = '<<$slave_name>> crawling to you on all fours and arching her back seductively, begins whispering passionate thoughts in your ears. Having called herself a dirty whore, she pleads with her master to do whatever he pleases, and not to feel sorry for her. Aroused by these words, you grab <<$slave_name>> and throw her on the bed and pump her for what seems hours.'
+$slave_seduction_anal[5] = '<<$slave_name>> crawling to you on all fours and arching her back seductively, begins whispering passionate thoughts in your ears. Having called herself a dirty whore, she pleads with her master to do whatever he pleases, and not to feel sorry for her. Aroused by these words, you grab <<$slave_name>> and throw her on the bed and pound her ass for what seems like hours!'
 
 $slave_foreplay_anal[0] = '<<$slave_name>> doesn`t even try any foreplay. She just clenches her teeth and grips the sheets as you insert yourself into her backside.'
 $slave_foreplay_anal[1] = '<<$slave_name>> gently hugs and kisses you on the lips. With her right hand she strokes your cock, waiting for it to become rock hard before inserting it into her ass.'
@@ -427,7 +441,7 @@ $slave_fuck_anal[1] = 'When your manhood intrudes into her tender ass, <<$slave_
 $slave_fuck_anal[2] = 'Slightly helping with her hand, <<$slave_name>> sits on top of your penis, so that it plunges into her ass the entire length. Caressing you and herself with passionate arms, she begins to move, slowly at first, but more and more passionately, when you approach climax.'
 $slave_fuck_anal[3] = 'During sex <<$slave_name>> skillfully swings on top of you, instantly tuning to the desired rhythm. You feel that you rapidly reach the peak of excitement.'
 $slave_fuck_anal[4] = 'Trying to give you maximum pleasure, <<$slave_name>> changes the poses one after another, alternating various depths of penetration and density of coverage. Due to the difference of sensations, excitement does not break immediately, but comes in waves.'
-$slave_fuck_anal[5] = 'You feel <<$slave_name>>''s greedy ass just sucks your cock into her itself, hugging and squeezing gently from all sides. <<$slave_name>> so skillfully picks up the rhythm that you feel true extasy, excitement, and pleasure.  It doesn''t get any better than this.'
+$slave_fuck_anal[5] = 'You feel <<$slave_name>>''s greedy ass just suck your cock into her anus, hugging and squeezing gently from all sides. <<$slave_name>> so skillfully picks up the rhythm that she brings you to complete ecstasy, maximum excitement, and total pleasure.  It doesn''t get any better than this!'
 
 !RELAXED ANAL SEX WITH ASSISTANT
 $assistant_seduction_anal[0] = '<<$assistant_name>> looks anxious and stiff as she strips off her clothes, finally just laying down flat on her stomach and closing her eyes.'
@@ -493,7 +507,7 @@ $assistant_fuck_oral[1] = 'When your manhood intrudes past her lips, <<$assistan
 $assistant_fuck_oral[2] = '<<$assistant_name>> plays with your balls sits as she swallows deep enough for your penis to hit the back of her throat, then pulls her head back, only to repeat the movement, slowly at first, but more and more passionately, when you approach to the climax.'
 $assistant_fuck_oral[3] = '<<$assistant_name>> skillfully swallows your entire length in one smooth movement, your balls touching her chin, then pulls back slowly, just enough to allow her tongue to caress your tip, before plunging down again, instantly tuning to the desired rhythm. You feel that you rapidly reach the peak of excitement.'
 $assistant_fuck_oral[4] = 'Trying to give you maximum pleasure, <<$assistant_name>>, alternating between the various ways her tongue can bring your pleasure as you methodically thrust into her mouth, sometime licking along the shaft, other time playing with the tip. Due to the difference of sensations, excitement does not break immediately, but is stored in waves.'
-$assistant_fuck_oral[5] = '<<$assistant_name>> lies on her back on the bed, with her head bended backward over the edge and then tells you not to hold back, opening her mouth. You feel that slave’s tongue wrap around your penis, while her throat swallows your member greedily, tightening around your cock, only relaxing her throat when she needs to moan or breathe, giving you no reason to stop, while she plays with herself providing entertainment for your eyes, while skillfully holding back cumming to time it with your rapidly approaching climax.'
+$assistant_fuck_oral[5] = '<<$assistant_name>> lies on her back on the bed, with her head bended backward over the edge and then tells you not to hold back, opening her mouth. You feel your slave’s tongue wrap around your penis, while her throat swallows your member greedily, tightening around your cock, and only relaxing her throat when she needs to moan or breathe.  Your exploading orgams sends cum into her stomach'
 
 !RAPE
 $rape_description = 'You grab the slave and throw her on the bed. Roughly spreading her legs, you forcedly thrust your cock in her pussy and start to rhythmically move with hips. Immediately ramp-up to the maximum, you rapidly approach the climax.'
@@ -569,7 +583,7 @@ $assistant_lesson_diligence[1] = '- Master! <<$slave_name>> engaged through forc
 $assistant_lesson_diligence[2] = '- Master! <<$slave_name>> was not too attentive and turned a deaf ears to part of my explanation. It seems that the lesson was not interesting for her. Estimate of her performance is <font color="#4B0082">unsatisfactory</font>.'
 $assistant_lesson_diligence[3] = '- <<$slave_name>> did not express herself during the lesson, Master. She listened to my explanations and tried to do everything, as I said, but did not show diligence. Evaluation of progress - <font color="#0000CD">satisfactory</font>.'
 $assistant_lesson_diligence[4] = '- <<$slave_name>> studied with due diligence, Master. I am pretty happy with how she behaved and her attitude to the lessons. <font color="#008080">Good performance</font>.'
-$assistant_lesson_diligence[5] = '<<$slave_name>> is quick on uptake, Master! Even I could not show more diligence if you yourself taught me. Evaluation of progress - <font color="#008000">excellent</font>!'
+$assistant_lesson_diligence[5] = '<<$slave_name>> is quick on uptake, Master! Even I could not show more diligence if you taught me personally. Evaluation of progress - <font color="#008000">excellent</font>!'
 
 !LESSONS
 $service_lesson_description[0] = 'Seems like <<$slave_name>> never have tidied up the house in her life. You have to teach her the simplest things, like ''on which side it is necessary to keep a broom'' and ''where to wet a rag''.'
@@ -589,9 +603,9 @@ $nurse_lesson_description[5] = '<<$slave_name>> knows and can do everything as a
 $cook_lesson_description[0] = 'You have the impression that <<$slave_name>> generally came for the first time to a civilized kitchen. You conduct a lesson on safety and ways of dealing with kitchen appliances, knives and utensils, as well as by the rules of storage products and spices.'
 $cook_lesson_description[1] = '<<$slave_name>> almost can not cook, so you have to start with the simplest of dishes, which require only a couple of components and one-step preparation.'
 $cook_lesson_description[2] = '<<$slave_name>> already knows how to cook simple meals, so you decide to teach her more difficult and more time consuming methods of cooking. Particular attention is paid to the correct calculation of the temperature, cooking time and methods for determining the readiness of dishes.'
-$cook_lesson_description[3] = '<<$slave_name>> able to cook almost any dish, but knowledge of the recipe - only half the story. You teach slave how to find the flavor combinations, the choice of the type and amount of spices, as well as methods of a beautiful serving and filing ready-made dishes.'
-$cook_lesson_description[4] = 'Top chefs not only cook the most delicious, unusual and interesting dishes. The actual process of cooking can be a real show. Under your strict guidance <<$slave_name>> learns to deftly work with knives and tossing food in the pan during cooking.'
-$cook_lesson_description[5] = 'You arrange the test exam to slave in cooking and make sure that <<$slave_name>> perfectly mastered this art. She cooks quickly and beautifully, is able to create a delicious combination of even the simplest of ingredients and beautifully arrange any dish.'
+$cook_lesson_description[3] = '<<$slave_name>> is able to cook almost any dish, but knowledge of the recipe is only half the story. You teach your slave how to find flavor combinations, the choice of spices and the proper amount, as well as methods of creating beautiful servings and filling pre-made dishes.'
+$cook_lesson_description[4] = 'Top chefs not only cook the most delicious, unusual and interesting dishes. The actual process of cooking can be a real show. Under your strict guidance <<$slave_name>> learns to expertly work with knives and tossing food in the pan during cooking.'
+$cook_lesson_description[5] = 'You arrange a test exam for your slave in cooking and make sure that <<$slave_name>> perfectly mastered this art. She cooks quickly and beautifully, is able to create a delicious combination out of even the simplest ingredients and beautifully arrange any dish.'
 
 $secretary_lesson_description[0] = '<<$slave_name>> does not understands a damn thing in the document circulation and paperwork. You have to explain her the basic principles of bureaucracy: why we need accounting and bookkeeping, what is a document, certificate, signature, seal, what are the principles of sorting papers.'
 $secretary_lesson_description[1] = 'Under your strict guidance <<$slave_name>> learns about the personal assistant''s simple tasks fulfillment. Calculate monthly demand of villa in cleaning products, supplies, and tools, take stock of the reserves, make orders for all necessary things and file checks.'
@@ -713,39 +727,39 @@ $refuse_talk['hateful'] = 'Hell no, you bastard! you`re not going to hear a sing
 $refuse_talk['resistant'] = '(Slave looks at you with undisguised contempt and stubbornly presses her lips. Looks like she''s not going to talk to you.)'
 $refuse_talk['lachrymose'] = '(Slave constantly sobs and smears tears over her cheeks) Let me go... I do not want to be here... please let me go...'
 
-$reasoning_one[0] = 'You tell to slave about the Fogs, through which she got into Eternal Rome. You explain how dangerous these Fogs and how difficult it is to pass through them to the desired point. Given that no one knows the exact location of her world, she simply does not have a chance to return home.'
-$reasoning_two[0] = 'You also tell about the Eternal Rome. About how aliens life is low valued, which came here through the fogs and about the lack of resources and living space. City law is completely on your side, and from those who do not recognize the law, we can expect only trouble.'
-$reasoning_three[0] = 'For a single girl, it is almost impossible to get yourself in the Eternal Rome. Stateless, without the protection and patronage of the influential master, anyone can do with her whatever they want. At best, she will be returned to you, by recognizing the brand or a collar. At worst - eaten alive.'
+$reasoning_one[0] = 'You tell to slave about the Fogs, through which she got into Eternal Rome. You explain how dangerous these Fogs are and how difficult it is to pass through them to the desired point. Given that no one knows the exact location of her world, she simply does not have a chance to return home.'
+$reasoning_two[0] = 'You also tell her about Eternal Rome. About how alien life is low valued, which came here through the fogs and about the lack of resources and living space. City law is completely on your side, and from those who do not recognize the law, we can expect only trouble.'
+$reasoning_three[0] = 'For a single girl, it is almost impossible to get yourself into Eternal Rome. Stateless, and without the protection and patronage of an influential master, anyone can do with her as they please. At best, she will be returned to you, by recognizing the brand or a collar. At worst - eaten alive.'
 
-$reasoning_one[1] = 'To dispel any slave''s illusions, you say that no one in all this world don`t give a shit about her. She has no rights, no property, no dignity. You have the right to do everything you want with her without any restrictions.'
+$reasoning_one[1] = 'To dispel any slave''s illusions, you say that no one in all this world gives a shit about her. She has no rights, no property, no dignity. You have the right to do anything you want with her without any restrictions.'
 $reasoning_two[1] = 'Thus, on her part would be the height of folly to spoil relations with you. Yes, some training may be unpleasant for her, humiliating or even painful, but the punishment for disobedience is always worse.'
 $reasoning_three[1] = 'However, you can be a gracious master, if you see that <<$slave_name>> behaves well. You have plenty of ways to reward her for her diligence in learning. Sooner or later she will have to submit. Resistance will only hurt herself.'
 
-$reasoning_one[2] = 'You decide to set to slave a goal which she could seek on her own accord, in cooperation with you. You explain the essence of the slave trainer, tell her about how is high valued well-trained, educated and beautiful girls in the Eternal Rome.'
-$reasoning_two[2] = 'Every day of her training costs you money, but in order to survive you have to make money. If you see that she is learning too slow, you have to sell slave for peanuts, so as not to incur losses. Life of a cheap slave is short and full of grief.'
-$reasoning_three[2] = 'If slave shows good results, her price will be very high. Of course, no one will spoil expensive property needlessly, and life in the harem of a rich patrician could be beautiful and carefree. It turns out that your interests are aligned with her own.'
+$reasoning_one[2] = 'You decide to give your slave a goal which she could seek on her own accord, in cooperation with you. You explain the essence of becoming a slave trainer or assistant, and tell her about how it is a high valued position.  You get to help bring up well-trained, educated, and beautiful girls in Eternal Rome.'
+$reasoning_two[2] = 'Every day of her training costs you money, but in order to survive you have to make money. If you see that she is learning too slowly, you have to sell her for peanuts, so as not to incur losses. The life of a cheap slave is short and full of grief.'
+$reasoning_three[2] = 'If a slave shows good results, her price will be very high. Of course, no one will spoil expensive property needlessly, and life in the harem of a rich patrician could be beautiful and carefree. It turns out that your interests are aligned with her own.'
 
 $reasoning_rate[0] = '<<$slave_name>> is unwilling to listen to you. In her eyes you can see that she does not believe a single word of it and probably thinks that she can find a better way. It seems that in this case you''d better switch to a more compelling arguments than just words.'
-$reasoning_rate[1] = '<<$slave_name>> listens to you quite closely, but your arguments stumble upon inner rejection. It is difficult to reject her past life and ambitions, hard to admit being rightless property. Nevertheless, the conversation conceived some effect.'
+$reasoning_rate[1] = '<<$slave_name>> listens to you quite closely, but your arguments stumble upon inner rejection. It is difficult to reject her past life and ambitions, and hard to admit being someones rightless property. Nevertheless, the conversation produced some effect.'
 $reasoning_rate[2] = '<<$slave_name>> listens carefully to your words and appears to perceive them quite seriously. Meaning of them is not too pleasant for her, but your arguments are too reasonable to dismiss them. Your words fell on fertile ground.'
-$reasoning_rate[3] = '<<$slave_name>> listens to you carefully, but do not seem to learn something particularly new. Slave has managed to understand her situation and came to terms with it. Explanations are somewhat late.'
+$reasoning_rate[3] = '<<$slave_name>> listens to you carefully, but does not seem to learn something particularly new. Your slave has managed to understand her situation and came to terms with it. Explanations are somewhat late.'
 
-$no_more_reason = '<<$slave_name>> already aware of her position. It is unlikely you will be able to tell her something else, and repeating everything several times will only expose yourself as a fool. It is better to finish this conversation.'
+$no_more_reason = '<<$slave_name>> is already aware of her position. It is unlikely you will be able to tell her something new, and repeating everything several times will only expose yourself as a fool. It is better to finish this conversation.'
 
-$cheer_up = 'You decide to cheer up your slave to slightly raise her spirits. You gently pat her head, saying that everything is not so bad as it seems. Life goes on, and it will still be enough joy and smiles. Everything will be fine.'
+$cheer_up = 'You decide to cheer up your slave to help raise her spirits. You gently pat her head, saying that everything is not as bad as it seems. Life goes on, and there will be more joy and smiles. Everything will be fine.'
 
 $cheer_up_result[0] = '<<$slave_name>> is absolutely indifferent to your attempts to cheer her up. Either she does not believe you, or you repeated this to her too many times already.'
-$cheer_up_result[1] = 'You managed to get only a slight smile from a slave. Unlikely that these kind words will greatly change the picture, although it''s still nice to hear something good.'
-$cheer_up_result[2] = '<<$slave_name>> cheers up from your words. Few phrases will not fundamentally change her mood, but they are clearly fell to the point.'
-$cheer_up_result[3] = 'In the eyes of a slave ignites a flame of hope, and she smiles at you. It seems that you''ve picked the exact words that she needed right now. This will slightly improve her mood.'
+$cheer_up_result[1] = 'You managed to get only a slight smile from your slave. It is unlikely that these kind words will greatly change the picture, although it''s still nice to hear something good.'
+$cheer_up_result[2] = '<<$slave_name>> cheers up from your words. A few phrases will not fundamentally change her mood, but they were clearly felt in the heart.'
+$cheer_up_result[3] = 'In the eyes of your slave ignites a flame of hope, and she smiles at you. It seems that you''ve picked the exact words that she needed right now. This will help improve her mood.'
 
-$threatening = 'You grab slave''s hair and with voice of full threats begin to paint all the punishment that you can throw at her plump ass. Only one of your bad temper is enough to provide her with cruel suffering - let she know about it.'
-$threatening_result[0] = '<<$slave_name>> perceives your threats without changing her facial expressions. It is unlikely that she will be intimidated by mere words, you need to use more serious arguments.'
-$threatening_result[1] = '<<$slave_name>> presses her head down and closes her eyes. Maybe your words didn''t scare her too much, but they have inspired discomfort and uncertainty.'
-$threatening_result[2] = '<<$slave_name>> looks at you with fear. Seriousness of your threats clearly make her take some thoughts. You may be able to achieve a more acceptable behavior.'
-$threatening_result[3] = 'Slave eyes widen in horror and quickly fill with tears. She was obviously unable to resist your threats and takes them very seriously.'
+$threatening = 'You grab your slave''s hair and with voice full of threats begin to paint all the punishment that you can throw at her plump ass. Only pushing you to a slight anger is enough to provide her with cruel suffering that she will regret.'
+$threatening_result[0] = '<<$slave_name>> perceives your threats without changing her facial expressions. It is unlikely that she will be intimidated by mere words, you need to use more serious punishments.'
+$threatening_result[1] = '<<$slave_name>> presses her head down and closes her eyes. Maybe your words didn''t scare her that much, but they have inspired discomfort and uncertainty.'
+$threatening_result[2] = '<<$slave_name>> looks at you with fear. The seriousness of your threats clearly make her take some thought. You may be able to achieve more acceptable behavior now.'
+$threatening_result[3] = 'Your slave eyes widen in horror and quickly fill with tears. She was obviously unable to resist your threats and takes them very seriously.'
 
-$straining = 'With stern voice you explain to slave that your good attitude towards her is not infinite. All good things in her life must be earned first. If she will behave like a spoiled princess, you have to punish her.'
+$straining = 'With a stern voice you explain to your slave that your good attitude towards her is not infinite. All good things in her life must be earned first. If she behaves like a spoiled princess, you have to punish her.'
 
 $straining_result[0] = '<<$slave_name>> listens to you, but her face does not change. She seems to think that all these conversations are pointless and is not going to come to her senses.'
 $straining_result[1] = '<<$slave_name>> shows some signs of shame, but her remorse looks rather like feigned attempt not to anger you, rather than real feeling. Maybe she will correct her behavior...'
@@ -1135,7 +1149,7 @@ $prise_erotic_reaction['hysteric'] = "<<$slave_name>> gladly accepts your affect
 
 $compliment_description[1] = 'You express moderate satisfaction with the slave''s progress, not forgetting to remind her that she should try better, if she wants so that everything was okay between you both.'
 $compliment_description[2] = 'You say to slave that you appreciate her efforts, and in general she is well done. Keep it up!'
-$compliment_description[3] = 'You are warmly embrace your slave and tell her that she is the best of everyone you''ve ever taught.'
+$compliment_description[3] = 'You warmly embrace your slave and tell her that she is the best of everyone you''ve ever taught.'
 $compliment_description[4] = 'You say to slave that she behaved well and if she continues in the same vein, it is surely that she will earn a reward from you.'
 $compliment_description[5] = 'You appreciate the merits of your slave and promised her that if she continued to try as well, you will buy her some really nice gift.'
 
@@ -1302,8 +1316,8 @@ $torture_reaction['hysteric'] = ""
 $slave_sleep_condition[1] = '   Carcer - a tiny dark room. It is impossible to lie down or completely stretch out. A night in this cell is able to break the will to resist but it can also damage health, not to mention the bad dreams. Has an especially strong effect on people with claustrophobia.'
 $slave_sleep_condition[2] = '   You took away the bedroll from your slave to show her that comfort should be earned. A night on the cold hard floor is neither good for resting, nor for her health, but <<$slave_name>> certainly will be a little more compliant.'
 $slave_sleep_condition[3] = '   It is common thing for slaves to sleep on a hard bedroll right on the floor. A small warm blanket and cushion filled with rice husks will keep her warm at night and enable her to sleep well, although it''s not comfortable at all.'
-$slave_sleep_condition[4] = '   As a special encouragement, your slave can be allowed to sleep with her master on his bed. This comfortable bed will make her sleep deeper and more comfortable. Sharing sleep with her owner - a great source of happiness for an obedient slave, but a poorly trained girl will not be happy at all.'
-$slave_sleep_condition[5] = '   Sleep in her own soft bed - the best luxury for any slave. This bed is very soft and comfortable - you should be careful to not spoil the girl too much. In any case, it should considerably improve her mood.'
+$slave_sleep_condition[4] = '   As a special encouragement, your slave can be allowed to sleep with her master on his bed. This comfortable bed will make her sleep deeper and more comfortable. Sharing sleep with her owner - a great source of happiness for an obedient and devoted slave, but a poorly trained girl will not be happy at all.'
+$slave_sleep_condition[5] = '   Sleep in her own soft bed - the best luxury for any slave. This bed is very soft and comfortable. This living arrangement should considerably improve her mood. This should be used as a reward for excellent obedience and moderate devotion, otherwise you risk spoiling your slave.'
 
 !not used, so no translation
 $slave_ration[1] = 'В Вечном Риме продуктов питания почти не производят, для этого не хватает места. Всю провизию приходится ввозить из других миров, поэтому она, как и всё здесь, обходится весьма недешево. Самый простой способ сэкономить на содержании рабыни &#45; это не кормить ее вовсе. День-другой голодовки позволит сбросить лишний вес и набраться уважения. Главное &#45; не переусердствовать!'
@@ -1319,10 +1333,10 @@ $slave_ration[9] = 'Комплексная добавка из смеси все
 
 $slave_no_food = '   In the Eternal Rome almost no opportunities exist to grow your own food. All meals are brought here from the worlds that lie beyond the Fog and because of that, it costs fair amount of money. By depriving your slave from food you will kill two birds with one stone - it will teach her to be more obedient and you save money.'
 $slave_dry_food = '   Dry food for pets "Julbars-jumas" - the choice of leading slavers. Comes in ten liter cellophane bags and due to the small specific weight, it is cheap in transportation from the Fogs. Contains all necessary nutrients and fibers but tastes disgusting.'
-$slave_cane_food = '   Canned food for pets. It perfectly matches the composition of nutrients and it tastes better than dry food or fiend cum. Unfortunately, it is rather expensive - undehydrated food weighs a lot, and it is necessary to import it from other worlds.'
+$slave_cane_food = '   Canned food for pets. It perfectly matches the composition of nutrients and it tastes better than dry food or fiend cum. Unfortunately, it is rather expensive - fresh food weighs a lot, and it is necessary to import it from other worlds. This should be used as a reward for excellent obedience and moderate devotion, otherwise you risk spoiling your slave.'
 $slave_semen_food = '   Fiends are the scourge and blessing of Rome. They are dangerous, but they can produce huge masses of nasty but nutritious sperm. It is not easy to milk these creatures so the seed is not cheap. However, if you have your own fiend and a good milker, feeding your slave becomes a lot easier. Only if you are able to make her eat it of course...'
 $slave_no_remains = '   Not every slave deserves to eat scraps from her master''s table. This honor must be earned. Also, do not forget about the slave''s shape.'
-$slave_eats_remains = '   Your slave may eat everything you leave over. Crumbs from your table are more delicious than ordinary slave food although it is usually not enough to be sated. You can consider this dessert, a nice addition to the staple food.'
+$slave_eats_remains = '   Your slave may eat everything you leave over. Crumbs from your table are more delicious than ordinary slave food although it is usually not enough to be sated. You can consider this dessert, a nice addition to the staple food.  This should be used as a reward for excellent obedience and moderate devotion, otherwise you risk spoiling your slave.'
 $slave_min_portion = '   Just enough for your slave not to starve. It is unlikely that she will be satisfied, but she will lose weight and understand who''s the boss. And you will save some money.'
 $slave_normal_portion = '   Just the right amount of food for your slave. For an accurate calculation of calories, a medical assistant would he helpful. You do everything by eye, so do not bother. It should be fine.'
 $slave_max_portion = '   Your slave''s bowl is filled to the brim. She can eat as much as she wants to. This is of course wasteful, but she will not remain hungry. Maybe she will gain a little weight though.'
@@ -1445,7 +1459,7 @@ $assistant_washes_master = '<<$assistant_name>> helps you to relax and freshen u
 $assistant_wash_slave = '<<$assistant_name>> takes away your slave to the bathroom and cleans her well with soap and sponge.'
 
 !SEX LESSONS
-$sex_lesson_diligence[0] = "Slave's actions clearly show that she doesn't try at all. All your explanations pass by her ears and it seems that she only fulfills your orders to for you to leave her alone as soon as possible. Complete lack of motivation makes your efforts almost useless."
+$sex_lesson_diligence[0] = "Slave's actions clearly show that she doesn't try at all. All your explanations pass by her ears and it seems that she only fulfills your orders for you to leave her alone as soon as possible. Complete lack of motivation makes your efforts almost useless."
 $sex_lesson_diligence[1] = "<<$slave_name>> doesn't show even the slightest interest. Of course, your pressure is enough for her to listen to the explanations, but the learning process is difficult. There won't be much use of a such lesson."
 $sex_lesson_diligence[2] = "<<$slave_name>> listens to all your comments and honestly tries to do everything correctly, though her involvement in the process is still not enough. Obviously, to achieve good results, her motivation should be higher."
 $sex_lesson_diligence[3] = "<<$slave_name>> approaches classes with precision and without unnecessary nerves. She listens carefully to all your comments and tries to fulfill them the best she can. Nevertheless, the result could be even better if she was really interested in the process 100%."
@@ -1529,33 +1543,33 @@ $rimming_lesson_description[3] = 'Feeling, that ass - is a dirty place, can inte
 $rimming_lesson_description[4] = 'Slave''s tongue is quite well developed, so that she could try to push it through your anal sphincter and penetrate into the rectum. You will focus on this in today''s lesson.'
 $rimming_lesson_description[5] = '<<$slave_name>> is able to tie a cherry petiole in a knot, using only her own tongue. It is unlikely that she can still learn something in this field, so you decide to just give her «oral exam» and enjoy the fruits of your education.'
 
-$vaginalsex_lesson_description[0] = '<<$slave_name>> completely inexperienced in sex and has no idea what is required of her. You decide to take all the initiative and just give slave used to the feeling of penetration.'
+$vaginalsex_lesson_description[0] = '<<$slave_name>> completely inexperienced in sex and has no idea what is required of her. You decide to take all the initiative and just get your slave used to the feeling of penetration.'
 $vaginalsex_lesson_description[1] = '<<$slave_name>> behaves in sex as a complete log, but you hope that with the experience she will be better. In today''s lesson, you will simply work on the basic poses, to help her to get used to the penetration from different angles.'
 $vaginalsex_lesson_description[2] = 'As part of today''s lesson <<$slave_name>> must learn how to move, while she being penetrated by a man. You give her some practical advice on swinging and coincidentally rhythms movements.'
 $vaginalsex_lesson_description[3] = 'In this lesson <<$slave_name>> will develop posture, in which the woman can show great initiative, giving her master the opportunity to relax and enjoy. You''ll be helping slave only with advice, everything else she has to do herself.'
 $vaginalsex_lesson_description[4] = 'To reach the top of vaginal sex, <<$slave_name>> should not just learn all the poses and movements, but also to learn how to work with her internal muscles. Subject is not the easiest and may require many lessons to be learned.'
-$vaginalsex_lesson_description[5] = '<<$slave_name>> so good in sex, as far as possible. She is able to easily take an any object and literally to milk man solely by internal muscle contraction. You can`t teach her any further, but you can make a small test...'
+$vaginalsex_lesson_description[5] = '<<$slave_name>> is so good at sex. She is able to literally milk a man solely by using her internal muscle contractions. You can`t teach her any further, but you can have loads of fun...'
 
 $analsex_lesson_description[0] = 'Slave''s butt is absolutely not ready for penetration, but after spending some time, you will be able to insert your penis part way. <<$slave_name>> should learn to relax.'
-$analsex_lesson_description[1] = '<<$slave_name>> barely takes cock in her narrow butt, so it is too early to talk about some techniques. The lesson is dedicated to develop her sphincter.'
+$analsex_lesson_description[1] = '<<$slave_name>> barely takes your cock into her narrow butt, so it is too early to talk about some techniques. The lesson is dedicated to develop her sphincter.'
 $analsex_lesson_description[2] = '<<$slave_name>> quite easily able to take dick in her ass, but the pain or lack of experience make her shackled and uninteresting in the process. You try to teach her swing with butt and get her share of pleasure.'
 $analsex_lesson_description[3] = '<<$slave_name>> quite accustomed to anal sex will try penetration from different angles and directions. In this lesson, you will help her learn the different poses and how to move correctly in each case.'
 $analsex_lesson_description[4] = 'In fact, anal sex without lubrication - not the best idea, but if slave can give pleasure without using a lubricant, she will learn a lot. In your opinion, her butt is developed enough in order to cope with this task and without damage.'
-$analsex_lesson_description[5] = '<<$slave_name>> so good in sex, as far as possible. She is able to easily take an any object and literally to milk man solely by internal muscle contraction. You can`t teach her any further, but you can make a small test...'
+$analsex_lesson_description[5] = '<<$slave_name>> is so good at anal sex. She is able to literally milk a man solely by using her internal muscle contractions. You can`t teach her any further, but you can have loads of fun...'
 
 $fisting_lesson_description[0] = 'Slave''s vagina is completely undeveloped and it is dangerous to try to shove the whole fist there yet, but we should start somewhere. Today, you just shove there a couple of fingers so that <<$slave_name>> accustomed to penetration.'
 $fisting_lesson_description[1] = 'In your opinion <<$slave_name>> still not ready for real fisting. You decide to shove in her vagina two, three and then four fingers to lightly develop slave''s internal muscles.'
 $fisting_lesson_description[2] = 'Slave''s vagina is not enough developed to take a fist easily, but you can shove your hand if you proceed slowly and carefully. Over time, it will become easier.'
 $fisting_lesson_description[3] = '<<$slave_name>> has quite a developed vagina that will fit your inserted palm entirely. You decide to concentrate on the movements inside to give her intense sensations.'
-$fisting_lesson_description[4] = 'Slave''s cunt so well developed that she can literally fucked by fist, thrusting your hand almost to the elbow. As an added challenge you try to stick feet in her vagina.'
-$fisting_lesson_description[5] = '<<$slave_name>> so good in sex, as far as possible. She is able to easily take an any object and literally to milk man solely by internal muscle contraction. You can`t teach her any further, but you can make a small test...'
+$fisting_lesson_description[4] = 'Slave''s cunt is so well developed that she can literally be fucked by fist, thrusting your hand almost to the elbow. As an added challenge you try to stick your feet in her vagina.'
+$fisting_lesson_description[5] = '<<$slave_name>> is so good at vaginal fisting. She is able to easily take an any object and literally milk a man solely by her internal muscle contractions. You can`t teach her any further, but you can have loads of fun...'
 
 $analfisting_lesson_description[0] = 'Slave''s ass is so tight that fisting is not even possible. However, you can stick your finger in and move it a little, so that she begins to get used to this sensation.'
 $analfisting_lesson_description[1] = 'You can`t shove your hand in the slave''s ass yet - it''s very risky, but it is possible to develop her anus. You can penetrate her ass with a couple of fingers. Over time, the muscles will get used and stretched.'
 $analfisting_lesson_description[2] = '<<$slave_name>> is able to relax her anal muscles so that your palm, albeit with a fair difficulty, but still fit into her rectum. You know she can do better if she tries.'
 $analfisting_lesson_description[3] = 'Using a sufficient amount of lubricant, you can easily stick a fist into her anus. If <<$slave_name>> is able to relax enough, she even can enjoy it.'
 $analfisting_lesson_description[4] = 'Slave''s ass is developed perfectly. If you use plenty of lubricant and push hard enough, you can stick your hand in almost to the elbow. This show is worthy to be a circus act.'
-$analfisting_lesson_description[5] = '<<$slave_name>> is so good in sex, as far as possible. She is able to easily take an any object and literally milk a man solely by her internal muscle contractions. You can`t teach her any further, but you can have loads of fun...'
+$analfisting_lesson_description[5] = '<<$slave_name>> is so good at anal fisting. She is able to easily take an any object and literally milk a man solely by her internal muscle contractions. You can`t teach her any further, but you can have loads of fun...'
 
 $mazo_lesson_description[0] = '<<$slave_name>> does not understand how it is possible to take pleasure from the pain and humiliation. You decide to start with slaps on the ass - they contribute to a rush of blood to the pelvic area, which contributes to the excitation. Alternating between spanking and affection, slave can be accustomed to special feelings.'
 $mazo_lesson_description[1] = 'During this lesson, you bind slave and using leather stack, will strike at sensitive places, trying to find exactly that force which will allow to give her the feelings on the verge of pain and pleasure.'
@@ -1590,7 +1604,7 @@ $enema_lesson_description[1] = 'Enema can be used not just with plain water, but
 $enema_lesson_description[2] = 'For the sake of her master <<$slave_name>> should be able to keep herself clean not only outside but inside too. The lesson will be an independent making herself a soap siphon enema. Slave will do it under your supervision.'
 $enema_lesson_description[3] = 'In this lesson you plan to teach slave to clean her uterus and bladder, it will be needed in the next lesson. <<$slave_name>> will have to learn to work with a catheter and syringe, with which she can perform such complex syringing.'
 $enema_lesson_description[4] = 'You order slave thoroughly clean all her insides, how she already knows. In this lesson, you fill her rectum with whipped cream, vagina - with ice cream, and the bladder with a glass of wine and insert a cocktail straw.'
-$enema_lesson_description[5] = 'Training is over. If you see this message, then you found a small bug ;)'
+$enema_lesson_description[5] = 'You order slave thoroughly clean all her insides, how she already knows. In this lesson, you fill her rectum with whipped cream, vagina - with ice cream, and the bladder with a glass of wine and insert a cocktail straw.'
 
 $seduction_lesson_description[0] = '<<$slave_name>> don`t know how to excite a man, without touching him. You give her a task to show you what she thinks tempting for men, to make her a little emancipated.'
 $seduction_lesson_description[1] = 'You decide to start a lesson with a lecture on the basic techniques of excitation demonstrations, as well as facial signs and gestures, beautifully expressing woman''s erotic intentions. <<$slave_name>> should try to show you all what you told her.'
@@ -1603,8 +1617,8 @@ $masturbation_lesson_description[0] = '<<$slave_name>> is not able to show her o
 $masturbation_lesson_description[1] = 'Of course, <<$slave_name>> sometimes masturbates alone, but her technique is not very effective. She needs to learn how to quickly and efficiently excite herself, and to do so in the presence of a watcher. You will definitely find a couple of useful tips on this topic.'
 $masturbation_lesson_description[2] = '<<$slave_name>> able to bring herself to orgasm right before your eyes, but can not show her excitement bright enough, so that it was interesting to watch. You decide to work on this in today''s lesson.'
 $masturbation_lesson_description[3] = 'To avoid monotony in her demonstrations, <<$slave_name>> must to learn how to masturbate nice and juicy in various poses, trying to select the most explicit and seductive, gently moving and changing rhythm. Under your guidance, she will be able to master this knowledge rather quickly.'
-$masturbation_lesson_description[4] = 'According to your order <<$slave_name>> should masturbate while her vagina will be opened using the gynecologic expander. Exciting in such an awkward position doubly difficult, but <<$slave_name>> will be able to get used to everything and at the same time demonstrate how pulsates and flows her womb.'
-$masturbation_lesson_description[5] = '<<$slave_name>> is mastered the technique of erotic demonstration, she is able to move and undress passionately, to show excitement in public, clearly and openly express dirtiest thoughts and desires. It is hardly necessary to teach her something else.'
+$masturbation_lesson_description[4] = 'According to your order <<$slave_name>> should masturbate while her vagina will be opened using the gynecologic expander. Exciting in such an awkward position is difficult, but <<$slave_name>> will be able to get used to everything and at the same time demonstrate how it pulsates and excites her womb.'
+$masturbation_lesson_description[5] = '<<$slave_name>> has mastered the technique of erotic demonstration, she is able to move and undress passionately, to show excitement in public, clearly and openly express the dirtiest thoughts and desires. It is hardly necessary to teach her anything else.'
 
 $dildo_lesson_description[0] = '<<$slave_name>> not used to masturbating under another look, especially using a foreign object. You give her a small dildo and order to move it all over the body to get used to the sensation and get comfortable.'
 $dildo_lesson_description[1] = '<<$slave_name>> can not really handle a dildo, so you give her the smallest and explain what''s what. Task, in general, quite simply, the main thing - to overcome the embarrassment.'
@@ -1623,79 +1637,79 @@ $exhibit_lesson_description[5] = '<<$slave_name>> is mastered the technique of e
 $disgrace_lesson_description[0] = 'For a slave is very important to be able to show respect to the master and beautifully humiliated in front of him, but <<$slave_name>> virtually devoid of such skills. To begin, you order her to kneel and listen to an hour lecture on how she can appeal to the master and berate herself.'
 $disgrace_lesson_description[1] = '<<$slave_name>> does not know how to approach the case of self-humiliation. You decide to conduct a lesson, picking with her epithets which she can curse herself, and writing them on the board so that she can remember and reproduce them with expression.'
 $disgrace_lesson_description[2] = '<<$slave_name>> must learn to contact with master with due respect, do not argue, do not interrupt, speak only when spoken to with a question. You decide to dedicate today''s lesson to all of these subtleties.'
-$disgrace_lesson_description[3] = 'Pose, look, movement - all of which can express humility and slave''s respect not worse than words. You train slave how she must keep herself in front of the master.'
-$disgrace_lesson_description[4] = '<<$slave_name>> sufficiently well-mannered, so you give her an independent task. She must using her experience ask for your forgiveness in the most exciting and humbly way for non-existent faults, beg for punishment, ask to use her, and praise your talents.'
-$disgrace_lesson_description[5] = '<<$slave_name>> is mastered the technique of erotic demonstration, she is able to move and undress passionately, to show excitement in public, clearly and openly express dirtiest thoughts and desires. It is hardly necessary to teach her something else.'
+$disgrace_lesson_description[3] = 'Pose, look, movement - all of which can express humility and the slave''s respect for you. You train <<$slave_name>> how she must keep herself in front of the master.'
+$disgrace_lesson_description[4] = '<<$slave_name>> sufficiently well-mannered, you give her an independent task. She must, using her experience, ask for your forgiveness in the most exciting and humble way for non-existent faults, beg for punishment, ask you to use her, and praise your talents.'
+$disgrace_lesson_description[5] = '<<$slave_name>> has mastered the technique of erotic demonstration, she is able to move and undress passionately, to show excitement in public, and clearly and openly express the dirtiest thoughts and desires. It is hardly necessary to teach her more in this skill.'
 
 $threesome_lesson_description[0] = '<<$slave_name>> must learn to cooperate with another girl, appeasing her master. To do this, she will have not only to be able to combine efforts, but also to reveal her lesbian nature. She is far from it yet, and there is a lot of room for improvement.'
 $threesome_lesson_description[1] = 'You explain to your slave that a lot of men like to see how girls caress each other. In today''s lesson <<$slave_name>> will have to fondle your assistant and receive her affection in front of you.'
 $threesome_lesson_description[2] = 'A lesbian show that girls can perform in front of a man should not just be passionate, but also colorful. <<$slave_name>> and <<$assistant_name>> should caress each other in front of you and perform an interesting show.'
 $threesome_lesson_description[3] = 'In a threesome, it is important to properly allocate attention amongst all the participants, seeking a special feeling of group ecstasy. Giving some practical advice to <<$slave_name>>, you call <<$assistant_name>> over and order them to start.'
 $threesome_lesson_description[4] = '<<$slave_name>> is able to passionately and beautifully caress another women and unite them in giving pleasure to a man. The real mastery remains in teaching her be sensitive with both partners, so as to achieve a triple simultaneous orgasm.'
-$threesome_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$threesome_lesson_description[5] = '<<$slave_name>> is able to passionately and beautifully caress another women and unite them in giving pleasure to a man. The real mastery remains in teaching her be sensitive with both partners, so as to achieve a triple simultaneous orgasm.'
 
 $threesome_noassistant_description[0] = '<<$slave_name>> must learn to cooperate with another girl, appeasing her master. To do this, she will have not only to be able to combine efforts, but also to reveal her lesbian nature. She is far from accomplishing this, and there is a lot of room for improvement.'
 $threesome_noassistant_description[1] = 'You explain to your slave that a lot of men like to see how girls caress each other. In today''s lesson <<$slave_name>> will have to fondle Gloria and receive her affection in front of you.'
 $threesome_noassistant_description[2] = 'A lesbian show that girls can perform in front of a man should not just be passionate, but also colorful. <<$slave_name>> and Angelika should caress each other in front of you and perform an entertaining show.'
 $threesome_noassistant_description[3] = 'In a threesome, it is important to properly allocate attention amongst all the participants, seeking a special feeling of group ecstasy. Giving some practical advice to <<$slave_name>>, you call Gloria over and order them to start.'
 $threesome_noassistant_description[4] = '<<$slave_name>> is able to passionately and beautifully caress another women and unite with her in giving extreme pleasure, stimulation, and entertainment to you. <<$slave_name>> and Angelika expertly bring you and each other into a triple simultaneous orgasm.'
-$threesome_noassistant_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$threesome_noassistant_description[5] = '<<$slave_name>> is able to passionately and beautifully caress another women and unite with her in giving extreme pleasure, stimulation, and entertainment to you. <<$slave_name>> and Angelika expertly bring you and each other into a triple simultaneous orgasm.'
 
-$dp_lesson_description[0] = 'You make an agreement with your friends from the guild that they have helped you in slave training. For a start <<$slave_name>> have to learn just to be able to take two dicks at once. This may be particularly difficult with the simultaneous use of the vagina and anus.'
-$dp_lesson_description[1] = '<<$slave_name>> must learn to take the right poses to facilitate the most convenient penetration of a two men at once. It''s not easy, but thanks to your friends from the guild, you can hold a practical session.'
-$dp_lesson_description[2] = '<<$slave_name>> already quite ably to take a two dicks at once, but now she has to learn to move so as to deliver the pleasure for both partners. It is good so that for such practices you can always find assistants.'
-$dp_lesson_description[3] = 'Even a threesome can be monotonous if girl will not show activity. <<$slave_name>> must learn to quickly change the poses, so that each penis of her partner could be in turn in her mouth, in the vagina and ass.'
-$dp_lesson_description[4] = '<<$slave_name>> copes well with two partners simultaneously. You explain to her that if she would be able to ensure that both men had cum at the same time, her training in this field will be completed.'
-$dp_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$dp_lesson_description[0] = 'You made an agreement with your friends from the guild that have helped you in the past. For a start <<$slave_name>> has to learn to take two dicks at once. This may be particularly difficult with the simultaneous use of the vagina and anus.'
+$dp_lesson_description[1] = '<<$slave_name>> must learn to take the right poses to facilitate the most convenient penetration of two men at once. It''s not easy, but thanks to your friends from the guild, you can hold a practical session.'
+$dp_lesson_description[2] = '<<$slave_name>> already quite able to take two dicks at once, but now she has to learn to move so as to deliver pleasure for both partners. It seems too easy to always find willing assistants!'
+$dp_lesson_description[3] = 'Even a threesome can be bad if the girl is not activity involved and changes things up. <<$slave_name>> must learn to quickly change the poses, so that each penis of her partner could take a turn in her mouth, vagina, and ass.'
+$dp_lesson_description[4] = '<<$slave_name>> copes well with two partners simultaneously. You explain to her that if she would ensure that both men cum at the same time, her training in this field will be completed.  She brings both partners to orgasm like a pro and takes one load down the throat while the other pumps her ass full of juice.'
+$dp_lesson_description[5] = '<<$slave_name>> copes well with two partners simultaneously. You explain to her that if she would ensure that both men cum at the same time, her training in this field will be completed.  She brings both partners to orgasm like a pro and takes one load down the throat while the other pumps her ass full of juice.'
 
-$tp_lesson_description[0] = 'You make an agreement with your friends from the guild that they have helped you in slave training. For a start <<$slave_name>> have to learn just to be able to take three dicks at once. Decent training for all her holes...'
-$tp_lesson_description[1] = 'Number of poses that allows triple penetration is limited, but <<$slave_name>> should master them thoroughly, and be flexible enough to take a penis from many angles. Your friends from the guild happy to help in this task.'
-$tp_lesson_description[2] = '<<$slave_name>> quite skillfully takes three dicks at once, but now she has to learn to move so as to simultaneously stimulate them, not forgetting about anyone. Not an easy task, but your friends from the guild will gladly help.'
-$tp_lesson_description[3] = 'To diversify the process, <<$slave_name>> must learn not only to change the poses on the fly, but also letting all the partners take turns to try her mouth, ass and vagina, so that no one went away offended.'
-$tp_lesson_description[4] = '<<$slave_name>> perfectly mastered the technique of triple penetration. To achieve perfection, it remains to learn to be sensitive so all the men will cum at the same time. Your friends will appreciate this slave''s skill!'
-$tp_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$tp_lesson_description[0] = 'You make an agreement with your friends from the guild that have helped you in slave training. For a start <<$slave_name>> has to learn to be able to take three dicks at once. Decent training for all her holes...'
+$tp_lesson_description[1] = 'The number of poses that allow triple penetration is limited, but <<$slave_name>> should master them thoroughly, and be flexible enough to take a penis from many angles. Your friends from the guild are happy to help in this task!'
+$tp_lesson_description[2] = '<<$slave_name>> quite skillfully takes three dicks at once, but now she has to learn to move so as to simultaneously stimulate all of them, not forgetting about anyone. Not an easy task, but she is learning.'
+$tp_lesson_description[3] = 'To diversify the process, <<$slave_name>> must learn not only to change the poses on the fly, but also letting all the partners take turns to try her mouth, ass and, vagina, so that no one walks away with any cum left to spare!'
+$tp_lesson_description[4] = '<<$slave_name>> perfectly mastered the technique of triple penetration. To achieve perfection, she must learn to be sensitive so that all three men will cum at the same time. Your friends appreciate this slave''s skill!  What a show!  Now the trick is getting them to leave!'
+$tp_lesson_description[5] = '<<$slave_name>> perfectly mastered the technique of triple penetration. To achieve perfection, she must learn to be sensitive so that all three men will cum at the same time. Your friends appreciate this slave''s skill!  What a show!  Now the trick is getting them to leave!'
 
-$gangbang_lesson_description[0] = 'Servicing five men at once is not an easy task, but <<$slave_name>> should learn it if she wants to achieve perfection in group sex. Fortunately, you do not experience the lack of volunteers.'
-$gangbang_lesson_description[1] = 'By and large, there is only one way to get physical pleasure for five men at once. For this <<$slave_name>> should use simultaneously not only all her holes, but also both hands. She would have to seriously try to learn how to coordinate her actions.'
-$gangbang_lesson_description[2] = '<<$slave_name>> quite skillfully holds five members at once, but she must learn to move so as to deliver an equal pleasure for all, not ignoring or forgetting anyone. The task is difficult, but you will have enough helpers for training.'
-$gangbang_lesson_description[3] = 'When a woman has five men at once, it turns as to be an entertaining show. Today you are going to watch it from the side, and give your slave tips on how to make this process a real show for the master.'
-$gangbang_lesson_description[4] = '<<$slave_name>> performed perfectly  during the gangbang and mastered this skill. You can now display a show where she simultaneously satisfies five males at once making them all cum at the same time. This is not easy to achieve, but after all, this is the reason why we need exercise!'
-$gangbang_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$gangbang_lesson_description[0] = 'Servicing five men at once is no easy task, but <<$slave_name>> should learn it if she wants to achieve perfection in group sex. Fortunately, you do not experience a lack of volunteers.'
+$gangbang_lesson_description[1] = 'By and large, there is only one way to get physical pleasure for five men at once. For this <<$slave_name>> should use not only all her holes, but also both hands. She has to seriously try to learn how to coordinate her actions.'
+$gangbang_lesson_description[2] = '<<$slave_name>> quite skillfully holds five members at once, but she must learn to move so as to deliver an equal pleasure for all, not ignoring or forgetting anyone. The task is difficult, but she takes load after load with pleasure.'
+$gangbang_lesson_description[3] = 'When a woman has five men at once, it turns out to be an entertaining show. Today you are going to watch it from the side, and give your slave tips on how to make this process a real show for the master.  Just watching her fuck the hell out of everyone makes you want to join in!'
+$gangbang_lesson_description[4] = '<<$slave_name>> performed perfectly during the gangbang and mastered this skill. You can now display a show where she simultaneously satisfies five males at once making them all cum at the same time. <<$slave_name>> expertly takes pounding after pounding in all of her holes, swallowing multiple loads!'
+$gangbang_lesson_description[5] = '<<$slave_name>> performed perfectly during the gangbang and mastered this skill. You can now display a show where she simultaneously satisfies five males at once making them all cum at the same time. <<$slave_name>> expertly takes pounding after pounding in all of her holes, swallowing multiple loads!'
 
 $bukake_lesson_description[0] = '<<$slave_name>> unaccustomed to group bukkake, so as a lesson you decide to just bring her out and offer several men to masturbate, cumming on her chest and face. Your slave have to get used to the sensation, to start to take the initiative.'
 $bukake_lesson_description[1] = 'To arrange a real bukkake, <<$slave_name>> should not just sit and wait until she will be cummed by many men, but also actively participate in the process of helping them with her hands and mouth. You go out to conduct a practice session.'
 $bukake_lesson_description[2] = 'In the case of group bukkake, <<$slave_name>> must learn not only helping men to ejaculate, but also do it at the same time to several directions, so that no one remained forgotten and not caressed. Fortunately, it is not difficult to find the volunteers for this task.'
 $bukake_lesson_description[3] = 'In order to make show interesting, <<$slave_name>> must master various techniques of the game with the sperm: smear it on her chest, lick it off her hands and breasts, and blow bubbles with the cum using her lips. In the end, bukkake is primarily entertainment for the eyes.'
 $bukake_lesson_description[4] = '<<$slave_name>> is able to caress and stimulate nearly a dozen men at once, creating an almost continuous flow of seed erupting on her chest and face. She has learned how to collect all the accumulated semen in her mouth and swallow it with one huge gulp.'
-$bukake_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$bukake_lesson_description[5] = '<<$slave_name>> is able to caress and stimulate nearly a dozen men at once, creating an almost continuous flow of seed erupting on her chest and face. She has learned how to collect all the accumulated semen in her mouth and swallow it with one huge gulp.'
 
-$dogsex_lesson_description[0] = '<<$dog_name>> is always ready to take a new bitch, but for <<$slave_name>> idea of sex with a dog is still unusual. To begin with, you give her task to caress your pet with hands. Slave needs to accustom to the beast member.'
-$dogsex_lesson_description[1] = '<<$slave_name>> is able to excite an animal, so that today <<$dog_name>> can count on real sex. For now you order slave just to get on all fours and help to the dog to insert its penis. Else it will do on its own.'
-$dogsex_lesson_description[2] = '<<$slave_name>> is able to have sex with dog, but with such task can handle any other dog. In order for your pet to assess the ability of the human female, she must learn to make a proper blowjob to it. You explain to slave that you will not finish the lesson until <<$dog_name>> will not cum in her mouth.'
-$dogsex_lesson_description[3] = 'Dogs love the variety not less than men. Therefore <<$slave_name>> should learn to use her ass to satisfy a dog. <<$dog_name>> is not mind to shove its end into the female anus, but slave should be able to help with her hand, so that it was in the right hole.'
+$dogsex_lesson_description[0] = '<<$dog_name>> is always ready to take a new bitch, but for <<$slave_name>> the idea of having sex with a dog is still unusual. To begin with, you give her a task to caress your pet with hands. Slave needs to get accustomed to the beast member.'
+$dogsex_lesson_description[1] = '<<$slave_name>> is able to excite an animal, so that today <<$dog_name>> can count on real sex. For now you order slave just to get on all fours and help the dog to insert its penis into her vagina. Otherwise it will be on it''s own.'
+$dogsex_lesson_description[2] = '<<$slave_name>> is able to have sex with a dog, but with such task can handle any other dog. In order for your pet to assess the ability of the human female, she must learn to make a proper blowjob to it. You explain to your slave that you will not finish the lesson until <<$dog_name>> cums in her mouth.'
+$dogsex_lesson_description[3] = 'Dogs love the variety not less than men. Therefore <<$slave_name>> should learn to use her ass to satisfy a dog. <<$dog_name>> is not mind to shove its end into the female anus, but a slave should be able to help with her hand, so that it was in the right hole.'
 $dogsex_lesson_description[4] = 'While some enthusiasts hold slaves for the pleasure of their pets, the main task of bestiality is still entertainment for the master with show. <<$slave_name>> should learn how to use all her skills to make a passionate and brutal show.'
-$dogsex_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$dogsex_lesson_description[5] = 'While some enthusiasts hold slaves for the pleasure of their pets, the main task of bestiality is still entertainment for the master with show. <<$slave_name>> should learn how to use all her skills to make a passionate and brutal show.'
 
 $pigsex_lesson_description[0] = 'Sex with a dirty and brutal animal like pig is already uneasy task with purely psychological side. <<$slave_name>> should get used to the idea, so you take her to the barnyard to acquaint with the mature purebred boar. <<$slave_name>> should caress it with hands.'
 $pigsex_lesson_description[1] = 'Having explaining to slave some features of the pigs physiology, you take her to the barnyard for the practical lesson. Although adult boar weighs over two hundred pounds, <<$slave_name>> must learn to mate with him.'
 $pigsex_lesson_description[2] = '<<$slave_name>> already knows how to fuck with a boar so that it will not squash her, but it looks not particularly interesting so far. Slave need to learn to do this in that way to support the interest of onlookers.'
 $pigsex_lesson_description[3] = 'A woman can not get boar obey by force, but it is quite possible with the help of affection. <<$slave_name>> must learn to make pig lie down on its back and beautifully suck his spiral curled end.'
 $pigsex_lesson_description[4] = '<<$slave_name>> quite deftly handles with the boar, but in order that show was truly spectacular, she must demonstrate a real animal passion. You take slave to the barnyard and give her all the opportunities for training.'
-$pigsex_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$pigsex_lesson_description[5] = '<<$slave_name>> quite deftly handles with the boar, but in order that show was truly spectacular, she must demonstrate a real animal passion. You take slave to the barnyard and give her all the opportunities for training.'
 
 $horsesex_lesson_description[0] = 'Horse - a beautiful animal, and therefore it''s psychologically easier for woman to mate with him than with other types of livestock. However, there are the size problem. You take slave to the barnyard and order to caress studhorse with hands.'
 $horsesex_lesson_description[1] = 'Real sex with such a large animal requires special training, so you decide to limit the exercise to oral stimulation for now. <<$slave_name>> should to milk a horse cock, using her hands and mouth.'
 $horsesex_lesson_description[2] = 'Paying a fair time to safety rules, you begin the practical training to satisfy the stallion. While the horse is restricted in its movements, <<$slave_name>> should move its end into herself, but her task is to take it inside as deep as possible.'
 $horsesex_lesson_description[3] = 'Using previously studied technique direction with hands, <<$slave_name>> should take a horse cock in her ass for a decent depth. Although the stallion is not moving, the task still is not easy, but the show promises to be exciting.'
 $horsesex_lesson_description[4] = 'Real sex with a stallion requires a fair amount of physical training, but you believe that <<$slave_name>> is ready for such activities. Using a special rack, your slave should allow the stallion to make its own movements, as with real mare.'
-$horsesex_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$horsesex_lesson_description[5] = 'Real sex with a stallion requires a fair amount of physical training, but you believe that <<$slave_name>> is ready for such activities. Using a special rack, your slave should allow the stallion to make its own movements, as with real mare.'
 
 $tentacle_lesson_description[0] = 'Any fiend craves to inseminate every encountered woman. To do this, it uses the force and the most powerful exciting pheromones. But if a woman will retain control over herself, she will be able to use her hands to milk his semen in a special container.'
 $tentacle_lesson_description[1] = 'Rear gripper — the youngest form of fiends. It is smaller than the size of a man, but its tentacles is already very strong. You explain to slave that it makes no sense to resist and try to fight it. It is necessary to caress those tentacles that are not busy and they will flow with seed which should be directed into the bucket.'
 $tentacle_lesson_description[2] = 'Dark juvenile looks scary because the most of its body takes a fanged mouth. But it will not bite a woman, only fertilize. So it is necessary to overcome the fear and do not forget to milk its seed. Coping with fear - the theme of the day.'
 $tentacle_lesson_description[3] = 'When a fiend grows into a tentacle beast it becomes much bigger that a human and its pheromones are so powerful that they literally drive you mad. But if you develop a habit and tune in to the target, it is also possible to milk. Today you teach your slave a couple of tricks.'
 $tentacle_lesson_description[4] = 'The oldest fiends reach monstrous proportions, becoming the krakens or even leviathans. But the essence is the same. Just more tentacles and stronger effect of pheromones, but even such a beast can be milked. Slave will train as long as not up to the task.'
-$tentacle_lesson_description[5] = 'This message is not supposed to be seen. Damn bugs.'
+$tentacle_lesson_description[5] = 'The oldest fiends reach monstrous proportions, becoming the krakens or even leviathans. But the essence is the same. Just more tentacles and stronger effect of pheromones, but even such a beast can be milked. Slave will train as long as not up to the task.'
 
 !IDLENESS
 $slave_rest = '<<$slave_name>> relaxes and rests from daily cares until dinner. This pastime is quite aimlessly in terms of her training, but <<$slave_name>> should be grateful for the opportunity to laze.'
@@ -1709,7 +1723,7 @@ $idle[5] = '<<$slave_name>> spends her free time, quietly humming a song of her 
 
 $outdoor_rest[1] = '  You bring slave to the Garden of Gethsemane, and leave her there for a couple of hours, so that she could be alone and find inner peace. In any case, the guard will return her to you at the end of the allotted time.'
 $outdoor_rest[2] = '  You let your slave go on the female half, where she can take a break from your society and frolic with the other girls. Of course, at the same time she is being washed and that will be very helpful. Two birds with one stone!'
-$outdoor_rest[3] = '  You hope that <<$slave_name>> will have a good time among the other slaves and will be able to unburden herself in conversations. She might even be able to hone social skills and develop her character. And in the meantime you have a whole day on your own business.'
+$outdoor_rest[3] = '  You hope that <<$slave_name>> will have a good time among the other slaves and will be able to unburden herself in conversations. She might even be able to hone social skills and develop her character. And in the meantime you have a whole day for your own business.'
 
 !MISC
 $rules_obedience[0] = '<font color="#00FF00">Follows the rules</font>'
@@ -1770,7 +1784,7 @@ $aura_angst[0] = '<font color="#464451">Anthracite colored despair</font> <font 
 $aura_angst[1] = '<font color="#464451">Anthracite colored despair</font> formed <font color="#cd0000">one</font> tentacle, permeating through the whole aura of your slave.'
 $aura_angst[2] = '<font color="#464451">Anthracite colored despair</font> formed <font color="#cd0000">two</font> tentacles, tightly gripping aura of your slave from both sides.'
 $aura_angst[3] = '<font color="#464451">Anthracite colored despair</font> formed a dense clot, with <font color="#cd0000">three</font> disgusting writhing tentacles sticking from it.'
-$aura_angst[4] = '<font color="#464451">Anthracite colored despair</font> grown and released <font color="#cd0000">four</font> tentacles, engulfing aura of your slave from all sides.'
+$aura_angst[4] = '<font color="#464451">Anthracite colored despair</font> grown and released <font color="#cd0000">four</font> tentacles, engulfing the aura of your slave from all sides.'
 $aura_angst[5] = '<font color="#464451">Anthracite colored despair</font> permeates the entire aura of your slave. You can clearly see <font color="#cd0000">five</font> fat, disgusting writhing tentacles, which tear all other colors to the shreds.'
 
 $aura_rational[0] = '<font color="#B452CD">Amethyst core of awareness</font> <font color="#cd0000"> is not formed</font>.'
@@ -1924,7 +1938,7 @@ $Арахнофобия = '  You notice that your slave madly afraid of all kind
 $Любит_беспомощность = "  You notice that the restriction of mobility affects your slave very positively. Looks like she's just glad to be bound or locked in a close box. This makes a lot of punishment virtually useless."
 $Клаустрофобия = '  When you limit the mobility of slave, she instantly begins to suffocate from fear. It seems that a sense of helplessness and inability to escape induces her animal terror. You should remember this when choosing a most effective punishment.'
 $Ленивая = '  Watching your slave, you notice that she appreciates the opportunity to slack off. This is not too good for the slave, but some types of incentives will be clearly more effective.'
-$Гиперактивная = '  Your slave just can not sit still. She is always busy with some works and runs around like electrobroom until tired. Giving her time to free time will not earn you a special gratitude.'
+$Гиперактивная = '  Your slave just can not sit still. She is always busy with some work and runs around like an electrobroom until tired. Giving her time for free time will not earn you special gratitude.'
 $Любит_роскошь = '  Apparently, your slave is crazy about everything that is beautiful, luxurious and brilliant. Dresses and jewelry will easily win her heart.'
 $Аскетичная = "  It seems that your slave is completely indifferent to luxury. She can not be bribed by shiny ornaments or luxurious dresses. And it's not so good, because you have less means of influence!"
 $Сладкоежка = "  You notice that your slave is crazy about everything sweet and tasty. Such gastronomic predilections reveal sizable opportunities for manipulation: for a sweet dessert she'll be ready to go a great length!"
@@ -1956,10 +1970,13 @@ $Эйдетическая_память = '  You are surprised to notice that you
 $Забывчивая = '  Your slave seems  to have a complete mess in her head. She constantly forgets what she was told just a day ago. You only need to stop conducting lessons - and her skills are lost at an alarming rate.'
 $Дисциплинированная = '  Sounds like your slave is accustomed to strict discipline and is ready to obey, ignoring her own desires. Certainly a useful feature for slaves.'
 $Своенравная = '  Discipline is clearly not applicable to the strengths of your slave. She is disorganized and always makes everything as she pleases. You need to always stand by her with a stick.'
-$Мания_величия = '  Your slave clearly overestimates her merits and too confident of her exclusivity. However, it has a bright side: you can give more serious promotion to her even for modest merits, not being afraid to spoil her.'
+$Мания_величия = '  Your slave clearly overestimates her merits and is too confident of her exclusivity. However, it has a bright side: you can give larger rewards to her even for modest merits, not being afraid to spoil her.'
 $Комплекс_вины = '  Your slave constantly feels guilty and takes mistakes painfully. This low self-esteem can be used to punish her more severely for not even the most significant offenses.'
-$Милосердная = 'You understand that your slave takes anguish of surrounding people very close to heart. This can be used to control her!'
-$Садистка = 'Your slave obviously enjoys watching the sufferings of surrounding people and even would not mind to participating in the process. Unfortunately, it narrows your means of influence.'
+$Милосердная = '  You understand that your slave takes anguish of surrounding people very close to heart. This can be used to control her!'
+$Садистка = '  Your slave obviously enjoys watching the sufferings of surrounding people and even would not mind to participating in the process. Unfortunately, it narrows your means of influence.'
+$NaturalGrace = '  Your slave has smooth, fluid, natural, and beautiful movements and body language.  There is a natural charm and beauty in whatever she does.'
+$CharmingVoice = '  Your slave has a golden voice that is so beautiful to the ear and warming to the soul.  She can get people to pay attention to her with a few simple words.'
+
 
 !FOR GENERATE_STOCK
 !NAMES
@@ -2600,7 +2617,6 @@ $execution_reaction['broken'] = '<<$slave_name>> receives the news of her impend
 $execution_reaction['depresive'] = '<<$slave_name>> trembles all over, but does not try to persuade you to leave her alive. Apparently she had already surrendered and thinks about death as a liberation. Execution can still be canceled...'
 $execution_reaction['horny'] = '<<$slave_name>> begs you to fuck her properly at last, promising to give you the last time unearthly pleasure without any restrictions. Execution can still be canceled...'
 $execution_reaction['hysteric'] = "<<$slave_name>> does not seem to believe that you're really going to be done with her. She laughs hysterically and yells stinging comments. Execution can still be canceled..."
-
 $execution_reaction['optimistic'] = '<<$slave_name>> tries to persuade you to save her life. In the end, any disagreements can be worked out, why would you resort to extreme measures? Execution can still be canceled...'
 $execution_reaction['docile'] = '<<$slave_name>> kneels with humiliation and asks you to save her miserable and unworthy life, promising to serve you better. Execution can still be canceled...'
 
@@ -2856,7 +2872,7 @@ $pet_couch = '   [MISTRESS AUGEAS]
 $expression_couch = '   [MISTRESS MARIVANNA]
    - Correct, competent and confident speechcraft is needed for any publicly demonstrated slave. I will make it so that you do not need to be  ashamed to appear with your slave in public!'
 $vocal_couch = '   [MASTER VON WALTZ]
-   -  Oh, my friend, the woman herself is like a beautiful musical instrument! I''ll teach your slave to sound without hesitation. We''ll work on her voice, ja!'
+   -  Oh, my friend, the woman herself is like a beautiful musical instrument! I''ll teach your slave to sing without hesitation. We''ll work on her voice, ja!'
 $magic_couch = '   [MASTER S]
    - Slaves are not allowed to learn the art of spark magic, <<$master_name>>. It''s too dangerous in battle. But I will teach her all about item enchanting and potion creation. However, do not expect miracles. It all depends on her talent.'
 $music_couch = '   [MASTER VON WALTZ]
@@ -2940,22 +2956,22 @@ $geralt_diligence[5] = '   [MASTER GERALD]
    
 $marivanna_diligence[0] = '   [MISTRESS MARIVANNA]
    - Your slave doesn`t have any motivation, <<$master_name>>. All my explanations are useless because of this attitude. 
-   Her grade for the lesson: <font color="#cd0000"><b>1-, very poor</b></font>'
+   Her grade for the lesson: <font color="#cd0000"><b>F-, very poor</b></font>'
 $marivanna_diligence[1] = '   [MISTRESS MARIVANNA]
    - Your slave is constantly distracted and does not want to listen to me. With such diligence, it is better to do something more simple.
-   Her grade for the lesson: <font color="#C71585"><b>2, unsatisfactory</b></font>'
+   Her grade for the lesson: <font color="#C71585"><b>D, unsatisfactory</b></font>'
 $marivanna_diligence[2] = '   [MISTRESS MARIVANNA]
    - Of course I used to have students even worse than your slave, <<$master_name>>, but do not expect great progress.
-   Her grade for the lesson: <font color="#4B0082"><b>3, satisfactory</b></font>'
+   Her grade for the lesson: <font color="#4B0082"><b>C, satisfactory</b></font>'
 $marivanna_diligence[3] = '   [MISTRESS MARIVANNA]
    - You could increase her motivation, but overall, I''m satisfied with the results, <<$master_name>>. I think that we made some progress today.
-   Her grade for the lesson: <font color="#0000CD"><b>4, good</b></font>'
+   Her grade for the lesson: <font color="#0000CD"><b>B, good</b></font>'
 $marivanna_diligence[4] = '   [MISTRESS MARIVANNA]
    - She really is motivated to learn, <<$master_name>>. Your slave really wants to learn everything I want to teach her, you''ll notice the progress we made.
-   Her grade for the lesson: <font color="#008080"><b>5, excellent</b></font>'
+   Her grade for the lesson: <font color="#008080"><b>A, excellent</b></font>'
 $marivanna_diligence[5] = '   [MISTRESS MARIVANNA]
    - Your slave really is no ordinary pupil, <<$master_name>>. I have rarely seen someone with more motivation to learn. 
-   Her grade for the lesson: <font color="#008000"><b>5+, perfect</b></font>'
+   Her grade for the lesson: <font color="#008000"><b>S+, perfect</b></font>'
 
 $jeeves_diligence[0] = '   [MASTER JEEVES]
    - In my opinion, <<$master_name>>, your slave is not ready. She doesn`t want to learn and thus will not learn anything. She needs proper training and be more submissive. 
@@ -3027,7 +3043,7 @@ $realtor_bonus_sex[2] = '  - Personal slave? Hmm, not bad. I just wanted to test
 $realtor_bonus_sex[3] = '  Gloria smiled seductively and gently took off my clothes, kissing each part of my body she uncovered. When she opened into my pants, my hardon was already waiting for her, ready for action. She gently teased it with her tongue as she expertly swallowed my whole cock.'
 $realtor_bonus_sex[4] = '   - Nice... Good girl... And do not skimp on the saliva: next stop in your ass. You do not want that to be unpleasant, right, Gloria?'
 $realtor_bonus_sex[5] = '   When my shaft became shiny and wet from her saliva, I turned her around and steadily entered into her tight anal hole. She moaned loudly with pleasure, and I realized that they taught her well - she pretended to be quite sincere.'
-$realtor_bonus_sex[6] = '   For the remaining hour, Gloria showed me everything that she is capable of, literally milking my cock dry. When I sat back on the bed, exhausted, she kissed me, left the keys on the table and walked away.  We had awesome sex with both of us being brought to climax and orgasm multiple times.  She won''t foget my performance anytime soon!'
+$realtor_bonus_sex[6] = '   For the remaining hour, Gloria showed me everything that she is capable of, literally milking my cock dry. When I sat back on the bed, exhausted, she kissed me, left the keys on the table and walked away.  We had awesome sex with both of us being brought to climax and orgasm multiple times.  She won''t forget my performance anytime soon!'
    
 $realtor_demo_kamira[1] = '  [GLORIA]
    - The infamous quarter of the Outcasts is under the jurisdiction of the Camira Great House. The residential buildings are not centralized and the quality of the housing in general is... ahem... pretty basic. At least the crime rates are lower than in the slums.'
@@ -3332,7 +3348,7 @@ $wujen_quest[6] = '  [Vujin the Wise]
 $aramus_quest[1] = '   [Sir Aramus]
   - Hey! You. Yes, you. Come over here. I got the offer of the century for you, mutually beneficial for both of us. Interested?'
 $aramus_quest[2] = '   [Sir Aramus]
-  - Listen here. Did you know that the Taurus House conducts closed gladiator fights? Just like in the Coliseum, but only for their own. The place is smaller and you can see better. And owner of the winner wins some serious cash.'
+  - Listen here. Did you know that the Taurus House conducts closed gladiator fights? Just like in the Coliseum, but only for their own. The place is smaller and you can see better. And the owner of the winner wins some serious cash.'
 $aramus_quest[3] = '   [Sir Aramus]
   - If I can get a slave which will win a lot... brother, it''s a gold mine! I need a champion of the arena. But of course I don`t have as many sparks as they usually ask for.'
 $aramus_quest[4] = '   [Sir Aramus]
@@ -3438,23 +3454,23 @@ $speculator_text[0] = '   [MASTER WONG]
 $speculator_text[1] = '   [MASTER WONG]
   - What is this? If you put your brand on a girl, it does not make her a good product. She is no damn good at all! Working with a girl like her is just going to lose me money. Get out of here.'
 $speculator_text[2] = '   [MASTER WONG]
-  - Hmmm... Yeah, it is clear why you`re trying to sell it to me. Considering her quality, you can only expect to sell her very cheap. But so be it, I will give you 500 sparks for her. And that''s very generous of me, <<$master_name>>.'
+  - Hmmm... Yeah, it is clear why you`re trying to sell it to me. Considering her quality, you can only expect to sell her very cheap. But so be it, I will give you <<auction_price[rating]>> sparks for her. And that''s very generous of me, <<$master_name>>.'
 $speculator_text[3] = '   [MASTER WONG]
-  - Hmmm... Yeah, it is clear why you`re trying to sell it to me. Considering her quality, you can only expect to sell her very cheap. But so be it, I will give you 1350 sparks for her. And that''s very generous of me, <<$master_name>>.'
+  - Hmmm... Yeah, it is clear why you`re trying to sell it to me. Considering her quality, you can only expect to sell her very cheap. But so be it, I will give you <<auction_price[rating]>> sparks for her. And that''s very generous of me, <<$master_name>>.'
 $speculator_text[4] = '   [MASTER WONG]
-  - Not the highest quality, huh? You can''t just throw me a typical slave, and expect to cash out. Okay, okay, <<$master_name>>, don`t look at me like that. I know that she will be good for resale. But do not even ask for more than 2000 sparks. Sell it yourself, if you want more.' 
+  - Not the highest quality, huh? You can''t just throw me a typical slave, and expect to cash out. Okay, okay, <<$master_name>>, don`t look at me like that. I know that she will be good for resale. But do not even ask for more than <<auction_price[rating]>> sparks. Sell it yourself, if you want more.' 
 $speculator_text[5] = '   [MASTER WONG]
-  - Not the highest quality, huh? You can''t just throw me a typical slave, and expect to cash out. Okay, okay, <<$master_name>>, don`t look at me like that. I know that she will be great for resale. But do not even ask for more than 2750 sparks. Sell it yourself, if you want more.' 
+  - Not the highest quality, huh? You can''t just throw me a typical slave, and expect to cash out. Okay, okay, <<$master_name>>, don`t look at me like that. I know that she will be great for resale. But do not even ask for more than <<auction_price[rating]>> sparks. Sell it yourself, if you want more.' 
 $speculator_text[6] = '   [MASTER WONG]
-  - Yes, she''s decent. Of course I have to endeavor to sell her with benefit, but I think it''s worth it. Of course, only if we get together at my price. My last word - 3300, and no spark more!'
+  - Yes, she''s decent. Of course I have to endeavor to sell her with benefit, but I think it''s worth it. Of course, only if we get together at my price. My last word - <<auction_price[rating]>>, and no spark more!'
 $speculator_text[7] = '   [MASTER WONG]
-  - Yes, she''s decent. Of course I have to endeavor to sell her with benefit, but I think it''s worth it. Of course, only if we get together at my price. My last word - 4000, and no spark more!'
+  - Yes, she''s decent. Of course I have to endeavor to sell her with benefit, but I think it''s worth it. Of course, only if we get together at my price. My last word - <<auction_price[rating]>>, and no spark more!'
 $speculator_text[8] = '   [MASTER WONG]
-  - Excellent product, <<$master_name>>, excellent. But you did the right thing by coming to me - the higher the quality of the goods, the richer the buyer must be, and this is still a very hard job, as you well know. I will give you 4600 sparks for her.'
+  - Excellent product, <<$master_name>>, excellent. But you did the right thing by coming to me - the higher the quality of the goods, the richer the buyer must be, and this is still a very hard job, as you well know. I will give you <<auction_price[rating]>> sparks for her.'
 $speculator_text[9] = '   [MASTER WONG]
-  - Excellent product, <<$master_name>>, excellent. But you did the right thing by coming to me - the higher the quality of the goods, the richer the buyer must be, and this is still a very hard job, as you well know. I will give you 5400 sparks for her.'
+  - Excellent product, <<$master_name>>, excellent. But you did the right thing by coming to me - the higher the quality of the goods, the richer the buyer must be, and this is still a very hard job, as you well know. I will give you <<auction_price[rating]>> sparks for her.'
 $speculator_text[10] = '   [MASTER WONG]
-  - Whoooa. Top class, eh? Such goods are rarely seen. And the buyer''s for them are even rarer. A decent price for such beauty can be obtained only from the richest people in Rome. Fortunately I have the right connections. I''ll give you six thousand for her. Deal?'
+  - Whoooa. Top class, eh? Such goods are rarely seen. And the buyer''s for them are even rarer. A decent price for such beauty can be obtained only from the richest people in Rome. Fortunately I have the right connections. I''ll give you <<auction_price[rating]>> sparks for her. Deal?'
 
 !ARENA
 $arena_ride_description[1] = '   You take appropriate to your status place on the tribune and from there watch the races. If you put on it your horse, it might help for your reputation. But now it is just an entertainment. Very exciting, it should be noted.'
@@ -3483,13 +3499,13 @@ $superviser_message[9] = '   [ARENA SUPERVISOR]
    - Silence! I ask for silence! Open your eyes and ears, because for what you now behold does not happen often. Unique battle for the title of ABSOLUTE CHAMPION. Who will challenge the invincible goddess of the arena?'
 
 $race_win_description[''] = ''
-$race_win_description['master'] = '   Your chariot comes to the finish line first! The audience on tribunes roars with excitement and welcomes you with loud shouts and applause. Of course, except for those who put the money to victory of your opponents. But they deserve it.'
-$race_win_description['ride_angelika'] = '   The victory went not to you today. This is certainly sad, but the fact that you reach the finish alive is a good achievement too. Under a thunderous applause that not intended for you, you leave the arena, driving in a leash your tired racehorse.'
-$race_win_description['ride_avgia'] = '   The victory went not to you today. This is certainly sad, but the fact that you reach the finish alive is a good achievement too. Under a thunderous applause that not intended for you, you leave the arena, driving in a leash your tired racehorse.'
-$race_win_description['ride_geralt'] = '   The victory went not to you today. This is certainly sad, but the fact that you reach the finish alive is a good achievement too. Under a thunderous applause that not intended for you, you leave the arena, driving in a leash your tired racehorse.' 
-$race_win_description['ride_ippolita'] = '   The victory went not to you today. This is certainly sad, but the fact that you reach the finish alive is a good achievement too. Under a thunderous applause that not intended for you, you leave the arena, driving in a leash your tired racehorse.'
-$race_win_description['ride_jeevs'] = '   The victory went not to you today. This is certainly sad, but the fact that you reach the finish alive is a good achievement too. Under a thunderous applause that not intended for you, you leave the arena, driving in a leash your tired racehorse.'
-$race_win_description['ride_morrigan'] = '   The victory went not to you today. This is certainly sad, but the fact that you reach the finish alive is a good achievement too. Under a thunderous applause that not intended for you, you leave the arena, driving in a leash your tired racehorse.'
+$race_win_description['master'] = '   Your chariot comes to the finish line first! The audience on tribunes roars with excitement and welcomes you with loud shouts and applause. Of course, except for those who bet for your opponents. But they deserve it.'
+$race_win_description['ride_angelika'] = '   The victory didn''t go your way today. This is certainly sad, but the fact that you reached the finish alive is a good achievement too. Under a thunderous applause that wasn''t intended for you, you leave the arena, driving with a leash your tired racehorse.'
+$race_win_description['ride_avgia'] = '   The victory didn''t go your way today. This is certainly sad, but the fact that you reached the finish alive is a good achievement too. Under a thunderous applause that wasn''t intended for you, you leave the arena, driving with a leash your tired racehorse.'
+$race_win_description['ride_geralt'] = '   The victory didn''t go your way today. This is certainly sad, but the fact that you reached the finish alive is a good achievement too. Under a thunderous applause that wasn''t intended for you, you leave the arena, driving with a leash your tired racehorse.'
+$race_win_description['ride_ippolita'] = '   The victory didn''t go your way today. This is certainly sad, but the fact that you reached the finish alive is a good achievement too. Under a thunderous applause that wasn''t intended for you, you leave the arena, driving with a leash your tired racehorse.'
+$race_win_description['ride_jeevs'] = '   The victory didn''t go your way today. This is certainly sad, but the fact that you reached the finish alive is a good achievement too. Under a thunderous applause that wasn''t intended for you, you leave the arena, driving with a leash your tired racehorse.'
+$race_win_description['ride_morrigan'] = '   The victory didn''t go your way today. This is certainly sad, but the fact that you reached the finish alive is a good achievement too. Under a thunderous applause that wasn''t intended for you, you leave the arena, driving with a leash your tired racehorse.'
 
 $pony_fail = '   Slave that harnessed to the chariot stumbles and flies head over heels pulling the entire harness. Overturned chariot by inertia hits the slave''s body, and you hear how breaks her bones with terrible crack sound... or is it yours?'
 $pony_dead = '   According to the racetrack tradition, after race bodies of a dead slaves on the track goes to a chef that cooks a feast for the guests in the senatorial bed. You get a token payment of five sparks for your slave''s body.'
@@ -3499,7 +3515,7 @@ $crush_trauma[1] = '  Overturned chariot drags you and your racehorse. Having dr
 $crush_trauma[2] = '  Flying out of the chariot, you immediately bundling to protect yourself from injury, but still get a few severe and painful injuries in a fall. It would be necessary to see a doctor as chance offers. Well, the race has already been lost anyway, and with a concussion you have yet to live.'
 $crush_trauma[3] = '  Broken chariot with a crackle presses you to the fence, and you realize that it was a crackling of broken ribs. Nothing fatal, but damage is very unpleasant - it would take some time to recover. And a race is lost forever.'
 $crush_trauma[4] = '  Flying out from your broken chariot, you are very unfortunate fall under someone else''s wheels. The result is a broken leg and a lot of pain. Damn, if only you had a protective armor...'
-$crush_trauma[5] = '  Chariot turns over, and covers you with all of it weight, breaking your neck vertebrae. Your sight fades. This sport is deadly not only for slaves... <br><br><center>GAME OVER</center>'
+$crush_trauma[5] = '  Chariot turns over, and covers you with all of it''s weight, breaking your neck vertebrae. Your sight fades. This sport is deadly not only for slaves... <br><br><center>GAME OVER</center>'
 
 $trace_forward_description['ride_start'] = '   You are on the straight and smooth initial segment of the path that left by the creators of the route so the chariot could quickly gain the initial speed. Starting gong is heard, and charioteers with all their might cracks with whips on the backs of their horses.'
 $trace_forward_description['straight'] = '   In ahead lies straight as an arrow length of the route with a smooth covering on which you can safely accelerate to any speed. The main thing to remember that the gathered speed can play a cruel joke with you on a dangerous part of the route.'
@@ -3522,7 +3538,7 @@ $trace_pass_description['ride_finish'] = '   Knowing that this is the last part 
 $trace_fail_description['ride_start'] = '   You gain a much lower speed than it possible, but no wonder they say - slow and steady wins the race. The greater the speed of the chariot, the greater will be its inertia and lesser its maneuverability.'
 $trace_fail_description['straight'] = '   You gain a much lower speed than it possible, but no wonder they say - slow and steady wins the race. The greater the speed of the chariot, the greater will be its inertia and lesser its maneuverability.'
 $trace_fail_description['curve'] = '   Not fitting into the curve in a little, you touch fence with board of your chariot and hear a terrible crackle. In addition to chariot damage, this error also leads to the loss of speed.'
-$trace_fail_description['russian_road'] = '   don`t caring about the risks, you do not reduce your speed before the complex area and almost fly out of the chariot, when it jumps at full speed on the potholes and falls into the pit. Harnessed to the chariot slave knocks her feet to the blood.'
+$trace_fail_description['russian_road'] = '   Not caring about the risks, you do not reduce your speed before the complex area and almost fly out of the chariot, when it jumps at full speed on the potholes and falls into the pit. Harnessed to the chariot <<$slave_name>> bashes her feet which are now bloody.'
 $trace_fail_description['dragon_teeth'] = '   Deciding that speed is more important than the integrity of the slave''s feet, you drive straight into the extending blades on the road. In the end, slave must be accustomed to the pain, although her muffled with lashes cry of pain suggests otherwise.'
 $trace_fail_description['concrete_jungle'] = '   You drove very risky, hoping to win at this dangerous area, but slightly miscalculating and your chariot at full speed flew into one of the concrete pillars.'
 $trace_fail_description['bladestrings'] = '   String-blades is very treacherous, because they can be noticed only by light glare and at the same time it is necessary to make the racehorse to bend down her head at the right time. You did not. Stretched over the road string cuts off delicate neck of your slave and in the next second, where was her head, you see a bright red fountain.'
@@ -3568,7 +3584,7 @@ $charriots_info[18] = '   [STABLEMAN]
 $charriots_info[19] = '   [STABLEMAN]
    - Finally, an obstacle that loved the most - it''s a string-blades. Thin metal strings we stretch so that they passed above sitting driver''s head, but at the same time they at height of running racehorse''s necks.'
 $charriots_info[20] = '   [STABLEMAN]
-   - If you do not give command to the slave in time to crouch or she does not react, then you can say goodbye to her. It would cut her head clean. Some, however, use an undersized girls, but they are too weak to gain speed.'
+   - If you do not give command to the slave in time to crouch or she does not react, then you can say goodbye to her. It would cut her head clean. Some, however, use undersized girls to avoid this trap, but they aren''t quite as fast but are more manuverable.'
 $charriots_info[21] = '   [STABLEMAN]
    - On each track you can use one of three tactics. To raise the speed, whip racehorse with lash. Pain gives adrenaline, so it''s the best way to accelerate.'
 $charriots_info[22] = '   [STABLEMAN]
@@ -3579,8 +3595,8 @@ $charriots_info[24] = '   [STABLEMAN]
    - But of course it is best to go faster. Otherwise you will not able to win the race. Winners in Rome is very appreciated! So good luck on the track.'
 
 $drowning_simple = 'After tying up the slave''s hands behind her back, you tie a heavy weight to her legs and throw her in a deep glass container full of water. she struggles underwater as bubbles of her own breathing rush to the surface of the water till there was no more air left in her lungs, <<$slave_name>> twitchs with clear suffocation expressions on her face as you watch her drowning.'
-$Roasting_simple = 'After tying up the slave''s hands and legs you cover her body with roasting saus then you put the slave in the oven, <<$slave_name>> screams in a hoarse voice as she is being cooked alive, after 30 minutes the screams stops and a tasty smell start to come out from the oven, looks like food is ready to be served.'
-$Givemonster_simple = 'After tying up the slave''s hands behind her back, you take the slave to the border of fogs and hang her by the leg at tree and leave her behind, after walking a few steps away you hear a howling sound followed by a loud scream from the slave, you turn your head to see a werewolf feasting on <<$slave_name>>.'
+$Roasting_simple = 'After tying up the slave''s hands and legs you put a fire under her, <<$slave_name>> screams in a hoarse voice as she is being cooked alive, after 30 minutes the screams stop and you drop off her body to a known cannibal living in the Outcasts Quarter.'
+$Givemonster_simple = 'After tying up the slave''s hands behind her back, you take the slave to the border of the fogs and hang her by the legs on a tree and leave her behind, after walking a few steps away you hear a deep growling sound followed by a loud scream from the slave, you turn your head to see a fearsome beast you''ve never seen before feasting on <<$slave_name>>.'
 
 $arachnid_lesson_description[0] = 'Mater Aranea, your largest spider, senses your slave`s presence. It rushes out of its lair in the cell wall, eight claw-tipped legs clicking against the smooth stone. Seven unblinking eyes focus on the slave`s stunned face, and the chelicrae part slightly. <<$slave_name>> shrieks in horror and frantically crawls to the cell door, beating on it with her bare fists and bawling hysterically. It looks like today`s training hasn`t gone well.'
 $arachnid_lesson_description[1] = 'Mater Aranea, your largest spider, senses your slave`s presence. It rushes out of its lair in the cell wall, eight claw-tipped legs clicking against the smooth stone. Seven unblinking eyes focus on the slave`s stunned face, and the chelicrae part slightly. <<$slave_name>> shrieks in horror and frantically crawls to the cell door, beating on it with her bare fists and bawling hysterically. It looks like today`s training hasn`t gone well.'
@@ -3599,6 +3615,25 @@ $polypus_lesson_description[5] = '<<$slave_name>> steps eagerly onto the grate t
 $slave_to_pig_pos_description[1] = 'Your slave obeys, too stupid to realize or too broken to care what this new role implies for her future. Over the coming days, her weight will dramatically increase, as she will have nothing to do but eat.'
 $slave_to_pig_neg_description[1] = 'Your slave has enough intelligence and self-preservation to refuse outright.'
 $pig_to_slave_description[1] = 'On your order, your pig leaves her pen and reports back to you. Her stomach is bulging and her gaze dull, and she could definitely use a bath.'
+
+!Sex special - crushboss
+$sex_special[1] = 'A large explosion occurs after casting your spell.  Something went horribly wrong.  Moments later...
+
+	<<$master_name>>, with all due respect, I don''t know what''s come over me but I''m pulling down your pants and deepthroating your cock.  I demand a cum filled treat!'
+$sex_special[2] = 'With almost superhuman strength and passion, <<$slave_name>> rips your pants off and begins massaging your cock with her throat.  You are unable to stop her.'
+$sex_special[3] = '  <<$slave_name>> puts both hands on your ass forcing her mouth to your cock while relentlessly going back and forth like a piston.  She takes your entire dick to it''s base and attempts to swallow it even further while hammering back and forth.'
+$sex_special[4] = '  [<<$slave_name>>]
+   - Yum, I can''t get enough of your huge cock!  More cum please!  <<$slave_name>> so expertly massages your cock with her throat that you powerfully eject a large stream of hot cum into her stomach.'
+$sex_special[5] = '  [<<$slave_name>>]
+	- Come over here, now! I want to test the strength of your bed...' 
+$sex_special[6] = '  <<$slave_name>> takes off the rest of your clothes and proceeds to sit on top of you in various positions and gives you the ride of your life!  She rocks back and forth on your cock and fucks you in every position possible like a porn star.'
+$sex_special[7] = '   - You can''t help but cum powerfully into her pussy as her vaginal muscles squeeze your cock tightly from all sides.'
+$sex_special[8] = '	[<<$slave_name>>]
+	- You are not done until you fill all of my holes! Kneel down on the bed while I ram my ass against your dick until my ass swallows your dick whole.'
+$sex_special[9] = '	She moans loudly with pleasure as she relentlessly pounds her firm and gorgeous ass against your hard cock over and over again.'
+$sex_special[10] = '   For the next two hours, <<$slave_name>> massages your dick in every way possible, literally milking your cock dry. After nearly passing out on the bed from exhaustion, <<$slave_name>> gives you a sensual massage, then a passionate kiss, and walks away.'
+$sex_special[11] = '  You had a once in a lifetime sexual encounter with both of you being brought to climax and orgasm multiple times. You could not have sex again if your life depended on it. Every last drop of your seed has been expended.  This is an experience you won''t soon forget!'
+
 
 --- #txt ---------------------------------
 

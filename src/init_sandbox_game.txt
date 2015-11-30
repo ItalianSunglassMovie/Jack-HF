@@ -1,4 +1,7 @@
 # init_sandbox_game
+!Initialize Sandbox Game
+!Created by crushboss
+
 get_initial_slave = 1
 hero_points = 1600
 sparks = 10000
@@ -9,7 +12,7 @@ master_style = 0
 master_libido = 0
 master_energy = 5
 
-master_tutor = 0
+master_tutor = 1
 master_fighter = 0
 master_butler = 0
 master_artdirector = 0
@@ -29,7 +32,11 @@ $estate = 'slum_house'
 $starting_area = 'Slum'
 
 custom_game = 0
+sandbox_game = 1
 patrician_mode_off = 0
+
+$assistant["armor"] = 'без_брони'
+$slave["armor"] = 'без_брони'
 
 $master_armor = 'эльчуга'
 $master_cloth = 'regal_suit'

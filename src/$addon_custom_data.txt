@@ -79,7 +79,7 @@ IF $ARGS[0] = 'update_current' :
   KILLVAR 'temp_current'
   KILLVAR '$temp_current'
   KILLVAR 'temp_type'
-
+  
   IF $ARGS[1] = 'assistant' :
     temp_type = assistant_type
     If $seed_name[temp_type] ! '' : $assistant_name = $seed_name[temp_type]
@@ -239,7 +239,7 @@ IF $ARGS[0] = 'update_current' :
   KILLVAR 'temp_current'
   KILLVAR '$temp_current'
   KILLVAR 'temp_type'
-
+  
 END
 
 
@@ -314,6 +314,7 @@ IF $ARGS[0] = 'purge_slave_base' :
   KILLVAR '$spider'
   KILLVAR '$thongue'
   KILLVAR '$tentacles'
+  KILLVAR '$spider'
   KILLVAR '$urine_drink'
   KILLVAR '$branding'
   KILLVAR '$cane'

@@ -57,7 +57,7 @@ $эффекты_игрока = $хорошие_эффекты_игрока + $п
 
 !Information about the latest actions of the player and enemies
 $информация_о_бое = ''
-if $боевая_обстановка!'': $информация_о_бое += '<<$боевая_обстановка>><br><br>'
+if $боевая_обстановка ! '': $информация_о_бое += '<<$боевая_обстановка>><br><br>'
 $информация_о_бое += '<<$действия_игрока>><br><br>'
 $информация_о_бое += '<<$действия_врага[1]>>'
 $информация_о_бое += '<<$действия_врага[2]>>'
@@ -65,8 +65,6 @@ $информация_о_бое += '<<$действия_врага[3]>>'
 $информация_о_бое += '<<$действия_врага[4]>>'
 $информация_о_бое += '<<$действия_врага[5]>>'
 
-
-!*p '<div id = "fight_bg"><img src = "content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 IF ui_style = 2: 
  *p '<div id = "fight_bg"><img src = "content\pic\ui\grimdark\bg\fight.jpg"></div>'
  else
@@ -75,37 +73,49 @@ END
 *p '<div id = "fight_txt"><<$информация_о_бое>></div>'
 
 IF arena_mode = 0:
- IF ui_style = 2:
+ IF ui_style = 2 and combatant = 0:
   *p '<div id = "fight_options_ui2"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
 <a href="EXEC: gt ''суперудары''">Special techniques</a>
 <a href = "EXEC: gt ''инвентарь''">Use potion</a>
 <a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
 <a href="EXEC: gt ''передышка''">Defend</a>
 </div>'
- else
+ elseif ui_style ! 2 and combatant = 0:
  *p '<div id = "fight_options"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
 <a href="EXEC: gt ''суперудары''">Special techniques</a>
 <a href = "EXEC: gt ''инвентарь''">Use potion</a>
 <a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
 <a href="EXEC: gt ''передышка''">Defend</a>
 </div>'
- END
- else
- if суперудар_сделан[1] = 0: 
-  IF ui_style = 2: 
-   *p "<div id = 'fight_options_ui2'><a href = 'EXEC: dynamic $суперудар_1'><img src = '<<$extra_special_active>>'></a></div>"
-   else
-   *p "<div id = 'fight_options'><a href = 'EXEC: dynamic $суперудар_1'><img src = '<<$extra_special_active>>'></a></div>"
-  END
- END
- if суперудар_сделан[1] = 1: 
-  IF ui_style = 2: 
-   *p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></div>"
-   else
-   *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>"
-  END
+ elseif ui_style = 2 and combatant = 1 or combatant = 2:
+  *p '<div id = "fight_options_ui2"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
+<a href = "EXEC: gt ''инвентарь''">Use potion</a>
+<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
+<a href="EXEC: gt ''передышка''">Defend</a>
+</div>'
+ elseif ui_style ! 2 and combatant = 1 or combatant = 2:
+  *p '<div id = "fight_options"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
+<a href = "EXEC: gt ''инвентарь''">Use potion</a>
+<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
+<a href="EXEC: gt ''передышка''">Defend</a>
+</div>'
  END
 END
+
+IF arena_mode = 1:
+ IF ui_style = 2 and (combatant = 1 or combatant = 2):
+  *p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_active>>'></a></div>"
+  elseif ui_style ! 2 and (combatant = 1 or combatant = 2):
+  *p "<div id = 'fight_options'><img src = '<<$extra_special_active>>'></a></div>"
+ END 
+END
+
+!'
+IF ui_style = 2: 
+ *p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></div>"
+ else
+ *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>"
+END'
 
 *p '<div id = "fight_subtions"><<$боевое_меню>></div>'
 

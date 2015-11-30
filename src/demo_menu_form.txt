@@ -1,5 +1,4 @@
 # demo_menu_form
-*P 'c'
 $toplay = 'girl'
 
 !check for drug sound, all other sounds will be disabled except bulk sound
@@ -39,6 +38,8 @@ quest_description_mode = 0
 IF get_initial_slave = 1:
  $special_age = 'young'
  gs 'generate_stock'
+ get_initial_slave = 0
+ stock_pending = 0
  gs 'stock_to_slave'
 END
 
@@ -407,7 +408,7 @@ IF menu_form = 31:
   $text_display += {<br><div id="under">Slave - accountant<br></div>}
   elseif slave_state ! CONST_INT['slave_exist']: $text_display += {<br><div id="under_gray">Slave - accountant<br></div>}
   else
-  $text_display += {<br><div id="under_gray">Slave - accountant<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under_gray">Slave - accountant<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & master_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END
  $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -485,7 +486,11 @@ IF menu_form = 111:
 END
 
 IF menu_form = 112:
- $text_display += {<br><div id="under">Explain her position<br><div id = "clear"><a href = 'EXEC: interaction = 1121 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+ IF already_done_today[1121] = 0:
+  $text_display += {<br><div id="under">Explain her position<br><div id = "clear"><a href = 'EXEC: interaction = 1121 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+  else
+  $text_display += {<br><div id="under_gray">Explain her position<br></div>}
+ END
  IF already_done_today[1122] = 0:
   $text_display += {<br><div id="under">Encourage<br><div id = "clear"><a href = 'EXEC: interaction = 1122 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
@@ -496,7 +501,7 @@ IF menu_form = 112:
   else
   $text_display += {<br><div id="under_gray">Threaten<br></div>}
  END 
- IF slave["spoil"] > 0:
+ IF slave["spoil"] > 0 and already_done_today[1124] = 0:
   $text_display += {<br><div id="under">Put in place<br><div id = "clear"><a href = 'EXEC: interaction = 1124 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   else
   $text_display += {<br><div id="under_gray">Put in place<br></div>}
@@ -537,11 +542,6 @@ IF menu_form = 122:
   else
   $text_display += {<br><div id="under_gray">Harness<br></div>}
  END
-!" IF master_tantra > 0:
-  $text_display += {<br><div id="under">Tantra-yoga<br><div id = "clear"><a href = 'EXEC: interaction = 1226 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
-  else
-  $text_display += {<br><div id="under_gray">Tantra-yoga<br></div>}
- END"
  $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 12 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END

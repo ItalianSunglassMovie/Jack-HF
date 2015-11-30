@@ -12,6 +12,7 @@ stock["null"] = 0
 stock["age"] = seed_age[stock_type]
 
 if stock["age"] = CONST_INT['loli_age']: stock['fertility'] = -2
+if stock["age"] ! CONST_INT['loli_age']: stock['fertility'] = 0
 
 !attributes
 stock["beauty"] = 4
@@ -90,8 +91,17 @@ $stock_occupation_description = 'Mostly I remember the process of downloading da
 oin = RAND(101,998)
 dynamic "$stock_name = 'Object №<<oin>>'"
 
+!No starting ailments - crushboss
+stock["bruises"] = 0
+stock["scares"] = 0
+stock["fear"] = 0
+stock["angst"] = 0
+stock["spoil"] = 0
+stock["arousal"] = 0
 stock['ill'] = 0
+stock['pregnant'] = 0
 stock['parasite'] = 0
+stock['issues'] = 0
 
 !characteristic alignment
 stock["energy"] = 3
@@ -109,6 +119,12 @@ $stock_fullimage = $fullimage[stock_type]
 $stock_ava = $seed_ava[stock_type]
 $stock_ava_gray = $seed_ava_gray[stock_type]
 
+!Set slave age count for keeping track of how long you''ve owned the slave - crushboss
+stock['age_count'] = 0
+
+!Set obedience difficult for new slaves - crushboss 
+stock['obedience_difficulty'] = 14
+
 !EQUIPMENT
 $stock["wpn"] = 'безоружный'
 $stock["armor"] = 'без_брони'
@@ -120,13 +136,18 @@ $stock["right_wpn"] = ''
 $stock["arm_wpn"] = ''
 $stock["leg_wpn"] = ''
 
-$stock["cloth"] = 'лохмотья'
+$stock["cloth"] = 'голая'
 
 stock['newness'] = 1
 
 if stock["energy"] > stock["stamina"]: stock["energy"] = stock["stamina"]
 stock["base_exotic"] = stock["exotic"]
 stock_rate["stamina"] = 0
+
+!Fixes a potential issue with Neoplasty being already done on new slaves
+stock['beauty_enchanced'] = 0
+stock["bcheck"] = 0
+stock["echeck"] = 0
 
 gs '#txt'
 gs '#txt_2'

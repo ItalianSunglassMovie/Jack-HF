@@ -1,6 +1,7 @@
 # shop_general
 !Common interface for selecting options in different places
 GS '_layout'
+
 if colloseum_fight > 0:
  gt 'colloseum_fight'
 END

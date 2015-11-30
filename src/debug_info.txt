@@ -1,0 +1,80 @@
+# debug_info
+!Debug Info - Created by crushboss
+debug_rand = 0
+
+gs 'main_layout'
+gs '$slave_price'
+gs '$slave_traits'
+gs '#txt'
+
+*p '<div id = "large_image"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+
+gs '#var_base'
+gs '#help_msg'
+
+!$slave_ava_color = $slave['ava_clear']
+$slave_ava_portrait = $slave['ava']
+
+*p '<div id = "title_scroll_debug"><img src = "content\pic\scroll_large.gif"></div>'
+
+*p '<div id = "title_scroll_column_left_top">
+<center><<$slave_name>>
+<img src = "<<$slave_ava_portrait>>.jpg"></center></div>'
+
+*p '<div id = "title_scroll_column_left_top">
+<center><<$slave_name>>
+<img src = "content\pic\girls\face\<<slave_type>>.jpg"></center></div>'
+
+*p '<div id = "title_scroll_column_left">
+<u>Obedience Factors</u>
+Obedience: <<slave["obedience"]>>
+Fear: <<slave["fear"]>>
+Fear Rate: <<slave_rate["fear"]>>
+Despair/Angst: <<slave["angst"]>>
+Despair Rate: <<slave_rate["angst"]>>
+Spoil: <<slave["spoil"]>>
+Spoil Rate: <<slave_rate["spoil"]>>
+Mood: <<slave["mood"]>>
+Mood Rate: <<slave_rate["mood"]>>
+Arousal: <<slave["arousal"]>>
+Arousal Rate: <<slave_rate["arousal"]>>
+Master Supermacy/Aura: <<master_supermacy>>
+Psy: <<$slave_psy_status>>
+</div>'
+
+*p '<div id = "title_scroll_column_right_top">
+<center><<$master_name>>
+<img src = "<<$master_ava_color>>"></center></div>'
+
+*p '<div id = "title_scroll_column_right">
+<u>Obedience Building Stats</u>
+Devotion: <<slave["moral"]>>
+Devotion Rate: <<slave_rate["moral"]>>
+Taming/Submission: <<slave["instinct"]>>
+Taming/Submission Rate: <<slave_rate["instinct"]>>
+Habit: <<slave["custom"]>>
+Habit Rate: <<slave_rate["custom"]>>
+Awareness: <<slave["rational"]>>
+Awareness Rate: <<slave_rate["rational"]>><br>
+</div>'
+
+*p '<div id = "title_scroll_column_middle">
+<u>There are three phases of slave training</u>
+1. Obedience through Fear, Intimidation, and Aura
+2. Obedience builds naturally from Habit, Awareness, and Taming
+3. Obedience is obtained through Devotion (best result)
+</div>'
+
+*p '<div id = "debug_whip"><img src="content\pic\buttons\whip_active.gif"></div>'
+
+debug_rand = RAND (1,6)
+if debug_rand = 1: *p '<div id = "debug_image_slave"><img src="content\pic\mob\gladiator_demo.gif"></div>'
+if debug_rand = 2: *p '<div id = "debug_image_slave"><img src="content\pic\mob\glad_demo.gif"></div>'
+if debug_rand = 3: *p '<div id = "debug_image_slave"><img src="content\pic\mob\glad_champion_demo.gif"></div>'
+
+if nsfw = 0: *p '<div id = "full_image_slave"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+
+*p {<div id = "close_button_debug"><a href = 'EXEC: gt "menu_form"'><img src = "content\pic\buttons\approve_small.png"></a></div>}
+
+--- debug_info ---------------------------------
+

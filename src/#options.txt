@@ -554,37 +554,37 @@ $hospital_options[13] = {
 $hospital_options[2] = {
 $text_display = '<br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF sparks >= 5 and slave['pregnant'] = 0 and slave['fertility'] = 0:
+IF sparks >= 5 and slave['pregnant'] = 0 and slave['fertility'] = 0 and slave['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_SSterilization, menu_SSterilization, 'Sterilization')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SSterilization_gray, empty, 'Sterilization')
 END
-IF sparks >= 50 and slave['fertility'] = -1:
+IF sparks >= 50 and slave['fertility'] = -1 and slave['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_Sfertility, menu_Sfertility, 'Restore Fertility')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Sfertility_gray, empty, 'Restore Fertility')
 END
-IF sparks >= 25 and slave['breast_enchanced'] = 0:
+IF sparks >= 25 and slave['breast_enchanced'] = 0 and slave['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_SBreast_augmentation, menu_SBreast_augmentation, 'Breast Augmentation')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SBreast_augmentation_gray, empty, 'Breast Augmentation')
 END
-IF sparks >= 25 and virginity >= 2:
+IF sparks >= 25 and virginity >= 2 and slave['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_SVirginity_restoration, menu_SVirginity_restoration, 'Virginity Restoration')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SVirginity_restoration_gray, empty, 'Virginity Restoration')
 END
-IF sparks >= 250 and slave['beauty_enchanced'] = 0 and slave_rate['beauty'] < 160:
+IF sparks >= 250 and slave['beauty_enchanced'] = 0 and slave["beauty"] < 5 and slave['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_SNeoplasty, menu_SNeoplasty, 'Neoplasty')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SNeoplasty_gray, empty, 'Neoplasty')
 END
-IF sparks >= 25 and slave['lactation'] = 0 and slave['age'] ! CONST_INT['loli_age']:
+IF sparks >= 25 and slave['lactation'] = 0 and slave['age'] ! CONST_INT['loli_age'] and slave['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_SPermanent_lactation, menu_SPermanent_lactation, 'Permanent Lactation')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SPermanent_lactation_gray, empty, 'Permanent Lactation')
 END
-IF sparks >= 50 and slave['fertility'] = 0:
+IF sparks >= 50 and slave['fertility'] = 0 and slave['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_SOviparity, menu_SOviparity, 'Oviparity')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SOviparity_gray, empty, 'Oviparity')
@@ -596,37 +596,37 @@ FUNC('$menu', '===END===')
 $hospital_options[3] = {
 $text_display = '<br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF sparks >= 5 and assistant['pregnant'] = 0 and assistant['fertility'] = 0:
+IF sparks >= 5 and assistant['pregnant'] = 0 and assistant['fertility'] = 0 and assistant['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_ASterilization, menu_ASterilization, 'Sterilization')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_ASterilization_gray, empty, 'Sterilization')
 END
-IF sparks >= 50 and assistant['fertility'] = -1:
+IF sparks >= 50 and assistant['fertility'] = -1 and assistant['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_Afertility, menu_Afertility, 'Restore Fertility')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Afertility_gray, empty, 'Restore Fertility')
 END
-IF sparks >= 25 and assistant['breast_enchanced'] = 0:
+IF sparks >= 25 and assistant['breast_enchanced'] = 0 and assistant['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_ABreast_augmentation, menu_ABreast_augmentation, 'Breast Augmentation')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_ABreast_augmentation_gray, empty, 'Breast Augmentation')
 END
-IF sparks >= 25 and assistant_virginity >= 2:
+IF sparks >= 25 and assistant_virginity >= 2 and assistant['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_AVirginity_restoration, menu_AVirginity_restoration, 'Virginity Restoration')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_AVirginity_restoration_gray, empty, 'Virginity Restoration')
 END
-IF sparks >= 250 and assistant['beauty_enchanced'] = 0 and assistant_rate['beauty'] < 160:
+IF sparks >= 250 and assistant['beauty_enchanced'] = 0 and assistant["beauty"] < 5 and assistant['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_ANeoplasty, menu_ANeoplasty, 'Neoplasty')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_ANeoplasty_gray, empty, 'Neoplasty')
 END
-IF sparks >= 25 and assistant['lactation'] = 0 and assistant['age'] ! CONST_INT['loli_age']:
+IF sparks >= 25 and assistant['lactation'] = 0 and assistant['age'] ! CONST_INT['loli_age'] and assistant['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_APermanent_lactation, menu_APermanent_lactation, 'Permanent Lactation')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_APermanent_lactation_gray, empty, 'Permanent Lactation')
 END
-IF sparks >= 50 and assistant['fertility'] = 0:
+IF sparks >= 50 and assistant['fertility'] = 0 and assistant['reabilitation'] < 1:
  FUNC('$menu', 'interaction_city', $menu_item_AOviparity, menu_AOviparity, 'Oviparity')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_AOviparity_gray, empty, 'Oviparity')
@@ -661,13 +661,13 @@ FUNC('$menu', '===END===')
 }
 
 $stasis_options[2] = {
-if cells_unlocked = 1: 
+IF cells_unlocked = 1: 
  $text_display = ''
  $sp_text[2] = "   In this place you can keep slaves in a stasis state in which they will remain as long as I have money to support the unit." 
  else
  $text_display = '<br>'
  $sp_text[2] = "   In this place you can keep slaves in a stasis state in which they will remain as long as I have money to support the unit. For an extra fee you can get access to three more cells for storage." 
-end
+END
 FUNC('$menu', 'spacer', 1)
 
 FUNC('$menu', '===BEGIN===', 'column_0') 
@@ -1089,7 +1089,7 @@ FUNC('$menu', '===END===')
 }
 
 $smugler_options[2] = {
-$sp_text[2] = '   Training scheme for all our slaves are standard, appearance too. Clones, you know. But you can select the desired age category.'
+$sp_text[2] = '   Training scheme for all our slaves are standard, appearance too. Clones, you know. But you can select the desired age category.  Remember that the Guild is very much against using clones for any reason.  If you get caught, it''s on your head.'
 $text_display = '<br><br>'
 FUNC('$menu', 'spacer', 1)
 
@@ -1599,6 +1599,8 @@ FUNC('$menu', 'interaction_city', $menu_item_Chain_pendant, menu_Chain_pendant, 
 FUNC('$menu', 'interaction_city', $menu_item_Ornamented_diadem, menu_Ornamented_diadem, 'Ornamented Diadem')
 FUNC('$menu', 'interaction_city', $menu_item_Gemstone_ring, menu_Gemstone_ring, 'Gemstone Ring')
 FUNC('$menu', 'interaction_city', $menu_item_Gemstone_earrings, menu_Gemstone_earrings, 'Gemstone Earrings')
+FUNC('$menu', 'interaction_city', $menu_item_belly_ring, menu_belly_ring, 'Belly Ring')
+FUNC('$menu', 'interaction_city', $menu_item_tongue_barbell, menu_tongue_barbell, 'Tongue Barbell')
 FUNC('$menu', 'interaction_city', $menu_item_Gemstone_necklace, menu_Gemstone_necklace, 'Gemstone Necklace')
 FUNC('$menu', 'interaction_city', $menu_item_Precious_tiara, menu_Precious_tiara, 'Precious Tiara')
 FUNC('$menu', 'exec_options', $menu_item_jeweler_options, 'sp_txt = 1 & gt $curloc', 'Other goods')
@@ -2182,7 +2184,7 @@ if slave["nose_piercing"] = 0:
  FUNC('$menu', 'location_gray', $menu_item_Ring_nose_gray, empty, 'Ring Inserted')
 end
 if slave["scarification"] = 0:  
- FUNC('$menu', 'interaction_city', $menu_item_Scarring, menu_Scarring, 'Scarring (10$)')
+ FUNC('$menu', 'interaction_city', $menu_item_Scarring, menu_Scarring, 'Scarring (20$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_Scarring_gray, empty, 'Scarring performed')
 end
@@ -2277,7 +2279,7 @@ $colloseum_options[1] = {
  IF ride_count ! 0: 
   FUNC('$menu', 'location_gray', $menu_item_racecount_gray, empty, 'Days to race: <<ride_count>>')
   else
-  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 0:
+  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 1:
    FUNC('$menu', 'exec_options', $menu_item_Participate_race, 'sp_txt = 23 & gt $curloc', 'Participate in the race')
    else
    FUNC('$menu', 'interaction_city', $menu_item_Watch_race, menu_Watch_race, 'Watch the race')
@@ -2286,7 +2288,7 @@ $colloseum_options[1] = {
  IF gladi_count ! 0: 
   FUNC('$menu', 'location_gray', $menu_item_battlecount_gray, empty, 'Days to battle: <<gladi_count>>')
   else
-  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 0:
+  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 1:
    FUNC('$menu', 'exec_options', $menu_item_Put_gladiatrix, 'sp_txt = 24 & gt $curloc', 'Gladiatrix Contest')
    else
    FUNC('$menu', 'interaction_city', $menu_item_Watch_battle, menu_Watch_battle, 'Watch the battle')
@@ -2315,7 +2317,7 @@ $colloseum_options[21] = {
   else
   FUNC('$menu', 'location_gray', $menu_item_sparring_assistant_gray, empty, 'Arrange sparring for assistant')
  END
- IF spm_number < master_fighter and master_energy > 0:
+  IF spm_number < (master_fighter - boost_up['master_fighter']) and $master_spm[5] = '' and master_energy > 2:
   FUNC('$menu', 'exec_options', $menu_item_special_technique, 'sp_txt = 5 & gt $curloc', 'Teach me a Special Technique')
   else
   FUNC('$menu', 'location_gray', $menu_item_special_technique_gray, empty, 'Teach me a Special Technique')
@@ -2344,35 +2346,38 @@ $colloseum_options[22] = {
 
 
 $colloseum_options[23] = { 
- $sp_text[23] = '   While there is still time for race, you can order a variety of chariot modification. The more heavy elements are used, the less will be the speed and agility of your chariot, but it will lower the risk of the fact that it may fall apart in the middle of the race. Ignoring your own defense, you`re playing with death.'
+ $sp_text[23] = '   While there is still time before the race, you can order a variety of chariot modifications. The heavier your chariot components are, the slower and less manueverability your chariot will be during the race, but it will lower the risk of it falling apart in the middle of the race. Ignoring your own defense, you`re playing with death.'
+
  FUNC('$menu', 'spacer', 2)
 
  FUNC('$menu', '===BEGIN===', 'column_0')
  IF heavy_frame = 1:
-  FUNC('$menu', 'exec_options', $menu_item_Pobedit, 'heavy_frame = 0 & gt $curloc', 'Pobedit Frame')
+  FUNC('$menu', 'exec_options', $menu_item_Pobedit, 'heavy_frame = 0 & dynamic $chariotweight & gt $curloc', 'Pobedit Frame')
   else
-  FUNC('$menu', 'exec_options', $menu_item_Carbon, 'heavy_frame = 1 & gt $curloc', 'Carbon Fiber Frame')
+  FUNC('$menu', 'exec_options', $menu_item_Carbon, 'heavy_frame = 1 & dynamic $chariotweight & gt $curloc', 'Carbon Fiber Frame')
  END
  IF heavy_boards = 1:
-  FUNC('$menu', 'exec_options', $menu_item_Armored, 'heavy_boards = 0 & gt $curloc', 'Armored Sides')
+  FUNC('$menu', 'exec_options', $menu_item_Armored, 'heavy_boards = 0 & dynamic $chariotweight & gt $curloc', 'Armored Sides')
   else
-  FUNC('$menu', 'exec_options', $menu_item_Decorative, 'heavy_boards = 1 & gt $curloc', 'Decorative Sides')
+  FUNC('$menu', 'exec_options', $menu_item_Decorative, 'heavy_boards = 1 & dynamic $chariotweight & gt $curloc', 'Decorative Sides')
  END  
  IF heavy_chasis = 1:
-  FUNC('$menu', 'exec_options', $menu_item_Reinforced, 'heavy_chasis = 0 & gt $curloc', 'Reinforced Suspension')
+  FUNC('$menu', 'exec_options', $menu_item_Reinforced, 'heavy_chasis = 0 & dynamic $chariotweight & gt $curloc', 'Reinforced Suspension')
   else
-  FUNC('$menu', 'exec_options', $menu_item_Lightweight, 'heavy_chasis = 1 & gt $curloc', 'Lightweight Suspension')
+  FUNC('$menu', 'exec_options', $menu_item_Lightweight, 'heavy_chasis = 1 & dynamic $chariotweight & gt $curloc', 'Lightweight Suspension')
  END  
  IF heavy_wheels = 1:
-  FUNC('$menu', 'exec_options', $menu_item_Alloy, 'heavy_wheels = 0 & gt $curloc', 'Alloy Wheels')
+  FUNC('$menu', 'exec_options', $menu_item_Alloy, 'heavy_wheels = 0 & dynamic $chariotweight & gt $curloc', 'Alloy Wheels')
   else
-  FUNC('$menu', 'exec_options', $menu_item_Spoked, 'heavy_wheels = 1 & gt $curloc', 'Spoked Wheels')
+  FUNC('$menu', 'exec_options', $menu_item_Spoked, 'heavy_wheels = 1 & dynamic $chariotweight & gt $curloc', 'Spoked Wheels')
  END  
  IF heavy_rider_armor = 1:
-  FUNC('$menu', 'exec_options', $menu_item_Heavy, 'heavy_rider_armor = 0 & gt $curloc', 'Heavy Protection of Charioteer')
+  FUNC('$menu', 'exec_options', $menu_item_Heavy, 'heavy_rider_armor = 0 & dynamic $chariotweight & gt $curloc', 'Heavy Protection of Charioteer')
   else
-  FUNC('$menu', 'exec_options', $menu_item_Light, 'heavy_rider_armor = 1 & gt $curloc', 'Light Protection of Charioteer')
- END    
+  FUNC('$menu', 'exec_options', $menu_item_Light, 'heavy_rider_armor = 1 & dynamic $chariotweight & gt $curloc', 'Light Protection of Charioteer')
+ END
+ dynamic $chariotweight
+ FUNC('$menu', 'exec_options', $menu_item_chariotweight, '', 'Chariot Weight: <<chariot_weight>>')
  FUNC('$menu', 'exec_options', $menu_item_ride_start, 'gt "$ride_start"', 'Start Race')
  FUNC('$menu', '===END===')
 }
@@ -2449,6 +2454,16 @@ $colloseum_options[5] = {
  FUNC('$menu', 'spacer', 2)
 
  FUNC('$menu', '===BEGIN===', 'column_0')
+ IF sparks >= spm_price and $spm_learned['лицо_прикладом'] = 0:
+  FUNC('$menu', 'interaction_city', $menu_item_Facebutt, menu_Facebutt, 'Face Butt')
+  ELSE
+  FUNC('$menu', 'location_gray', $menu_item_Facebutt_gray, empty, 'Face Butt')
+ END
+ IF sparks >= spm_price and $spm_learned['ответный_удар'] = 0:
+  FUNC('$menu', 'interaction_city', $menu_item_Riposte, menu_Riposte, 'Riposte')
+  ELSE
+  FUNC('$menu', 'location_gray', $menu_item_Riposte_gray, empty, 'Riposte')
+ END
  IF sparks >= spm_price and $spm_learned['удар_с_разворота'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Roundhouse, menu_Roundhouse, 'Roundhouse Kick')
   else
@@ -2458,27 +2473,27 @@ $colloseum_options[5] = {
   FUNC('$menu', 'interaction_city', $menu_item_Swift, menu_Swift, 'Swift Blow')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Swift_gray, empty, 'Swift Blow')
- END 
+ END
  IF sparks >= spm_price and $spm_learned['воинственный_клич'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Battlecry, menu_Battlecry, 'Battle Cry')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Battlecry_gray, empty, 'Battle Cry')
- END 
+ END
  IF sparks >= spm_price and $spm_learned['оглушение'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Heavyblow, menu_Heavyblow, 'Heavy Blow')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Heavyblow_gray, empty, 'Heavy Blow')
- END 
+ END
  IF sparks >= spm_price and $spm_learned['подрезка'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Dashing, menu_Dashing, 'Dashing Blow')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Dashing_gray, empty, 'Dashing Blow')
- END 
+ END
  IF sparks >= spm_price and $spm_learned['ослепление'] = 0:
   FUNC('$menu', 'interaction_city', $menu_item_Precise, menu_Precise, 'Precise Hit')
   ELSE
   FUNC('$menu', 'location_gray', $menu_item_Precise_gray, empty, 'Precise Hit')
- END   
+ END
  FUNC('$menu', 'exec_options', $menu_item_Refusesparring, 'sp_txt = 21 & gt $curloc', 'Albeit no, I`d rather...')
  FUNC('$menu', '===END===')
 }
@@ -2546,23 +2561,26 @@ $text_display += {<br><div id="under">Check preferences<br><div id = "clear"><a 
 $text_display += {<br><div id="under">Bid farewell and leave<br><div id = "clear"><a href = 'EXEC: city_form = 31 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
+!STREC 2016-10-26 - Begin
 !preparing for fight
 $get_weapon[1] = {
+if iCurrentWeapon ! 0: суперудар_сделан[iCurrentWeapon] = 1
+
 FUNC('$menu', 'spacer', 2)
 
 FUNC('$menu', '===BEGIN===', 'column_0')
 IF $за_спиной!'':
- FUNC('$menu', 'exec_options', $menu_item_the_shoulder, 'dynamic $взять_оружие_за_спиной & no_wpn[""за_спиной""] = 1 & sp_txt = 2 & gt $curloc', 'Shoulder: <<$название_предмета[$за_спиной]>>')
+ FUNC('$menu', 'exec_options', $menu_item_the_shoulder, 'dynamic $взять_оружие_за_спиной & iCurrentWeapon=1 & no_wpn[""за_спиной""] = 1 & sp_txt = 2 & gt $curloc', 'Shoulder: <<$название_предмета[$за_спиной]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_the_shoulder_gray, empty, 'Nothing over the shoulder')
 END
 IF $слева!'':
- FUNC('$menu', 'exec_options', $menu_item_left_side, 'dynamic $взять_оружие_слева & no_wpn[""слева""] = 1 & sp_txt = 2 & gt $curloc', 'Left: <<$название_предмета[$слева]>>')
+ FUNC('$menu', 'exec_options', $menu_item_left_side, 'dynamic $взять_оружие_слева & iCurrentWeapon=2 & no_wpn[""слева""] = 1 & sp_txt = 2 & gt $curloc', 'Left: <<$название_предмета[$слева]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_left_side_gray, empty, 'Nothing on the left side')
 END
 IF $справа!'':
- FUNC('$menu', 'exec_options', $menu_item_right_side, 'dynamic $взять_оружие_справа & no_wpn[""справа""] = 1 & sp_txt = 2 & gt $curloc', 'Right: <<$название_предмета[$справа]>>')
+ FUNC('$menu', 'exec_options', $menu_item_right_side, 'dynamic $взять_оружие_справа & iCurrentWeapon=3 & no_wpn[""справа""] = 1 & sp_txt = 2 & gt $curloc', 'Right: <<$название_предмета[$справа]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_right_side_gray, empty, 'Nothing on the right side')
 END
@@ -2572,7 +2590,7 @@ IF combatant ! 0:
  $название_предмета[$предплечье] = ''
 END
 IF $предплечье!'':
- FUNC('$menu', 'exec_options', $menu_item_in_bracer, 'dynamic $взять_оружие_предплечье & no_wpn[""предплечье""] = 1 & sp_txt = 2 & gt $curloc', 'Sleeve Holster: <<$название_предмета[$предплечье]>>')
+ FUNC('$menu', 'exec_options', $menu_item_in_bracer, 'dynamic $взять_оружие_предплечье & iCurrentWeapon=4 & no_wpn[""предплечье""] = 1 & sp_txt = 2 & gt $curloc', 'Sleeve Holster: <<$название_предмета[$предплечье]>>')
  else
  FUNC('$menu', 'location_gray', $menu_item_in_bracer_gray, empty, 'Nothing in Sleeve')
 END
@@ -2586,9 +2604,28 @@ IF $в_сапоге!'' and combatant = 0:
  else
  FUNC('$menu', 'location_gray', $menu_item_in_boot_gray, empty, 'Nothing in Boot')
 END
+
+IF iCurrentWeapon=1:
+	dynamic $взять_оружие_за_спиной
+	no_wpn["за_спиной"]=1
+END
+IF iCurrentWeapon=2:
+	dynamic $взять_оружие_слева
+	no_wpn["слева"]=1
+END
+IF iCurrentWeapon=3:
+	dynamic $взять_оружие_справа
+	no_wpn["справа"]=1
+END
+IF iCurrentWeapon=4:
+	dynamic $взять_оружие_предплечье
+	no_wpn["предплечье"]=1
+END
+
 FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" &  gt "начать_бой"', 'Join the battle')
 FUNC('$menu', '===END===')
 }
+!STREC 2016-10-26 - End
 
 $get_weapon[2] = {
 FUNC('$menu', 'spacer', 2)

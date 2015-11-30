@@ -99,6 +99,7 @@ Slaver: &nbsp;<<$master_name>><br>
 <a href="EXEC: msg $allure_chart & $info_text = $allure_help & gt $curloc"><<$master_style[master_style]>></a> 
 <a href="EXEC: msg $libido_chart & $info_text = $libido_help & gt $curloc"><<$master_libido[master_libido]>></a>
 <a href="EXEC: msg $brand_chart & $info_text = $brand_help & gt $curloc"><<$brand[brand_reputation]>></a>
+<a href="EXEC: msg $guild_brand_chart & $info_text = $guild_brand_help & gt $curloc"><<$guild_brand[guild_reputation]>></a>
 <a href="EXEC: msg $wealth_chart & $info_text = $wealth_help & gt $curloc"><<$master_wealth[master_wealth]>></a>
 <a href="EXEC: msg $hygiene_chart & $info_text = $hygiene_help & gt $curloc"><<$boy_hygiene[master_hygiene]>></a>
 <a href="EXEC: msg $mood_chart & $info_text = $mood_help & gt $curloc"><<$boy_mood[master_mood_plus]>></a>
@@ -144,7 +145,8 @@ END
 !EQUIP TAB
 !& $info_text = '''' - info text will reset after switching tab
 If master_stat_screen = 2:
-   *p '<div id = "mark_one"><a href = "EXEC: master_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
+	gs '$calculate_attributes'
+	*p '<div id = "mark_one"><a href = "EXEC: master_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
     *p '<div id = "mark_two"><a href = "EXEC: master_stat_screen = 1 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
     *p '<div id = "mark_three"><img src = "content\pic\buttons\sel_button.png"></div>'
     *p '<div id = "mark_four"><a href = "EXEC: master_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'  
@@ -193,5 +195,11 @@ END
 !Debug - Testing Variables - crushboss
 !msg '<<master_fighter_rate>>'
 !msg '<<tentacle_hp>>'
+!msg '<<master_supermacy>>'
+!msg '<<brand_rate>>'
+!IF master_stat_screen = 3:
+! msg 'Butler: <<master_butler>><br> Butler Rate: <<master_butler_rate>><br>Art Director: <<master_artdirector>><br>Art Director Rate: <<master_artdirector_rate>><br>Mage: <<master_mage>><br>Mage Rate: <<master_mage_rate>><br>Medic: <<master_medic>><br>Medic Rate: <<master_medic_rate>><br>Fighter: <<master_fighter>><br>Fighter Rate: <<master_fighter_rate>><br>'
+!END
+!if master_stat_screen = 3: msg 'Master Supermacy: <<master_supermacy>><br>'
 --- master_stat ---------------------------------
 

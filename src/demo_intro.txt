@@ -46,8 +46,8 @@ if lecture = 100:
 <div id="under">Back to work<br><div id = "clear"><a href = ''EXEC: menu_form = 0 & gt "demo_menu_form"''><img src = "content\pic\clear.gif"></a></div></div>
 </div>' 
   gs '$slave_price'
-  IF rating >= 2:
-   $text[1] = 'According to my calculations slave already meets <<$rating[8]>> rank. I think it''s time to show her to Mistress Angelica and finish the exam.'
+  IF rating >= 4:
+   $text[1] = 'According to my calculations slave already meets <<$rating[4]>> rank. I think it''s time to show her to Mistress Angelica and finish the exam.'
    else
    $text[1] = 'It seems to me that my slave is not good enough yet, although I can ask Mistress Angelica to evaluate it. Or just remind me something from her lectures...'
   END
@@ -143,8 +143,8 @@ END
 IF lecture = 5:
  txt_count = 6
  $text[1] = '<font color="#191970">- And what kind of exam, Mistress?</font>'
- $text[2] = '<font color="#8B0A50">- Exercise of a slave training for sale. We will give you the basic premise, a slave to choose, a set of clothes, a full refrigerator and funding in the amount of three hundred sparks. You''ll have to pay the rent and feed your slave.</font>'
- $text[3] = '<font color="#8B0A50">- These sparks will last about a month. More or less depending on your frugality. Anyway, during this time you will have to raise the rating of your slave at least to <<$rating[8]>> rank.</font>'
+ $text[2] = '<font color="#8B0A50">- Exercise of a slave training for sale. We will give you the basic premise, a slave to choose, a set of clothes, a full refrigerator and funding in the amount of six hundred sparks. You''ll have to pay the rent and feed your slave.</font>'
+ $text[3] = '<font color="#8B0A50">- These sparks will last about a month. More or less depending on your frugality. Anyway, during this time you will have to raise the rating of your slave at least to <<$rating[4]>> rank.</font>'
  $text[4] = '<font color="#8B0A50">- If by the time when you run out of sparks the girl has a bad rating - you failed your exam. If you your slave dies - you failed the exam too. Do you get it?</font>'
  $text[5] = '<font color="#191970">- Completely. That does not sound too difficult.</font>'
  if txt = 5: npc_attitude = 31
@@ -155,7 +155,7 @@ IF lecture = 11:
   txt_count = 4
   $text[1] = 'Mistress Angelika is intently looking at my slave and the shine of a single eye makes it obvious that she used auspex.'
   $text[2] = 'After scanning the aura of your slave, she examines her body and asks probably a hundred questions, a fair amount of which are addressed to you. You try to answer honestly.'
- IF rating >= 2:
+ IF rating >= 4:
   $text[3] = 'Mistress Angelika nods approvingly:
     <font color="#8B0A50">- Yes, I think I will accept your work. Your skills are sufficient to be able to feed yourself with our craft, and most importantly - you will not dishonor the good name of our Guild.</font>'
   $text[4] = '<font color="#8B0A50">- I will give my recommendations to the master''s council and tomorrow you''ll become one of us. There will be a small official ceremony and banquet, which we will pay by selling your slave. You can relax now.</font>'
@@ -182,7 +182,7 @@ IF lecture = 13:
   $text[1] = 'The money you got for slave training ran out, so that you have brought her to the Guild to complete the exam. Honestly, you feel slightly uncomfortable: Since you used up all of your allowance, the result should be excellent.' 
   $text[2] = 'Mistress Angelika is intently looking at my slave and the shine of a single eye makes it obvious that she used auspex.'
   $text[3] = 'After scanning the aura of your slave, she examines her body and asks probably a hundred questions, a fair amount of which are addressed to you. You try to answer honestly.'
- IF rating >= 2:
+ IF rating >= 4:
   $text[4] = 'Mistress Angelika nods approvingly:
     <font color="#8B0A50">- Yes, I think I will accept your work. Your skills are sufficient to be able to feed yourself with our craft, and most importantly - you will not dishonor the good name of our Guild.</font>'
   $text[5] = '    <font color="#8B0A50">- I will give my recommendations to the master''s council and tomorrow you''ll become one of us. There will be a small official ceremony and banquet, which we will pay by selling your slave. You can relax now.</font>'

@@ -2,6 +2,7 @@
 !Processing of the next section of the race route
 charriot['max_speed'] = (slave['temper'] + charriot['pony_health']*3) - charriot['weight']
 if slave['age'] ! CONST_INT['loli_age']: charriot['max_speed'] = charriot['max_speed']*2
+if slave['age'] = CONST_INT['loli_age']: charriot['max_speed'] = ((charriot['max_speed']*3)/2)
 charriot['acceleration'] = charriot['max_speed']/4
 if charriot['acceleration'] < 1: charriot['acceleration'] = 1
 charriot['inertion'] = (charriot['speed'] * charriot['weight'])/25

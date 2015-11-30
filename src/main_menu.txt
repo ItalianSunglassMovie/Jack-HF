@@ -7,8 +7,11 @@ IF sound_on = 1 and warning_pass = 1:
 end
 gs 'init_game'
 
+a = RAND(1,3)
+if a = 1: $backimage = 'content/pic/title.jpg'
+if a = 2: $backimage = 'content/pic/title10.jpg'
+if a = 3: $backimage = 'content/pic/title17.jpg'
 
-$backimage = 'content/pic/title17.jpg'
 MAINDESC_X = 1
 MAINDESC_Y = 1
 MAINDESC_W = 1278
@@ -20,9 +23,9 @@ MAINDESC_H = 798
 $text_display = ''
 FUNC('$menu', '===BEGIN===', 'mainmenu')
 FUNC('$menu', 'exec_options', $menu_item_Tutorial, 'gt "demo_intro"', 'Tutorial')
-FUNC('$menu', 'exec_options', $menu_item_Storyselect, 'gt "hero_customization"', 'Story Select')
-FUNC('$menu', 'exec_options', $menu_item_Storycreate, 'gs "init_custom_game" & gt "hero_creation"', 'Story Create')
-FUNC('$menu', 'exec_options', $menu_item_Sandbox, 'gs "init_sandbox_game" & gt "hero_creation"', 'Sandbox')
+FUNC('$menu', 'exec_options', $menu_item_Storyselect, 'gt "hero_customization"', 'Story Mode')
+FUNC('$menu', 'exec_options', $menu_item_Storycreate, 'gs "init_custom_game" & gt "hero_creation"', 'Custom Game')
+FUNC('$menu', 'exec_options', $menu_item_Sandbox, 'gs "init_sandbox_game" & gt "hero_creation"', 'Sandbox Game')
 FUNC('$menu', 'exec_options', $menu_item_Controls, 'gt "controls"', 'Controls')
 FUNC('$menu', 'exec_options', $menu_item_Credits, 'gt "credits"', 'Credits')
 FUNC('$menu', 'exec_options', $menu_item_Aboutfix, 'gt "development"', 'Development')
@@ -31,7 +34,6 @@ FUNC('$menu', '===END===')
 *p '<div id = "main_menu"><<$text_display>></div>'
 
 !CLOSE ALL
-
 if warning_pass = 0: gt 'warning'
 --- main_menu ---------------------------------
 

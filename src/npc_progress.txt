@@ -113,6 +113,6 @@ END
 
 if i < 12: jump 'loop'
 
-npc_money['mistress_angelika'] = 20000
+npc_money['mistress_angelika'] = 200000
 --- npc_progress ---------------------------------
 

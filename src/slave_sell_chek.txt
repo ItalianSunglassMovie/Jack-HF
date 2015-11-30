@@ -1,8 +1,13 @@
 # slave_sell_chek
-!Проверка на отказ
+!Slave Sell Check
+!Overhauled by crushboss
+!Testing for failure to meet the demands of the customer
 byer_interested = 1
 
 killvar 'stat_importance'
+
+gs '$slave_price'
+
 dynamic $npc_preferences[$npc_id]
 if stat_importance['sensitivity'] > slave['sensitivity']: sl_txt = 102
 if stat_importance['temper'] > slave['temper']: sl_txt = 102
@@ -33,8 +38,8 @@ if stat_importance['fetishism'] > slave['fetishism']: sl_txt = 102
 
 if slave[$npc_id] < 1: slave[$npc_id] = 0
 if byer_from_house = 0:
- charm_demand_max = 8 + demand_rating[$npc_id]
- charm_demand = RAND (0,charm_demand_max)
+ charm_demand_max = 15 + demand_rating[$npc_id]
+ charm_demand = RAND (5,charm_demand_max)
  if charm_demand > charm: slave[$npc_id] = 1
  if slave[$npc_id] = 1: sl_txt = 103
 end
@@ -58,11 +63,33 @@ END
 if slave['exotic'] > demand['max_exotic']: sl_txt = 100 
 if slave['exotic'] < demand['min_exotic']: sl_txt = 100
 if slave['beauty'] < demand['min_beauty']: sl_txt = 100
+if slave['brand'] = 0 or slave['brand'] = 4: sl_txt = 100
 if slave['fat'] < demand['min_fat']: sl_txt = 100
 if slave['fat'] > demand['max_fat']: sl_txt = 100
+if slave['wounds'] > 0 or slave['ill'] > 0 or slave['parasite'] > 0 or slave['energy'] < 0 or slave['stamina'] < 3: sl_txt = 104
+if slave['reabilitation'] > 0 or slave['bruises'] > 0 or slave['scares'] > 0 or slave['hygiene'] > 3 or $slave_psy_status = 'broken': sl_txt = 104
+if slave['pregnant'] > 0 and slave["pregnant_revealed"] > 0: sl_txt = 105
 
 IF demand['enchanter'] = 1:
- IF slave['enchanter'] > 0: 
+ IF slave['enchanter'] > 0:
+  sl_txt = 100
+ END
+END
+
+IF demand['pure'] = 1:
+ IF slave["oral"] > 1 or slave["penetration"] > 1 or slave["roleplay"] > 1 or slave["fetishism"] > 1 or slave["orgy"] > 1 or slave["xenophily"] > 1:
+  sl_txt = 100
+ END
+END
+
+IF demand['nopreversion'] = 1:
+ IF slave["fetishism"] > 1 or slave["xenophily"] > 1 or (slave["preversion"] > 0 and slave["preversion_revealed"] > 0):
+  sl_txt = 100
+ END
+END
+
+IF demand['notattoos'] = 1:
+ IF slave["tatoo"] > 1:
   sl_txt = 100
  END
 END
@@ -74,7 +101,7 @@ IF demand['virginity'] = 1:
  END
 END
 
-if virginity < 2: virgin_price += 50*rating
+if virginity < 2: virgin_price += (50*relative_rating)
 
 if virgin_price > 0: $virgin_price = ' plus <<virgin_price>> for virginity'
 
@@ -83,8 +110,7 @@ IF rating > demand_rating[$npc_id]:
  if sl_txt = 1: sl_txt = 2
 END
 
-IF sl_txt > 2: 
- byer_interested = 0
-END
+IF sl_txt > 2: byer_interested = 0
+
 --- slave_sell_chek ---------------------------------
 

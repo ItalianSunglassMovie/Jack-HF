@@ -1,4 +1,7 @@
 # get_slave_seed
+!Get Slave Seed
+!Written by crushboss
+!Gets slave data from slave.json files in the json folder
 $slave_psy_basic = $seed_psy_basic[slave_type]
 slave["age"] = seed_age[slave_type]
 
@@ -72,9 +75,6 @@ slave["sub_polypusvermin"] = seed_sub_polypusvermin[slave_type]
 
 if seed_metabolism > 0: slave["metabolism"] = seed_metabolism[slave_type]
 
-slave["scares"] = seed_slave_scares[slave_type]
-slave["bruises"] = seed_slave_bruises[slave_type]
-
 !Trait Affinities
 slave["sport_affinity"] = seed_sport_affinity[slave_type]
 slave["expression_affinity"] = seed_expression_affinity[slave_type]
@@ -116,6 +116,9 @@ slave["exhibitionism"] = seed_exhibitionism[slave_type]
 slave["preversion"] = seed_preversion[slave_type]
 slave["masohism"] = seed_masohism[slave_type]
 slave["homosexualism"] = seed_homosexualism[slave_type]
+slave["abuse_attitude"] = seed_abuse_attitude[slave_type]
+slave["blood_attitude"] = seed_blood_attitude[slave_type]
+slave["passion_sweets"] = seed_passion_sweets[slave_type]
 slave["memory_revealed"] = seed_memory_revealed[slave_type]
 slave["meekness_revealed"] = seed_meekness_revealed[slave_type]
 slave["selfesteem_revealed"] = seed_selfesteem_revealed[slave_type]
@@ -130,9 +133,12 @@ slave["masohism_revealed"] = seed_masohism_revealed[slave_type]
 slave["homosexualism_revealed"] = seed_homosexualism_revealed[slave_type]
 slave["metabolism_revealed"] = seed_metabolism_revealed[slave_type]
 
-!Illness and Disease
+!Illness, Disease, Scars, Bruises, Psy
 slave['ill'] = seed_ill[slave_type]
 slave['parasite'] = seed_parasite[slave_type]
+slave["scares"] = seed_slave_scares[slave_type]
+slave["bruises"] = seed_slave_bruises[slave_type]
+$slave_psy_basic = $seed_psy_basic[slave_type]
 
 !Anatomy
 $slave_name = $seed_name[slave_type]
@@ -142,11 +148,31 @@ slave["boobs"] = seed_boobs[slave_type]
 virginity = seed_virginity[slave_type]
 display_psy_status = 1
 
+!BACKGROUND
+$slave_world_description = $stock_world_description[slave_type]
+$slave_family_description = $stock_family_description[slave_type]
+$slave_occupation_description = $stock_occupation_description[slave_type]
+
 !Images
 $slave['fullimage'] = $fullimage[slave_type]
 $slave['ava'] = $seed_ava[slave_type]
 $slave['ava_gray'] = $seed_ava_gray[slave_type]
 $slave['ava_clear'] = $seed_ava_clear[slave_type]
+
+!Equipment
+$slave["wpn"] = 'безоружный'
+$slave["armor"] = 'без_брони'
+$slave["scnd"] = ''
+
+$slave["back_wpn"] = ''
+$slave["left_wpn"] = ''
+$slave["right_wpn"] = ''
+$slave["arm_wpn"] = ''
+$slave["leg_wpn"] = ''
+
+$slave["cloth"] = 'голая'
+
+slave['newness'] = 10
 
 --- get_slave_seed ---------------------------------
 

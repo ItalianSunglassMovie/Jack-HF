@@ -38,7 +38,7 @@ IF sp_txt = 1:
   FUNC('$menu', 'location_gray', $menu_item_Auction_slaves_gray, empty, 'Days to Auction: <<auction_count>>')
  END
 	!Strec - jon_UIadds addition (begin)
-	if inventory['stethoscope']<1 and sparks>100:
+	if inventory['stethoscope'] < 1 and sparks > 100:
 		inventory['stethoscope'] = 0
         FUNC('$menu', 'exec_options', $menu_item_buystethoscope, 'gt "sjm_UI_UIadds_buystethoscope"', 'Buy stethoscope (100$)')
 	end
@@ -50,20 +50,20 @@ END
 IF sp_txt = 2:
  FUNC('$menu', 'spacer', 1)
  FUNC('$menu', '===BEGIN===', 'column_0')
- if brand_reputation >= 0 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_D1_rank, menu_D1_rank, 'Contract work - D- rank')
- if brand_reputation >= 1 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_D2_rank, menu_D2_rank, 'Contract work - D+ rank')
- if brand_reputation >= 2 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_C1_rank, menu_C1_rank, 'Contract work - C- rank')
- if brand_reputation >= 2 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_C2_rank, menu_C2_rank, 'Contract work - C+ rank')
- if brand_reputation >= 3 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_B1_rank, menu_B1_rank, 'Contract work - B- rank')
+ if guild_reputation >= 0 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_D1_rank, menu_D1_rank, 'Contract work - D- rank')
+ if guild_reputation >= 1 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_D2_rank, menu_D2_rank, 'Contract work - D+ rank')
+ if guild_reputation >= 2 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_C1_rank, menu_C1_rank, 'Contract work - C- rank')
+ if guild_reputation >= 2 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_C2_rank, menu_C2_rank, 'Contract work - C+ rank')
+ if guild_reputation >= 3 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_B1_rank, menu_B1_rank, 'Contract work - B- rank')
  FUNC('$menu', 'exec_options', $menu_item_Contracts_back, 'sp_txt = 1 & gt $curloc', 'Back')
  FUNC('$menu', '===END===')
  FUNC('$menu', 'spacer', 2)
  FUNC('$menu', '===BEGIN===', 'column_1')
- if brand_reputation >= 3 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_B2_rank, menu_B2_rank, 'Contract work - B+ rank')
- if brand_reputation >= 4 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_A1_rank, menu_A1_rank, 'Contract work - A- rank')
- if brand_reputation >= 4 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_A2_rank, menu_A2_rank, 'Contract work - A+ rank')
- if brand_reputation >= 5 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_S1_rank, menu_S1_rank, 'Contract work - S- rank')
- if brand_reputation >= 5 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_S2_rank, menu_S2_rank, 'Contract work - S+ rank')
+ if guild_reputation >= 3 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_B2_rank, menu_B2_rank, 'Contract work - B+ rank')
+ if guild_reputation >= 4 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_A1_rank, menu_A1_rank, 'Contract work - A- rank')
+ if guild_reputation >= 4 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_A2_rank, menu_A2_rank, 'Contract work - A+ rank')
+ if guild_reputation >= 5 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_S1_rank, menu_S1_rank, 'Contract work - S- rank')
+ if guild_reputation >= 5 and contract['active'] = 0 and slave_state = CONST_INT['no_slave']: FUNC('$menu', 'interaction_city', $menu_item_S2_rank, menu_S2_rank, 'Contract work - S+ rank')
  FUNC('$menu', '===END===')
 END
 

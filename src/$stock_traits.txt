@@ -1,0 +1,436 @@
+# $stock_traits
+!reveals stock traits - crushboss
+
+IF stock["nymphomania_revealed"] = 1:
+ IF stock["nymphomania"] > 0: msg '<<$Нимфоманка>>'
+ IF stock["nymphomania"] < 0: msg '<<$Фригидная>>'
+ stock["nymphomania_revealed"] = 2
+END
+
+IF stock["masohism_revealed"] = 1:
+ IF stock["masohism"] = 2: msg '<<$Мазохистка>>'
+ IF stock["masohism"] = 1: msg '<<$Привычна_к_боли>>'
+ IF stock["masohism"] = -1: msg '<<$Боится_боли>>' 
+ stock["masohism_revealed"] = 2
+END
+ 
+IF stock["exhibitionism_revealed"] = 1:
+ IF stock["exhibitionism"] = 2: msg '<<$Эксгибиционистка>>'
+ IF stock["exhibitionism"] = -1: msg '<<$Стеснительная>>'
+ stock["exhibitionism_revealed"] = 2
+END
+
+IF stock["preversion_revealed"] = 1:
+ IF stock["preversion"] = 2: msg '<<$Извращенка>>'
+ IF stock["preversion"] = -1: msg '<<$Пуристка>>'
+ stock["preversion_revealed"] = 2
+END
+
+IF stock["homosexualism_revealed"] = 1:
+ IF stock["homosexualism"] = 2: msg '<<$Лесбиянка>>'
+ IF stock["homosexualism"] = 1: msg '<<$Бисексуальная>>'
+ IF stock["homosexualism"] = -1: msg '<<$Гомофобка>>'
+ stock["homosexualism_revealed"] = 2
+END
+
+IF stock["abuse_attitude_revealed"] = 1:
+ IF stock["abuse_attitude"] = 2: msg '<<$Пси_мазохистка>>'
+ IF stock["abuse_attitude"] = -1: msg '<<$Истеричка>>'
+ stock["abuse_attitude_revealed"] = 2
+END
+
+IF stock["darkness_attitude_revealed"] = 1:
+ IF stock["darkness_attitude"] = 2: msg '<<$Дитя_тьмы>>'
+ IF stock["darkness_attitude"] = -1: msg '<<$Боится_темноты>>'
+ stock["darkness_attitude_revealed"] = 2
+END
+
+IF stock["blood_attitude_revealed"] = 1:
+ IF stock["blood_attitude"] = 2: msg '<<$Кровожадная>>'
+ IF stock["blood_attitude"] = -1: msg '<<$Боится_крови>>'
+ stock["blood_attitude_revealed"] = 2
+END
+
+IF stock["fire_attitude_revealed"] = 1:
+ IF stock["fire_attitude"] = 2: msg '<<$Пиромания>>'
+ IF stock["fire_attitude"] = -1: msg '<<$Пирофобия>>'
+ stock["fire_attitude_revealed"] = 2
+END
+
+IF stock["water_attitude_revealed"] = 1:
+ IF stock["water_attitude"] = 2: msg '<<$Дитя_воды>>'
+ IF stock["water_attitude"] = -1: msg '<<$Гидрофобия>>'
+ stock["water_attitude_revealed"] = 2
+END
+
+IF stock["vermin_attitude_revealed"] = 1:
+ IF stock["vermin_attitude"] = 2: msg '<<$Арахнофилия>>'
+ IF stock["vermin_attitude"] = -1: msg '<<$Арахнофобия>>'
+ stock["vermin_attitude_revealed"] = 2
+END
+
+IF stock["deprivation_attitude_revealed"] = 1:
+ IF stock["deprivation_attitude"] = 2: msg '<<$Любит_беспомощность>>'
+ IF stock["deprivation_attitude"] = -1: msg '<<$Клаустрофобия>>'
+ stock["deprivation_attitude_revealed"] = 2
+END
+
+IF stock["passion_comfort_revealed"] = 1:
+ IF stock["passion_comfort"] = 1: msg '<<$Ленивая>>'
+ IF stock["passion_comfort"] = -1: msg '<<$Гиперактивная>>'
+ stock["passion_comfort_revealed"] = 2
+END
+
+IF stock["passion_luxury_revealed"] = 1:
+ IF stock["passion_luxury"] = 1: msg '<<$Любит_роскошь>>'
+ IF stock["passion_luxury"] = -1: msg '<<$Аскетичная>>'
+ stock["passion_luxury_revealed"] = 2
+END
+
+IF stock["passion_sweets_revealed"] = 1:
+ IF stock["passion_sweets"] = 1: msg '<<$Сладкоежка>>'
+ IF stock["passion_sweets"] = -1: msg '<<$Не_любит_сладкое>>'
+ stock["passion_sweets_revealed"] = 2
+END
+
+IF stock["passion_fame_revealed"] = 1:
+ IF stock["passion_fame"] = 1: msg '<<$Тщеславная>>'
+ IF stock["passion_fame"] = -1: msg '<<$Хикикомори>>'
+ stock["passion_fame_revealed"] = 2
+END
+
+IF stock["courage_revealed"] = 1:
+ IF stock["courage"] = 2: msg '<<$Отмороженая>>'
+ IF stock["courage"] = 1: msg '<<$Храбрая>>'
+ IF stock["courage"] = -1: msg '<<$Трусиха>>' 
+ stock["courage_revealed"] = 2
+END
+!'
+IF stock["metabolism_revealed"] = 1:
+ IF stock["metabolism"] = 5: msg '<<$Мощный_метаболизм>>'
+ IF stock["metabolism"] = 4: msg '<<$Хороший_метаболизм>>'
+ IF stock["metabolism"] = 2: msg '<<$Ослабленный_метаболизм>>' 
+ IF stock["metabolism"] = 1: msg '<<$Слабый_метаболизм>>' 
+ stock["metabolism_revealed"] = 2
+END'
+
+IF stock["sport_affinity_revealed"] = 1:
+ IF stock["sport_affinity"] = 1: msg '<<$Спортивная>>'
+ IF stock["sport_affinity"] = -1: msg '<<$Апатичная>>'
+ stock["sport_affinity_revealed"] = 2
+END
+
+IF stock["expression_affinity_revealed"] = 1:
+ IF stock["expression_affinity"] > 0: msg '<<$оратор>>'
+ stock["expression_affinity_revealed"] = 2
+END
+
+IF stock["pet_affinity_revealed"] = 1:
+ IF stock["pet_affinity"] > 0: msg '<<$питомец>>'
+ stock["pet_affinity_revealed"] = 2
+END
+
+IF stock["dressage_affinity_revealed"] = 1:
+ IF stock["dressage_affinity"] > 0: msg '<<$Brony>>'
+ stock["dressage_affinity_revealed"] = 2
+END
+
+IF stock["nurse_affinity_revealed"] = 1:
+ IF stock["nurse_affinity"] > 0: msg '<<$медсестра>>'
+ stock["nurse_affinity_revealed"] = 2
+END
+
+IF stock["service_affinity_revealed"] = 1:
+ IF stock["service_affinity"] > 0: msg '<<$горничная>>'
+ stock["service_affinity_revealed"] = 2
+END
+
+IF stock["cook_affinity_revealed"] = 1:
+ IF stock["cook_affinity"] > 0: msg '<<$кухарка>>'
+ stock["cook_affinity_revealed"] = 2
+END
+
+IF stock["gladiatrix_affinity_revealed"] = 1:
+ IF stock["gladiatrix_affinity"] > 0: msg '<<$воительница>>'
+ stock["gladiatrix_affinity_revealed"] = 2
+END
+
+IF stock["enchanter_affinity_revealed"] = 1:
+ IF stock["enchanter_affinity"] > 0: msg '<<$чародейка>>'
+ stock["enchanter_affinity_revealed"] = 2
+END
+
+IF stock["vocal_affinity_revealed"] = 1:
+ IF stock["vocal_affinity"] > 0: msg '<<$певица>>'
+ stock["vocal_affinity_revealed"] = 2
+END
+
+IF stock["music_affinity_revealed"] = 1:
+ IF stock["music_affinity"] > 0: msg '<<$музыкантка>>'
+ stock["music_affinity_revealed"] = 2
+END
+
+IF stock["callisthenics_affinity_revealed"] = 1:
+ IF stock["callisthenics_affinity"] > 0: msg '<<$танцовщица>>'
+ stock["callisthenics_affinity_revealed"] = 2
+END
+
+IF stock["secretary_affinity_revealed"] = 1:
+ IF stock["secretary_affinity"] > 0: msg '<<$секретарша>>'
+ stock["secretary_affinity_revealed"] = 2
+END
+
+!"IF stock["memory_revealed"] = 1:
+ IF stock["memory"] = 1: msg '<<$Эйдетическая_память>>'
+ IF stock["memory"] = -1: msg '<<$Забывчивая>>'
+ stock["memory_revealed"] = 2
+END"
+
+IF stock["meekness_revealed"] = 1:
+ IF stock["meekness"] > 0: msg '<<$Дисциплинированная>>'
+ IF stock["meekness"] < 0: msg '<<$Своенравная>>'
+ stock["meekness_revealed"] = 2
+END
+
+IF stock["selfesteem_revealed"] = 1:
+ IF stock["selfesteem"] > 0: msg '<<$Мания_величия>>'
+ IF stock["selfesteem"] < 0: msg '<<$Комплекс_вины>>'
+ stock["selfesteem_revealed"] = 2
+END
+
+IF stock["compassion_revealed"] = 1:
+ IF stock["compassion"] > 0: msg '<<$Милосердная>>'
+ IF stock["compassion"] < 0: msg '<<$Садистка>>'
+ stock["compassion_revealed"] = 2
+END
+
+!Stock Traits
+$stock_features_list = ''
+stock_sanity = stock["ego"] + stock["temper"] + stock["pride"]
+if stock_sanity < 3: $stock_sanity = '<a style = "color: #cd0000;" href="EXEC: msg $sanity_broken & gt $curloc">Sanity</a>'
+if stock_sanity <= 5 and stock_sanity > 2: $stock_sanity = '<a style = "color: #C71585;" href="EXEC: msg $sanity_low & gt $curloc">Sanity</a>'
+if stock_sanity <= 5: $stock_features_list +='<font color="#cd0000"><<$stock_sanity>></font><BR>'
+IF stock['brand'] = 0: $stock_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not Branded</font></a><BR>'
+IF stock["wounds"] > 0: $stock_features_list += '<font color="#cd0000"><<$stock_wounds[stock["wounds"]]>></font><BR>'
+IF stock["scares"] > 0: $stock_features_list += '<font color="#cd0000"><<$stock_scares[stock["scares"]]>></font><BR>'
+IF stock["bruises"] > 0: $stock_features_list += '<font color="#cd0000"><<$stock_bruises[stock["bruises"]]>></font><BR>'
+IF master_medic >= 4: if stock["starvation"] >= 5: $stock_features_list += '<font color="#cd0000"><<$stock_starvation>></font><BR>'
+IF stock['reabilitation'] > 0: $stock_features_list += '<font color="#cd0000">Recovery</font> [<<stock["reabilitation"]>>]<BR>'
+IF stock_virginity < 2: $stock_features_list += 'Virgin<BR>' 
+IF stock["grace"] > 0: $stock_features_list += '<a href="EXEC: msg $NaturalGrace">Graceful</a><BR>'
+IF stock["grace"] < 0: $stock_features_list += '<font color="#cd0000">Clumsy</font><BR>'
+IF stock["voice"] > 0: $stock_features_list += '<a href="EXEC: msg $CharmingVoice">Charming voice</a><BR>'
+IF stock["voice"] < 0: $stock_features_list += '<font color="#cd0000">Hoarse voice</font><BR>'
+IF stock['arena_level'] > 4 and stock['arena_level'] < 9: $stock_features_list += 'Arena Champion<BR>'
+IF stock['arena_level'] > 8: $stock_features_list += 'Arena Grand Champion<BR>'
+!if stock['fertility'] = -2: $stock_features_list += 'Immature<BR>' 
+IF stock['fertility'] = -1: 
+ if stock["fertility_revealed"] > 0: $stock_features_list += 'Sterile<BR>' 
+END
+IF stock["nymphomania"] > 0: 
+ if stock["nymphomania_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Нимфоманка">Nymphomaniac</a><BR>' 
+END
+IF stock["nymphomania"] < 0: 
+ if stock["nymphomania_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Фригидная"><font color="#cd0000">Frigid</font></a><BR>' 
+ stock['neg_horny'] = 0
+END
+IF stock["masohism"] = 2: 
+ if stock["masohism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Мазохистка">Masochist</a><BR>'
+ stock['neg_pain'] = 0  
+END
+IF stock["masohism"] = 1: 
+ if stock["masohism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Привычна_к_боли">Accustomed to Pain</a><BR>'
+END
+IF stock["masohism"] = -1: 
+ if stock["masohism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Боится_боли"><font color="#cd0000">Afraid of Pain</font></a><BR>' 
+END
+IF stock["exhibitionism"] = 2: 
+ if stock["exhibitionism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Эксгибиционистка">Exhibitionist</a><BR>' 
+ stock['neg_naked'] = 0   
+ stock['neg_shame'] = 0   
+END
+IF stock["exhibitionism"] = -1: 
+ if stock["exhibitionism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Стеснительная"><font color="#cd0000">Shy</font></a><BR>' 
+END
+IF stock["preversion"] = 2: 
+ if stock["preversion_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Извращенка">Pervert</a><BR>' 
+END
+IF stock["preversion"] = -1: 
+ if stock["preversion_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Пуристка"><font color="#cd0000">Purist</font></a><BR>' 
+END
+IF stock["homosexualism"] = 2: 
+ if stock["homosexualism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Лесбиянка">Lesbian</a><BR>'
+END
+IF stock["homosexualism"] = 1: 
+ if stock["homosexualism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Бисексуальная">Bisexual</a><BR>' 
+END
+IF stock["homosexualism"] = -1: 
+ if stock["homosexualism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Гомофобка"><font color="#cd0000">Homophobic</font></a><BR>' 
+END
+IF stock["abuse_attitude"] = 2: 
+ if stock["abuse_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Пси_мазохистка">Psi-Masochist</a><BR>'
+ stock['neg_abuse'] = 0 
+END
+IF stock["abuse_attitude"] = -1: 
+ if stock["abuse_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Истеричка">Hysteric</a><BR>' 
+END
+IF stock["darkness_attitude"] = 2: 
+ if stock["darkness_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Дитя_тьмы">Darkness Child</a><BR>' 
+END
+IF stock["darkness_attitude"] = -1: 
+ if stock["darkness_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Боится_темноты"><font color="#cd0000">Nyctophobia</font></a><BR>' 
+END
+IF stock["blood_attitude"] = 2: 
+ if stock["blood_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Кровожадная">Bloodthirsty</a><BR>' 
+END
+IF stock["blood_attitude"] = -1:
+ if stock["blood_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Боится_крови"><font color="#cd0000">Hemophobia</font></a><BR>' 
+END
+IF stock["fire_attitude"] = 2:
+ if stock["fire_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Пиромания">Pyromania</a><BR>' 
+END
+IF stock["fire_attitude"] = -1: 
+ if stock["fire_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Пирофобия"><font color="#cd0000">Pyrophobia</font></a><BR>' 
+END
+IF stock["water_attitude"] = 2: 
+ if stock["water_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Дитя_воды">Water Child</a><BR>' 
+END
+IF stock["water_attitude"] = -1:
+ if stock["water_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Гидрофобия"><font color="#cd0000">Hydrophobia</font></a><BR>' 
+END
+IF stock["vermin_attitude"] = 2:
+ if stock["vermin_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Арахнофилия">Arachnophilia</a><BR>' 
+END
+IF stock["vermin_attitude"] = -1:
+ if stock["vermin_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Арахнофобия"><font color="#cd0000">Arachnophobia</font></a><BR>'
+END
+IF stock["deprivation_attitude"] = 2:
+ if stock["deprivation_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Любит_беспомощность">Loves Helplessness</a><BR>' 
+END
+IF stock["deprivation_attitude"] = -1:
+ if stock["deprivation_attitude_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Клаустрофобия"><font color="#cd0000">Claustrophobia</font></a><BR>' 
+END
+IF stock["passion_comfort"] = 1:
+ if stock["passion_comfort_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Ленивая">Lazy</a><BR>' 
+END
+IF stock["passion_comfort"] = -1:
+ if stock["passion_comfort_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Гиперактивная"><font color="#cd0000">Hyperactive</font></a><BR>' 
+ stock['pos_well_rested'] = 0  
+END
+IF stock["passion_luxury"] = 1:
+ if stock["passion_luxury_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Любит_роскошь">Loves Luxury</a><BR>' 
+END
+IF stock["passion_luxury"] = -1:
+ if stock["passion_luxury_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Аскетичная"><font color="#cd0000">Ascetic</font></a><BR>' 
+END
+IF stock["passion_sweets"] = 1:
+ if stock["passion_sweets_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Сладкоежка">Sweet-tooth</a><BR>' 
+END
+IF stock["passion_sweets"] = -1:
+ if stock["passion_sweets_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Не_любит_сладкое"><font color="#cd0000">Dislikes Sweets</font></a><BR>' 
+ stock['pos_desert'] = 0   
+END
+IF stock["passion_fame"] = 1:
+ if stock["passion_fame_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Тщеславная">Conceited</a><BR>' 
+END
+IF stock["passion_fame"] = -1:
+ if stock["passion_fame_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Хикикомори"><font color="#cd0000">Hikikomori</font></a><BR>' 
+ stock['pos_prise'] = 0    
+END
+IF stock["courage"] = 2:
+ if stock["courage_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Отмороженая">Moronic</a><BR>'
+ stock['neg_fear'] = 0     
+END
+IF stock["courage"] = 1:
+ if stock["courage_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Храбрая">Brave</a><BR>'
+END
+IF stock["courage"] = -1:
+ if stock["courage_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Трусиха"><font color="#cd0000">Coward</font></a><BR>' 
+END
+!'
+IF stock["metabolism"] = 5:
+ if stock["metabolism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Мощный_метаболизм">Powerful Metabolism</a><BR>' 
+END
+IF stock["metabolism"] = 4:
+ if stock["metabolism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Хороший_метаболизм">Good Metabolism</a><BR>' 
+END
+IF stock["metabolism"] = 2:
+ if stock["metabolism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Ослабленный_метаболизм"><font color="#cd0000">Weakened Metabolism</font></a><BR>' 
+END
+IF stock["metabolism"] = 1:
+ if stock["metabolism_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Слабый_метаболизм"><font color="#cd0000">Weak Metabolism</font></a><BR>' 
+END'
+IF stock["sport_affinity"] = 1:
+ if stock["sport_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Спортивная">Sportive</a><BR>' 
+END
+IF stock["sport_affinity"] = -1:
+ if stock["sport_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Апатичная"><font color="#cd0000">Torpid</font></a><BR>' 
+END
+IF stock["expression_affinity"] > 0:
+ if stock["expression_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $оратор">Orator</a><BR>'
+END
+IF stock["pet_affinity"] > 0: 
+ if stock["pet_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $питомец">Pet Prodigy</a><BR>' 
+END
+IF stock["dressage_affinity"] > 0:
+ if stock["dressage_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Brony">Brony</a><BR>' 
+END
+IF stock["nurse_affinity"] > 0: 
+ if stock["nurse_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $медсестра">Expert Nurse</a><BR>'
+END
+IF stock["service_affinity"] > 0: 
+ if stock["service_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $горничная">Expert Maid</a><BR>'
+END
+IF stock["cook_affinity"] > 0: 
+ if stock["cook_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $кухарка">Gourmet Chef</a><BR>' 
+END
+IF stock["gladiatrix_affinity"] > 0:
+ if stock["gladiatrix_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $воительница">Gladiatrix</a><BR>' 
+END
+IF stock["enchanter_affinity"] > 0:
+ if stock["enchanter_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $чародейка">Enchantress</a><BR>'
+END
+IF stock["vocal_affinity"] > 0:
+ if stock["vocal_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $певица">Singer</a><BR>' 
+END
+IF stock["music_affinity"] > 0:
+ if stock["music_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $музыкантка">Musician</a><BR>' 
+END
+!Added two possible outcomes for the Dancer Affinity - crushboss
+IF stock["callisthenics_affinity"] > 0:
+ IF stock["nymphomania"] > 0 or stock["preversion"] > 0: 
+  if stock["callisthenics_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $танцовщица">Exotic Dancer</a><BR>'
+  else
+  if stock["callisthenics_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $танцовщица">Ballerina</a><BR>'
+ END
+END
+IF stock["secretary_affinity"] > 0: 
+ if stock["secretary_affinity_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $секретарша">Secretary</a><BR>'    
+END
+!"IF stock["memory"] = 1:
+ if stock["memory_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Эйдетическая_память">Eidetic memory</a><BR>' 
+END
+IF stock["memory"] = -1:
+ if stock["memory_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Забывчивая">Forgetful</a><BR>' 
+END"
+IF stock["meekness"] > 0:
+ if stock["meekness_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Дисциплинированная">Disciplined</a><BR>' 
+END
+IF stock["meekness"] < 0:
+ if stock["meekness_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Своенравная"><font color="#cd0000">Wayward</font></a><BR>' 
+END
+IF stock["selfesteem"] > 0:
+ if stock["selfesteem_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Мания_величия">Megalomania</a><BR>'
+END
+IF stock["selfesteem"] < 0:
+ if stock["selfesteem_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Комплекс_вины"><font color="#cd0000">Guilt Complex</font></a><BR>' 
+END
+IF stock["compassion"] > 0:
+ if stock["compassion_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Милосердная">Merciful</a><BR>'
+END
+IF stock["compassion"] < 0:
+ if stock["compassion_revealed"] > 0: $stock_features_list += '<a href="EXEC: msg $Садистка"><font color="#cd0000">Sadist</font></a><BR>' 
+END
+
+--- $stock_traits ---------------------------------
+

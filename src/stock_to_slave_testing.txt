@@ -1,4 +1,7 @@
 # stock_to_slave_testing
+!Stock to Slave Testing Cheat for cheat_h and cheat_j
+!Created by crushboss
+
 !Slave Equipped Armor, Weapons, and Cloth
 $slave["wpn"] = 'катана'
 $slave["scnd"] = ''
@@ -22,13 +25,38 @@ if pet_tentacle > 0 and assistant_state ! 1: stock_tentacle_rule = 1
 !Slave Misc Attributes
 if slave["age"] ! CONST_INT['loli_age']: slave['fertility'] = -1
 slave["fertility_revealed"] = 1
-if slave['arena_level'] < 4: slave['arena_level'] = 4
-if race_win_ratio < 4: race_win_ratio = 4
-slave['pos_slave_winner'] = slave['sensitivity']
-if slave['has_ride_win'] < 1: slave['has_ride_win'] = 1
+!if slave['arena_level'] < 4: slave['arena_level'] = 4
+!if race_win_ratio < 4: race_win_ratio = 4
+!slave['pos_slave_winner'] = slave['sensitivity']
+!if slave['has_ride_win'] < 1: slave['has_ride_win'] = 1
 slave_rate['fame'] += 15
 if cheat_j = 1: slave_rate['fame'] += 25
-!slave['brand'] = 2
+slave["energy"] = 5
+slave["metabolism"] = 5
+slave["arousal"] = 5
+!slave_rate["arousal"] = 200
+!if slave['brand'] ! 4: slave['brand'] = 3
 
+!Slave Conditions
+!slave["ill"] = 0
+slave['fertility'] = 0
+!slave['pregnant'] = 0
+!slave['parasite'] = 0
+!slave["wounds"] = 0
+!slave["bruises"] = 0
+!slave["scares"] = 0
+!slave['issues'] = 0
+!slave["fear"] = 0
+!slave["angst"] = 0
+!slave["spoil"] = 0
+!slave["moral"] = 5
+!virginity = 2
+slave["pet"] = 5
+slave["dressage"] = 5
+
+a = RAND (1,10)
+if a < 6 and slave["age"] ! CONST_INT['loli_age']: slave["gladiatrix_affinity"] = 1
+if a > 5 and slave["age"] = CONST_INT['loli_age']: slave["dressage_affinity"] = 1
+a = 0
 --- stock_to_slave_testing ---------------------------------
 

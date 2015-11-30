@@ -35,7 +35,7 @@ IF $interaction_type = 'byer_invitation':
  END
 END
 
-!interaction type - slave sell simple scheme - Improved logic - crushboss
+!interaction type - slave sell simple scheme
 IF $interaction_type = 'sell_slave_simple':
  gs '$slave_price'
  txt_count = 1
@@ -44,12 +44,18 @@ IF $interaction_type = 'sell_slave_simple':
  charm_demand = RAND (5,charm_demand_max)
  if charm_demand > charm and byer_interested = 1 and no_charm_check = 1: byer_interested = 1
  if charm_demand > charm and byer_interested = 1 and no_charm_check = 0: byer_interested = 0
+ if slave['wounds'] > 0 or slave['ill'] > 0 or slave['parasite'] > 0 or slave['energy'] < 0 or slave['stamina'] < 3: byer_interested = 0
+ if slave['reabilitation'] > 0 or slave['bruises'] > 0 or slave['scares'] > 0 or slave['hygiene'] > 3 or $slave_psy_status = 'broken': byer_interested = 0
+ if slave['pregnant'] > 0 and slave["pregnant_revealed"] > 0: byer_interested = 0
+ 
 ! msg 'Slave Rating: <<rating>>'
+! msg 'Demand Rating: <<demand_rating[$npc_id]>>'
 ! msg 'Slave Charm: <<charm>>'
 ! msg 'Charm Demand: <<charm_demand>>'
 ! msg 'NPC ID: <<slave[$npc_id]>>'
 ! msg 'Buyer Interested:  <<byer_interested>>'
 ! msg 'No Charm check: <<no_charm_check>>'
+
  IF byer_interested = 1:
   npc_progress[$npc_id] = 2
   $text[1] = $buy_quote[$npc_id]
@@ -68,6 +74,7 @@ IF $interaction_type = 'sell_slave_simple':
     if $npc_alignment[$npc_id] = 'korvus' and faction_fame['serpis'] > 2: no_rise = 0
     if noble_status > 0 and faction_fame[$npc_alignment[$npc_id]] = 5: no_rise = 1
     if no_rise = 0: faction_fame[$npc_alignment[$npc_id]] += 1
+    brand_rate += 1
    END
    else
    brand_rate += fixed_brand_rise
@@ -75,7 +82,10 @@ IF $interaction_type = 'sell_slave_simple':
   else
   if charm_demand > charm: $text[1] = $refuse_charm_quote[$npc_id] 
   if slave_specialisation[$interesting_specialisation[$npc_id]] < 1: $text[1] = $refuse_skill_quote[$npc_id]  
-  if demand_rating[$npc_id] > rating: $text[1] = $refuse_level_quote[$npc_id]  
+  if demand_rating[$npc_id] > rating: $text[1] = $refuse_level_quote[$npc_id]
+  if slave['wounds'] > 0 or slave['ill'] > 0 or slave['parasite'] > 0 or slave['energy'] < 0 or slave['stamina'] < 3: $text[1] = $refuse_health_quote[$npc_id]
+  if slave['reabilitation'] > 0 or slave['bruises'] > 0 or slave['scares'] > 0 or slave['hygiene'] > 3 or $slave_psy_status = 'broken': $text[1] = $refuse_health_quote[$npc_id]
+  if slave['pregnant'] > 0 and slave["pregnant_revealed"] > 0: $text[1] = $refuse_pregnant_quote[$npc_id]  
   if slave[$npc_id] = 1: $text[1] = $refuse_again_quote[$npc_id]
   if charm_demand > charm: slave[$npc_id] = 1
  END
@@ -95,6 +105,9 @@ IF $interaction_type = 'sell_slave_house':
  charm_demand = RAND (5,charm_demand_max)
  if charm_demand > charm and byer_interested = 1 and no_charm_check = 1: byer_interested = 1
  if charm_demand > charm and byer_interested = 1 and no_charm_check = 0: byer_interested = 0
+ if slave['wounds'] > 0 or slave['ill'] > 0 or slave['parasite'] > 0 or slave['energy'] < 0 or slave['stamina'] < 3: byer_interested = 0
+ if slave['reabilitation'] > 0 or slave['bruises'] > 0 or slave['scares'] > 0 or slave['hygiene'] > 3 or $slave_psy_status = 'broken': byer_interested = 0
+ if slave['pregnant'] > 0 and slave["pregnant_revealed"] > 0: byer_interested = 0
  IF byer_interested = 1:
   byer_from_house = 1
   gt 'slave_sell'
@@ -102,7 +115,10 @@ IF $interaction_type = 'sell_slave_house':
   if charm_demand > charm: $text[1] = $refuse_charm_quote[$npc_id]
   if slave_specialisation[$interesting_specialisation[$npc_id]] < 1: $text[1] = $refuse_skill_quote[$npc_id] & slave[$npc_id] = 0  
   if demand_rating[$npc_id] > rating: $text[1] = $refuse_level_quote[$npc_id] & slave[$npc_id] = 0
-  if slave[$npc_id] = 1: $text[1] = $refuse_again_quote[$npc_id]
+  if slave['wounds'] > 0 or slave['ill'] > 0 or slave['parasite'] > 0 or slave['energy'] < 0 or slave['stamina'] < 3: $text[1] = $refuse_health_quote[$npc_id] & slave[$npc_id] = 0
+  if slave['reabilitation'] > 0 or slave['bruises'] > 0 or slave['scares'] > 0 or slave['hygiene'] > 3 or $slave_psy_status = 'broken': $text[1] = $refuse_health_quote[$npc_id] & slave[$npc_id] = 0
+  if slave['pregnant'] > 0 and slave["pregnant_revealed"] > 0: $text[1] = $refuse_pregnant_quote[$npc_id] & slave[$npc_id] = 0
+  if slave[$npc_id] = 1: $text[1] = $refuse_again_quote[$npc_id]  
   if charm_demand > charm: slave[$npc_id] = 1
  END
  daycount += 1
@@ -123,15 +139,6 @@ IF $interaction_type = 'slave_sold_house':
     have_discounted = 0
     else
     if brand_reputation <= demand_rating[$npc_id]/2: brand_rate += demand_rating[$npc_id]/2
-   END
-   IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]/2: 
-    no_rise = 0
-    if $npc_alignment[$npc_id] = 'taurus' and faction_fame['kamira'] > 2: no_rise = 0
-    if $npc_alignment[$npc_id] = 'serpis' and faction_fame['korvus'] > 2: no_rise = 0
-    if $npc_alignment[$npc_id] = 'kamira' and faction_fame['taurus'] > 2: no_rise = 0
-    if $npc_alignment[$npc_id] = 'korvus' and faction_fame['serpis'] > 2: no_rise = 0
-    if noble_status > 0 and faction_fame[$npc_alignment[$npc_id]] = 5: no_rise = 1
-    if no_rise = 0: faction_fame[$npc_alignment[$npc_id]] += 1
    END
    IF faction_fame[$npc_alignment[$npc_id]] < demand_rating[$npc_id]/2: 
     no_rise = 0
@@ -186,6 +193,8 @@ IF $interaction_type = 'sell_slave_complex':
   active[$quest[5]] = 0
   if noble_status = 0 and demand_rating[$npc_id] = 10: noble_status = 1
   else
+  if sl_txt = 105: $text[1] = $refuse_pregnant_quote[$npc_id]
+  if sl_txt = 104: $text[1] = $refuse_health_quote[$npc_id]
   if sl_txt = 103: $text[1] = $refuse_charm_quote[$npc_id]  
   if sl_txt = 102: $text[1] = $refuse_skill_quote[$npc_id]  
   if sl_txt = 101: $text[1] = $refuse_level_quote[$npc_id]  
@@ -306,7 +315,8 @@ IF $interaction_type = 'rental_sex':
  gs 'new_estate'
  $place = 'bedroom'
  $return_lock  = 'menu_form'  
- $special_action[3] = {npc = 0} 
+ $special_action[3] = {npc = 0}
+ if (custom_game = 1 or story_mode = 1) and master_excitement = 0: master_excitement = RAND (0,5)
  IF master_excitement > 0:
   txt_count = 6
   $special_image[3] = 'girls\sex\bj_general.gif'

@@ -1,5 +1,6 @@
 # hero_customization
 get_initial_slave = 1
+story_mode = 1
 *p '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
 *p '<div id = "center_text_column_4"> <center><b>SELECT YOUR CHARACTER</center></b></div>'
 

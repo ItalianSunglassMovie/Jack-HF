@@ -168,7 +168,16 @@ if sbros = 1:
 END
 
 IF city_form ! 1000 :
- *p '<div id = "back_home"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-left" tooltip-data="Go home" href = "EXEC: menu_form = 0 & city_form = 0 & gt ''menu_form''"><img src="content\pic\buttons\home_button.png"></a></div>'
+ *p '<div id = "back_home"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-left" tooltip-data="Go home" href = "EXEC: menu_form = 0 & city_form = 0 & gs ''$newloc'' & gt ''menu_form''"><img src="content\pic\buttons\home_button.png"></a></div>'
+END
+
+!Travel buttons added to the city menu - crushboss
+IF city_form ! 1000 and menu_form ! 2000 and menu_form ! 2020 and menu_form ! 2022 and sex_num ! 100 and exam_in_progress ! 1:
+ $quick_move_action = "show"
+ $slave_assistant_management = "no"
+ gs 'sjm_UI_UIadds'
+ else
+ $quick_move_action = "none"
 END
 
 --- city_screen ---------------------------------

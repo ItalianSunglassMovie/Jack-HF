@@ -1,7 +1,5 @@
 # sjm_UI_UIadds_buystethoscope
-if inventory['stethoscope'] < 1:
-	inventory['stethoscope'] = 0
-end
+if inventory['stethoscope'] < 1: inventory['stethoscope'] = 0
 inventory['stethoscope'] += 1
 sparks -= 100
 play 'content\snd\kkm.mp3', sound_volume

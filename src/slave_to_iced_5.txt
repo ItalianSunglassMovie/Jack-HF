@@ -1,5 +1,7 @@
 # slave_to_iced_5
-!move slave to a home cryo cell with replacement
+!move slave to a cryo cell with replacement
+tattoo_brand = 0
+
 temp = slave_state
 slave_state = iced_5_state
 iced_5_state = temp
@@ -14,8 +16,8 @@ $iced_5_type = $temp
 
 $temp_name = $slave_name
 $slave_name = $iced_5_name
-$iced_5_name = $temp_name 
-v_balls_rule = 0
+$iced_5_name = $temp_name
+
 rules_broken = 0
 
 killvar 'temp'
@@ -72,6 +74,7 @@ $temp_family_description = $slave_family_description
 $temp_occupation_description = $slave_occupation_description
 $temp_psy_basic = $slave_psy_basic 
 temp_virginity = virginity
+$temp_ava = $slave_ava
 
 $slave_psy_basic = $iced_5_psy_basic
 $slave_world_description = $iced_5_world_description
@@ -79,6 +82,7 @@ $slave_family_description = $iced_5_family_description
 $slave_occupation_description = $iced_5_occupation_description
 $slave_psy_basic = $iced_5_psy_basic 
 virginity = iced_5_virginity
+$slave_ava = $iced_5_ava
 
 $iced_5_psy_basic = $temp_psy_basic
 $iced_5_world_description = $temp_world_description
@@ -86,6 +90,7 @@ $iced_5_family_description = $temp_family_description
 $iced_5_occupation_description = $temp_occupation_description
 $iced_5_psy_basic = $temp_psy_basic 
 iced_5_virginity = temp_virginity
+$iced_5_ava = $temp_ava
 
 tempo["mood"] = slave_prev["mood"]
 tempo["arousal"] = slave_prev["mood"]
@@ -115,89 +120,101 @@ death_treat = death_treat_iced_5
 death_treat_iced_5 = tmp
 
 temp = slave_sleep_condition
-slave_sleep_condition = slave_sleep_condition_iced_5
-slave_sleep_condition_iced_5 = temp
+slave_sleep_condition = iced_5_slave_sleep_condition
+iced_5_slave_sleep_condition = temp
 
 temp = slave_food_type
-slave_food_type = slave_food_type_iced_5
-slave_food_type_iced_5 = temp
+slave_food_type = iced_5_slave_food_type
+iced_5_slave_food_type = temp
 
 temp = slave_eats_remains
-slave_eats_remains = slave_eats_remains_iced_5
-slave_eats_remains_iced_5 = temp
+slave_eats_remains = iced_5_slave_eats_remains
+iced_5_slave_eats_remains = temp
 
 temp = slave_ration
-slave_ration = slave_ration_iced_5
-slave_ration_iced_5 = temp
+slave_ration = iced_5_slave_ration
+iced_5_slave_ration = temp
 
 temp = slave_food_portion
-slave_food_portion = slave_food_portion_iced_5
-slave_food_portion_iced_5 = temp
+slave_food_portion = iced_5_slave_food_portion
+iced_5_slave_food_portion = temp
 
 temp = vitamin
-vitamin = vitamin_iced_5
-vitamin_iced_5 = temp
+vitamin = iced_5_vitamin
+iced_5_vitamin = temp
 
 temp = silence_rule
-silence_rule = silence_rule_iced_5
-silence_rule_iced_5 = temp
+silence_rule = iced_5_silence_rule
+iced_5_silence_rule = temp
 
 temp = master_rule
-master_rule = master_rule_iced_5
-master_rule_iced_5 = temp
+master_rule = iced_5_master_rule
+iced_5_master_rule = temp
 
 temp = orgasm_prohibited
-orgasm_prohibited = orgasm_prohibited_iced_5
-orgasm_prohibited_iced_5 = temp
+orgasm_prohibited = iced_5_orgasm_prohibited
+iced_5_orgasm_prohibited = temp
 
 temp = shit_prohibited
-shit_prohibited = shit_prohibited_iced_5
-shit_prohibited_iced_5 = temp
+shit_prohibited = iced_5_shit_prohibited
+iced_5_shit_prohibited = temp
 
 temp = pet_rule
-pet_rule = pet_rule_iced_5
-pet_rule_iced_5 = temp
+pet_rule = iced_5_pet_rule
+iced_5_pet_rule = temp
 
 temp = blowjob_rule
-blowjob_rule = blowjob_rule_iced_5
-blowjob_rule_iced_5 = temp
+blowjob_rule = iced_5_blowjob_rule
+iced_5_blowjob_rule = temp
 
 temp = pissuar_rule
-pissuar_rule = pissuar_rule_iced_5
-pissuar_rule_iced_5 = temp
+pissuar_rule = iced_5_pissuar_rule
+iced_5_pissuar_rule = temp
 
 temp = toilet_rule
-toilet_rule = toilet_rule_iced_5
-toilet_rule_iced_5 = temp
+toilet_rule = iced_5_toilet_rule
+iced_5_toilet_rule = temp
 
 temp = slave_cleans_rule
-slave_cleans_rule = slave_cleans_rule_iced_5
-slave_cleans_rule_iced_5 = temp
+slave_cleans_rule = iced_5_slave_cleans_rule
+iced_5_slave_cleans_rule = temp
 
 temp = slave_cooks_rule
-slave_cooks_rule = slave_cooks_rule_iced_5
-slave_cooks_rule_iced_5 = temp
+slave_cooks_rule = iced_5_slave_cooks_rule
+iced_5_slave_cooks_rule = temp
 
 temp = slave_washes_rule
-slave_washes_rule = slave_washes_rule_iced_5
-slave_washes_rule_iced_5 = temp
+slave_washes_rule = iced_5_slave_washes_rule
+iced_5_slave_washes_rule = temp
 
 temp = slave_tentacle_rule
-slave_tentacle_rule = slave_tentacle_rule_iced_5
-slave_tentacle_rule_iced_5 = temp
+slave_tentacle_rule = iced_5_slave_tentacle_rule
+iced_5_slave_tentacle_rule = temp
 
 temp = v_balls_rule
-v_balls_rule = v_balls_rule_iced_5
-v_balls_rule_iced_5 = temp
+v_balls_rule = iced_5_v_balls_rule
+iced_5_v_balls_rule = temp
 
 temp = rule_masturbation
-rule_masturbation = rule_masturbation_iced_5
-rule_masturbation_iced_5 = temp
+rule_masturbation = iced_5_rule_masturbation
+iced_5_rule_masturbation = temp
+
+temp = force_rules
+force_rules = iced_5_force_rules
+iced_5_force_rules = temp
 
 gs '#txt'
 gs '#txt_2'
 gs '$newloc'
-sp_txt = 2
-GT 'shop_general'
+
+IF iced_5_state > 0: cryonum = 5
+
+IF $place = "stasis_cell":
+ GT 'menu_form'
+ else
+ sp_txt = 2
+ GT 'shop_general'
+END
+
 --- slave_to_iced_5 ---------------------------------
 

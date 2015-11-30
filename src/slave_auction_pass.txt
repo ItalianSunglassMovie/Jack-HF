@@ -60,7 +60,7 @@ END
 IF haggling_stage = 0: 
  stock_sold += 1
  cur_stock_price = stock_base_price
- rise_stock_price = stock_base_price 
+ rise_stock_price = stock_base_price
  haggling_stage = 1
  else
  rise_stock_price = cur_stock_price + 5

@@ -10,7 +10,7 @@ MAINDESC_Y = 670
 MAINDESC_W = 900
 MAINDESC_H = 95
 
-'<center><a href=1><H2><u>Yes, I am adult and I want to continue</u></H2></a>'
+'<center><a href=1><H2><u>Yes, I am an adult and I want to continue</u></H2></a>'
 '<a href=2><H2><u>Exit immediately</u></H2></a></center>'
 
 act '1 agree': warning_pass = 1 & gt 'main_menu'

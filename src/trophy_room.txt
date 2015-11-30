@@ -1,0 +1,63 @@
+# trophy_room
+!Draws the Trophies on the screen - crushboss
+*p '<div id = "trophy_title"><center>Trophy Room</center></div>'
+
+!Row 1
+if trophy_ogre = 1: *p '<div id = "trophy_room_ogre"><img src="content\pic\mob\Ogre_ava.jpg">
+<center>Ogre</center></div>'
+if trophy_warg = 1: *p '<div id = "trophy_room_warg"><img src="content\pic\mob\warg_ava.jpg">
+<center>Warg</center></div>'
+if trophy_werewolf = 1: *p '<div id = "trophy_room_werewolf"><img src="content\pic\mob\werewolf_ava.jpg">
+<center>Werewolf</center></div>'
+if trophy_hugefiend = 1: *p '<div id = "trophy_room_hugefiend"><img src="content\pic\mob\spawn_ava.jpg">
+<center>Huge Fiend</center></div>'
+if trophy_blackmedic = 1: *p '<div id = "trophy_room_blackmedic"><img src="content\pic\mob\medic_ava.jpg">
+<center>Black Medic</center></div>'
+if trophy_maturefiend = 1: *p '<div id = "trophy_room_maturefiend"><img src="content\pic\mob\spawn_ava.jpg">
+<center>Mature Fiend</center></div>'
+
+!Row 2
+if trophy_vampire = 1: *p '<div id = "trophy_room_vampire"><img src="content\pic\mob\vampire_ava.jpg">
+<center>Vampire</center></div>'
+if trophy_lich = 1: *p '<div id = "trophy_room_lich"><img src="content\pic\mob\lich_ava.jpg">
+<center>Lich</center></div>'
+if trophy_beastmen = 1: *p '<div id = "trophy_room_beastmen"><img src="content\pic\mob\goathead_ava.jpg">
+<center>Beastmen</center></div>'
+if trophy_paladin = 1: *p '<div id = "trophy_room_paladin"><img src="content\pic\mob\paladin_ava.jpg">
+<center>Paladin</center></div>'
+if trophy_orc = 1: *p '<div id = "trophy_room_orc"><img src="content\pic\mob\orc_ava.jpg">
+<center>Orc</center></div>'
+if trophy_youngfiend = 1: *p '<div id = "trophy_room_youngfiend"><img src="content\pic\mob\spawn_ava.jpg">
+<center>Young Fiend</center></div>'
+
+!Row 3
+if trophy_scum = 1: *p '<div id = "trophy_room_scum"><img src="content\pic\mob\canibal_ava.jpg">
+<center>Scum</center></div>'
+if trophy_goblins = 1: *p '<div id = "trophy_room_goblin"><img src="content\pic\mob\goblin_ava.jpg">
+<center>Goblins</center></div>'
+if trophy_corvus = 1: *p '<div id = "trophy_room_corvus"><img src="content\pic\mob\gladiator_champion_corvus_ava.jpg">
+<center>Corvus Champ</center></div>'
+if trophy_camira = 1: *p '<div id = "trophy_room_camira"><img src="content\pic\mob\gladiator_champion_kamira_ava.jpg">
+<center>Camira Champ</center></div>'
+if trophy_serpis = 1: *p '<div id = "trophy_room_serpis"><img src="content\pic\mob\gladiator_champion_sepris_ava.jpg">
+<center>Serpis Champ</center></div>'
+if trophy_taurus = 1: *p '<div id = "trophy_room_taurus"><img src="content\pic\mob\gladiator_champion_taurus_ava.jpg">
+<center>Taurus Champ</center></div>'
+
+!Row 4
+if trophy_vatican = 1: *p '<div id = "trophy_room_vatican"><img src="content\pic\mob\gladiator_champion_vatican_ava.jpg">
+<center>Vatican Champ</center></div>'
+if trophy_absolute = 1: *p '<div id = "trophy_room_absolute"><img src="content\pic\mob\gladiator_champion_absolute_ava.jpg">
+<center>Absolute Champ</center></div>'
+if trophy_slaves = 1: *p '<div id = "trophy_room_slaves"><img src="content\pic\mob\gladiator_prisoners_ava.jpg">
+<center>Arena Slaves</center></div>'
+if trophy_arenafiend = 1: *p '<div id = "trophy_room_arenafiend"><img src="content\pic\mob\spawn_ava.jpg">
+<center>Arena Fiend</center></div>'
+if trophy_racechampion = 1: *p '<div id = "trophy_room_racechampion"><img src="content\pic\mob\chariot_race_champion.jpg">
+<center>Race Champ</center></div>'
+if trophy_racegrandchampion = 1: *p '<div id = "trophy_room_racegrandchampion"><img src="content\pic\mob\chariot_race_grand_champion.jpg">
+<center>Race Grand Champ</center></div>'
+
+
+--- trophy_room ---------------------------------
+

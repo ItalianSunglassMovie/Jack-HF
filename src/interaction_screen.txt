@@ -1,35 +1,33 @@
 # interaction_screen
 GS '_layout'
+IF $interaction_type = 'self_sex_lesson_special':
+ IF $special_action[txt] ! '':
+  dynamic $special_action[txt]
+ END
+END
+
 npc = 0
 
 *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
 *p '<div id = "text"><<$text[txt]>></div>'
 
-IF $interaction_type = 'talk':
-npc = 1
-$npc_id = '<<$slave_name>>'
-! if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
-if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
-END
-
-IF $interaction_type = 'talk_assistant':
- npc = 1
- $npc_id = 'ваша_ассистентка'
- IF nsfw = 0:
-  if assistant['image_mode'] = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>'
-  if assistant['image_mode'] = 1: *p '<div id = "bg"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>'
-  if assistant['image_mode'] = 2: *p '<div id = "bg"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>'
-  if assistant['image_mode'] = 3: *p '<div id = "bg"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>'  
- END
-END
-
-
 IF $interaction_type = 'special':
  if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
+
+IF $interaction_type = 'self_sex_lesson_special':
+ $npc_id = '<<$slave_name>>'
+ IF txt = 1 or txt = 5: npc = 1
+  else
+  npc = 0
+ END
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
 IF $interaction_type = 'special_talk':
  npc = 1
 END
+
 IF interaction = 5416 or interaction = 5418 or interaction = menu_threesome or interaction = menu_threesome_noassistant:
  if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$lesbian[slave_type]>>.gif"></div>'
 END
@@ -75,8 +73,9 @@ END
 IF $interaction_type = 'torture':
  if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
- 
-IF $interaction_type = 'self_sex_lesson': 
+
+!Displays the slave''s fullimage on the first screen during sex training - not wanted by the community - crushboss 
+!IF $interaction_type = 'self_sex_lesson':'
  IF nsfw = 0:
   IF txt = 1:
    *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
@@ -84,30 +83,92 @@ IF $interaction_type = 'self_sex_lesson':
    *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
   END
  END
+END'
+
+IF $interaction_type = 'self_sex_lesson':
+ IF nsfw = 0:
+    *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ END
 END
 
-if npc = 0:
+IF npc = 0 and $interaction_type ! 'self_sex_lesson_special':
  $info_bar = ''
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div><<$place_location[$place]>>
 
  Information for consideration:
  </center></div>'
  *p '<div id = "side_panel_text">  <<$place_info[$place]>>
-</div>'  
- else
+</div>'
+END
+  
+IF npc = 1 and $interaction_type ! 'self_sex_lesson_special':
  $info_bar = '' 
- if nsfw = 0:*p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
  *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
 
 Information for consideration:
 </center></div>'
- *p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+END
 
- <<$npc_info[$npc_id]>>
-</div>'
+IF npc = 1 and $interaction_type = 'self_sex_lesson_special':
+ $info_bar = ''
+ *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+ *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
+
+Information for consideration:
+</center></div>'
+END
+
+IF npc = 0 and $interaction_type = 'self_sex_lesson_special':
+ $info_bar = ''
+ *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ *p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div><<$place_location[$place]>>
+
+ Information for consideration:
+ </center></div>'
+ *p '<div id = "side_panel_text">  <<$place_info[$place]>>
+</div>'  
+END
+
+IF $interaction_type = 'talk':
+ npc = 1
+ $npc_id = '<<$slave_name>>'
+ $place = 'study'
+ $special_bg = $study
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+! if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
+END
+
+IF $interaction_type = 'talk_assistant':
+ npc = 1
+ $npc_id = 'ваша_ассистентка'
+ IF nsfw = 0:
+  if assistant['image_mode'] = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>'
+  if assistant['image_mode'] = 1: *p '<div id = "bg"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>'
+  if assistant['image_mode'] = 2: *p '<div id = "bg"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>'
+  if assistant['image_mode'] = 3: *p '<div id = "bg"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>'  
+ END
 END
 
 *p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+
+IF $interaction_type = 'self_sex_lesson_special':
+ IF $special_image[txt] ! '':
+  if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_image[txt]>>"></div>'
+ END
+ IF $special_image_full[txt] ! '':
+  if nsfw = 0: *p '<div id = "bg"><img src="<<$special_image_full[txt]>>"></div>'
+ END
+END
+
+!Not needed - crushboss
+!'IF (res < 0 or sin > 0) and $interaction_type ! 'torture' and $interaction_type ! 'present_torture' and $interaction_type ! 'prisoner_torture' and $interaction_type ! '':
+ npc = 1
+ $npc_id = '<<$slave_name>>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
+! if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+END'
 
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 

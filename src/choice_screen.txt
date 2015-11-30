@@ -1,5 +1,6 @@
 # choice_screen
 !yes/no choice screen
+gs '#var_base'
 gs '$slave_price_stock'
 gs '_layout'
 
@@ -54,13 +55,12 @@ Information for consideration:
 END
 
 gs '$addon', 'info_box'
-gs '$slave_price_stock'
 
 IF npc = 9999:
  *p '<div id = "interaction_stat_bar">
 Name: <<$stock_name>>
 Age: &nbsp;<<$slave_age_name[stock["age"]]>>
-Rank: &nbsp;<a href="EXEC: msg $rating_help"><<$rating[rating]>></a> &nbsp;&nbsp;Key: &nbsp;&nbsp;<a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1"><img src="content/pic/chart.png"></a><br> 
+Rank: &nbsp;<a href="EXEC: msg $stock_rating_help"><<$stock_rating[stock_rating]>></a> &nbsp;&nbsp;Key: &nbsp;&nbsp;<a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1"><img src="content/pic/chart.png"></a><br> 
 <u>ATTRIBUTES</u>
 <a href="EXEC: msg $красота_справка & msg $красота_справка_2"><img src="<<$info_box[stock["beauty"]]>>"></a><a href="EXEC:$info_text = $красота_совет & gt $curloc">&nbsp;<<$beauty[stock["beauty"]]>></a>'
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'stamina')
@@ -76,7 +76,8 @@ $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'ego')
 $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
 *nl '<a href="EXEC: msg $гордыня_справка & msg $гордыня_справка_2"><img src="<<$info_box_p[stock["pride"]]>>"></a> <a style="text-decoration: none;" class="tooltip-right" tooltip-data="<<$tooltip_text>>" href="EXEC: $info_text = $гордыня_совет & gt $curloc">&nbsp;<<$pride[stock["pride"]]>></a>'
 *nl '<a href="EXEC: msg $экзотичность_справка & msg $экзотичность_справка_2"><img src="<<$info_box[stock["exotic"]]>>"></a> <a href="EXEC: $info_text = $экзотичность_совет & gt $curloc">&nbsp;<<$exotic[stock["exotic"]]>></a>'
-*nl '<a href="EXEC: msg $жыр_справка & msg $жыр_справка_2"><img src="<<$info_box_f[stock["fat"]]>>"></a> <a href="EXEC: $info_text = $жыр_совет & gt $curloc">&nbsp;<<$fat[stock["fat"]]>></a><br>
+*nl '<a href="EXEC: msg $жыр_справка & msg $жыр_справка_2"><img src="<<$info_box_f[stock["fat"]]>>"></a> <a href="EXEC: $info_text = $жыр_совет & gt $curloc">&nbsp;<<$fat[stock["fat"]]>></a>'
+*nl '<a href="EXEC: msg $слава_справка & msg $слава_справка_2"><img src="<<$info_box[stock["fame"]]>>"></a> <a href="EXEC: $info_text = $слава_совет & gt $curloc">&nbsp;<<$girl_fame[stock["fame"]]>></a><br>
 <u>TRAITS</u>
 <<$stock_features_list>>
 </div>'
@@ -89,8 +90,8 @@ END
 
 if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
 
-
 *p {<div id = "approve"><a href = 'EXEC: dynamic $yes'><img src="content\pic\buttons\approve.png"></a></div>}
 *p {<div id = "deny"><a href = 'EXEC: dynamic $no'><img src="content\pic\buttons\deny.png"></a></div>}
+
 --- choice_screen ---------------------------------
 

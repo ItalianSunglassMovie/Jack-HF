@@ -1,39 +1,21 @@
 # $gladiator_fight_start
 !START OF THE GLADIATRIX FIGHT
+!Overhauled by crushboss
+
 $fight_return = 'Start'
 arena_mode = 1
 
 base_str = slave['stamina'] + slave["gladiatrix_affinity"]
-if slave['age'] = CONST_INT['loli_age']: base_str = base_str/2
+if slave['age'] = CONST_INT['loli_age']: base_str = (base_str/2) + slave["gladiatrix_affinity"]
+if slave['age'] = CONST_INT['milf_age']: base_str += 1
 base_flagelation = slave['gladiatrix'] + slave["gladiatrix_affinity"]
 сила = slave['gladiatrix'] + slave["gladiatrix_affinity"]
 ловкость = slave['gladiatrix'] + slave["gladiatrix_affinity"]
 восприятие = slave['gladiatrix'] + slave["gladiatrix_affinity"]
 if slave["gladiatrix_affinity_revealed"] = 0: slave["gladiatrix_affinity_revealed"] = 1
 
-!reset vars
-поверженные_враги = 0
-killvar '$состояние'
-
-killvar 'слабость'
-killvar 'скованность'
-killvar 'боль'
-killvar 'шаткость'
-killvar 'ошеломление'
-killvar 'рассеянность'
-killvar 'бешенство' 
-killvar 'разгон'
-killvar 'меткость'
-killvar 'адреналин'
-killvar 'верткость'
-killvar 'внимание'
-
-killvar 'суперудар'
-killvar 'наложение'
-killvar '$боевая_обстановка'
-killvar '$действия_игрока'
-killvar '$действия_врага'
-killvar '$суперудар'  
+!reset vars - added lots of variables that were not being cleared and were causing bugs - crushboss
+gs '$combat_variable_reset'
 
 суперудар_сделан[1] = IIF(slave['gladiatrix'] > 2, 0, 1)
 
@@ -47,23 +29,27 @@ gs '#суперудары'
 gs '#боевые_предметы'
 gs '#dynamic'
 
-!$combatant_ava = '<<$slave["ava_clear"]>>.jpg'
-!if $combatant_ava = '' or $combatant_ava = '0': $combatant_ava = '<<$slave_ava>>.jpg'
+!For some reason I have to set this twice for it to work everytime - crushboss
+!Fixes slave and enemy portraits in battle - crushboss
 $combatant_ava = '<<$slave_ava>>.jpg'
 $combatant_ava = '<<$slave_ava>>.jpg'
-!msg 'Let the fight begin!
-  <<$combatant_ava>>'
 $combatant_name = $slave_name 
 $броня = $armor[$g_type]
 $оружие = $style_wpn[$g_type]
 $вторичный = $style_freehand[$g_type]
 
+!Set base combat attributes and results - fixed and improved - crushboss
 макс_здоровье_игрока = slave["stamina"] * 10 - slave_rate['wounds']
+if slave["gladiatrix_affinity"] > 0: макс_здоровье_игрока = slave["stamina"]*10
+if slave['age'] = CONST_INT['loli_age']: макс_здоровье_игрока = макс_здоровье_игрока/2
+if slave['age'] = CONST_INT['milf_age']: макс_здоровье_игрока += slave["stamina"]*2
 if макс_здоровье_игрока < 1: макс_здоровье_игрока = 1
 здоровье_игрока = макс_здоровье_игрока
 макс_выносливость_игрока = 50 + (slave["energy"]*5)
+if slave["gladiatrix_affinity"] > 0: макс_выносливость_игрока = 75 + (slave["energy"]*5)
 выносливость_игрока = макс_выносливость_игрока
 норм_дух_игрока = slave["ego"]*10
+if slave["gladiatrix_affinity"] > 0: норм_дух_игрока = slave["ego"]*20
 дух_игрока = норм_дух_игрока
 сила_передышки = 10 
 slave["calories"] -= 2
@@ -77,7 +63,7 @@ dynamic $броня_эффект[$броня]
 i = 0
 :loop
 IF i < количество_врагов:
- i+=1
+ i += 1
  $имя_врага[i] = $название_моба[$враг[i]]
  $склонение_врага[i] = $склонение_моба[$враг[i]]
  $класс_врага[i] = $класс_моба[$враг[i]]

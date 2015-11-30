@@ -1,0 +1,51 @@
+# trophy_room_screen
+!Trophy Room - Created by crushboss
+
+!Reset vars
+trophy_rand = 0
+toggle_trophy = 0
+trophy_won_fog = 0
+trophy_won_arena = 0
+trophy_won_count = 0
+
+gs 'main_layout'
+gs '#txt'
+gs '#var_base'
+
+$backimage = 'content/pic/bg/trophy/bg_trophy.jpg'
+$trophyimage = 'content\pic\bg\trophy\'
+
+if toggle_trophy = 0: gs 'random_bg_trophy'
+if toggle_trophy = 0: gs 'trophy_room'
+
+trophy_won_fog = trophy_ogre + trophy_warg + trophy_werewolf + trophy_hugefiend + trophy_blackmedic + trophy_maturefiend + trophy_vampire + trophy_lich + trophy_beastmen + trophy_paladin + trophy_orc + trophy_youngfiend + trophy_scum + trophy_goblins
+trophy_won_arena = trophy_corvus + trophy_camira + trophy_serpis + trophy_taurus + trophy_vatican + trophy_absolute + trophy_slaves + trophy_arenafiend
+trophy_won_count = trophy_won_fog + trophy_won_arena
+
+*p '<div id = "trophy_right_column"><center><img src = "<<$master_ava_color>>">
+<<$master_name>></center></div>'
+
+*p '<div id = "trophy_right_column_mid">
+&nbsp&nbsp Trophies - Total:&nbsp&nbsp 22
+&nbsp&nbsp Trophies - Fogs:&nbsp&nbsp&nbsp 14
+&nbsp&nbsp Trophies - Arena:&nbsp&nbsp&nbsp 8<br>
+Trophies Won - Total:&nbsp <<trophy_won_count>>
+Trophies Won - Fogs:&nbsp&nbsp <<trophy_won_fog>>
+Trophies Won - Arena:&nbsp&nbsp <<trophy_won_arena>>
+</div>'
+
+*p '<div id = "trophy_right_column_trophy"><center><img src="content\pic\bg\trophy\trophy.gif"></center></div>'
+
+*p {<div id = "next_button_trophy"><a href = 'EXEC: gs "next_bg_trophy"'><img src = "content\pic\buttons\thumb_up_trophy.gif"></a></div>}
+*p {<div id = "back_button_trophy"><a href = 'EXEC: gs "back_bg_trophy"'><img src = "content\pic\buttons\thumb_down_trophy.gif"></a></div>}
+*p {<div id = "random_button_trophy"><a href = 'EXEC: gs "random_bg_trophy"'><img src = "content\pic\buttons\hourglass.gif"></a></div>}
+
+IF toggle_trophy = 0:
+ *p {<div id = "toggle_button_trophy"><a href = 'EXEC: gs "toggle_trophy"'><img src = "content\pic\buttons\dual_active_trophy.gif"></a></div>}
+ else
+ *p {<div id = "toggle_button_trophy"><a href = 'EXEC: gs "toggle_trophy"'><img src = "content\pic\buttons\dual_used_trophy.gif"></a></div>}
+END
+
+*p {<div id = "close_button_trophy"><a href = 'EXEC: gt "menu_form"'><img src = "content\pic\buttons\approve_small.png"></a></div>}
+--- trophy_room_screen ---------------------------------
+

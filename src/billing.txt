@@ -49,7 +49,7 @@ IF assistant_account_rule = 1:
 END
 
 IF slave_account_rule = 1:
- slave_rate["intellect"] += 3
+ slave_rate["intellect"] += 5
  slave_rate["secretary"] += 15
  account_skill = slave["secretary"] + slave["intellect"]
  if slave["obedience"] < 0: account_skill += slave["obedience"]

@@ -90,10 +90,6 @@ boost_up['master_artdirector'] = 1
 master_mood['pos_master_cloth'] = 0
 master_mood['neg_master_cloth'] = 0
 }
-$item_property_off['formal_suit'] = {
-    formal_suite_on = 0
-    boost_up['master_artdirector'] -= 1
-}
 
 !["aketon"]
 dynamic $ib_cycle, 'aketon', 'Aketon', 10, '   Price: 10 sparks. <br>   Quilted armor jacket, light enough to be used as everyday wear. Great outfit for a warrior.', 'scene\item\item_Aketon'
@@ -105,10 +101,6 @@ aketon_on = 1
 boost_up['master_fighter'] = 1
 master_mood['pos_master_cloth'] = 0
 master_mood['neg_master_cloth'] = 0
-}
-$item_property_off['aketon'] = {
-    aketon_on = 0
-    boost_up['master_fighter'] -= 1
 }
 
 !["livery"]
@@ -122,10 +114,6 @@ boost_up['master_butler'] = 1
 master_mood['pos_master_cloth'] = 0
 master_mood['neg_master_cloth'] = 0
 }
-$item_property_off['livery'] = {
-    livery_on = 0
-    boost_up['master_butler'] -= 1
-}
 
 !["medic_robes"]
 dynamic $ib_cycle, 'medic_robes', 'Medical Gown', 10, '   Price: 10 sparks. <br>   Very comfortable and practical clothing for the healthcare worker. Immediately makes you a qualified doctor - even if only due to self-hypnosis.', 'scene\item\item_Medical_gown'
@@ -137,10 +125,6 @@ medic_robes_on = 1
 boost_up['master_medic'] = 1
 master_mood['pos_master_cloth'] = 0
 master_mood['neg_master_cloth'] = 0
-}
-$item_property_off['medic_robes'] = {
-    medic_robes_on = 0
-    boost_up['master_medic'] -= 1
 }
 
 !["wizard_robes"]
@@ -154,10 +138,6 @@ boost_up['master_mage'] = 1
 master_mood['pos_master_cloth'] = 0
 master_mood['neg_master_cloth'] = 0
 }
-$item_property_off['wizard_robes'] = {
-    wizard_robes_on = 0
-    boost_up['master_mage'] -= 1
-}
 
 !item description in the inventory, probably temporarily, needs rework
 $man_rugs_help = '   These clothes are worn out and out of fashion. They do not meet any of your goals. It would be better to get some new clothes.'
@@ -168,7 +148,7 @@ $fancy_suit_help = '   This heavy clothing is richly decorated with precious ins
 
 $regal_suit_help = '   Keeping track of Eternal Rome fashion is almost impossible, but many are trying. In any case, this outfit is a perfect compromise between luxury and convenience.'
 
-$formal_suit_help = '   Very comfortable and practical clothing for the healthcare worker. Immediately makes you a qualified doctor - even if only due to self-hypnosis.'
+$formal_suit_help = '   Very formal clothing. Looks old-fashioned and does not look very charming, but at least you will be taken seriously. It is perfect for the impresario or for an entertainer.'
 
 $aketon_help = '   Quilted armor jacket, light enough to be used as everyday wear. Great outfit for a warrior.'
 
@@ -357,7 +337,7 @@ $item_property["laced_underwear"] = {
     end
     slave_rate["style"] += 1
     learn_bonus["sex"] += 1
-    daily_bonus["arousal"] += 1
+    daily_bonus["arousal"] += 2
     slave["st_plus"] += 1
 }
 
@@ -400,8 +380,8 @@ $item_property["bellydance"] = {
     end
     slave_rate["style"] += 2 
     slave_rate["exotic_bonus"] += 20
-    slave_rate["sensitivity"] += 1
-    slave_rate["ego"] += 1
+    daily_bonus["sensitivity"] += 1
+    daily_bonus["ego"] += 1
     daily_bonus["arousal"] += 1 
     learn_bonus["callisthenics"] += 1
     slave["ex_plus"] += 2
@@ -471,7 +451,6 @@ $item_property["rubber_gloves"] = {
 }
 
 !["laced_gloves"]
-
 dynamic $ib_cycle, 'laced_gloves', 'Lace Gloves', 5, '   Price: 5 sparks  <br>   Elbow length laced gloves will accentuate the style and charm of your slaves outfit. There exists a wide variety of options for colors, solid and mesh, with the fingers and without.', 'scene\item\item_laced_gloves'
 
 $item_property["laced_gloves"] = {
@@ -557,10 +536,10 @@ dynamic $ib_cycle, 'high_heels', 'Heels', 5, '   Price: 5 sparks  <br>   These s
 $item_property["high_heels"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
-     assistant["st_plus"] += 1
+     assistant["st_plus"] += 2
     end
     slave_rate["style"] += 1
-    slave["st_plus"] += 1
+    slave["st_plus"] += 2
 }
 
 !["high_boots"]
@@ -572,11 +551,10 @@ $item_property["high_boots"] = {
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
+    slave["st_plus"] += 1
     learn_bonus["sex"] += 1
     learn_bonus["stamina"] += 1
-    daily_bonus["rational"] += 1
-    daily_bonus["temper"] += 1
-    slave["st_plus"] += 1
+    daily_bonus["arousal"] += 1
 }
 
 !JEWELRY AND ACCESSORIES
@@ -597,11 +575,11 @@ dynamic $ib_cycle, 'incrusted_ring', 'Gemstone Ring', 5, '   Price: 5 sparks  <b
 
 $item_property["incrusted_ring"] = {
     if assistant_item = 1:
-     assistant_rate["exotic_bonus"] += 1
+     assistant_rate["exotic_bonus"] += 3
      assistant_rate["style"] += 1
      assistant["st_plus"] += 1
     end
-    slave_rate["exotic_bonus"] += 1
+    slave_rate["exotic_bonus"] += 3
     slave_rate["style"] += 1
     slave["st_plus"] += 1
 }
@@ -631,6 +609,34 @@ $item_property["incrusted_earrings"] = {
     slave_rate["exotic_bonus"] += 5
     slave_rate["style"] += 1
     slave["st_plus"] += 1
+    slave["ex_plus"] += 1
+}
+
+!["belly_ring"]
+dynamic $ib_cycle, 'belly_ring', 'Belly Ring', 10, '   Price: 10 sparks  <br>   This belly ring is made from a rare and exotic metal and encrusted with synthetic crystals, which are generally more rare and exotic than standard gemstones.', 'scene\service\service_belly_piercing'
+
+$item_property["belly_ring"] = {
+    if assistant_item = 1:
+     assistant_rate["exotic_bonus"] += 8
+     assistant_rate["style"] += 1
+     assistant["st_plus"] += 1
+     assistant["ex_plus"] += 1
+    end
+    slave_rate["exotic_bonus"] += 8
+    slave_rate["style"] += 1
+    slave["st_plus"] += 1
+    slave["ex_plus"] += 1
+}
+
+!["tongue_barbell"]
+dynamic $ib_cycle, 'tongue_barbell', 'Tongue Barbell', 10, '   Price: 10 sparks  <br>   This tongue barbell is made out of precious metal and polished to perfection with a rare gemstone on either end.', 'scene\service\service_thongue_piercing'
+
+$item_property["tongue_barbell"] = {
+    if assistant_item = 1:
+     assistant_rate["exotic_bonus"] += 12
+     assistant["ex_plus"] += 1
+    end
+    slave_rate["exotic_bonus"] += 12
     slave["ex_plus"] += 1
 }
 
@@ -721,12 +727,12 @@ dynamic $ib_cycle, 'golden_collar', 'Ornamented Collar', 20, '   Price: 20 spark
 
 $item_property["golden_collar"] = {
     if assistant_item = 1:
-     assistant_rate["exotic_bonus"] += 10
+     assistant_rate["exotic_bonus"] += 15
      assistant_rate["style"] += 1
      assistant["ex_plus"] += 2
      assistant["st_plus"] += 2
     end
-    slave_rate["exotic_bonus"] += 10
+    slave_rate["exotic_bonus"] += 15
     slave_rate["style"] += 1
     daily_bonus["custom"] += 1
     daily_bonus["instinct"] += 1
@@ -785,6 +791,7 @@ $item_property["leather_collar"] = {
     daily_bonus["custom"] += 1
     daily_bonus["instinct"] += 2
     learn_bonus["pet"] += 1
+    slave['slave_collar'] = 1
 }
 
 !["steel_collar"]
@@ -800,13 +807,15 @@ $item_property["steel_collar"] = {
 }
 
 !["spiked_collar"]
-dynamic $ib_cycle, 'spiked_collar', 'Spiked Collar', 10, '   Price: 10 sparks  <br>   Brutal form of a collar decorated with long and sharp steel spikes. It not only reminds the slave of her status, but also makes her to feel more aggressive. Good accessory for a gladiatrix, and indeed for any temperamental bitch.', 'scene\item\item_spiked_collar'
+dynamic $ib_cycle, 'spiked_collar', 'Spiked Collar', 10, '   Price: 10 sparks  <br>   Brutal form of a collar decorated with long and sharp steel spikes. It not only reminds the slave of her status, but also makes her feel more aggressive. Good accessory for a gladiatrix, and indeed for any temperamental bitch.', 'scene\item\item_spiked_collar'
 
 $item_property["spiked_collar"] = {
-    daily_bonus["instinct"] += 1
-    daily_bonus["temper"] += 1
+    daily_bonus["custom"] += 1
+	daily_bonus["instinct"] += 1
+    daily_bonus["rational"] += 1
     learn_bonus["pet"] += 1
     learn_bonus["gladiatrix"] += 1
+    slave['slave_collar'] = 1
 }
 
 !["dog_collar"]
@@ -858,7 +867,6 @@ $item_property["anal_tail"] = {
     daily_bonus["arousal"] += 2
     daily_bonus["custom"] += 1
     daily_bonus["mood"] -= 1
-    daily_bonus["ego"] -= 1
     daily_bonus["pride"] -= 1
     learn_bonus["pet"] += 1
     learn_bonus["dressage"] += 1
@@ -874,9 +882,9 @@ $item_property["pony_plume"] = {
     end
     slave_rate["style"] += 1
     daily_bonus["instinct"] += 2
-    daily_bonus["temper"] += 2
+    daily_bonus["temper"] += 1
     daily_bonus["mood"] -= 3
-    daily_bonus["ego"] -= 2
+    daily_bonus["ego"] -= 1
     daily_bonus["pride"] -= 3
     learn_bonus["dressage"] += 2
     slave["st_plus"] += 1
@@ -894,7 +902,6 @@ $item_property["hoofed_boots"] = {
     daily_bonus["instinct"] += 1
     daily_bonus["temper"] += 1
     daily_bonus["mood"] -= 1
-    daily_bonus["ego"] -= 1
     daily_bonus["pride"] -= 1
     learn_bonus["dressage"] += 1
     slave["st_plus"] += 1

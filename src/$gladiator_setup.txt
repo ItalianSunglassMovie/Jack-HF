@@ -1,6 +1,14 @@
 # $gladiator_setup
 !Calculation of input for gladiatrix combat
+!Improved - crushboss
+
 количество_врагов = 1
+superviser_message = 0
+a = 0
+killvar '$extra_special_active'
+killvar '$extra_special_used'
+killvar '$враг'
+killvar '$ge'
 
 IF slave['arena_level'] < 1:
  a = RAND(1,4)
@@ -108,7 +116,7 @@ $враг[3] = $ge3
 $враг[4] = $ge4  
 $враг[5] = $ge5  
 
-
 gt 'interaction_city'
+
 --- $gladiator_setup ---------------------------------
 

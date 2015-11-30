@@ -1,0 +1,23 @@
+# $pregnancy
+!Pregnancy calculation - Created by crushboss
+
+!setting vars
+pregnancy_chance = 0
+pregnancy_random = 0
+
+!Slave Pregnancy Chance
+if slave['pregnant'] = 0 and slave['parasite'] = 0: slave["pregnant_revealed"] = 0
+
+if slave['ovulation'] > 0 and slave['pregnant'] < 1 and slave['fertility'] ! -1 and slave['fertility'] ! -2: slave['pregnant'] = 1
+
+IF slave['pregnant'] < 1 and slave['fertility'] ! -1 and slave['fertility'] ! -2:
+ pregnancy_chance = RAND (100,131)
+ pregnancy_random = RAND (100,131)
+ IF pregnancy_chance = pregnancy_random:
+  slave['pregnant'] = 1
+  slave["pregnant_revealed"] = 0
+ END
+END
+
+--- $pregnancy ---------------------------------
+

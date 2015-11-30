@@ -36,7 +36,6 @@ IF $great_house = 'korvus':
  END
 END
 
-
 IF $great_house = 'neutral':
  IF npc_reveal['брина_рыжая'] = 1: 
   txt_count += 1
@@ -185,14 +184,6 @@ $info_bar = ''
 
  <<$npc_info[$npc_id]>>
 </div>'
-
-!'
-IF slave_state = 0 and contract['time'] = 0:
- *p {<div id = "evaluate"><a href = 'EXEC: interaction_city = 900 & gt "interaction_city"'><img src="content\pic\buttons\evaluate.png"></a></div>}
- else
- *p {<div id = "evaluate"><img src="content\pic\buttons\deny.png"></div>} 
-END
-'
 
 if txt > 1: 
  addobj '<img src = "content\pic\buttons\back_button.png">'

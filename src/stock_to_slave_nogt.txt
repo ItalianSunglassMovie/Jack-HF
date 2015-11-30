@@ -8,6 +8,7 @@ tattoo_brand = 0
 slave_type = stock_type
 $slave_type = $stock_type
 stock['age'] = seed_age[stock_type]
+virginity = stock_virginity
 
 killvar 'slave' 
 killvar 'slave_rate' 
@@ -37,30 +38,107 @@ $slave['ava_clear'] = $seed_ava_clear[slave_type]
 $slave['boobs_img'] = $seed_boobs_img[slave_type]
 $slave['pussy_img'] = $seed_pussy_img[slave_type]
 
-virginity = stock_virginity
 v_balls_rule = 0
 rules_broken = 0
+slave["virtue"] = 0
+slave["sin"] = 0
+slave["fertility_revealed"] = 1
+
+!Slave Rules
+slave_sleep_condition = 0
+slave_food_type = 0
+slave_eats_remains = 0
+slave_food_portion = 4
 
 $slave["cloth"] = "голая"
 slave['weight_before'] = slave["fat"]
 
+!Loli aged slaves are not old enough to have acquired these traits - crushboss
+IF slave['age'] = CONST_INT['loli_age'] and cheat_h ! 1 and cheat_j ! 1 and cheat_k ! 1 and cheat_l ! 1:
+ slave["custom"] = 0
+ slave_rate["custom"] = 0
+ slave["moral"] = 0
+ slave_rate["moral"] = 0
+ slave["rational"] = 0
+ slave_rate["rational"] = 0
+ slave["instinct"] = 0
+ slave_rate["instinct"] = 0
+END
+
+!Testing Code - Remove for Release - crushboss
+if cheat_h = 1 or cheat_j = 1: gs 'stock_to_slave_testing'
+if cheat_k = 1 and get_girl = 0: gs 'stock_to_slave_testing2'
+!End of Testing Code
+
+if slave["bruises"] = 0: slave_rate["bruises"] = 0
 if slave["bruises"] = 1: slave_rate["bruises"] = 10
 if slave["bruises"] = 2: slave_rate["bruises"] = 20
 if slave["bruises"] = 3: slave_rate["bruises"] = 40
 if slave["bruises"] = 4: slave_rate["bruises"] = 80
 if slave["bruises"] = 5: slave_rate["bruises"] = 160
 
+if slave["scares"] = 0: slave_rate["scares"] = 0
 if slave["scares"] = 1: slave_rate["scares"] = 10
 if slave["scares"] = 2: slave_rate["scares"] = 20
 if slave["scares"] = 3: slave_rate["scares"] = 40
 if slave["scares"] = 4: slave_rate["scares"] = 80
 if slave["scares"] = 5: slave_rate["scares"] = 160
 
+if slave["hygiene"] = 0: slave_rate["hygiene"] = 0
 if slave["hygiene"] = 1: slave_rate["hygiene"] = 10
 if slave["hygiene"] = 2: slave_rate["hygiene"] = 20
 if slave["hygiene"] = 3: slave_rate["hygiene"] = 40
 if slave["hygiene"] = 4: slave_rate["hygiene"] = 80
 if slave["hygiene"] = 5: slave_rate["hygiene"] = 160
+
+!Force slave["anal_stretch"] and slave["sub_fisting"] values since they won''t go up without setting the xp values - crushboss
+if slave["sub_fisting"] = 1: sub_fisting_xp += 10
+if slave["sub_fisting"] = 2: sub_fisting_xp += 20
+if slave["sub_fisting"] = 3: sub_fisting_xp += 40
+if slave["sub_fisting"] = 4: sub_fisting_xp += 80
+if slave["sub_fisting"] = 5: sub_fisting_xp += 160
+
+if slave["anal_stretch"] = 1: anal_stretch_xp += 10
+if slave["anal_stretch"] = 2: anal_stretch_xp += 20
+if slave["anal_stretch"] = 3: anal_stretch_xp += 40
+if slave["anal_stretch"] = 4: anal_stretch_xp += 80
+if slave["anal_stretch"] = 5: anal_stretch_xp += 160
+
+!Adjustments for loli aged slaves and virgin slaves - improved - crushboss
+IF virginity <= 0:
+ slave['ill'] = 0
+ slave['parasite'] = 0
+ slave['pregnant'] = 0
+ slave["sub_vaginal"] = 0
+ slave["sub_vaginal_xp"] = 0
+ slave["sub_fisting"] = 0
+ slave["sub_fisting_xp"] = 0
+ slave["sub_threesome"] = 0
+ slave["sub_threesome_xp"] = 0
+ slave["sub_dp"] = 0
+ slave["sub_dp_xp"] = 0
+ slave["sub_tp"] = 0
+ slave["sub_tp_xp"] = 0
+ slave["sub_gangbang"] = 0
+ slave["sub_gangbang_xp"] = 0
+ slave["sub_bukake"] = 0
+ slave["sub_bukake_xp"] = 0
+ slave["sub_anal"] = 0
+ slave["sub_anal_xp"] = 0
+ slave["anal_stretch"] = 0  
+ slave["sub_zoosex"] = 0
+ slave["sub_zoosex_xp"] = 0
+ slave["sub_bestiality"] = 0
+ slave["sub_bestiality_xp"] = 0
+ slave["sub_horse"] = 0
+ slave["sub_horse_xp"] = 0
+ slave["sub_tentacles"] = 0
+ slave["sub_tentacles_xp"] = 0
+ slave["sub_arachnidspider"] = 0
+ slave["sub_arachnidspider_xp"] = 0
+ slave["sub_polypusvermin"] = 0
+ slave["sub_polypusvermin_xp"] = 0
+END
 
 master_mood['pos_new_slave'] = 6 - brand_reputation
 if slave["energy"] > slave["stamina"]: slave["energy"] = slave["stamina"]
@@ -68,16 +146,29 @@ slave["base_exotic"] = slave["exotic"]
 slave_rate["stamina"] = 0
 if slave['age'] = CONST_INT['loli_age']: slave["fertility_revealed"] = 1
 slave_state = CONST_INT['slave_exist']
-
-!Testing Code - Remove for Release - crushboss
-if cheat_h = 1 or cheat_j = 1: gs 'stock_to_slave_testing'
-!End of Testing Code
+slave['has_ride_win'] = 0
 
 !Fixes the starving message you get on the 2nd day of getting a new slave or assistant - crushboss
 slave["calories"] = 14
 slave_rate["fat"] = 2
 slave['neg_hungry'] = 0
-slave['starvation'] = 0
+slave['starvation'] = -5
+
+!Fixes a potential issue with Neoplasty being already done on new slaves - crushboss
+slave['beauty_enchanced'] = 0
+slave["bcheck"] = 0
+slave["echeck"] = 0
+
+!Fix blank screen bug - crushboss
+$slave["wpn"] = 'безоружный'
+$slave["armor"] = 'без_брони'
+$slave["scnd"] = ''
+$slave["back_wpn"] = ''
+$slave["left_wpn"] = ''
+$slave["right_wpn"] = ''
+$slave["arm_wpn"] = ''
+$slave["leg_wpn"] = ''
+$slave["cloth"] = 'голая'
 
 gs '#txt'
 gs '#txt_2'

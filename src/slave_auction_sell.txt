@@ -14,7 +14,7 @@ GS '$slave_price'
 slave['brand'] = tattoo_brand
 
 sell_price = slaveprice/2
-if sell_price < 1: sell_price = 1
+if sell_price < 10: sell_price = 10
 
 $npc_id = 'фарид_аукционщик'
 npc = 1

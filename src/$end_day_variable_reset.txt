@@ -1,0 +1,187 @@
+# $end_day_variable_reset
+!Clean slate for new day - sanity check - crushboss
+!Created by crushboss
+
+repulse = 0
+complex_repulse = 0
+cheer_effect = 0
+cheer_rate = 0
+reasoning_effect = 0
+reasoning_rate = 0
+slave_well_rested = 0
+free_time = 0
+rules_count = 0
+daily_reward_count = 0
+num_rules_broken = 0
+num_rules_wanttobreak = 0
+slave_will_masturbate = 0
+slave_masturbating_anyway = 0
+silence_rule_res = 0
+master_rule_res = 0
+shit_prohibited_res = 0
+pet_rule_res = 0
+blowjob_rule_res = 0
+pissuar_rule_res = 0
+toilet_rule_res = 0
+v_balls_rule_res = 0
+iwanttobreakbutcant_silence_rule = 0
+iwanttobreakbutcant_master_rule = 0
+iwanttobreakbutcant_shit_prohibited = 0
+iwanttobreakbutcant_pet_rule = 0
+iwanttobreakbutcant_blowjob_rule = 0
+iwanttobreakbutcant_pissuar_rule = 0
+iwanttobreakbutcant_toilet_rule = 0
+iwanttobreakbutcant_v_balls = 0
+unenforced_silence_rule_broken = 0
+unenforced_master_rule_broken = 0
+unenforced_shit_prohibited_broken = 0
+unenforced_pet_rule_broken = 0
+unenforced_blowjob_rule_broken = 0
+unenforced_pissuar_rule_broken = 0
+unenforced_toilet_rule_broken = 0
+unenforced_v_balls_rule_broken = 0
+
+a = 0
+b = 0
+c = 0
+g = 0
+i = 0
+s = 0
+aaa = 0
+shameful = 0
+painful = 0
+disgusting = 0
+lesbian = 0
+darkness = 0
+bloody = 0
+fire_based = 0
+water_based = 0
+vermin_based = 0
+deprivation = 0
+abuse = 0	
+compassion = 0
+sensitivity_threshold = 6
+
+npc = 0
+city_random_event = 0
+stock_sold = 0
+stock_pending = 0
+auction_phase = 0
+haggling_stage = 0
+sl_txt = 0
+menu_form = 0
+starvation_warning = 0
+
+comforting = 0
+sweet = 0
+luxury = 0
+flattering = 0
+everlasting = 0
+
+sex_acceptance = 0
+erotic_stimulation = 0
+final_stimulation = 0
+ejaculation_intensity = 0
+sex_ability = 0
+sex_quality = 0
+orgastic = 0
+orgasm_description = 0    
+talent_bonus = 0
+
+torture_skill = 0
+torture_intensity = 0
+fear_force = 0
+fear_rised = 0
+fear_resistance = slave["ego"] + rebell[$slave_psy_basic]
+riser = 0
+rise_difficulty = 0
+rise_modifer = 0
+slave_power = 0
+master_power = 0
+damage = 0
+bruising = 0
+scarification = 0
+noresist = 0
+futile_threat = 0
+easy_for_master = 0
+
+interaction = 0
+interaction_city = 0
+$interaction_type = ''
+
+add_house_mess = 0
+add_slave_hygiene = 0
+add_assistant_hygiene = 0
+add_master_hygiene = 0
+add_slave_mood = 0
+couch_skill = 0
+slave_skill = 0
+$target_skill = 'dump' 
+$target_skill_two = 'dudump'
+$subskill_xp = 'dump'
+$subskill_two = 'dudump'
+$subskill_two_xp = 'dudump'
+$target_affinity = 'dump'
+sin_gained = 0 
+$prise_type = ''
+prise_level = 0
+prise_potence = 0
+prise_cost = 0
+prise_succes = 0
+date_succes = 0
+succes = 0
+slave["virtue"] = 0
+assistant["virtue"] = 0
+assistant["sin"] = 0
+angst_rise = 0
+moral_app = 0
+moral_basis = 0
+moral_boost = 0
+slave_fights_back = 0
+
+res = 0
+diligence = 0
+
+$special_part = ''
+$special_bg = ''   
+$special_text = ''
+$place = ''
+
+sententia_veritas = 0
+magna_magnifika = 0
+cruciato = 0
+slave['domini_dictum'] = 0
+prisoner['domini_dictum'] = 0
+assistant['domini_dictum'] = 0
+
+slave_exhaustion_fainted = 0
+slave_nearly_fainted = 0
+slave_stamina_fainted = 0
+
+killvar 'already_done_today'
+killvar 'play_sound'
+killvar 'sex'
+killvar 'sex_num'
+killvar 'sex_done_today'
+killvar 'sex_done_thisperson'
+killvar 'today_sex_assistant'
+killvar 'today_sex_curslave'
+killvar 'already_sex_curslave'
+killvar 'суперудар_сделан'
+killvar '$text'
+killvar '$race_winner'
+
+$text = ''
+$text[0] = ''
+$text[1] = ''
+$text[2] = ''
+$text[3] = ''
+$text[4] = ''
+$text[5] = ''
+$text[6] = ''
+$text[7] = ''
+$text[8] = ''
+$text[9] = ''
+
+--- $end_day_variable_reset ---------------------------------
+

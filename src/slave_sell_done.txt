@@ -7,7 +7,7 @@ slave['brand'] = tattoo_brand
 IF price >= npc_worth[$npc_id] and npc_bennies[$npc_id] > 0: 
  npc_bennies[$npc_id] -= 1
  npc_relations[$npc_id] += 1
- if slave['brand'] ! 4: brand_rate += 1 
+ if slave['brand'] ! 4 and slave['brand'] ! 0: brand_rate += 1 
  if personal_relations[$npc_id] > 3: brand_rate += 1 
 END
 

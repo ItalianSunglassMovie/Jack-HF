@@ -1474,16 +1474,12 @@ IF sex_interaction = 25:
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: 
   slave_rate['custom'] += 1
  END 
- 
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: 
   assistant_rate['custom'] += 1
  END 
- 
  sex["masohism_revealed"] = 1
- 
  if sex_done_today[sex_interaction] = 0: master_torture_rate += 1
  sex["pc_interest"] += sex['girl_sensitivity']
-
  $text[1] = '   <<$sex_wax>>' 
  $special_bg = $wax[sex['girl_type']]   
  $play_sound[1] = '<<$soft_pain[sex["girl_age"]]>>'  
@@ -1502,15 +1498,12 @@ IF sex_interaction = 26:
  IF diligence < 0:
   $interaction_type = 'deny' & gt 'sex_interaction_result'
  END
-
  sex['enema'] = 1 
  sex["girl_openmind"] -= 1
  if diligence > sex["girl_excitement"] and master_fetish > sex["girl_excitement"]: sex["girl_excitement"] += 1
- 
- IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["pride"] -= master_fetish
- 
- IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["pride"] -= master_fetish
-
+ if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["pride"] -= master_fetish
+ if $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["pride"] -= master_fetish
+ if sex_done_today[sex_interaction] = 0: master_fetish_rate += 1
  $text[1] = $sex_enema 
  $special_bg = $enema[sex['girl_type']]   
  $play_sound[1] = '<<$moan[sex["girl_age"]]>>'  
@@ -1544,7 +1537,6 @@ IF sex_interaction = 27:
  IF diligence < 0:
   $interaction_type = 'deny' & gt 'sex_interaction_result'
  END 
- 
  IF sex['girl_preversion'] < 0:
   sex["climax_buildup"] = 0
   sex["girl_openmind"] -= 1
@@ -1559,19 +1551,15 @@ IF sex_interaction = 27:
   slave_rate['custom'] += 1
   slave_rate['pride'] -= master_fetish
  END 
- 
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0:
   if assistant['sub_piss'] > 0: assistant['sub_piss_xp'] += sex["girl_attention"] - 2
   if assistant['sub_piss'] = 0: $rise_skill = 'slave["sub_piss"]'
   assistant_rate['custom'] += 1
   assistant_rate['pride'] -= master_fetish
  END
- 
  sex["preversion_revealed"] = 1
- 
  if sex_done_today[sex_interaction] = 0: master_fetish_rate += 1
  sex["pc_interest"] += 1 + sex['girl_sub_piss'] + master_fetish
-
  $text[1] = '   <<$sex_urination[sex["girl_sub_piss"]]>>' 
  $special_bg = $urine_drink[sex['girl_type']]   
  $play_sound[1] = '<<$urine[sex["girl_age"]]>>'  
@@ -1590,7 +1578,6 @@ IF sex_interaction = 28:
  IF diligence < 0:
   $interaction_type = 'deny' & gt 'sex_interaction_result'
  END 
- 
  IF sex['girl_anal_stretch'] < 3 or sex['girl_masohism'] = -1:
   sex["climax_buildup"] = 0
   sex["girl_openmind"] -= 1
@@ -1604,7 +1591,6 @@ IF sex_interaction = 28:
   if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate['sensitivity'] += 1
   if $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate['sensitivity'] += 1
  END
- 
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: 
   if slave['anal_stretch'] > 0: slave['anal_stretch_xp'] += sex["girl_attention"] - 2
   if slave['anal_stretch'] = 0: $rise_skill = 'slave["anal_stretch"]'
@@ -1613,9 +1599,7 @@ IF sex_interaction = 28:
   if assistant['anal_stretch'] > 0: assistant['anal_stretch_xp'] += sex["girl_attention"] - 2
   if assistant['anal_stretch'] = 0: $rise_skill = 'assistant["anal_stretch"]'
  END
- 
  sex["masohism_revealed"] = 1
- 
  $text[1] = '  <<$sex_analfisting[sex["girl_anal_stretch"]]>>'
  $play_sound[1] = '<<$fisting_sound[sex["girl_age"]]>>'
  $special_bg = $analfisting[sex['girl_type']] 
@@ -1631,7 +1615,6 @@ IF sex_interaction = 91:
  res = 2
  stimulating = 1 
  dynamic $sex_diligence 
- 
  IF $insertion = 'vaginal':
   $play_sound[1] = '<<$fuck_sound[sex["girl_age"]]>>'
   $special_bg = $sex_vaginal[sex['girl_type']]
@@ -1645,12 +1628,10 @@ IF sex_interaction = 91:
   $text[1] = '<<$sex_cum_anal>>' 
   quality = min (diligence,sex['girl_sub_anal'])
  END
- 
  sex["climax_buildup"] += quality
  if sex_done_today[sex_interaction] = master_penetration: master_penetration_rate += 1
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["custom"] += 1
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["custom"] += 1
-
  sex["cum_pleasure"] = sex['pc_boner']*3 + sex["pc_excitement_state"]*3
  sex["pc_interest"] -= 5
  sex["girl_energy"] -= 3
@@ -1664,19 +1645,16 @@ IF sex_interaction = 92:
  disgusting = 1
  dynamic $sex_diligence 
  quality = min (diligence,sex['girl_sub_bj'])
-
- IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["custom"] += 1 & slave_rate["pride"] -= 2
+ if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["custom"] += 1 & slave_rate["pride"] -= 2
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0 and diligence > 0:
   if slave['sub_bj'] > 0: slave['sub_bj_xp'] += sex["girl_attention"] - 2
   if slave['sub_bj'] = 0: $rise_skill = 'slave["sub_bj"]'
  END
- 
- IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["custom"] += 1 & assistant_rate["pride"] -= 2
+ if $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["custom"] += 1 & assistant_rate["pride"] -= 2
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0 and diligence > 0:
   if assistant['sub_bj'] > 0: assistant['sub_bj_xp'] += sex["girl_attention"] - 2
   if assistant['sub_bj'] = 0: $rise_skill = 'assistant["sub_bj"]'
  END
-
  if quality > 2:
   sex["cum_pleasure"] = sex['pc_boner']*quality + sex["pc_excitement_state"]*quality 
   else
@@ -1685,7 +1663,6 @@ IF sex_interaction = 92:
  sex["pc_interest"] -= 3
  sex["girl_energy"] -= 1
  sex['pc_energy'] -= 3
- 
  $play_sound[1] = '<<$bj_sound[sex["girl_age"]]>>'
  $special_bg = $bj[sex['girl_type']] 
  $text[1] = '<<$sex_cum_oral>>'   
@@ -1698,26 +1675,21 @@ IF sex_interaction = 93:
  disgusting = 1
  dynamic $sex_diligence 
  quality = min (diligence,sex['girl_sub_bukake'])
-
- IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["pride"] -= master_fetish
+ if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["pride"] -= master_fetish
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0 and diligence > 0: 
   if slave['sub_bukake'] > 0: slave['sub_bukake_xp'] += sex["girl_attention"] - 2
   if slave['sub_bukake'] = 0: $rise_skill = 'slave["sub_bukake"]'
  END
- 
- IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["pride"] -= master_fetish
+ if $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["pride"] -= master_fetish
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0 and diligence > 0: 
   if assistant['sub_bukake'] > 0: assistant['sub_bukake_xp'] += sex["girl_attention"] - 2
   if assistant['sub_bukake'] = 0: $rise_skill = 'assistant["sub_bukake"]'
  END
- 
  sex["preversion_revealed"] = 1
-
  sex["cum_pleasure"] = sex['pc_boner'] + sex["pc_excitement_state"] + quality*2
  sex["pc_interest"] -= 3
  sex["girl_energy"] -= 1
  sex['pc_energy'] -= 3
- 
  $play_sound[1] = '<<$moan[sex["girl_age"]]>>'
  $special_bg = $thongue[sex['girl_type']] 
  $text[1] = '<<$sex_cum_bukake>>'   
@@ -1737,23 +1709,18 @@ IF sex_interaction = 94:
   $special_bg = $pazuri[sex['girl_type']] 
  END 
  quality = min (diligence,sex['girl_sub_bukake'])
-
- IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["pride"] -= 1
+ if $sex['partner'] = '' and sex_done_today[sex_interaction] = 0: slave_rate["pride"] -= 1
  IF $sex['partner'] = '' and sex_done_today[sex_interaction] = 0 and diligence > 0: 
   if slave['sub_bukake'] > 0: slave['sub_bukake_xp'] += sex["girl_attention"] - 2
   if slave['sub_bukake'] = 0: $rise_skill = 'slave["sub_bukake"]'
  END
- 
- IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["pride"] -= 1
+ if $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0: assistant_rate["pride"] -= 1
  IF $sex['partner'] = 'assistant' and sex_done_today[sex_interaction] = 0 and diligence > 0: 
   if assistant['sub_bukake'] > 0: assistant['sub_bukake_xp'] += sex["girl_attention"] - 2
   if assistant['sub_bukake'] = 0: $rise_skill = 'assistant["sub_bukake"]'
  END
- 
  sex["preversion_revealed"] = 1
-
  sex["cum_pleasure"] = sex['pc_boner'] + sex["pc_excitement_state"] + quality
-  
  sex["pc_interest"] -= 5
  sex["girl_energy"] -= 1
  sex['pc_energy'] -= 2

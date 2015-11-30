@@ -11,16 +11,15 @@ gladi_count = 4
 
 bath = 1
 kitchen = 1
+barn = 1
 dungeon = 0
 slave_food_portion = 1
 cooked_food = -1
-sparks = 300
+sparks = 600
 demo_game = 1
 
 ui_style = 1
 GS '_layout'
-!slave_type = 902
-!GS 'get_demo_slave'
 
 if master_str = 1: master_str_rate = 15
 if master_str = 2: master_str_rate = 30

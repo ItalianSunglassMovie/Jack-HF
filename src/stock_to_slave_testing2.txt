@@ -1,0 +1,116 @@
+# stock_to_slave_testing2
+!Stock to Slave Testing Cheat2 - cheat_k - equip new slave with full piercings, tattoos, clothes, armor, weapons, and accessories
+!Created by crushboss
+
+!Slave Piercings
+slave["niple_piercing"] = 1
+slave["clit_piercing"] = 1
+slave["ear_piercing"] = 1
+slave["thongue_piercing"] = 1
+slave["belly_piercing"] = 1
+slave["nosdril_piercing"] = 1
+slave["nose_piercing"] = 1
+slave["thongue_split"] = 1
+slave["scarification"] = 1
+slave["full_piercing"] = 1
+slave["piercings"] = 9
+slave["piercing_count"] = 5 
+
+!Slave Clothing Inventory
+slave_inventory['maid_dress'] = 1
+slave_inventory['apron'] = 1
+slave_inventory['nurse_dress'] = 1
+slave_inventory['sailor_foku'] = 1
+slave_inventory['leotard'] = 1
+slave_inventory['chainmail_bikini'] = 1
+slave_inventory['sun_dress'] = 1
+slave_inventory['leather_corset'] = 1
+slave_inventory['fluffy_stepins'] = 1
+slave_inventory['high_boots'] = 1
+slave_inventory['sneakers'] = 1
+slave_inventory['tabi'] = 1
+slave_inventory['glasses'] = 1
+slave_inventory['nekomimi'] = 1
+slave_inventory['leather_gloves'] = 1
+slave_inventory['fluffy_gloves'] = 1
+slave_inventory['rubber_gloves'] = 1
+slave_inventory['plain_headband'] = 1
+slave_inventory['golden_collar'] = 1
+slave_inventory['leather_collar'] = 1
+slave_inventory['spiked_collar'] = 1
+slave_inventory['sun_dress'] = 1
+slave_inventory['common_apron'] = 1
+slave_inventory['maid_dress'] = 1
+slave_inventory['nurse_dress'] = 1
+slave_inventory['enchanter_robe'] = 1
+slave_inventory['leotard'] = 1
+slave_inventory['chainmail_bikini'] = 1
+slave_inventory['laced_underwear'] = 1
+slave_inventory['bellydance'] = 1
+slave_inventory['leather_corset'] = 1
+slave_inventory['anal_tail'] = 1
+slave_inventory['exotic_wig'] = 1
+slave_inventory['pony_plume'] = 1
+slave_inventory['incrusted_earrings'] = 4
+slave_inventory['golden_collar'] = 1
+slave_inventory['leather_gloves'] = 1
+slave_inventory['ponygirl_harness'] = 1
+slave_inventory['nipple_chain'] = 1
+slave_inventory['high_heels'] = 1
+slave_inventory['high_boots'] = 1
+slave_inventory['hoofed_boots'] = 1
+slave_inventory['incrusted_ring'] = 4
+
+!Slave Makeup and Tattoos
+IF slave["age"] ! CONST_INT['loli_age']:
+ slave["makeup"] = 3
+ slave["fiend_tattoo"] = 1
+ slave["tatoo"] = 5
+END
+slave["manicure"] = 5
+slave["parfume"] = 1
+slave["hygiene"] = 0
+slave_rate["hygiene"] = 0
+slave["epilation"] = 12
+slave["hairstyle"] = 7
+slave["pos_gentle"] = 2
+slave['pos_slave_clean'] = 2
+
+!Slave Equipped Armor, Weapons, and Cloth
+$slave["wpn"] = 'катана'
+$slave["scnd"] = ''
+$slave["armor"] = 'плейт'
+$slave["right_wpn"] = 'катана'
+$slave["left_wpn"] = 'кинжал'
+$slave["back_wpn"] = 'фламберг'
+$slave["cloth"] = 'leather_corset'
+
+!Slave Equipped Gear
+$slave["earrings"] = 'incrusted_earrings'
+$slave["collar"] = 'golden_collar'
+$slave["headband"] = 'exotic_wig'
+$slave["gloves"] = 'leather_gloves'
+$slave["nipplerings"] = 'nipple_chain'
+$slave["clitring"] = 'incrusted_earrings'
+$slave["boots"] = 'high_boots'
+$slave["ring_left"] = 'incrusted_ring'
+$slave["ring_right"] = 'incrusted_ring'
+
+!Slave Rules
+slave_sleep_condition = 0
+slave_food_type = 0
+slave_eats_remains = 0
+slave_food_portion = 4
+slave_washes_rule = 1
+blowjob_rule = 1
+v_balls_rule = 1
+force_rules = 1
+if pet_tentacle > 0 and assistant_state ! 1: slave_tentacle_rule = 1
+
+!Slave Misc Attributes
+if slave["age"] ! CONST_INT['loli_age']: slave['fertility'] = -1
+slave["fertility_revealed"] = 1
+!if slave['brand'] ! 4: slave['brand'] = 3
+
+--- stock_to_slave_testing2 ---------------------------------
+

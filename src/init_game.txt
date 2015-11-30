@@ -1,4 +1,5 @@
 # init_game
+!Initialize Game - this is loaded before init_custom_game, init_sandbox_game, hero_creation, and hero_customization (story mode)
 !settings for master stats
 $master_ava = 'content\pic\master\master_noble_sepia.jpg'
 $master_ava_color = 'content\pic\master\master_noble.jpg'
@@ -11,7 +12,7 @@ master_style = 4
 master_libido = 4
 master_energy = 5
 
-master_tutor = 0
+master_tutor = 1
 master_fighter = 3
 master_butler = 3
 master_artdirector = 3
@@ -28,7 +29,7 @@ master_penetration = 3
 master_fetish = 3
 
 !other settings
-stock_limit = 15
+stock_limit = 8
 
 bath = 1
 kitchen = 1
@@ -59,6 +60,7 @@ $суперудар[2] = ''
 $суперудар[3] = ''
 $суперудар[4] = ''
 $суперудар[5] = ''
+$суперудар[6] = ''
 
 $master_wpn = 'безоружный'
 $master_armor = 'без_брони'
@@ -98,6 +100,7 @@ no_loli = 0
 no_milf = 0
 no_mindbreak = 0
 no_guro = 0
+$slave_assistant_management = "show"
 
 !Initialize Cheat Variables - crushboss
 cheat_a = 0
@@ -110,16 +113,38 @@ cheat_g = 0
 cheat_h = 0
 cheat_i = 0
 cheat_j = 0
+cheat_k = 0
+cheat_l = 0
 cheat_ioff = 0
+cheat_all_basic = 0
+cheat_all_low = 0
 cheat_all = 0
+cheat_all_max = 0
 extended_rental_cheat = 0
 
 !Initialize Variables - crushboss
+$special_age = ''
 daycount = 0
 slave[$npc_id] = 0
 demand_rating[$npc_id] = 0
 purse = 0
+daily_reward_count = 0
+spell_adverto_servili = 0
 a = 0
+change_loc = 1
+master_check = 0
+isabella_get = 0
+isabella_met = 0
+slave_exhaustion_fainted = 0
+slave_nearly_fainted = 0
+slave_stamina_fainted = 0
+
+!Chariot Defaults - crushboss
+heavy_frame = 1
+heavy_boards = 1
+heavy_chasis = 1
+heavy_wheels = 1
+heavy_rider_armor = 1
 
 $preset_name[1] = 'Preset 1'
 $preset_name[2] = 'Preset 2'
@@ -131,9 +156,12 @@ $preset_name[6] = 'Preset 6'
 !Квесты
 active[$quest[1]] = 1
 active[$quest[3]] = 1
+active[$quest[11]] = 1
 
+story_mode = 0
 custom_game = 0
-patrician_mode_off = 0
+sandbox_game = 0
+patrician_mode_off = 1
 
 --- init_game ---------------------------------
 

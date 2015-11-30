@@ -11,6 +11,7 @@ $quest[7] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 7 & g
 $quest[8] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 8 & gt curloc">Garsid requests a perfect sex slave to be taught for him</a> <br>'
 $quest[9] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 9 & gt curloc">Master Valios promised reward for adult fiend of the Fogs</a> <br>'
 $quest[10] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 10 & gt curloc">I need to perform the guild contract</a> <br>'
+$quest[11] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 11 & gt curloc">Specialization Requirements</a> <br>'
 $quest_description[0] = 'sample description
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
@@ -57,19 +58,32 @@ $quest_description[10] = '  I received a contract in the guild for training a sl
 
 <a href = "EXEC: msg $specialisation_help">Tip on specializations</a>
 
-To prepare a slave on a specific specialization, I need to train her profile skill to at least <font color="#0000CD">average</font> level. Concubines also requires the sum of sex techniques to be more than nine. If I have an assistant, she will tell me when the slave will correspond to specialization.
+To prepare a slave on a specific specialization, I need to train her profile skill/s to at least <font color="#0000CD">B+</font> level. Concubines also require the sum of sex techniques to be more than fourteen with the slave''s master sex skills (penetration, orgy, oral, petting, and roleplay) no less than <font color="#0000CD">B+</font>. These skills must also meet or exceed the slaves rating. If I have an assistant, she will tell me when the slave will correspond to specialization.
 
 Usual time limit on the contract:
-When ordering <<$rating[1]>>-rank: 20 days, 
-When ordering <<$rating[2]>>-rank: 30 days,
-When ordering <<$rating[3]>>-rank: 45 days,
+When ordering <<$rating[1]>>-rank: 30 days, 
+When ordering <<$rating[2]>>-rank: 40 days,
+When ordering <<$rating[3]>>-rank: 50 days,
 When ordering <<$rating[4]>>-rank: 60 days,
-When ordering <<$rating[5]>>-rank: 75 days.
-When ordering <<$rating[6]>>-rank: 90 days, 
-When ordering <<$rating[7]>>-rank: 115 days,
-When ordering <<$rating[8]>>-rank: 130 days,
-When ordering <<$rating[9]>>-rank: 145 days,
-When ordering <<$rating[10]>>-rank: 160 days.
+When ordering <<$rating[5]>>-rank: 70 days.
+When ordering <<$rating[6]>>-rank: 80 days, 
+When ordering <<$rating[7]>>-rank: 90 days,
+When ordering <<$rating[8]>>-rank: 100 days,
+When ordering <<$rating[9]>>-rank: 110 days,
+When ordering <<$rating[10]>>-rank: 120 days.
+
+<a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
+
+$quest_description[11] = 'All skills and attributes required by a specialization must be at least B+ in level or equal to or greater than the slave’s rating/rank (whichever is greater). Your assistant will tell you what specializations your slave qualifies for. All specializations now require several skills or attributes to meet the specialization requirements.
+
+1. Assistant Specialization - Secretary and Escort
+2. Pet Ponygirl Specialization - Pet and Dressage
+3. Servant Specialization - Maid and Cook
+4. Witch Doctor Specialization - Nurse and Enchanter
+5. Gladiatrix Specialization - Gladiatrix - There are three new requirements to obtain this specialization - 1. Maxed Stamina 2. Nature 3. Temperment (both Nature and Temperment have to be B+ or higher and not lower than the slave''s rating)
+6. Artist Specialization - Dancer, Music, and Singing
+7. Concubine Specialization - The following slave sex skills must be at least B+ in level: Petting, Penetration, Oral Pleasure, Group Sex, and Demonstration.
+ Most customers requesting a concubine slave want her to be thin (Model or Voluptuous – fat level).  They also want her Beauty to be B+ or equal in level to her rating (whichever is greater).
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
 

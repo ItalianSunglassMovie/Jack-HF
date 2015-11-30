@@ -1,11 +1,49 @@
 # $ride_start
 !Preparation for chariot race
+!Overhauled by crushboss
+
 CLOSE ALL
+pony_gear_bonus = 0
+
+!Dressage, meekness, and courage affinity revealed - crushboss
+IF slave["dressage_affinity"] > 0 and slave["dressage_affinity_revealed"] < 2: slave["dressage_affinity_revealed"] = 1
+IF (slave["meekness"] > 0 or slave["meekness"] < 0) and slave["meekness_revealed"] < 2: slave["meekness_revealed"] = 1
+IF (slave["courage"] > 0 or slave["courage"] < 0) and slave["courage_revealed"] < 2: slave["courage_revealed"] = 1
+
 gs '#charriots_base'
 charriot['weight'] = (heavy_frame + heavy_boards + heavy_chasis + heavy_wheels + heavy_rider_armor) + 5
-charriot['pony_health'] = slave['stamina'] 
-charriot['maneurability'] = slave["instinct"] + slave["dressage"] + slave["dressage_affinity"]
+charriot['pony_health'] = (slave['stamina'] + slave["dressage_affinity"])
+charriot['maneurability'] = (slave["instinct"] + slave["dressage"] + (slave["dressage_affinity"]*2))
 if slave["meekness"] < 0: charriot['maneurability'] -= 1
+if slave["meekness"] > 0: charriot['maneurability'] += 1
+IF slave["courage"] < 0: charriot['maneurability'] -= 1
+IF slave["courage"] > 0: charriot['maneurability'] += 1
+if slave["pride"] > 2: charriot['maneurability'] -= 1
+if slave["temper"] < 4: charriot['maneurability'] -= 1
+if slave["energy"] < 3: charriot['maneurability'] -= 1
+
+!Added modifiers based on age - crushboss
+IF slave["age"] = CONST_INT['loli_age']: charriot['maneurability'] += 2
+IF slave["age"] = CONST_INT['milf_age']: charriot['maneurability'] -= 2
+
+!Added modifiers based on pony gear equipped - crushboss
+if $slave["headband"] = 'pony_plume': pony_gear_bonus += 1
+if $slave["cloth"] = 'anal_tail': pony_gear_bonus += 1
+if $slave["boots"] = 'hoofed_boots': pony_gear_bonus += 1
+if $slave["gloves"] = 'ponygirl_harness': pony_gear_bonus += 1
+
+!Added message so players will get used to equipping pony gear - otherwise they will mostly lose and get frustrated - crushboss
+msg 'Pony Gear Bonus: <<pony_gear_bonus>><br>A bonus of 2 or less results in a penalty<br>Pony Gear available:<br>Plumed Bridle<br>Anal Tail<br>Hoofed Boots<br>Pony Harness<br>'
+
+!Penalty applied if the slave isn''t wearing pony gear - crushboss
+IF pony_gear_bonus < 3:
+ charriot['maneurability'] -= 2
+ charriot['weight'] += 2
+END
+
+!Added bonus for dressage affinity - natural pony girls are less affected by chariot weight - crushboss
+if slave["dressage_affinity"] > 0: charriot['weight'] -= 2
+
 slave_rate["hygiene"] += 50
 master_hygiene_rate += 30
 

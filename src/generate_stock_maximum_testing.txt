@@ -1,9 +1,13 @@
 # generate_stock_maximum_testing
+!Generate Stock Maximum Testing Cheat
+!Created by crushboss
+
 !Temporary code for testing - crushboss
 
 !Slave Attributes and Skills
-stock["fat"] = RAND (1,2)
+stock["fat"] = 1
 stock["beauty"] = 5
+stock["fame"] = 5
 stock["sub_vaginal"] = 5
 stock["sub_fisting"] = 5
 stock["sub_threesome"] = 5
@@ -19,8 +23,8 @@ stock["sub_polypusvermin"] = 5
 stock["sub_hug"] = 5
 stock["sub_kiss"] = 5
 stock["sub_bj"] = 5
-stock["sub_vaginal"] = 5
 stock["sub_anal"] = 5
+stock["anal_stretch"] = 5
 stock["sub_exhibit"] = 5
 stock["sub_humiliation"] = 5
 stock["sub_hj"] = 5
@@ -29,8 +33,6 @@ stock["sub_pazuri"] = 5
 stock["sub_thongue"] = 5
 stock["sub_dt"] = 5
 stock["sub_asslik"] = 5
-stock["anal_stretch"] = stock["sub_anal"]
-if stock["anal_stretch"] > 5: stock["anal_stretch"] = 5
 stock["sub_seduce"] = 5
 stock["sub_masturbation"] = 5
 stock["sub_dildo"] = 5
@@ -62,7 +64,7 @@ stock["custom"] = 5
 stock["moral"] = 5
 stock["rational"] = 5
 stock["instinct"] = 5
-stock["exotic"] = 5
+stock["exotic"] = 4
 stock["energy"] = 5
 stock["bruises"] = 0
 stock["scares"] = 0
@@ -72,7 +74,10 @@ stock["spoil"] = 0
 stock["arousal"] = 0
 stock["hygiene"] = 0
 stock['ill'] = 0
+stock['pregnant'] = 0
+stock['parasite'] = 0
 stock['issues'] = 0
+stock["metabolism"] = 5
 
 !Slave Piercings
 stock["niple_piercing"] = 1
@@ -82,11 +87,35 @@ stock["thongue_piercing"] = 1
 stock["belly_piercing"] = 1
 stock["nosdril_piercing"] = 1
 stock["nose_piercing"] = 1
+stock["thongue_split"] = 1
+stock["scarification"] = 1
 stock["full_piercing"] = 1
-stock["piercings"] = 7
-stock["piercing_count"] = 4
+stock["piercings"] = 9
+stock["piercing_count"] = 5 
 
 !Slave Clothing Inventory
+stock_inventory['maid_dress'] = 1
+stock_inventory['apron'] = 1
+stock_inventory['nurse_dress'] = 1
+stock_inventory['sailor_foku'] = 1
+stock_inventory['leotard'] = 1
+stock_inventory['chainmail_bikini'] = 1
+stock_inventory['sun_dress'] = 1
+stock_inventory['leather_corset'] = 1
+stock_inventory['fluffy_stepins'] = 1
+stock_inventory['high_boots'] = 1
+stock_inventory['sneakers'] = 1
+stock_inventory['tabi'] = 1
+stock_inventory['glasses'] = 1
+stock_inventory['nekomimi'] = 1
+stock_inventory['leather_gloves'] = 1
+stock_inventory['fluffy_gloves'] = 1
+stock_inventory['rubber_gloves'] = 1
+stock_inventory['plain_headband'] = 1
+stock_inventory['golden_collar'] = 1
+stock_inventory['leather_collar'] = 1
+stock_inventory['spiked_collar'] = 1
+stock_inventory['sun_dress'] = 1
 stock_inventory['common_apron'] = 1
 stock_inventory['maid_dress'] = 1
 stock_inventory['nurse_dress'] = 1
@@ -110,9 +139,11 @@ stock_inventory['hoofed_boots'] = 1
 stock_inventory['incrusted_ring'] = 4
 
 !Slave Makeup and Tattoos
-stock["makeup"] = 3
-stock["fiend_tattoo"] = 1
-stock["tatoo"] = 5
+IF stock["age"] ! CONST_INT['loli_age']:
+ stock["makeup"] = 3
+ stock["fiend_tattoo"] = 1
+ stock["tatoo"] = 5
+END
 stock["manicure"] = 5
 stock["parfume"] = 1
 stock["hygiene"] = 0
@@ -133,6 +164,13 @@ $stock["boots"] = 'high_boots'
 $stock["ring_left"] = 'incrusted_ring'
 $stock["ring_right"] = 'incrusted_ring'
 
+!Pet Fiend
+IF pet_tentacle < 1:
+ pet_tentacle = 1
+ tentacle_hp = 0
+ tentacle_size = 4
+END
+
 !Slave Rules
 stock_sleep_condition = 1
 stock_food_type = 2
@@ -145,11 +183,99 @@ force_rules = 1
 if pet_tentacle > 0 and assistant_state ! 1: stock_tentacle_rule = 1
 
 !Misc
-stock['brand'] = 3
+stock_virginity = 2
+stock["dressage_affinity"] = 1
+stock["gladiatrix_affinity"] = 1
 
-!Pet Fiend
-if pet_tentacle < 1: pet_tentacle = 1
-tentacle_size = 4
+!Temporary Code for Testing - Makes slave very disobedient - crushboss'
+stock["sub_vaginal"] = 0
+stock["sub_fisting"] = 0
+stock["sub_threesome"] = 0
+stock["sub_dp"] = 0
+stock["sub_tp"] = 0
+stock["sub_gangbang"] = 0
+stock["sub_zoosex"] = 0
+stock["sub_bestiality"] = 0
+stock["sub_horse"] = 0
+stock["sub_tentacles"] = 0
+stock["sub_arachnidspider"] = 0
+stock["sub_polypusvermin"] = 0
+stock["sub_hug"] = 0
+stock["sub_kiss"] = 0
+stock["sub_bj"] = 0
+stock["sub_anal"] = 0
+stock["anal_stretch"] = 0
+stock["sub_exhibit"] = 0
+stock["sub_humiliation"] = 0
+stock["sub_hj"] = 0
+stock["sub_fj"] = 0
+stock["sub_pazuri"] = 0
+stock["sub_thongue"] = 0
+stock["sub_dt"] = 0
+stock["sub_asslik"] = 0
+stock["sub_seduce"] = 0
+stock["sub_masturbation"] = 0
+stock["sub_dildo"] = 0
+stock["sub_enema"] = 0
+stock["sub_mazo"] = 0
+stock["sub_selfpain"] = 0
+stock["sub_piss"] = 0
+stock["sub_kopro"] = 0
+stock["sub_bukake"] = 0
+stock["stamina"] = 5
+stock["sensitivity"] = 3
+stock["temper"] = 5
+stock["ego"] = 5
+stock["pride"] = 5
+stock["intellect"] = 5
+stock["service"] = 0
+stock["expression"] = 0
+stock["secretary"] = 0
+stock["callisthenics"] = 0
+stock["gladiatrix"] = 0
+stock["cook"] = 0
+stock["dressage"] = 0
+stock["pet"] = 0
+stock["nurse"] = 0
+stock["enchanter"] = 0
+stock["vocal"] = 0
+stock["music"] = 0
+stock["custom"] = 0
+stock["moral"] = 0
+stock["rational"] = 0
+stock["instinct"] = 0
+stock["exotic"] = 4
+stock["energy"] = 5
+stock["hygiene"] = 4
+!End of Testing Code'
+
+!Full Trophy Room - Testing Code'
+trophy_ogre = 1
+trophy_warg = 1
+trophy_werewolf = 1
+trophy_hugefiend = 1
+trophy_blackmedic = 1
+trophy_maturefiend = 1
+trophy_vampire = 1
+trophy_lich = 1
+trophy_beastmen = 1
+trophy_paladin = 1
+trophy_orc = 1
+trophy_youngfiend = 1
+trophy_scum = 1
+trophy_goblins = 1
+trophy_corvus = 1
+trophy_camira = 1
+trophy_serpis = 1
+trophy_taurus = 1
+trophy_vatican = 1
+trophy_absolute = 1
+trophy_slaves = 1
+trophy_arenafiend = 1
+!End of Testing Code'
+
+gs '$slave_price_stock'
+gs '#txt'
 
 --- generate_stock_maximum_testing ---------------------------------
 

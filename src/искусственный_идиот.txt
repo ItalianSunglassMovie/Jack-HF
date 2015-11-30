@@ -1,7 +1,7 @@
 # искусственный_идиот
 !BATTLE AI (ARTIFICIAL IDIOT) FOR ENEMIES
-atk = i
 def = 0
+atk = i
 
 !change stand
 случай = RAND(1,3)

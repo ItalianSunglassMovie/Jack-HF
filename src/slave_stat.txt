@@ -10,6 +10,13 @@ END
 if slot = 0: $equip_choice = ''
 slot = 0
 
+!Fix blank screen bug - crushboss
+IF slave_state ! CONST_INT['no_exist']:
+ if $slave["wpn"] = '': $slave["wpn"] = 'безоружный'
+ if $slave["armor"] = '': $slave["armor"] = 'без_брони'
+ if $slave["cloth"] = '': $slave["cloth"] = 'голая'
+END
+
 stat_importance['stamina'] = 1
 stat_importance['sensitivity'] = 1
 stat_importance['temper'] = 1
@@ -19,7 +26,10 @@ stat_importance['exotic'] = 1
 stat_importance['fat'] = 1
 
 stat_importance['obedience'] = 1
+stat_importance['moral'] = 1
 stat_importance['custom'] = 1
+stat_importance['instinct'] = 1
+stat_importance['rational'] = 1
 stat_importance['pride'] = 1
 stat_importance['spoil'] = 1
 
@@ -29,7 +39,6 @@ stat_importance['dressage'] = 1
 stat_importance['nurse'] = 1
 stat_importance['service'] = 1
 stat_importance['cook'] = 1
-stat_importance['roleplay'] = 1
 stat_importance['gladiatrix'] = 1
 stat_importance['enchanter'] = 1
 stat_importance['callisthenics'] = 1
@@ -41,8 +50,10 @@ stat_importance['oral'] = 1
 stat_importance['penetration'] = 1
 stat_importance['petting'] = 1
 stat_importance['orgy'] = 1
+stat_importance['roleplay'] = 1
 stat_importance['xenophily'] = 1
 stat_importance['fetishism'] = 1
+
 gs '$slave_price'
 gs 'stats_layout'
 
@@ -56,7 +67,10 @@ IF exam_in_progress = 1:
  *p '<div id = "close"><a href = "EXEC: $equip_choice = '''' & gt ''menu_form''"><img src = "content\pic\buttons\close_button.png"></a></div>'
 END
 
+gs '$slave_traits'
+gs '$addon_custom_data'
 gs '$addon', 'info_box'
+
 !lillimerge add more tooltips?
 
 *p '<div id="left_column">
@@ -299,6 +313,10 @@ END
 if slave_cleans_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_cleans_rule = 0
 if slave_cooks_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_cooks_rule = 0
 if slave_tentacle_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_tentacle_rule = 0
+IF slave_account_rule = 1 and slave_state = CONST_INT['slave_exist']:
+ assistant_account_rule = 0
+ master_account_rule = 0
+END
 
  KILLVAR '$tooltip_text'
  IF vitamin = 1:
@@ -517,6 +535,8 @@ If slave_stat_screen = 2:
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 31 & dynamic $slave_feet_list"><u>Feet:</u> <<$item_name[$slave["boots"]]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 32 & dynamic $slave_ring_list"><u>Ring 1:</u> <<$item_name[$slave["ring_left"]]>></a></div>'
         *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 33 & dynamic $slave_ring_list_2"><u>Ring 2:</u> <<$item_name[$slave["ring_right"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 34 & dynamic $slave_naval_list"><u>Naval:</u> <<$item_name[$slave["naval"]]>></a></div>'
+        *p '<div class="inventory_item"><a style = "color: black;" href = "EXEC: slot = 35 & dynamic $slave_tongue_list"><u>Tongue:</u> <<$item_name[$slave["tongue"]]>></a></div>'
     *p '</div>'
 
     *p '<div id = "center_text_column_2"> <center><u>AVAILABLE OPTIONS</u></center><<$equip_choice>>
@@ -560,7 +580,7 @@ IF slave_state = CONST_INT['slave_exist']:
   else
   $skill_text += '<<$slave_callisthenics[slave["callisthenics"]]>><BR>'    
  END
- IF slave["stamina"] >= 1: 
+ IF slave["stamina"] >= 1 and slave["stamina"] <= 5: 
   $skill_text += '<a href = "EXEC: interaction = 1221 & gt ''interaction''"><<$gym_lesson[slave["stamina"]]>></a><BR>'
   else
   $skill_text += '<<$slave_stamina[slave["stamina"]]>><BR>'    
@@ -595,7 +615,8 @@ IF slave_state = CONST_INT['slave_exist']:
 <<$slave_gladiatrix[slave["gladiatrix"]]>> 
 <<$slave_enchanter[slave["enchanter"]]>> 
 <<$slave_expression[slave["expression"]]>> 
-<<$slave_callisthenics[slave["callisthenics"]]>> 
+<<$slave_callisthenics[slave["callisthenics"]]>>
+<<$gym_lesson[slave["stamina"]]>>
 <<$slave_vocal[slave["vocal"]]>> 
 <<$slave_music[slave["music"]]>> 
 <<$slave_pet[slave["pet"]]>>
@@ -617,6 +638,9 @@ END
 !Used for debugging variables I need to track - crushboss
 !msg '<<slave_rate["rational"]>>'
 !msg '<<$slave_ava>>.jpg'
-
+!msg 'Charm: <<charm>>'
+!IF slave_stat_screen = 1:
+! msg 'Obedience: <<slave["obedience"]>><br>Fear: <<slave["fear"]>><br>Fear Rate: <<slave_rate["fear"]>><br>Despair-Angst: <<slave["angst"]>><br>Despair-Angst Rate: <<slave_rate["angst"]>><br>Spoil: <<slave["spoil"]>><br>Spoil Rate: <<slave_rate["spoil"]>><br>Mood: <<slave["mood"]>><br>Arousal: <<slave["arousal"]>><br>Arousal Rate: <<slave_rate["arousal"]>><br>'
+!END
 --- slave_stat ---------------------------------
 

@@ -1,6 +1,7 @@
 # get_demo_slave
 !activates the slave for training mode
 slave_state = CONST_INT['slave_exist']
+gs 'get_slave_seed'
 $slave_psy_basic = $seed_psy_basic[slave_type]
 $slave_type = 'unic'
 slave["null"] = 0
@@ -118,6 +119,7 @@ slave['parasite'] = 0
 $slave['boobs_img'] = $seed_boobs_img[slave_type]
 $slave['pussy_img'] = $seed_pussy_img[slave_type]
 slave['brand'] = 4
+tattoo_brand = slave['brand']
 
 !stats alignment
 slave["energy"] = slave["metabolism"]
@@ -135,7 +137,7 @@ $slave['ava_gray'] = $seed_ava_gray[slave_type]
 $slave['ava_clear'] = $seed_ava_clear[slave_type]
 
 !EQUIP
-!"$slave["wpn"] = 'кинжал'
+$slave["wpn"] = 'кинжал'
 $slave["armor"] = 'кожан'
 $slave["scnd"] = ''
 
@@ -143,9 +145,9 @@ $slave["back_wpn"] = ''
 $slave["left_wpn"] = ''
 $slave["right_wpn"] = ''
 $slave["arm_wpn"] = ''
-$slave["leg_wpn"] = 'кинжал'
+$slave["leg_wpn"] = ''
 
-$slave["cloth"] = 'leather_corset'"
+$slave["cloth"] = 'leather_corset'
 
 slave['newness'] = 10
 

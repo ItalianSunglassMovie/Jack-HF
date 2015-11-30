@@ -78,22 +78,23 @@ $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
 
  *p '<div id="right_column">
 <u>SKILLS</u>
-<<$slave_service[slave["service"]]>> 
-<<$slave_cook[slave["cook"]]>> 
-<<$slave_nurse[slave["nurse"]]>> 
+<<$slave_service[slave["service"]]>>
+<<$slave_cook[slave["cook"]]>>
+<<$slave_nurse[slave["nurse"]]>>
 <<$slave_secretary[slave["secretary"]]>>
-<<$slave_enchanter[slave["enchanter"]]>> 
-<<$slave_expression[slave["expression"]]>> 
-<<$slave_gladiatrix[slave["gladiatrix"]]>>  
-<<$slave_callisthenics[slave["callisthenics"]]>> 
-<<$slave_vocal[slave["vocal"]]>> 
-<<$slave_music[slave["music"]]>> 
+<<$slave_enchanter[slave["enchanter"]]>>
+<<$slave_expression[slave["expression"]]>>
+<<$slave_gladiatrix[slave["gladiatrix"]]>>
+<<$slave_callisthenics[slave["callisthenics"]]>>
+<<$gym_lesson[slave["stamina"]]>>
+<<$slave_vocal[slave["vocal"]]>>
+<<$slave_music[slave["music"]]>>
 <<$slave_pet[slave["pet"]]>>
-<<$slave_dressage[slave["dressage"]]>> 
+<<$slave_dressage[slave["dressage"]]>>
 
 <u>SEX-TECHNIQUES</u>
-<<$slave_petting[slave["petting"]]>> 
-<<$slave_penetration[slave["penetration"]]>> 
+<<$slave_petting[slave["petting"]]>>
+<<$slave_penetration[slave["penetration"]]>>
 <<$slave_oral[slave["oral"]]>>
 <<$slave_orgy[slave["orgy"]]>>
 <<$slave_roleplay[slave["roleplay"]]>>
@@ -115,180 +116,315 @@ IF teach_stat_screen = 0:
  $middle_text_4 = '' 
  $middle_text_5 = ''
  $middle_text_6 = ''
- $middle_text_7 = ''
- $middle_text_8 = ''
+! $middle_text_7 = ''
+! $middle_text_8 = ''
  $right_text_list = '' 
  $left_text_heading = ''
  $right_text_heading = ''
 
  $left_text_heading += '<u>SKILLS TRAINING</u>' 
  IF house_mess > 0 and slave["service"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 1211 & gt ""interaction""'><<$service_lesson[slave[""service""]]>><BR></a>"
-  else
-  $left_text_teach += '<a href = "EXEC: msg $no_house_mess & gt curloc"><font color="#C0C0C0">Housekeeping lesson<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 1211 & gt ""interaction""'><<$service_lesson[slave[""service""]]>></a><BR>"
+  elseif house_mess < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_house_mess & gt curloc"><font color="#C0C0C0">Housekeeping lesson</font></a><BR>'
+  elseif slave["service"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Housekeeping lesson</font></a><BR>'
  END
  IF kitchen > 0 and slave["cook"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 1212 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>><BR></a>"
-  else
-  $left_text_teach += '<a href = "EXEC: msg $no_kitchen & gt curloc"><font color="#C0C0C0">Cookery lesson<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 1212 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>></a><BR>"
+  elseif kitchen < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_kitchen & gt curloc"><font color="#C0C0C0">Cookery lesson</font></a><BR>'
+  elseif slave["cook"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Cookery lesson</font></a><BR>'
  END
  IF slave["nurse"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 1213 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>><BR></a>" 
-  else
-  $left_text_teach += '<font color="#C0C0C0">Nurse training<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 1213 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>></a><BR>"
+  elseif slave["nurse"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Nurse training</font></a><BR>'
  END 
  IF slave["secretary"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 1214 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>><BR></a>"   
-  else
-  $left_text_teach += '<font color="#C0C0C0">Clerical work<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 1214 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>></a><BR>"
+  elseif slave["secretary"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Clerical work</font></a><BR>'
  END
  IF lab = 1 and slave["enchanter"] < 5: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 1243 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>><BR></a>"
-  else
-  $left_text_teach += '<a href = "EXEC: msg $no_lab & gt curloc"><font color="#C0C0C0">Alchemy lesson<BR></font></a>'   
+  $left_text_teach += "<a href = 'EXEC: interaction = 1243 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>></a><BR>"
+  elseif lab < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_lab & gt curloc"><font color="#C0C0C0">Alchemy lesson</font></a><BR>'
+  elseif slave["enchanter"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Alchemy lesson</font></a><BR>'
  END
  IF slave["expression"] < 5: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 1231 & gt ""interaction""'><<$exprtession_lesson[slave[""expression""]]>><BR></a>"   
-  else
-  $left_text_teach += '<font color="#C0C0C0">Etiquette lesson<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 1231 & gt ""interaction""'><<$expression_lesson[slave[""expression""]]>></a><BR>"
+  elseif slave["expression"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Etiquette lesson</font></a><BR>'
  END
  IF slave["stamina"] >= 3 and slave["gladiatrix"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 1223 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>><BR></a>"
-  else
-  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Martial Arts<BR></font></a>'
- END 
- IF slave["stamina"] >= 1:
-  $left_text_teach += "<a href = 'EXEC: interaction = 1221 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>><BR></a>"
-  else
-  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Gymnastics<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 1223 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Martial Arts</font></a><BR>'
+  elseif slave["gladiatrix"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Martial Arts</font></a><BR>'
  END 
  IF slave["stamina"] >= 3 and slave["callisthenics"] < 5: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 1222 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>><BR></a>" 
-  else
-  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Dance lesson<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 1222 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Dance lesson</font></a><BR>'
+  elseif slave["callisthenics"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Dance lesson</font></a><BR>'
  END 
+ IF slave["stamina"] >= 1 and slave["stamina"] <= 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1221 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>></a><BR>"
+  elseif slave["stamina"] < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Sports & Fitness</font></a><BR>'
+ END
  IF slave["vocal"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 1234 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>><BR></a>"  
-  else
-  $left_text_teach += '<font color="#C0C0C0">Singing lesson<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 1234 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>></a><BR>"
+  elseif slave["vocal"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Singing lesson</font></a><BR>'
  END
  IF slave["music"] < 5:
-  $left_text_teach += "<a href = 'EXEC: menu_form = 1233 & gt ""menu_form""'><<$music_lesson[slave[""music""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Music lesson<BR></font></a>'
- END 
+  $left_text_teach += "<a href = 'EXEC: menu_form = 1233 & gt ""menu_form""'><<$music_lesson[slave[""music""]]>></a><BR>"
+  elseif slave["music"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Music lesson</font></a><BR>'
+ END
  IF slave["stamina"] >= 3 and slave["pet"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 1242 & gt ""interaction""'><<$dressur_lesson[slave[""pet""]]>><BR></a>"
-  else
-  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pet training<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 1241 & gt ""interaction""'><<$domestik_lesson[slave[""pet""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pet training</font></a><BR>'
+  elseif slave["pet"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pet training</font></a><BR>'
+ END
+ IF slave["stamina"] >= 4 and slave["pet"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1242 & gt ""interaction""'><<$dressur_lesson[slave[""pet""]]>></a><BR>"
+  elseif slave["stamina"] < 4:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pet Taming training</font></a><BR>'
+  elseif slave["pet"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pet Taming training</font></a><BR>'
  END
  IF slave["stamina"] >= 3 and slave["dressage"] < 5: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 1224 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>><BR></a>"
-  else
-  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pony training<BR></font></a>'     
+  $left_text_teach += "<a href = 'EXEC: interaction = 1224 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pony training</font></a><BR>'
+  elseif slave["dressage"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pony training</font></a><BR>'
  END
  IF slave["stamina"] >= 4 and slave["dressage"] < 5: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 1225 & gt ""interaction""'><<$draft_lesson[slave[""dressage""]]>><BR></a>"
-  else
-  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Harness training<BR></font></a>'     
+  $left_text_teach += "<a href = 'EXEC: interaction = 1225 & gt ""interaction""'><<$draft_lesson[slave[""dressage""]]>></a><BR>"
+  elseif slave["stamina"] < 4:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pony Harness training</font></a><BR>'
+  elseif slave["dressage"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pony Harness training</font></a><BR>'
  END
-!" IF master_tantra > 0:
-  $left_text_list += "<a href = 'EXEC: interaction = 1226 & gt ""interaction""'><<$tantra_lesson[slave[""tantra""]]>><BR></a>"
-  else
-  $left_text_list += '<font color="#C0C0C0">Tantra Yoga<BR></font>'    
- END "
-
 
  $right_text_heading += '<u>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSEXUAL TRAINING&nbsp&nbsp</u>'
- $middle_text_1 += "<a href = 'EXEC: interaction = 1311 & gt ""interaction""'><<$slave_sub_hj[slave[""sub_hj""]]>><BR></a>"
- $middle_text_1 += "<a href = 'EXEC: interaction = 1312 & gt ""interaction""'><<$slave_sub_fj[slave[""sub_fj""]]>><BR></a>"
- $middle_text_1 += "<a href = 'EXEC: interaction = 1313 & gt ""interaction""'><<$slave_sub_hug[slave[""sub_hug""]]>><BR></a>"
- $middle_text_1 += "<a href = 'EXEC: interaction = 1314 & gt ""interaction""'><<$slave_sub_pazuri[slave[""sub_pazuri""]]>><BR></a>"
- $middle_text_2 += "<a href = 'EXEC: interaction = 1331 & gt ""interaction""'><<$slave_sub_vaginal[slave[""sub_vaginal""]]>><BR></a>"
- $middle_text_2 += "<a href = 'EXEC: interaction = 1332 & gt ""interaction""'><<$slave_sub_anal[slave[""sub_anal""]]>><BR></a>"
- $middle_text_2 += "<a href = 'EXEC: interaction = 1333 & gt ""interaction""'><<$slave_sub_fisting[slave[""sub_fisting""]]>><BR></a>"
- $middle_text_2 += "<a href = 'EXEC: interaction = 1334 & gt ""interaction""'><<$slave_anal_stretch[slave[""anal_stretch""]]>><BR></a>"
- $middle_text_3 += "<a href = 'EXEC: interaction = 1321 & gt ""interaction""'><<$slave_sub_kiss[slave[""sub_kiss""]]>><BR></a>"
- $middle_text_3 += "<a href = 'EXEC: interaction = 1322 & gt ""interaction""'><<$slave_sub_thongue[slave[""sub_thongue""]]>><BR></a>"
- $middle_text_3 += "<a href = 'EXEC: interaction = 1323 & gt ""interaction""'><<$slave_sub_bj[slave[""sub_bj""]]>><BR></a>"
- $middle_text_3 += "<a href = 'EXEC: interaction = 1324 & gt ""interaction""'><<$slave_sub_dt[slave[""sub_dt""]]>><BR></a>"
- $middle_text_3 += "<a href = 'EXEC: interaction = 1325 & gt ""interaction""'><<$slave_sub_asslik[slave[""sub_asslik""]]>><BR></a>"
+ IF slave["sub_hj"] < 5:
+  $middle_text_1 += "<a href = 'EXEC: interaction = 1311 & gt ""interaction""'><<$slave_sub_hj[slave[""sub_hj""]]>></a><BR>"
+  else
+  $middle_text_1 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Handjob</font></a><BR>'
+ END
+ IF slave["sub_fj"] < 5:
+  $middle_text_1 += "<a href = 'EXEC: interaction = 1312 & gt ""interaction""'><<$slave_sub_fj[slave[""sub_fj""]]>></a><BR>"
+  else
+  $middle_text_1 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Footjob</font></a><BR>'
+ END
+ IF slave["sub_hug"] < 5:
+  $middle_text_1 += "<a href = 'EXEC: interaction = 1313 & gt ""interaction""'><<$slave_sub_hug[slave[""sub_hug""]]>></a><BR>"
+  else
+  $middle_text_1 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Rubbing</font></a><BR>'
+ END
+ IF slave["sub_pazuri"] < 5:
+  $middle_text_1 += "<a href = 'EXEC: interaction = 1314 & gt ""interaction""'><<$slave_sub_pazuri[slave[""sub_pazuri""]]>></a><BR>"
+  else
+  $middle_text_1 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Titjob</font></a><BR>'
+ END
+ IF slave["sub_vaginal"] < 5:
+  $middle_text_2 += "<a href = 'EXEC: interaction = 1331 & gt ""interaction""'><<$slave_sub_vaginal[slave[""sub_vaginal""]]>></a><BR>"
+  else
+  $middle_text_2 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Sex</font></a><BR>'
+ END
+ IF slave["sub_anal"] < 5:
+  $middle_text_2 += "<a href = 'EXEC: interaction = 1332 & gt ""interaction""'><<$slave_sub_anal[slave[""sub_anal""]]>></a><BR>"
+  else
+  $middle_text_2 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Anal Sex</font></a><BR>'
+ END
+ IF slave["sub_fisting"] < 5:
+  $middle_text_2 += "<a href = 'EXEC: interaction = 1333 & gt ""interaction""'><<$slave_sub_fisting[slave[""sub_fisting""]]>></a><BR>"
+  else
+  $middle_text_2 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Fisting</font></a><BR>'
+ END
+ IF slave["anal_stretch"] < 5:
+  $middle_text_2 += "<a href = 'EXEC: interaction = 1334 & gt ""interaction""'><<$slave_anal_stretch[slave[""anal_stretch""]]>></a><BR>"
+  else
+  $middle_text_2 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Anal Fisting</font></a><BR>'
+ END
+ IF slave["sub_kiss"] < 5:
+  $middle_text_3 += "<a href = 'EXEC: interaction = 1321 & gt ""interaction""'><<$slave_sub_kiss[slave[""sub_kiss""]]>></a><BR>"
+  else
+  $middle_text_3 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Kissing</font></a><BR>'
+ END
+ IF slave["sub_thongue"] < 5:
+  $middle_text_3 += "<a href = 'EXEC: interaction = 1322 & gt ""interaction""'><<$slave_sub_thongue[slave[""sub_thongue""]]>></a><BR>"
+  else
+  $middle_text_3 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Licking</font></a><BR>'
+ END
+ IF slave["sub_bj"] < 5:
+  $middle_text_3 += "<a href = 'EXEC: interaction = 1323 & gt ""interaction""'><<$slave_sub_bj[slave[""sub_bj""]]>></a><BR>"
+  else
+  $middle_text_3 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Blowjob</font></a><BR>'
+ END
+ IF slave["sub_dt"] < 5:
+  $middle_text_3 += "<a href = 'EXEC: interaction = 1324 & gt ""interaction""'><<$slave_sub_dt[slave[""sub_dt""]]>></a><BR>"
+  else
+  $middle_text_3 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Deep Throat</font></a><BR>'
+ END
+ IF slave["sub_asslik"] < 5:
+  $middle_text_3 += "<a href = 'EXEC: interaction = 1325 & gt ""interaction""'><<$slave_sub_asslik[slave[""sub_asslik""]]>></a><BR>"
+  else
+  $middle_text_3 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Rimming</font></a><BR>'
+ END
  IF exam_in_progress = 1:
-  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Threesome<BR></font></a>' 
-  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Double penetration<BR></font></a>' 
-  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Triple penetration<BR></font></a>' 
-  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Gangbang<BR></font></a>' 
-  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Bukkake<BR></font></a>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Threesome</font></a><BR>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Double penetration</font></a><BR>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Triple penetration</font></a><BR>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Gangbang</font></a><BR>' 
+  $middle_text_4 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Bukkake</font></a><BR>' 
   else
-  IF assistant_state = 1: 
-   $middle_text_4 += "<a href = 'EXEC: interaction = 5420 & gt ""interaction""'><<$slave_sub_threesome[slave[""sub_threesome""]]>><BR></a>"   
-   else
-   $middle_text_4 += "<a href = 'EXEC: interaction = 5422 & gt ""interaction""'><<$slave_sub_threesome[slave[""sub_threesome""]]>><BR></a>" 
+  IF assistant_state = 1 and slave["sub_threesome"] < 5: 
+   $middle_text_4 += "<a href = 'EXEC: interaction = 5420 & gt ""interaction""'><<$slave_sub_threesome[slave[""sub_threesome""]]>></a><BR>"   
+   elseif assistant_state ! 1 and slave["sub_threesome"] < 5:
+   $middle_text_4 += "<a href = 'EXEC: interaction = 5422 & gt ""interaction""'><<$slave_sub_threesome[slave[""sub_threesome""]]>></a><BR>" 
+   elseif slave["sub_threesome"] >= 5:
+   $middle_text_4 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Threesome</font></a><BR>'
   END
-  $middle_text_4 += "<a href = 'EXEC: interaction = 1342 & gt ""interaction""'><<$slave_sub_dp[slave[""sub_dp""]]>><BR></a>"   
-  $middle_text_4 += "<a href = 'EXEC: interaction = 1343 & gt ""interaction""'><<$slave_sub_tp[slave[""sub_tp""]]>><BR></a>"   
-  $middle_text_4 += "<a href = 'EXEC: interaction = 1344 & gt ""interaction""'><<$slave_sub_gangbang[slave[""sub_gangbang""]]>><BR></a>"   
-  $middle_text_4 += "<a href = 'EXEC: interaction = 1345 & gt ""interaction""'><<$slave_sub_bukake[slave[""sub_bukake""]]>><BR></a>"
+  IF slave["sub_dp"] < 5:
+   $middle_text_4 += "<a href = 'EXEC: interaction = 1342 & gt ""interaction""'><<$slave_sub_dp[slave[""sub_dp""]]>></a><BR>"
+   else
+   $middle_text_4 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Double Penetration</font></a><BR>'
+  END
+  IF slave["sub_tp"] < 5: 
+   $middle_text_4 += "<a href = 'EXEC: interaction = 1343 & gt ""interaction""'><<$slave_sub_tp[slave[""sub_tp""]]>></a><BR>"
+   else
+   $middle_text_4 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Triple Penetration</font></a><BR>'
+  END
+  IF slave["sub_gangbang"] < 5: 
+   $middle_text_4 += "<a href = 'EXEC: interaction = 1344 & gt ""interaction""'><<$slave_sub_gangbang[slave[""sub_gangbang""]]>></a><BR>"
+   else
+   $middle_text_4 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Gangbang</font></a><BR>'
+  END
+  IF slave["sub_bukake"] < 5:
+   $middle_text_4 += "<a href = 'EXEC: interaction = 1345 & gt ""interaction""'><<$slave_sub_bukake[slave[""sub_bukake""]]>></a><BR>"
+   else
+   $middle_text_4 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Bukkake</font></a><BR>'
+  END
  END
- $middle_text_5 += "<a href = 'EXEC: interaction = 1371 & gt ""interaction""'><<$slave_sub_seduce[slave[""sub_seduce""]]>><BR></a>"
- $middle_text_5 += "<a href = 'EXEC: interaction = 1372 & gt ""interaction""'><<$slave_sub_masturbation[slave[""sub_masturbation""]]>><BR></a>"
- $middle_text_5 += "<a href = 'EXEC: interaction = 1373 & gt ""interaction""'><<$slave_sub_dildo[slave[""sub_dildo""]]>><BR></a>"
- $middle_text_5 += "<a href = 'EXEC: interaction = 1374 & gt ""interaction""'><<$slave_sub_exhibit[slave[""sub_exhibit""]]>><BR></a>"
- $middle_text_5 += "<a href = 'EXEC: interaction = 1375 & gt ""interaction""'><<$slave_sub_humiliation[slave[""sub_humiliation""]]>><BR></a>" 
- IF bath > 0:
-  $middle_text_6 += "<a href = 'EXEC: interaction = 1365 & gt ""interaction""'><<$slave_sub_enema[slave[""sub_enema""]]>><BR></a>"
+ IF slave["sub_seduce"] < 5:
+  $middle_text_5 += "<a href = 'EXEC: interaction = 1371 & gt ""interaction""'><<$slave_sub_seduce[slave[""sub_seduce""]]>></a><BR>"
   else
-  $middle_text_6 += '<a href = "EXEC: msg $no_bath & gt curloc"><font color="#C0C0C0">Enema<BR></font></a>' 
+  $middle_text_5 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Seduction</font></a><BR>'
  END
- $middle_text_6 += "<a href = 'EXEC: interaction = 1361 & gt ""interaction""'><<$slave_sub_mazo[slave[""sub_mazo""]]>><BR></a>"
- $middle_text_6 += "<a href = 'EXEC: interaction = 1362 & gt ""interaction""'><<$slave_sub_selfpain[slave[""sub_selfpain""]]>><BR></a>"
- IF bath > 0:
-  $middle_text_6 += "<a href = 'EXEC: interaction = 1363 & gt ""interaction""'><<$slave_sub_piss[slave[""sub_piss""]]>><BR></a>"
+ IF slave["sub_masturbation"] < 5:
+  $middle_text_5 += "<a href = 'EXEC: interaction = 1372 & gt ""interaction""'><<$slave_sub_masturbation[slave[""sub_masturbation""]]>></a><BR>"
   else
-  $middle_text_6 += '<a href = "EXEC: msg $no_bath & gt curloc"><font color="#C0C0C0">Golden shower<BR></font></a>' 
+  $middle_text_5 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Masturbation</font></a><BR>'
  END
- IF bath > 0:
-  $middle_text_6 += "<a href = 'EXEC: interaction = 1364 & gt ""interaction""'><<$slave_sub_kopro[slave[""sub_kopro""]]>><BR><BR></a>"
+ IF slave["sub_dildo"] < 5:
+  $middle_text_5 += "<a href = 'EXEC: interaction = 1373 & gt ""interaction""'><<$slave_sub_dildo[slave[""sub_dildo""]]>></a><BR>"
   else
-  $middle_text_6 += '<a href = "EXEC: msg $no_bath & gt curloc"><font color="#C0C0C0">Scatology<BR></font></a>' 
+  $middle_text_5 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Dildo</font></a><BR>'
+ END
+ IF slave["sub_exhibit"] < 5:
+  $middle_text_5 += "<a href = 'EXEC: interaction = 1374 & gt ""interaction""'><<$slave_sub_exhibit[slave[""sub_exhibit""]]>></a><BR>"
+  else
+  $middle_text_5 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Exhibitionism</font></a><BR>'
+ END
+ IF slave["sub_humiliation"] < 5:
+  $middle_text_5 += "<a href = 'EXEC: interaction = 1375 & gt ""interaction""'><<$slave_sub_humiliation[slave[""sub_humiliation""]]>></a><BR>" 
+  else
+  $middle_text_5 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Humiliation</font></a><BR>'
+ END
+ IF bath > 0 and slave["sub_enema"] < 5:
+  $middle_text_6 += "<a href = 'EXEC: interaction = 1365 & gt ""interaction""'><<$slave_sub_enema[slave[""sub_enema""]]>></a><BR>"
+  elseif bath ! 1 and slave["sub_enema"] < 5:
+  $middle_text_6 += '<a href = "EXEC: msg $no_bath & gt curloc"><font color="#C0C0C0">Enema</font></a><BR>'
+  elseif slave["sub_enema"] >= 5:
+  $middle_text_6 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Enema</font></a><BR>'
+ END
+ IF slave["sub_mazo"] < 5:
+  $middle_text_6 += "<a href = 'EXEC: interaction = 1361 & gt ""interaction""'><<$slave_sub_mazo[slave[""sub_mazo""]]>></a><BR>"
+  else
+  $middle_text_6 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Masochism</font></a><BR>'
+ END
+ IF slave["sub_selfpain"] < 5:
+  $middle_text_6 += "<a href = 'EXEC: interaction = 1362 & gt ""interaction""'><<$slave_sub_selfpain[slave[""sub_selfpain""]]>></a><BR>"
+  else
+  $middle_text_6 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Self-Torture</font></a><BR>'
+ END
+ IF bath > 0 and slave["sub_piss"] < 5:
+  $middle_text_6 += "<a href = 'EXEC: interaction = 1363 & gt ""interaction""'><<$slave_sub_piss[slave[""sub_piss""]]>></a><BR>"
+  elseif bath ! 1 and slave["sub_piss"] < 5:
+  $middle_text_6 += '<a href = "EXEC: msg $no_bath & gt curloc"><font color="#C0C0C0">Golden shower</font></a><BR>'
+  elseif slave["sub_piss"] >= 5:
+  $middle_text_6 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Golden shower</font></a><BR>'
+ END
+ IF bath > 0 and slave["sub_kopro"] < 5:
+  $middle_text_6 += "<a href = 'EXEC: interaction = 1364 & gt ""interaction""'><<$slave_sub_kopro[slave[""sub_kopro""]]>></a><BR>"
+  elseif bath ! 1 and slave["sub_kopro"] < 5:
+  $middle_text_6 += '<a href = "EXEC: msg $no_bath & gt curloc"><font color="#C0C0C0">Scatology</font></a><BR>'
+  elseif slave["sub_kopro"] >= 5:
+  $middle_text_6 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Scatology</font></a><BR>'
  END
  IF exam_in_progress = 1:
-  $middle_text_7 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Dog mating<BR></font></a>' 
-  $middle_text_7 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Pig mating<BR></font></a>' 
-  $middle_text_8 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Horse mating<BR></font></a>' 
-  $middle_text_8 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Fiend mating<BR></font></a>' 
-  $middle_text_7 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Spider mating<BR></font>' 
-  $middle_text_8 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Sea tentacle mating<BR></font>' 
+  $middle_text_5 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Dog mating</font></a><BR>' 
+  $middle_text_5 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Pig mating</font></a><BR>'
+  $middle_text_5 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Spider mating</font><BR>' 
+  $middle_text_6 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Horse mating</font></a><BR>' 
+  $middle_text_6 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Fiend mating</font></a><BR>' 
+  $middle_text_6 += '<a href = "EXEC: msg $no_services_exam & gt curloc"><font color="#C0C0C0">Sea tentacle mating</font><BR>' 
   else
-  IF dog > 0:   
-   $middle_text_7 += "<a href = 'EXEC: interaction = 1351 & gt ""interaction""'><<$slave_sub_zoosex[slave[""sub_zoosex""]]>><BR></a>"   
-   else
-   $middle_text_7 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Dog mating<BR></font></a>' 
+  IF dog > 0 and slave["sub_zoosex"] < 5:
+   $middle_text_5 += "<a href = 'EXEC: interaction = 1351 & gt ""interaction""'><<$slave_sub_zoosex[slave[""sub_zoosex""]]>></a><BR>"   
+   elseif dog ! 1 and slave["sub_zoosex"] < 5:
+   $middle_text_5 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Dog mating</font></a><BR>'
+   elseif slave["sub_zoosex"] >= 5:
+   $middle_text_5 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Dog mating</font></a><BR>'
   END
-  IF svine > 0:   
-   $middle_text_7 += "<a href = 'EXEC: interaction = 1352 & gt ""interaction""'><<$slave_svinesex[slave[""sub_bestiality""]]>><BR></a>"    
-   else
-   $middle_text_7 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Pig mating<BR></font></a>' 
+  IF svine > 0 and barn = 1 and slave["sub_bestiality"] < 5:
+   $middle_text_5 += "<a href = 'EXEC: interaction = 1352 & gt ""interaction""'><<$slave_svinesex[slave[""sub_bestiality""]]>></a><BR>"    
+   elseif svine ! 1 and barn ! 1 and slave["sub_bestiality"] < 5:
+   $middle_text_5 += '<a href = "EXEC: msg $no_barn & gt curloc"><font color="#C0C0C0">Pig mating</font></a><BR>'
+   elseif slave["sub_bestiality"] >= 5:
+   $middle_text_5 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pig mating</font></a><BR>'
   END
-  IF horse > 0:  
-   $middle_text_8 += "<a href = 'EXEC: interaction = 1353 & gt ""interaction""'><<$slave_horsesex[slave[""sub_horse""]]>><BR></a>"   
-   else
-   $middle_text_8 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Horse mating<BR></font></a>' 
+  IF arachnidSpider > 0 and dungeon = 1 and slave["sub_arachnidSpider"] < 5:  
+   $middle_text_5 += "<a href = 'EXEC: interaction = 1355 & gt ""interaction""'><<$slave_arachnidSpider[slave[""sub_arachnidSpider""]]>></a><BR>"   
+   elseif arachnidSpider ! 1 and dungeon ! 1 and slave["sub_arachnidSpider"] < 5:
+   $middle_text_5 += '<a href = "EXEC: msg $no_dungeon & gt curloc"><font color="#C0C0C0">Spider mating</font></a><BR>'
+   elseif slave["sub_arachnidSpider"] >= 5:
+   $middle_text_5 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Spider mating</font></a><BR>' 
   END
-  IF pet_tentacle > 0:  
-   $middle_text_8 += "<a href = 'EXEC: interaction = 1354 & gt ""interaction""'><<$slave_tentacle[slave[""sub_tentacles""]]>><BR></a>"   
-   else
-   $middle_text_8 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Fiend mating<BR></font></a>' 
+  IF horse > 0 and slave["sub_horse"] < 5:
+   $middle_text_6 += "<a href = 'EXEC: interaction = 1353 & gt ""interaction""'><<$slave_horsesex[slave[""sub_horse""]]>></a><BR>"   
+   elseif horse ! 1 and slave["sub_horse"] < 5:
+   $middle_text_6 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Horse mating</font></a><BR>'
+   elseif slave["sub_horse"] >= 5:
+   $middle_text_6 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Horse mating</font></a><BR>'
+  END
+  IF pet_tentacle > 0 and pen = 1 and slave["sub_tentacles"] < 5:
+   $middle_text_6 += "<a href = 'EXEC: interaction = 1354 & gt ""interaction""'><<$slave_tentacle[slave[""sub_tentacles""]]>></a><BR>"   
+   elseif pet_tentacle ! 1 and pen ! 1 and slave["sub_tentacles"] < 5:
+   $middle_text_6 += '<a href = "EXEC: msg $no_pen & gt curloc"><font color="#C0C0C0">Fiend mating</font></a><BR>'
+   elseif pet_tentacle ! 1 and pen = 1 and slave["sub_tentacles"] < 5:
+   $middle_text_6 += '<a href = "EXEC: msg $no_creature & gt curloc"><font color="#C0C0C0">Fiend mating</font></a><BR>'
+   elseif slave["sub_tentacles"] >= 5:
+   $middle_text_6 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Fiend mating</font></a><BR>'
   END 
-  IF arachnidSpider > 0 and dungeon = 1:  
-   $middle_text_7 += "<a href = 'EXEC: interaction = 1355 & gt ""interaction""'><<$slave_arachnidSpider[slave[""sub_arachnidSpider""]]>><BR></a>"   
-   else
-   $middle_text_7 += '<font color="#C0C0C0">Spider mating<BR></font>' 
-  END
-  IF polypusvermin > 0 and dungeon = 1:  
-   $middle_text_8 += "<a href = 'EXEC: interaction = 1356 & gt ""interaction""'><<$slave_polypusvermin[slave[""sub_polypusvermin""]]>><BR></a>"   
-   else
-   $middle_text_8 += '<font color="#C0C0C0">Sea tentacle mating<BR></font>' 
+  IF polypusvermin > 0 and dungeon = 1 and slave["sub_polypusvermin"] < 5:
+   $middle_text_6 += "<a href = 'EXEC: interaction = 1356 & gt ""interaction""'><<$slave_polypusvermin[slave[""sub_polypusvermin""]]>></a><BR>"   
+   elseif polypusvermin ! 1 and dungeon ! 1 and slave["sub_polypusvermin"] < 5:
+   $middle_text_6 += '<a href = "EXEC: msg $no_dungeon & gt curloc"><font color="#C0C0C0">Sea T mating</font></a><BR>'
+   elseif slave["sub_polypusvermin"] >= 5:
+   $middle_text_6 += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Sea T mating</font></a><BR>'
   END
  END
  *p '<div id = "mark_one"><img src = "content\pic\buttons\sel_button.png"></div>'
@@ -329,8 +465,8 @@ IF teach_stat_screen = 0:
  *p '<div id = "middle_text_4"><<$middle_text_4>></div>'
  *p '<div id = "middle_text_5"><<$middle_text_5>></div>'
  *p '<div id = "middle_text_6"><<$middle_text_6>></div>'
- *p '<div id = "middle_text_7"><<$middle_text_7>></div>'
- *p '<div id = "middle_text_8"><<$middle_text_8>></div>'
+! *p '<div id = "middle_text_7"><<$middle_text_7>></div>'
+! *p '<div id = "middle_text_8"><<$middle_text_8>></div>'
 END
 
 !TUTOR TRAINING TAB
@@ -342,70 +478,86 @@ If teach_stat_screen = 1:
  $left_text_heading = ''
  
  $left_text_heading += '<u>SKILLS TRAINING</u>'
- IF house_mess > 0 and slave['service'] < 5:
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1711 & gt ""interaction""'><<$service_lesson[slave[""service""]]>></a></p>"
-  else
-  $left_text_teach += '<p><<$service_lesson[6]>></p>'
+ IF house_mess > 0 and slave["service"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1711 & gt ""interaction""'><<$service_lesson[slave[""service""]]>></a><BR>"
+  elseif house_mess < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_house_mess & gt curloc"><font color="#C0C0C0">Housekeeping lesson</font></a><BR>'
+  elseif slave["service"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Housekeeping lesson</font></a><BR>'
  END
- IF kitchen > 0 and slave['cook'] < 5:
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1712 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>></a></p>"
-  else
-  $left_text_teach += '<p><<$cook_lesson[6]>></p>'
+ IF kitchen > 0 and slave["cook"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1712 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>></a><BR>"
+  elseif kitchen < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_kitchen & gt curloc"><font color="#C0C0C0">Cookery lesson</font></a><BR>'
+  elseif slave["cook"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Cookery lesson</font></a><BR>'
+ END
+ IF slave["nurse"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1713 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>></a><BR>"
+  elseif slave["nurse"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Nurse training</font></a><BR>'
  END 
- IF slave['nurse'] < 5:  
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1713 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>></a></p>"  
-  else
-  $left_text_teach += '<p><<$nurse_lesson[6]>></p>'  
+ IF slave["secretary"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1714 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>></a><BR>"
+  elseif slave["secretary"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Clerical work</font></a><BR>'
  END
- IF slave['secretary'] < 5:    
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1714 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>></a></p>"  
-  else
-  $left_text_teach += '<p><<$secretary_lesson[6]>></p>'
+ IF lab = 1 and slave["enchanter"] < 5: 
+  $left_text_teach += "<a href = 'EXEC: interaction = 1734 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>></a><BR>"
+  elseif lab < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_lab & gt curloc"><font color="#C0C0C0">Alchemy lesson</font></a><BR>'
+  elseif slave["enchanter"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Alchemy lesson</font></a><BR>'
  END
- IF lab = 1 and slave['enchanter'] < 5: 
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1734 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>></a></p>"
-  else
-  $left_text_teach += '<p><<$alchemy_lesson[6]>></p>'   
+ IF slave["expression"] < 5: 
+  $left_text_teach += "<a href = 'EXEC: interaction = 1731 & gt ""interaction""'><<$expression_lesson[slave[""expression""]]>></a><BR>"
+  elseif slave["expression"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Etiquette lesson</font></a><BR>'
  END
- IF slave['expression'] < 5:    
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1731 & gt ""interaction""'><<$exprtession_lesson[slave[""expression""]]>></a></p>"   
-  else
-  $left_text_teach += '<p><<$exprtession_lesson[6]>></p>'
- END
- IF slave["stamina"] >= 3 and slave['gladiatrix'] < 5:
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1723 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>></a></p>"
-  else
-  $left_text_teach += '<p><<$fight_lesson[6]>></p>'
+ IF slave["stamina"] >= 3 and slave["gladiatrix"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1723 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Martial Arts</font></a><BR>'
+  elseif slave["gladiatrix"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Martial Arts</font></a><BR>'
  END 
- IF slave["stamina"] >= 1 and slave['stamina'] <= 5:
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1721 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>></a></p>"
-  else
-  $left_text_teach += '<p><<$gym_lesson[6]>></p>'
- END
- IF slave["stamina"] >= 3 and slave['callisthenics'] < 5: 
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1722 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>></a></p>" 
-  else
-  $left_text_teach += '<p><<$dance_lesson[6]>></p>'
- END
- IF slave['vocal'] < 5:   
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1733 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>></a></p>"  
-  else
-  $left_text_teach += '<p><<$vocal_lesson[6]>></p>'
- END  
- IF slave['music'] < 5:   
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1732 & gt ""interaction""'><<$music_lesson[slave[""music""]]>></a></p>" 
-  else
-  $left_text_teach += '<p><<$music_lesson[6]>></p>'
- END
- IF slave['pet'] < 5:  
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1725 & gt ""interaction""'><<$dressur_lesson[slave[""pet""]]>></a></p>"
-  else
-  $left_text_teach += '<p><<$dressur_lesson[6]>></p>'
+ IF slave["stamina"] >= 3 and slave["callisthenics"] < 5: 
+  $left_text_teach += "<a href = 'EXEC: interaction = 1722 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Dance lesson</font></a><BR>'
+  elseif slave["callisthenics"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Dance lesson</font></a><BR>'
  END 
- IF slave["stamina"] >= 3 and slave['dressage'] < 5: 
-  $left_text_teach += "<p><a href = 'EXEC: interaction = 1724 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>></a></p>"
-  else
-  $left_text_teach += '<p><<$dressage_lesson[6]>></p>'     
+ IF slave["stamina"] >= 1 and slave["stamina"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1721 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>></a><BR>"
+  elseif slave["stamina"] < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Sports & Fitness</font></a><BR>'
+  elseif slave["stamina"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Sports & Fitness</font></a><BR>'
+ END
+ IF slave["vocal"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1733 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>></a><BR>"
+  elseif slave["vocal"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Singing lesson</font></a><BR>'
+ END
+ IF slave["music"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1732 & gt ""interaction""'><<$music_lesson[slave[""music""]]>></a><BR>"
+  elseif slave["music"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Music lesson</font></a><BR>'
+ END
+ IF slave["stamina"] >= 3 and slave["pet"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 1725 & gt ""interaction""'><<$domestik_lesson[slave[""pet""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pet training</font></a><BR>'
+  elseif slave["pet"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pet training</font></a><BR>'
+ END
+ IF slave["stamina"] >= 3 and slave["dressage"] < 5: 
+  $left_text_teach += "<a href = 'EXEC: interaction = 1724 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pony training</font></a><BR>'
+  elseif slave["dressage"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pony training</font></a><BR>'
  END
 
  *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
@@ -446,69 +598,79 @@ If teach_stat_screen = 2:
  
  $left_text_heading += '<u>SKILLS TRAINING</u>'
  IF slave["service"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 561 & gt ""interaction""'><<$service_lesson[slave[""service""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Housekeeping lesson<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 561 & gt ""interaction""'><<$service_lesson[slave[""service""]]>></a><BR>"
+  elseif slave["service"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Housekeeping lesson</font></a><BR>'
  END
  IF slave["cook"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 562 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Cookery lesson<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 562 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>></a><BR>"
+  elseif slave["cook"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Cookery lesson</font></a><BR>'
  END
  IF slave["nurse"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 563 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>><BR></a>"  
-  else
-  $left_text_teach += '<font color="#C0C0C0">Nurse training<BR></font></a>'
- END
+  $left_text_teach += "<a href = 'EXEC: interaction = 563 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>></a><BR>"
+  elseif slave["nurse"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Nurse training</font></a><BR>'
+ END 
  IF slave["secretary"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 564 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>><BR></a>"  
-  else
-  $left_text_teach += '<font color="#C0C0C0">Clerical work<BR></font></a>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 564 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>></a><BR>"
+  elseif slave["secretary"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Clerical work</font></a><BR>'
  END
- IF slave["enchanter"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 5613 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Alchemy lesson<BR></font></a>'
+ IF slave["enchanter"] < 5: 
+  $left_text_teach += "<a href = 'EXEC: interaction = 5613 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>></a><BR>"
+  elseif slave["enchanter"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Alchemy lesson</font></a><BR>'
  END
- IF slave["expression"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 5610 & gt ""interaction""'><<$exprtession_lesson[slave[""expression""]]>><BR></a>" 
-  else
-  $left_text_teach += '<font color="#C0C0C0">Etiquette lesson<BR></font></a>'
+ IF slave["expression"] < 5: 
+  $left_text_teach += "<a href = 'EXEC: interaction = 5610 & gt ""interaction""'><<$expression_lesson[slave[""expression""]]>></a><BR>"
+  elseif slave["expression"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Etiquette lesson</font></a><BR>'
  END
  IF slave["stamina"] >= 3 and slave["gladiatrix"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 567 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Martial Arts<BR></font>'
- END 
- IF slave["stamina"] >= 1:
-  $left_text_teach += "<a href = 'EXEC: interaction = 565 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Gymnastics<BR></font>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 567 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Martial Arts</font></a><BR>'
+  elseif slave["gladiatrix"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Martial Arts</font></a><BR>'
  END 
  IF slave["stamina"] >= 3 and slave["callisthenics"] < 5: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 566 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>><BR></a>" 
-  else
-  $left_text_teach += '<font color="#C0C0C0">Dance lesson<BR></font>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 566 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Dance lesson</font></a><BR>'
+  elseif slave["callisthenics"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Dance lesson</font></a><BR>'
+ END 
+ IF slave["stamina"] >= 1 and slave["stamina"] < 5:
+  $left_text_teach += "<a href = 'EXEC: interaction = 565 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>></a><BR>"
+  elseif slave["stamina"] < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Sports & Fitness</font></a><BR>'
+  elseif slave["stamina"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Sports & Fitness</font></a><BR>'
  END
  IF slave["vocal"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 5612 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Singing lesson<BR></font>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 5612 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>></a><BR>"
+  elseif slave["vocal"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Singing lesson</font></a><BR>'
  END
  IF slave["music"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 5611 & gt ""interaction""'><<$music_lesson[slave[""music""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Music lesson<BR></font>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 5611 & gt ""interaction""'><<$music_lesson[slave[""music""]]>></a><BR>"
+  elseif slave["music"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Music lesson</font></a><BR>'
  END
  IF slave["stamina"] >= 3 and slave["pet"] < 5:
-  $left_text_teach += "<a href = 'EXEC: interaction = 569 & gt ""interaction""'><<$dressur_lesson[slave[""pet""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Pet training<BR></font>'
- END 
+  $left_text_teach += "<a href = 'EXEC: interaction = 569 & gt ""interaction""'><<$domestik_lesson[slave[""pet""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pet training</font></a><BR>'
+  elseif slave["pet"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pet training</font></a><BR>'
+ END
  IF slave["stamina"] >= 3 and slave["dressage"] < 5: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 568 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Pony training<BR></font>'     
+  $left_text_teach += "<a href = 'EXEC: interaction = 568 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pony training</font></a><BR>'
+  elseif slave["dressage"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pony training</font></a><BR>'
  END
 
  *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
@@ -544,65 +706,110 @@ If teach_stat_screen = 3:
  $left_text_heading = '' 
 
  $left_text_heading += '<u>SKILLS TRAINING</u>'  
- IF  house_mess > 0 and assistant["service"] > slave["service"]:
-  $left_text_teach += "<a href = 'EXEC: interaction = 4111 & gt ""interaction""'><<$service_lesson[slave[""service""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Housekeeping lesson<BR></font>'
+ IF house_mess > 0 and assistant["service"] > slave["service"]:
+  $left_text_teach += "<a href = 'EXEC: interaction = 4111 & gt ""interaction""'><<$service_lesson[slave[""service""]]>></a><BR>"
+  elseif house_mess < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_house_mess & gt curloc"><font color="#C0C0C0">Housekeeping lesson</font></a><BR>'
+  elseif slave["service"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Housekeeping lesson</font></a><BR>'
+  elseif assistant["service"] <= slave["service"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Housekeeping lesson</font></a><BR>'
  END
  IF kitchen > 0 and assistant["cook"] > slave["cook"]:
-  $left_text_teach += "<a href = 'EXEC: interaction = 4112 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Cookery lesson<BR></font>'
- END 
- IF assistant["nurse"] > slave["nurse"]:  
-  $left_text_teach += "<a href = 'EXEC: interaction = 4113 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>><BR></a>"  
-  else
-  $left_text_teach += '<font color="#C0C0C0">Nurse training<BR></font>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 4112 & gt ""interaction""'><<$cook_lesson[slave[""cook""]]>></a><BR>"
+  elseif kitchen < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_kitchen & gt curloc"><font color="#C0C0C0">Cookery lesson</font></a><BR>'
+  elseif slave["cook"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Cookery lesson</font></a><BR>'
+  elseif assistant["cook"] <= slave["cook"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Cookery lesson</font></a><BR>'
  END
- IF assistant["secretary"] > slave["secretary"]:  
-  $left_text_teach += "<a href = 'EXEC: interaction = 4114 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>><BR></a>"  
-  else
-  $left_text_teach += '<font color="#C0C0C0">Clerical work<BR></font>'
+ IF assistant["nurse"] > slave["nurse"]:
+  $left_text_teach += "<a href = 'EXEC: interaction = 4113 & gt ""interaction""'><<$nurse_lesson[slave[""nurse""]]>></a><BR>"
+  elseif slave["nurse"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Nurse training</font></a><BR>'
+  elseif assistant["nurse"] <= slave["nurse"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Nurse training</font></a><BR>'
  END 
- IF lab = 1 and  assistant["enchanter"] > slave["enchanter"]: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 4142 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Alchemy lesson<BR></font>'   
+ IF assistant["secretary"] > slave["secretary"]:
+  $left_text_teach += "<a href = 'EXEC: interaction = 4114 & gt ""interaction""'><<$secretary_lesson[slave[""secretary""]]>></a><BR>"
+  elseif slave["secretary"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Clerical work</font></a><BR>'
+  elseif assistant["secretary"] <= slave["secretary"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Clerical work</font></a><BR>'
  END
- IF assistant["expression"] > slave["expression"]:   
-  $left_text_teach += "<a href = 'EXEC: interaction = 4131 & gt ""interaction""'><<$exprtession_lesson[slave[""expression""]]>><BR></a>"   
-  else
-  $left_text_teach += '<font color="#C0C0C0">Etiquette lesson<BR></font>'
- END 
+ IF lab = 1 and assistant["enchanter"] > slave["enchanter"]: 
+  $left_text_teach += "<a href = 'EXEC: interaction = 4142 & gt ""interaction""'><<$alchemy_lesson[slave[""enchanter""]]>></a><BR>"
+  elseif lab < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_lab & gt curloc"><font color="#C0C0C0">Alchemy lesson</font></a><BR>'
+  elseif slave["enchanter"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Alchemy lesson</font></a><BR>'
+  elseif assistant["enchanter"] <= slave["enchanter"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Alchemy lesson</font></a><BR>'
+ END
+ IF assistant["expression"] > slave["expression"]: 
+  $left_text_teach += "<a href = 'EXEC: interaction = 4131 & gt ""interaction""'><<$expression_lesson[slave[""expression""]]>></a><BR>"
+  elseif slave["expression"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Etiquette lesson</font></a><BR>'
+  elseif assistant["expression"] <= slave["expression"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Etiquette lesson</font></a><BR>'
+ END
  IF slave["stamina"] >= 3 and assistant["gladiatrix"] > slave["gladiatrix"]:
-  $left_text_teach += "<a href = 'EXEC: interaction = 4123 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Martial Arts<BR></font>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 4123 & gt ""interaction""'><<$fight_lesson[slave[""gladiatrix""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Martial Arts</font></a><BR>'
+  elseif slave["gladiatrix"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Martial Arts</font></a><BR>'
+  elseif assistant["gladiatrix"] <= slave["gladiatrix"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Martial Arts</font></a><BR>'
  END 
  IF slave["stamina"] >= 3 and assistant["callisthenics"] > slave["callisthenics"]: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 4122 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>><BR></a>" 
-  else
-  $left_text_teach += '<font color="#C0C0C0">Dance lesson<BR></font>'
+  $left_text_teach += "<a href = 'EXEC: interaction = 4122 & gt ""interaction""'><<$dance_lesson[slave[""callisthenics""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Dance lesson</font></a><BR>'
+  elseif slave["callisthenics"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Dance lesson</font></a><BR>'
+  elseif assistant["callisthenics"] <= slave["callisthenics"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Dance lesson</font></a><BR>'
  END 
- IF assistant["vocal"] > slave["vocal"]:  
-  $left_text_teach += "<a href = 'EXEC: interaction = 4133 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>><BR></a>"  
-  else
-  $left_text_teach += '<font color="#C0C0C0">Singing lesson<BR></font>'
- END   
- IF assistant["music"] > slave["music"]:  
-  $left_text_teach += "<a href = 'EXEC: interaction = 4132 & gt ""interaction""'><<$music_lesson[slave[""music""]]>><BR></a>" 
-  else
-  $left_text_teach += '<font color="#C0C0C0">Music lesson<BR></font>'
- END  
- IF slave["stamina"] >= 3 and assistant["pet"] > slave["pet"]:  
-  $left_text_teach += "<a href = 'EXEC: interaction = 4141 & gt ""interaction""'><<$dressur_lesson[slave[""pet""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Pet training<BR></font>'   
- END     
- IF slave["stamina"] >= 3 and assistant["dressage"] > slave["dressage"]: 
-  $left_text_teach += "<a href = 'EXEC: interaction = 4143 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>><BR></a>"
-  else
-  $left_text_teach += '<font color="#C0C0C0">Pony training<BR></font>'     
+ IF slave["stamina"] >= 1 and assistant["stamina"] >= slave["stamina"]:
+  $left_text_teach += "<a href = 'EXEC: interaction = 4121 & gt ""interaction""'><<$gym_lesson[slave[""stamina""]]>></a><BR>"
+  elseif slave["stamina"] < 1:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Sports & Fitness</font></a><BR>'
+  elseif assistant["stamina"] < slave["stamina"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Sports & Fitness</font></a><BR>'
+ END
+ IF assistant["vocal"] > slave["vocal"]:
+  $left_text_teach += "<a href = 'EXEC: interaction = 4133 & gt ""interaction""'><<$vocal_lesson[slave[""vocal""]]>></a><BR>"
+  elseif slave["vocal"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Singing lesson</font></a><BR>'
+  elseif assistant["vocal"] <= slave["vocal"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Singing lesson</font></a><BR>'
+ END
+ IF assistant["music"] > slave["music"]:
+  $left_text_teach += "<a href = 'EXEC: interaction = 4132 & gt ""interaction""'><<$music_lesson[slave[""music""]]>></a><BR>"
+  elseif slave["music"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Music lesson</font></a><BR>'
+  elseif assistant["music"] <= slave["music"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Music lesson</font></a><BR>'
+ END
+ IF slave["stamina"] >= 3 and assistant["pet"] > slave["pet"]:
+  $left_text_teach += "<a href = 'EXEC: interaction = 4141 & gt ""interaction""'><<$domestik_lesson[slave[""pet""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pet training</font></a><BR>'
+  elseif slave["pet"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pet training</font></a><BR>'
+  elseif assistant["pet"] <= slave["pet"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Pet training</font></a><BR>'
+ END
+ IF slave["stamina"] >= 3 and assistant["dressage"] > slave["dressage"]:
+  $left_text_teach += "<a href = 'EXEC: interaction = 4143 & gt ""interaction""'><<$dressage_lesson[slave[""dressage""]]>></a><BR>"
+  elseif slave["stamina"] < 3:
+  $left_text_teach += '<a href = "EXEC: msg $no_slave_stamina & gt curloc"><font color="#C0C0C0">Pony training</font></a><BR>'
+  elseif slave["dressage"] >= 5:
+  $left_text_teach += '<a href = "EXEC: msg $max_skill & gt curloc"><font color="#C0C0C0">Pony training</font></a><BR>'
+  elseif assistant["dressage"] <= slave["dressage"]:
+  $left_text_teach += '<a href = "EXEC: msg $assistant_skill & gt curloc"><font color="#C0C0C0">Pony training</font></a><BR>'
  END
 
  *p '<div id = "mark_one"><a href = "EXEC: teach_stat_screen = 0 & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'

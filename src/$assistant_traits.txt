@@ -1,5 +1,19 @@
 # $assistant_traits
-!reveals traits
+!reveals assistant traits - crushboss
+
+!Check for habit - assistant
+if assistant["exhibitionism_xp"] > 10 and assistant["exhibitionism"] = 0: assistant["exhibitionism"] = 1
+if assistant["masohism_xp"] > 30 and assistant["masohism"] = 0: assistant["masohism"] = 1
+if assistant["preversion_xp"] > 10 and assistant["preversion"] = 0: assistant["preversion"] = 1
+if assistant["lesbian_xp"] > 10 and assistant["homosexualism"] = 0: assistant["homosexualism"] = 1
+if assistant["abuse_xp"] > 30 and assistant["abuse_attitude"] = 0: assistant["abuse_attitude"] = 1
+if assistant["darkness_xp"] > 10 and assistant["darkness_attitude"] = 0: assistant["darkness_attitude"] = 1
+if assistant["blood_xp"] > 10 and assistant["blood_attitude"] = 0: assistant["blood_attitude"] = 1
+if assistant["fire_xp"] > 10 and assistant["fire_attitude"] = 0: assistant["fire_attitude"] = 1
+if assistant["water_xp"] > 10 and assistant["water_attitude"] = 0: assistant["water_attitude"] = 1
+if assistant["vermin_xp"] > 10 and assistant["vermin_attitude"] = 0: assistant["vermin_attitude"] = 1
+if assistant["deprivation_xp"] > 10 and assistant["deprivation_attitude"] = 0: assistant["deprivation_attitude"] = 1
+
 IF assistant["nymphomania_revealed"] = 1:
  IF assistant["nymphomania"] > 0: msg '<<$Нимфоманка>>'
  IF assistant["nymphomania"] < 0: msg '<<$Фригидная>>'
@@ -203,42 +217,53 @@ IF assistant["compassion_revealed"] = 1:
  assistant["compassion_revealed"] = 2
 END
 
-IF assistant["pregnant_revealed"] = 1:
+!Fixed message display when slave has Oviparity (egglaying) for assistant - crushboss
+IF assistant['pregnant'] > 0 and assistant["pregnant_revealed"] = 1 and assistant['vaginal_modification'] ! 4 and assistant['fertility'] = 0:
  msg '<<$assistant_name>> is experiencing morning sickness and has not menstruated for a long time. It looks like she''s pregnant!'
  assistant["pregnant_revealed"] = 2
 END
 
-IF assistant["pregnant_revealed"] = 1:
- msg '<<$assistant_name>> is experiencing morning sickness and has not menstruated for a long time. It looks like she''s pregnant!'
- assistant["pregnant_revealed"] = 2
-END
-
-IF assistant["pregnant_revealed"] = 2 and assistant["pregnant"] = 0: assistant["pregnant_revealed"] = 0
+IF assistant["pregnant_revealed"] = 2 and assistant['pregnant'] = 0: assistant["pregnant_revealed"] = 0
 
 !traits
 $assistant_features_list = ''
-if assistant["metabolism"] < 1: assistant["metabolism"] = 1
-IF assistant["brand"] = 0: $assistant_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
-IF assistant["wounds"] > 0: $assistant_features_list += '<<$assistant_wounds[assistant["wounds"]]>><BR>'
-IF assistant["scares"] > 0: $assistant_features_list += '<<$assistant_scares[assistant["scares"]]>><BR>'
-IF assistant["bruises"] > 0: $assistant_features_list += '<<$assistant_bruises[assistant["bruises"]]>><BR>'
-IF assistant['reabilitation'] > 0: $assistant_features_list += 'Recovery [<<assistant["reabilitation"]>>]<BR>'
-IF assistant["grace"] > 0: $assistant_features_list += '<font color="#0000CD">Graceful</font><BR>'
-IF assistant["grace"] < 0: $assistant_features_list += 'Clumsy<BR>'
-IF assistant["voice"] > 0: $assistant_features_list += '<font color="#0000CD">Charming voice</font><BR>'
-IF assistant["voice"] < 0: $assistant_features_list += 'Hoarse voice<BR>'
+assistant_sanity = assistant["ego"] + assistant["temper"] + assistant["pride"]
+if assistant_sanity < 3: $assistant_sanity = '<a style = "color: #cd0000;" href="EXEC: $info_text = $sanity_broken & gt $curloc">Sanity</a>'
+if assistant_sanity <= 5 and assistant_sanity > 2: $assistant_sanity = '<a style = "color: #C71585;" href="EXEC: $info_text = $sanity_low & gt $curloc">Sanity</a>'
+IF assistant_sanity <= 5: $assistant_features_list +='<font color="#cd0000"><<$assistant_sanity>></font><BR>'
+IF assistant["brand"] = 0: $assistant_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not Branded</font></a><BR>'
+IF assistant["wounds"] > 0: $assistant_features_list += '<font color="#cd0000"><<$assistant_wounds[assistant["wounds"]]>></font><BR>'
+IF assistant["scares"] > 0: $assistant_features_list += '<font color="#cd0000"><<$assistant_scares[assistant["scares"]]>></font><BR>'
+IF assistant["bruises"] > 0: $assistant_features_list += '<font color="#cd0000"><<$assistant_bruises[assistant["bruises"]]>></font><BR>'
+IF assistant['reabilitation'] > 0: $assistant_features_list += '<font color="#cd0000">Recovery</font> [<<assistant["reabilitation"]>>]<BR>'
+IF assistant["grace"] > 0: $assistant_features_list += '<a href="EXEC: msg $NaturalGrace">Graceful</a><BR>'
+IF assistant["grace"] < 0: $assistant_features_list += '<font color="#cd0000">Clumsy</font><BR>'
+IF assistant["voice"] > 0: $assistant_features_list += '<a href="EXEC: msg $CharmingVoice">Charming voice</a><BR>'
+IF assistant["voice"] < 0: $assistant_features_list += '<font color="#cd0000">Hoarse voice</font><BR>'
 IF assistant['arena_level'] > 4 and assistant['arena_level'] < 9: $assistant_features_list += 'Arena Champion<BR>'
 IF assistant['arena_level'] > 8: $assistant_features_list += 'Arena Grand Champion<BR>'
+IF assistant['has_ride_win'] > 3 and assistant['has_ride_win'] < 7:
+ $assistant_features_list += 'Racing Champion<BR>'
+ trophy_racechampion = 1
+END 
+IF assistant['has_ride_win'] > 6:
+ $assistant_features_list += 'Racing Grand Champion<BR>'
+ trophy_racechampion = 1
+ trophy_racegrandchampion = 1
+END
+
+!These traits are displayed on the assistant portrait and don''t need to be duplicated - plus the traits area needed more space - crushboss
 !if assistant['fertility'] = -2: $assistant_features_list += 'Immature<BR>' 
-!IF assistant["fertility"] = -1: 
+!IF assistant['fertility'] = -1: 
 ! if assistant["fertility_revealed"] > 0: $assistant_features_list += 'Sterile<BR>' 
 !END
-!IF assistant["fertility"] = 1: 
+!IF assistant['fertility'] = 1: 
 ! if assistant["fertility_revealed"] > 0: $assistant_features_list += 'Egglaying<BR>' 
 !END
-!IF assistant["pregnant"] > 0: 
+!IF assistant['pregnant'] > 0: 
 ! if assistant["pregnant_revealed"] > 0: $assistant_features_list += 'Pregnant<BR>' 
 !END
+
 IF assistant["nymphomania"] > 0: 
  if assistant["nymphomania_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Нимфоманка">Nymphomaniac</a><BR>' 
 END

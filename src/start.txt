@@ -20,7 +20,6 @@ $FNAME = 'Consolas'
 
 $counter = '$counter'
 $onobjsel = '$objsel'
-!$ongload = '$check_load'
 
 !Game Option Variables
 nsfw = 0
@@ -40,16 +39,31 @@ cheat_g = 0
 cheat_h = 0
 cheat_i = 0
 cheat_j = 0
+cheat_k = 0
+cheat_l = 0
 cheat_ioff = 0
+cheat_all_basic = 0
+cheat_all_low = 0
 cheat_all = 0
+cheat_all_max = 0
 extended_rental_cheat = 0
 
 !Initialize Variables - crushboss
+$special_age = ''
 daycount = 0
 slave[$npc_id] = 0
 demand_rating[$npc_id] = 0
 purse = 0
+daily_reward_count = 0
+spell_adverto_servili = 0
 a = 0
+change_loc = 1
+$slave_assistant_management = "show"
+isabella_get = 0
+isabella_met = 0
+slave_exhaustion_fainted = 0
+slave_nearly_fainted = 0
+slave_stamina_fainted = 0
 
 gs '#simple_npc'
 gs '#dynamic'
@@ -77,8 +91,6 @@ gs '#боевые_предметы'
 gs '#sex_texts'
 gs '#sex_options'
 
-!gs '$check_load'
-
 $music['ride'] = 'content\snd\race_master.mp3'
 $music['arena'] = 'content\snd\fight_arena.mp3'
 $music['girl'] = 'content\snd\fight_girl.mp3'
@@ -88,9 +100,8 @@ $music['city'] = 'content\snd\city.mp3'
 $music['mainscreen'] = 'content\snd\mainscreen.mp3'
 
 !AddOn - Initialisation
-$title_fix = 'fix 25.07#1, Merged Mods by Lillibilli v1.9'
+$title_fix = 'Jack HF 1.6 by crushboss'
 $game_ver = $title_fix
-GS '#addon_slave_base'
 GS '$addon_custom_data'
 
 GT 'main_menu'

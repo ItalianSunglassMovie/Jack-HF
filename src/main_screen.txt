@@ -56,24 +56,24 @@ $shedule = '<center><u>Events schedule</u></center>
 
 !option icon
 IF exam_in_progress = 1:
- *p {<div id="options_icon"><a href = "EXEC: menu_form = 2000 & gt 'demo_menu_form'"><img src="content\pic\buttons\gear.png"></a></div>} 
+ *p {<div id="options_icon"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-bottom" tooltip-data="Game Options" <a href = "EXEC: menu_form = 2000 & gt 'demo_menu_form'"><img src="content\pic\buttons\gear.png"></a></div>} 
  elseif ui_style = 2 and exam_in_progress = 0:
- *p {<div id="options_icon"><a href = "EXEC: menu_form = 2000 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\gear.png"></a></div>}
+ *p {<div id="options_icon"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-bottom" tooltip-data="Game Options" <a href = "EXEC: menu_form = 2000 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\gear.png"></a></div>}
  else
- *p {<div id="options_icon"><a href = "EXEC: menu_form = 2000 & gt 'menu_form'"><img src="content\pic\buttons\gear.png"></a></div>} 
+ *p {<div id="options_icon"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-bottom" tooltip-data="Game Options" <a href = "EXEC: menu_form = 2000 & gt 'menu_form'"><img src="content\pic\buttons\gear.png"></a></div>} 
 END 
 
 IF ui_style = 2:
  IF sound_on = 1:
-  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_on.png"></a></div>'  
+  *p '<div id="sound_icon"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-bottom" tooltip-data="Sound is ON" <a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_on.png"></a></div>'  
   else
-  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_off.png"></a></div>'  
+  *p '<div id="sound_icon"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-bottom" tooltip-data="Sound is OFF" <a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_off.png"></a></div>'  
  END
  ELSE
  IF sound_on = 1:
-  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
+  *p '<div id="sound_icon"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-bottom" tooltip-data="Sound is ON" <a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\buttons\sound_on.png"></a></div>'  
   else
-  *p '<div id="sound_icon"><a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
+  *p '<div id="sound_icon"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-bottom" tooltip-data="Sound is OFF" <a href = "EXEC: sound_on = 1 & gt curloc"><img src="content\pic\buttons\sound_off.png"></a></div>'  
  END
 END
 
@@ -170,28 +170,28 @@ END
 
 IF cooked_food < 1 and kitchen > 0: 
  IF slave_state = CONST_INT['slave_exist'] and slave_cooks_rule = 1:
-  *p {<div id="fast_cook"><a href = "EXEC: interaction = menu_dinner_S & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+  *p {<div id="fast_cook"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Cook Meal" <a href = "EXEC: interaction = menu_dinner_S & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
   else
-  IF assistant_cooks_rule = 1: *p {<div id="fast_cook"><a href = "EXEC: interaction = 43 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
-  IF assistant_cooks_rule = 0 OR assistant_state = 0: *p {<div id="fast_cook"><a href = "EXEC: interaction = 35 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
+  IF assistant_cooks_rule = 1: *p {<div id="fast_cook"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Cook Meal" <a href = "EXEC: interaction = 43 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  IF assistant_cooks_rule = 0 OR assistant_state = 0: *p {<div id="fast_cook"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Cook Meal" <a href = "EXEC: interaction = 35 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
  END
 END
 
 !fast button for fiend
 IF tentacle_state = 1: 
  IF slave_state = CONST_INT['slave_exist'] and slave_tentacle_rule = 1:
-  *p {<div id="fast_tentacle"><a href = "EXEC: interaction = 59 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+  *p {<div id="fast_tentacle"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Milk Fiend" <a href = "EXEC: interaction = 59 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
   else
-  IF assistant_state = 1: *p {<div id="fast_tentacle"><a href = "EXEC: interaction = 45 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
+  IF assistant_state = 1: *p {<div id="fast_tentacle"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Milk Fiend" <a href = "EXEC: interaction = 45 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
  END
 END
 
 IF house_mess > 1: 
  IF slave_state = CONST_INT['slave_exist'] and slave_cleans_rule = 1:
-  *p {<div id="fast_clean"><a href = "EXEC: interaction = menu_tidy_S & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+  *p {<div id="fast_clean"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Clean House" <a href = "EXEC: interaction = menu_tidy_S & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
   else
-  if assistant_cleans_rule = 1: *p {<div id="fast_clean"><a href = "EXEC: interaction = 42 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
-  if assistant_cleans_rule = 0 OR assistant_state = 0: *p {<div id="fast_clean"><a href = "EXEC: interaction = 36 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
+  if assistant_cleans_rule = 1: *p {<div id="fast_clean"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Clean House" <a href = "EXEC: interaction = 42 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
+  if assistant_cleans_rule = 0 OR assistant_state = 0: *p {<div id="fast_clean"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Clean House" <a href = "EXEC: interaction = 36 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}    
  END
 END
 
@@ -215,17 +215,27 @@ IF slave_state = CONST_INT['slave_exist']:
 <<$behavior_evaluation[eval]>>
 <<$girl_hygiene[slave["hygiene"]]>>
 </div>'
- !*p '<div id="fast_chat"><img src="content\pic\buttons\chat.png"></div>' 
+
  IF exam_in_progress = 1:
-  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'demo_menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
-  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'demo_menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
+  *p  {<div id="fast_influence"><a style="text-decoration: none; padding-top: 14px;" class="victoriana wide" tooltip-data="Influence Slave" <a href = "EXEC: menu_form = 112 & gt 'demo_menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
+  *p  {<div id="fast_question"><a style="text-decoration: none; padding-top: 14px;" class="victoriana wide" tooltip-data="Question Slave" <a href = "EXEC: menu_form = 111 & gt 'demo_menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
   elseif ui_style = 2 and exam_in_progress = 0:
-  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\influence.png"></a></div>}   
-  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\question.png"></a></div>}
+  *p  {<div id="fast_influence"><a style="text-decoration: none; padding-top: 14px;" class="victoriana wide" tooltip-data="Influence Slave" <a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\influence.png"></a></div>}   
+  *p  {<div id="fast_question"><a style="text-decoration: none; padding-top: 14px;" class="victoriana wide" tooltip-data="Question Slave" <a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\ui\grimdark\buttons\question.png"></a></div>}
   else
-  *p  {<div id="fast_influence"><a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
-  *p  {<div id="fast_question"><a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
+  *p  {<div id="fast_influence"><a style="text-decoration: none; padding-top: 14px;" class="victoriana wide" tooltip-data="Influence Slave" <a href = "EXEC: menu_form = 112 & gt 'menu_form'"><img src="content\pic\buttons\influence.png"></a></div>}   
+  *p  {<div id="fast_question"><a style="text-decoration: none; padding-top: 14px;" class="victoriana wide" tooltip-data="Question Slave" <a href = "EXEC: menu_form = 111 & gt 'menu_form'"><img src="content\pic\buttons\question.png"></a></div>}  
  END
+END
+
+IF exam_in_progress = 0 and slave_state ! CONST_INT['no_exist']:
+ IF $master_head_gear = 'raven_crown': 
+  *p {<div id="debug_info"><a style="text-decoration: none; padding-top: 24px;" class="victoriana wide" tooltip-data="Debug Info" <a href = "EXEC: gt 'debug_info'"><img src="content\pic\buttons\debug_button.png"></a></div>}
+ END
+END
+
+IF exam_in_progress = 0:
+   *p {<div id="trophy_room"><a style="text-decoration: none; padding-top: 24px;" class="victoriana wide" tooltip-data="Trophy Room" <a href = "EXEC: gt 'trophy_room_screen'"><img src="content\pic\buttons\trophy_button.png"></a></div>}
 END
 
 IF slave_state = CONST_INT['slave_faint']:
@@ -236,13 +246,13 @@ END
 
 IF slave_state = CONST_INT['slave_exist']:
  IF exam_in_progress = 1:
-  if slave["sin"] >= 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
-  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
-  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+  if slave["sin"] >= 0: *p {<div id="fast_redeem"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Punishments" <a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
+  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Rewards" <a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Punishments" <a href = "EXEC: menu_form = 14 & gt 'demo_menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Rewards" <a href = "EXEC: menu_form = 15 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
   else
-  if slave["sin"] >= 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
-  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
-  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+  if slave["sin"] >= 0: *p {<div id="fast_redeem"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Punishments" <a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} 
+  if slave["virtue"] > 0: *p {<div id="fast_redeem"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Rewards" <a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>} 
+  if slave["sin"] = 0 and slave["virtue"] = 0: *p {<div id="fast_redeem_1"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Punishments" <a href = "EXEC: menu_form = 14 & gt 'menu_form'"><img src="content\pic\buttons\red_button.png"></a></div>} & *p {<div id="fast_redeem_2"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Rewards" <a href = "EXEC: menu_form = 15 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}
  END
 END
 
@@ -252,51 +262,53 @@ END
 IF cryo_intro = 1:
  IF $estate = 'serpis_house':
   IF ui_style = 2:
-   *p '<div id = "cryobutton"><a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
+   *p '<div id = "cryobutton"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Cryo Sleep" <a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
    else
-   *p '<div id = "cryobutton"><a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
+   *p '<div id = "cryobutton"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Cryo Sleep" <a href = "EXEC: interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
   END
   ELSE
   if ui_style = 2:
-   *p '<div id = "cryobutton"><a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
+   *p '<div id = "cryobutton"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Cryo Sleep" <a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\ui\grimdark\buttons\cryobutton.png"></a></div>'
    else
-   *p '<div id = "cryobutton"><a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
+   *p '<div id = "cryobutton"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Cryo Sleep" <a href = "EXEC: dynamic $master_energy_drop & homerun = 1 & interaction_city = 332 & gt ''interaction_city''"><img src="content\pic\buttons\cryobutton.png"></a></div>'
   END
  END
 END
 
 
 IF master_hygiene > 0 and slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist'] and bath > 0: 
- *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}   
+ *p {<div id="fast_wash_master"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Bathe" <a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}
  else
- if master_hygiene > 0 and bath > 0: *p {<div id="fast_wash_master"><a href = "EXEC: interaction = 34 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+ if master_hygiene > 0 and assistant_washes_rule = 1 and assistant_state = 1 and bath > 0: *p {<div id="fast_wash_master"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Bathe" <a href = "EXEC: interaction = menu_assistant_washes_master & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+ else
+ if master_hygiene > 0 and bath > 0: *p {<div id="fast_wash_master"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Bathe" <a href = "EXEC: interaction = 34 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
 END
 
 IF master_hygiene > 0 and slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist'] and bath > 0:
- *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+ *p {<div id="fast_wash_slave"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Bathe" <a href = "EXEC: interaction = 5411 & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}
  else
- if slave["hygiene"] > 0 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a href = "EXEC: interaction = menu_bath_S & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}
+ if slave["hygiene"] > 0 and slave_state = CONST_INT['slave_exist'] and bath > 0: *p {<div id="fast_wash_slave"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Bathe" <a href = "EXEC: interaction = menu_bath_S & gt 'interaction'"><img src="content\pic\buttons\fast_button.png"></a></div>}
 END
 
 IF master_excitement > 0: 
  IF slave_state = CONST_INT['slave_exist']:
   IF exam_in_progress = 1:
-   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+   *p {<div id="fast_sex"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Fuck Her!" <a href = "EXEC: menu_form = 16 & gt 'demo_menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
    else
-   *p {<div id="fast_sex"><a href = "EXEC: menu_form = 16 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+   *p {<div id="fast_sex"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Fuck Her!" <a href = "EXEC: menu_form = 16 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
   END
  END
  IF slave_state ! CONST_INT['slave_exist'] and assistant_state = 1:
-  *p {<div id="fast_sex"><a href = "EXEC: menu_form = 4 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
+  *p {<div id="fast_sex"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-top" tooltip-data="Fuck Her!" <a href = "EXEC: menu_form = 4 & gt 'menu_form'"><img src="content\pic\buttons\fast_button.png"></a></div>}  
  END
 END
 
 !exchange button for the slave with assistant
 IF slave_state = CONST_INT['slave_exist'] and slave["moral"] >= 3:
- *p  {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+ *p  {<div id="exchange"><a style="text-decoration: none; padding-top: 30px;" class="victoriana wide" tooltip-data="Exchange Button - Switch an obedient slave to the assistant slot or vice versa" <a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}
 END
 IF slave_state ! CONST_INT['slave_exist'] and assistant["moral"] >= 3:
- *p  {<div id="exchange"><a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}  
+ *p  {<div id="exchange"><a style="text-decoration: none; padding-top: 30px;" class="victoriana wide" tooltip-data="Exchange Button - Switch an obedient slave to the assistant slot or vice versa" <a href = "EXEC: gt 'slave_to_assistant'"><img src="content\pic\buttons\exchange.png"></a></div>}
 END
 
 !showing spell state 
@@ -323,11 +335,13 @@ if gladi_count = 0:
  else
  *p '<div id = "gladi_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Fights in the Coliseum will start in <<gladi_count>> days"><img src="content\pic\ui overhaul\watch the battle_gray.png"></a></div>'
 end
-if auction_count = 0:
- *p '<div id = "auction_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Auction begins today!" href =  "EXEC: interaction_city = 117 & gt ''interaction_city''"><img src="content\pic\ui overhaul\auction.png"></a></div>'
- else
+IF auction_count = 0 and slave_state = CONST_INT['no_exist']:
+ *p '<div id = "auction_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Auction begins today! Purchase a new slave in the Slave Market." href =  "EXEC: interaction_city = 117 & gt ''interaction_city''"><img src="content\pic\ui overhaul\auction.png"></a></div>'
+ elseif auction_count > 0:
  *p '<div id = "auction_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Auction begins in <<auction_count>> days"><img src="content\pic\ui overhaul\auction_gray.png"></a></div>'
-end
+ elseif slave_state ! CONST_INT['no_exist']:
+ *p '<div id = "auction_counting"><a style="text-decoration: none; padding-top: 30px;" class="victoriana tooltip-left" tooltip-data="Auction begins today! Sell your current slave in the Guild Auction." href =  "EXEC: interaction_city = 93 & gt ''interaction_city''"><img src="content\pic\ui overhaul\auction.png"></a></div>'
+END
 *p '<div id = "settings_2r"><<$setting_display_r>></div>'
 
 !icons disabled in option menu
@@ -338,22 +352,58 @@ IF dungeon > 0:
   else
   *p '<div id = "cage"><img src = "content/pic/blank_ava.jpg"></div>'
  END
- *p '<div id = "cage"><a href = "EXEC: gt ''prison_cell''"><img src="content\pic\cage.png"></a></div>'
+ *p '<div id = "cage"><a style="text-decoration: none; padding-top: 120px;" class="victoriana wide tooltip-left" tooltip-data="Prison Cells in Dungeon" <a href = "EXEC: gt ''prison_cell''"><img src="content\pic\cage.png"></a></div>'
 END
 
+!Cryo Storage - new buttons on main menu feature - crushboss
 IF stasis_tank > 0:
- IF iced_state > 0:
-  *p '<div id = "stasis"><a href = "EXEC: gt ''stasis_cell''"><img src = "<<$iced["ava_gray"]>>.jpg"></a></div>'
-  else
-  *p '<div id = "stasis"><a href = "EXEC: gt ''stasis_cell''"><img src = "content/pic/blank_ava.jpg"></a></div>'
+ if iced_1_state > 0: *p '<div id = "stasis_cell_1"><a style="text-decoration: none; padding-top: 50px;" class="victoriana wide tooltip-top" tooltip-data="Cell 1" <a href = "EXEC: dynamic $cryo_cell_1"><img src = "content\pic\ui\crushboss\arousal_1.png"></a></div>'
+ if iced_2_state > 0: *p '<div id = "stasis_cell_2"><a style="text-decoration: none; padding-top: 50px;" class="victoriana wide tooltip-top" tooltip-data="Cell 2" <a href = "EXEC: dynamic $cryo_cell_2"><img src = "content\pic\ui\crushboss\arousal_2.png"></a></div>'
+ if iced_3_state > 0: *p '<div id = "stasis_cell_3"><a style="text-decoration: none; padding-top: 50px;" class="victoriana wide tooltip-top" tooltip-data="Cell 3" <a href = "EXEC: dynamic $cryo_cell_3"><img src = "content\pic\ui\crushboss\arousal_3.png"></a></div>'
+ if iced_4_state > 0: *p '<div id = "stasis_cell_4"><a style="text-decoration: none; padding-top: 50px;" class="victoriana wide tooltip-top" tooltip-data="Cell 4" <a href = "EXEC: dynamic $cryo_cell_4"><img src = "content\pic\ui\crushboss\arousal_4.png"></a></div>'
+ if iced_5_state > 0: *p '<div id = "stasis_cell_5"><a style="text-decoration: none; padding-top: 50px;" class="victoriana wide tooltip-top" tooltip-data="Cell 5" <a href = "EXEC: dynamic $cryo_cell_5"><img src = "content\pic\ui\crushboss\arousal_5.png"></a></div>'
+ if iced_6_state > 0: *p '<div id = "stasis_cell_6"><a style="text-decoration: none; padding-top: 50px;" class="victoriana wide tooltip-top" tooltip-data="Cell 6" <a href = "EXEC: dynamic $cryo_cell_6"><img src = "content\pic\ui\crushboss\arousal_6.png"></a></div>'  
+END
+
+!Cryo Storage - Selected cell - crushboss
+IF stasis_tank > 0:
+ IF iced_1_state > 0 and cryo_cell_selected = 1:
+  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_1_name>> in Cryo Storage - Cell 1" <a href = "EXEC: gt ''stasis_cell_1''"><img src = "<<$iced_1["ava_gray"]>>.jpg"></a></div>'
+!  else
+!  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Frozen Stasis Tank for Slave storage" <a href = "EXEC: gt ''stasis_cell_1''"><img src = "content/pic/blank_ava.jpg"></a></div>'
+ END
+ IF iced_2_state > 0 and cryo_cell_selected = 2:
+  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_2_name>> in Cryo Storage - Cell 2" <a href = "EXEC: gt ''stasis_cell_2''"><img src = "<<$iced_2["ava_gray"]>>.jpg"></a></div>'
+!  else
+!  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Frozen Stasis Tank for Slave storage" <a href = "EXEC: gt ''stasis_cell_2''"><img src = "content/pic/blank_ava.jpg"></a></div>'
+ END
+ IF iced_3_state > 0 and cryo_cell_selected = 3:
+  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_3_name>> in Cryo Storage - Cell 3" <a href = "EXEC: gt ''stasis_cell_3''"><img src = "<<$iced_3["ava_gray"]>>.jpg"></a></div>'
+!  else
+!  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Frozen Stasis Tank for Slave storage" <a href = "EXEC: gt ''stasis_cell_3''"><img src = "content/pic/blank_ava.jpg"></a></div>'
+ END
+ IF iced_4_state > 0 and cryo_cell_selected = 4:
+  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_4_name>> in Cryo Storage - Cell 4" <a href = "EXEC: gt ''stasis_cell_4''"><img src = "<<$iced_4["ava_gray"]>>.jpg"></a></div>'
+! else
+!  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Frozen Stasis Tank for Slave storage" <a href = "EXEC: gt ''stasis_cell_4''"><img src = "content/pic/blank_ava.jpg"></a></div>'
+ END
+ IF iced_5_state > 0 and cryo_cell_selected = 5:
+  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_5_name>> in Cryo Storage - Cell 5" <a href = "EXEC: gt ''stasis_cell_5''"><img src = "<<$iced_5["ava_gray"]>>.jpg"></a></div>'
+!  else
+!  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Frozen Stasis Tank for Slave storage" <a href = "EXEC: gt ''stasis_cell_5''"><img src = "content/pic/blank_ava.jpg"></a></div>'
+ END
+ IF iced_6_state > 0 and cryo_cell_selected = 6:
+  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_6_name>> in Cryo Storage - Cell 6" <a href = "EXEC: gt ''stasis_cell_6''"><img src = "<<$iced_6["ava_gray"]>>.jpg"></a></div>'
+!  else
+!  *p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="Frozen Stasis Tank for Slave storage" <a href = "EXEC: gt ''stasis_cell_6''"><img src = "content/pic/blank_ava.jpg"></a></div>'
  END
 END
 
 IF slave_state = CONST_INT['slave_exist']:
  if ui_style = 2:
-  *p '<div id = "teach"><a href = "EXEC: gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach.png"></a></div>'
+  *p '<div id = "teach"><a style="text-decoration: none; padding-top: 65px;" class="victoriana wide tooltip-left" tooltip-data="Personal training with your slave" <a href = "EXEC: gt ''teach_screen''"><img src="content\pic\ui\grimdark\buttons\teach.png"></a></div>'
   else
-  *p '<div id = "teach"><a href = "EXEC: gt ''teach_screen''"><img src="content\pic\buttons\teach.png"></a></div>'
+  *p '<div id = "teach"><a style="text-decoration: none; padding-top: 65px;" class="victoriana wide tooltip-left" tooltip-data="Personal training with your slave" <a href = "EXEC: gt ''teach_screen''"><img src="content\pic\buttons\teach.png"></a></div>'
  end
  IF assistant_state = 1:
   IF ui_style = 2:
@@ -392,9 +442,11 @@ END
 END
 
 
-IF menu_form ! 2000 and menu_form ! 2020 and menu_form ! 2022 and exam_in_progress = 0 : *p '<div id = "back_home"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-left" tooltip-data="Leave the house" href = "EXEC: city_form = estate_location[$estate] & gt ''city_menu_form''"><img src="content\pic\buttons\home_button.png"></a></div>'
+IF menu_form ! 2000 and menu_form ! 2020 and menu_form ! 2022 and exam_in_progress = 0 : *p '<div id = "back_home"><a style="text-decoration: none; padding-top: 75px;" class="victoriana tooltip-left" tooltip-data="Leave the house" href = "EXEC: gs ''$newloc'' & city_form = estate_location[$estate] & gt ''city_menu_form''"><img src="content\pic\buttons\home_button.png"></a></div>'
 
-gs 'revelations'
+!Calculate slave and assistant traits - crushboss
+if slave_state ! CONST_INT['no_exist']: GS '$slave_traits'
+if assistant_state = 1: GS '$assistant_traits'
 
 !for decade count
 IF decadecount >= 10:
@@ -466,11 +518,19 @@ IF autosave_decade = 1:
  END
 END
 !Strec - jon_UIadds addition (begin)
-$quick_move_action = "show"
+!Added logic to fix the Travel buttons from displaying in the Game Options and other locations - crushboss
+IF city_form ! 1000 and menu_form ! 2000 and menu_form ! 2020 and menu_form ! 2022 and sex_num ! 100 and exam_in_progress ! 1:
+ $quick_move_action = "show"
+ $slave_assistant_management = "show"
+ else
+ $quick_move_action = "none"
+END
+
 gs 'sjm_UI_UIadds'
 !Strec - jon_UIadds addition (end)
 
 !Debug code for tracking variables
 !msg '<<slave_rate["stamina"]>>'
+
 --- main_screen ---------------------------------
 

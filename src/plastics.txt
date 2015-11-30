@@ -52,6 +52,7 @@ $yes = {$slave['fullimage'] = $fullimage[txt]
 $slave['ava'] = $seed_ava[txt]
 $slave['ava_gray'] = $seed_ava_gray[txt]
 $slave['ava_clear'] = $seed_ava_clear[txt]
+$slave_ava = $seed_ava[txt]
 slave_type = txt
 killobj
 gt 'shop_general'

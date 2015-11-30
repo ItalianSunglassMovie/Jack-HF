@@ -129,21 +129,30 @@ $get_lab_space = {
 	lab_items = lab_store["slime"] + lab_store["kanabis"] + lab_store["koffe"] + lab_store["meth"] + lab_store["opium"] + вакхический_нектар + тонизируюзщий_эликсир + целительный_бальзам + афродизиак + мощный_афодизиак + приворотное_зелье + вода_леты
 	lab_space = estate_size[$estate] - lab_items
 }
-	
+
+!Overhauled - crushboss	
 $slave_pass_out = {
 IF slave_state ! CONST_INT['no_slave']:
- if slave["energy"] = -5: slave_state = CONST_INT['slave_faint']
+ IF slave["energy"] = -5:
+  slave_state = CONST_INT['slave_faint']
+  if exam_in_progress ! 1 and slave_exhaustion_fainted = 0: msg 'Your slave fainted due to extreme exhaustion.'
+  slave_exhaustion_fainted = 1
+ END
  IF slave["stamina"] = 0: 
   slave_state = CONST_INT['slave_faint']
-  else
-  if slave["energy"] > -5: slave_state = CONST_INT['slave_exist']
+  if exam_in_progress ! 1 and slave_stamina_fainted = 0: msg 'Your slave fainted due to having no stamina.'
+  slave_stamina_fainted = 1
+  elseif slave["stamina"] = 1 and slave_rate["stamina"] <= 0 and slave_state ! CONST_INT['slave_faint']:
+   if exam_in_progress ! 1 and slave_nearly_fainted = 0: msg 'Your slave nearly fainted due to a lack of stamina.'
+   slave_nearly_fainted = 1
  END
- IF slave["stamina"] = 0 and slave_rate["stamina"] <= 0 and slave['starvation'] > 50: 
+ IF slave["stamina"] = 0 and slave_rate["stamina"] <= 0 and slave["fat"] = 0 and slave['starvation'] > 50: 
   slave_state = CONST_INT['no_slave']
   master_mood['neg_slave_starved'] = 1
   if exam_in_progress ! 1: msg 'Your slave died from starvation. You sold her body to the butcher for 5 sparks.'
   sparks += 5
  END
+ if slave_state ! CONST_INT['slave_faint'] and slave_state ! CONST_INT['no_slave']: slave_state = CONST_INT['slave_exist']
 END
 }
 
@@ -165,7 +174,8 @@ IF prisoner_state ! 0:
  END
  IF prisoner["stamina"] = 0 and prisoner_rate["stamina"] <= 0 and prisoner['starvation'] > 50:
   prisoner_state = 0
-  msg 'Your prisoner died from starvation, forgotten in dungeon cage. You sold her body to the butcher for 5 sparks.'
+  prisoner = 0
+  msg 'Your prisoner died from starvation, forgotten in a dungeon cage. You sold her body to the butcher for 5 sparks.'
   sparks += 5
  END
 END
@@ -320,23 +330,32 @@ IF slave["arousal"] = 0:
  final_stimulation = erotic_stimulation * slave["arousal"]
 END
 if sex_acceptance < 0: final_stimulation = 0
-if orgastic = 0: slave_rate["arousal"] += final_stimulation
+if orgastic = 0: slave_rate["arousal"] += (final_stimulation * (1 + (slave["sensitivity"]/2)))
 }
 
 $slave_orgasm = {
 IF orgasm_prohibited = 0:
  slave_rate["mood"] += final_stimulation
- slave_rate["arousal"] -= final_stimulation
+ IF orgastic = 2:
+  slave_rate["arousal"] -= (final_stimulation * (1 + (slave["sensitivity"]/2)))
+  else
+  slave_rate["arousal"] -= final_stimulation
+ END
  if slave_rate["arousal"] < 0: slave_rate["arousal"] = 0
  riser = min (master_supermacy, final_stimulation)
  if riser < 0: riser = 1
  slave_rate["instinct"] += riser
+ slave_rate["temper"] += 1
  orgasm_description = 1    
  IF slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
  slave['neg_horny'] = 0
  else
  IF final_stimulation <= slave["obedience"]:
-  slave_rate["arousal"] += final_stimulation
+  IF orgastic = 2:
+   slave_rate["arousal"] += (final_stimulation * (1 + (slave["sensitivity"]/2)))
+   else
+   slave_rate["arousal"] += final_stimulation
+  END
   slave_rate["sensitivity"] += 1
   orgasm_description = 2    
   slave_rate["instinct"] += 1
@@ -344,7 +363,11 @@ IF orgasm_prohibited = 0:
   else
   slave_rate["mood"] += final_stimulation
   IF slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
-  slave_rate["arousal"] -= final_stimulation
+  IF orgastic = 2:
+   slave_rate["arousal"] -= (final_stimulation * (1 + (slave["sensitivity"]/2)))
+   else
+   slave_rate["arousal"] -= final_stimulation
+  END
   if slave_rate["arousal"] < 0: slave_rate["arousal"] = 0
   slave_rate["temper"] += 1
   sin_gained = max (1, slave["moral"])
@@ -359,6 +382,72 @@ IF orgasm_prohibited = 0:
   orgasm_description = 3    
  END
 END
+orgastic = 0
+}
+
+!Added erotic stimulation code for assistant - crushboss
+$erotic_stimulation_assistant = {
+if sex_acceptance > 0: erotic_stimulation += sex_acceptance
+IF assistant["arousal"] = 0: 
+ final_stimulation = 1
+ else
+ final_stimulation = erotic_stimulation * assistant["arousal"]
+END
+if sex_acceptance < 0: final_stimulation = 0
+if orgastic = 0: assistant_rate["arousal"] += (final_stimulation * (1 + (assistant["sensitivity"]/2)))
+}
+
+!Added orgasm code for assistant - crushboss
+$assistant_orgasm = {
+IF orgasm_prohibited = 0:
+ assistant_rate["mood"] += final_stimulation
+ IF orgastic = 2:
+  assistant_rate["arousal"] -= (final_stimulation * (1 + (assistant["sensitivity"]/2)))
+  else
+  assistant_rate["arousal"] -= final_stimulation
+ END
+ if assistant_rate["arousal"] < 0: assistant_rate["arousal"] = 0
+ riser = min (master_supermacy, final_stimulation)
+ if riser < 0: riser = 1
+ assistant_rate["instinct"] += riser
+ assistant_rate["temper"] += 1
+ orgasm_description = 1    
+ IF assistant['pos_orgasm'] < 1: assistant['pos_orgasm'] = 1
+ assistant['neg_horny'] = 0
+ else
+ IF final_stimulation <= assistant["obedience"]:
+  IF orgastic = 2:
+   assistant_rate["arousal"] += (final_stimulation * (1 + (assistant["sensitivity"]/2)))
+   else
+   assistant_rate["arousal"] += final_stimulation
+  END
+  assistant_rate["sensitivity"] += 1
+  orgasm_description = 2    
+  assistant_rate["instinct"] += 1
+  assistant['neg_horny'] += 1
+  else
+  assistant_rate["mood"] += final_stimulation
+  IF assistant['pos_orgasm'] < 1: assistant['pos_orgasm'] = 1
+  IF orgastic = 2:
+   assistant_rate["arousal"] -= (final_stimulation * (1 + (assistant["sensitivity"]/2)))
+   else
+   assistant_rate["arousal"] -= final_stimulation
+  END
+  if assistant_rate["arousal"] < 0: assistant_rate["arousal"] = 0
+  assistant_rate["temper"] += 1
+  sin_gained = max (1, assistant["moral"])
+  if sin_gained > 5: sin_gained = 5
+  assistant['neg_horny'] = 0
+  assistant['pos_orgasm'] += 1
+  IF sin_gained >= assistant["virtue"]:
+   assistant["virtue"] = 0
+   if sin_gained > assistant["sin"]: assistant["sin"] = sin_gained
+   if sententia_veritas = 1: assistant["sin"] = 5
+  END  
+  orgasm_description = 3    
+ END
+END
+orgastic = 0
 }
 
 $sin_potential = {
@@ -442,10 +531,10 @@ if repulse > slave["obedience"]: complex_diligence = -1
 if rebell[$slave_psy_status] > 0: complex_diligence -= 1
 if slave['fear'] > complex_repulse: complex_diligence += 1
 if slave['mood'] > complex_repulse: complex_diligence += 1
-if slave['moral'] > complex_repulse: complex_diligence += 1
+if slave['moral']*2 > complex_repulse: complex_diligence += 1
 if slave['custom'] > complex_repulse: complex_diligence += 1
 if slave['rational'] > complex_repulse: complex_diligence += 1
-if slave['instinct'] > complex_repulse: complex_diligence += 1
+if slave['instinct']*2 > complex_repulse: complex_diligence += 1
 a = slave['spoil'] + complex_repulse
 if  a > 5: complex_diligence -= 1
 a = slave['pride'] + complex_repulse
@@ -593,19 +682,21 @@ IF master_excitement > 0:
  master_mood_rate += ejaculation_intensity * master_excitement
  if ejaculation_intensity > master_mood['pos_statisfied']: master_mood['pos_statisfied'] = ejaculation_intensity
 END
-master_excitement -= ejaculation_intensity
+master_excitement_rate -= ejaculation_intensity*10
+gs '$calculate_attributes_fast'
 IF master_excitement > 0: master_libido_rate += ejaculation_intensity*5
 IF master_excitement < 0: master_libido_rate -= 15
-if master_excitement < -5: master_excitement = -5
+if master_excitement < -5: master_excitement = -5 & master_excitement_rate = -5
+gs '$calculate_attributes_fast'
 }
 
 $house_cleaning = {
-    house_mess_rate = 0
-    if house_mess = 1: house_mess_rate = 10
-    if house_mess = 2: house_mess_rate = 20
-    if house_mess = 3: house_mess_rate = 40
-    if house_mess = 4: house_mess_rate = 80
-    if house_mess = 5: house_mess_rate = 160
+    house_mess = 0
+	if house_mess_rate >= 10: house_mess = 1
+	if house_mess_rate >= 20: house_mess = 2
+	if house_mess_rate >= 40: house_mess = 3
+	if house_mess_rate >= 60: house_mess = 4
+	if house_mess_rate >= 80: house_mess = 5
 }
 
 !Strange stamina gain fixed - added damage = 0 since the variable kept building and never reset - crushboss
@@ -642,7 +733,9 @@ msg "<<$slave_name>> rebels, forcing you to resort to brute force. Too weak to p
 slave["virtue"] = 0
 slave["sin"] = 5
 bruising = 1
+damage = 0
 damage = slave["stamina"] + master_str - master_fighter
+if damage > 5: damage = 5
 slave["beaten"] = 1
 slave['beaten_ever'] = 1
 slave['neg_forced'] = 1
@@ -898,25 +991,39 @@ $пинок = {gt 'атака_игрока',11}
 $толчок = {gt 'атака_игрока',12}
 $подсечка = {gt 'атака_игрока',13}
 
-$суперудар_1 = {
-суперудар_сделан[1] = 1
+!Used to be named $суперудар_1 with variable суперудар_сделан[1] = 1.  Somewhere in the code it was setting the variable to 1
+!Not a pretty fix but it works with new function and variable names without issues - crushboss
+$суперудар_11 = {
+суперудар_сделан[11] = 1
 gt 'атака_игрока',21
 }
-$суперудар_2 = {
-суперудар_сделан[2] = 1
+$суперудар_12 = {
+суперудар_сделан[12] = 1
 gt 'атака_игрока',22
 }
-$суперудар_3 = {
-суперудар_сделан[3] = 1
+$суперудар_13 = {
+суперудар_сделан[13] = 1
 gt 'атака_игрока',23
 }
-$суперудар_4 = {
-суперудар_сделан[4] = 1
+$суперудар_14 = {
+суперудар_сделан[14] = 1
 gt 'атака_игрока',24
 }
-$суперудар_5 = {
-суперудар_сделан[5] = 1
+$суперудар_15 = {
+суперудар_сделан[15] = 1
 gt 'атака_игрока',25
+}
+$суперудар_16 = {
+суперудар_сделан[16] = 1
+gt 'атака_игрока',26
+}
+$суперудар_17 = {
+суперудар_сделан[17] = 1
+gt 'атака_игрока',27
+}
+$суперудар_18 = {
+суперудар_сделан[18] = 1
+gt 'атака_игрока',28
 }
 
 $вернуться_в_корень = {
@@ -979,6 +1086,7 @@ $equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_2_change
 if фламберг > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''фламберг'' & dynamic $slot_2_change">Flamberge [<<фламберг>>]</a>'
 if нагината > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагината'' & dynamic $slot_2_change">Naginata [<<нагината>>]</a>'
 if моргенштерн > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''моргенштерн'' & dynamic $slot_2_change">Morningstar [<<моргенштерн>>]</a>'
+if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_2_change">Trident [<<трезубец>>]</a>'
 if грейтекс > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''грейтекс'' & dynamic $slot_2_change">Greataxe [<<грейтекс>>]</a>'
 if бита > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бита'' & dynamic $slot_2_change">Baseball Bat [<<бита>>]</a>'
 if скотобой > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''скотобой'' & dynamic $slot_2_change">Cattle Prod [<<скотобой>>]</a>'
@@ -1132,6 +1240,7 @@ $equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_21_chang
 if фламберг > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''фламберг'' & dynamic $slot_21_change">Flamberge [<<фламберг>>]</a>'
 if нагината > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагината'' & dynamic $slot_21_change">Naginata [<<нагината>>]</a>'
 if моргенштерн > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''моргенштерн'' & dynamic $slot_21_change">Morningstar [<<моргенштерн>>]</a>'
+if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_21_change">Trident [<<трезубец>>]</a>'
 if грейтекс > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''грейтекс'' & dynamic $slot_21_change">Greataxe [<<грейтекс>>]</a>'
 if бита > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бита'' & dynamic $slot_21_change">Baseball Bat [<<бита>>]</a>'
 if скотобой > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''скотобой'' & dynamic $slot_21_change">Cattle Prod [<<скотобой>>]</a>'
@@ -1320,6 +1429,22 @@ if slave_inventory['incrusted_ring'] > 0: $equip_choice += '<br><a href = "EXEC:
 gt curloc
 }
 
+$slave_naval_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_34_change">Take off belly ring</a>'
+if slave_inventory['belly_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''belly_ring'' & dynamic $slot_34_change">Belly Ring <<slave_inventory["belly_ring"]>></a>'
+if slave["belly_piercing"] = 0: $equip_choice = 'Naval/belly is not pierced'
+gt curloc
+}
+
+$slave_tongue_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_35_change">Take off tongue barbell</a>'
+if slave_inventory['tongue_barbell'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''tongue_barbell'' & dynamic $slot_35_change">Tongue Barbell <<slave_inventory["tongue_barbell"]>></a>'
+if slave["thongue_piercing"] = 0: $equip_choice = 'Tongue is not pierced'
+gt curloc
+}
+
 $assistant_armor_list = {
 $equip_choice = ''
 $equip_choice += '<a href = "EXEC: $new_item = ''без_брони'' & dynamic $slot_40_change">Remove armor</a>'
@@ -1338,6 +1463,7 @@ $equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_41_chang
 if фламберг > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''фламберг'' & dynamic $slot_41_change">Flamberge [<<фламберг>>]</a>'
 if нагината > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагината'' & dynamic $slot_41_change">Naginata [<<нагината>>]</a>'
 if моргенштерн > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''моргенштерн'' & dynamic $slot_41_change">Morningstar [<<моргенштерн>>]</a>'
+if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_41_change">Trident [<<трезубец>>]</a>'
 if грейтекс > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''грейтекс'' & dynamic $slot_41_change">Greataxe [<<грейтекс>>]</a>'
 if бита > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бита'' & dynamic $slot_41_change">Baseball Bat [<<бита>>]</a>'
 if скотобой > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''скотобой'' & dynamic $slot_41_change">Cattle Prod [<<скотобой>>]</a>'
@@ -1526,7 +1652,21 @@ if assistant_inventory['incrusted_ring'] > 0: $equip_choice += '<br><a href = "E
 gt curloc
 }
 
+$assistant_naval_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_54_change">Take off belly ring</a>'
+if assistant_inventory['belly_ring'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''belly_ring'' & dynamic $slot_54_change">Belly Ring <<slave_inventory["belly_ring"]>></a>'
+if assistant["belly_piercing"] = 0: $equip_choice = 'Naval/belly is not pierced'
+gt curloc
+}
 
+$assistant_tongue_list = {
+$equip_choice = ''
+$equip_choice += '<a href = "EXEC: $new_item = ''пусто'' & dynamic $slot_55_change">Take off tongue barbell</a>'
+if assistant_inventory['tongue_barbell'] > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''tongue_barbell'' & dynamic $slot_55_change">Tongue Barbell <<slave_inventory["tongue_barbell"]>></a>'
+if assistant["thongue_piercing"] = 0: $equip_choice = 'Tongue is not pierced'
+gt curloc
+}
 
 $slot_1_change = {
 slot = 1
@@ -1748,6 +1888,32 @@ if $curloc = "slave_stat":
 end
 }
 
+$slot_34_change = {
+slave_inventory[$slave["naval"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["naval"] = $new_item
+$equip_choice = ''
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
+}
+
+$slot_35_change = {
+slave_inventory[$slave["tongue"]] += 1
+slave_inventory[$new_item] -= 1
+$slave["tongue"] = $new_item
+$equip_choice = ''
+if $curloc = "slave_stat":
+ gs '$newloc'
+ gt 'slave_stat'
+ else
+ gt curloc
+end
+}
+
 $slot_40_change = {
 slot = 40
 gt 'item_change'
@@ -1844,6 +2010,22 @@ $slot_53_change = {
 assistant_inventory[$assistant["ring_right"]] += 1
 assistant_inventory[$new_item] -= 1
 $assistant["ring_right"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_54_change = {
+assistant_inventory[$assistant["naval"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["naval"] = $new_item
+$equip_choice = ''
+gt curloc
+}
+
+$slot_55_change = {
+assistant_inventory[$assistant["tongue"]] += 1
+assistant_inventory[$new_item] -= 1
+$assistant["tongue"] = $new_item
 $equip_choice = ''
 gt curloc
 }
@@ -3318,6 +3500,41 @@ no_guro = 0
 $bg['slaughter'] = 'slaughter'
 $bg['tabern_kitchen'] = 'tabern_kitchen'
 $npc_image['bullhorn'] = 'bullhorn'
+}
+
+!Cryo Sleep - new buttons on main menu feature - crushboss
+$cryo_cell_1 = {
+cryo_cell_selected = 1
+*p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_1_name>> in Cryo Storage - Cell 1" <a href = "EXEC: gt ''stasis_cell_1''"><img src = "<<$iced_1["ava_gray"]>>.jpg"></a></div>'
+}
+
+$cryo_cell_2 = {
+cryo_cell_selected = 2
+*p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_2_name>> in Cryo Storage - Cell 2" <a href = "EXEC: gt ''stasis_cell_2''"><img src = "<<$iced_2["ava_gray"]>>.jpg"></a></div>'
+}
+
+$cryo_cell_3 = {
+cryo_cell_selected = 3
+*p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_3_name>> in Cryo Storage - Cell 3" <a href = "EXEC: gt ''stasis_cell_3''"><img src = "<<$iced_3["ava_gray"]>>.jpg"></a></div>'
+}
+
+$cryo_cell_4 = {
+cryo_cell_selected = 4
+*p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_4_name>> in Cryo Storage - Cell 4" <a href = "EXEC: gt ''stasis_cell_4''"><img src = "<<$iced_4["ava_gray"]>>.jpg"></a></div>'
+}
+
+$cryo_cell_5 = {
+cryo_cell_selected = 5
+*p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_5_name>> in Cryo Storage - Cell 5" <a href = "EXEC: gt ''stasis_cell_5''"><img src = "<<$iced_5["ava_gray"]>>.jpg"></a></div>'
+}
+
+$cryo_cell_6 = {
+cryo_cell_selected = 6
+*p '<div id = "stasis"><a style="text-decoration: none; padding-top: 7px;" class="victoriana wide tooltip-left" tooltip-data="<<$iced_6_name>> in Cryo Storage - Cell 6" <a href = "EXEC: gt ''stasis_cell_6''"><img src = "<<$iced_6["ava_gray"]>>.jpg"></a></div>'
+}
+
+$chariotweight = {
+chariot_weight = (heavy_frame + heavy_boards + heavy_chasis + heavy_wheels + heavy_rider_armor) + 5
 }
 --- #dynamic ---------------------------------
 

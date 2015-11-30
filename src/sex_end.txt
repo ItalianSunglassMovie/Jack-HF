@@ -11,7 +11,7 @@ a = 0
 
 if master_excitement > sex['pc_boner']: a = master_excitement - sex['pc_boner']
 if a > master_mood['pos_statisfied']: master_mood['pos_statisfied'] = a
-master_excitement = sex['pc_boner']
+master_excitement_rate = sex['pc_boner']*16
 
 IF $sex_partner = '':
  if sex["nymphomania_revealed"] = 1: if slave["nymphomania_revealed"] = 0: slave["nymphomania_revealed"] = 1  
@@ -41,7 +41,7 @@ IF $sex_partner = '':
  if slave["virtue"] > 5: slave["virtue"] = 5
  if sententia_veritas = 1 and sex['base_boner'] > sex['pc_boner']: slave["virtue"] = 5
  slave['newness'] = sex['girl_newness']
- if sex['girl_get_pregnant'] = 1 and slave['pregnant'] < 1: slave['pregnant'] = 1
+ if sex['girl_get_pregnant'] = 1 and slave['pregnant'] < 1 and slave['fertility'] ! -1 and slave['fertility'] ! -2: slave['pregnant'] = 1
 END
 
 IF $sex_partner = 'assistant':
@@ -68,7 +68,7 @@ IF $sex_partner = 'assistant':
  assistant['orgasm_type'] = sex['girl_orgasm_type_change']
  dynamic $assistant_energy_drop
  assistant['newness'] = sex['girl_newness']
- if sex['girl_get_pregnant'] = 1 and assistant['pregnant'] < 1: assistant['pregnant'] = 1
+ if sex['girl_get_pregnant'] = 1 and assistant['pregnant'] < 1 and assistant['fertility'] ! -1 and assistant['fertility'] ! -2: assistant['pregnant'] = 1
 END
 
 $sex_partner = ''

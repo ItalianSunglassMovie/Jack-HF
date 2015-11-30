@@ -110,7 +110,8 @@ copyarr '$суперудар', '$master_spm'
 
 IF combatant = 1:
  $toplay = 'arena'
-! $combatant_ava = '<<$slave["ava_clear"]>>.jpg'
+ !For some reason I have to set this twice for it to work everytime - crushboss
+ !Fixes slave and enemy portraits in battle - crushboss
  $combatant_ava = '<<$slave_ava>>.jpg'
  $combatant_ava = '<<$slave_ava>>.jpg'
  $combatant_name = $slave_name 
@@ -123,20 +124,25 @@ IF combatant = 1:
  $в_сапоге = $slave["leg_wpn"] 
 
  макс_здоровье_игрока = slave["stamina"] * 10 - slave_rate['wounds']
+ if slave["gladiatrix_affinity"] > 0: макс_здоровье_игрока = slave["stamina"]*10
  if slave['age'] = CONST_INT['loli_age']: макс_здоровье_игрока = макс_здоровье_игрока/2
+ if slave['age'] = CONST_INT['milf_age']: макс_здоровье_игрока += slave["stamina"]*2
  if макс_здоровье_игрока < 1: макс_здоровье_игрока = 1
  здоровье_игрока = макс_здоровье_игрока
  макс_выносливость_игрока = 50 + (slave["energy"]*5)
+ if slave["gladiatrix_affinity"] > 0: макс_выносливость_игрока = 75 + (slave["energy"]*5)
  if slave['age'] = CONST_INT['loli_age']: макс_выносливость_игрока = макс_выносливость_игрока/2    
  выносливость_игрока = макс_выносливость_игрока
  норм_дух_игрока = slave["ego"]*10
+ if slave["gladiatrix_affinity"] > 0: норм_дух_игрока = slave["ego"]*20
  дух_игрока = норм_дух_игрока
  сила_передышки = 10 
  slave["calories"] -= 2
  slave_rate["hygiene"] += 40
  
  base_str = slave["stamina"] + slave["gladiatrix_affinity"]
- if slave['age'] = CONST_INT['loli_age']: base_str = base_str/2
+ if slave['age'] = CONST_INT['loli_age']: base_str = (base_str/2) + slave["gladiatrix_affinity"]
+ if slave['age'] = CONST_INT['milf_age']: base_str += 1
  base_flagelation = slave["gladiatrix"] + slave["gladiatrix_affinity"]
  сила = slave["gladiatrix"] + slave["gladiatrix_affinity"]
  ловкость = slave["gladiatrix"] + slave["gladiatrix_affinity"]
@@ -151,7 +157,6 @@ IF combatant = 1:
 END
 
 IF combatant = 2:
-! $combatant_ava = '<<$assistant[''ava_clear'']>>.jpg'
  $combatant_ava = '<<$assistant_ava>>.jpg'
  $combatant_ava = '<<$assistant_ava>>.jpg'
  $combatant_name = $assistant_name 
@@ -164,18 +169,23 @@ IF combatant = 2:
  $в_сапоге = $assistant["leg_wpn"] 
 
  макс_здоровье_игрока = assistant["stamina"] * 10 - assistant_rate["wounds"]
+ if assistant["gladiatrix_affinity"] > 0: макс_здоровье_игрока = assistant["stamina"]*10
  if assistant['age'] = CONST_INT['loli_age']: макс_здоровье_игрока = макс_здоровье_игрока/2
+ if assistant['age'] = CONST_INT['milf_age']: макс_здоровье_игрока += assistant["stamina"]*2
  if макс_здоровье_игрока < 1: макс_здоровье_игрока = 1
  здоровье_игрока = макс_здоровье_игрока
  макс_выносливость_игрока = 50 + (assistant["energy"]*5)
+ if assistant["gladiatrix_affinity"] > 0: макс_выносливость_игрока = 75 + (assistant["energy"]*5)
  if assistant['age'] = CONST_INT['loli_age']: макс_выносливость_игрока = макс_выносливость_игрока/2  
  выносливость_игрока = макс_выносливость_игрока
  норм_дух_игрока = assistant["ego"]*10
+ if assistant["gladiatrix_affinity"] > 0: норм_дух_игрока = assistant["ego"]*20
  дух_игрока = норм_дух_игрока
  сила_передышки = 10 
  
  base_str = assistant["stamina"] + assistant["gladiatrix_affinity"]
- if assistant['age'] = CONST_INT['loli_age']: base_str = base_str/2
+ if assistant['age'] = CONST_INT['loli_age']: base_str = (base_str/2) + assistant["gladiatrix_affinity"]
+ if assistant['age'] = CONST_INT['milf_age']: base_str += 1
  base_flagelation = assistant["gladiatrix"] + assistant["gladiatrix_affinity"]
  сила = assistant["gladiatrix"] + assistant["gladiatrix_affinity"]
  ловкость = assistant["gladiatrix"] + assistant["gladiatrix_affinity"]
@@ -235,9 +245,10 @@ IF $враг[1] = 'воспитуемая':
  if $slave["back_wpn"] = 'бита': slave_base_dmg = 5+slave['gladiatrix'] & $slave_dmg_type = 'дробящий'
  if $slave["back_wpn"] = 'скотобой': slave_base_dmg = 5+slave['gladiatrix'] & $slave_dmg_type = 'психический'
  if $slave["back_wpn"] = 'фламберг': slave_base_dmg = 5+slave['gladiatrix'] & $slave_dmg_type = 'рубящий'
- if $slave["back_wpn"] = 'нагината': slave_base_dmg = 5+slave['gladiatrix'] & $slave_dmg_type = 'рубящий'
- if $slave["back_wpn"] = 'моргенштерн': slave_base_dmg = 5+slave['gladiatrix'] & $slave_dmg_type = 'колющий'
+ if $slave["back_wpn"] = 'нагината': slave_base_dmg = 5+slave['gladiatrix'] & $slave_dmg_type = 'колющий'
+ if $slave["back_wpn"] = 'моргенштерн': slave_base_dmg = 5+slave['gladiatrix'] & $slave_dmg_type = 'дробящий'
  if $slave["back_wpn"] = 'грейтекс': slave_base_dmg = 5+slave['gladiatrix'] & $slave_dmg_type = 'рубящий'
+ if $slave["back_wpn"] = 'трезубец': slave_base_dmg = 5+slave['gladiatrix'] & $slave_dmg_type = 'колющий'
 
  IF slave_attack = 1:
   slave_base_dmg = 1+slave['gladiatrix'] & $slave_dmg_type = 'колющий'
@@ -332,7 +343,7 @@ IF $враг[1] = 'воспитуемая':
   модификатор_рубящий['воспитуемая'] -= 5
   модификатор_дробящий['воспитуемая'] -= 1
   модификатор_холод['воспитуемая'] += 1
-  модификатор_огонь['воспитуемая'] += 1
+  модификатор_огонь['воспитуемая'] += 2
   модификатор_молния['воспитуемая'] += 1  
  END
  

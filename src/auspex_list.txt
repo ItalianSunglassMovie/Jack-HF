@@ -4,6 +4,8 @@ IF wizard_mode = 1: auspex = 1
 $auspex_list = ''
 $return_lock  = 'slave_stat'
 
+gs '$calculate_attributes'
+
 IF auspex = 0:
  $auspex_list = '' 
  $info_text = '   Without spells reinforcing auspex, the aura of your slave is seen as pale and indistinct shadow. You can not determine the color, strength or direction of her spiritual field.
@@ -95,30 +97,6 @@ IF assistant_aura = 1:
   $auspex_list += ''
  END
 END
-
-!"IF wizard_mode = 1:
- $auspex_list += ''
- $auspex_list += '
-Fear:          <<slave["fear"]>>/<<slave_rate["fear"]>>      Cal: <<slave["calories"]>>
-Angst:          <<slave["angst"]>>/<<slave_rate["angst"]>>    
-Instinct:       <<slave["instinct"]>>/<<slave_rate["instinct"]>>  
-Ratio:          <<slave["rational"]>>/<<slave_rate["rational"]>>  
-Custom:       <<slave["custom"]>>/<<slave_rate["custom"]>>      
-Moral:         <<slave["moral"]>>/<<slave_rate["moral"]>>       
-Spoil: <<slave["spoil"]>>/<<slave_rate["spoil"]>>      
-
-<<$beauty[slave["beauty"]]>> (<<slave_rate["beauty"]>>)
-<<$stamina[slave["stamina"]]>> (<<slave_rate["stamina"]>>)
-<<$exotic[slave["exotic"]]>> (<<slave_rate["exotic"]>>)
-<<$fat[slave["fat"]]>> (<<slave_rate["fat"]>>)
-<<$sensitivity[slave["sensitivity"]]>> (<<slave_rate["sensitivity"]>>)
-<<$style[slave["style"]]>> (<<slave["style"]>>)
-<<$intellect[slave["intellect"]]>> (<<slave_rate["intellect"]>>)
-<<$temper[slave["temper"]]>> (<<slave_rate["temper"]>>)
-<<$ego[slave["ego"]]>> (<<slave_rate["ego"]>>)
-<<$pride[slave["pride"]]>> (<<slave_rate["pride"]>>)
-'
-END"
 
 --- auspex_list ---------------------------------
 

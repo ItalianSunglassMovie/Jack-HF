@@ -28,7 +28,7 @@ $no = {gt 'Start'}
 '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
 '<div id = "title_scroll_text"><center><h2><font face="Victoriana" size="+20">Congratulations!</font></h2>
 You have achieved the status of a patrician, got the best customers, and thus completed the story of the game with a rating of<br>
-<h1><font face="Victoriana" size="+20"><<$rating[score]>></font></h1>
+<h1><font face="Victoriana" size="+20"><<$patrician_rating[score]>></font></h1>
 <font face="Victoriana" size="+10">Days spent: <<day>></font><br>
 <font face="Victoriana" size="+10">Played as: <<$master_base_name[hero_choice]>></font><br>
 Wish to continue in free mode?</center>
