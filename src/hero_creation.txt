@@ -1,5 +1,7 @@
 # hero_creation
-!hero creation screen
+!Hero Creation Screen
+!Overhauled by crushboss
+
 !for msg
 $MSG_BACKIMAGE = 'content\pic\msg_bg.jpg'
 $MSG_OK_IMAGE = 'content/pic/buttons/ok-icon.png'
@@ -11,6 +13,7 @@ MSG_TEXT_H = 400
 MSG_OK_X = 250
 MSG_OK_Y = 340
 MSG_X = 200
+
 !init vars
 if hero_choice = 0: hero_choice = 1
 
@@ -19,9 +22,8 @@ IF $master_name = 'JeanGrey' and cheat_all_basic < 1:
  cheat_b = 2
  cheat_c = 2
  cheat_i = 2
+ cheat_k = 2
  cheat_all_basic = 1
- $master_name = 'CrushBoss'
- isabella_get = 1
 END
  
 IF $master_name = 'BlackWidow' and cheat_all_low < 1:
@@ -30,31 +32,8 @@ IF $master_name = 'BlackWidow' and cheat_all_low < 1:
  cheat_c = 2
  cheat_i = 2
  cheat_k = 2
+ cheat_l = 2
  cheat_all_low = 1
- вакхический_нектар = 20
- тонизируюзщий_эликсир = 30
- целительный_бальзам = 30
- приворотное_зелье = 20
- мощный_афодизиак = 20
- !Special Combat Techniques
- $spm_learned['удар_с_разворота'] = 1
- $spm_learned['рассечение'] = 1
- $spm_learned['воинственный_клич'] = 1
- $spm_learned['подрезка'] = 1
- $spm_learned['ослепление'] = 1
- $spm_learned['оглушение'] = 1
- $spm_learned['ответный_удар'] = 1
- $spm_learned['лицо_прикладом'] = 1
- $master_spm[1] = 'удар_с_разворота'
- $master_spm[2] = 'рассечение'
- $master_spm[3] = 'воинственный_клич'
- $master_spm[4] = 'подрезка'
- $master_spm[5] = 'ослепление'
- $master_spm[6] = 'оглушение'
- $master_spm[7] = 'ответный_удар'
- $master_spm[8] = 'лицо_прикладом'
- $master_name = 'CrushBoss'
- isabella_get = 1
 END
 
 IF $master_name = 'ScarletWitch' and cheat_all < 1:
@@ -63,32 +42,8 @@ IF $master_name = 'ScarletWitch' and cheat_all < 1:
  cheat_c = 2
  cheat_h = 2
  cheat_i = 2
- cheat_l = 2
+ cheat_k = 2
  cheat_all = 1
- вакхический_нектар = 20
- тонизируюзщий_эликсир = 30
- целительный_бальзам = 30
- приворотное_зелье = 20
- мощный_афодизиак = 20
- !Special Combat Techniques
- $spm_learned['удар_с_разворота'] = 1
- $spm_learned['рассечение'] = 1
- $spm_learned['воинственный_клич'] = 1
- $spm_learned['подрезка'] = 1
- $spm_learned['ослепление'] = 1
- $spm_learned['оглушение'] = 1
- $spm_learned['ответный_удар'] = 1
- $spm_learned['лицо_прикладом'] = 1
- $master_spm[1] = 'удар_с_разворота'
- $master_spm[2] = 'рассечение'
- $master_spm[3] = 'воинственный_клич'
- $master_spm[4] = 'подрезка'
- $master_spm[5] = 'ослепление'
- $master_spm[6] = 'оглушение'
- $master_spm[7] = 'ответный_удар'
- $master_spm[8] = 'лицо_прикладом'
- $master_name = 'CrushBoss'
- isabella_get = 1
 END
 
 IF $master_name = 'BlackCat' and cheat_all_max < 1:
@@ -99,30 +54,14 @@ IF $master_name = 'BlackCat' and cheat_all_max < 1:
  cheat_i = 2
  cheat_j = 2
  cheat_all_max = 1
- вакхический_нектар = 20
- тонизируюзщий_эликсир = 30
- целительный_бальзам = 30
- приворотное_зелье = 20
- мощный_афодизиак = 20
- !Special Combat Techniques
- $spm_learned['удар_с_разворота'] = 1
- $spm_learned['рассечение'] = 1
- $spm_learned['воинственный_клич'] = 1
- $spm_learned['подрезка'] = 1
- $spm_learned['ослепление'] = 1
- $spm_learned['оглушение'] = 1
- $spm_learned['ответный_удар'] = 1
- $spm_learned['лицо_прикладом'] = 1
- $master_spm[1] = 'удар_с_разворота'
- $master_spm[2] = 'рассечение'
- $master_spm[3] = 'воинственный_клич'
- $master_spm[4] = 'подрезка'
- $master_spm[5] = 'ослепление'
- $master_spm[6] = 'оглушение'
- $master_spm[7] = 'ответный_удар'
- $master_spm[8] = 'лицо_прикладом'
- $master_name = 'CrushBoss'
- isabella_get = 1
+ faction_fame['serpis'] = 4
+ faction_fame['taurus'] = 4
+ faction_fame['kamira'] = 4
+ faction_fame['korvus'] = 4
+ faction_fame['neutral'] = 5
+ noble_status = 1
+ guild_reputation_rate += 40
+ brand_rate += 20
 END 
 
 IF ($master_name = 'CrushBoss' and cheat_a < 1) or cheat_a = 2:
@@ -155,6 +94,25 @@ IF ($master_name = 'CrushBoss' and cheat_a < 1) or cheat_a = 2:
  faction_fame['serpis'] = 1
  faction_fame['korvus'] = 1
  faction_fame['kamira'] = 1
+ !Special Combat Techniques
+ $spm_learned['удар_с_разворота'] = 1
+ $spm_learned['рассечение'] = 1
+ $spm_learned['воинственный_клич'] = 1
+ $spm_learned['подрезка'] = 1
+ $spm_learned['ослепление'] = 1
+ $spm_learned['оглушение'] = 1
+ $spm_learned['ответный_удар'] = 1
+ $spm_learned['лицо_прикладом'] = 1
+ $master_spm[1] = 'удар_с_разворота'
+ $master_spm[2] = 'рассечение'
+ $master_spm[3] = 'воинственный_клич'
+ $master_spm[4] = 'подрезка'
+ $master_spm[5] = 'ослепление'
+ $master_spm[6] = 'оглушение'
+ $master_spm[7] = 'ответный_удар'
+ $master_spm[8] = 'лицо_прикладом'
+ $master_name = 'CrushBoss'
+ isabella_get = 1
  cheat_a = 1
 END
 
@@ -194,7 +152,6 @@ IF ($master_name = 'Thor' and cheat_b < 1) or cheat_b = 2:
  barn = 1
  bath = 1
  kitchen = 1
- library = 1
  pen = 1
  svine = 1
  arachnidSpider = 1
@@ -202,48 +159,74 @@ IF ($master_name = 'Thor' and cheat_b < 1) or cheat_b = 2:
  
  !Estate Interiors
  $study = 'classic'
- $bg['study'] = $interior_study[$study]
- $bg['home_lux'] = $interior_bg[$study]
- $place_info['study'] = $interior_study_info[$study]
- $interior_bg['classic'] = 'study_large'
- $interior_study['classic'] = 'study'
+ $interior_study_large['classic'] = 'interiors\classic_study_large'
+ $interior_study['classic'] = 'interiors\classic_study'
  $interior_study_info['classic'] = '   '
+ $bg['study'] = $interior_study[$study]
+ $bg['home_lux'] = $interior_study_large[$study]
+ $place_name['study'] = $estate_study_name[$estate]
+ $place_location['study'] = $estate_study_location[$estate] 
+ $place_info['study'] = $interior_study_info[$study]
  
  $bed = 'stylish'
- $bg['bedroom'] = $interior_bed[$bed]
- $place_info['bedroom'] = $interior_bed_info[$bed]
+ $interior_bed_large['stylish'] = 'interiors\stylish_bed_large'
  $interior_bed['stylish'] = 'interiors\stylish_bed'
  $interior_bed_info['stylish'] = '   '
+ $bg['bedroom'] = $interior_bed[$bed]
+ $bg['bedroom_lux'] = $interior_bed_large[$bed]
+ $place_name['bedroom'] = $estate_bed_name[$estate]
+ $place_location['bedroom'] = $estate_bed_location[$estate]
+ $place_info['bedroom'] = $interior_bed_info[$bed]
  
  $bath = 'gothic'
- $bg['bathroom'] = $interior_bath[$bath]
- $place_info['bathroom'] = $interior_bath_info[$bath]
+ $interior_bath_large['gothic'] = 'interiors\gothic_bath_large'
  $interior_bath['gothic'] = 'interiors\gothic_bath'
  $interior_bath_info['gothic'] = '   '
+ $bg['bathroom'] = $interior_bath[$bath]
+ $bg['bathroom_lux'] = $interior_bath_large[$bath]
+ $place_name['bathroom'] = $estate_bath_name[$estate]
+ $place_location['bathroom'] = $estate_bath_location[$estate]
+ $place_info['bathroom'] = $interior_bath_info[$bath]
  
  $dungeon = 'executor'
- $bg['dungeon'] = $interior_dungeon[$dungeon]
- $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
+ $interior_dungeon_large['executor'] = 'interiors\executor_dungeon_large'
  $interior_dungeon['executor'] = 'interiors\executor_dungeon'
  $interior_dungeon_info['executor'] = '   '
+ $bg['dungeon'] = $interior_dungeon[$dungeon]
+ $bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
+ $place_name['dungeon'] = $estate_dungeon_name[$estate]
+ $place_location['dungeon'] = $estate_dungeon_location[$estate]
+ $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
  
  $kitchen = 'basic'
- $bg['kitchen'] = $interior_kitchen[$kitchen]
- $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
- $interior_kitchen['basic'] = 'kitchen'
+ $interior_kitchen_large['basic'] = 'interiors\basic_kitchen_large'
+ $interior_kitchen['basic'] = 'interiors\basic_kitchen'
  $interior_kitchen_info['basic'] = '   '
+ $bg['kitchen'] = $interior_kitchen[$kitchen]
+ $bg['kitchen_lux'] = $interior_kitchen_large[$kitchen]
+ $place_name['kitchen'] = $estate_kitchen_name[$estate]
+ $place_location['kitchen'] = $estate_kitchen_location[$estate]
+ $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
  
  $lab = 'basic'
- $bg['lab'] = $interior_lab[$lab]
- $place_info['lab'] = $interior_lab_info[$lab]
+ $interior_lab_large['basic'] = 'interiors\basic_lab_large'
  $interior_lab['basic'] = 'interiors\basic_lab'
  $interior_lab_info['basic'] = '   '
+ $bg['lab'] = $interior_lab[$lab]
+ $bg['lab_lux'] = $interior_lab_large[$lab]
+ $place_name['lab'] = $estate_lab_name[$estate]
+ $place_location['lab'] = $estate_lab_location[$estate]
+ $place_info['lab'] = $interior_lab_info[$lab]
  
  $bouduar = 'gothic'
- $bg['bouduar'] = $interior_bouduar[$bouduar]
- $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
+ $interior_bouduar_large['gothic'] = 'interiors\gothic_bouduar_large'
  $interior_bouduar['gothic'] = 'interiors\gothic_bouduar'
  $interior_bouduar_info['gothic'] = '   '
+ $bg['bouduar'] = $interior_bouduar[$bouduar]
+ $bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
+ $place_name['bouduar'] = $estate_bouduar_name[$estate]
+ $place_location['bouduar'] = $estate_bouduar_location[$estate]
+ $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 
  !Starting Money
  sparks += 25000
@@ -273,17 +256,32 @@ IF ($master_name = 'Hulk' and cheat_c < 1) or cheat_c = 2:
  master_domination = 5
  
  !Weapon and Armor Inventory
- плейт = 6
- бастард = 6
- катана = 6
- кинжал = 6
- стилет = 6
- тесак = 6
  фламберг = 6
  нагината = 6
  моргенштерн = 6
- трезубец = 6
  грейтекс = 6
+ бита = 6
+ скотобой = 6
+ кнут = 6
+ шпага = 6
+ рапира = 6
+ кончар = 6
+ гладиус = 6
+ бастард = 6
+ мачете = 6
+ катана = 6
+ трезубец = 6
+ демократизатор = 6
+ кинжал = 6
+ стилет = 6
+ кастет = 6
+ нагайка = 6
+ глушилка = 6
+ тесак = 6
+ мулава = 6
+ плейт = 6
+! кольчуга = 3
+! посох_огня = 1
 
  !Master Clothing Inventory
 ! comfy_robes = 1
@@ -310,6 +308,15 @@ IF ($master_name = 'Hulk' and cheat_c < 1) or cheat_c = 2:
  $master_right_wpn = 'бастард'
  $master_arm_wpn = 'кинжал'
  $master_leg_wpn = 'стилет'
+ $master_head_gear = 'raven_crown'
+ $master_earring = 'chimera_earring'
+ $master_amulet = 'snake_amulet'
+ $master_ring = 'bull_ring'
+ raven_crown_on = 1
+ chimera_gem_on = 1
+ snake_amulet_on = 1
+ bull_ring_on = 1
+ item_supermacy_bonus += 5
  
  !Master Frige Inventory
  frige["vegetables"] = 30
@@ -330,6 +337,14 @@ IF ($master_name = 'Hulk' and cheat_c < 1) or cheat_c = 2:
  lab_store["koffe"] = 30
  lab_store["meth"] = 30
  lab_store["opium"] = 30
+ 
+ !Potion Inventory
+ вакхический_нектар = 20
+ тонизируюзщий_эликсир = 30
+ целительный_бальзам = 30
+ приворотное_зелье = 20
+ мощный_афодизиак = 20
+ вода_леты = 10
 
  !BSDM Inventory
  inventory['deprivation_suit'] = 1
@@ -363,7 +378,7 @@ cheat_e = 0
 cheat_g = 0
 END
 
-IF ($master_name = 'mature' and cheat_g < 1) or cheat_g = 2:
+IF (($master_name = 'mature' or $master_name = 'milf') and cheat_g < 1) or cheat_g = 2:
 cheat_g = 1
 cheat_e = 0
 cheat_f = 0
@@ -458,6 +473,76 @@ IF patrician_mode_off = 0:
   *p '<div style="position:absolute;top:451px;left:870px;"><a href = "EXEC: get_initial_slave = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
  END
 END
+
+!Choose starting sparks feature - crushboss
+IF custom_game = 1:
+	*p '<div style="position:absolute;top:180px;left:470px;font-family:Victoriana;"><table><TR><TD style="width:60px"><font color="#0000FF" size="5">Sparks:</font></TD><TD><a href = "EXEC: dynamic $sparks_decrease & gt curloc"><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#0000FF" size="5"><<sparks>></font></center></TD><TD><a href = "EXEC: dynamic $sparks_increase & gt curloc"><img src="content/pic/buttons/Plus.png"></a></TD><TD></TR></table></div>'
+END
+
+!Choose starting factions feature - crushboss
+IF custom_game = 1:
+	*p '<div id="faction_selection">
+	<center><u>FACTION:</u></center><font color="#008000">- White House</font>
+	<font color="#008080">- Corvus House</font>
+	<font color="#0000CD">- Taurus House</font>
+	<font color="#4B0082">- Serpis House</font>
+	<font color="#C71585">- Camira House</font>
+	</div>'
+
+	IF $estate = 'white_house' and faction_fame['neutral'] = 1 and faction_purchase_neutral = 0:
+		*p '<div id="chekbox_205"><a href = "EXEC: faction_fame[''neutral''] = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	elseif faction_fame['neutral'] = 0 and $estate ! 'white_house':
+		*p '<div id="chekbox_205"><a href = "EXEC: faction_fame[''neutral''] = 1 & hero_points -=80 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'
+	elseif faction_fame['neutral'] = 1 and ($estate = 'korvus_house' or $estate = 'taurus_house' or $estate = 'serpis_house' or $estate = 'kamira_house' or $estate = 'slum_house'):
+		*p '<div id="chekbox_205"><a href = "EXEC: faction_fame[''neutral''] = 0 & hero_points += 80 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	else
+		*p '<div id="chekbox_205"><a href = "EXEC: faction_fame[''neutral''] = 1 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	END
+
+	IF $estate = 'korvus_house' and faction_fame['korvus'] = 1 and faction_purchase_korvus = 0 and $estate ! 'white_house':
+		*p '<div id="chekbox_206"><a href = "EXEC: faction_fame[''korvus''] = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	elseif faction_fame['korvus'] = 0 and $estate ! 'korvus_house':
+		*p '<div id="chekbox_206"><a href = "EXEC: faction_fame[''korvus''] = 1 & hero_points -= 40 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'
+	elseif faction_fame['korvus'] = 1 and ($estate = 'taurus_house' or $estate = 'serpis_house' or $estate = 'kamira_house' or $estate = 'slum_house'):
+		*p '<div id="chekbox_206"><a href = "EXEC: faction_fame[''korvus''] = 0 & hero_points += 40 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	else
+		*p '<div id="chekbox_206"><a href = "EXEC: faction_fame[''korvus''] = 1 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	END
+
+	IF $estate = 'taurus_house' and faction_fame['taurus'] = 1 and faction_purchase_taurus = 0 and ($estate ! 'korvus_house' or $estate ! 'white_house'):
+		*p '<div id="chekbox_207"><a href = "EXEC: faction_fame[''taurus''] = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	elseif faction_fame['taurus'] = 0 and $estate ! 'taurus_house':
+		*p '<div id="chekbox_207"><a href = "EXEC: faction_fame[''taurus''] = 1 & hero_points -= 20 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'
+	elseif faction_fame['taurus'] = 1 and ($estate = 'serpis_house' or $estate = 'kamira_house' or $estate = 'slum_house'):
+		*p '<div id="chekbox_207"><a href = "EXEC: faction_fame[''taurus''] = 0 & hero_points += 20 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	elseif $estate ! 'korvus_house' or $estate ! 'white_house':
+		*p '<div id="chekbox_207"><a href = "EXEC: faction_fame[''taurus''] = 1 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	END
+
+	IF $estate = 'serpis_house' and faction_fame['serpis'] = 1 and faction_purchase_serpis = 0 and ($estate ! 'taurus_house' or $estate ! 'korvus_house' or $estate ! 'white_house'):
+		*p '<div id="chekbox_208"><a href = "EXEC: faction_fame[''serpis''] = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	elseif faction_fame['serpis'] = 0 and $estate ! 'serpis_house':
+		*p '<div id="chekbox_208"><a href = "EXEC: faction_fame[''serpis''] = 1 & hero_points -= 10 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'
+	elseif faction_fame['serpis'] = 1 and ($estate = 'kamira_house' or $estate = 'slum_house'):
+		*p '<div id="chekbox_208"><a href = "EXEC: faction_fame[''serpis''] = 0 & hero_points += 10 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	elseif $estate ! 'taurus_house' or $estate ! 'korvus_house' or $estate ! 'white_house':
+		*p '<div id="chekbox_208"><a href = "EXEC: faction_fame[''serpis''] = 1 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	END
+
+	IF $estate = 'kamira_house' and faction_fame['kamira'] = 1 and faction_purchase_kamira = 0 and ($estate ! 'serpis_house' or $estate ! 'taurus_house' or $estate ! 'korvus_house' or $estate ! 'white_house'):
+		*p '<div id="chekbox_209"><a href = "EXEC: faction_fame[''kamira''] = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	elseif faction_fame['kamira'] = 0 and $estate ! 'kamira_house':
+		*p '<div id="chekbox_209"><a href = "EXEC: faction_fame[''kamira''] = 1 & hero_points -= 10 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'
+	elseif faction_fame['kamira'] = 1 and $estate = 'slum_house':
+		*p '<div id="chekbox_209"><a href = "EXEC: faction_fame[''kamira''] = 0 & hero_points += 10 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	elseif $estate ! 'serpis_house' or $estate ! 'taurus_house' or $estate ! 'korvus_house' or $estate ! 'white_house':
+		*p '<div id="chekbox_209"><a href = "EXEC: faction_fame[''kamira''] = 1 & dynamic $faction_adjustment & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'
+	END
+END
+
+!Debug Testing code - crushboss
+! msg 'White House: <<faction_fame[''neutral'']>><br>Corvus House: <<faction_fame[''korvus'']>><br>Taurus House: <<faction_fame[''taurus'']>><br>Serpis House: <<faction_fame[''serpis'']>><br>Camira House: <<faction_fame[''kamira'']>><br>'
+!End of debug testing code
 
 *p {<div id = "close_scroll"><a href = 'EXEC: hero_points = 0 & gt "main_menu"'><img src = "content\pic\buttons\close_button.png"></a></div>}
 --- hero_creation ---------------------------------

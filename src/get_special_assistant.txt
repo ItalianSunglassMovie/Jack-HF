@@ -199,7 +199,7 @@ $assistant["cloth"] = 'leather_corset'
 assistant_state = 1
 assistant['newness'] = 1
 
-!Testing Code - Disable for release - crushboss
+!Testing Code - crushboss
 if cheat_i = 1: gs 'assistant_testing'
 !End of Testing Code
 
@@ -264,6 +264,8 @@ if assistant["exotic"] = 5: assistant_rate["exotic"] = 160
 
 !Fixes a potential issue with Neoplasty being already done on Isabella
 assistant['beauty_enchanced'] = 0
+
+if pet_tentacle > 0: assistant_tentacle_rule = 1 & slave_tentacle_rule = 0
 
 gs '#txt'
 gs '#txt_2'

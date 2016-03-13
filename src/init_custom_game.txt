@@ -3,7 +3,7 @@
 
 get_initial_slave = 0
 hero_points = 800
-sparks = 1000
+sparks = 1500
 
 master_str = 1
 master_cha = 0
@@ -11,7 +11,7 @@ master_style = 0
 master_libido = 0
 master_energy = 5
 
-master_tutor = 1
+master_tutor = 0
 master_fighter = 0
 master_butler = 0
 master_artdirector = 0
@@ -30,11 +30,27 @@ master_fetish = 0
 $estate = 'slum_house'
 $starting_area = 'Slum'
 
+faction_fame['neutral'] = 0
+faction_fame['korvus'] = 0
+faction_fame['taurus'] = 0
+faction_fame['serpis'] = 0
+faction_fame['kamira'] = 0
+
+faction_purchase_kamira = 0
+faction_purchase_serpis = 0
+faction_purchase_taurus = 0
+faction_purchase_korvus = 0
+faction_purchase_neutral = 0
+
 $assistant["armor"] = 'без_брони'
 $slave["armor"] = 'без_брони'
 
 custom_game = 1
+story_mode = 0
+sandbox_game = 0
+demo_game = 0
 patrician_mode_off = 1
+difficulty_setting = 0
 
 --- init_custom_game ---------------------------------
 

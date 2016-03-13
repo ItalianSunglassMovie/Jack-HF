@@ -72,7 +72,7 @@ $style_wpn['kimerian'] = 'грейтекс'
 
 $style_freehand['retiarius'] = ''
 $style_freehand['flagrius'] = ''
-$style_freehand['dimacherus'] = 'короткий_меч'
+$style_freehand['dimacherus'] = 'гладиус'
 $style_freehand['hoplomachus'] = ''
 $style_freehand['kimerian'] = ''
 
@@ -89,10 +89,10 @@ $gt_spm['hoplomachus'] = 'толчок_щитом'
 $gt_spm['kimerian'] = 'удар_с_разворота'
 
 !fiend vars
-semen_gain[0] = 6
-semen_gain[1] = 12
-semen_gain[2] = 18
-semen_gain[3] = 24
+semen_gain[0] = 12
+semen_gain[1] = 18
+semen_gain[2] = 24
+semen_gain[3] = 36
 semen_gain[4] = 48
 
 tentacle_grow[0] = 6
@@ -1231,19 +1231,19 @@ $slave_petting[3] = dyneval($vb_cycle, 3, 'Petting B+')
 $slave_petting[4] = dyneval($vb_cycle, 4, 'Petting A+')
 $slave_petting[5] = dyneval($vb_cycle, 5, 'Petting S+')
 
-$slave_penetration[0] = dyneval($vb_cycle, 0, 'Penetration F-')
-$slave_penetration[1] = dyneval($vb_cycle, 1, 'Penetration D-')
-$slave_penetration[2] = dyneval($vb_cycle, 2, 'Penetration C-')
-$slave_penetration[3] = dyneval($vb_cycle, 3, 'Penetration B+')
-$slave_penetration[4] = dyneval($vb_cycle, 4, 'Penetration A+')
-$slave_penetration[5] = dyneval($vb_cycle, 5, 'Penetration S+')
-
 $slave_oral[0] = dyneval($vb_cycle, 0, 'Oral Pleasure F-')
 $slave_oral[1] = dyneval($vb_cycle, 1, 'Oral Pleasure D-')
 $slave_oral[2] = dyneval($vb_cycle, 2, 'Oral Pleasure C-')
 $slave_oral[3] = dyneval($vb_cycle, 3, 'Oral Pleasure B+')
 $slave_oral[4] = dyneval($vb_cycle, 4, 'Oral Pleasure A+')
 $slave_oral[5] = dyneval($vb_cycle, 5, 'Oral Pleasure S+')
+
+$slave_penetration[0] = dyneval($vb_cycle, 0, 'Penetration F-')
+$slave_penetration[1] = dyneval($vb_cycle, 1, 'Penetration D-')
+$slave_penetration[2] = dyneval($vb_cycle, 2, 'Penetration C-')
+$slave_penetration[3] = dyneval($vb_cycle, 3, 'Penetration B+')
+$slave_penetration[4] = dyneval($vb_cycle, 4, 'Penetration A+')
+$slave_penetration[5] = dyneval($vb_cycle, 5, 'Penetration S+')
 
 $slave_orgy[0] = dyneval($vb_cycle, 0, 'Group Sex F-')
 $slave_orgy[1] = dyneval($vb_cycle, 1, 'Group Sex D-')
@@ -1252,12 +1252,12 @@ $slave_orgy[3] = dyneval($vb_cycle, 3, 'Group Sex B+')
 $slave_orgy[4] = dyneval($vb_cycle, 4, 'Group Sex A+')
 $slave_orgy[5] = dyneval($vb_cycle, 5, 'Group Sex S+')
 
-$slave_xenophily[0] = dyneval($vb_cycle, 0, 'Xenophily F-')
-$slave_xenophily[1] = dyneval($vb_cycle, 1, 'Xenophily D-')
-$slave_xenophily[2] = dyneval($vb_cycle, 2, 'Xenophily C-')
-$slave_xenophily[3] = dyneval($vb_cycle, 3, 'Xenophily B+')
-$slave_xenophily[4] = dyneval($vb_cycle, 4, 'Xenophily A+')
-$slave_xenophily[5] = dyneval($vb_cycle, 5, 'Xenophily S+')
+$slave_roleplay[0] = dyneval($vb_cycle, 0, 'Demonstration F-')
+$slave_roleplay[1] = dyneval($vb_cycle, 1, 'Demonstration D-')
+$slave_roleplay[2] = dyneval($vb_cycle, 2, 'Demonstration C-')
+$slave_roleplay[3] = dyneval($vb_cycle, 3, 'Demonstration B+')
+$slave_roleplay[4] = dyneval($vb_cycle, 4, 'Demonstration A+')
+$slave_roleplay[5] = dyneval($vb_cycle, 5, 'Demonstration S+')
 
 $slave_fetishism[0] = dyneval($vb_cycle, 0, 'Fetishism F-')
 $slave_fetishism[1] = dyneval($vb_cycle, 1, 'Fetishism D-')
@@ -1266,12 +1266,12 @@ $slave_fetishism[3] = dyneval($vb_cycle, 3, 'Fetishism B+')
 $slave_fetishism[4] = dyneval($vb_cycle, 4, 'Fetishism A+')
 $slave_fetishism[5] = dyneval($vb_cycle, 5, 'Fetishism S+')
 
-$slave_roleplay[0] = dyneval($vb_cycle, 0, 'Demonstration F-')
-$slave_roleplay[1] = dyneval($vb_cycle, 1, 'Demonstration D-')
-$slave_roleplay[2] = dyneval($vb_cycle, 2, 'Demonstration C-')
-$slave_roleplay[3] = dyneval($vb_cycle, 3, 'Demonstration B+')
-$slave_roleplay[4] = dyneval($vb_cycle, 4, 'Demonstration A+')
-$slave_roleplay[5] = dyneval($vb_cycle, 5, 'Demonstration S+')
+$slave_xenophily[0] = dyneval($vb_cycle, 0, 'Xenophily F-')
+$slave_xenophily[1] = dyneval($vb_cycle, 1, 'Xenophily D-')
+$slave_xenophily[2] = dyneval($vb_cycle, 2, 'Xenophily C-')
+$slave_xenophily[3] = dyneval($vb_cycle, 3, 'Xenophily B+')
+$slave_xenophily[4] = dyneval($vb_cycle, 4, 'Xenophily A+')
+$slave_xenophily[5] = dyneval($vb_cycle, 5, 'Xenophily S+')
 
 $slave_wounds[1] = $_font_col_rep[2] + 'Lightly Injured' + $_font_closer 
 $slave_wounds[2] = $_font_col_rep[1] + 'Injured' + $_font_closer 
@@ -1439,7 +1439,7 @@ $master_fighter[2] = dyneval($vb_cycle, 2, 'Fighter C-')
 $master_fighter[3] = dyneval($vb_cycle, 3, 'Soldier B+')
 $master_fighter[4] = dyneval($vb_cycle, 4, 'Warrior A+')
 $master_fighter[5] = dyneval($vb_cycle, 5, 'Master Swordsman S+')
-$master_fighter[6] = dyneval($vb_cycle, 7, 'Master Swordsman S++')
+$master_fighter[6] = dyneval($vb_cycle, 7, 'Master Sword S++')
 
 $master_mage[0] = dyneval($vb_cycle, 0, 'Mundane F-')
 $master_mage[1] = dyneval($vb_cycle, 1, 'Apprentice D-')
@@ -1638,9 +1638,9 @@ dynamic $vb_full_cycle, '$wear_ex', 6, 'Clothes'
 dynamic $vb_full_cycle, '$wear_st', 6, 'Clothes'
 
 dynamic $vb_full_cycle, '$стиль', 6, 'Style'
-$грация[0] = $_font_col_rep[0] + 'Grace' + $_font_closer
-$грация[1] = $_font_col_rep[5] + 'Grace' + $_font_closer
-$грация[2] = $_font_col_rep[0] + 'Grace' + $_font_closer
+$грация[0] = $_font_col_rep[0] + 'Natural Grace' + $_font_closer
+$грация[1] = $_font_col_rep[5] + 'Natural Grace' + $_font_closer
+$грация[2] = $_font_col_rep[0] + 'Natural Grace' + $_font_closer
 
 $гигиена[0] = $_font_col_rep[5] + 'Hygiene' + $_font_closer
 $гигиена[1] = $_font_col_rep[4] + 'Hygiene' + $_font_closer
@@ -1756,12 +1756,12 @@ $draft_lesson[5] = dyneval($vb_cycle, 5, 'Pony Harness training S+')
 
 dynamic $vb_full_cycle, '$_lesson', 6, 'Lesson'
 
-$gym_lesson[0] = dyneval($vb_cycle, 0, 'Sports & Fitness F-')
-$gym_lesson[1] = dyneval($vb_cycle, 1, 'Sports & Fitness D-')
-$gym_lesson[2] = dyneval($vb_cycle, 2, 'Sports & Fitness C-')
-$gym_lesson[3] = dyneval($vb_cycle, 3, 'Sports & Fitness B+')
-$gym_lesson[4] = dyneval($vb_cycle, 4, 'Sports & Fitness A+')
-$gym_lesson[5] = dyneval($vb_cycle, 5, 'Sports & Fitness S+')
+$gym_lesson[0] = dyneval($vb_cycle, 0, '<font size = 3%>Sports & Fitness F-</font>')
+$gym_lesson[1] = dyneval($vb_cycle, 1, '<font size = 3%>Sports & Fitness D-</font>')
+$gym_lesson[2] = dyneval($vb_cycle, 2, '<font size = 3%>Sports & Fitness C-</font>')
+$gym_lesson[3] = dyneval($vb_cycle, 3, '<font size = 3%>Sports & Fitness B+</font>')
+$gym_lesson[4] = dyneval($vb_cycle, 4, '<font size = 3%>Sports & Fitness A+</font>')
+$gym_lesson[5] = dyneval($vb_cycle, 5, '<font size = 3%>Sports & Fitness S+</font>')
 
 $slave_sub_kiss[0] = dyneval($vb_cycle, 0, 'Kissing F-')
 $slave_sub_kiss[1] = dyneval($vb_cycle, 1, 'Kissing D-')
@@ -2147,6 +2147,142 @@ $trophy_bg[122] = 'trophy girl 122'
 $trophy_bg[123] = 'trophy girl 123'
 $trophy_bg[124] = 'trophy girl 124'
 $trophy_bg[125] = 'trophy girl 125'
+$trophy_bg[126] = 'trophy girl 126'
+$trophy_bg[127] = 'trophy girl 127'
+$trophy_bg[128] = 'trophy girl 128'
+$trophy_bg[129] = 'trophy girl 129'
+$trophy_bg[130] = 'trophy girl 130'
+$trophy_bg[131] = 'trophy girl 131'
+$trophy_bg[132] = 'trophy girl 132'
+$trophy_bg[133] = 'trophy girl 133'
+$trophy_bg[134] = 'trophy girl 134'
+$trophy_bg[135] = 'trophy girl 135'
+$trophy_bg[136] = 'trophy girl 136'
+$trophy_bg[137] = 'trophy girl 137'
+$trophy_bg[138] = 'trophy girl 138'
+$trophy_bg[139] = 'trophy girl 139'
+$trophy_bg[140] = 'trophy girl 140'
+$trophy_bg[141] = 'trophy girl 141'
+$trophy_bg[142] = 'trophy girl 142'
+$trophy_bg[143] = 'trophy girl 143'
+$trophy_bg[144] = 'trophy girl 144'
+$trophy_bg[145] = 'trophy girl 145'
+$trophy_bg[146] = 'trophy girl 146'
+$trophy_bg[147] = 'trophy girl 147'
+$trophy_bg[148] = 'trophy girl 148'
+$trophy_bg[149] = 'trophy girl 149'
+$trophy_bg[150] = 'trophy girl 150'
+$trophy_bg[151] = 'trophy girl 151'
+$trophy_bg[152] = 'trophy girl 152'
+$trophy_bg[153] = 'trophy girl 153'
+$trophy_bg[154] = 'trophy girl 154'
+$trophy_bg[155] = 'trophy girl 155'
+$trophy_bg[156] = 'trophy girl 156'
+$trophy_bg[157] = 'trophy girl 157'
+$trophy_bg[158] = 'trophy girl 158'
+$trophy_bg[159] = 'trophy girl 159'
+$trophy_bg[160] = 'trophy girl 160'
+$trophy_bg[161] = 'trophy girl 161'
+$trophy_bg[162] = 'trophy girl 162'
+$trophy_bg[163] = 'trophy girl 163'
+$trophy_bg[164] = 'trophy girl 164'
+$trophy_bg[165] = 'trophy girl 165'
+$trophy_bg[166] = 'trophy girl 166'
+$trophy_bg[167] = 'trophy girl 167'
+$trophy_bg[168] = 'trophy girl 168'
+$trophy_bg[169] = 'trophy girl 169'
+$trophy_bg[170] = 'trophy girl 170'
+$trophy_bg[171] = 'trophy girl 171'
+$trophy_bg[172] = 'trophy girl 172'
+$trophy_bg[173] = 'trophy girl 173'
+$trophy_bg[174] = 'trophy girl 174'
+$trophy_bg[175] = 'trophy girl 175'
+$trophy_bg[176] = 'trophy girl 176'
+$trophy_bg[177] = 'trophy girl 177'
+$trophy_bg[178] = 'trophy girl 178'
+$trophy_bg[179] = 'trophy girl 179'
+$trophy_bg[180] = 'trophy girl 180'
+$trophy_bg[181] = 'trophy girl 181'
+$trophy_bg[182] = 'trophy girl 182'
+$trophy_bg[183] = 'trophy girl 183'
+$trophy_bg[184] = 'trophy girl 184'
+$trophy_bg[185] = 'trophy girl 185'
+$trophy_bg[186] = 'trophy girl 186'
+$trophy_bg[187] = 'trophy girl 187'
+$trophy_bg[188] = 'trophy girl 188'
+$trophy_bg[189] = 'trophy girl 189'
+$trophy_bg[190] = 'trophy girl 190'
+$trophy_bg[191] = 'trophy girl 191'
+$trophy_bg[192] = 'trophy girl 192'
+$trophy_bg[193] = 'trophy girl 193'
+$trophy_bg[194] = 'trophy girl 194'
+$trophy_bg[195] = 'trophy girl 195'
+$trophy_bg[196] = 'trophy girl 196'
+$trophy_bg[197] = 'trophy girl 197'
+$trophy_bg[198] = 'trophy girl 198'
+$trophy_bg[199] = 'trophy girl 199'
+$trophy_bg[200] = 'trophy girl 200'
+$trophy_bg[201] = 'trophy girl 201'
+$trophy_bg[202] = 'trophy girl 202'
+$trophy_bg[203] = 'trophy girl 203'
+$trophy_bg[204] = 'trophy girl 204'
+$trophy_bg[205] = 'trophy girl 205'
+$trophy_bg[206] = 'trophy girl 206'
+$trophy_bg[207] = 'trophy girl 207'
+$trophy_bg[208] = 'trophy girl 208'
+$trophy_bg[209] = 'trophy girl 209'
+$trophy_bg[210] = 'trophy girl 210'
+$trophy_bg[211] = 'trophy girl 211'
+$trophy_bg[212] = 'trophy girl 212'
+$trophy_bg[213] = 'trophy girl 213'
+$trophy_bg[214] = 'trophy girl 214'
+$trophy_bg[215] = 'trophy girl 215'
+$trophy_bg[216] = 'trophy girl 216'
+$trophy_bg[217] = 'trophy girl 217'
+$trophy_bg[218] = 'trophy girl 218'
+$trophy_bg[219] = 'trophy girl 219'
+$trophy_bg[220] = 'trophy girl 220'
+$trophy_bg[221] = 'trophy girl 221'
+$trophy_bg[222] = 'trophy girl 222'
+$trophy_bg[223] = 'trophy girl 223'
+$trophy_bg[224] = 'trophy girl 224'
+$trophy_bg[225] = 'trophy girl 225'
+$trophy_bg[226] = 'trophy girl 226'
+$trophy_bg[227] = 'trophy girl 227'
+$trophy_bg[228] = 'trophy girl 228'
+$trophy_bg[229] = 'trophy girl 229'
+$trophy_bg[230] = 'trophy girl 230'
+$trophy_bg[231] = 'trophy girl 231'
+$trophy_bg[232] = 'trophy girl 232'
+$trophy_bg[233] = 'trophy girl 233'
+$trophy_bg[234] = 'trophy girl 234'
+$trophy_bg[235] = 'trophy girl 235'
+$trophy_bg[236] = 'trophy girl 236'
+$trophy_bg[237] = 'trophy girl 237'
+$trophy_bg[238] = 'trophy girl 238'
+$trophy_bg[239] = 'trophy girl 239'
+$trophy_bg[240] = 'trophy girl 240'
+$trophy_bg[241] = 'trophy girl 241'
+$trophy_bg[242] = 'trophy girl 242'
+$trophy_bg[243] = 'trophy girl 243'
+$trophy_bg[244] = 'trophy girl 244'
+$trophy_bg[245] = 'trophy girl 245'
+$trophy_bg[246] = 'trophy girl 246'
+$trophy_bg[247] = 'trophy girl 247'
+$trophy_bg[248] = 'trophy girl 248'
+$trophy_bg[249] = 'trophy girl 249'
+$trophy_bg[250] = 'trophy girl 250'
+$trophy_bg[251] = 'trophy girl 251'
+$trophy_bg[252] = 'trophy girl 252'
+$trophy_bg[253] = 'trophy girl 253'
+$trophy_bg[254] = 'trophy girl 254'
+$trophy_bg[255] = 'trophy girl 255'
+$trophy_bg[256] = 'trophy girl 256'
+$trophy_bg[257] = 'trophy girl 257'
+$trophy_bg[258] = 'trophy girl 258'
+$trophy_bg[259] = 'trophy girl 259'
+$trophy_bg[260] = 'trophy girl 260'
+
 
 --- #var_base ---------------------------------
 

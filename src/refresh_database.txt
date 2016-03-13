@@ -1,0 +1,33 @@
+# refresh_database
+!Refresh Database - created by crushboss
+!This helps the game be more compatible with old save games - not a perfect solution but it helps
+
+gs '#simple_npc'
+gs '#dynamic'
+gs '#npc_base'
+!Disabled #place_base - do not enable - only needs to be loaded in Start - crushboss
+!gs '#place_base'
+gs '#estate_base'
+gs '#txt'
+gs '#txt_2'
+gs '#var_base'
+gs '#variative'
+gs '#options'
+gs '#item_base'
+gs '#moodlet_base'
+gs '#food_base'
+gs '#charriots_base'
+gs '#masters_base'
+gs '#quest_base'
+gs '#help_msg'
+!fight engine
+gs '#тексты_движка'
+gs '#противники'
+gs '#суперудары'
+gs '#боевые_предметы'
+!sex engine
+gs '#sex_texts'
+gs '#sex_options'
+
+--- refresh_database ---------------------------------
+

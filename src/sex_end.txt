@@ -31,7 +31,7 @@ IF $sex_partner = '':
    if slave['neg_defloration'] > 0: gs '$mod_slave_drop', slave['neg_defloration']   
  END
  IF sex["climax_count"] > 0:
-  if orgasm_prohibited > 0: sin_gained = max (1, slave["moral"])
+  if orgasm_prohibited > 0: sin_potential = max (1, slave["moral"])
   slave_rate["arousal"] -= sex["climax_count"] * slave["arousal"] * sex["climax_top"]
  END
  if sex["climax_top"] > slave['pos_orgasm']: slave['pos_orgasm'] = sex["climax_top"]

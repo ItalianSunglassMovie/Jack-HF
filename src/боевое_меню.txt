@@ -21,10 +21,10 @@ $второй_штраф = $атака_1_штраф[$оружие]
 $боевое_меню = ''
 $боевое_меню += '<<$первый_пункт>><br>'
 $боевое_меню += '<<$второй_пункт>><br>'
-if вторичная_атака[$вторичный] = 1: $боевое_меню += '<<$вторичная_атака_название[$вторичный]>><br>'
-$боевое_меню += "<br><a href='EXEC: dynamic $пинок'><font color='red'>Kick</font></a>(Ошл/Вни)<br>"
-$боевое_меню += "<a href='EXEC: dynamic $толчок'><font color='green'>Push</font></a>(Рас/Адр)<br>"
-$боевое_меню += "<a href='EXEC: dynamic $подсечка'><font color='purple'>Sweep</font></a>(Шат/Вер)<br>"
+if вторичная_атака[$вторичный] = 1 and $вторичный ! '': $боевое_меню += "<a href='EXEC: dynamic $атака_второй_рукой'><<$вторичная_атака_название[$вторичный]>><br>"
+$боевое_меню += "<br><a href='EXEC: dynamic $пинок'><font color='red'>Kick</font></a> (Stun\Attention)<br>"
+$боевое_меню += "<a href='EXEC: dynamic $толчок'><font color='green'>Push</font></a> (Distract\Adren)<br>"
+$боевое_меню += "<a href='EXEC: dynamic $подсечка'><font color='purple'>Sweep</font></a> (Unstd\Evasion)<br>"
 
 --- боевое_меню ---------------------------------
 

@@ -18,6 +18,12 @@ dynamic $toolsequipped
 
 slave['brand'] = tattoo_brand
 
+!Displays a message encouraging the player to read the Release Notes and Change Log - crushboss
+IF release_notes_message = 0:
+ msg 'Please take the time and read the Release Notes and the Change Log.  They contain tons of valuable information that will answer a lot of your questions and will help you be a better player!'
+ release_notes_message = 1
+END
+
 !check slave and assistant ratings - crushboss
 IF (assistant_state = 1 or slave_state ! CONST_INT['no_exist']) and change_loc = 1:
  if assistant_state = 1: gs '$assistant_rank_stats'
@@ -69,7 +75,7 @@ END
 if slave_state = CONST_INT['no_exist'] and cheat_j = 1: get_new_slave = 1
 
 !Get new slave cheat - cheat_j - crushboss
-IF get_new_slave = 1 and slave_state = CONST_INT['no_exist']:
+IF get_new_slave = 1 and slave_state = CONST_INT['no_exist'] and active[$quest[12]] = 0:
  get_initial_slave = 0
  gs 'generate_stock'
  gs 'stock_to_slave_nogt'
@@ -92,17 +98,18 @@ if (cheat_h = 1 or cheat_j = 1 or cheat_k = 1) and ($slave["armor"] = '' or $sla
 if (cheat_h = 1 or cheat_j = 1 or cheat_k = 1) and $slave["right_wpn"] = '': $slave["right_wpn"] = 'катана'
 if (cheat_h = 1 or cheat_j = 1 or cheat_k = 1) and $slave["left_wpn"] = '': $slave["left_wpn"] = 'кинжал'
 if (cheat_h = 1 or cheat_j = 1 or cheat_k = 1) and $slave["back_wpn"] = '': $slave["back_wpn"] = 'фламберг'
-if (cheat_h = 1 or cheat_j = 1 or cheat_k = 1) and ($slave["cloth"] = '' or $slave["cloth"] = 'голая'): $slave["cloth"] = 'leather_corset'
+if (cheat_h = 1 or cheat_j = 1 or cheat_k = 1) and ($slave["cloth"] = '' or $slave["cloth"] = 'голая'): $slave["cloth"] = 'sun_dress'
 !End of testing code - crushboss
 
-IF spell_adverto_servili = 1 and virginity > 0 and master_supermacy > 2 and master_energy > 2 and $estate ! 'slum_house' and pet_tentacle > 0 and dungeon > 0 and (brand_rate >= 10 or guild_reputation_rate >= 10):
- IF slave_state ! CONST_INT['no_exist'] and slave['ill'] = 0 and slave['pregnant'] = 0 and slave['parasite'] = 0 and slave['issues'] = 0 and slave['brand'] ! 4 and slave['brand'] = 3:
-  IF $master_head_gear = 'raven_crown' and $master_earring = 'chimera_earring' and $master_amulet = 'snake_amulet' and $master_ring = 'bull_ring':
-   spell_adverto_servili = 0
-   interaction = 1395
-   gt 'interaction'
-  END
- END
+!Easter Egg feature - crushboss
+IF spell_adverto_servili = 1 and virginity > 0 and master_supermacy > 2 and $estate ! 'slum_house' and pet_tentacle > 0 and dungeon > 0 and (brand_rate >= 10 or guild_reputation_rate >= 10):
+	IF slave_state ! CONST_INT['no_exist'] and slave['ill'] = 0 and slave['pregnant'] = 0 and slave['parasite'] = 0 and slave['issues'] = 0 and slave['brand'] = 3:
+		IF $master_head_gear = 'raven_crown' and $master_earring = 'chimera_earring' and $master_amulet = 'snake_amulet' and $master_ring = 'bull_ring':
+			spell_adverto_servili = 0
+			interaction = 1395
+			gt 'interaction'
+		END
+	END
 END
 
 !knout and whip check
@@ -123,11 +130,14 @@ IF $text_exhausted_prisoner = '' or $text_exhausted = '':
  gs '#var_base'
 END
 
-!debug
-!msg '$place = <<$place>>'
 !main menu
 IF menu_form = 0:
- $place = 'home_lux'
+ IF interior_num = 7 or interior_num = 0:
+	$place = 'home_lux'
+	else
+	change_interior = 0
+	gt 'interior_change'
+ END
  
   FUNC('$menu', '===BEGIN===', 'column_0') 
  
@@ -255,13 +265,14 @@ IF menu_form = 4:
   if assistant['domina'] = 1 and nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>' 
   if assistant['executive'] = 1 and nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>' 
 
+  FUNC('$menu', 'spacer', -1)
   FUNC('$menu', '===BEGIN===', 'column_0')
 
 
   IF slave_state = CONST_INT['slave_exist']:
-    FUNC('$menu', 'menu_form', $menu_item_lesson_S_A, menu_lesson_S_A, 'Conduct a lesson', 'Order <<$assistant_name>> to Teach <<$slave_name>> a lesson')
+    FUNC('$menu', 'menu_form', $menu_item_lesson_S_A, menu_lesson_S_A, 'Conduct a Lesson', 'Order <<$assistant_name>> to Teach <<$slave_name>> a lesson')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_lesson_S_A_gray, empty, 'Conduct a lesson', 'No slave found')
+    FUNC('$menu', 'exec', $menu_item_lesson_S_A_gray, empty, 'Conduct a Lesson', 'No slave found')
   END
   
   IF house_mess > 0 and assistant["service"] > 0:
@@ -271,21 +282,26 @@ IF menu_form = 4:
   END
   
   IF kitchen > 0 and assistant["cook"] > 0 and cooked_food < 1:
-    FUNC('$menu', 'goto', $menu_item_dinner_A, menu_dinner_A, 'interaction', 'interaction', 'Prepare dinner', 'Order <<$assistant_name>> to prepare dinner')
+    FUNC('$menu', 'goto', $menu_item_dinner_A, menu_dinner_A, 'interaction', 'interaction', 'Prepare Dinner', 'Order <<$assistant_name>> to prepare dinner')
   ELSE
-    FUNC('$menu', 'exec', $menu_item_dinner_A_gray, empty, 'Prepare dinner', 'Food been prepared already')
+    FUNC('$menu', 'exec', $menu_item_dinner_A_gray, empty, 'Prepare Dinner', 'Food has already been prepared')
   END
   
   IF pet_tentacle > 0 and spawn_milked = 0:
     FUNC('$menu', 'goto', $menu_item_Milk_A, menu_Milk_A, 'interaction', 'interaction', 'Milk the Fiend', 'Order <<$assistant_name>> to Milk the Fiend')
-  ELSE
-    FUNC('$menu', 'exec', $menu_item_Milk_A_gray, empty, 'Milk the Fiend', 'You do not own a Fiend')
+  ELSEIF pet_tentacle = 0:
+    FUNC('$menu', 'exec', $menu_item_Milk_S_gray, empty, 'Milk the Fiend', 'You do not own a Fiend')
+  ELSEIF spawn_milked > 0:
+    FUNC('$menu', 'exec', $menu_item_Milk_S_gray, empty, 'Milk the Fiend', 'The Fiend is satisfied')
   END
-  
-  FUNC('$menu', 'goto', $menu_item_assistant_active_sex, menu_assistant_active_sex, 'interaction', 'interaction', 'Active Sex', 'Have Active Sex with  <<$assistant_name>>')
+
+  FUNC('$menu', 'menu_form', $menu_item_sex_edu, menu_sex_edu_assistant, 'Sex Education',  'Conduct Sex Education for <<$assistant_name>>')  
   FUNC('$menu', 'goto', $menu_item_assistant_relaxed_Vaginal, menu_assistant_relaxed_Vaginal, 'interaction', 'interaction', 'Relaxed Vaginal Sex', 'Have Relaxed Vaginal Sex with <<$assistant_name>>')
   FUNC('$menu', 'goto', $menu_item_assistant_relaxed_Anal, menu_assistant_relaxed_Anal, 'interaction', 'interaction', 'Relaxed Anal Sex', 'Have Relaxed Anal Sex with <<$assistant_name>>')
   FUNC('$menu', 'goto', $menu_item_assistant_relaxed_Oral, menu_assistant_relaxed_Oral, 'interaction', 'interaction', 'Relaxed Oral Sex', 'Have Relaxed Oral Sex with <<$assistant_name>>')
+  FUNC('$menu', 'menu_form', $menu_item_Serve_S, menu_Serve_S_assistant, 'Serve Me', 'Order <<$assistant_name>> to Serve you')
+  FUNC('$menu', 'menu_form', $menu_item_drug_S, menu_drug_S_assistant, 'Take a Drug', 'Order <<$assistant_name>> to take a Drug')
+  FUNC('$menu', 'menu_form', $menu_item_potion_S, menu_potion_S_assistant, 'Drink a Potion', 'Order <<$assistant_name>> to drink a Potion')
 
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Assistant_assignments"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
@@ -337,13 +353,13 @@ IF menu_form = 5:
     FUNC('$menu', 'goto', $menu_item_Milk_S, menu_Milk_S, 'interaction', 'interaction', 'Milk the Fiend', 'Order <<$slave_name>> to milk the Fiend')
   ELSEIF pet_tentacle = 0:
     FUNC('$menu', 'exec', $menu_item_Milk_S_gray, empty, 'Milk the Fiend', 'You do not own a Fiend')
-  ELSEIF spawn_milked = 1:
+  ELSEIF spawn_milked > 0:
     FUNC('$menu', 'exec', $menu_item_Milk_S_gray, empty, 'Milk the Fiend', 'The Fiend is satisfied')
   END
   
-  FUNC('$menu', 'menu_form', $menu_item_Serve_S, menu_Serve_S, 'Serve me', 'Order <<$slave_name>> to serve you')
-  FUNC('$menu', 'menu_form', $menu_item_drug_S, menu_drug_S, 'Take a drug', 'Order <<$slave_name>> to take a drug')
-  FUNC('$menu', 'menu_form', $menu_item_potion_S, menu_potion_S, 'Drink a potion', 'Order <<$slave>> to drink a potion')
+  FUNC('$menu', 'menu_form', $menu_item_Serve_S, menu_Serve_S, 'Serve me', 'Order <<$slave_name>> to Serve you')
+  FUNC('$menu', 'menu_form', $menu_item_drug_S, menu_drug_S, 'Take a drug', 'Order <<$slave_name>> to take a Drug')
+  FUNC('$menu', 'menu_form', $menu_item_potion_S, menu_potion_S, 'Drink a potion', 'Order <<$slave>> to drink a Potion')
 
   FUNC('$menu', '===END===')
  $text_display += '<br><div id="Back_Slave_assignments"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = ''EXEC: menu_form = 0 & gt "menu_form"''><img src = "content\pic\ui overhaul\back.png"></a></div>'
@@ -403,50 +419,56 @@ IF menu_form = 6:
     FUNC('$menu', 'exec', $menu_item_Cruciato_gray, empty, 'Cruciato', 'Not enough sparks to cast this spell')
   END
   
-  IF already_done_today[64] = 0 and slave["virtue"] = 0 and slave["sin"] = 0 and slave_state = CONST_INT['slave_exist']: 
-    FUNC('$menu', 'goto', $menu_item_Sententia_veritas, menu_Sententia_veritas, 'interaction', 'interaction', 'Sententia veritas', 'If <<$slave_name>> has no merit or guilt, increases degree of merit or guilt at the next receiving (costs 5$ to cast)')
+  IF already_done_today[64] = 0 and sententia_veritas = 0 and sententia_veritas_casted = 0 and slave["virtue"] = 0 and slave["sin"] = 0 and slave_state = CONST_INT['slave_exist']: 
+    FUNC('$menu', 'goto', $menu_item_Sententia_veritas, menu_Sententia_veritas, 'interaction', 'interaction', 'Sententia Veritas', 'If <<$slave_name>> has no merit or guilt, increases degree of merit or guilt at the next receiving (costs 5$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave']:
-    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'No slave available to cast Sententia veritas on')
+    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia Veritas', 'No slave available to cast Sententia Veritas on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
-    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', '<<$slave_name>> is unconscious')
-  ELSEIF slave["virtue"] = 1:
-    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', '<<$slave_name>> feels merit, spell can`t be casted')
-  ELSEIF slave["sin"] = 1:
-    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', '<<$slave_name>> feels guilt, spell can`t be casted')
-  ELSEIF already_done_today[64] = 1:
-    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'The spell is active, can`t be casted more than once a day')
+    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia Veritas', '<<$slave_name>> is unconscious')
+  ELSEIF slave["virtue"] > 0:
+    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia Veritas', '<<$slave_name>> feels merit, spell can`t be casted')
+  ELSEIF slave["sin"] > 0:
+    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia Veritas', '<<$slave_name>> feels guilt, spell can`t be casted')
+  ELSEIF already_done_today[64] = 1 or sententia_veritas = 1 or sententia_veritas_casted = 1:
+    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia Veritas', 'The spell can`t be cast more than once a day')
   ELSEIF sparks < 5:
-    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'Not enough sparks to cast this spell')
+    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia Veritas', 'Not enough sparks to cast this spell')
   ELSEIF master_mage = 0:
-    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia veritas', 'Your magic skill isn`t high enough to cast this spell')
+    FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia Veritas', 'Your magic skill isn`t high enough to cast this spell')
+  ELSE
+	FUNC('$menu', 'exec', $menu_item_Sententia_veritas_gray, empty, 'Sententia Veritas', 'The spell can`t be cast more than once a day')
   END
   
-  IF already_done_today[65] = 0 and slave_state = CONST_INT['slave_exist']: 
+  IF already_done_today[65] = 0 and magna_magnifika = 0 and slave_state = CONST_INT['slave_exist']: 
     FUNC('$menu', 'goto', $menu_item_Magna_Magnifika, menu_Magna_Magnifika, 'interaction', 'interaction', 'Magna Magnifika', 'Strengthens the caster''s aura depending on the magical powers of the caster (costs 5$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave']:
     FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'No slave available to cast Magna Magnifika on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
     FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', '<<$slave_name>> is unconscious')
-  ELSEIF already_done_today[65] = 1:
+  ELSEIF already_done_today[65] = 1 or magna_magnifika = 1:
     FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'The spell is already active, it can`t be casted more than once a day')
   ELSEIF sparks < 5:
     FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'Not enough sparks to cast this spell')
   ELSEIF master_mage = 0:
     FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'Your magic skill isn`t high enough to cast this spell')
+  ELSE
+	FUNC('$menu', 'exec', $menu_item_Magna_Magnifika_gray, empty, 'Magna Magnifika', 'The spell is already active, it can`t be casted more than once a day')
   END
   
-  IF already_done_today[66] = 0 and slave_state = CONST_INT['slave_exist']: 
-    FUNC('$menu', 'goto', $menu_item_Tremedio, menu_Tremedio, 'interaction', 'interaction', 'Tremedio', 'Causes the slave to be afraid of the slaver (costs 5$ to cast)')
+  IF already_done_today[66] = 0 and tremendio = 0 and slave_state = CONST_INT['slave_exist']: 
+    FUNC('$menu', 'goto', $menu_item_Tremedio, menu_Tremedio, 'interaction', 'interaction', 'Tremendio', 'Causes the slave to be afraid of the slaver (costs 5$ to cast)')
   ELSEIF slave_state = CONST_INT['no_slave']:
-    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'No slave available to cast Tremedio on')
+    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremendio', 'No slave available to cast Tremendio on')
   ELSEIF slave_state = CONST_INT['slave_faint']:
-    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', '<<$slave_name>> is unconscious')
-  ELSEIF already_done_today[66] = 1:
-    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'The spell is already active, it can`t be casted more than once a day')
+    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremendio', '<<$slave_name>> is unconscious')
+  ELSEIF already_done_today[66] = 1 or tremendio = 1:
+    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremendio', 'The spell is already active, it can`t be casted more than once a day')
   ELSEIF sparks < 5:
-    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'Not enough sparks to cast this spell')
+    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremendio', 'Not enough sparks to cast this spell')
   ELSEIF master_mage = 0:
-    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremedio', 'Your magic skill isn`t high enough to cast this spell')
+    FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremendio', 'Your magic skill isn`t high enough to cast this spell')
+  ELSE
+	FUNC('$menu', 'exec', $menu_item_Tremedio_gray, empty, 'Tremendio', 'The spell is already active, it can`t be casted more than once a day')
   END
   
   IF already_done_today[67] = 0 and slave_state = CONST_INT['slave_exist']: 
@@ -528,14 +550,13 @@ IF menu_form = menu_sex_edu:
 
   FUNC('$menu', '===BEGIN===', 'column_0')
 
-
-  FUNC('$menu', 'menu_form', $menu_item_Petting, menu_Petting, 'Petting', 'Teach <<$slave_name>> the sexual petting techniques')
-  FUNC('$menu', 'menu_form', $menu_item_Oral_tec, menu_Oral_tec, 'Oral techniques', 'Teach <<$slave_name>> oral techniques')
-  FUNC('$menu', 'menu_form', $menu_item_Penetration, menu_Penetration, 'Penetration', 'Teach <<$slave_name>> the penetration techniques')
-  FUNC('$menu', 'menu_form', $menu_item_Demonstration, menu_Demonstration, 'Demonstration', 'Teach <<$slave_name>> sexual demonstration techniques')
-  FUNC('$menu', 'menu_form', $menu_item_Group_sex, menu_Group_sex, 'Group sex', 'Teach <<$slave_name>> Group sex techniques')
-  FUNC('$menu', 'menu_form', $menu_item_Fetishism, menu_Fetishism, 'Fetishism', 'Teach <<$slave_name>> Fetishism techniques')
-  FUNC('$menu', 'menu_form', $menu_item_Xenophily, menu_Xenophily, 'Xenophily', 'Teach <<$slave_name>> Xenophily techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Petting, menu_Petting, '<<$slave_petting[slave["petting"]]>>', 'Teach <<$slave_name>> sexual Petting techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Oral_tec, menu_Oral_tec, '<<$slave_oral[slave["oral"]]>>', 'Teach <<$slave_name>> Oral techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Penetration, menu_Penetration, '<<$slave_penetration[slave["penetration"]]>>', 'Teach <<$slave_name>> Penetration techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Group_sex, menu_Group_sex, '<<$slave_orgy[slave["orgy"]]>>', 'Teach <<$slave_name>> Group Sex techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Demonstration, menu_Demonstration, '<<$slave_roleplay[slave["roleplay"]]>>', 'Teach <<$slave_name>> sexual Demonstration techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Fetishism, menu_Fetishism, '<<$slave_fetishism[slave["fetishism"]]>>', 'Teach <<$slave_name>> Fetishism techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Xenophily, menu_Xenophily, '<<$slave_xenophily[slave["xenophily"]]>>', 'Teach <<$slave_name>> Xenophily techniques')
 
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Sexed"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 1 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
@@ -662,7 +683,7 @@ IF menu_form = menu_tutor:
     FUNC('$menu', 'exec', $menu_item_Cookery_tutor_gray, empty, 'Cookery', '<<$slave_name>> is skilled enough at Cookery, she doesn`t need anymore teaching')
   END
   IF slave['nurse'] < 5: 
-    FUNC('$menu', 'goto', $menu_item_Medicine_tutor, menu_Medicine_tutor, 'interaction', 'interaction', 'Medicine', 'Invite a Nursing  tutor for <<$slave_name>>(<<$couch_price[slave["nurse"]]>>)')
+    FUNC('$menu', 'goto', $menu_item_Medicine_tutor, menu_Medicine_tutor, 'interaction', 'interaction', 'Medicine', 'Invite a Nursing tutor for <<$slave_name>>(<<$couch_price[slave["nurse"]]>>)')
   ELSEIF slave['nurse'] = 5:
     FUNC('$menu', 'exec', $menu_item_Medicine_tutor_gray, empty, 'Medicine', '<<$slave_name>> is skilled enough at Nursing, she doesn`t need anymore teaching')
   END
@@ -977,6 +998,149 @@ IF menu_form = menu_lesson_S_A:
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Conduct_A_lesson"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 4 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
  $text_display += {<br><div id="Cancel_Conduct_A_lesson"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant activities - Sexed - added by crushboss
+IF menu_form = menu_sex_edu_assistant:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  FUNC('$menu', 'menu_form', $menu_item_Petting, menu_Petting_assistant, '<<$slave_petting[assistant["petting"]]>>', 'Teach <<$assistant_name>> sexual Petting techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Oral_tec, menu_Oral_tec_assistant, '<<$slave_oral[assistant["oral"]]>>', 'Teach <<$assistant_name>> Oral techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Penetration, menu_Penetration_assistant, '<<$slave_penetration[assistant["penetration"]]>>', 'Teach <<$assistant_name>> Penetration techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Group_sex, menu_Group_sex_assistant, '<<$slave_orgy[assistant["orgy"]]>>', 'Teach <<$assistant_name>> Group Sex techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Demonstration, menu_Demonstration_assistant, '<<$slave_roleplay[assistant["roleplay"]]>>', 'Teach <<$assistant_name>> sexual Demonstration techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Fetishism, menu_Fetishism_assistant, '<<$slave_fetishism[assistant["fetishism"]]>>', 'Teach <<$assistant_name>> Fetishism techniques')
+  FUNC('$menu', 'menu_form', $menu_item_Xenophily, menu_Xenophily_assistant, '<<$slave_xenophily[assistant["xenophily"]]>>', 'Teach <<$assistant_name>> Xenophily techniques')
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Sexed"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 4 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="cancel_Sexed"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant activities - Serve me - added by crushboss
+IF menu_form = menu_Serve_S_assistant:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+  FUNC('$menu', 'spacer', 1)
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  IF bath > 0:
+    FUNC('$menu', 'goto', $menu_item_Washme, menu_assistant_washes_master, 'interaction', 'interaction', 'Wash me', 'Order <<$assistant_name>> to wash you up')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Washme_gray, empty, 'Wash me', 'We have no bath to wash you, perhaps we need to change apartments')
+  END
+  FUNC('$menu', 'goto', $menu_item_Massage, menu_Massage_assistant, 'interaction', 'interaction', 'Massage me', 'Order <<$assistant_name>> to give you a Massage')
+  FUNC('$menu', 'goto', $menu_item_Concert, menu_Concert_assistant, 'interaction', 'interaction', 'Concert', 'Order <<$assistant_name>> to perform a Music Concert for your entertainment')
+  FUNC('$menu', 'goto', $menu_item_Acrobatics, menu_Acrobatics_assistant, 'interaction', 'interaction', 'Acrobatics', 'Order <<$assistant_name>> to do some Acrobatics for your entertainment')
+  FUNC('$menu', 'goto', $menu_item_Striptease, menu_Striptease_assistant, 'interaction', 'interaction', 'Striptease', 'Order <<$assistant_name>> to do a Striptease for your entertainment')
+  FUNC('$menu', 'goto', $menu_item_Eroticalshow, menu_Eroticalshow_assistant, 'interaction', 'interaction', 'Erotic Show', 'Order <<$assistant_name>> to perform an Erotical Show for your entertainment')
+
+  IF slave_state = CONST_INT['slave_exist'] and assistant_state = 1:
+    FUNC('$menu', 'goto', $menu_item_Lesbianshow, menu_Lesbianshow_assistant, 'interaction', 'interaction', 'Lesbian Show', 'Order <<$assistant_name>> and <<$slave_name>> to perform a lesbian show for your entertainment')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Lesbianshow_gray, empty, 'Lesbian Show', 'No slave available')
+  END
+  FUNC('$menu', 'goto', $menu_item_assistant_active_sex, menu_assistant_active_sex, 'interaction', 'interaction', 'Active Sex', 'Have Active Sex with  <<$assistant_name>>')
+
+  IF assistant_state = 1 and slave_state = CONST_INT['slave_exist'] and assistant["energy"] > -2 and slave["energy"] > -2:
+    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome, 'interaction', 'interaction', 'Threesome', 'Have a threesome with <<$slave_name>> and <<$assistant_name>>')
+  ELSEIF assistant_state = 0 and slave_state = CONST_INT['slave_exist'] and slave["energy"] > -2:
+    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome_noassistant, 'interaction', 'interaction', 'Threesome', 'Have a threesome with <<$slave_name>> and Gloria from the Real Estate Office or Angelika from the Guild')
+  ELSEIF slave["energy"] <= -2:
+    FUNC('$menu', 'exec', $menu_item_Threesome_gray, empty, 'Threesome', $text_exhausted)
+  END
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Serveme"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 4 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Serveme"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant assignments - Take a drug
+IF menu_form = menu_drug_S_assistant:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+  FUNC('$menu', 'spacer', 3)
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  IF lab_store["koffe"] > 0:
+    FUNC('$menu', 'goto', $menu_item_camra_slave, menu_camra_assistant, 'interaction', 'interaction', 'Drink Camra', 'Order <<$assistant_name>> to drink Camra (<<lab_store["koffe"]>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_camra_slave_gray, empty, 'Drink Camra', 'You ran out of Camra')
+  END 
+  IF lab_store["kanabis"] > 0:
+    FUNC('$menu', 'goto', $menu_item_Datura_slave, menu_Datura_assistant, 'interaction', 'interaction', 'Blaze it', 'Order <<$assistant_name>> to smoke Datura (<<lab_store["kanabis"]>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Datura_slave_gray, empty, 'Blaze it', 'You ran out of Datura')
+  END 
+  IF frige["alcohol"] > 0:
+    FUNC('$menu', 'goto', $menu_item_Alcohol_slave, menu_Alcohol_assistant, 'interaction', 'interaction', 'Chug', 'Order <<$assistant_name>> to drink Alcohol (<<frige["alcohol"]>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Alcohol_slave_gray, empty, 'Chug', 'You ran out of Alcohol')
+  END 
+  IF lab_store["meth"] > 0:
+    FUNC('$menu', 'goto', $menu_item_pollen_slave, menu_pollen_assistant, 'interaction', 'interaction', 'Smell Pollen', 'Order <<$assistant_name>> to smell Pollen (<<lab_store["meth"]>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_pollen_slave_gray, empty, 'Smell Pollen', 'You ran out of Pollen')
+  END 
+  IF lab_store["opium"] > 0:
+    FUNC('$menu', 'goto', $menu_item_oblivion_slave, menu_oblivion_assistant, 'interaction', 'interaction', 'Your Dose of Happiness', 'Order <<$assistant_name>> to take a dose of Essense of Oblivion (<<lab_store["opium"]>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_oblivion_slave_gray, empty, 'Your Dose of Happiness', 'You ran out of Essense of Oblivion')
+  END 
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Take_S_drug"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 4 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Take_S_drug"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant assignments - Drink a potion
+IF menu_form = menu_potion_S_assistant:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+  FUNC('$menu', 'spacer', 2)
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  IF вакхический_нектар > 0:
+    FUNC('$menu', 'goto', $menu_item_nectar_slave, menu_nectar_assistant, 'interaction', 'interaction', 'Bacchic nectar', 'Order <<$assistant_name>> to drink a Bacchic Nectar potion (<<вакхический_нектар>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_nectar_slave_gray, empty, 'Bacchic nectar', 'You ran out of Bacchic Nectar potions')
+  END 
+  IF тонизируюзщий_эликсир > 0:
+    FUNC('$menu', 'goto', $menu_item_elixir_slave, menu_elixir_assistant, 'interaction', 'interaction', 'Tonic elixir', 'Order <<$assistant_name>> to drink a Tonic Elixir potion (<<тонизируюзщий_эликсир>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_elixir_slave_gray, empty, 'Tonic elixir', 'You ran out of Tonic Elixir potions')
+  END 
+  IF целительный_бальзам > 0:
+    FUNC('$menu', 'goto', $menu_item_Balm_slave, menu_Balm_assistant, 'interaction', 'interaction', 'Miracle Balm', 'Order <<$assistant_name>> to drink a Miracle Balm potion (<<целительный_бальзам>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Balm_slave_gray, empty, 'Miracle Balm', 'You ran out of Miracle Balm potions')
+  END 
+  IF афродизиак > 0:
+    FUNC('$menu', 'goto', $menu_item_Aphrodisiac_slave, menu_Aphrodisiac_assistant, 'interaction', 'interaction', 'Aphrodisiac', 'Order <<$assistant_name>> to drink an Aphrodisiac potion (<<афродизиак>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Aphrodisiac_slave_gray, empty, 'Aphrodisiac', 'You ran out of Aphrodisiac potions')
+  END 
+  IF мощный_афодизиак > 0:
+    FUNC('$menu', 'goto', $menu_item_PowerfulAphrodisiac_slave, menu_PowerfulAphrodisiac_assistant, 'interaction', 'interaction', 'Powerful Aphrodisiac', 'Order <<$assistant_name>> to drink a Powerful Aphrodisiac potion (<<мощный_афодизиак>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_PowerfulAphrodisiac_slave_gray, empty, 'Powerful Aphrodisiac', 'You ran out of Powerful Aphrodisiac potions')
+  END 
+  IF приворотное_зелье > 0:
+    FUNC('$menu', 'goto', $menu_item_Philtre_slave, menu_Philtre_assistant, 'interaction', 'interaction', 'Philtre', 'Order <<$assistant_name>> to drink a Philtre potion (<<приворотное_зелье>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Philtre_slave_gray, empty, 'Philtre', 'You ran out of Philtre potions')
+  END 
+  IF вода_леты > 0:
+    FUNC('$menu', 'goto', $menu_item_Lethe_slave, menu_Lethe_assistant, 'interaction', 'interaction', 'Water of Lethe', 'Order <<$assistant_name>> to drink a Water of Lethe potion (<<вода_леты>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Lethe_slave_gray, empty, 'Water of Lethe', 'You ran out of Water of Lethe potions')
+  END 
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Drink_S_potion"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 4 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Drink_S_potion"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
 END
 
 !main menu - Slave assignments - Attend classes
@@ -1340,6 +1504,7 @@ IF menu_form = 1233:
  $text_display += {<br><div id="Back_Musical_instruments"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 123 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
  $text_display += {<br><div id="Cancel_Musical_instruments"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
 END
+
 $text_skilledsex = '<<$slave_name>> has mastered this technique, she doesn`t need more teaching'
 !main menu - Slave activities - Sex - Petting
 IF menu_form = 131:
@@ -1601,6 +1766,270 @@ IF menu_form = 137:
 
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Demonstration"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 13 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Demonstration"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!Assistant sex menu - added by crushboss
+
+$text_skilledsex = '<<$assistant_name>> has mastered this technique, she doesn`t need more teaching'
+!main menu - Assistant activities - Sex - Petting
+IF menu_form = 231:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  IF assistant["sub_hj"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Handjob, menu_handjob_assistant, 'interaction', 'interaction', '<<$slave_sub_hj[assistant["sub_hj"]]>>', 'Teach <<$assistant_name>> sex lesson (Handjob)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Handjob_gray, empty, 'Handjob', $text_skilledsex)
+  END
+  IF assistant["sub_fj"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Footjob, menu_footjob_assistant, 'interaction', 'interaction', '<<$slave_sub_fj[assistant["sub_fj"]]>>', 'Teach <<$assistant_name>> sex lesson (Footjob)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Footjob_gray, empty, 'Footjob', $text_skilledsex)
+  END
+  IF assistant["sub_hug"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Rubbing, menu_rubbing_assistant, 'interaction', 'interaction', '<<$slave_sub_hug[assistant["sub_hug"]]>>', 'Teach <<$assistant_name>> sex lesson (Rubbing)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Rubbing_gray, empty, 'Rubbing', $text_skilledsex)
+  END
+  IF assistant["sub_pazuri"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Paizuri, menu_paizuri_assistant, 'interaction', 'interaction', '<<$slave_sub_pazuri[assistant["sub_pazuri"]]>>', 'Teach <<$assistant_name>> sex lesson (Paizuri)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Paizuri_gray, empty, 'Paizuri', $text_skilledsex)
+  END
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Petting"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 20 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Petting"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant activities - Sex - Oral techniques
+IF menu_form = 232:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  if assistant["sub_kiss"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Kissing, menu_kissing_assistant, 'interaction', 'interaction', '<<$slave_sub_kiss[assistant["sub_kiss"]]>>', 'Teach <<$assistant_name>> sex lesson (Kissing)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Kissing_gray, empty, 'Kissing', $text_skilledsex)
+  END
+  if assistant["sub_thongue"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Licking, menu_licking_assistant, 'interaction', 'interaction', '<<$slave_sub_thongue[assistant["sub_thongue"]]>>', 'Teach <<$assistant_name>> sex lesson (Licking)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Licking_gray, empty, 'Licking', $text_skilledsex)
+  END
+  if assistant["sub_bj"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Blowjob, menu_blowjob_assistant, 'interaction', 'interaction', '<<$slave_sub_bj[assistant["sub_bj"]]>>', 'Teach <<$assistant_name>> sex lesson (Blowjob)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Blowjob_gray, empty, 'Blowjob', $text_skilledsex)
+  END
+  if assistant["sub_dt"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Deepthroat, menu_deepthroat_assistant, 'interaction', 'interaction', '<<$slave_sub_dt[assistant["sub_dt"]]>>', 'Teach <<$assistant_name>> sex lesson (Deepthroat)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Deepthroat_gray, empty, 'Deepthroat', $text_skilledsex)
+  END
+  if assistant["sub_asslik"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Rimming, menu_rimming_assistant, 'interaction', 'interaction', '<<$slave_sub_asslik[assistant["sub_asslik"]]>>', 'Teach <<$assistant_name>> sex lesson (Rimming)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Rimming_gray, empty, 'Rimming', $text_skilledsex)
+  END
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Oral"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 20 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Oral"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant activities - Sex - Penetration
+IF menu_form = 233:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  if assistant["sub_vaginal"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Vaginal, menu_vaginal_assistant, 'interaction', 'interaction', '<<$slave_sub_vaginal[assistant["sub_vaginal"]]>>', 'Teach <<$assistant_name>> sex lesson (Vaginal sex)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Vaginal_gray, empty, 'Vaginal Sex', $text_skilledsex)
+  END
+  if assistant["sub_anal"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Anal, menu_anal_assistant, 'interaction', 'interaction', '<<$slave_sub_anal[assistant["sub_anal"]]>>', 'Teach <<$assistant_name>> sex lesson (Anal sex)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Anal_gray, empty, 'Anal Sex', $text_skilledsex)
+  END
+  if assistant["sub_fisting"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Fisting, menu_fisting_assistant, 'interaction', 'interaction', '<<$slave_sub_fisting[assistant["sub_fisting"]]>>', 'Teach <<$assistant_name>> sex lesson (Fisting)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Fisting_gray, empty, 'Fisting', $text_skilledsex)
+  END
+  if assistant["anal_stretch"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_AnalFisting, menu_analfisting_assistant, 'interaction', 'interaction', '<<$slave_anal_stretch[assistant["anal_stretch"]]>>', 'Teach <<$assistant_name>> sex lesson (Anal fisting)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_AnalFisting_gray, empty, 'Anal Fisting', $text_skilledsex)
+  END
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Penetration"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 20 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Penetration"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant activities - Sex - Group sex
+IF menu_form = 234:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  IF assistant_state = 1 and assistant["sub_threesome"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Threesome, menu_threesome_assistant, 'interaction', 'interaction', '<<$slave_sub_threesome[assistant["sub_threesome"]]>>', 'Teach <<$assistant_name>> sex lesson (Threesome)')
+  ELSEIF assistant["sub_threesome"] = 5:
+    FUNC('$menu', 'exec', $menu_item_Threesome_gray, empty, 'Threesome', $text_skilledsex)
+  END
+  if assistant["sub_dp"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Double, menu_double_assistant, 'interaction', 'interaction', '<<$slave_sub_dp[assistant["sub_dp"]]>>', 'Teach <<$assistant_name>> sex lesson (Double penetration)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Double_gray, empty, 'Double Penetration', $text_skilledsex)
+  END
+  if assistant["sub_tp"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Triple, menu_triple_assistant, 'interaction', 'interaction', '<<$slave_sub_tp[assistant["sub_tp"]]>>', 'Teach <<$assistant_name>> sex lesson (Triple penetration)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Triple_gray, empty, 'Triple Penetration', $text_skilledsex)
+  END
+  if assistant["sub_gangbang"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Gangbang, menu_gangbang_assistant, 'interaction', 'interaction', '<<$slave_sub_gangbang[assistant["sub_gangbang"]]>>', 'Teach <<$assistant_name>> sex lesson (Gangbang)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Gangbang_gray, empty, 'Gangbang', $text_skilledsex)
+  END
+  if assistant["sub_bukake"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Bukkake, menu_bukkake_assistant, 'interaction', 'interaction', '<<$slave_sub_bukake[assistant["sub_bukake"]]>>', 'Teach <<$assistant_name>> sex lesson (Bukkake)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Bukkake_gray, empty, 'Bukkake', $text_skilledsex)
+  END
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Group_sex"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 20 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Group_sex"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant activities - Sex - Xenophily
+IF menu_form = 235:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  if dog > 0 and assistant["sub_zoosex"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Dog, menu_dog_assistant, 'interaction', 'interaction', '<<$slave_sub_zoosex[assistant["sub_zoosex"]]>>', 'Teach <<$assistant_name>> sex lesson (Dog mating)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Dog_gray, empty, 'Dog mating', $text_skilledsex)
+  END
+  if svine > 0 and assistant["sub_bestiality"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Pig, menu_pig_assistant, 'interaction', 'interaction', '<<$slave_svinesex[assistant["sub_bestiality"]]>>', 'Teach <<$assistant_name>> sex lesson (Pig mating)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Pig_gray, empty, 'Pig mating', $text_skilledsex)
+  END
+  if horse > 0 and assistant["sub_horse"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Horse, menu_horse_assistant, 'interaction', 'interaction', '<<$slave_horsesex[assistant["sub_horse"]]>>', 'Teach <<$assistant_name>> sex lesson (Horse mating)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Horse_gray, empty, 'Horse mating', $text_skilledsex)
+  END
+  if pet_tentacle > 0 and assistant["sub_tentacles"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Fiend, menu_fiend_assistant, 'interaction', 'interaction', '<<$slave_tentacle[assistant["sub_tentacles"]]>>', 'Teach <<$assistant_name>> sex lesson (Fiend mating)')
+  ELSEIF pet_tentacle = 0:
+    FUNC('$menu', 'exec', $menu_item_Fiend_gray, empty, 'Fiend mating', 'You don`t own a fiend pet')
+  ELSEIF assistant["sub_tentacles"] = 5:
+    FUNC('$menu', 'exec', $menu_item_Fiend_gray, empty, 'Fiend mating', $text_skilledsex)
+  END
+  if arachnidSpider > 0 and dungeon > 0 and assistant["sub_arachnidSpider"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Spider, menu_spider_assistant, 'interaction', 'interaction', '<<$slave_arachnidSpider[assistant["sub_arachnidSpider"]]>>', 'Teach <<$assistant_name>> sex lesson (Spider mating)')
+  ELSEIF dungeon = 0:
+    FUNC('$menu', 'exec', $menu_item_Spider_gray, empty, 'Spider mating', 'You don`t own a dungeon')
+  ELSEIF assistant["sub_arachnidSpider"] = 5:
+    FUNC('$menu', 'exec', $menu_item_Spider_gray, empty, 'Spider mating', $text_skilledsex)
+  END
+  if polypusvermin > 0 and dungeon > 0 and assistant["sub_polypusvermin"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_polypus, menu_polypus_assistant, 'interaction', 'interaction', '<<$slave_polypusvermin_full[assistant["sub_polypusvermin"]]>>', 'Teach <<$assistant_name>> sex lesson (Sea Tentacle mating)')
+  ELSEIF dungeon = 0:
+    FUNC('$menu', 'exec', $menu_item_polypus_gray, empty, 'Sea Tentacle mating', 'You don`t own a dungeon')
+  ELSEIF assistant["sub_polypusvermin"] = 5:
+    FUNC('$menu', 'exec', $menu_item_polypus_gray, empty, 'Sea Tentacle mating', $text_skilledsex)
+  END
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Xenophily"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 20 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Xenophily"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant activities - Sex - Fetishism
+IF menu_form = 236:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>'
+   
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  IF bath > 0 and assistant["sub_enema"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Enema, menu_enema_assistant, 'interaction', 'interaction', '<<$slave_sub_enema[assistant["sub_enema"]]>>', 'Teach <<$assistant_name>> sex lesson (Enema)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Enema_gray, empty, 'Enema', $text_skilledsex)
+  END
+  IF assistant["sub_mazo"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Masochism, menu_masochism_assistant, 'interaction', 'interaction', '<<$slave_sub_mazo[assistant["sub_mazo"]]>>', 'Teach <<$assistant_name>> sex lesson (Masochism)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Masochism_gray, empty, 'Masochism', $text_skilledsex)
+  END
+  IF assistant["sub_selfpain"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_selfpain, menu_selfpain_assistant, 'interaction', 'interaction', '<<$slave_sub_selfpain[assistant["sub_selfpain"]]>>', 'Teach <<$assistant_name>> sex lesson (Self torture)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_selfpain_gray, empty, 'Self-Torture', $text_skilledsex)
+  END
+  IF bath > 0 and assistant["sub_piss"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Golden, menu_golden_assistant, 'interaction', 'interaction', '<<$slave_sub_piss[assistant["sub_piss"]]>>', 'Teach <<$assistant_name>> sex lesson (Golden shower)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Golden_gray, empty, 'Golden Shower', $text_skilledsex)
+  END
+  IF bath > 0 and assistant["sub_kopro"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Scat, menu_scat_assistant, 'interaction', 'interaction', '<<$slave_sub_kopro[assistant["sub_kopro"]]>>', 'Teach <<$assistant_name>> sex lesson (Scat)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Scat_gray, empty, 'Scat', $text_skilledsex)
+  END
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Fetishism"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 20 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Fetishism"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Assistant activities - Sex - Demonstration
+IF menu_form = 237:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>' 
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  IF assistant["sub_seduce"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Seduction, menu_seduction_assistant, 'interaction', 'interaction', '<<$slave_sub_seduce[assistant["sub_seduce"]]>>', 'Teach <<$assistant_name>> sex lesson (Seduction)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Seduction_gray, empty, 'Seduction', $text_skilledsex)
+  END
+  IF assistant["sub_masturbation"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Masturbation, menu_masturbation_assistant, 'interaction', 'interaction', '<<$slave_sub_masturbation[assistant["sub_masturbation"]]>>', 'Teach <<$assistant_name>> sex lesson (Masturbation)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Masturbation_gray, empty, 'Masturbation', $text_skilledsex)
+  END
+  IF assistant["sub_dildo"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Dildo, menu_dildo_assistant, 'interaction', 'interaction', '<<$slave_sub_dildo[assistant["sub_dildo"]]>>', 'Teach <<$assistant_name>> sex lesson (Dildo)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Dildo_gray, empty, 'Dildo', $text_skilledsex)
+  END
+  IF assistant["sub_exhibit"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Exhibitionism, menu_exhibitionism_assistant, 'interaction', 'interaction', '<<$slave_sub_exhibit[assistant["sub_exhibit"]]>>', 'Teach <<$assistant_name>> sex lesson (Exhibitionism)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Exhibitionism_gray, empty, 'Exhibitionism', $text_skilledsex)
+  END
+  IF assistant["sub_humiliation"] <= 5:
+    FUNC('$menu', 'goto', $menu_item_Worship, menu_worship_assistant, 'interaction', 'interaction', '<<$slave_sub_humiliation[assistant["sub_humiliation"]]>>', 'Teach <<$assistant_name>> sex lesson (Worship and humiliation)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Worship_gray, empty, 'Worship and Humiliation', $text_skilledsex)
+  END
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Demonstration"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 20 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
  $text_display += {<br><div id="Cancel_Demonstration"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
 END
 
@@ -2297,6 +2726,14 @@ IF menu_form = menu_Serve_S:
   FUNC('$menu', 'goto', $menu_item_slave_Relaxed_Oral_sex, menu_slave_Relaxed_Oral_sex, 'interaction', 'interaction', 'Relaxed Oral Sex', 'have Relaxed Oral Sex with <<$slave_name>>')
   FUNC('$menu', 'goto', $menu_item_slave_Active_sex, menu_slave_Active_sex, 'interaction', 'interaction', 'Active Sex', 'have Active Sex with <<$slave_name>>')
 
+  IF assistant_state = 1 and slave_state = CONST_INT['slave_exist'] and assistant["energy"] > -2 and slave["energy"] > -2:
+    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome, 'interaction', 'interaction', 'Threesome', 'Have a threesome with <<$slave_name>> and <<$assistant_name>>')
+  ELSEIF assistant_state = 0 and slave_state = CONST_INT['slave_exist'] and slave["energy"] > -2:
+    FUNC('$menu', 'goto', $menu_item_Threesome, menu_Threesome_noassistant, 'interaction', 'interaction', 'Threesome', 'Have a threesome with <<$slave_name>> and Gloria from the Real Estate Office or Angelika from the Guild')
+  ELSEIF slave["energy"] <= -2:
+    FUNC('$menu', 'exec', $menu_item_Threesome_gray, empty, 'Threesome', $text_exhausted)
+  END
+
   FUNC('$menu', '===END===')
  $text_display += {<br><div id="Back_Serveme"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 5 & gt "menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
  $text_display += {<br><div id="Cancel_Serveme"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
@@ -2389,10 +2826,28 @@ IF menu_form = 2000:
    else
    $setting_display_r += {<br><div id="under">Gore is currently not shown in game<br><div id = "clear"><a href = 'EXEC: dynamic $guro_on & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
+
+  $setting_display_r += {<br><div id="under_gray">{ { { Obedience Difficulty Setting } } }<br></div>}
   
+  IF difficulty_setting ! 1:
+   $setting_display_r += {<br><div id="under_gray">Easy<br><div id = "clear"><a href = 'EXEC: difficulty_setting = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<br><div id="under">Easy<br></div>}
+  END
+  IF difficulty_setting ! 0:
+   $setting_display_r += {<div id="under_gray">Classic/Normal<br><div id = "clear"><a href = 'EXEC: difficulty_setting = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<div id="under">Classic/Normal<br></div>}
+  END
+  IF difficulty_setting ! 2:
+   $setting_display_r += {<div id="under_gray">Difficult/Hardcore<br><div id = "clear"><a href = 'EXEC: difficulty_setting = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<div id="under">Difficult/Hardcore<br></div>}
+  END
+
   $setting_display_r += {<br><br><div id="under_gray">{ { { SOUND SETTINGS } } }<br></div>}
   
-  $setting_display_c += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $setting_display_c += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: gs "$newloc" & menu_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 !  $setting_display_c2 += {<br><div id="under_gray"> Next <br></div>}
 !  $setting_display_c2 += {<br><div id="under_gray"> Next <br><div id = "clear"><img src = "content\pic\clear.gif"></div></div>}
 END

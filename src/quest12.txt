@@ -1,0 +1,46 @@
+# quest12
+!Quest 12
+!Post Patrician Quest - Daily Quest Handling - created by crushboss
+
+$quest12 = ''
+quest12_day_counter += 1
+
+if quest12_day_counter < 3: $slave["back_wpn"] = ''
+
+IF quest12_day_counter > 120 and active[$quest[12]] ! 2:
+	$quest12 = 'fail'
+END
+
+IF slave_type = 908 and active[$quest[12]] ! 2:
+	IF slave['age_count'] < 10:
+		slave_food_type = 2
+		v_balls_rule = 1
+		blowjob_rule = 1
+		slave_washes_rule = 1
+		slave_tentacle_rule = 1
+	END		
+	IF slave_eats_remains ! 0 or slave_food_type ! 2 or blowjob_rule ! 1 or slave_washes_rule ! 1 or slave_tentacle_rule ! 1 or pet_tentacle = 0 or spawn_semen = 0: 
+		$quest12 = 'fail'
+	END
+	IF v_balls_rule ! 1 and slave['virginity'] ! 0:
+		$quest12 = 'fail'
+	END
+	IF slave["niple_piercing"] = 1 and $slave["nipplerings"] ! 'nipple_chain':
+		$quest12 = 'fail'
+	END
+	IF slave_state = 0:
+		$quest12 = 'fail'
+	END
+	slave["metabolism"] = 3
+	IF slave["masohism_xp"] > 20:
+		slave["masohism_xp"] = 20
+		slave["masohism"] = 0
+	END
+END
+
+!Testing Code - crushboss
+!slave['has_ride_win'] = 7
+!End of Testing code - crushboss
+
+--- quest12 ---------------------------------
+

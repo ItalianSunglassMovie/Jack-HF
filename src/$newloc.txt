@@ -9,11 +9,12 @@ if $master_name ! 'Старый Охотник': wizard_mode = 0
 if master_mood['a'] = 0: master_mood['a'] = 0
 
 !AddOn - Version check
-$title_fix = 'Jack HF 1.6 by crushboss'
+$title_fix = 'Jack HF 1.7.2 by crushboss'
 If $game_ver ! $title_fix:
  gs '$addon', 'update', 'full'
 End
 
+!Stat normalization
 IF slave_state ! CONST_INT['no_exist']:
  if slave_rate["pride"] < 0 and slave["pride"] <= 0: slave_rate["pride"] = 0
  if slave_rate["instinct"] < 0 and slave["instinct"] <= 0: slave_rate["instinct"] = 0
@@ -47,7 +48,7 @@ IF pet_tentacle ! 1:
  tentacle_size = 0
  else
  if spawn_milked = 0: tentacle_state = 1
- if spawn_milked = 1: tentacle_state = 2
+ if spawn_milked > 0: tentacle_state = 2
 END
 
 IF barn ! 1:
@@ -64,7 +65,19 @@ IF dungeon ! 1:
  polypusvermin = 1
 END
 
-!Add data for extended rental cheat - crushboss 
+!Extra handling for the Sententia Veritas spell - crushboss
+IF sententia_veritas = 1 and slave["sin"] > 0:
+	slave["sin"] = 5
+	sententia_veritas = 0
+	sententia_veritas_casted = 1
+END
+IF sententia_veritas = 1 and slave["virtue"] > 0:
+	slave["virtue"] = 5
+	sententia_veritas = 0
+	sententia_veritas_casted = 1
+END
+
+!Add data for extended rental cheat - crushboss
 IF extended_rental_cheat > 0:
  !Extended Rental
  lab = 1
@@ -73,7 +86,6 @@ IF extended_rental_cheat > 0:
  barn = 1
  bath = 1
  kitchen = 1
- library = 1
  pen = 1
  svine = 1
  arachnidSpider = 1
@@ -81,48 +93,75 @@ IF extended_rental_cheat > 0:
  
  !Estate Interiors
  $study = 'classic'
- $bg['study'] = $interior_study[$study]
- $bg['home_lux'] = $interior_bg[$study]
- $place_info['study'] = $interior_study_info[$study]
- $interior_bg['classic'] = 'study_large'
- $interior_study['classic'] = 'study'
+ $interior_study_large['classic'] = 'interiors\classic_study_large'
+ $interior_study['classic'] = 'interiors\classic_study'
  $interior_study_info['classic'] = '   '
+ $bg['study'] = $interior_study[$study]
+ $bg['home_lux'] = $interior_study_large[$study]
+ $place_name['study'] = $estate_study_name[$estate]
+ $place_location['study'] = $estate_study_location[$estate] 
+ $place_info['study'] = $interior_study_info[$study]
  
  $bed = 'stylish'
- $bg['bedroom'] = $interior_bed[$bed]
- $place_info['bedroom'] = $interior_bed_info[$bed]
+ $interior_bed_large['stylish'] = 'interiors\stylish_bed_large'
  $interior_bed['stylish'] = 'interiors\stylish_bed'
  $interior_bed_info['stylish'] = '   '
+ $bg['bedroom'] = $interior_bed[$bed]
+ $bg['bedroom_lux'] = $interior_bed_large[$bed]
+ $place_name['bedroom'] = $estate_bed_name[$estate]
+ $place_location['bedroom'] = $estate_bed_location[$estate]
+ $place_info['bedroom'] = $interior_bed_info[$bed]
  
  $bath = 'gothic'
- $bg['bathroom'] = $interior_bath[$bath]
- $place_info['bathroom'] = $interior_bath_info[$bath]
+ $interior_bath_large['gothic'] = 'interiors\gothic_bath_large'
  $interior_bath['gothic'] = 'interiors\gothic_bath'
  $interior_bath_info['gothic'] = '   '
+ $bg['bathroom'] = $interior_bath[$bath]
+ $bg['bathroom_lux'] = $interior_bath_large[$bath]
+ $place_name['bathroom'] = $estate_bath_name[$estate]
+ $place_location['bathroom'] = $estate_bath_location[$estate]
+ $place_info['bathroom'] = $interior_bath_info[$bath]
  
  $dungeon = 'executor'
- $bg['dungeon'] = $interior_dungeon[$dungeon]
- $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
+ $interior_dungeon_large['executor'] = 'interiors\executor_dungeon_large'
  $interior_dungeon['executor'] = 'interiors\executor_dungeon'
  $interior_dungeon_info['executor'] = '   '
+ $bg['dungeon'] = $interior_dungeon[$dungeon]
+ $bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
+ $place_name['dungeon'] = $estate_dungeon_name[$estate]
+ $place_location['dungeon'] = $estate_dungeon_location[$estate]
+ $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
  
  $kitchen = 'basic'
- $bg['kitchen'] = $interior_kitchen[$kitchen]
- $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
- $interior_kitchen['basic'] = 'kitchen'
+ $interior_kitchen_large['basic'] = 'interiors\basic_kitchen_large'
+ $interior_kitchen['basic'] = 'interiors\basic_kitchen'
  $interior_kitchen_info['basic'] = '   '
+ $bg['kitchen'] = $interior_kitchen[$kitchen]
+ $bg['kitchen_lux'] = $interior_kitchen_large[$kitchen]
+ $place_name['kitchen'] = $estate_kitchen_name[$estate]
+ $place_location['kitchen'] = $estate_kitchen_location[$estate]
+ $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
  
  $lab = 'basic'
- $bg['lab'] = $interior_lab[$lab]
- $place_info['lab'] = $interior_lab_info[$lab]
+ $interior_lab_large['basic'] = 'interiors\basic_lab_large'
  $interior_lab['basic'] = 'interiors\basic_lab'
  $interior_lab_info['basic'] = '   '
+ $bg['lab'] = $interior_lab[$lab]
+ $bg['lab_lux'] = $interior_lab_large[$lab]
+ $place_name['lab'] = $estate_lab_name[$estate]
+ $place_location['lab'] = $estate_lab_location[$estate]
+ $place_info['lab'] = $interior_lab_info[$lab]
  
  $bouduar = 'gothic'
- $bg['bouduar'] = $interior_bouduar[$bouduar]
- $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
+ $interior_bouduar_large['gothic'] = 'interiors\gothic_bouduar_large'
  $interior_bouduar['gothic'] = 'interiors\gothic_bouduar'
  $interior_bouduar_info['gothic'] = '   '
+ $bg['bouduar'] = $interior_bouduar[$bouduar]
+ $bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
+ $place_name['bouduar'] = $estate_bouduar_name[$estate]
+ $place_location['bouduar'] = $estate_bouduar_location[$estate]
+ $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
+ 
  extended_rental_cheat -= 1
 END
 
@@ -131,48 +170,34 @@ if master_wealth < 4: club_member = 0
 !Added Chimera Gem enhancement - crushboss
 if chimera_gem_on = 1: master_excitement = 5 & master_excitement_rate = 200
 
-!retain the rules of the last assistant
-IF assistant_state ! 1:
- if assistant_cleans_rule = 1: assistant_cleans_rule = 2
- if assistant_cooks_rule = 1: assistant_cooks_rule = 2
- if assistant_washes_rule = 1: assistant_washes_rule = 2
- if assistant_washe_slave_rule = 1: assistant_washe_slave_rule = 2
- if assistant_supervise_rule = 1: assistant_supervise_rule = 2
- if assistant_buy_vegetables = 1: assistant_buy_vegetables = 2
- if assistant_buy_flower = 1: assistant_buy_flower = 2  
- if assistant_buy_spice = 1: assistant_buy_spice = 2
- if assistant_buy_cheese = 1: assistant_buy_cheese = 2
- if assistant_buy_alcohol = 1: assistant_buy_alcohol = 2
- if assistant_buy_eggs = 1: assistant_buy_eggs = 2
- if assistant_buy_milk = 1: assistant_buy_milk = 2
- if assistant_buy_cream = 1: assistant_buy_cream = 2
- if assistant_buy_mince = 1: assistant_buy_mince = 2
- if assistant_buy_meat = 1: assistant_buy_meat = 2
- else
- if assistant_cleans_rule = 2: assistant_cleans_rule = 1
- if assistant_cooks_rule = 2: assistant_cooks_rule = 1
- if assistant_washes_rule = 2: assistant_washes_rule = 1
- if assistant_washe_slave_rule = 2: assistant_washe_slave_rule = 1
- if assistant_supervise_rule = 2: assistant_supervise_rule = 1
- if assistant_buy_vegetables = 2: assistant_buy_vegetables = 1
- if assistant_buy_flower = 2: assistant_buy_flower = 1  
- if assistant_buy_spice = 2: assistant_buy_spice = 1
- if assistant_buy_cheese = 2: assistant_buy_cheese = 1
- if assistant_buy_alcohol = 2: assistant_buy_alcohol = 1
- if assistant_buy_eggs = 2: assistant_buy_eggs = 1
- if assistant_buy_milk = 2: assistant_buy_milk = 1
- if assistant_buy_cream = 2: assistant_buy_cream = 1
- if assistant_buy_mince = 2: assistant_buy_mince = 1
- if assistant_buy_meat = 2: assistant_buy_meat = 1
-END
-
 !Variable rule normalization for assistant - crushboss
-if assistant_state ! 1 and assistant_account_rule = 1: assistant_account_rule = 0
-if assistant_state ! 1 and assistant_alchemist_rule = 1: assistant_alchemist_rule = 0
-if assistant_state ! 1 and assistant_cleans_rule = 1: assistant_cleans_rule = 0
-if assistant_state ! 1 and assistant_cooks_rule = 1: assistant_cooks_rule = 0
-if assistant_state ! 1 and assistant_washes_rule = 1: assistant_washes_rule = 0
-if assistant_state ! 1 and assistant_supervise_rule = 1: assistant_supervise_rule = 0
+if assistant_state = 0 and assistant_account_rule = 1: assistant_account_rule = 0
+if assistant_state = 0 and assistant_alchemist_rule = 1: assistant_alchemist_rule = 0
+if assistant_state = 0 and assistant_cleans_rule = 1: assistant_cleans_rule = 0
+if assistant_state = 0 and assistant_cooks_rule = 1: assistant_cooks_rule = 0
+if assistant_state = 0 and assistant_washes_rule = 1: assistant_washes_rule = 0
+if assistant_state = 0 and assistant_supervise_rule = 1: assistant_supervise_rule = 0
+
+!Reset assistant variables if no assistant exists and fix blank screen bug for assistant - crushboss
+IF assistant_state = 0:
+	killvar 'assistant'
+	killvar '$assistant' 
+	killvar 'assistant_rate'
+	killvar 'assistant_inventory'
+	killvar '$assistant_inventory'
+	killvar 'assistant_specialisation'
+	$assistant["prev_primary_wpn"] = ''
+	$assistant["prev_secondary_wpn"] = ''
+	$assistant["wpn"] = 'безоружный'
+	$assistant["armor"] = 'без_брони'
+	$assistant["scnd"] = ''
+	$assistant["back_wpn"] = ''
+	$assistant["left_wpn"] = ''
+	$assistant["right_wpn"] = ''
+	$assistant["arm_wpn"] = ''
+	$assistant["leg_wpn"] = ''
+	$assistant["cloth"] = 'голая'
+END
  
 if assistant_state = 1 and slave_state = CONST_INT['no_slave']: assistant_alchemist_rule = 1
 
@@ -193,19 +218,6 @@ IF v_balls_rule = 1:
  IF inventory['vaginal_balls'] < 1 or virginity < 1:
   v_balls_rule = 0
  END
-END
-
-!Fix blank screen bug - crushboss
-IF assistant_state ! 1:
- $assistant["wpn"] = 'безоружный'
- $assistant["armor"] = 'без_брони'
- $assistant["scnd"] = ''
- $assistant["back_wpn"] = ''
- $assistant["left_wpn"] = ''
- $assistant["right_wpn"] = ''
- $assistant["arm_wpn"] = ''
- $assistant["leg_wpn"] = ''
- $assistant["cloth"] = 'голая'
 END
 
 !Fix blank screen bug - crushboss
@@ -251,11 +263,27 @@ IF slave_state = CONST_INT['no_exist']:
  prise_succes = 0
  slave_fights_back = 0
  gift_promised = 0
+ slave['egg_time'] = 0
+ slave['eggs_to_lay'] = 0
+ slave['lactation'] = 0
+ slave['milk_gain'] = 0
+ slave['cream_gain'] = 0
  slave["pain_treat"] = 0
  slave["virtue"] = 0
  slave["sin"] = 0
  slave['brand'] = 0
  slave['has_ride_win'] = 0
+ slave['arena_level'] = 0
+ slave['c1done'] = 0
+ slave['c2done'] = 0
+ slave['c3done'] = 0
+ slave['c4done'] = 0
+ $slave["trademark_style"] = ''
+ $g_type = ''
+ superviser_message = 0
+ challenge_type = 0
+ $slave["prev_primary_wpn"] = ''
+ $slave["prev_secondary_wpn"] = ''
  tattoo_brand = 0
  abandon_treat = 0
  death_treat = 0
@@ -277,6 +305,11 @@ IF slave_state = CONST_INT['no_exist']:
  rules_broken_sin = 0
  res = 0
  diligence = 0
+ virtue_gained = 0
+ show_slave_fullimage = 0
+ sin_potential = 0
+ previous_slave_sin = 0
+ previous_slave_virtue = 0
  repulse = 0
  complex_repulse = 0
  cheer_effect = 0
@@ -365,9 +398,7 @@ IF slave_state = CONST_INT['no_exist']:
  slave_exhaustion_fainted = 0
  slave_nearly_fainted = 0
  slave_stamina_fainted = 0
- sententia_veritas = 0
- magna_magnifika = 0
- cruciato = 0
+ slave_beg_for_sex = 0
  killvar 'slave'
  killvar '$slave' 
  killvar 'slave_rate'
@@ -377,7 +408,8 @@ IF slave_state = CONST_INT['no_exist']:
  killvar 'already_done_today'
  killvar 'already_done_curslave'
  killvar 'already_gain_virtue'
- killvar 'sex'
+!Do not enable - bug fix - crushboss 
+! killvar 'sex'
  killvar 'sex_done_today'
  killvar 'sex_done_thisperson'
  killvar 'today_sex_curslave'
@@ -416,6 +448,8 @@ assistant_rate["style"] = 0
 assistant_rate["exotic_bonus"] = 0 
 assistant["ex_plus"] = 0
 assistant["st_plus"] = 0
+killvar 'learn_bonus_assistant'
+killvar 'daily_bonus_assistant'
 assistant_item = 1
 dynamic $item_property[$assistant["armor"]]
 dynamic $item_property[$assistant["cloth"]]
@@ -430,7 +464,11 @@ dynamic $item_property[$assistant["ring_left"]]
 dynamic $item_property[$assistant["ring_right"]]
 dynamic $item_property[$assistant["naval"]]
 dynamic $item_property[$assistant["tongue"]]
-assistant_item = 0
+IF daily_bonus_assistant["mood"] <= 0:
+ assistant['pos_clothes'] = 0
+END
+!Not sure why the line below is needed - crushboss
+!assistant_item = 0
 
 !counting slave equip bonuses
 slave_rate["style"] = 0
@@ -456,8 +494,10 @@ IF daily_bonus["mood"] <= 0:
  slave['pos_clothes'] = 0
 END
 
+if raven_crown_on = 1: auspex = 1
+
 !Added bull ring enhancement - crushboss
-if bull_ring_on = 1 and master_energy < 0: master_energy = 0
+if bull_ring_on = 1 and master_energy < 1: master_energy = 1
 
 master_style = style_modifer[$master_cloth]
 if master_visage > 0: master_style += 1
@@ -591,6 +631,7 @@ if slave["spoil"] < 0: slave["spoil"] = 0
 if slave["spoil"] = 0 and slave_rate["spoil"] < -10: slave_rate["spoil"] = -10
 if slave["arousal"] > 5: slave["arousal"] = 5
 if slave["arousal"] = 5 and slave_rate["arousal"] > 200: slave_rate["arousal"] = 200
+if slave_rate["arousal"] < 0: slave_rate["arousal"] = 0
 if slave["arousal"] < 0: slave["arousal"] = 0
 if slave["hygiene"] > 5: slave["hygiene"] = 5
 if slave["hygiene"] < 0: slave["hygiene"] = 0
@@ -771,13 +812,16 @@ if slave["st_plus"] >= 13: slave["st_count"] = 5
 slave["obedience"] = 0
 slave_mood_bonus = 0
 slave_obedience_bonus = 0
+slave_obedience_penalty = 0
 slave_nature = 0
 slave_fear_bonus = 0
 
+gs '$difficulty_setting'
+
 if slave["mood"] > 0: slave_mood_bonus = 1 + (slave["mood"]/2)
-slave_obedience_bonus = 0 + slave["meekness"]
-if slave["courage"] = 2: slave["fear"] = 0
-if slave["courage"] = 1: slave["fear"] = (slave["fear"]/2)
+slave_obedience_bonus += slave["meekness"]
+if slave["courage"] = 2: slave_obedience_penalty += 6
+if slave["courage"] = 1: slave_obedience_penalty += 4
 if slave["courage"] = -1: slave_obedience_bonus += slave["fear"]
 slave_nature = (slave["pride"] + slave["temper"] + slave["ego"] + slave["intellect"])
 IF slave_nature < 11:
@@ -795,7 +839,7 @@ IF slave_nature < 11:
 END
 if slave["age"] = CONST_INT['loli_age']: slave_obedience_bonus += 2
 if slave["age"] = CONST_INT['young_age']: slave_obedience_bonus += 1
-slave["obedience"] = slave_obedience_bonus + slave_mood_bonus + slave_fear_bonus + (slave["moral"]*2) + (slave["instinct"]*2) + slave["custom"] + slave["rational"] - (slave["spoil"] + (slave['obedience_difficulty']/2) + slave["pride"] + slave["temper"] + slave["ego"] + slave["intellect"])
+slave["obedience"] = slave_obedience_bonus + slave_mood_bonus + slave_fear_bonus + (slave["moral"]*2) + (slave["instinct"]*2) + slave["custom"] + slave["rational"] - ((slave["spoil"]*2) + (slave['obedience_difficulty']/2) + slave_obedience_penalty + slave["pride"] + slave["temper"] + slave["ego"] + slave["intellect"])
 if $slave_psy_status = 'broken': slave["obedience"] = 100
 
 !Psychological status of slave
@@ -874,15 +918,18 @@ IF prisoner_state > 0:
 prisoner["obedience"] = 0
 prisoner_mood_bonus = 0
 prisoner_obedience_bonus = 0
+prisoner_obedience_penalty = 0
+
+gs '$difficulty_setting'
 
 if prisoner["mood"] > 0: prisoner_mood_bonus = 1 + prisoner["mood"]/2
-prisoner_obedience_bonus = 0 + prisoner["meekness"]
-if prisoner["courage"] = 2: prisoner["fear"] = 0
-if prisoner["courage"] = 1: prisoner["fear"] = prisoner["fear"]/2
+prisoner_obedience_bonus += prisoner["meekness"]
+if prisoner["courage"] = 2: prisoner_obedience_penalty += 6
+if prisoner["courage"] = 1: prisoner_obedience_penalty += 4
 if prisoner["courage"] = -1: prisoner_obedience_bonus += prisoner["fear"]
 if prisoner["age"] = CONST_INT['loli_age']: prisoner_obedience_bonus += 2
 if prisoner["age"] = CONST_INT['young_age']: prisoner_obedience_bonus += 1
-prisoner["obedience"] = prisoner_obedience_bonus + prisoner_mood_bonus + (prisoner["moral"]*2) + (prisoner["instinct"]*2) + prisoner["custom"] + prisoner["rational"] + (prisoner["fear"]*3) - (prisoner["spoil"] + (prisoner['obedience_difficulty']/2) + prisoner["pride"] + prisoner["temper"] + prisoner["ego"] + prisoner["intellect"])
+prisoner["obedience"] = prisoner_obedience_bonus + prisoner_mood_bonus + (prisoner["moral"]*2) + (prisoner["instinct"]*2) + prisoner["custom"] + prisoner["rational"] + (prisoner["fear"]*3) - ((prisoner["spoil"]*2) + (prisoner['obedience_difficulty']/2) + prisoner_obedience_penalty + prisoner["pride"] + prisoner["temper"] + prisoner["ego"] + prisoner["intellect"])
 if $prisoner_psy_status = 'broken': prisoner["obedience"] = 100
 
 $prev_status = $prisoner_psy_status
@@ -1071,6 +1118,7 @@ if assistant["spoil"] > 5: assistant["spoil"] = 5
 if assistant["spoil"] < 0: assistant["spoil"] = 0
 if assistant["arousal"] > 5: assistant["arousal"] = 5
 if assistant["arousal"] = 5 and assistant_rate["arousal"] > 200: assistant_rate["arousal"] = 200
+if assistant_rate["arousal"] < 0: assistant_rate["arousal"] = 0
 if assistant["arousal"] < 0: assistant["arousal"] = 0
 if assistant["hygiene"] > 5: assistant["hygiene"] = 5
 if assistant["hygiene"] < 0: assistant["hygiene"] = 0
@@ -1248,14 +1296,16 @@ if assistant["beauty"] > 0: assistant["neg_ugly"] = 0
 assistant["obedience"] = 0
 assistant_mood_bonus = 0
 assistant_obedience_bonus = 0
+assistant_obedience_penalty = 0
 assistant_nature = 0
 assistant_fear_bonus = 0
 
-!Calculate assistant obedience - crushboss
+gs '$difficulty_setting'
+
 if assistant["mood"] > 0: assistant_mood_bonus = 1 + (assistant["mood"]/2)
-assistant_obedience_bonus = 0 + assistant["meekness"]
-if assistant["courage"] = 2: assistant["fear"] = 0
-if assistant["courage"] = 1: assistant["fear"] = (assistant["fear"]/2)
+assistant_obedience_bonus += assistant["meekness"]
+if assistant["courage"] = 2: assistant_obedience_penalty += 6
+if assistant["courage"] = 1: assistant_obedience_penalty += 4
 if assistant["courage"] = -1: assistant_obedience_bonus += assistant["fear"]
 assistant_nature = (assistant["pride"] + assistant["temper"] + assistant["ego"] + assistant["intellect"])
 IF assistant_nature < 11:
@@ -1273,7 +1323,7 @@ IF assistant_nature < 11:
 END
 if assistant["age"] = CONST_INT['loli_age']: assistant_obedience_bonus += 2
 if assistant["age"] = CONST_INT['young_age']: assistant_obedience_bonus += 1
-assistant["obedience"] = assistant_obedience_bonus + assistant_mood_bonus + assistant_fear_bonus + (assistant["moral"]*2) + (assistant["instinct"]*2) + assistant["custom"] + assistant["rational"] - (assistant["spoil"] + (assistant['obedience_difficulty']/2) + assistant["pride"] + assistant["temper"] + assistant["ego"] + assistant["intellect"])
+assistant["obedience"] = assistant_obedience_bonus + assistant_mood_bonus + assistant_fear_bonus + (assistant["moral"]*2) + (assistant["instinct"]*2) + assistant["custom"] + assistant["rational"] - ((assistant["spoil"]*2) + (assistant['obedience_difficulty']/2) + assistant_obedience_penalty + assistant["pride"] + assistant["temper"] + assistant["ego"] + assistant["intellect"])
 if $assistant_psy_status = 'broken': assistant["obedience"] = 100
 
 !Psychological status of assistant - crushboss
@@ -1334,6 +1384,9 @@ IF $assistant_psy_status = 'servile' or $assistant_psy_status = 'obedient':
  assistant["status_met"] = 0
 END
 
+!To be an assistant devotion has to be a minimum of 3 - the exchange button will not allow the switch of a slave to be an assistant without a devotion of 3 - crushboss
+if assistant["moral"] < 3: assistant["moral"] = 3 & assistant_rate["moral"] = 0
+
 !Calculate assistant traits, rank, and stats - crushboss
  gs '$assistant_traits'
  gs '$assistant_rank_stats'
@@ -1344,19 +1397,6 @@ END
 gs 'moodlets'
 
 !TRAITS OF FROZEN SLAVES
-$iced_features_list = ''
-IF iced["brand"] = 0: $iced_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
-IF iced["wounds"] > 0: $iced_features_list += '<<$slave_wounds[iced["wounds"]]>><BR>'
-IF iced["scares"] > 0: $iced_features_list += '<<$slave_scares[iced["scares"]]>><BR>'
-IF iced["bruises"] > 0: $iced_features_list += '<<$slave_bruises[iced["bruises"]]>><BR>'
-IF iced['reabilitation'] > 0: $iced_features_list += 'Recovery [<<iced["reabilitation"]>>]<BR>'
-IF iced_virginity < 2: $iced_features_list += 'Virgin<BR>' 
-if iced['fertility'] = -2: $iced_features_list += 'Immature<BR>' 
-IF iced['fertility'] = -1: $iced_features_list += 'Sterile<BR>' 
-IF iced['fertility'] = 1: $iced_features_list += 'Egglaying<BR>' 
-IF iced['pregnant'] = 1 and iced["pregnant_revealed"] > 0: $iced_features_list += 'Pregnant<BR>' 
-IF iced['arena_level'] > 4: $iced_features_list += 'Arena champion<BR>'
-
 $iced_1_features_list = ''
 IF iced_1["brand"] = 0: $iced_1_features_list +='<a href = "EXEC: msg $Нет_клейма"><font color="#cd0000">Not branded</font></a><BR>'
 IF iced_1["wounds"] > 0: $iced_1_features_list += '<<$slave_wounds[iced_1["wounds"]]>><BR>'

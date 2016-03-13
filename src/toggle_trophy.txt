@@ -7,7 +7,7 @@ IF toggle_trophy = 0:
  toggle_trophy = 0
  *p {<div id = "toggle_button_trophy"><a href = 'EXEC: gs "toggle_trophy"'><img src = "content\pic\buttons\dual_active_trophy.gif"></a></div>}
 END
- 
+
 *p '<div id = "large_image"><img src="<<$trophyimage>><<$trophy_bg[trophy_rand]>>.jpg"></div>'
 if toggle_trophy = 0: gs 'trophy_room'
 --- toggle_trophy ---------------------------------

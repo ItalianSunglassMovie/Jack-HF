@@ -5,10 +5,10 @@ gs '#суперудары'
 
 !creating menu
 $боевое_меню = ''
-$боевое_меню += "<a href='EXEC: dynamic $пинок'><font color='red'>Kick</font></a>(Stn\Att)<br>"
-$боевое_меню += "<a href='EXEC: dynamic $толчок'><font color='green'>Push</font></a>(Dis\Adr)<br>"
-$боевое_меню += "<a href='EXEC: dynamic $подсечка'><font color='purple'>Sweep</font></a>(Unstd\Ev)<br>"
-if вторичная_атака[$вторичный] = 1: $боевое_меню += '<<$вторичная_атака_название[$вторичный]>><br>'
+$боевое_меню += "<a href='EXEC: dynamic $пинок'><font color='red'>Kick</font></a> (Stun\Attention)<br>"
+$боевое_меню += "<a href='EXEC: dynamic $толчок'><font color='green'>Push</font></a> (Distract\Adren)<br>"
+$боевое_меню += "<a href='EXEC: dynamic $подсечка'><font color='purple'>Sweep</font></a> (Unstd\Evasion)<br>"
+if вторичная_атака[$вторичный] = 1 and $вторичный ! '': $боевое_меню += '<<$вторичная_атака_название[$вторичный]>><br>'
 $боевое_меню += "<br>"
 $боевое_меню += "<a href='EXEC: dynamic $вернуться_в_корень'>Back</a><br>"
 

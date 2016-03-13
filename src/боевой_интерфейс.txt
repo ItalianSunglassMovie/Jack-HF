@@ -1,6 +1,7 @@
 # боевой_интерфейс
 !Displays information about the battle and player options
 !Most of the time you are on this location when fighting
+!Overhauled by crushboss
 
 if текущий < 1: текущий = количество_врагов
 if текущий > количество_врагов: текущий = 1
@@ -66,56 +67,88 @@ $информация_о_бое += '<<$действия_врага[4]>>'
 $информация_о_бое += '<<$действия_врага[5]>>'
 
 IF ui_style = 2: 
- *p '<div id = "fight_bg"><img src = "content\pic\ui\grimdark\bg\fight.jpg"></div>'
- else
- *p '<div id = "fight_bg"><img src = "content\pic\bg\fight.jpg"></div>'
+	*p '<div id = "fight_bg"><img src = "content\pic\ui\grimdark\bg\fight.jpg"></div>'
+else
+	*p '<div id = "fight_bg"><img src = "content\pic\bg\fight.jpg"></div>'
 END
+
 *p '<div id = "fight_txt"><<$информация_о_бое>></div>'
 
 IF arena_mode = 0:
- IF ui_style = 2 and combatant = 0:
-  *p '<div id = "fight_options_ui2"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
-<a href="EXEC: gt ''суперудары''">Special techniques</a>
-<a href = "EXEC: gt ''инвентарь''">Use potion</a>
-<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
-<a href="EXEC: gt ''передышка''">Defend</a>
-</div>'
- elseif ui_style ! 2 and combatant = 0:
- *p '<div id = "fight_options"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
-<a href="EXEC: gt ''суперудары''">Special techniques</a>
-<a href = "EXEC: gt ''инвентарь''">Use potion</a>
-<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
-<a href="EXEC: gt ''передышка''">Defend</a>
-</div>'
- elseif ui_style = 2 and combatant = 1 or combatant = 2:
-  *p '<div id = "fight_options_ui2"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
-<a href = "EXEC: gt ''инвентарь''">Use potion</a>
-<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
-<a href="EXEC: gt ''передышка''">Defend</a>
-</div>'
- elseif ui_style ! 2 and combatant = 1 or combatant = 2:
-  *p '<div id = "fight_options"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
-<a href = "EXEC: gt ''инвентарь''">Use potion</a>
-<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
-<a href="EXEC: gt ''передышка''">Defend</a>
-</div>'
- END
+	!Handle Master and Sparring practice menu options - crushboss
+	IF ui_style = 2 and combatant = 0:
+		*p '<div id = "fight_options_ui2"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
+			<a href="EXEC: gt ''суперудары''">Special techniques</a>
+			<a href = "EXEC: gt ''инвентарь''">Use potion</a>
+			<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
+			<a href="EXEC: gt ''передышка''">Defend</a>
+		</div>'
+	elseif ui_style ! 2 and combatant = 0:
+		*p '<div id = "fight_options"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
+			<a href="EXEC: gt ''суперудары''">Special techniques</a>
+			<a href = "EXEC: gt ''инвентарь''">Use potion</a>
+			<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
+			<a href="EXEC: gt ''передышка''">Defend</a>
+		</div>'
+	elseif ui_style = 2 and (combatant = 1 or combatant = 2):
+		*p '<div id = "fight_options_ui2"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
+			<a href = "EXEC: gt ''инвентарь''">Use potion</a>
+			<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
+			<a href="EXEC: gt ''передышка''">Defend</a>
+		</div>'
+	elseif ui_style ! 2 and (combatant = 1 or combatant = 2):
+		*p '<div id = "fight_options"><a href = "EXEC: dynamic $в_боевое_меню">Regular attacks</a>
+			<a href = "EXEC: gt ''инвентарь''">Use potion</a>
+			<a href = "EXEC: gt ''сменить_оружие''">Change weapon</a>
+			<a href="EXEC: gt ''передышка''">Defend</a>
+		</div>'
+	END
 END
 
-IF arena_mode = 1:
- IF ui_style = 2 and (combatant = 1 or combatant = 2):
-  *p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_active>>'></a></div>"
-  elseif ui_style ! 2 and (combatant = 1 or combatant = 2):
-  *p "<div id = 'fight_options'><img src = '<<$extra_special_active>>'></a></div>"
- END 
+IF arena_mode = 1 and combatant = 1:
+	!Enables or disables Extra Special Graphic and Option - Gladiatrix Contest for Slave - crushboss
+	IF ui_style = 2 and суперудар_сделан[22] = 0 and $g_type = "retiarius":
+		*p "<div id = 'fight_options_ui2'><a href = 'EXEC: dynamic $суперудар_22'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[22] = 0 and $g_type = "retiarius":
+		*p "<div id = 'fight_options'><a href = 'EXEC: dynamic $суперудар_22'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style = 2 and суперудар_сделан[23] = 0 and $g_type = "flagrius":
+		*p "<div id = 'fight_options_ui2'><a href = 'EXEC: dynamic $суперудар_23'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[23] = 0 and $g_type = "flagrius":
+		*p "<div id = 'fight_options'><a href = 'EXEC: dynamic $суперудар_23'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style = 2 and суперудар_сделан[24] = 0 and $g_type = "dimacherus":
+		*p "<div id = 'fight_options_ui2'><a href = 'EXEC: dynamic $суперудар_24'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[24] = 0 and $g_type = "dimacherus":
+		*p "<div id = 'fight_options'><a href = 'EXEC: dynamic $суперудар_24'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style = 2 and суперудар_сделан[25] = 0 and $g_type = "hoplomachus":
+		*p "<div id = 'fight_options_ui2'><a href = 'EXEC: dynamic $суперудар_25'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[25] = 0 and $g_type = "hoplomachus":
+		*p "<div id = 'fight_options'><a href = 'EXEC: dynamic $суперудар_25'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style = 2 and суперудар_сделан[14] = 0 and $g_type = "kimerian":
+		*p "<div id = 'fight_options_ui2'><a href = 'EXEC: dynamic $суперудар_14'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[14] = 0 and $g_type = "kimerian":
+		*p "<div id = 'fight_options'><a href = 'EXEC: dynamic $суперудар_14'><img src = '<<$extra_special_active>>'></a></div>"
+	elseif ui_style = 2 and суперудар_сделан[22] = 1:
+		*p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[22] = 1:
+		*p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></a></div>"
+	elseif ui_style = 2 and суперудар_сделан[23] = 1:
+		*p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[23] = 1:
+		*p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></a></div>"
+	elseif ui_style = 2 and суперудар_сделан[24] = 1:
+		*p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[24] = 1:
+		*p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></a></div>"
+	elseif ui_style = 2 and суперудар_сделан[25] = 1:
+		*p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[25] = 1:
+		*p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></a></div>"
+	elseif ui_style = 2 and суперудар_сделан[14] = 1:
+		*p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></a></div>"
+	elseif ui_style ! 2 and суперудар_сделан[14] = 1:
+		*p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></a></div>"		
+	END 
 END
-
-!'
-IF ui_style = 2: 
- *p "<div id = 'fight_options_ui2'><img src = '<<$extra_special_used>>'></div>"
- else
- *p "<div id = 'fight_options'><img src = '<<$extra_special_used>>'></div>"
-END'
 
 *p '<div id = "fight_subtions"><<$боевое_меню>></div>'
 

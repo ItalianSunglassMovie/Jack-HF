@@ -7,8 +7,8 @@ tattoo_brand = 0
 
 slave_type = stock_type
 $slave_type = $stock_type
-stock['age'] = seed_age[stock_type]
 virginity = stock_virginity
+stock['age'] = seed_age[stock_type]
 
 killvar 'slave' 
 killvar 'slave_rate' 
@@ -65,7 +65,30 @@ IF slave['age'] = CONST_INT['loli_age'] and cheat_h ! 1 and cheat_j ! 1 and chea
  slave_rate["instinct"] = 0
 END
 
-!Testing Code - Remove for Release - crushboss
+!Ensure the slave starts out with empty arena variables - crushboss
+slave['has_ride_win'] = 0
+slave['arena_level'] = 0
+slave['c1done'] = 0
+slave['c2done'] = 0
+slave['c3done'] = 0
+slave['c4done'] = 0
+$slave["trademark_style"] = ''
+$g_type = ''
+superviser_message = 0
+challenge_type = 0
+
+!Fix blank screen bug - crushboss
+$slave["wpn"] = 'безоружный'
+$slave["armor"] = 'без_брони'
+$slave["scnd"] = ''
+$slave["back_wpn"] = ''
+$slave["left_wpn"] = ''
+$slave["right_wpn"] = ''
+$slave["arm_wpn"] = ''
+$slave["leg_wpn"] = ''
+$slave["cloth"] = 'голая'
+
+!Testing Code - crushboss
 if cheat_h = 1 or cheat_j = 1: gs 'stock_to_slave_testing'
 if cheat_k = 1 and get_girl = 0: gs 'stock_to_slave_testing2'
 !End of Testing Code
@@ -146,7 +169,6 @@ slave["base_exotic"] = slave["exotic"]
 slave_rate["stamina"] = 0
 if slave['age'] = CONST_INT['loli_age']: slave["fertility_revealed"] = 1
 slave_state = CONST_INT['slave_exist']
-slave['has_ride_win'] = 0
 
 !Fixes the starving message you get on the 2nd day of getting a new slave or assistant - crushboss
 slave["calories"] = 14
@@ -158,17 +180,6 @@ slave['starvation'] = -5
 slave['beauty_enchanced'] = 0
 slave["bcheck"] = 0
 slave["echeck"] = 0
-
-!Fix blank screen bug - crushboss
-$slave["wpn"] = 'безоружный'
-$slave["armor"] = 'без_брони'
-$slave["scnd"] = ''
-$slave["back_wpn"] = ''
-$slave["left_wpn"] = ''
-$slave["right_wpn"] = ''
-$slave["arm_wpn"] = ''
-$slave["leg_wpn"] = ''
-$slave["cloth"] = 'голая'
 
 gs '#txt'
 gs '#txt_2'

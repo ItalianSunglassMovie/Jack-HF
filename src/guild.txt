@@ -7,6 +7,11 @@ IF slave_offered_to_subpurchaser = 1:
  end
 END
 
+IF expert_give_slave = 1:
+ expert_give_slave = 0
+ gs 'expert_to_slave'
+END
+
 !SLAVERS GUILD
 GS '_layout'
 gs '$slave_price'

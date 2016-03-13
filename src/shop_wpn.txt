@@ -165,6 +165,8 @@ IF sp_txt = 12:
  FUNC('$menu', 'exec_options', $menu_item_Machete, 'sp_txt = 127 & gt $curloc', 'Machete (50$)')
  FUNC('$menu', 'exec_options', $menu_item_Katana, 'sp_txt = 128 & gt $curloc', 'Katana (100$)')
  FUNC('$menu', 'exec_options', $menu_item_Baton, 'sp_txt = 129 & gt $curloc', 'Baton (25$)')
+ FUNC('$menu', 'exec_options', $menu_item_Trident, 'sp_txt = 137 & gt $curloc', 'Trident (100$)') 
+ FUNC('$menu', 'exec_options', $menu_item_Mace, 'sp_txt = 130 & gt $curloc', 'Mace (100$)') 
  FUNC('$menu', '===END===')
 END
 
@@ -312,14 +314,29 @@ IF sp_txt = 129:
  FUNC('$menu', '===END===')
 END
 
+IF sp_txt = 130:
+ IF sparks >= 100: 
+  sparks -= 100
+  мулава += 1
+  $shop_wpn[130] = $shop_wpn_accept
+  else
+  $shop_wpn[130] = $shop_wpn_deny 
+ END
+ FUNC('$menu', 'spacer', 4)
+
+ FUNC('$menu', '===BEGIN===', 'column_0') 
+ FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 0 & gt $curloc', 'Look at other goods')
+ FUNC('$menu', 'city_form', $menu_item_Leavearmory, emptyLeavearmory, 'Leave the shop')
+ FUNC('$menu', '===END===')
+END
+
 IF sp_txt = 13:
- FUNC('$menu', 'spacer', 2)
+ FUNC('$menu', 'spacer', 1)
 
  FUNC('$menu', '===BEGIN===', 'column_0') 
  FUNC('$menu', 'exec_options', $menu_item_Flamberge, 'sp_txt = 131 & gt $curloc', 'Flamberge (200$)')
  FUNC('$menu', 'exec_options', $menu_item_Naginata, 'sp_txt = 132 & gt $curloc', 'Naginata (200$)')
  FUNC('$menu', 'exec_options', $menu_item_Morningstar, 'sp_txt = 133 & gt $curloc', 'Morningstar (200$)')
- FUNC('$menu', 'exec_options', $menu_item_Trident, 'sp_txt = 137 & gt $curloc', 'Trident (200$)')
  FUNC('$menu', 'exec_options', $menu_item_Greataxe, 'sp_txt = 134 & gt $curloc', 'Greataxe (150$)')
  FUNC('$menu', 'exec_options', $menu_item_Baseballbat, 'sp_txt = 135 & gt $curloc', 'Baseball Bat (100$)')
  FUNC('$menu', 'exec_options', $menu_item_Cattleprod, 'sp_txt = 136 & gt $curloc', 'Cattle Prod (150$)')
@@ -424,12 +441,12 @@ IF sp_txt = 136:
 END
 
 IF sp_txt = 137:
- IF sparks >= 200: 
-  sparks -= 200
+ IF sparks >= 100: 
+  sparks -= 100
   трезубец += 1
-  $shop_wpn[132] = $shop_wpn_accept
+  $shop_wpn[137] = $shop_wpn_accept
   else
-  $shop_wpn[132] = $shop_wpn_deny 
+  $shop_wpn[137] = $shop_wpn_deny 
  END
  FUNC('$menu', 'spacer', 4)
 
@@ -446,7 +463,7 @@ IF sp_txt = 3:
  FUNC('$menu', 'exec_options', $menu_item_Aramid, 'sp_txt = 21 & gt $curloc', 'Aramid Suit (100$)')
  FUNC('$menu', 'exec_options', $menu_item_Leather, 'sp_txt = 22 & gt $curloc', 'Leather Armor (400$)')
  FUNC('$menu', 'exec_options', $menu_item_Elven, 'sp_txt = 23 & gt $curloc', 'Elven Chainmail (250$)')
- FUNC('$menu', 'exec_options', $menu_item_Yatserin, 'sp_txt = 24 & gt $curloc', 'Yatserin Mail (300$)')
+ FUNC('$menu', 'exec_options', $menu_item_Yatserin, 'sp_txt = 27 & gt $curloc', 'Yatserin Mail (300$)')
  FUNC('$menu', 'exec_options', $menu_item_Combined, 'sp_txt = 25 & gt $curloc', 'Combined Armor (800$)')
  FUNC('$menu', 'exec_options', $menu_item_Gothicbuy, 'sp_txt = 26 & gt $curloc', 'Gothic Plate (1000$)')
  FUNC('$menu', 'exec_options', $menu_item_Backarmoy, 'sp_txt = 1 & gt $curloc', 'Other goods')
@@ -501,7 +518,7 @@ IF sp_txt = 23:
  FUNC('$menu', '===END===')
 END
 
-IF sp_txt = 24:
+IF sp_txt = 27:
  IF sparks >= 300: 
   sparks -= 300
   ячуга += 1

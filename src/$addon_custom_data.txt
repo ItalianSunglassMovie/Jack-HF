@@ -37,9 +37,6 @@ IF $ARGS[0] = 'update_active' :
   IF prisoner_state = CONST_INT['slave_exist'] AND prisoner_type > 0 :
     GS '$addon_custom_data', 'update_current', 'prisoner'
   END
-  IF iced_state = CONST_INT['slave_exist'] AND iced_type > 0 :
-    GS '$addon_custom_data', 'update_current', 'iced'
-  END
   IF iced_1_state = CONST_INT['slave_exist'] AND iced_1_type > 0 :
     GS '$addon_custom_data', 'update_current', 'iced_1'
   END
@@ -97,12 +94,6 @@ IF $ARGS[0] = 'update_current' :
     If $seed_name[temp_type] ! '' : $prisoner_name = $seed_name[temp_type]
     COPYARR 'temp_current','prisoner'
     COPYARR '$temp_current','$prisoner'
-  END
-  IF $ARGS[1] = 'iced' :
-    temp_type = iced_type
-    If $seed_name[temp_type] ! '' : $iced_name = $seed_name[temp_type]
-    COPYARR 'temp_current','iced'
-    COPYARR '$temp_current','$iced'
   END
   IF $ARGS[1] = 'iced_1' :
     temp_type = iced_1_type
@@ -190,10 +181,6 @@ IF $ARGS[0] = 'update_current' :
     COPYARR 'prisoner', 'temp_current'
     COPYARR '$prisoner', '$temp_current'
   END
-  IF $ARGS[1] = 'iced' :
-    COPYARR 'iced', 'temp_current'
-    COPYARR '$iced', '$temp_current'
-  END
   IF $ARGS[1] = 'iced_1' :
     COPYARR 'iced_1', 'temp_current'
     COPYARR '$iced_1', '$temp_current'
@@ -206,7 +193,6 @@ IF $ARGS[0] = 'update_current' :
     COPYARR 'iced_3', 'temp_current'
     COPYARR '$iced_3', '$temp_current'
   END
-  
   IF $ARGS[1] = 'iced_4' :
     COPYARR 'iced_4', 'temp_current'
     COPYARR '$iced_4', '$temp_current'

@@ -195,7 +195,7 @@ end
 if $quick_move_action = "show" :
 	$tmp = '<div id = "qm_block">'
 		$tmp += '<div class="qm_title">Travel</div>'
-		$tmp += '<div id = "qm_whitehall" class="tooltip-left segoe_print" tooltip-data="Travel to White Hall"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 1 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_whitehall.png"></a></div>'
+		$tmp += '<div id = "qm_whitehall" class="tooltip-left segoe_print" tooltip-data="Travel to White Town"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 1 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_whitehall.png"></a></div>'
 		$tmp += '<div id = "qm_bull" class="tooltip-left segoe_print" class="tooltip-left" tooltip-data="Travel to the Bull"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 2 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_thebull.png"></a></div>'
 		$tmp += '<div id = "qm_serpentine" class="tooltip-left segoe_print" tooltip-data="Travel to Serpentine"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 3 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_serpentine.png"></a></div>'
 		$tmp += '<div id = "qm_outcasts" class="tooltip-left segoe_print" tooltip-data="Travel to the Outcasts"><a href = "EXEC: $quick_move_action = ''go'' & city_form = 4 & gt ''sjm_UI_UIadds''"><img src="content\pic\ui\jon-UIadds\qm_outcast.png"></a></div>'

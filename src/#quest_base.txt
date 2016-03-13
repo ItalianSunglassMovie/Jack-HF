@@ -12,6 +12,8 @@ $quest[8] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 8 & g
 $quest[9] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 9 & gt curloc">Master Valios promised reward for adult fiend of the Fogs</a> <br>'
 $quest[10] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 10 & gt curloc">I need to perform the guild contract</a> <br>'
 $quest[11] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 11 & gt curloc">Specialization Requirements</a> <br>'
+!Post Patrician Quest - crushboss
+$quest[12] = '<a href = "EXEC: quest_description_mode = 1 & choosen_quest = 12 & gt curloc">Lord Spectre promised a priceless reward for corrupting his brother''s daughter</a> <br>'
 $quest_description[0] = 'sample description
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
@@ -86,6 +88,17 @@ $quest_description[11] = 'All skills and attributes required by a specialization
  Most customers requesting a concubine slave want her to be thin (Model or Voluptuous – fat level).  They also want her Beauty to be B+ or equal in level to her rating (whichever is greater).
 
 <a href = "EXEC: quest_description_mode = 0 & gt curloc">Back</a>'
+
+!Post Patrician Quest - crushboss
+$quest_description[12] = '  Lord Spectre, a Lord and ruler in White Town, offers me a mail coat in exchange for corrupting his brother''s daughter, Felicity, and turning her into a slave. According to him this mail coat is able to withstand all types of damage better than any armor known to all worlds connected to Eternal Rome, which are many.
+If needed, I will be able to find Lord Spectre at the Central forum.
+Summary of Requirements (violating any of the below rules will result in quest failure):
+1.  Pride and Spoil must be reduced to zero and Devotion maxed.  Do not train other slaves once you pick up the girl.  Train her to be a nymphomaniac, exhibitionist, pervert, and bi-sexual.  Max all of her sexual skills.
+2.  Feed her Fiend''s cum (spawn semen) everyday you have her and feed her nothing else!  You must always have a Fiend for Felicity to milk!  She must always perform the milking!
+3.  Get her full piercings including tongue splitting and scarring and have her wear all slave accessories and items, especially a Nipple Chain
+4.  Get her full tattoos - all that are available from Uncle Bo (get her a tattoo brand before putting a magical brand on her)
+5.  Turn her into an S+ rated concubine; fuck her brains out in every way possible and as often as you can; always have the Vaginal Balls rule enabled once you take her virginity; always have the following rules enabled: Bath Slave, Behave Alarm, and Milkmaid
+6.  Have her win the title of Race Grand Champion and deliver her to me with child (pregnant) and with maximum sexual arousal before 120 days is up.  Quest Day Count:  <<quest12_day_counter>>'
 
 !$quest[] = ''
 

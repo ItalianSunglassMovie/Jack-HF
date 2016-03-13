@@ -94,8 +94,8 @@ $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
 
 <u>SEX-TECHNIQUES</u>
 <<$slave_petting[slave["petting"]]>>
-<<$slave_penetration[slave["penetration"]]>>
 <<$slave_oral[slave["oral"]]>>
+<<$slave_penetration[slave["penetration"]]>>
 <<$slave_orgy[slave["orgy"]]>>
 <<$slave_roleplay[slave["roleplay"]]>>
 <<$slave_fetishism[slave["fetishism"]]>>

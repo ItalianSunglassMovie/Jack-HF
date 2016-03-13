@@ -2,6 +2,10 @@
 !move slave to prisoner
 tattoo_brand = 0
 
+$slave["prev_primary_wpn"] = ''
+$slave["prev_secondary_wpn"] = ''
+slave["gladiatrix_contest"] = 0
+
 temp = slave_state
 slave_state = prisoner_state
 prisoner_state = temp
@@ -13,6 +17,12 @@ prisoner_type = temp
 $temp = $slave_type
 $slave_type = $prisoner_type
 $prisoner_type = $temp
+
+$temp_name = $slave_name
+$slave_name = $prisoner_name
+$prisoner_name = $temp_name
+
+rules_broken = 0
 
 killvar 'temp'
 killvar '$temp'
@@ -62,7 +72,6 @@ killvar 'slave_inventory'
 copyarr 'slave_inventory','prisoner_inventory'
 copyarr 'prisoner_inventory','temp'
 
-$temp_name = $slave_name
 $temp_psy_basic = $slave_psy_basic
 $temp_world_description = $slave_world_description
 $temp_family_description = $slave_family_description
@@ -71,7 +80,6 @@ $temp_psy_basic = $slave_psy_basic
 temp_virginity = virginity
 $temp_ava = $slave_ava
 
-$slave_name = $prisoner_name
 $slave_psy_basic = $prisoner_psy_basic
 $slave_world_description = $prisoner_world_description
 $slave_family_description = $prisoner_family_description
@@ -80,7 +88,6 @@ $slave_psy_basic = $prisoner_psy_basic
 virginity = prisoner_virginity
 $slave_ava = $prisoner_ava
 
-$prisoner_name = $temp_name
 $prisoner_psy_basic = $temp_psy_basic
 $prisoner_world_description = $temp_world_description
 $prisoner_family_description = $temp_family_description
@@ -88,6 +95,10 @@ $prisoner_occupation_description = $temp_occupation_description
 $prisoner_psy_basic = $temp_psy_basic 
 prisoner_virginity = temp_virginity
 $prisoner_ava = $temp_ava
+
+$tmp = $g_type
+$g_type = $g_type_prisoner
+$g_type_prisoner = $tmp
 
 tmp = prise_promised
 prise_promised = prise_promised_prisoner
@@ -202,5 +213,6 @@ gs '$newloc'
 if prisoner_state = 1: $prisoner_info_text = '<<$ppsy_status[$prisoner_psy_status]>>'
 if prisoner_state = 2: $prisoner_info_text = '   <<$prisoner_name>> is exhausted and moans quietly. She is clearly in a very bad condition. You have to give her a rest or even medical assistance.'
 GT 'prison_cell'
+
 --- slave_to_cage ---------------------------------
 

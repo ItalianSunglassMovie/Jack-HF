@@ -7,8 +7,6 @@ killvar 'stock'
 killvar 'stock_rate'
 $stock_features_list = ''
 
-gs 'get_stock_seed'
-
 $stock_epithet = 'affordable'
 $stock_occupation_auk = 'girl'
 $stock_world_auk = 'mysterious world'
@@ -36,7 +34,7 @@ IF $special_age ! '':
  $special_age = ''
 END
 
-!Testing Code - Remove for release - crushboss
+!Testing Code - crushboss
 IF cheat_e = 1:
  meta_type = 1
  cheat_f = 0
@@ -80,6 +78,8 @@ IF special_stock > 0:
  special_stock = 0
 END
 
+gs 'get_stock_seed'
+
 !Associate age with stock_type
 $stock_type = 'common'
 stock["null"] = 0
@@ -102,6 +102,15 @@ i = 0
 
     dynamic '<<$stockatr[i]>> = atribute'
 if i < stat_count: jump 'loop'
+
+!Added code to avoid having slaves with all bottomed out stats - crushboss
+b = stock["stamina"] + stock["beauty"] + stock["sensitivity"] + stock["intellect"] + stock["temper"] + stock["ego"]
+IF b < 10:
+	stat_count = 7
+	i = 0
+	b = 0
+	jump 'loop'
+END
 
 stock["fat"] = RAND (0,4)
 stock["metabolism"] = 3
@@ -1429,7 +1438,7 @@ IF RAND (1, 20) = 10:
  stock["compassion"] = chance
 END
 
-!Code for testing the new better vanilla slave system - remove for release - crushboss'
+!Code for testing the new better vanilla slave system - crushboss'
 stock["nymphomania_revealed"] = 2
 stock["masohism_revealed"] = 2
 stock["exhibitionism_revealed"] = 2
@@ -1469,20 +1478,21 @@ stock["compassion_revealed"] = 2
 stock["energy"] = RAND (0,3)
 stock["hygiene"] = RAND (0,4)
 
-!Testing Code - Disable for release - crushboss
+!Testing Code - crushboss
 if cheat_h = 1 and get_girl = 0: gs 'generate_stock_testing'
 if cheat_j = 1 and get_girl = 0: gs 'generate_stock_maximum_testing'
 
-IF cheat_k = 1 or cheat_l = 1 or cheat_h = 1 or cheat_j = 1:
+IF cheat_l = 1:
  stock["energy"] = 5
  stock["metabolism"] = 5
  if stock["stamina"] < 3: stock["stamina"] += 2
  if stock["beauty"] < 3: stock["beauty"] += 2
  if stock["exotic"] <= 0: stock["exotic"] = RAND (0,3)
- if stock["meekness"] <= 0: stock["meekness"] = RAND (1,3)
- IF RAND (1, 4) = 2:
+ if stock["meekness"] <= 0: stock["meekness"] = RAND (0,3)
+ IF RAND (1,4) = 2:
   if stock["preversion"] <= 0: stock["preversion"] = 2
  END
+ if stock["nymphomania"] < 0: stock["nymphomania"] = RAND (0,1)
  if stock["homosexualism"] <= 0: stock["homosexualism"] = RAND (0,1)
  if stock["selfesteem"] <= 0: stock["selfesteem"] = RAND (0,1)
  if stock["abuse_attitude"] >= 0: stock["abuse_attitude"] = RAND (-1,0)
@@ -1493,10 +1503,9 @@ IF cheat_k = 1 or cheat_l = 1 or cheat_h = 1 or cheat_j = 1:
  if stock["gladiatrix_affinity"] <= 0 and stock["dressage_affinity"] <= 0: stock["gladiatrix_affinity"] = RAND (0,1)
  if stock["gladiatrix_affinity"] <= 0 and stock["dressage_affinity"] <= 0: stock["dressage_affinity"] = RAND (0,1)
 END
-
 !End of Testing Code
 
-!characteristic alignment - crushboss
+!Characteristic alignment - crushboss
 if stock["beauty"] > 5: stock["beauty"] = 5
 if stock["beauty"] < 1: stock["beauty"] = 1
 if stock["stamina"] > 5: stock["stamina"] = 5
@@ -1632,6 +1641,18 @@ if stock["metabolism"] > 5: stock["metabolism"] = 5
 if stock["energy"] > stock["stamina"]: stock["energy"] = stock["stamina"]
 stock["base_exotic"] = stock["exotic"]
 stock_rate["stamina"] = 0
+
+!Added code to avoid having slaves with all bottomed out stats - crushboss
+b = stock["stamina"] + stock["beauty"] + stock["sensitivity"] + stock["intellect"] + stock["temper"] + stock["ego"]
+IF b < 10:
+	if stock["stamina"] <= 1: stock["stamina"] += RAND(1,2)
+	if stock["beauty"] <= 1: stock["beauty"] += RAND(1,2)
+	if stock["sensitivity"] <= 1: stock["sensitivity"] += RAND(1,2)
+	if stock["intellect"] <= 1: stock["intellect"] += RAND(1,2)
+	if stock["temper"] <= 1: stock["temper"] += RAND(1,2)
+	if stock["ego"] <= 1: stock["ego"] += RAND(1,2)
+	b = 0
+END
 
 !psy determination
 a = RAND (1,3)

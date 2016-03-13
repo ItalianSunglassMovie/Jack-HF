@@ -1,6 +1,7 @@
 # random_bg_trophy
 !Displays a random Trophy background image - crushboss
-trophy_rand = RAND (1,118)
+trophy_rand = RAND (1,246)
+*p '<div id = "large_image">Clear Screen</div>'
 *p '<div id = "large_image"><img src="<<$trophyimage>><<$trophy_bg[trophy_rand]>>.jpg"></div>'
 if toggle_trophy = 0: gs 'trophy_room'
 --- random_bg_trophy ---------------------------------

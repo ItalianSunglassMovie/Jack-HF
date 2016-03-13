@@ -52,6 +52,8 @@ assistant_inventory['high_heels'] = 1
 assistant_inventory['high_boots'] = 1
 assistant_inventory['hoofed_boots'] = 1
 assistant_inventory['incrusted_ring'] = 4
+assistant_inventory['belly_ring'] = 1
+assistant_inventory['tongue_barbell'] = 1
 
 !Assistant Equipped Gear
 $assistant["wpn"] = 'катана'
@@ -70,6 +72,8 @@ $assistant["clitring"] = 'incrusted_earrings'
 $assistant["boots"] = 'high_boots'
 $assistant["ring_left"] = 'incrusted_ring'
 $assistant["ring_right"] = 'incrusted_ring'
+$assistant["naval"] = 'belly_ring'
+$assistant["tongue"] = 'tongue_barbell'
 
 !Pet Fiend
 IF pet_tentacle < 1:
@@ -103,7 +107,7 @@ assistant_rate['fame'] += 15
 assistant['brand'] = 3
 
 !Testing new assistant buttons
-!Testing Code - remove for release
+!Testing Code - crushboss
 assistant['fertility'] = 0
 !assistant['parasite'] = 1
 !assistant['ill'] = 1

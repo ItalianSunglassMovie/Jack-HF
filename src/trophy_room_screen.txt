@@ -19,16 +19,16 @@ if toggle_trophy = 0: gs 'random_bg_trophy'
 if toggle_trophy = 0: gs 'trophy_room'
 
 trophy_won_fog = trophy_ogre + trophy_warg + trophy_werewolf + trophy_hugefiend + trophy_blackmedic + trophy_maturefiend + trophy_vampire + trophy_lich + trophy_beastmen + trophy_paladin + trophy_orc + trophy_youngfiend + trophy_scum + trophy_goblins
-trophy_won_arena = trophy_corvus + trophy_camira + trophy_serpis + trophy_taurus + trophy_vatican + trophy_absolute + trophy_slaves + trophy_arenafiend
+trophy_won_arena = trophy_corvus + trophy_camira + trophy_serpis + trophy_taurus + trophy_vatican + trophy_absolute + trophy_slaves + trophy_arenafiend + trophy_racechampion + trophy_racegrandchampion
 trophy_won_count = trophy_won_fog + trophy_won_arena
 
 *p '<div id = "trophy_right_column"><center><img src = "<<$master_ava_color>>">
 <<$master_name>></center></div>'
 
 *p '<div id = "trophy_right_column_mid">
-&nbsp&nbsp Trophies - Total:&nbsp&nbsp 22
+&nbsp&nbsp Trophies - Total:&nbsp&nbsp 24
 &nbsp&nbsp Trophies - Fogs:&nbsp&nbsp&nbsp 14
-&nbsp&nbsp Trophies - Arena:&nbsp&nbsp&nbsp 8<br>
+&nbsp&nbsp Trophies - Arena:&nbsp&nbsp&nbsp 10<br>
 Trophies Won - Total:&nbsp <<trophy_won_count>>
 Trophies Won - Fogs:&nbsp&nbsp <<trophy_won_fog>>
 Trophies Won - Arena:&nbsp&nbsp <<trophy_won_arena>>

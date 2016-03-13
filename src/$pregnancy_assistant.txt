@@ -7,14 +7,17 @@ pregnancy_random = 0
 
 if assistant['pregnant'] = 0 and assistant['parasite'] = 0: assistant["pregnant_revealed"] = 0
 
-if assistant['ovulation'] > 0 and assistant['pregnant'] < 1 and assistant['fertility'] ! -1 and assistant['fertility'] ! -2: assistant['pregnant'] = 1
+if (assistant['ovulation'] > 0 or assistant_menstruation = 1) and assistant['pregnant'] < 1 and assistant['fertility'] ! -1 and assistant['fertility'] ! -2: assistant['pregnant'] = 1
+
+if (assistant['ovulation'] > 0 or assistant_menstruation = 1) and assistant['pregnant'] < 3 and assistant['fertility'] = 1 and assistant['vaginal_modification'] = 4: assistant['pregnant'] = 3
 
 IF assistant['pregnant'] < 1 and assistant['fertility'] ! -1 and assistant['fertility'] ! -2:
- pregnancy_chance = RAND (100,131)
- pregnancy_random = RAND (100,131)
+ pregnancy_chance = RAND (100,125)
+ pregnancy_random = RAND (100,125)
  IF pregnancy_chance = pregnancy_random:
   assistant['pregnant'] = 1
   assistant["pregnant_revealed"] = 0
+  if assistant['vaginal_modification'] = 4 and assistant['pregnant'] < 3: assistant['pregnant'] = 3
  END
 END
 

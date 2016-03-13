@@ -15,23 +15,22 @@ IF $interaction_type = 'talk':
   txt_count = 1
   $text[1] = '  <<$refuse_talk[$slave_psy_status]>>'
   if already_done_today[interaction] = 0 and slave["sin"] < 1: slave["sin"] = 1
-  if sententia_veritas = 1: slave["sin"] = 5
+  if sententia_veritas = 1: slave["sin"] = 5 & sententia_veritas = 0 & sententia_veritas_casted = 1
   else
   dynamic $special_part
   gs '$calculate_attributes_fast'
  END
- res = 0
 END
 
 !interaction type - drug
 IF $interaction_type = 'get_grug':
  IF res < 0:
-  $interaction_type = 'talk'
+  show_slave_fullimage = 1
   $special_bg = $study 
   txt_count = 1
   $text[1] = '  <<$slave_name>> refuses to take from you suspicious stuff. Looks like someone needs to be taught a lesson of obedience!'
   if already_done_today[interaction] = 0 and slave["sin"] < 1: slave["sin"] = 1
-  if sententia_veritas = 1: slave["sin"] = 5
+  if sententia_veritas = 1: slave["sin"] = 5 & sententia_veritas = 0 & sententia_veritas_casted = 1
   else
   if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
   dynamic $special_part   
@@ -44,10 +43,35 @@ IF $interaction_type = 'get_grug':
    GT 'menu_form'
   END
  END
- res = 0
 END
 
-!majick majick
+!Drugs and Potions - Assistant - crushboss
+!interaction type - drug
+IF $interaction_type = 'get_grug_assistant':
+ dynamic $sex_acceptance_assistant 
+ dynamic $repulse_check_assistant 
+ dynamic $diligence_assistant 
+ dynamic $complex_diligence_assistant
+ IF res < 0:
+  show_assistant_fullimage = 1
+  $special_bg = $study 
+  txt_count = 1
+  $text[1] = '  <<$assistant_name>> refuses to take suspicious stuff from you.'
+  else
+  if sound_on = 1: play 'content\snd\bulk.mp3', sound_volume
+  dynamic $special_part   
+  menu_form = 0
+  bulk = 1
+  gs '$newloc'
+  IF exam_in_progress = 1:
+   GT 'demo_menu_form'
+   else
+   GT 'menu_form'
+  END
+ END
+END
+
+!magic spells
 IF $interaction_type = 'spell_cast':
  txt_count = 1
  $text[1] = '<<$cast_spell[interaction]>>'
@@ -68,14 +92,31 @@ IF $interaction_type = 'spell_cast':
  $special_bg = 'magic'
 END
 
+!magic spells - silent
+IF $interaction_type = 'spell_cast_silent':
+ spell_effectiveness = 0
+ IF spell_effectiveness = 0:
+  if master_mage = 0: spell_effectiveness = 1
+  if master_mage = 1: spell_effectiveness = 2
+  if master_mage = 2: spell_effectiveness = 4
+  if master_mage = 3: spell_effectiveness = 6
+  if master_mage = 4: spell_effectiveness = 8
+  if master_mage = 5: spell_effectiveness = 10 
+  if master_mage = 6: spell_effectiveness = 12   
+  spell_effectiveness -= slave['ego']
+ END
+ dynamic $special_part
+ gs '$calculate_attributes_fast'
+END
+
 !interaction type - order for slave
 IF $interaction_type = 'make_slave_do':
  txt_count = 1
  IF res < 0:
+  show_slave_fullimage = 1
+  dynamic $sin_gained_now
   $special_bg = $study
   $text[1] = $refuse_txt
-  $interaction_type = 'talk'
-  dynamic $sin_gained_now 
   else
   $text[1] = $done_txt
   house_mess_rate += add_house_mess
@@ -83,17 +124,20 @@ IF $interaction_type = 'make_slave_do':
   master_hygiene_rate += add_master_hygiene
   dynamic $special_part  
   dynamic $slave_energy_drop
-  dynamic $virtue_gained_now
+  if sin_gain = 0: dynamic $virtue_gained_now
   dynamic '<<$target_skill>> += skill_rise'
   gs '$calculate_attributes_fast'
   if slave[$target_affinity] > 0: slave['pos_job'] = 1
   if slave[$target_affinity] < 0: slave['neg_job'] = 1 & gs '$mod_slave_drop', 1
  END
- res = 0
 END
 
-!interaction type - order for assistant
+!interaction type - order for assistant - improved and fixed - crushboss
 IF $interaction_type = 'make_assistant_do':
+ dynamic $sex_acceptance_assistant 
+ dynamic $repulse_check_assistant 
+ dynamic $diligence_assistant 
+ dynamic $complex_diligence_assistant
  txt_count = 1
  $text[1] = $done_txt
  house_mess_rate += add_house_mess
@@ -112,9 +156,9 @@ IF $interaction_type = 'make_slave_assistant_do':
  if couch_skill = 6: couch_skill = 5
  teacher_potential = couch_skill - slave_skill
  IF res < 0:
+  show_slave_fullimage = 1
   $special_bg = $study
   $text[1] = $refuse_txt
-  $interaction_type = 'talk'
   dynamic $sin_gained_now 
   else
   $text[1] = $done_txt
@@ -139,7 +183,7 @@ IF $interaction_type = 'make_slave_assistant_do':
   if slave[$target_affinity] < 0: slave['neg_job'] = 1 & gs '$mod_slave_drop', 1
   IF $target_skill = 'slave_rate["stamina"]':
    skill_rise = skill_rise/2
-   if skill_rise < 2: skill_rise = 2
+   if skill_rise < 3: skill_rise = 3
   END
   if skill_rise < 1: skill_rise = 1
   if teacher_potential > 0 and diligence > 2: master_tutor_rate += 1
@@ -148,7 +192,7 @@ IF $interaction_type = 'make_slave_assistant_do':
    IF slave["virtue"] < 2:
     slave["virtue"] = 0
     if slave["sin"] < 1: slave["sin"] = 1     
-    if sententia_veritas = 1: slave["sin"] = 5
+    if sententia_veritas = 1: slave["sin"] = 5 & sententia_veritas = 0 & sententia_veritas_casted = 1
    END
    else
     dynamic $virtue_gained_now
@@ -172,7 +216,6 @@ IF $interaction_type = 'make_slave_assistant_do':
   dynamic $special_part
   gs '$calculate_attributes_fast'
  END
- res = 0
 END
 
 !interaction type - personal lesson - improved and fixed - crushboss
@@ -182,7 +225,7 @@ IF $interaction_type = 'master_teaches_slave':
  teacher_potential = couch_skill - slave_skill
  if $target_skill = 'slave_rate["stamina"]': teacher_potential = 1
  IF teacher_potential < 1:
-  $interaction_type = 'talk'
+  show_slave_fullimage = 1
   IF slave_skill >= 5:
    $text[1] = '<<$slave_name>> trained too well, and has the best of your own knowledge on the subject. Perhaps you should move on to other areas of training...'
   else
@@ -193,10 +236,10 @@ IF $interaction_type = 'master_teaches_slave':
   GT 'interaction_screen'
   else
   IF diligence < 0:
-   $interaction_type = 'talk'
+   show_slave_fullimage = 1
+   dynamic $sin_gained_now
    $special_bg = $study
    $text[1] = '  <<$slave_name>> refuses to learn. With this attitude, the lesson will be useless.'
-   dynamic $sin_gained_now
    else
    txt_count = 2
    tutor_modifier = master_tutor
@@ -221,7 +264,7 @@ IF $interaction_type = 'master_teaches_slave':
    if slave[$target_affinity] < 0: slave['neg_job'] = 1 & gs '$mod_slave_drop', 1
    IF $target_skill = 'slave_rate["stamina"]':
     skill_rise = skill_rise/2
-    if skill_rise < 2: skill_rise = 2
+    if skill_rise < 3: skill_rise = 3
    END
    if skill_rise < 1: skill_rise = 1
    if teacher_potential > 0 and diligence > 2: master_tutor_rate += 1
@@ -231,7 +274,7 @@ IF $interaction_type = 'master_teaches_slave':
     IF slave["virtue"] < 2:
      slave["virtue"] = 0
      if slave["sin"] < 1: slave["sin"] = 1
-     if sententia_veritas = 1: slave["sin"] = 5
+     if sententia_veritas = 1: slave["sin"] = 5 & sententia_veritas = 0 & sententia_veritas_casted = 1
     END
     else
     dynamic $virtue_gained_now
@@ -253,7 +296,6 @@ IF $interaction_type = 'master_teaches_slave':
    gs '$calculate_attributes_fast'
   END
  END
- diligence = 0
 END
 
 !interaction type - assistant lesson - improved and fixed - crushboss
@@ -293,7 +335,7 @@ IF $interaction_type = 'assistant_teaches_slave':
   if slave[$target_affinity] < 0: slave['neg_job'] = 1 & gs '$mod_slave_drop', 1
   IF $target_skill = 'slave_rate["stamina"]':
    skill_rise = skill_rise/2
-   if skill_rise < 2: skill_rise = 2
+   if skill_rise < 3: skill_rise = 3
   END
   if skill_rise < 1: skill_rise = 1
   IF diligence = 0: 
@@ -301,7 +343,7 @@ IF $interaction_type = 'assistant_teaches_slave':
    IF slave["virtue"] < 2:
     slave["virtue"] = 0 
     if slave["sin"] < 1: slave["sin"] = 1
-    if sententia_veritas = 1: slave["sin"] = 5
+    if sententia_veritas = 1: slave["sin"] = 5 & sententia_veritas = 0 & sententia_veritas_casted = 1
    END
    else
    dynamic $virtue_gained_now
@@ -317,7 +359,6 @@ IF $interaction_type = 'assistant_teaches_slave':
   dynamic $special_part
   gs '$calculate_attributes_fast'
  END
- diligence = 0
 END
 
 !interaction type - lesson with a tutor - improved and fixed - crushboss
@@ -354,7 +395,7 @@ IF  $interaction_type = 'couch_teaches_slave':
  if slave[$target_affinity] < 0: slave['neg_job'] = 1 & gs '$mod_slave_drop', 1  
  IF $target_skill = 'slave_rate["stamina"]':
   skill_rise = skill_rise/2
-  if skill_rise < 2: skill_rise = 2
+  if skill_rise < 3: skill_rise = 3
  END
  if skill_rise < 1: skill_rise = 1
  IF interaction = 1721:
@@ -365,7 +406,7 @@ IF  $interaction_type = 'couch_teaches_slave':
   IF slave["virtue"] < 2:
    slave["virtue"] = 0 
    if slave["sin"] < 1: slave["sin"] = 1
-   if sententia_veritas = 1: slave["sin"] = 5
+   if sententia_veritas = 1: slave["sin"] = 5 & sententia_veritas = 0 & sententia_veritas_casted = 1
   END
   else
   dynamic $virtue_gained_now
@@ -379,11 +420,11 @@ IF  $interaction_type = 'couch_teaches_slave':
  gs '$calculate_attributes_fast'
 END
 
-!interaction type - sex lesson
+!interaction type - sex lesson - slave
 IF $interaction_type = 'self_sex_lesson':
  diligence = complex_diligence
  IF diligence < 0: 
-  $interaction_type = 'talk'
+  show_slave_fullimage = 1
   $special_bg = $study
   killvar 'play_sound'  
   txt_count = 2
@@ -399,18 +440,21 @@ IF $interaction_type = 'self_sex_lesson':
   dynamic 'succes += <<$subskill_xp>>'  
   IF diligence <= 0: 
    succes = 0
-   sin_gained = 1
-   if slave["sin"] < 1: slave["sin"] = 1
-   if sententia_veritas = 1: slave["sin"] = 5
-   else
+   sin_potential = 1
+   dynamic $sin_gained_now
+   elseif diligence > 0 and sin_gain = 0:
    dynamic $virtue_gained_eroles
   END
   IF succes > 0:
    dynamic '<<$subskill>> += 1'
+   dynamic '<<$subskill_xp>> += 1'
+   slave["nymphomania_xp"] += 1
+   slave_rate["arousal"] -= (slave["arousal"] * 3)
    $text[3] = 'By the end of lesson you managed to make significant progress. Now you can move on to more complex techniques.'
    else
-   $text[3] = 'Slave was not able to fully fulfill what you were trying to teach her. It will be necessary to repeat this lesson again, but still you barely moved and the next time this should be easier.'   
+   $text[3] = '<<$slave_name>> was not able to fully fulfill what you were trying to teach her. It will be necessary to repeat this lesson again, but still you barely moved and the next time this should be easier.'   
    dynamic '<<$subskill_xp>> += 1'
+   slave["nymphomania_xp"] += 1
   END
   master_hygiene_rate += add_master_hygiene
   slave_rate["hygiene"] += add_slave_hygiene
@@ -426,10 +470,55 @@ IF $interaction_type = 'self_sex_lesson':
    END
   END
   dynamic $special_part
+  IF orgasm_description = 3:
+   dynamic $sin_potential
+   dynamic $sin_gained_now
+  END
   gs '$calculate_attributes_fast'
  END
- diligence = 0
- orgastic = 0
+ !Tutorial sex training - bug fix - crushboss
+ if exam_in_progress = 1: txt_count = 5
+END
+
+!interaction type - sex lesson - assistant - created by crushboss
+IF $interaction_type = 'self_sex_lesson_assistant':
+  dynamic $sex_acceptance_assistant 
+  dynamic $repulse_check_assistant 
+  dynamic $diligence_assistant 
+  dynamic $complex_diligence_assistant
+  diligence = complex_diligence
+  if erotic_stimulation > 0: dynamic $erotic_stimulation_assistant
+  txt_count = 3
+  $text[2] = '  <<$sex_lesson_diligence_assistant[diligence]>>'
+  rise_difficulty += rise_modifer
+  succes = couch_skill + diligence + learn_bonus_assistant["sex"] + ((master_mood + assistant["mood"])/2) - rise_difficulty      
+  dynamic 'succes += <<$subskill_xp>>'  
+  IF succes > 0:
+   dynamic '<<$subskill>> += 1'
+   dynamic '<<$subskill_xp>> += 1'
+   assistant["nymphomania_xp"] += 1
+   assistant_rate["arousal"] -= (assistant["arousal"] * 3)
+   $text[3] = 'By the end of lesson you managed to make significant progress. Now you can move on to more complex techniques.'
+   else
+   $text[3] = '<<$assistant_name>> was not able to fully fulfill what you were trying to teach her. It will be necessary to repeat this lesson again, but still you barely moved and the next time this should be easier.'   
+   dynamic '<<$subskill_xp>> += 1'
+   assistant["nymphomania_xp"] += 1
+  END
+  master_hygiene_rate += add_master_hygiene
+  assistant_rate["hygiene"] += add_assistant_hygiene
+  house_mess_rate += add_house_mess
+  dynamic $assistant_energy_drop
+  dynamic $master_energy_drop
+  if ejaculation_intensity > 0: dynamic $master_ejaculate  
+  IF orgastic > 0:
+   IF final_stimulation > 0:
+    dynamic $assistant_orgasm
+    txt_count = 4
+    $text[4] = '  <<$orgasm_assistant_description[orgasm_assistant_description]>>'
+   END
+  END
+  dynamic $special_part
+  gs '$calculate_attributes_fast'
 END
 
 !Sex - special - created by crushboss
@@ -464,13 +553,13 @@ IF $interaction_type = 'self_sex_lesson_special':
  slave["virtue"] = 5
  slave["sin"] = 0
  riser = 2
- sin_gained = 0
+ sin_potential = 0
  final_stimulation = 5
  dynamic $master_ejaculate
  dynamic $slave_orgasm
  slave["virtue"] = 5 
  slave["sin"] = 0
- sin_gained = 0
+ sin_potential = 0
  slave['neg_horny'] = 0
  slave['pos_orgasm'] += 4
  slave["energy"] = 2
@@ -564,7 +653,7 @@ END
 
 !interaction type - studying complete
 IF $interaction_type = 'completed':
- $interaction_type = 'talk'
+ show_slave_fullimage = 1
  $text[1] = 'Slave fully mastered this skill, and you`re unlikely to be able to teach her something new. Perhaps, you should pay attention to the less developed aspects or just use her skills in practice.'
 END
 
@@ -600,7 +689,7 @@ IF  $interaction_type = 'school_class':
  if talent_bonus > 0 and $slave['pos_job'] < 1: $slave['pos_job'] = 1 
  IF $target_skill = 'slave_rate["stamina"]':
   skill_rise = skill_rise/2
-  if skill_rise < 2: skill_rise = 2
+  if skill_rise < 3: skill_rise = 3
  END
  if skill_rise < 1: skill_rise = 1
  IF interaction = 565: 
@@ -611,7 +700,7 @@ IF  $interaction_type = 'school_class':
   IF slave["virtue"] < 2:
    slave["virtue"] = 0 
    if slave["sin"] < 1: slave["sin"] = 1
-   if sententia_veritas = 1: slave["sin"] = 5
+   if sententia_veritas = 1: slave["sin"] = 5 & sententia_veritas = 0 & sententia_veritas_casted = 1
   END
   else
   dynamic $virtue_gained_now
@@ -621,7 +710,7 @@ IF  $interaction_type = 'school_class':
  dynamic '<<$target_skill>> += skill_rise'  
  dynamic $special_part
  gs '$calculate_attributes_fast'
- $interaction_type = 'talk' 
+ show_slave_fullimage = 1 
 END
 
 !interaction type - reward with a date
@@ -746,13 +835,12 @@ IF $interaction_type = 'prise_erotic':
  slave_rate["hygiene"] += add_slave_hygiene 
  master_hygiene_rate += add_master_hygiene
  house_mess_rate += add_house_mess 
- orgastic = 0
 END
 
 !Interaction type - Compliment
 !Repeat compliment fixed and has no penalty - crushboss
 IF $interaction_type = 'compliment':
- $interaction_type = 'talk'
+ show_slave_fullimage = 1
  txt_count = 2
  IF already_done_today[interaction] >= 1:
   $text[2] = '  <<$compliment_repeat>>'
@@ -824,16 +912,16 @@ IF $interaction_type = 'torture':
   slave_power = slave["gladiatrix"] + slave["stamina"]
   master_power = master_str + master_fighter
   IF master_power <= slave_power:
+   show_slave_fullimage = 1
    txt = 1
    $text[1] = 'Slave gives you a desperate resistance. Fight begins and you have to beat her badly before resistance is finally broken.' 
    dynamic $slave_fights_back
    dynamic $slave_damaged 
-   $interaction_type = 'talk'
    menu_form = 0
    GT 'interaction_screen'
    else 
    dynamic $slave_forced
-   dynamic $slave_damaged  
+   dynamic $slave_damaged
   END
  END
  txt_count = 2
@@ -894,7 +982,6 @@ IF $interaction_type = 'torture':
  END 
  if phobia < 0: gs '$mod_slave_drop', torture_intensity
  if phobia = 0: gs '$mod_slave_drop', 1
- orgastic = 0
 END
 
 !interaction type - prisoner torture
@@ -928,7 +1015,7 @@ END
 
 !interaction type - verbal punishment
 IF $interaction_type = 'abuse':
- $interaction_type = 'talk'
+ show_slave_fullimage = 1
  $special_bg = $study
  txt_count = 2
  IF futile_threat = 1: 
@@ -947,7 +1034,7 @@ END
 
 !interaction type - presentation of the torture aggregate
 IF $interaction_type = 'present_torture':
- $interaction_type = 'talk'
+ show_slave_fullimage = 1
  txt_count = 2
  slave["sin"] = 0
  IF futile_threat = 1: 
@@ -972,10 +1059,10 @@ IF $interaction_type = 'rape':
   slave_power = slave["gladiatrix"] + slave["stamina"]
   master_power = master_str + master_fighter
   IF master_power <= slave_power:
+   show_slave_fullimage = 1
    txt = 1
    dynamic $slave_fights_back
    dynamic $slave_damaged 
-   $interaction_type = 'talk'
    menu_form = 0
    GT 'interaction_screen'
    else 
@@ -1000,7 +1087,10 @@ IF $interaction_type = 'rape':
  slave_rate["hygiene"] += add_slave_hygiene  
  house_mess_rate += add_house_mess    
  if ejaculation_intensity > 0: dynamic $master_ejaculate  
- if erotic_stimulation > 0: dynamic $erotic_stimulation
+ IF erotic_stimulation > 0:
+  dynamic $sex_acceptance
+  dynamic $erotic_stimulation
+ END
  IF orgastic > 0:
   IF final_stimulation > 0: 
    dynamic $slave_orgasm
@@ -1010,7 +1100,6 @@ IF $interaction_type = 'rape':
  END
  dynamic $special_part
  gs '$calculate_attributes_fast'
- orgastic = 0  
 END
 
 !interaction type - branding
@@ -1021,11 +1110,11 @@ IF $interaction_type = 'branding':
   slave_power = slave["gladiatrix"] + slave["stamina"]
   master_power = master_str + master_fighter
   IF master_power <= slave_power:
+   show_slave_fullimage = 1
    txt = 1
    $text[1] = 'Slave gives you a desperate resistance. Fight begins and you have to beat her badly before resistance is finally broken.' 
    dynamic $slave_fights_back
    dynamic $slave_damaged 
-   $interaction_type = 'talk'
    menu_form = 0
    GT 'interaction_screen'
    else 
@@ -1061,11 +1150,11 @@ IF $interaction_type = 'execution':
   slave_power = slave["gladiatrix"] + slave["stamina"]
   master_power = master_str + master_fighter
   IF master_power <= slave_power:
+   show_slave_fullimage = 1
    txt = 1
    $text[1] = 'Slave gives you a desperate resistance. Fight begins and you have to beat her badly before resistance is finally broken.' 
    dynamic $slave_fights_back
    dynamic $slave_damaged 
-   $interaction_type = 'talk'
    menu_form = 0
    GT 'interaction_screen'
    else 
@@ -1103,8 +1192,21 @@ already_done_today[interaction] += 1
 already_done_curslave[interaction] += 1 
 already_gain_virtue[interaction] += 1
 
+!Reset vars - crushboss
 txt = 1
 menu_form = 0
+res = 0
+diligence = 0
+orgastic = 0
+orgasm_description = 0
+virtue_gained = 0
+sin_potential = 0
+previous_slave_sin = 0
+previous_slave_virtue = 0
+
+IF exam_in_progress = 1:
+ gs '$newloc'
+END
 
 GT 'interaction_screen'
 

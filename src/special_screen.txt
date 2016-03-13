@@ -1,0 +1,157 @@
+# special_screen
+!Special Screen
+!Created by crushboss
+
+$special_part = ''
+$special_bg = ''
+$special_text = ''
+
+killvar '$special_image'
+killvar '$special_image_full'
+killvar '$special_action'
+killvar '$special_bg'
+killvar '$forum_encouner_description'
+
+GS '_layout'
+gs '#dynamic'
+gs '#txt'
+gs '#txt_2'
+
+IF $special_action[txt] ! '':
+	dynamic $special_action[txt]
+END
+
+npc = 0
+menu_form = 0
+
+IF trophy_fire_staff = 0 and посох_огня = 0:
+	$place = 'edge_patrool'
+	copyarr '$text', '$fire_staff_reward_special'
+	$special_action[1] = {
+		npc = 0
+		$place = 'edge_patrool'
+	}
+	$special_action[2] = {
+		npc = 0
+	}
+	$special_action[3] = {
+		npc = 0
+	}
+	$special_action[4] = {
+		npc = 0
+	}
+	$special_action[5] = {
+		npc = 0
+	}
+	$special_action[6] = {
+		npc = 0
+	}
+	txt_count = 7
+	!Reset and set vars - crushboss
+	gs '$combat_variable_reset'
+	gs '$newloc'
+	IF txt = 7:
+		get_girl = 0
+		fog_battle = 0
+		trophy_fire_staff = 1
+		посох_огня = 1
+		gt 'menu_form'
+	END	
+	jump 'loop'
+END
+
+:loop
+
+*p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+*p '<div id = "text"><<$text[txt]>></div>'
+
+IF $interaction_type = 'special':
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+END
+
+IF $interaction_type = 'special_talk':
+ npc = 1
+END
+
+IF $interaction_type = 'special_png':
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.png"></div>'
+END
+
+IF $interaction_type = 'special_jpg':
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.jpg"></div>'
+END
+
+IF npc = 0:
+	$info_bar = ''
+	*p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$place_name[$place]>></div><<$place_location[$place]>>
+
+	Information for consideration:
+	</center></div>'
+	*p '<div id = "side_panel_text">  <<$place_info[$place]>>
+	</div>'  
+else
+	$info_bar = '' 
+	IF nsfw = 1:
+		*p '<div id = "bg"><img src="content\pic\bg\empty.jpg"></div>'
+	else
+		*p '<div id = "bg"><img src="content\pic\characters\<<$npc_image[$npc_id]>>.gif"></div>'
+	END
+	*p '<div id = "side_panel_main"><center><div style="font-size: 50px;"><<$npc_name[$npc_id]>></div><<$npc_status[$npc_id]>>
+
+	Information for consideration:
+	</center></div>'
+	*p '<div id = "side_panel_text">  <<$npc_attitude[npc_attitude[$npc_id]]>>
+
+	<<$npc_info[$npc_id]>>
+	</div>'
+END
+
+IF $interaction_type = 'talk' or show_slave_fullimage = 1:
+ npc = 1
+ $npc_id = '<<$slave_name>>'
+ $place = 'study'
+ $special_bg = $study
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
+END
+
+IF show_assistant_fullimage = 1:
+ npc = 1
+ $npc_id = '<<$assistant_name>>'
+ $place = 'study'
+ $special_bg = $study
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>'
+END
+
+IF $interaction_type = 'talk_assistant':
+ npc = 1
+ $npc_id = 'ваша_ассистентка'
+ IF nsfw = 0:
+  if assistant['image_mode'] = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[assistant_type]>>.gif"></div>'
+  if assistant['image_mode'] = 1: *p '<div id = "bg"><img src="content\pic\<<$fullmistress[assistant_type]>>.gif"></div>'
+  if assistant['image_mode'] = 2: *p '<div id = "bg"><img src="content\pic\<<$fullmade[assistant_type]>>.gif"></div>'
+  if assistant['image_mode'] = 3: *p '<div id = "bg"><img src="content\pic\<<$fullsecretary[assistant_type]>>.gif"></div>'  
+ END
+END
+
+*p '<div id = "interaction_stat_bar"><<$info_bar>></div>'
+
+IF $special_image[txt] ! '':
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_image[txt]>>"></div>'
+END
+IF $special_image_full[txt] ! '':
+ if nsfw = 0: *p '<div id = "bg"><img src="<<$special_image_full[txt]>>"></div>'
+END
+
+if sound_on = 1: play 'content\snd\<<$play_sound[txt]>>.mp3', sound_volume
+
+IF txt > 1: 
+ addobj '<img src = "content\pic\buttons\back_button.png">'
+ else
+ addobj '<img src = "content\pic\buttons\noback_button.png">' 
+END 
+addobj '<img src = "content\pic\buttons\forward_button.png">'
+ 
+--- special_screen ---------------------------------
+

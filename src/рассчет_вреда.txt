@@ -1,5 +1,5 @@
 # рассчет_вреда
-!CALCULATION DAMAGE FROM ALL MODIFICATORS
+!CALCULATION OF DAMAGE FROM ALL MODIFIERS
 модификатор = 0
 
 !Interaction of the type of protection and attack

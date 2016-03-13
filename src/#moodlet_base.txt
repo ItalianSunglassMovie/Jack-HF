@@ -116,6 +116,68 @@ $slave_bad_mod[32] = 'neg_slave_ill'
 $slave_bad_mod[33] = 'neg_slave_looser'
 $slave_bad_mod[34] = 'neg_ugly'
 
+!Added moodlets for assistant - crushboss
+$assistant_good_mod[1] = 'pos_sleep'
+$assistant_good_mod[2] = 'pos_prise'
+$assistant_good_mod[3] = 'pos_slave_date'
+$assistant_good_mod[4] = 'pos_reward'
+$assistant_good_mod[5] = 'pos_orgasm'
+$assistant_good_mod[6] = 'pos_cookie'
+$assistant_good_mod[7] = 'pos_gentle'
+$assistant_good_mod[8] = 'pos_games'
+$assistant_good_mod[9] = 'pos_job'
+$assistant_good_mod[10] = 'pos_clothes'
+$assistant_good_mod[11] = 'pos_moral'
+$assistant_good_mod[12] = 'pos_no_punish'
+$assistant_good_mod[13] = 'pos_desert'
+$assistant_good_mod[14] = 'pos_well_rested'
+$assistant_good_mod[15] = 'pos_slave_clean'
+$assistant_good_mod[16] = 'pos_pony'
+$assistant_good_mod[17] = 'pos_spellguarded'
+$assistant_good_mod[18] = 'pos_artifact'
+$assistant_good_mod[19] = 'pos_slave_kannabis'
+$assistant_good_mod[20] = 'pos_slave_alco'
+$assistant_good_mod[21] = 'pos_slave_opium'
+$assistant_good_mod[22] = 'pos_slave_drunk'
+$assistant_good_mod[23] = 'pos_slave_love'
+$assistant_good_mod[24] = 'pos_slave_winner'
+$assistant_good_mod[25] = 'pos_multiple_orgasm'
+
+$assistant_bad_mod[1] = 'neg_artifact'
+$assistant_bad_mod[2] = 'neg_pain'
+$assistant_bad_mod[3] = 'neg_abuse'
+$assistant_bad_mod[4] = 'neg_disgust'
+$assistant_bad_mod[5] = 'neg_sick'
+$assistant_bad_mod[6] = 'neg_menstruation'
+$assistant_bad_mod[7] = 'neg_slave'
+$assistant_bad_mod[8] = 'neg_slave_dirty'
+$assistant_bad_mod[9] = 'neg_slave_mess'
+$assistant_bad_mod[10] = 'neg_horny'
+$assistant_bad_mod[11] = 'neg_hungry'
+$assistant_bad_mod[12] = 'neg_exhausted'
+$assistant_bad_mod[13] = 'neg_fear'
+$assistant_bad_mod[14] = 'neg_no_prise'
+$assistant_bad_mod[15] = 'neg_angst'
+$assistant_bad_mod[16] = 'neg_spoil'
+$assistant_bad_mod[17] = 'neg_rules'
+$assistant_bad_mod[18] = 'neg_bad_sleep'
+$assistant_bad_mod[19] = 'neg_prisoner'
+$assistant_bad_mod[20] = 'neg_naked'
+$assistant_bad_mod[21] = 'neg_job'
+$assistant_bad_mod[22] = 'neg_defloration'
+$assistant_bad_mod[23] = 'neg_forced'
+$assistant_bad_mod[24] = 'neg_raped'
+$assistant_bad_mod[25] = 'neg_shame'
+$assistant_bad_mod[26] = 'neg_spellbound'
+$assistant_bad_mod[27] = 'neg_slave_food'
+$assistant_bad_mod[28] = 'neg_slave_koffe'
+$assistant_bad_mod[29] = 'neg_slave_meth'
+$assistant_bad_mod[30] = 'neg_slave_opium'
+$assistant_bad_mod[31] = 'neg_slave_drunk'
+$assistant_bad_mod[32] = 'neg_slave_ill'
+$assistant_bad_mod[33] = 'neg_slave_looser'
+$assistant_bad_mod[34] = 'neg_ugly'
+
 !master positive moodlets
 $mood_description['pos_housing'] = 'I must admit that I have a very decent housing.'
 $mood_description['pos_house_clean'] = 'The house is in perfect cleanliness and order.'
@@ -302,34 +364,135 @@ $mood_description['neg_ugly'] = '   [<<$slave_name>>]
 - All these bruises and scratches... They mutilated me. I''m scared to look at myself in the mirror.'
 $mood_description['neg_'] = '   [<<$slave_name>>]
 - '
-$mood_description['neg_'] = '   [<<$slave_name>>]
+
+!Added moodlets for assistant - crushboss
+
+!positive assistant moodlet
+$mood_description_assistant['pos_prise'] = '   [<<$assistant_name>>]
+- Fair words please the conversation.'
+$mood_description_assistant['pos_slave_date'] = '   [<<$assistant_name>>]
+- I loved our walk. I would like to spend time together some another time!'
+$mood_description_assistant['pos_reward'] = '   [<<$assistant_name>>]
+- Reward for good behavior is nice. Improves mood.'
+$mood_description_assistant['pos_orgasm'] = '   [<<$assistant_name>>]
+- Well... I was so nice to get a discharge. I would not mind cumming like that once more...'
+$mood_description_assistant['pos_cookie'] = '   [<<$assistant_name>>]
+ I ate very tasty food and it is certainly nice. Food on your table is much better than in my bowl.'
+$mood_description_assistant['pos_sleep'] = '   [<<$assistant_name>>]
+- I got a good night''s sleep in my room. It is so nice sometimes to relax in comfort.'
+$mood_description_assistant['pos_slave_clean'] = '   [<<$assistant_name>>]
+- I washed recently. Nice to feel clean and fresh.'
+$mood_description_assistant['pos_well_rested'] = '   [<<$assistant_name>>]
+- I rested well yesterday, it is pleasant to slack off from time to time.'
+$mood_description_assistant['pos_desert'] = '   [<<$assistant_name>>]
+- I still remember the flavor of sweet treats. Mmmm... yummy!'
+$mood_description_assistant['pos_no_punish'] = '   [<<$assistant_name>>]
+- You decided not to punish me, although I know that I was guilty. Nice to know that you are sorry for me ^ _ ^'
+$mood_description_assistant['pos_moral'] = '   [<<$assistant_name>>]
+- I''m always happy to serve my Master. I''m a good girl, right, Master?'
+$mood_description_assistant['pos_clothes'] = "   [<<$assistant_name>>]
+- I have a very comfortable clothes. Nothing is too tight and doesn't interfere."
+$mood_description_assistant['pos_job'] = '   [<<$assistant_name>>]
+- When I do my favorite thing, I feel relieved.'
+$mood_description_assistant['pos_games'] = '   [<<$assistant_name>>]
+- Free time for entertainment - that''s just awesome! So nice to get away from worries.'
+$mood_description_assistant['pos_gentle'] = "   [<<$assistant_name>>]
+- It''s nice to feel someone''s care and affection..."
+$mood_description_assistant['pos_pony'] = '   [<<$assistant_name>>]
+- I also have my little pony - with her is is always fun!'
+$mood_description_assistant['pos_spellguarded'] = '   [<<$assistant_name>>]
+- My will was stronger than your spell! I feel much more confident.'
+$mood_description_assistant['pos_artifact'] = '   [<<$assistant_name>>]
+- This magic decoration just superb. While I wear it, the world seems a lot better than it is. I will never take it off!'
+$mood_description_assistant['pos_slave_kannabis'] = '   [<<$assistant_name>>]
+- Oooo... duuuuuuuuude... this weed is a thing. Such a bliss, we need to add some relaxing music.'
+$mood_description_assistant['pos_slave_alco'] = '   [<<$assistant_name>>]
+- I... hic... soooooo drunk. Why did you get me drunk, eh? You want to take advantage of my... hic... helpless situation?'
+$mood_description_assistant['pos_slave_opium'] = '   [<<$assistant_name>>]
+- I feel good. I feel oblivion flowing through my veins, carrying away pain and sorrow.'
+$mood_description_assistant['pos_slave_drunk'] = '   [<<$assistant_name>>]
+- I... hic... soooooo drunk. Why did you get me drunk, eh? You want to take advantage of my... hic... helpless situation?'
+$mood_description_assistant['pos_slave_love'] = '   [<<$assistant_name>>]
+- Some kind of irresistible force beckons me to you. I always think of you. I want to be beside you... forever.'
+$mood_description_assistant['pos_multiple_orgasm'] = '   [<<$assistant_name>>]
+- Ohh, it was a great sex! Such a heavenly pleasure... I would like to experience this once again.'
+$mood_description_assistant['pos_slave_winner'] = '   [<<$assistant_name>>]
+- Hooray, we won! That was amazing. I feel much more confident.'
+$mood_description_assistant['pos_'] = '   [<<$assistant_name>>]
 - '
-$mood_description['neg_'] = '   [<<$slave_name>>]
+
+!negative assistant moodlets
+$mood_description_assistant['neg_slave'] = '   [<<$assistant_name>>]
+- I got into the strange unfamiliar world and I was immediately made into ​​a slave. How do you think I feel?'
+$mood_description_assistant['neg_pain'] = '   [<<$assistant_name>>]
+- You hurt me. I still feel it, it does not go away.'
+$mood_description_assistant['neg_abuse'] = '   [<<$assistant_name>>]
+- You were swearing at me so strongly that I still feel sick from it.'
+$mood_description_assistant['neg_disgust'] = '   [<<$assistant_name>>]
+- I can not forget all this horror. Even pain is easier to endure than those hideous, horrible things that you are doing to me.'
+$mood_description_assistant['neg_sick'] = "   [<<$assistant_name>>]
+- I feel really bad. I'm dizzy."
+$mood_description_assistant['neg_menstruation'] = '   [<<$assistant_name>>]
+- I have these days... during my period(PMS). So my mood isn''t the best and I''m moody.'
+$mood_description_assistant['neg_slave_food'] = '   [<<$assistant_name>>]
+- That food you are giving me, it is not very good. To tell the truth, it is so vile that it is easier to stay hungry than to push it down my throat...'
+$mood_description_assistant['neg_slave_dirty'] = "   [<<$assistant_name>>]
+- I'm itchy from the dirt and bad smell. It would be nice to wash..."
+$mood_description_assistant['neg_slave_mess'] = '   [<<$assistant_name>>]
+- The house now is a terrible mess, dishes are unwashed, everything is upside down. Not the best conditions for life.'
+$mood_description_assistant['neg_horny'] = '   [<<$assistant_name>>]
+- Every woman from time to time needs a little bit of affection. Without this it is so sad...'
+$mood_description_assistant['neg_hungry'] = '   [<<$assistant_name>>]
+- I constantly feel hungry. I want to eat normally.'
+$mood_description_assistant['neg_exhausted'] = "   [<<$assistant_name>>]
+- I'm very tired. Seems like I'll collapse if I continue working."
+$mood_description_assistant['neg_fear'] = '   [<<$assistant_name>>]
+- I know that you can punish me for any wrongdoing, and live in constant fear. Thoughts about various horrors do not go out of my head.'
+$mood_description_assistant['neg_no_prise'] = '   [<<$assistant_name>>]
+- I tried so hard to do well, and you have not even told me a single good word.'
+$mood_description_assistant['neg_angst'] = '   [<<$assistant_name>>]
+- I do not know what will happen to me tomorrow or even the next minute. Why do I live? I feel like howling of hopelessness...'
+$mood_description_assistant['neg_spoil'] = "   [<<$assistant_name>>]
+- You do not appreciate me at all! Look, what kind of conditions are these?! Cheer me up or something! I'm bored!"
+$mood_description_assistant['neg_rules'] = '   [<<$assistant_name>>]
+- All these terrible rules that you are forcing me to do... they do not add to the joy of life, actually.'
+$mood_description_assistant['neg_bad_sleep'] = '   [<<$assistant_name>>]
+- Sleeping conditions are just terrible. My whole body numb and sore from such a "rest".'
+$mood_description_assistant['neg_prisoner'] = '   [<<$assistant_name>>]
+- I spent so much time in prison. Not the most pleasant experience...'
+$mood_description_assistant['neg_naked'] = "   [<<$assistant_name>>]
+- I have to go naked everywhere. It's cold and humiliating."
+$mood_description_assistant['neg_job'] = '   [<<$assistant_name>>]
+- You make me engage in any boring and unpleasant work. From this I have a bad mood.'
+$mood_description_assistant['neg_defloration'] = '   [<<$assistant_name>>]
+- Sex for the first time is scary and painful. I still hurts down there...'
+$mood_description_assistant['neg_forced'] = '   [<<$assistant_name>>]
+- You have coerced me into doing ugly things. I feel so helpless. And my bruises hurt.'
+$mood_description_assistant['neg_raped'] = '   [<<$assistant_name>>]
+- You raped me! I feel dirty, abused and trampled.'
+$mood_description_assistant['neg_shame'] = "   [<<$assistant_name>>]
+- God, I'm still embarrassed. Why did you make me display myself like that?"
+$mood_description_assistant['neg_spellbound'] = '   [<<$assistant_name>>]
+- Your evil spell put me down. There are strange voices whispering in my head. They drive me crazy!'
+$mood_description_assistant['neg_artifact'] = '   [<<$assistant_name>>]
+- My magic decoration! My... My... precioooous... Angry master took it away from us... gollum... poor... poor us... so lonely...'
+$mood_description_assistant['neg_slave_koffe'] = "   [<<$assistant_name>>]
+- I can not wake up before I drink some kamra. I can't even open my eyes."
+$mood_description_assistant['neg_slave_meth'] = '   [<<$assistant_name>>]
+- I feel sick. I feel very, very sick. My mouth is dry, I feel weak, my muscles ache... I NEED DUST!'
+$mood_description_assistant['neg_slave_opium'] = "   [<<$assistant_name>>]
+- I can't stand it. I NEED A DOSE, URGENTLY! Oh, please... I beg of you..."
+$mood_description_assistant['neg_slave_drunk'] = '   [<<$assistant_name>>]
+- My head still hurts after yesterday. I can not drink so much.'
+$mood_description_assistant['neg_slave_ill'] = '   [<<$assistant_name>>]
+- It hurts to go to the toilet and secretions look strange. I guess I caught something...'
+$mood_description_assistant['neg_slave_looser'] = "   [<<$assistant_name>>]
+- I'm not to blame for this loss! Opponents were too strong..."
+$mood_description_assistant['neg_ugly'] = '   [<<$assistant_name>>]
+- All these bruises and scratches... They mutilated me. I''m scared to look at myself in the mirror.'
+$mood_description_assistant['neg_'] = '   [<<$assistant_name>>]
 - '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
-$mood_description['neg_'] = '   [<<$slave_name>>]
-- '
+
 
 --- #moodlet_base ---------------------------------
 

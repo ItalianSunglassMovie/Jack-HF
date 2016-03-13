@@ -2,6 +2,9 @@
 !Calculation of input for gladiatrix combat
 !Improved - crushboss
 
+!Reset Combat Variables at the start of a new Gladiatrix Contest - crushboss
+gs '$combat_variable_reset'
+sp_txt = 0
 количество_врагов = 1
 superviser_message = 0
 a = 0
@@ -58,6 +61,12 @@ END
 IF slave['arena_level'] > 4:
  IF challenge_type = 1:
   a = RAND(1,5)
+  !Added code to have the Vatican Champion appear sooner to help avoid the Vatican Champion damage bug - crushboss
+  IF trophy_vatican = 0 and a ! 5:
+	b = RAND(1,10)
+	if b < 6: a = 5
+	b = 0
+  END
   if a = 1: $ge = 'champion_kamira'
   if a = 2: $ge = 'champion_corvus'
   if a = 3: $ge = 'champion_serpis'
@@ -94,7 +103,8 @@ IF $g_type = "flagrius":
  $extra_special_used = 'content/pic/buttons/whip_used.gif'
 END
 
-IF $g_type = "dimacherus":
+IF $g_type = "dimacherus" or $g_type = '':
+ $g_type = "dimacherus"
  $extra_special_active = 'content/pic/buttons/dual_active.gif'
  $extra_special_used = 'content/pic/buttons/dual_used.gif'
 END

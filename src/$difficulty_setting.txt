@@ -1,0 +1,81 @@
+# $difficulty_setting
+!Difficulty Setting - created by crushboss
+
+!Easy difficulty setting for tutorial / demo mode - crushboss
+if exam_in_progress = 1: difficulty_setting = 1
+
+!Obedience adjustments for difficulty setting - crushboss
+
+!Easy
+IF difficulty_setting = 1:
+	IF slave_state ! CONST_INT['no_exist']:
+		slave['obedience_difficulty'] = 2
+		slave_obedience_bonus += 4
+		if rules_count < 3: rules_count = 3
+		if daily_reward_count > 2: daily_reward_count = 2
+		if slave["spoil"] > 3: slave["spoil"] = 3 & slave_rate["spoil"] = 10
+		if slave["angst"] > 3: slave["angst"] = 3 & slave_rate["angst"] = 10
+	END
+	IF assistant_state ! CONST_INT['no_exist']:
+		assistant['obedience_difficulty'] = 2
+		assistant_obedience_bonus += 4
+	END
+	IF prisoner_state ! CONST_INT['no_exist']:
+		prisoner['obedience_difficulty'] = 2
+		prisoner_obedience_bonus += 4
+	END
+END
+
+!Normal
+IF difficulty_setting = 0:
+	IF slave_state ! CONST_INT['no_exist']:
+		slave['obedience_difficulty'] = 4
+		if rules_count = 2: rules_count = 3
+		if daily_reward_count = 3: daily_reward_count = 2
+	END
+	IF assistant_state ! CONST_INT['no_exist']:
+		assistant['obedience_difficulty'] = 4
+	END
+	IF prisoner_state ! CONST_INT['no_exist']:
+		prisoner['obedience_difficulty'] = 4
+	END
+END
+
+!Difficult/Hardcore
+IF difficulty_setting = 2:
+	IF slave_state ! CONST_INT['no_exist']:
+		if slave['age_count'] = 0: slave['obedience_difficulty'] = 14
+		if slave['age_count'] = 1: slave['obedience_difficulty'] = 13
+		if slave['age_count'] = 2: slave['obedience_difficulty'] = 12
+		if slave['age_count'] = 3: slave['obedience_difficulty'] = 11
+		if slave['age_count'] = 4: slave['obedience_difficulty'] = 10
+		if slave['age_count'] = 5: slave['obedience_difficulty'] = 9
+		if slave['age_count'] = 6: slave['obedience_difficulty'] = 8
+		if slave['age_count'] = 7: slave['obedience_difficulty'] = 7
+		if slave['age_count'] >= 8: slave['obedience_difficulty'] = 6
+	END
+	IF assistant_state ! CONST_INT['no_exist']:
+		if assistant['age_count'] = 0: assistant['obedience_difficulty'] = 14
+		if assistant['age_count'] = 1: assistant['obedience_difficulty'] = 13
+		if assistant['age_count'] = 2: assistant['obedience_difficulty'] = 12
+		if assistant['age_count'] = 3: assistant['obedience_difficulty'] = 11
+		if assistant['age_count'] = 4: assistant['obedience_difficulty'] = 10
+		if assistant['age_count'] = 5: assistant['obedience_difficulty'] = 9
+		if assistant['age_count'] = 6: assistant['obedience_difficulty'] = 8
+		if assistant['age_count'] = 7: assistant['obedience_difficulty'] = 7
+		if assistant['age_count'] >= 8: assistant['obedience_difficulty'] = 6
+	END
+	IF prisoner_state ! CONST_INT['no_exist']:
+		if prisoner['age_count'] = 0: prisoner['obedience_difficulty'] = 14
+		if prisoner['age_count'] = 1: prisoner['obedience_difficulty'] = 13
+		if prisoner['age_count'] = 2: prisoner['obedience_difficulty'] = 12
+		if prisoner['age_count'] = 3: prisoner['obedience_difficulty'] = 11
+		if prisoner['age_count'] = 4: prisoner['obedience_difficulty'] = 10
+		if prisoner['age_count'] = 5: prisoner['obedience_difficulty'] = 9
+		if prisoner['age_count'] = 6: prisoner['obedience_difficulty'] = 8
+		if prisoner['age_count'] = 7: prisoner['obedience_difficulty'] = 7
+		if prisoner['age_count'] >= 8: prisoner['obedience_difficulty'] = 6
+	END
+END	
+--- $difficulty_setting ---------------------------------
+

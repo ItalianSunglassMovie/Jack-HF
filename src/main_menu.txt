@@ -1,11 +1,25 @@
 # main_menu
-!main menu of the game
-IF sound_on = 1 and warning_pass = 1:
- play 'content/snd/mainscreen.mp3', music_volume, 'only, loop'
- else
- close 'content/snd/mainscreen.mp3'
-end
+!Main Start menu of the game
+!Overhauled by crushboss
+
+gs 'start_refresh'
+
+!AddOn - Initialisation
+$title_fix = 'Jack HF 1.7.2 by crushboss'
+$game_ver = $title_fix
+gs '$addon_custom_data'
+
+gs '#place_base'
+gs 'refresh_database'
+gs '$end_day_variable_reset'
+gs '$combat_variable_reset'
 gs 'init_game'
+
+IF sound_on = 1 and warning_pass = 1:
+	play 'content/snd/mainscreen.mp3', music_volume, 'only, loop'
+else
+	close 'content/snd/mainscreen.mp3'
+END
 
 a = RAND(1,3)
 if a = 1: $backimage = 'content/pic/title.jpg'

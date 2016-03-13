@@ -248,7 +248,7 @@ $медик_справка = '<center>MEDIC<br>
 <font color="#0000CD">Doctor</font>
 <font color="#008080">Physician</font>
 <font color="#008000">Surgeon</font></center>'
-$медик_совет = '  A competent medic can train nurses and can quickly cure sick and injured slaves. The level of your nurses cannot exceed the level of your physician skill during personal lessons. Increases automatically when training nurses.'
+$медик_совет = '  A competent medic and alchemist can train witchdoctors and can quickly cure sick and injured slaves. The level of your witchdoctors cannot exceed the level of your physician and alchemist skill during personal lessons. Increases automatically when training witchdoctors.'
 
 $боец_справка = '<center>FIGHTER<br>
 <font color="#cd0000">Non-combatant</font>
@@ -311,7 +311,7 @@ $no_money_school = '  I do not have enough money to send my slave to school.'
 
 $no_money_coach= '  I do not have enough money to hire a tutor for my slave.'
 
-$no_bouduar = '  I do not have a boudoir for my slave to sleep in. I must talk to the realtor in the White City Trade Square to purchase one.'
+$no_bouduar = '  I do not have a boudoir for my slave to sleep in. I must talk to the realtor in the White Town Trade Square to purchase one.'
 
 $no_tentacle = '  I have no fiend to milk, I need to procure one.'
 
@@ -333,7 +333,7 @@ $max_skill = '	This skill is maxed and cannot be trained further.'
 
 $assistant_skill = '	Your assistant''s skill is not sufficient to train your slave further.'
 
-$no_lab = '  This house has no laboratory. I must talk to the realtor in the White City Trade Square to purchase one.'
+$no_lab = '  This house has no laboratory. I must talk to the realtor in the White Town Trade Square to purchase one.'
 
 $no_slave = '  I have no slave to assist, I need to procure one.'
 
@@ -394,7 +394,7 @@ $дворецкий_с_справка = "  Stewardship combines the knowledge of
 
 $артдиректор_с_справка = '  Artistry comes in many forms. Painting, singing, dancing, music, public speaking, even some more esoteric skills such as stripping and seduction.'
 
-$медик_с_справка = '  A competent medic can train nurses and can quickly cure sick and injured slaves.'
+$медик_с_справка = '  A competent medic and alchemist can train witchdoctors and can quickly cure sick and injured slaves.'
 
 $боец_с_справка = "   Martial skill is useful both to train a gladiatrix and in real combat. Your capacity to learn special techniques from the Colosseum trainer and the duration of your strikes effects are both dependent upon your combat skill."
 

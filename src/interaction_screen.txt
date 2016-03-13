@@ -130,7 +130,7 @@ IF npc = 0 and $interaction_type = 'self_sex_lesson_special':
 </div>'  
 END
 
-IF $interaction_type = 'talk':
+IF $interaction_type = 'talk' or show_slave_fullimage = 1:
  npc = 1
  $npc_id = '<<$slave_name>>'
  $place = 'study'
@@ -138,6 +138,15 @@ IF $interaction_type = 'talk':
  *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
  if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>'
 ! if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$fullimage[slave_type]>>.gif"></div>'
+END
+
+IF show_assistant_fullimage = 1:
+ npc = 1
+ $npc_id = '<<$assistant_name>>'
+ $place = 'study'
+ $special_bg = $study
+ *p '<div id = "bg"><img src="content\pic\bg\<<$bg[$place]>>.jpg"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$assistant["fullimage"]>>.gif"></div>'
 END
 
 IF $interaction_type = 'talk_assistant':
@@ -178,6 +187,12 @@ if txt > 1:
  addobj '<img src = "content\pic\buttons\noback_button.png">' 
 END 
 addobj '<img src = "content\pic\buttons\forward_button.png">'
+
+!Tutorial sex training - bug fix - crushboss
+IF exam_in_progress = 1 and $interaction_type = 'self_sex_lesson' and txt > 4:
+	killobj
+	GT 'demo_menu_form'
+END
 
 --- interaction_screen ---------------------------------
 

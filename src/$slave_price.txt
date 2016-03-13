@@ -18,6 +18,7 @@ $rating_help = ''
 slave["obedience"] = 0
 slave_mood_bonus = 0
 slave_obedience_bonus = 0
+slave_obedience_penalty = 0
 slave_nature = 0
 slave_fear_bonus = 0
 
@@ -188,10 +189,13 @@ if slave["roleplay"] >= 5: max_sex += 1
 maxsum = max_skill + max_sex
 
 !Calculate slave obedience - crushboss
+
+gs '$difficulty_setting'
+
 if slave["mood"] > 0: slave_mood_bonus = 1 + (slave["mood"]/2)
-slave_obedience_bonus = 0 + slave["meekness"]
-if slave["courage"] = 2: slave["fear"] = 0
-if slave["courage"] = 1: slave["fear"] = (slave["fear"]/2)
+slave_obedience_bonus += slave["meekness"]
+if slave["courage"] = 2: slave_obedience_penalty += 6
+if slave["courage"] = 1: slave_obedience_penalty += 4
 if slave["courage"] = -1: slave_obedience_bonus += slave["fear"]
 slave_nature = (slave["pride"] + slave["temper"] + slave["ego"] + slave["intellect"])
 IF slave_nature < 11:
@@ -209,7 +213,7 @@ IF slave_nature < 11:
 END
 if slave["age"] = CONST_INT['loli_age']: slave_obedience_bonus += 2
 if slave["age"] = CONST_INT['young_age']: slave_obedience_bonus += 1
-slave["obedience"] = slave_obedience_bonus + slave_mood_bonus + slave_fear_bonus + (slave["moral"]*2) + (slave["instinct"]*2) + slave["custom"] + slave["rational"] - (slave["spoil"] + (slave['obedience_difficulty']/2) + slave["pride"] + slave["temper"] + slave["ego"] + slave["intellect"])
+slave["obedience"] = slave_obedience_bonus + slave_mood_bonus + slave_fear_bonus + (slave["moral"]*2) + (slave["instinct"]*2) + slave["custom"] + slave["rational"] - ((slave["spoil"]*2) + (slave['obedience_difficulty']/2) + slave_obedience_penalty + slave["pride"] + slave["temper"] + slave["ego"] + slave["intellect"])
 if $slave_psy_status = 'broken': slave["obedience"] = 100
 
 !Calculate Slave Rating

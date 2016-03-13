@@ -5,6 +5,11 @@
 
 tattoo_brand = 0
 
+$slave["prev_primary_wpn"] = ''
+$slave["prev_secondary_wpn"] = ''
+$assistant["prev_primary_wpn"] = ''
+$assistant["prev_secondary_wpn"] = ''
+
 temp = slave_state
 slave_state = assistant_state
 assistant_state = temp
@@ -95,13 +100,6 @@ $assistant_psy_basic = $temp_psy_basic
 assistant_virginity = temp_virginity
 $assistant_ava = $temp_ava
 
-tempo["mood"] = slave_prev["mood"]
-tempo["arousal"] = slave_prev["mood"]
-slave["mood"] = assistant_prev["mood"]
-slave["arousal"] = assistant_prev["arousal"]
-assistant["mood"] = tempo["mood"]
-assistant["arousal"] = tempo["mood"]
-
 !Added fix for milk gain on slave/assistant switch - crushboss
 tempo['milk_gain'] = slave['milk_gain']
 slave['milk_gain'] = assistant['milk_gain']
@@ -109,6 +107,10 @@ assistant['milk_gain'] = tempo['milk_gain']
 tempo['cream_gain'] = slave['cream_gain']
 slave['cream_gain'] = assistant['cream_gain']
 assistant['cream_gain'] = tempo['cream_gain']
+
+$tmp = $g_type
+$g_type = $g_type_assistant
+$g_type_assistant = $tmp
 
 tmp = prise_promised
 prise_promised = prise_promised_assistant
@@ -266,8 +268,6 @@ if assistant_tentacle_rule = 1 and assistant_state = 1: slave_tentacle_rule = 0
 if slave_state = CONST_INT['no_exist']: slave_tentacle_rule = 0
 if slave_tentacle_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_tentacle_rule = 0
 if assistant_state ! 1: assistant_tentacle_rule = 0
-if pet_tentacle > 0 and assistant_state = 1 and slave_tentacle_rule ! 1: assistant_tentacle_rule = 1
-if pet_tentacle > 0 and slave_state = CONST_INT['slave_exist'] and assistant_state ! 1: slave_tentacle_rule = 1
 
 !Fixes a bug with the initial slave and assistant ratings - crushboss
 change_loc = 1

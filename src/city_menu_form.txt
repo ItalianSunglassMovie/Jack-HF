@@ -65,22 +65,21 @@ Cancel
 '
   !FUNC('$menu', 'city_form', $menu_item_, menu_, '')
 
+!Energy loss will occur with the regular menu now instead of only with the quick travel buttons - crushboss
 IF city_form = 0:
   $place = 'city' 
-  if homerun = 0: master_energy -= 1 & homerun = 1 
   FUNC('$menu', 'spacer', 1)
 
   FUNC('$menu', '===BEGIN===', 'column_0') 
 
-  FUNC('$menu', 'city_form', $menu_item_town, menu_town, 'White Town')
-  FUNC('$menu', 'city_form', $menu_item_Bull, menu_Bull, 'Quarter of the Bull')
-  FUNC('$menu', 'city_form', $menu_item_Serpentine, menu_Serpentine, 'Serpentine Quarter')
-  FUNC('$menu', 'city_form', $menu_item_Outcasts, menu_Outcasts, 'Quarter of the Outcasts')
-  FUNC('$menu', 'city_form', $menu_item_Necropolis, menu_Necropolis, 'Necropolis')
-  FUNC('$menu', 'city_form', $menu_item_Border, menu_Border, 'Border of the Fogs')
+  FUNC('$menu', 'exec_options', $menu_item_town, 'city_form = 1 & $quick_move_action = "go" & gt "sjm_UI_UIadds"', 'White Town')
+  FUNC('$menu', 'exec_options', $menu_item_Bull, 'city_form = 2 & $quick_move_action = "go" & gt "sjm_UI_UIadds"', 'Quarter of the Bull')
+  FUNC('$menu', 'exec_options', $menu_item_Serpentine, 'city_form = 3 & $quick_move_action = "go" & gt "sjm_UI_UIadds"', 'Serpentine Quarter')
+  FUNC('$menu', 'exec_options', $menu_item_Outcasts, 'city_form = 4 & $quick_move_action = "go" & gt "sjm_UI_UIadds"', 'Quarter of the Outcasts')
+  FUNC('$menu', 'exec_options', $menu_item_Necropolis, 'city_form = 5 & $quick_move_action = "go" & gt "sjm_UI_UIadds"', 'Necropolis')
+  FUNC('$menu', 'exec_options', $menu_item_Border, 'city_form = 6 & $quick_move_action = "go" & gt "sjm_UI_UIadds"', 'Border of the Fogs')
 
   FUNC('$menu', '===END===')
- !$text_display += {<br><div id="under">Вернуться домой <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & city_form = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"><font color="#ffff00"></font></a></div></div>}
 END
 
 IF city_form = 1:
@@ -587,10 +586,28 @@ IF city_form = 1000:
    else
    $setting_display_r += {<br><div id="under">Gore is currently not shown in game<br><div id = "clear"><a href = 'EXEC: dynamic $guro_on & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>} 
   END
+
+  $setting_display_r += {<br><div id="under_gray">{ { { Obedience Difficulty Setting } } }<br></div>}
+  
+  IF difficulty_setting ! 1:
+   $setting_display_r += {<br><div id="under_gray">Easy<br><div id = "clear"><a href = 'EXEC: difficulty_setting = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<br><div id="under">Easy<br></div>}
+  END
+  IF difficulty_setting ! 0:
+   $setting_display_r += {<div id="under_gray">Classic/Normal<br><div id = "clear"><a href = 'EXEC: difficulty_setting = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<div id="under">Classic/Normal<br></div>}
+  END
+  IF difficulty_setting ! 2:
+   $setting_display_r += {<div id="under_gray">Difficult/Hardcore<br><div id = "clear"><a href = 'EXEC: difficulty_setting = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+   else
+   $setting_display_r += {<div id="under">Difficult/Hardcore<br></div>}
+  END
   
   $setting_display_r += {<br><br><div id="under_gray">{ { { SOUND SETTINGS } } }<br></div>}
 
-  $setting_display_c += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: city_form = $prev_city_form & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $setting_display_c += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: gs "$newloc" & city_form = $prev_city_form & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 !  $setting_display_c2 += {<br><div id="under_gray"> Next <br></div>}
 !  $setting_display_c2 += {<br><div id="under_gray"> Next <br><div id = "clear"><img src = "content\pic\clear.gif"></div></div>}
 END

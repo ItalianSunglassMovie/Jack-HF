@@ -123,28 +123,23 @@ stock_inventory['plain_headband'] = 1
 stock_inventory['golden_collar'] = 1
 stock_inventory['leather_collar'] = 1
 stock_inventory['spiked_collar'] = 1
-stock_inventory['sun_dress'] = 1
 stock_inventory['common_apron'] = 1
 stock_inventory['maid_dress'] = 1
-stock_inventory['nurse_dress'] = 1
 stock_inventory['enchanter_robe'] = 1
-stock_inventory['leotard'] = 1
-stock_inventory['chainmail_bikini'] = 1
 stock_inventory['laced_underwear'] = 1
 stock_inventory['bellydance'] = 1
-stock_inventory['leather_corset'] = 1
 stock_inventory['anal_tail'] = 1
 stock_inventory['exotic_wig'] = 1
 stock_inventory['pony_plume'] = 1
 stock_inventory['incrusted_earrings'] = 4
-stock_inventory['golden_collar'] = 1
-stock_inventory['leather_gloves'] = 1
 stock_inventory['ponygirl_harness'] = 1
 stock_inventory['nipple_chain'] = 1
 stock_inventory['high_heels'] = 1
 stock_inventory['high_boots'] = 1
 stock_inventory['hoofed_boots'] = 1
 stock_inventory['incrusted_ring'] = 4
+stock_inventory['belly_ring'] = 1
+stock_inventory['tongue_barbell'] = 1
 
 !Slave Equipped Gear
 $stock["earrings"] = 'incrusted_earrings'
@@ -156,6 +151,8 @@ $stock["clitring"] = 'incrusted_earrings'
 $stock["boots"] = 'high_boots'
 $stock["ring_left"] = 'incrusted_ring'
 $stock["ring_right"] = 'incrusted_ring'
+$stock["naval"] = 'belly_ring'
+$stock["tongue"] = 'tongue_barbell'
 
 !Slave Rules
 stock_sleep_condition = 1

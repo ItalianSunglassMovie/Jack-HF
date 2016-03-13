@@ -224,6 +224,9 @@ $item_property["пусто"] = {
 dynamic $ib_cycle, 'голая', 'Strip naked', 0, '   Your slave is completely naked.', 'scene\'
 
 $item_property["голая"] = {
+    if assistant_item = 1:
+     daily_bonus_assistant["mood"] -= 1
+	end    
     daily_bonus["mood"] -= 1
 }
 
@@ -233,6 +236,7 @@ dynamic $ib_cycle, 'common_apron', 'Frilly Apron', 5, '   Price: 5 sparks. <br> 
 $item_property["common_apron"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     learn_bonus_assistant["cook"] += 1
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
@@ -246,6 +250,7 @@ dynamic $ib_cycle, 'maid_dress', 'Maid Outfit', 5, '   Price: 5 sparks.  <br>   
 $item_property["maid_dress"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     learn_bonus_assistant["service"] += 1
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
@@ -258,6 +263,7 @@ dynamic $ib_cycle, 'nurse_dress', 'Nurse Outfit', 5, '   Price: 5 sparks.  <br> 
 
 $item_property["nurse_dress"] = {
     if assistant_item = 1:
+    learn_bonus_assistant["nurse"] += 1
      assistant_rate["style"] += 1
      assistant["st_plus"] += 1
     end
@@ -272,6 +278,8 @@ dynamic $ib_cycle, 'sailor_foku', 'School Uniform', 10, '   Price: 10 sparks  <b
 $item_property["sailor_foku"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     learn_bonus_assistant["secretary"] += 1
+     learn_bonus_assistant["academy"] += 1
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
@@ -286,6 +294,7 @@ dynamic $ib_cycle, 'enchanter_robe', 'Sorceress Robes', 5, '   Price: 5 sparks  
 $item_property["enchanter_robe"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 0
+     learn_bonus_assistant["enchanter"] += 2
     end
     slave_rate["style"] += 0
     learn_bonus["enchanter"] += 2
@@ -295,6 +304,10 @@ $item_property["enchanter_robe"] = {
 dynamic $ib_cycle, 'leotard', 'Athletic Leotard', 5, '   Price: 5 sparks  <br>   A tight leotard which emphasizes the shape of your slave while not hampering her movements. Perfect for any sports activity, except for battles.', 'scene\item\item_leotard'
 
 $item_property["leotard"] = {
+	if assistant_item = 1:
+	 learn_bonus_assistant["stamina"] += 1
+     learn_bonus_assistant["callisthenics"] += 1
+    end
     learn_bonus["stamina"] += 1
     learn_bonus["callisthenics"] += 1
 }
@@ -305,6 +318,8 @@ dynamic $ib_cycle, 'chainmail_bikini', 'Chainmail Bikini', 5, '   Price: 5 spark
 $item_property["chainmail_bikini"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     learn_bonus_assistant["stamina"] += 1
+     learn_bonus_assistant["gladiatrix"] += 2
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
@@ -319,6 +334,8 @@ dynamic $ib_cycle, 'sun_dress', 'Light Sundress', 5, '   Price: 5 sparks  <br>  
 $item_property["sun_dress"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     daily_bonus_assistant["mood"] += 1
+     if assistant["pos_clothes"] < 2: assistant["pos_clothes"] += 1
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
@@ -333,6 +350,8 @@ dynamic $ib_cycle, 'laced_underwear', 'Lace Underwear', 5, '   Price: 5 sparks  
 $item_property["laced_underwear"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     learn_bonus_assistant["sex"] += 1
+     daily_bonus_assistant["arousal"] += 2
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
@@ -359,6 +378,7 @@ dynamic $ib_cycle, 'rubber_dress', 'Latex Dress', 20, '   Price: 20 sparks  <br>
 $item_property["rubber_dress"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 2
+     learn_bonus_assistant["sex"] += 1
      assistant["st_plus"] += 2
     end
     slave_rate["style"] += 2 
@@ -373,15 +393,13 @@ $item_property["bellydance"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 2 
      assistant_rate["exotic_bonus"] += 20
-     assistant_rate["sensitivity"] += 1
-     assistant_rate["ego"] += 1
+     daily_bonus_assistant["arousal"] += 1 
+     learn_bonus_assistant["callisthenics"] += 1
      assistant["ex_plus"] += 2
      assistant["st_plus"] += 2
     end
     slave_rate["style"] += 2 
     slave_rate["exotic_bonus"] += 20
-    daily_bonus["sensitivity"] += 1
-    daily_bonus["ego"] += 1
     daily_bonus["arousal"] += 1 
     learn_bonus["callisthenics"] += 1
     slave["ex_plus"] += 2
@@ -394,6 +412,7 @@ dynamic $ib_cycle, 'ukata', 'Kimono-Yukata', 20, '   Price: 20 sparks  <br>   Be
 $item_property["ukata"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 2
+     learn_bonus_assistant["expression"] += 1
      assistant["st_plus"] += 2
     end
     slave_rate["style"] += 2
@@ -406,7 +425,9 @@ dynamic $ib_cycle, 'leather_corset', 'Leather Corset', 50, '   Price: 50 sparks 
 
 $item_property["leather_corset"] = {
     if assistant_item = 1:
+     daily_bonus_assistant["arousal"] += 1
      assistant_rate["style"] += 2
+     learn_bonus_assistant["sex"] += 2
      assistant["st_plus"] += 2
     end
     daily_bonus["arousal"] += 1
@@ -433,6 +454,8 @@ dynamic $ib_cycle, 'wedding_dress', 'Wedding Dress', 100, '   Price: 100 sparks 
 $item_property["wedding_dress"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 3
+     daily_bonus_assistant["mood"] += 2
+     if assistant["pos_clothes"] < 3: assistant["pos_clothes"] += 2
      assistant["st_plus"] += 3
     end
     slave_rate["style"] += 3
@@ -446,7 +469,11 @@ $item_property["wedding_dress"] = {
 dynamic $ib_cycle, 'rubber_gloves', 'Rubber Gloves', 5, '   Price: 5 sparks  <br>   Although rubber gloves do not complement any costume and will not decorate the hands of your slave, they have a lot of applications. These gloves will protect the delicate skin of the slave while cleaning and washing dishes. It also comes in handy for some medical procedures.', 'scene\item\item_rubber_gloves'
 
 $item_property["rubber_gloves"] = {
-    learn_bonus["nurse"] += 1
+	if assistant_item = 1:
+	 learn_bonus_assistant["nurse"] += 1
+     learn_bonus_assistant["service"] += 1
+    end
+	learn_bonus["nurse"] += 1
     learn_bonus["service"] += 1
 }
 
@@ -468,6 +495,7 @@ dynamic $ib_cycle, 'plastic_bracers', 'Carbon Fiber Gloves', 10, '   Price: 10 s
 $item_property["plastic_bracers"] = {
     if assistant_item = 1:
      assistant_rate["style"] -= 1
+     learn_bonus_assistant["gladiatrix"] += 2
      assistant["st_plus"] -= 1
     end
     slave_rate["style"] -= 1
@@ -481,6 +509,7 @@ dynamic $ib_cycle, 'fluffy_gloves', 'Fluffy Paws', 5, '   Price: 10 sparks  <br>
 $item_property["fluffy_gloves"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     learn_bonus_assistant["pet"] += 1
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
@@ -494,6 +523,7 @@ dynamic $ib_cycle, 'leather_gloves', 'Leather Gloves', 10, '   Price: 10 sparks 
 $item_property["leather_gloves"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     learn_bonus_assistant["gladiatrix"] += 1
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
@@ -505,6 +535,9 @@ $item_property["leather_gloves"] = {
 dynamic $ib_cycle, 'tabi', 'Tabi Socks', 5, '   Price: 10 sparks  <br>   This type of thick socks is cut with a separate thumb. Classic footwear for martial arts and silent movement. These socks will last through any sort of training.', 'scene\item\item_tabi'
 
 $item_property["tabi"] = {
+	if assistant_item = 1:
+	 learn_bonus_assistant["gladiatrix"] += 1
+	end
     learn_bonus["gladiatrix"] += 1
 }
 
@@ -512,7 +545,11 @@ $item_property["tabi"] = {
 dynamic $ib_cycle, 'fluffy_stepins', 'Soft Slippers', 5, '   Price: 5 sparks  <br>   We offer a variety of options for soft and fluffy slippers, which will create an incredible feeling of warmth and comfort. We even have options in the form of muzzles of different cute animals!', 'scene\item\item_fluffy_stepins'
 
 $item_property["fluffy_stepins"] = {
-    daily_bonus["mood"] += 1
+	if assistant_item = 1:
+	 daily_bonus_assistant["mood"] += 1
+     if assistant["pos_clothes"] < 1: assistant["pos_clothes"] += 1
+    end
+	daily_bonus["mood"] += 1
     if slave["pos_clothes"] < 1: slave["pos_clothes"] += 1
 }
 
@@ -520,6 +557,9 @@ $item_property["fluffy_stepins"] = {
 dynamic $ib_cycle, 'pointes', 'Pointes', 5, '   Price: 5 sparks  <br>   Indispensable attribute of every ballerina - pointes. The most comfortable shoes for ballroom dancing.', 'scene\item\item_pointes'
 
 $item_property["pointes"] = {
+	if assistant_item = 1:
+	 learn_bonus_assistant["callisthenics"] += 1
+	end
     learn_bonus["callisthenics"] += 1
 }
 
@@ -527,6 +567,9 @@ $item_property["pointes"] = {
 dynamic $ib_cycle, 'sneakers', 'Sneakers', 5, '   Price: 5 sparks  <br>   Comfortable and practical footwear for sports and everyday wear.', 'scene\item\item_sneakers'
 
 $item_property["sneakers"] = {
+	if assistant_item = 1:
+	 learn_bonus_assistant["stamina"] += 1
+	end
     learn_bonus["stamina"] += 1
 }
 
@@ -549,6 +592,9 @@ $item_property["high_boots"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
      assistant["st_plus"] += 1
+     learn_bonus_assistant["sex"] += 1
+     learn_bonus_assistant["stamina"] += 1
+     daily_bonus_assistant["arousal"] += 1     
     end
     slave_rate["style"] += 1
     slave["st_plus"] += 1
@@ -619,11 +665,13 @@ $item_property["belly_ring"] = {
     if assistant_item = 1:
      assistant_rate["exotic_bonus"] += 8
      assistant_rate["style"] += 1
+     daily_bonus_assistant["arousal"] += 1
      assistant["st_plus"] += 1
      assistant["ex_plus"] += 1
     end
     slave_rate["exotic_bonus"] += 8
     slave_rate["style"] += 1
+    daily_bonus["arousal"] += 1
     slave["st_plus"] += 1
     slave["ex_plus"] += 1
 }
@@ -635,9 +683,11 @@ $item_property["tongue_barbell"] = {
     if assistant_item = 1:
      assistant_rate["exotic_bonus"] += 12
      assistant["ex_plus"] += 1
+     daily_bonus_assistant["arousal"] += 1
     end
     slave_rate["exotic_bonus"] += 12
     slave["ex_plus"] += 1
+    daily_bonus["arousal"] += 1
 }
 
 !["plain_pendant"]
@@ -692,6 +742,10 @@ $item_property["incrusted_tiara"] = {
 dynamic $ib_cycle, 'plain_headband', 'Headband', 3, '   Price: 3 sparks  <br>   This accessory is designed not only as an accessory, but for everyday use. The lightweight and flexible headband allows to neatly tuck away hair so that it does not conceal the face.', 'scene\item\item_headband'
 
 $item_property["plain_headband"] = {
+	if assistant_item = 1:
+	 if assistant["pos_clothes"] < 1: assistant["pos_clothes"] = 1
+     daily_bonus_assistant["mood"] += 1
+    end
     if slave["pos_clothes"] < 1: slave["pos_clothes"] = 1
     daily_bonus["mood"] += 1
 }
@@ -702,6 +756,7 @@ dynamic $ib_cycle, 'glasses', 'Stylish Glasses', 10, '   Price: 10 sparks  <br> 
 $item_property["glasses"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     learn_bonus_assistant["secretary"] += 1
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
@@ -715,6 +770,7 @@ dynamic $ib_cycle, 'nekomimi', 'Cat Ears', 10, '   Price: 10 sparks  <br>   Larg
 $item_property["nekomimi"] = {
     if assistant_item = 1:
      assistant_rate["exotic_bonus"] += 5
+     learn_bonus_assistant["pet"] += 1
      assistant["ex_plus"] += 1
     end
     slave_rate["exotic_bonus"] += 5
@@ -729,6 +785,10 @@ $item_property["golden_collar"] = {
     if assistant_item = 1:
      assistant_rate["exotic_bonus"] += 15
      assistant_rate["style"] += 1
+     daily_bonus_assistant["custom"] += 1
+     daily_bonus_assistant["instinct"] += 1
+     daily_bonus_assistant["rational"] += 1
+     assistant['slave_collar'] = 1
      assistant["ex_plus"] += 2
      assistant["st_plus"] += 2
     end
@@ -778,6 +838,10 @@ $item_property["exotic_wig"] = {
 dynamic $ib_cycle, 'hijab', 'Hijab', 3, '   Price: 3 sparks  <br>   A hijab completely covers the hair. Perhaps not the best kind of jewelry for the head, but it is very practical in everyday affairs. The hair will not fall into the soup or interfere during cleaning!', 'scene\item\item_hijab'
 
 $item_property["hijab"] = {
+	if assistant_item = 1:
+     learn_bonus_assistant["service"] += 1
+     learn_bonus_assistant["cook"] += 1
+    end	
     learn_bonus["service"] += 1
     learn_bonus["cook"] += 1
 }
@@ -786,10 +850,16 @@ $item_property["hijab"] = {
 dynamic $ib_cycle, 'leather_collar', 'Leather Collar', 3, '   Price: 3 sparks  <br>   Wide leather collar with studs and rings for attaching a leash and shackles. Wearing one of these, your slave will never forget about her fate. Not to mention the fact that it''s just very practical for many games.', 'scene\item\item_leather_collar'
 
 $item_property["leather_collar"] = {
-    daily_bonus["ego"] -= 1
+	if assistant_item = 1:
+     daily_bonus_assistant["pride"] -= 1
+     daily_bonus_assistant["custom"] += 1
+     daily_bonus_assistant["instinct"] += 1
+     learn_bonus_assistant["pet"] += 1
+     assistant['slave_collar'] = 1
+    end	
     daily_bonus["pride"] -= 1
     daily_bonus["custom"] += 1
-    daily_bonus["instinct"] += 2
+    daily_bonus["instinct"] += 1
     learn_bonus["pet"] += 1
     slave['slave_collar'] = 1
 }
@@ -798,11 +868,17 @@ $item_property["leather_collar"] = {
 dynamic $ib_cycle, 'steel_collar', 'Steel Collar', 10, '   Durable steel collar - heavy reminder of the fate of the slave from which it is impossible to get rid of. Wearing a steel collar is not a pleasent experience - it rubs the neck and grazes the skin. Not to mention the impact on the pride and conceit. It is engraved with your name and address to get her back in case of loss. (10 sparks)', 'scene\item\item_steel_collar'
 
 $item_property["steel_collar"] = {
-    daily_bonus["ego"] -= 1
+	if assistant_item = 1:
+     daily_bonus_assistant["mood"] -= 3
+     daily_bonus_assistant["pride"] -= 1
+     daily_bonus_assistant["custom"] += 2
+     daily_bonus_assistant["instinct"] += 2
+     assistant['slave_collar'] = 1
+    end	
     daily_bonus["mood"] -= 3
     daily_bonus["pride"] -= 1
-    daily_bonus["custom"] += 3
-    daily_bonus["instinct"] += 3
+    daily_bonus["custom"] += 2
+    daily_bonus["instinct"] += 2
     slave['slave_collar'] = 1
 }
 
@@ -810,6 +886,14 @@ $item_property["steel_collar"] = {
 dynamic $ib_cycle, 'spiked_collar', 'Spiked Collar', 10, '   Price: 10 sparks  <br>   Brutal form of a collar decorated with long and sharp steel spikes. It not only reminds the slave of her status, but also makes her feel more aggressive. Good accessory for a gladiatrix, and indeed for any temperamental bitch.', 'scene\item\item_spiked_collar'
 
 $item_property["spiked_collar"] = {
+	if assistant_item = 1:
+     daily_bonus_assistant["custom"] += 1
+	 daily_bonus_assistant["instinct"] += 1
+     daily_bonus_assistant["rational"] += 1
+     learn_bonus_assistant["pet"] += 1
+     learn_bonus_assistant["gladiatrix"] += 1
+     assistant['slave_collar'] = 1
+    end	
     daily_bonus["custom"] += 1
 	daily_bonus["instinct"] += 1
     daily_bonus["rational"] += 1
@@ -822,8 +906,13 @@ $item_property["spiked_collar"] = {
 dynamic $ib_cycle, 'dog_collar', 'Collar and Leash', 5, '   Price: 5 sparks  <br>   Provided with a leash, it is immediately obvious that this is not made for humans, but for a pet. Help set up a slave in the right mood, but it''s easy to remove. This collar is not meant to remind your slave of her fate, as it is obviously a pet collar, not a slave collar.', 'scene\item\item_dog_collar'
 
 $item_property["dog_collar"] = {
-    daily_bonus["ego"] -= 1
-    daily_bonus["instinct"] += 1
+	if assistant_item = 1:
+	 daily_bonus_assistant["mood"] += 1
+	 daily_bonus_assistant["pride"] -= 1
+     learn_bonus_assistant["pet"] += 1
+    end
+    daily_bonus["mood"] += 1
+    daily_bonus["pride"] -= 1
     learn_bonus["pet"] += 1
 }
 
@@ -831,6 +920,11 @@ $item_property["dog_collar"] = {
 dynamic $ib_cycle, 'leather_straps', 'Leather Shackles', 5, '   Price: 5 sparks  <br>   A pair of sturdy leather bracelets with steel rings for fixing chains. Can be worn on the hands or feet, and successfully used in any bondage. Very practical!', 'scene\item\item_leather_straps'
 
 $item_property["leather_straps"] = {
+	if assistant_item = 1:
+     daily_bonus_assistant["instinct"] += 1
+     daily_bonus_assistant["custom"] += 1
+     daily_bonus_assistant["mood"] -= 1
+    end	
     daily_bonus["instinct"] += 1
     daily_bonus["custom"] += 1
     daily_bonus["mood"] -= 1
@@ -842,12 +936,17 @@ dynamic $ib_cycle, 'nipple_chain', 'Nipple Chain', 10, '   Price: 10 sparks  <br
 $item_property["nipple_chain"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     daily_bonus_assistant["arousal"] += 2
+     daily_bonus_assistant["rational"] += 1
+     daily_bonus_assistant["instinct"] += 1
+     learn_bonus_assistant["sex"] += 1
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
     daily_bonus["arousal"] += 2
     daily_bonus["rational"] += 1
     daily_bonus["instinct"] += 1
+    learn_bonus["sex"] += 1
     slave["st_plus"] += 1
 }
 
@@ -855,8 +954,11 @@ $item_property["nipple_chain"] = {
 dynamic $ib_cycle, 'crown_of_thorns', 'Crown of Thorns', 5, ' Price: 5 sparks <br>   Of course this is only the name, it has no thorns. These rims are made out of barbed wire. The trick is the attachment mechanism - it is arranged such as to cause pain, but not to injure and not be removed so easily. Constant, though mild pain reminds slave of humility.', 'scene\item\item_thorns'
 
 $item_property["crown_of_thorns"] = {
+    if assistant_item = 1:
+     daily_bonus_assistant["instinct"] += 3
+     daily_bonus_assistant["mood"] -= 2
+	end	
     daily_bonus["instinct"] += 3
-    daily_bonus["temper"] -= 1
     daily_bonus["mood"] -= 2
 }
 
@@ -864,6 +966,14 @@ $item_property["crown_of_thorns"] = {
 dynamic $ib_cycle, 'anal_tail', 'Anal Tail', 10, '   This device consists of two parts - a large plastic phallus with an extension that provides a secure fit in the ass, and a set of removable tails. Well suited for petplay and increases the arousal of your slave. But it''s true that the tail prevents wearing ordinary clothes. (10 sparks)', 'scene\item\item_anal_tail'
 
 $item_property["anal_tail"] = {
+    if assistant_item = 1:
+     daily_bonus_assistant["arousal"] += 2
+     daily_bonus_assistant["custom"] += 1
+     daily_bonus_assistant["mood"] -= 1
+     daily_bonus_assistant["pride"] -= 1
+     learn_bonus_assistant["pet"] += 1
+     learn_bonus_assistant["dressage"] += 1
+	end
     daily_bonus["arousal"] += 2
     daily_bonus["custom"] += 1
     daily_bonus["mood"] -= 1
@@ -878,13 +988,15 @@ dynamic $ib_cycle, 'pony_plume', 'Plumed Bridle', 10, '   It''s just a necessary
 $item_property["pony_plume"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     daily_bonus_assistant["instinct"] += 2
+     daily_bonus_assistant["mood"] -= 3
+     daily_bonus_assistant["pride"] -= 3
+     learn_bonus_assistant["dressage"] += 2     
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
     daily_bonus["instinct"] += 2
-    daily_bonus["temper"] += 1
     daily_bonus["mood"] -= 3
-    daily_bonus["ego"] -= 1
     daily_bonus["pride"] -= 3
     learn_bonus["dressage"] += 2
     slave["st_plus"] += 1
@@ -896,11 +1008,14 @@ dynamic $ib_cycle, 'hoofed_boots', 'Hooved Boots', 25, '   Price: 25 sparks  <br
 $item_property["hoofed_boots"] = {
     if assistant_item = 1:
      assistant_rate["style"] += 1
+     daily_bonus_assistant["instinct"] += 1
+     daily_bonus_assistant["mood"] -= 1
+     daily_bonus_assistant["pride"] -= 1
+     learn_bonus_assistant["dressage"] += 1     
      assistant["st_plus"] += 1
     end
     slave_rate["style"] += 1
     daily_bonus["instinct"] += 1
-    daily_bonus["temper"] += 1
     daily_bonus["mood"] -= 1
     daily_bonus["pride"] -= 1
     learn_bonus["dressage"] += 1
@@ -911,11 +1026,16 @@ $item_property["hoofed_boots"] = {
 dynamic $ib_cycle, 'ponygirl_harness', 'Pony Harness', 10, '   Price: 10 sparks  <br>   The main objective of this leather corset is to fix a ponygirl''s hands behind her back so that she can no longer use them. A big ring in the area of the fixed hands provides the convenience of rides and additional straps in the front provide a fixation and emphasize the breasts.', 'scene\item\item_harness'
 
 $item_property["ponygirl_harness"] = {
+    if assistant_item = 1:
+     daily_bonus_assistant["instinct"] += 1
+     daily_bonus_assistant["pride"] -= 2
+	 daily_bonus_assistant["custom"] += 1
+	 daily_bonus_assistant["mood"] -= 2
+	 learn_bonus_assistant["dressage"] += 1
+	end    
     daily_bonus["instinct"] += 1
-    daily_bonus["temper"] += 1
-	daily_bonus["pride"] -= 2
+    daily_bonus["pride"] -= 2
 	daily_bonus["custom"] += 1
-	daily_bonus["ego"] -= 1
 	daily_bonus["mood"] -= 2
 	learn_bonus["dressage"] += 1
 }

@@ -1,0 +1,45 @@
+# interior_change
+!Move to a different room in your apartment
+!Created by crushboss
+
+gs 'main_layout'
+
+if change_interior = 1: interior_num += 1
+if interior_num > 7: interior_num = 1
+if interior_num = 1: $place = 'bedroom_lux'
+IF interior_num = 2 and bath > 0:
+	$place = 'bathroom_lux'
+elseif interior_num = 2 and bath = 0:
+	interior_num += 1
+END
+IF interior_num = 3 and dungeon > 0:
+	$place = 'dungeon_lux'
+elseif interior_num = 3 and dungeon = 0:
+	interior_num += 1
+END
+IF interior_num = 4 and kitchen > 0:
+	$place = 'kitchen_lux'
+elseif interior_num = 4 and kitchen = 0:
+	interior_num += 1
+END
+IF interior_num = 5 and lab > 0:
+	$place = 'lab_lux'
+elseif interior_num = 5 and lab = 0:
+	interior_num += 1
+END
+IF interior_num = 6 and bouduar > 0:
+	$place = 'bouduar_lux'
+elseif interior_num = 6 and bouduar = 0:
+	interior_num += 1
+END
+if interior_num = 7: $place = 'home_lux'
+
+change_interior = 0
+menu_form = 0
+
+gs 'menu_form_zero'
+
+GT 'main_screen'
+
+--- interior_change ---------------------------------
+

@@ -34,8 +34,8 @@ Milk х<<frige["milk"]>>
 Cream х<<frige["cream"]>>
 Chopped Meat х<<frige["mince"]>>
 Tenderloin х<<frige["meat"]>>
-Virgin Meat х<<frige["virgin_meat"]>><br>'
-if spawn_semen > 0: $left_text_list += 'Spawn''s semen x<<spawn_semen>>'
+Virgin Meat х<<frige["virgin_meat"]>>
+Spawn''s Semen x<<spawn_semen>><br>'
 
 IF lab > 0: 
  $middle_text_list += '<u>LABORATORY</u> [<<lab_items>>/<<estate_size[$estate]>>]:
@@ -105,6 +105,38 @@ Slaver: &nbsp;<<$master_name>><br>
 <a href="EXEC: msg $mood_chart & $info_text = $mood_help & gt $curloc"><<$boy_mood[master_mood_plus]>></a>
 </div>'
 
+ *p '<div id="left_column_master_rules">
+<u>AUTO CASTING</u>
+<font color="#cd0000">- Auspex</font>
+<font color="#c71585">- Sententia Veritas
+- Magna Magnifika</font>
+<font color="#0000CD">- Silent Casting</font>
+</div>'
+
+IF auspex_auto_cast = 1:
+ *p '<div id="chekbox_200"><a href = "EXEC: auspex_auto_cast = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+ else
+ *p '<div id="chekbox_200"><a href = "EXEC: auspex_auto_cast = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+END
+
+IF sententia_auto_cast = 1:
+ *p '<div id="chekbox_204"><a href = "EXEC: sententia_auto_cast = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+ else
+ *p '<div id="chekbox_204"><a href = "EXEC: sententia_auto_cast = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+END
+
+IF magna_magnifika_auto_cast = 1:
+ *p '<div id="chekbox_202"><a href = "EXEC: magna_magnifika_auto_cast = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+ else
+ *p '<div id="chekbox_202"><a href = "EXEC: magna_magnifika_auto_cast = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+END
+
+IF silent_auto_cast = 1:
+ *p '<div id="chekbox_203"><a href = "EXEC: silent_auto_cast = 0 & gt curloc"><img src="content\pic\buttons\sel_button.png"></a></div>'  
+ else
+ *p '<div id="chekbox_203"><a href = "EXEC: silent_auto_cast = 1 & gt curloc"><img src="content\pic\buttons\unsel_button.png"></a></div>'  
+END 
+
 *p '<div id="right_column">
 <u>SKILLS</u>
 <a href="EXEC: msg $учитель_справка & $info_text = $учитель_совет & gt $curloc"><<$master_tutor[master_tutor]>></a> 
@@ -119,13 +151,11 @@ Slaver: &nbsp;<<$master_name>><br>
 <a href="EXEC: msg $бондаж_справка & $info_text = $бондаж_совет & gt $curloc"><<$master_bondage[master_bondage]>></a>
 
 <u>SEX-TECHNIQUES</u>
-<<$master_petting[master_petting]>> 
+<<$master_petting[master_petting]>>
+<<$master_oral[master_oral]>>
 <<$master_penetration[master_penetration]>> 
-<<$master_oral[master_oral]>> 
 <<$master_fetish[master_fetish]>> 
 </div>'
-
-!*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc"><img src="content/pic/chart.png"></a></div>'
 
 !OBJECTIVES TAB
 IF master_stat_screen = 1:
@@ -193,6 +223,7 @@ END
 *p '<div id="info"><<$info_text>></div>'
 
 !Debug - Testing Variables - crushboss
+!msg '<<модификатор_колющий>><br>'
 !msg '<<master_fighter_rate>>'
 !msg '<<tentacle_hp>>'
 !msg '<<master_supermacy>>'

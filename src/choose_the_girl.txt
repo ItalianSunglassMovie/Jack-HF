@@ -6,7 +6,7 @@ ui_style = 1
 killobj
 addobj '<img src = "content\pic\buttons\demo_forward_button.png">'
 
-*p '<div id = "bg"><img src="content\pic\bg\dungeon.jpg"></div>'
+*p '<div id = "bg"><img src="content\pic\bg\interiors\classic_dungeon.jpg"></div>'
 *p '<div id = "bg"><center>Choose your slave</center></div>'
 
 IF choice = 0:
@@ -37,6 +37,8 @@ IF choice = 2:
 END
 GS 'get_demo_slave'
 GS '$newloc'
+
+slave["energy"] = slave["stamina"]
 
 *p {<div id="choose_left"><a href = 'EXEC: choice = 2 & gt curloc'><img src = "content\pic\demo\click_field.gif"></a></div>}
 *p {<div id="choose_center"><a href = 'EXEC: choice = 1 & gt curloc'><img src = "content\pic\demo\click_field.gif"></a></div>}

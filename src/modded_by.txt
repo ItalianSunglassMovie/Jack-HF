@@ -2,7 +2,7 @@
 !Modded By
 
 '<div id = "title_scroll"><img src = "content\pic\scroll_large.gif"></div>'
-'<div id = "title_scroll_text">Version - Jack HF (Hongfire edition) 1.6 - consists of:
+'<div id = "title_scroll_text">Version - Jack HF (Hongfire edition) 1.7.2 - consists of:
 
 the_vm Github commits, anon fixes and Grimdark interface
 
@@ -15,7 +15,7 @@ sjm UIadds by Strec
 Interface visual improvements by Powerairmax
 Updated game engine by Beaver14
 Slave Packs by NewEra
-New features, enhancements, bug fixes (tons), code cleanup, testing, and translation improvements by CrushBoss (version 1.6 Change Log and Release Notes has all the details)
+New features, enhancements, bug fixes (tons), code cleanup, testing, and translation improvements by CrushBoss (version 1.7.2 Change Log and Release Notes has all the details)
 
 </div>'
 

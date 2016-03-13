@@ -1,6 +1,6 @@
 # #dynamic
 $scroll_heroes = {
-    IF hero_choice < 11: 
+    IF hero_choice < 12: 
         hero_choice += 1
     else
         hero_choice = 1
@@ -12,7 +12,7 @@ $scroll_heroes_back = {
     IF hero_choice > 1: 
         hero_choice -= 1
     else
-        hero_choice = 11
+        hero_choice = 12
     END
     gt $curloc
 }
@@ -47,6 +47,18 @@ $name_type = {
     $a = input ('Give your character a name. Please try to keep this shorter than 14 characters.')
     if $a !'': $master_name = $a
     gt curloc
+}
+
+$sparks_decrease = {
+	sparks -= 100
+	if sparks < 200: sparks = 200
+    gt $curloc
+}
+
+$sparks_increase = {
+	sparks += 100
+	if sparks > 2500: sparks = 2500
+    gt $curloc
 }
 
 $go_forward = {
@@ -130,7 +142,7 @@ $get_lab_space = {
 	lab_space = estate_size[$estate] - lab_items
 }
 
-!Overhauled - crushboss	
+!Slave pass out - Overhauled - crushboss	
 $slave_pass_out = {
 IF slave_state ! CONST_INT['no_slave']:
  IF slave["energy"] = -5:
@@ -156,6 +168,32 @@ IF slave_state ! CONST_INT['no_slave']:
 END
 }
 
+!Assistant pass out - Added for assistant - crushboss	
+$assistant_pass_out = {
+IF assistant_state ! CONST_INT['no_slave']:
+ IF assistant["energy"] = -5:
+  assistant_state = CONST_INT['slave_faint']
+  if exam_in_progress ! 1 and assistant_exhaustion_fainted = 0: msg 'Your assistant fainted due to extreme exhaustion.'
+  assistant_exhaustion_fainted = 1
+ END
+ IF assistant["stamina"] = 0: 
+  assistant_state = CONST_INT['slave_faint']
+  if exam_in_progress ! 1 and assistant_stamina_fainted = 0: msg 'Your assistant fainted due to having no stamina.'
+  assistant_stamina_fainted = 1
+  elseif assistant["stamina"] = 1 and assistant_rate["stamina"] <= 0 and assistant_state ! CONST_INT['slave_faint']:
+   if exam_in_progress ! 1 and assistant_nearly_fainted = 0: msg 'Your assistant nearly fainted due to a lack of stamina.'
+   assistant_nearly_fainted = 1
+ END
+ IF assistant["stamina"] = 0 and assistant_rate["stamina"] <= 0 and assistant["fat"] = 0 and assistant['starvation'] > 50: 
+  assistant_state = CONST_INT['no_slave']
+  master_mood['neg_slave_starved'] = 1
+  if exam_in_progress ! 1: msg 'Your assistant died from starvation. You sold her body to the butcher for 5 sparks.'
+  sparks += 5
+ END
+ if assistant_state ! CONST_INT['slave_faint'] and assistant_state ! CONST_INT['no_slave']: assistant_state = CONST_INT['slave_exist']
+END
+}
+
 !if slave died in combat against master
 $slave_killed = {
 slave_state = CONST_INT['no_slave']
@@ -172,7 +210,7 @@ IF prisoner_state ! 0:
   else
   if prisoner["energy"] > -5: prisoner_state = 1
  END
- IF prisoner["stamina"] = 0 and prisoner_rate["stamina"] <= 0 and prisoner['starvation'] > 50:
+ IF (prisoner["stamina"] = 0 and prisoner_rate["stamina"] <= 0) or prisoner['starvation'] > 50:
   prisoner_state = 0
   prisoner = 0
   msg 'Your prisoner died from starvation, forgotten in a dungeon cage. You sold her body to the butcher for 5 sparks.'
@@ -209,7 +247,19 @@ IF sex_acceptance < 0:
  else
  if erotic_stimulation > 0: res -= slave["arousal"]
 END
-if slave['domini_dictum'] = 1 and res < 0: res = 0
+if slave['domini_dictum'] = 1 and res < 0 and $interaction_type ! 'get_grug' and $interaction_type ! 'get_grug_assistant': res = 0
+}
+
+!Repulse Check - Assistant - crushboss
+$repulse_check_assistant = {
+res = assistant["obedience"] - repulse + sex_acceptance_assistant
+if $interaction_type = 'talk': res = assistant["obedience"] - repulse
+IF sex_acceptance < 0: 
+ assistant_rate["mood"] -= repulse - sex_acceptance_assistant
+ else
+ if erotic_stimulation > 0: res -= assistant["arousal"]
+END
+if assistant['domini_dictum'] = 1 and res < 0: res = 0
 }
 
 $sex_acceptance = {
@@ -237,6 +287,41 @@ END
 IF $interaction_type = 'rape':
  sex_acceptance += slave["arousal"] + slave["sub_vaginal"] + slave["obedience"] - repulse
  if sex_acceptance > 1: sex_acceptance = 1
+END
+IF $interaction_type ! 'rape' and lesbian = 0 and disgusting = 0 and painful = 0 and shameful = 0:
+ sex_acceptance += (sex_sum/3)
+END
+}
+
+!Sex Acceptance - Assistant - crushboss
+$sex_acceptance_assistant = {
+IF shameful > 0:
+ sex_acceptance_assistant += assistant["exhibitionism"] - shameful
+ if assistant["exhibitionism"] < 1 and assistant['neg_shame'] < 1: assistant['neg_shame'] = 1
+ assistant["exhibitionism_xp"] += 1
+END
+IF painful > 0: 
+ sex_acceptance_assistant += assistant["masohism"] - painful
+ if assistant["masohism"] < 1 and assistant['neg_pain'] < 1: assistant['neg_pain'] = 1 
+ assistant["masohism_xp"] += 1  
+END
+IF disgusting > 0: 
+ sex_acceptance_assistant += assistant["preversion"] - disgusting
+ if assistant["preversion"] < 1 and assistant['neg_disgust'] < 1: assistant['neg_disgust'] = 1  
+ assistant["preversion_xp"] += 1
+END
+IF lesbian > 0: 
+ sex_acceptance_assistant += assistant["homosexualism"] - lesbian
+ assistant["lesbian_xp"] += 1
+ else
+ if assistant["homosexualism"] = 2: sex_acceptance_assistant -= 1 
+END
+IF $interaction_type = 'rape':
+ sex_acceptance_assistant += assistant["arousal"] + assistant["sub_vaginal"] + assistant["obedience"] - repulse
+ if sex_acceptance_assistant > 1: sex_acceptance_assistant = 1
+END
+IF $interaction_type ! 'rape' and lesbian = 0 and disgusting = 0 and painful = 0 and shameful = 0:
+ sex_acceptance_assistant += (assistant_sex_sum/3)
 END
 }
 
@@ -322,132 +407,99 @@ $prise_potence = {
  if prise_potence < 0: prise_potence = 1 
 }
 
+!Erotic Stimulation - slave
 $erotic_stimulation = {
+if sex_acceptance > 6: sex_acceptance = 6
 if sex_acceptance > 0: erotic_stimulation += sex_acceptance
+if erotic_stimulation > 10: erotic_stimulation = 10
 IF slave["arousal"] = 0: 
  final_stimulation = 1
  else
- final_stimulation = erotic_stimulation * slave["arousal"]
+ final_stimulation = (erotic_stimulation * slave["arousal"])
+ if final_stimulation > 22: final_stimulation = 22
 END
 if sex_acceptance < 0: final_stimulation = 0
-if orgastic = 0: slave_rate["arousal"] += (final_stimulation * (1 + (slave["sensitivity"]/2)))
+if orgastic = 0: slave_rate["arousal"] += (final_stimulation * (slave["sensitivity"]/2))
 }
 
+!Slave Orgasm - overhauled by crushboss
 $slave_orgasm = {
 IF orgasm_prohibited = 0:
- slave_rate["mood"] += final_stimulation
- IF orgastic = 2:
-  slave_rate["arousal"] -= (final_stimulation * (1 + (slave["sensitivity"]/2)))
-  else
-  slave_rate["arousal"] -= final_stimulation
- END
- if slave_rate["arousal"] < 0: slave_rate["arousal"] = 0
- riser = min (master_supermacy, final_stimulation)
- if riser < 0: riser = 1
- slave_rate["instinct"] += riser
- slave_rate["temper"] += 1
- orgasm_description = 1    
- IF slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
- slave['neg_horny'] = 0
- else
- IF final_stimulation <= slave["obedience"]:
-  IF orgastic = 2:
-   slave_rate["arousal"] += (final_stimulation * (1 + (slave["sensitivity"]/2)))
-   else
-   slave_rate["arousal"] += final_stimulation
-  END
-  slave_rate["sensitivity"] += 1
-  orgasm_description = 2    
-  slave_rate["instinct"] += 1
-  slave['neg_horny'] += 1
-  else
+  orgasm_description = 1
+  if final_stimulation > 22: final_stimulation = 22
   slave_rate["mood"] += final_stimulation
-  IF slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
   IF orgastic = 2:
-   slave_rate["arousal"] -= (final_stimulation * (1 + (slave["sensitivity"]/2)))
+   slave_rate["arousal"] -= (final_stimulation * ((slave["sensitivity"] + 1)/2))
    else
-   slave_rate["arousal"] -= final_stimulation
+   slave_rate["arousal"] -= (final_stimulation + slave["sensitivity"])
   END
   if slave_rate["arousal"] < 0: slave_rate["arousal"] = 0
+  riser = min (master_supermacy, final_stimulation)
+  if riser < 0: riser = 1
+  slave_rate["instinct"] += riser
   slave_rate["temper"] += 1
-  sin_gained = max (1, slave["moral"])
-  if sin_gained > 5: sin_gained = 5
+  IF slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
   slave['neg_horny'] = 0
-  slave['pos_orgasm'] += 1
-  IF sin_gained >= slave["virtue"]:
-   slave["virtue"] = 0
-   if sin_gained > slave["sin"]: slave["sin"] = sin_gained
-   if sententia_veritas = 1: slave["sin"] = 5
-  END  
-  orgasm_description = 3    
- END
+ ELSEIF orgasm_prohibited = 1:
+  IF final_stimulation <= slave["obedience"]:
+    orgasm_description = 2
+    slave_rate["arousal"] += (final_stimulation * (slave["sensitivity"]/2))
+    slave_rate["sensitivity"] += 1
+    slave_rate["instinct"] += 1
+    slave['neg_horny'] += 1
+   ELSEIF final_stimulation > slave["obedience"]:
+    orgasm_description = 3
+    slave_rate["mood"] += final_stimulation
+    IF slave['pos_orgasm'] < 1: slave['pos_orgasm'] = 1
+    IF orgastic = 2:
+     slave_rate["arousal"] -= (final_stimulation * ((slave["sensitivity"] + 1)/2))
+     else
+     slave_rate["arousal"] -= (final_stimulation + slave["sensitivity"])
+    END
+    if slave_rate["arousal"] < 0: slave_rate["arousal"] = 0
+    slave_rate["temper"] += 1
+    slave['neg_horny'] = 0
+    slave['pos_orgasm'] += 1
+    sin_gain = 1
+    sin_potential = max (2, slave["moral"], slave["instinct"])
+    dynamic $sin_gained_now
+  END
 END
-orgastic = 0
 }
 
 !Added erotic stimulation code for assistant - crushboss
 $erotic_stimulation_assistant = {
-if sex_acceptance > 0: erotic_stimulation += sex_acceptance
+if sex_acceptance_assistant > 6: sex_acceptance_assistant = 6
+if sex_acceptance_assistant > 0: erotic_stimulation += sex_acceptance_assistant
+if erotic_stimulation > 10: erotic_stimulation = 10
 IF assistant["arousal"] = 0: 
  final_stimulation = 1
  else
- final_stimulation = erotic_stimulation * assistant["arousal"]
+ final_stimulation = (erotic_stimulation * assistant["arousal"])
+ if final_stimulation > 22: final_stimulation = 22
 END
-if sex_acceptance < 0: final_stimulation = 0
-if orgastic = 0: assistant_rate["arousal"] += (final_stimulation * (1 + (assistant["sensitivity"]/2)))
+if sex_acceptance_assistant < 0: final_stimulation = 0
+if orgastic = 0: assistant_rate["arousal"] += (final_stimulation * (assistant["sensitivity"]/2))
 }
 
 !Added orgasm code for assistant - crushboss
 $assistant_orgasm = {
-IF orgasm_prohibited = 0:
- assistant_rate["mood"] += final_stimulation
- IF orgastic = 2:
-  assistant_rate["arousal"] -= (final_stimulation * (1 + (assistant["sensitivity"]/2)))
-  else
-  assistant_rate["arousal"] -= final_stimulation
- END
- if assistant_rate["arousal"] < 0: assistant_rate["arousal"] = 0
- riser = min (master_supermacy, final_stimulation)
- if riser < 0: riser = 1
- assistant_rate["instinct"] += riser
- assistant_rate["temper"] += 1
- orgasm_description = 1    
- IF assistant['pos_orgasm'] < 1: assistant['pos_orgasm'] = 1
- assistant['neg_horny'] = 0
+if final_stimulation > 22: final_stimulation = 22
+assistant_rate["mood"] += final_stimulation
+IF orgastic = 2:
+ assistant_rate["arousal"] -= (final_stimulation * ((assistant["sensitivity"] + 1)/2))
  else
- IF final_stimulation <= assistant["obedience"]:
-  IF orgastic = 2:
-   assistant_rate["arousal"] += (final_stimulation * (1 + (assistant["sensitivity"]/2)))
-   else
-   assistant_rate["arousal"] += final_stimulation
-  END
-  assistant_rate["sensitivity"] += 1
-  orgasm_description = 2    
-  assistant_rate["instinct"] += 1
-  assistant['neg_horny'] += 1
-  else
-  assistant_rate["mood"] += final_stimulation
-  IF assistant['pos_orgasm'] < 1: assistant['pos_orgasm'] = 1
-  IF orgastic = 2:
-   assistant_rate["arousal"] -= (final_stimulation * (1 + (assistant["sensitivity"]/2)))
-   else
-   assistant_rate["arousal"] -= final_stimulation
-  END
-  if assistant_rate["arousal"] < 0: assistant_rate["arousal"] = 0
-  assistant_rate["temper"] += 1
-  sin_gained = max (1, assistant["moral"])
-  if sin_gained > 5: sin_gained = 5
-  assistant['neg_horny'] = 0
-  assistant['pos_orgasm'] += 1
-  IF sin_gained >= assistant["virtue"]:
-   assistant["virtue"] = 0
-   if sin_gained > assistant["sin"]: assistant["sin"] = sin_gained
-   if sententia_veritas = 1: assistant["sin"] = 5
-  END  
-  orgasm_description = 3    
- END
+ assistant_rate["arousal"] -= (final_stimulation + assistant["sensitivity"])
 END
-orgastic = 0
+if assistant_rate["arousal"] < 0: assistant_rate["arousal"] = 0
+riser = min (master_supermacy, final_stimulation)
+if riser < 0: riser = 1
+assistant_rate["instinct"] += riser
+assistant_rate["temper"] += 1
+assistant_rate["sensitivity"] += 1
+orgasm_assistant_description = 1   
+IF assistant['pos_orgasm'] < 1: assistant['pos_orgasm'] = 1
+assistant['neg_horny'] = 0
 }
 
 $sin_potential = {
@@ -459,43 +511,58 @@ END
 if sin_potential > 6: sin_potential = 6
 }
 
+!Sin Gained - overhauled by crushboss
 $sin_gained_now = {
-    IF already_done_today[interaction] = 0:
-        sin_gained = sin_potential + res
-        if sin_gained <= 0: sin_gained = 1
-        if sin_gained > 5: sin_gained = 5
-        IF sin_gained >= slave["virtue"]:
-            slave["virtue"] = 0
-            IF sin_gained > slave["sin"]: 
-                slave["sin"] = sin_gained
-                !TODO: проверить, правильно ли работает исправление
-                !Из-за фикса, возможно ухудшение на один день состояния мастера (влияние мудов)
-                !master_bad_mood['neg_nice_slave'] = 1
-                master_mood['neg_rebell'] = 1
-                master_mood['pos_nice_slave'] = 0
-                gs '$mod_master_drop', 1
-            END 
-        END
-    END
+	previous_slave_sin = slave["sin"]
+	a = RAND(10,20)
+	if a > 14: slave["sin"] = sin_potential + RAND(-3,-1)
+	if a < 15: slave["sin"] = sin_potential
+    if previous_slave_sin > 0: slave["sin"] += previous_slave_sin
+    if slave["sin"] < 1: slave["sin"] = 1
+    if slave["sin"] > 5: slave["sin"] = 5
+    IF slave["sin"] >= slave["virtue"]:
+		slave["virtue"] = 0
+		else
+		slave["virtue"] -= slave["sin"]
+		slave["sin"] = 0
+	END
+    master_mood['neg_rebell'] = 1
+    master_mood['pos_nice_slave'] = 0
+    gs '$mod_master_drop', 1
     if sententia_veritas = 1: slave["virtue"] = 0 & slave["sin"] = 5
+    sin_gain = 1
+    sin_potential = 0
+    previous_slave_sin = 0
+    a = 0
 }
 
+!Virtue Gained - overhauled by crushboss
 $virtue_gained_now = {
 	IF already_done_today[interaction] = 0:
+		previous_slave_virtue = slave["virtue"]
 		virtue_gained = diligence
 		if slave_skill > 0: virtue_gained = min (diligence, slave_skill)
 		if virtue_gained <= 0: virtue_gained = 1
 		if virtue_gained > 5: virtue_gained = 5
 		IF virtue_gained >= slave["sin"]:
 			slave["sin"] = 0
-			IF virtue_gained > slave["virtue"]:
-				slave["virtue"] = virtue_gained
-				master_mood['pos_nice_slave'] = 1
-				master_mood['neg_rebell'] = 0
-			END
+			else
+			slave["sin"] -= virtue_gained
+			virtue_gained = 0
+		END	
+		IF virtue_gained > slave["virtue"]:
+			slave["virtue"] = virtue_gained
+			master_mood['pos_nice_slave'] = 1
+			master_mood['neg_rebell'] = 0
 		END
+		if previous_slave_virtue > 0 and slave["sin"] = 0: slave["virtue"] += previous_slave_virtue
+		if slave["virtue"] > 5: slave["virtue"] = 5
 	END
-	if sententia_veritas = 1: slave["virtue"] = 5 & slave["sin"] = 0 
+	if sententia_veritas = 1: slave["virtue"] = 5 & slave["sin"] = 0
+	virtue_gained = 0
+	diligence = 0
+	previous_slave_virtue = 0
+	slave_skill = 0
 }
 
 $virtue_gained_eroles = {
@@ -562,7 +629,56 @@ if complex_diligence > 0 and a > 5: complex_diligence -= 1
 if slave['moral'] > complex_diligence and slave['moral'] > 0: complex_diligence = slave['moral']
 if $slave_psy_status = 'broken': complex_diligence = 0
 if complex_diligence > 5: complex_diligence = 5 
-if slave['domini_dictum'] = 1 and complex_diligence < 0: complex_diligence = 0
+if slave['domini_dictum'] = 1 and complex_diligence < 0 and $interaction_type ! 'get_grug' and $interaction_type ! 'get_grug_assistant': complex_diligence = 0
+}
+
+$diligence_assistant = {
+diligence = min (res, 5) 
+if diligence < 0: diligence = 0
+if $assistant_psy_status = 'broken': diligence = 0
+if repulse > 0: assistant_rate["custom"] += 1
+if assistant_rate["custom"] < 0: assistant_rate["custom"] = 0
+}
+
+$complex_diligence_assistant = {
+complex_diligence = 0
+if complex_repulse > assistant["obedience"]: complex_diligence = -1
+if repulse > assistant["obedience"]: complex_diligence = -1
+if rebell[$assistant_psy_status] > 0: complex_diligence -= 1
+if assistant['fear'] > complex_repulse: complex_diligence += 1
+if assistant['mood'] > complex_repulse: complex_diligence += 1
+if assistant['moral']*2 > complex_repulse: complex_diligence += 1
+if assistant['custom'] > complex_repulse: complex_diligence += 1
+if assistant['rational'] > complex_repulse: complex_diligence += 1
+if assistant['instinct']*2 > complex_repulse: complex_diligence += 1
+a = assistant['spoil'] + complex_repulse
+if  a > 5: complex_diligence -= 1
+a = assistant['pride'] + complex_repulse
+if a > 5: complex_diligence -= 1
+
+phobia = 0
+IF stimulating > 0: 
+ phobia += assistant["nymphomania"]
+END
+IF shameful > 0: phobia += assistant["exhibitionism"] - shameful
+IF painful > 0: phobia += assistant["masohism"] - painful
+IF abuse > 0: phobia += assistant["abuse_attitude"] - abuse
+IF disgusting > 0: phobia += assistant["preversion"] - disgusting
+IF darkness > 0: phobia += assistant["darkness_attitude"] - darkness
+IF bloody > 0: phobia += assistant["blood_attitude"] - bloody
+IF fire_based > 0: phobia += assistant["fire_attitude"] - fire_based
+IF water_based > 0: phobia += assistant["water_attitude"] - water_based
+IF vermin_based > 0: phobia += assistant["vermin_attitude"] - vermin_based 
+IF deprivation > 0: phobia += assistant["deprivation_attitude"] - deprivation
+complex_diligence += phobia & $dil_message += 'phobia <<phobia>><br>'
+
+if assistant['energy'] < 0: complex_diligence += assistant['energy']
+a = assistant['angst'] + complex_repulse
+if complex_diligence > 0 and a > 5: complex_diligence -= 1
+if assistant['moral'] > complex_diligence and assistant['moral'] > 0: complex_diligence = assistant['moral']
+if $assistant_psy_status = 'broken': complex_diligence = 0
+if complex_diligence > 5: complex_diligence = 5 
+if assistant['domini_dictum'] = 1 and complex_diligence < 0: complex_diligence = 0
 }
 
 $sex_diligence = {
@@ -674,7 +790,7 @@ if assistant["energy"] < 0: assistant_rate["stamina"] += assistant["energy"]
 $master_energy_drop = {
 master_energy -= 1
 if master_energy < -5: master_energy = -5
-if master_energy < 0: master_str_rate += master_energy
+if master_energy < 0 and bull_ring_on = 0: master_str_rate += master_energy
 }
 
 $master_ejaculate = {
@@ -699,12 +815,12 @@ $house_cleaning = {
 	if house_mess_rate >= 80: house_mess = 5
 }
 
-!Strange stamina gain fixed - added damage = 0 since the variable kept building and never reset - crushboss
+!Strange stamina gain fixed - crushboss
 $slave_damaged = {
-damage = 0
+if damage > slave["stamina"]: slave_rate["wounds"] += damage
 damage += slave["sensitivity"] + slave["hygiene"] - slave["stamina"]
-slave_rate["stamina"] -= damage
 if damage < 0: damage = 0
+if damage > 0: slave_rate["stamina"] -= damage
 if bruising = 1: slave_rate["bruises"] += damage*3
 if scarification = 1: slave_rate["scares"] += damage
 damage = 0
@@ -795,6 +911,100 @@ $убрать_вторичное = {
 $вторичный = ''
 gs 'боевое_меню'
 GT 'боевой_интерфейс'
+}
+
+!Dual Wield system - Primary Weapon - overhauled by crushboss
+$primary_weapon = {
+IF no_wpn["за_спиной"] = 1:
+!Two-Handed Back Weapon
+	$оружие = $за_спиной
+	$вторичный = ''
+	if combatant = 0: $за_спиной = $master_back_wpn & $master["prev_secondary_wpn"] = ''
+	if combatant = 1: $за_спиной = $slave["back_wpn"] & $slave["prev_secondary_wpn"] = ''
+	if combatant = 2: $за_спиной = $assistant["back_wpn"] & $assistant["prev_secondary_wpn"] = ''
+ELSEIF no_wpn["слева"] = 1:
+!Left Weapon
+	$оружие = $слева
+	if combatant = 0: $слева = $master_left_wpn
+	if combatant = 1: $слева = $slave["left_wpn"]
+	if combatant = 2: $слева = $assistant["left_wpn"]
+ELSEIF no_wpn["справа"] = 1:
+!Right Weapon
+	$оружие = $справа
+	if combatant = 0: $справа = $master_right_wpn
+	if combatant = 1: $справа = $slave["right_wpn"]
+	if combatant = 2: $справа = $assistant["right_wpn"]
+ELSEIF no_wpn["предплечье"] = 1:
+!Bracer Weapon (arm)
+	$оружие = $предплечье
+	if combatant = 0: $предплечье = $master_arm_wpn
+	if combatant = 1: $предплечье = $slave["arm_wpn"]
+	if combatant = 2: $предплечье = $assistant["arm_wpn"]
+ELSEIF no_wpn["в_сапоге"] = 1:
+!Boot Weapon (leg)
+	$оружие = $в_сапоге
+	if combatant = 0: $в_сапоге = $master_leg_wpn
+	if combatant = 1: $в_сапоге = $slave["leg_wpn"]
+	if combatant = 2: $в_сапоге = $assistant["leg_wpn"]
+END
+!Remember the previous primary weapon
+IF $оружие ! '':
+	if combatant = 0: $master["prev_primary_wpn"] = $оружие
+	if combatant = 1: $slave["prev_primary_wpn"] = $оружие
+	if combatant = 2: $assistant["prev_primary_wpn"] = $оружие
+END
+}
+
+!Dual Wield system - Secondary Weapon - overhauled by crushboss
+$secondary_weapon = {
+IF no_wpn["слева"] = 2:
+!Left Weapon
+	$вторичный = $слева
+	if combatant = 0: $слева = $master_left_wpn
+	if combatant = 1: $слева = $slave["left_wpn"]
+	if combatant = 2: $слева = $assistant["left_wpn"]
+ELSEIF no_wpn["справа"] = 2:
+!Right Weapon
+	$вторичный = $справа
+	if combatant = 0: $справа = $master_right_wpn
+	if combatant = 1: $справа = $slave["right_wpn"]
+	if combatant = 2: $справа = $assistant["right_wpn"]
+ELSEIF no_wpn["предплечье"] = 2:
+!Bracer Weapon (arm)
+	$вторичный = $предплечье
+	if combatant = 0: $предплечье = $master_arm_wpn
+	if combatant = 1: $предплечье = $slave["arm_wpn"]
+	if combatant = 2: $предплечье = $assistant["arm_wpn"]
+ELSEIF no_wpn["в_сапоге"] = 2:
+!Boot Weapon (leg)
+	$вторичный = $в_сапоге
+	if combatant = 0: $в_сапоге = $master_leg_wpn
+	if combatant = 1: $в_сапоге = $slave["leg_wpn"]
+	if combatant = 2: $в_сапоге = $assistant["leg_wpn"]
+END
+!Remember the previous secondary weapon
+IF $вторичный ! '':
+	if combatant = 0: $master["prev_secondary_wpn"] = $вторичный
+	if combatant = 1: $slave["prev_secondary_wpn"] = $вторичный
+	if combatant = 2: $assistant["prev_secondary_wpn"] = $вторичный
+END
+}
+
+!Use Previous Weapon Configuration Option - crushboss
+$previous_weapon = {
+	!Primary
+	IF $оружие = '' and a = 1:
+		if combatant = 0: $оружие = $master["prev_primary_wpn"]
+		if combatant = 1: $оружие = $slave["prev_primary_wpn"]
+		if combatant = 2: $оружие = $assistant["prev_primary_wpn"]
+	END
+	
+	! Secondary
+	IF $вторичный = '' and a = 1:
+		if combatant = 0: $вторичный = $master["prev_secondary_wpn"]
+		if combatant = 1: $вторичный = $slave["prev_secondary_wpn"]
+		if combatant = 2: $вторичный = $assistant["prev_secondary_wpn"]
+	END
 }
 
 $взять_оружие_за_спиной = {
@@ -1025,6 +1235,22 @@ $суперудар_18 = {
 суперудар_сделан[18] = 1
 gt 'атака_игрока',28
 }
+$суперудар_22 = {
+суперудар_сделан[22] = 1
+gt 'атака_игрока',32
+}
+$суперудар_23 = {
+суперудар_сделан[23] = 1
+gt 'атака_игрока',33
+}
+$суперудар_24 = {
+суперудар_сделан[24] = 1
+gt 'атака_игрока',34
+}
+$суперудар_25 = {
+суперудар_сделан[25] = 1
+gt 'атака_игрока',35
+}
 
 $вернуться_в_корень = {
 gs 'боевое_меню'
@@ -1077,6 +1303,7 @@ if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эл
 if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_1_change">Yatserin mail [<<ячуга>>]</a>'
 if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_1_change">Combined armor [<<полудоспех>>]</a>'
 if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_1_change">Gothic plate [<<плейт>>]</a>'
+if кольчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кольчуга'' & dynamic $slot_1_change">Mithril mail [<<кольчуга>>]</a>'
 gt curloc
 }
 
@@ -1086,21 +1313,10 @@ $equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_2_change
 if фламберг > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''фламберг'' & dynamic $slot_2_change">Flamberge [<<фламберг>>]</a>'
 if нагината > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагината'' & dynamic $slot_2_change">Naginata [<<нагината>>]</a>'
 if моргенштерн > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''моргенштерн'' & dynamic $slot_2_change">Morningstar [<<моргенштерн>>]</a>'
-if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_2_change">Trident [<<трезубец>>]</a>'
+if посох_огня > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''посох_огня'' & dynamic $slot_2_change">Dragon Fire Staff Relic [<<посох_огня>>]</a>'
 if грейтекс > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''грейтекс'' & dynamic $slot_2_change">Greataxe [<<грейтекс>>]</a>'
 if бита > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бита'' & dynamic $slot_2_change">Baseball Bat [<<бита>>]</a>'
 if скотобой > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''скотобой'' & dynamic $slot_2_change">Cattle Prod [<<скотобой>>]</a>'
-if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_2_change">Whip [<<кнут>>]</a>'
-if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_2_change">Épée [<<шпага>>]</a>'
-if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_2_change">Rapier [<<рапира>>]</a>'
-if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_2_change">Koncerz [<<кончар>>]</a>'
-if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_2_change">Gladius [<<гладиус>>]</a>'
-if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_2_change">Bastard sword [<<бастард>>]</a>'
-if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_2_change">Warpick [<<клевец>>]</a>'
-if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_2_change">Machete [<<мачете>>]</a>'
-if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_2_change">Katana [<<катана>>]</a>'
-if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_2_change">Hatchet [<<томагавк>>]</a>'
-if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_2_change">Baton [<<демократизатор>>]</a>'
 gt curloc
 }
 
@@ -1113,10 +1329,9 @@ if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рап
 if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_3_change">Koncerz [<<кончар>>]</a>'
 if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_3_change">Gladius [<<гладиус>>]</a>'
 if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_3_change">Bastard sword [<<бастард>>]</a>'
-if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_3_change">Warpick [<<клевец>>]</a>'
 if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_3_change">Machete [<<мачете>>]</a>'
 if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_3_change">Katana [<<катана>>]</a>'
-if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_3_change">Hatchet [<<томагавк>>]</a>'
+if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_3_change">Trident [<<трезубец>>]</a>'
 if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_3_change">Baton [<<демократизатор>>]</a>'
 if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_3_change">Dagger [<<кинжал>>]</a>'
 if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_3_change">Stiletto [<<стилет>>]</a>'
@@ -1124,7 +1339,7 @@ if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кас
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_3_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_3_change">Stunner [<<глушилка>>]</a>'
 if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_3_change">Butcher''s Cleaver [<<тесак>>]</a>'
-if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_3_change">Sturdy Shield [<<щит>>]</a>'
+if мулава > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мулава'' & dynamic $slot_3_change">Mace [<<мулава>>]</a>'
 gt curloc
 }
 
@@ -1137,10 +1352,9 @@ if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рап
 if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_4_change">Koncerz [<<кончар>>]</a>'
 if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_4_change">Gladius [<<гладиус>>]</a>'
 if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_4_change">Bastard sword [<<бастард>>]</a>'
-if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_4_change">Warpick [<<клевец>>]</a>'
 if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_4_change">Machete [<<мачете>>]</a>'
 if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_4_change">Katana [<<катана>>]</a>'
-if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_4_change">Hatchet [<<томагавк>>]</a>'
+if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_4_change">Trident [<<трезубец>>]</a>'
 if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_4_change">Baton [<<демократизатор>>]</a>'
 if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_4_change">Dagger [<<кинжал>>]</a>'
 if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_4_change">Stiletto [<<стилет>>]</a>'
@@ -1148,7 +1362,7 @@ if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кас
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_4_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_4_change">Stunner [<<глушилка>>]</a>'
 if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_4_change">Butcher''s Cleaver [<<тесак>>]</a>'
-if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_4_change">Sturdy Shield [<<щит>>]</a>'
+if мулава > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мулава'' & dynamic $slot_4_change">Mace [<<мулава>>]</a>'
 gt curloc
 }
 
@@ -1161,7 +1375,6 @@ if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кас
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_5_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_5_change">Stunner [<<глушилка>>]</a>'
 if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_5_change">Butcher''s Cleaver [<<тесак>>]</a>'
-if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_5_change">Sturdy Shield [<<щит>>]</a>'
 gt curloc
 }
 
@@ -1174,7 +1387,6 @@ if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кас
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_6_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_6_change">Stunner [<<глушилка>>]</a>'
 if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_6_change">Butcher''s Cleaver [<<тесак>>]</a>'
-if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_6_change">Sturdy Shield [<<щит>>]</a>'
 gt curloc
 }
 
@@ -1231,6 +1443,7 @@ if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эл
 if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_20_change">Yatserin Mail [<<ячуга>>]</a>'
 if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_20_change">Combined Armor [<<полудоспех>>]</a>'
 if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_20_change">Gothic Plate [<<плейт>>]</a>'
+if кольчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кольчуга'' & dynamic $slot_20_change">Mithril mail [<<кольчуга>>]</a>'
 gt curloc
 }
 
@@ -1240,21 +1453,9 @@ $equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_21_chang
 if фламберг > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''фламберг'' & dynamic $slot_21_change">Flamberge [<<фламберг>>]</a>'
 if нагината > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагината'' & dynamic $slot_21_change">Naginata [<<нагината>>]</a>'
 if моргенштерн > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''моргенштерн'' & dynamic $slot_21_change">Morningstar [<<моргенштерн>>]</a>'
-if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_21_change">Trident [<<трезубец>>]</a>'
 if грейтекс > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''грейтекс'' & dynamic $slot_21_change">Greataxe [<<грейтекс>>]</a>'
 if бита > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бита'' & dynamic $slot_21_change">Baseball Bat [<<бита>>]</a>'
 if скотобой > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''скотобой'' & dynamic $slot_21_change">Cattle Prod [<<скотобой>>]</a>'
-if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_21_change">Whip [<<кнут>>]</a>'
-if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_21_change">Épée [<<шпага>>]</a>'
-if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_21_change">Rapier [<<рапира>>]</a>'
-if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_21_change">Koncerz [<<кончар>>]</a>'
-if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_21_change">Gladius [<<гладиус>>]</a>'
-if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_21_change">Bastard Sword [<<бастард>>]</a>'
-if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_21_change">Warpick [<<клевец>>]</a>'
-if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_21_change">Machete [<<мачете>>]</a>'
-if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_21_change">Katana [<<катана>>]</a>'
-if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_21_change">Hatchet [<<томагавк>>]</a>'
-if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_21_change">Baton [<<демократизатор>>]</a>'
 gt curloc
 }
 
@@ -1267,10 +1468,9 @@ if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рап
 if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_22_change">Koncerz [<<кончар>>]</a>'
 if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_22_change">Gladius [<<гладиус>>]</a>'
 if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_22_change">Bastard sword [<<бастард>>]</a>'
-if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_22_change">Warpick [<<клевец>>]</a>'
 if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_22_change">Machete [<<мачете>>]</a>'
 if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_22_change">Katana [<<катана>>]</a>'
-if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_22_change">Hatchet [<<томагавк>>]</a>'
+if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_22_change">Trident [<<трезубец>>]</a>'
 if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_22_change">Baton [<<демократизатор>>]</a>'
 if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_22_change">Dagger [<<кинжал>>]</a>'
 if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_22_change">Stiletto [<<стилет>>]</a>'
@@ -1278,7 +1478,7 @@ if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кас
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_22_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_22_change">Stunner [<<глушилка>>]</a>'
 if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_22_change">Butcher''s Cleaver [<<тесак>>]</a>'
-if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_22_change">Sturdy Shield [<<щит>>]</a>'
+if мулава > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мулава'' & dynamic $slot_22_change">Mace [<<мулава>>]</a>'
 gt curloc
 }
 
@@ -1291,10 +1491,9 @@ if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рап
 if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_23_change">Koncerz [<<кончар>>]</a>'
 if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_23_change">Gladius [<<гладиус>>]</a>'
 if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_23_change">Bastard sword [<<бастард>>]</a>'
-if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_23_change">Warpick [<<клевец>>]</a>'
 if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_23_change">Machete [<<мачете>>]</a>'
 if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_23_change">Katana [<<катана>>]</a>'
-if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_23_change">Hatchet [<<томагавк>>]</a>'
+if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_23_change">Trident [<<трезубец>>]</a>'
 if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_23_change">Baton [<<демократизатор>>]</a>'
 if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_23_change">Dagger [<<кинжал>>]</a>'
 if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_23_change">Stiletto [<<стилет>>]</a>'
@@ -1302,6 +1501,7 @@ if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кас
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_23_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_23_change">Stunner [<<глушилка>>]</a>'
 if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_23_change">Butcher''s Cleaver [<<тесак>>]</a>'
+if мулава > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мулава'' & dynamic $slot_23_change">Mace [<<мулава>>]</a>'
 gt curloc
 }
 
@@ -1454,6 +1654,7 @@ if эльчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''эл
 if ячуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''ячуга'' & dynamic $slot_40_change">Yatserin Mail [<<ячуга>>]</a>'
 if полудоспех > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''полудоспех'' & dynamic $slot_40_change">Combined Armor [<<полудоспех>>]</a>'
 if плейт > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''плейт'' & dynamic $slot_40_change">Gothic Plate [<<плейт>>]</a>'
+if кольчуга > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кольчуга'' & dynamic $slot_40_change">Mithril mail [<<кольчуга>>]</a>'
 gt curloc
 }
 
@@ -1463,21 +1664,9 @@ $equip_choice += '<a href = "EXEC: $new_item = ''none'' & dynamic $slot_41_chang
 if фламберг > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''фламберг'' & dynamic $slot_41_change">Flamberge [<<фламберг>>]</a>'
 if нагината > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагината'' & dynamic $slot_41_change">Naginata [<<нагината>>]</a>'
 if моргенштерн > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''моргенштерн'' & dynamic $slot_41_change">Morningstar [<<моргенштерн>>]</a>'
-if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_41_change">Trident [<<трезубец>>]</a>'
 if грейтекс > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''грейтекс'' & dynamic $slot_41_change">Greataxe [<<грейтекс>>]</a>'
 if бита > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бита'' & dynamic $slot_41_change">Baseball Bat [<<бита>>]</a>'
 if скотобой > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''скотобой'' & dynamic $slot_41_change">Cattle Prod [<<скотобой>>]</a>'
-if кнут > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кнут'' & dynamic $slot_41_change">Whip [<<кнут>>]</a>'
-if шпага > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''шпага'' & dynamic $slot_41_change">Épée [<<шпага>>]</a>'
-if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рапира'' & dynamic $slot_41_change">Rapier [<<рапира>>]</a>'
-if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_41_change">Koncerz [<<кончар>>]</a>'
-if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_41_change">Gladius [<<гладиус>>]</a>'
-if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_41_change">Bastard sword [<<бастард>>]</a>'
-if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_41_change">Warpick [<<клевец>>]</a>'
-if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_41_change">Machete [<<мачете>>]</a>'
-if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_41_change">Katana [<<катана>>]</a>'
-if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_41_change">Hatchet [<<томагавк>>]</a>'
-if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_41_change">Baton [<<демократизатор>>]</a>'
 gt curloc
 }
 
@@ -1490,10 +1679,9 @@ if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рап
 if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_42_change">Koncerz [<<кончар>>]</a>'
 if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_42_change">Gladius [<<гладиус>>]</a>'
 if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_42_change">Bastard sword [<<бастард>>]</a>'
-if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_42_change">Warpick [<<клевец>>]</a>'
 if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_42_change">Machete [<<мачете>>]</a>'
 if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_42_change">Katana [<<катана>>]</a>'
-if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_42_change">Hatchet [<<томагавк>>]</a>'
+if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_42_change">Trident [<<трезубец>>]</a>'
 if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_42_change">Baton [<<демократизатор>>]</a>'
 if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_42_change">Dagger [<<кинжал>>]</a>'
 if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_42_change">Stiletto [<<стилет>>]</a>'
@@ -1501,7 +1689,7 @@ if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кас
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_42_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_42_change">Stunner [<<глушилка>>]</a>'
 if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_42_change">Butcher''s Cleaver [<<тесак>>]</a>'
-if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_42_change">Sturdy Shield [<<щит>>]</a>'
+if мулава > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мулава'' & dynamic $slot_42_change">Mace [<<мулава>>]</a>'
 gt curloc
 }
 
@@ -1514,10 +1702,9 @@ if рапира > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''рап
 if кончар > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кончар'' & dynamic $slot_43_change">Koncerz [<<кончар>>]</a>'
 if гладиус > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''гладиус'' & dynamic $slot_43_change">Gladius [<<гладиус>>]</a>'
 if бастард > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''бастард'' & dynamic $slot_43_change">Bastard sword [<<бастард>>]</a>'
-if клевец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''клевец'' & dynamic $slot_43_change">Warpick [<<клевец>>]</a>'
 if мачете > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мачете'' & dynamic $slot_43_change">Machete [<<мачете>>]</a>'
 if катана > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''катана'' & dynamic $slot_43_change">Katana [<<катана>>]</a>'
-if томагавк > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''томагавк'' & dynamic $slot_43_change">Hatchet [<<томагавк>>]</a>'
+if трезубец > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''трезубец'' & dynamic $slot_43_change">Trident [<<трезубец>>]</a>'
 if демократизатор > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''демократизатор'' & dynamic $slot_43_change">Baton [<<демократизатор>>]</a>'
 if кинжал > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кинжал'' & dynamic $slot_43_change">Dagger [<<кинжал>>]</a>'
 if стилет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''стилет'' & dynamic $slot_43_change">Stiletto [<<стилет>>]</a>'
@@ -1525,7 +1712,7 @@ if кастет > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''кас
 if нагайка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''нагайка'' & dynamic $slot_43_change">Lash [<<нагайка>>]</a>'
 if глушилка > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''глушилка'' & dynamic $slot_43_change">Stunner [<<глушилка>>]</a>'
 if тесак > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''тесак'' & dynamic $slot_43_change">Butcher''s Cleaver [<<тесак>>]</a>'
-if щит > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''щит'' & dynamic $slot_43_change">Sturdy Shield [<<щит>>]</a>'
+if мулава > 0: $equip_choice += '<br><a href = "EXEC: $new_item = ''мулава'' & dynamic $slot_43_change">Mace [<<мулава>>]</a>'
 gt curloc
 }
 
@@ -2277,45 +2464,77 @@ vitamin = 0
 !for controlling starting reputation
 $rise_rep = {
 IF $estate = 'korvus_house':
- IF hero_points >= 10:
-  hero_points -= 10
+ IF hero_points >= 80:
+  hero_points -= 80
+  IF faction_fame['neutral'] = 1:
+   hero_points += 80
+  END
   $estate = 'white_house'
   faction_fame['neutral'] = 1
-  faction_fame['korvus'] = 0
   $starting_area = 'White Town'
+  faction_purchase_kamira = 0
+  faction_purchase_serpis = 0
+  faction_purchase_taurus = 0
+  faction_purchase_korvus = 0
+  faction_purchase_neutral = 1  
+  dynamic $faction_adjustment
   ELSE
-  msg "Not enough character points. You need 10 points to raise this stat."
+  msg "Not enough character points. You need 80 points to raise this stat."
  END
 END
 IF $estate = 'taurus_house':
- IF hero_points >= 10:
-  hero_points -= 10
+ IF hero_points >= 40:
+  hero_points -= 40
+  IF faction_fame['korvus'] = 1:
+   hero_points += 40
+  END
   $estate = 'korvus_house'
   faction_fame['korvus'] = 1
-  faction_fame['taurus'] = 0
   $starting_area = 'Necropolis'
+  faction_purchase_kamira = 0
+  faction_purchase_serpis = 0
+  faction_purchase_taurus = 0
+  faction_purchase_korvus = 1
+  faction_purchase_neutral = 0
+  dynamic $faction_adjustment
   ELSE
-  msg "Not enough character points. You need 10 points to raise this stat."
+  msg "Not enough character points. You need 40 points to raise this stat."
  END
 END
 IF $estate = 'serpis_house':
- IF hero_points >= 10:
-  hero_points -= 10
+ IF hero_points >= 20:
+  hero_points -= 20
+  IF faction_fame['taurus'] = 1:
+   hero_points += 20
+  END
   $estate = 'taurus_house'
   faction_fame['taurus'] = 1
-  faction_fame['serpis'] = 0
+  faction_purchase_kamira = 0
+  faction_purchase_serpis = 0
+  faction_purchase_taurus = 1
+  faction_purchase_korvus = 0
+  faction_purchase_neutral = 0
+  dynamic $faction_adjustment
   $starting_area = 'Quarter of the Bull'
   ELSE
-  msg "Not enough character points. You need 10 points to raise this stat."
+  msg "Not enough character points. You need 20 points to raise this stat."
  END
 END
 IF $estate = 'kamira_house':
  IF hero_points >= 10:
   hero_points -= 10
+  IF faction_fame['serpis'] = 1:
+   hero_points += 10
+  END
   $estate = 'serpis_house'
   faction_fame['serpis'] = 1
-  faction_fame['kamira'] = 0
   $starting_area = 'Serpentine Quarter'
+  faction_purchase_kamira = 0
+  faction_purchase_serpis = 1
+  faction_purchase_taurus = 0
+  faction_purchase_korvus = 0
+  faction_purchase_neutral = 0
+  dynamic $faction_adjustment
   ELSE
   msg "Not enough character points. You need 10 points to raise this stat."
  END
@@ -2323,8 +2542,17 @@ END
 IF $estate = 'slum_house':
  IF hero_points >= 10:
   hero_points -= 10
+  IF faction_fame['kamira'] = 1:
+   hero_points += 10
+  END
   $estate = 'kamira_house'
   faction_fame['kamira'] = 1
+  faction_purchase_kamira = 1
+  faction_purchase_serpis = 0
+  faction_purchase_taurus = 0
+  faction_purchase_korvus = 0
+  faction_purchase_neutral = 0
+  dynamic $faction_adjustment
   $starting_area = 'Quarter of the Outcasts'
   ELSE
   msg "Not enough character points. You need 10 points to raise this stat."
@@ -2338,34 +2566,110 @@ IF $estate = 'kamira_house':
  $estate = 'slum_house'
  faction_fame['kamira'] = 0
  $starting_area = 'Slum'
+ dynamic $faction_adjustment
 END
 IF $estate = 'serpis_house':
- hero_points += 10
+ if faction_fame['kamira'] = 1: hero_points += 10
  $estate = 'kamira_house'
  faction_fame['serpis'] = 0
  faction_fame['kamira'] = 1
  $starting_area = 'Quarter of the Outcasts'
+ faction_purchase_kamira = 1
+ faction_purchase_serpis = 0
+ faction_purchase_taurus = 0
+ faction_purchase_korvus = 0
+ faction_purchase_neutral = 0
+ dynamic $faction_adjustment
 END
 IF $estate = 'taurus_house':
- hero_points += 10
+ if faction_fame['serpis'] = 1: hero_points += 20
  $estate = 'serpis_house'
  faction_fame['taurus'] = 0
  faction_fame['serpis'] = 1
  $starting_area = 'Serpentine Quarter'
+ faction_purchase_kamira = 0
+ faction_purchase_serpis = 1
+ faction_purchase_taurus = 0
+ faction_purchase_korvus = 0
+ faction_purchase_neutral = 0
+ dynamic $faction_adjustment
 END
 IF $estate = 'korvus_house':
- hero_points += 10
+ if faction_fame['taurus'] = 1: hero_points += 40
  $estate = 'taurus_house'
  faction_fame['korvus'] = 0
  faction_fame['taurus'] = 1
  $starting_area = 'Quarter of the Bull'
+ faction_purchase_kamira = 0
+ faction_purchase_serpis = 0
+ faction_purchase_taurus = 1
+ faction_purchase_korvus = 0
+ faction_purchase_neutral = 0
+ dynamic $faction_adjustment
 END
 IF $estate = 'white_house':
- hero_points += 10
+ if faction_fame['korvus'] = 1: hero_points += 80
  $estate = 'korvus_house'
  faction_fame['neutral'] = 0
  faction_fame['korvus'] = 1
  $starting_area = 'Necropolis'
+ faction_purchase_kamira = 0
+ faction_purchase_serpis = 0
+ faction_purchase_taurus = 0
+ faction_purchase_korvus = 1
+ faction_purchase_neutral = 0
+ dynamic $faction_adjustment
+END
+}
+
+$faction_adjustment = {
+IF faction_fame['neutral'] = 1:
+	IF faction_fame['korvus'] = 0:
+		hero_points -= 40
+		faction_fame['korvus'] = 1
+	END
+	IF faction_fame['taurus'] = 0:
+		hero_points -= 20
+		faction_fame['taurus'] = 1
+	END
+	IF faction_fame['serpis'] = 0:
+		hero_points -= 10
+		faction_fame['serpis'] = 1
+	END
+	IF faction_fame['kamira'] = 0:
+		hero_points -= 10
+		faction_fame['kamira'] = 1
+	END
+END 
+IF faction_fame['korvus'] = 1:
+	IF faction_fame['taurus'] = 0:
+		hero_points -= 20
+		faction_fame['taurus'] = 1
+	END
+	IF faction_fame['serpis'] = 0:
+		hero_points -= 10
+		faction_fame['serpis'] = 1
+	END
+	IF faction_fame['kamira'] = 0:
+		hero_points -= 10
+		faction_fame['kamira'] = 1
+	END
+END 
+IF faction_fame['taurus'] = 1:
+	IF faction_fame['serpis'] = 0:
+		hero_points -= 10
+		faction_fame['serpis'] = 1
+	END
+	IF faction_fame['kamira'] = 0:
+		hero_points -= 10
+		faction_fame['kamira'] = 1
+	END
+END 
+IF faction_fame['serpis'] = 1:
+	IF faction_fame['kamira'] = 0:
+		hero_points -= 10
+		faction_fame['kamira'] = 1
+	END
 END
 }
 

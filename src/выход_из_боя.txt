@@ -209,6 +209,170 @@ IF $fight_return ! '':
  $fight_return = ''
 END
 
+!Fog Battle Results and Rewards - crushboss
+
+!young fiend with a girl
+IF $враг[1] = 'исчадие_молодь':
+	fighting_expirience = 5
+	won_slave_minimum_value = 200
+	get_girl = 1
+	trophy_youngfiend = 1
+	fog_battle = 1
+	won_slave['parasite'] = 1
+	won_slave['deflowered'] = 1
+END
+!mature fiend with a girl
+IF $враг[1] = 'исчадие':
+	fighting_expirience = 10
+	won_slave_minimum_value = 200
+	get_girl = 1
+	trophy_maturefiend = 1
+	fog_battle = 1
+	master_str_rate += 2
+	won_slave['parasite'] = 1
+	won_slave['deflowered'] = 1
+END
+!huge fiend with a girl
+IF $враг[1] = 'чудовщиное_исчадие':
+	fighting_expirience = 15
+	won_slave_minimum_value = 300
+	get_girl = 1
+	trophy_hugefiend = 1
+	fog_battle = 1
+	master_str_rate += 4
+	master_domination_rate += 2
+	won_slave['parasite'] = 1
+	won_slave['deflowered'] = 1
+END
+!black medic with a girl
+IF $враг[1] = 'черный_медик':
+	fighting_expirience = 15
+	won_slave_minimum_value = 300
+	get_girl = 1
+	trophy_blackmedic = 1
+	fog_battle = 1
+	won_slave['parasite'] = 0
+	won_slave['deflowered'] = 0
+END
+!taurus paladin with a girl
+IF $враг[1] = 'паладин':
+	fighting_expirience = 10
+	won_slave_minimum_value = 200
+	get_girl = 1
+	fog_battle = 1
+	trophy_paladin = 1
+	master_str_rate += 2
+	won_slave['parasite'] = 0
+	won_slave['deflowered'] = 0 
+END
+!beastmen with a girl
+IF $враг[1] = 'козлорогий':
+	fighting_expirience = 10
+	won_slave_minimum_value = 200
+	get_girl = 1
+	trophy_beastmen = 1
+	fog_battle = 1
+	master_str_rate += 2
+	won_slave['ill'] = 1
+	won_slave['deflowered'] = 1
+END
+!werewolf with a girl
+IF $враг[1] = 'вервольф':
+	fighting_expirience = 15
+	won_slave_minimum_value = 300
+	get_girl = 1
+	trophy_werewolf = 1
+	fog_battle = 1
+	master_str_rate += 4
+	master_domination_rate += 2 
+	won_slave['parasite'] = 0
+	won_slave['deflowered'] = 0
+END
+!vampire with a girl
+IF $враг[1] = 'вампир':
+	fighting_expirience = 10
+	won_slave_minimum_value = 200
+	get_girl = 1
+	trophy_vampire = 1
+	fog_battle = 1
+	master_str_rate += 2
+	won_slave['parasite'] = 0
+	won_slave['deflowered'] = 0  
+END
+!Lich with a girl
+IF $враг[1] = 'лич':
+	fighting_expirience = 10
+	won_slave_minimum_value = 200
+	get_girl = 1
+	trophy_lich = 1
+	fog_battle = 1
+	master_str_rate += 2
+	won_slave['parasite'] = 0
+	won_slave['deflowered'] = 0
+END
+!scum with a girl
+IF $вт[1] = 'канибал':
+	fighting_expirience = 10
+	won_slave_minimum_value = 200
+	get_girl = 1
+	trophy_scum = 1
+	fog_battle = 1
+	won_slave['ill'] = 1
+	won_slave['deflowered'] = 1
+END
+!ogre with a girl
+IF $враг[1] = 'ogre':
+	fighting_expirience = 15
+	won_slave_minimum_value = 300
+	get_girl = 1
+	trophy_ogre = 1
+	fog_battle = 1
+	master_str_rate += 4
+	master_domination_rate += 2
+	won_slave['deflowered'] = 1
+	won_slave['parasite'] = 0
+END
+!goblins with a girl
+IF $враг[1] = 'goblin':
+	fighting_expirience = 5
+	won_slave_minimum_value = 100
+	get_girl = 1
+	trophy_goblins = 1
+	fog_battle = 1
+	won_slave['ill'] = 1
+	won_slave['deflowered'] = 1
+END
+!warg with a girl
+IF $враг[1] = 'warg':
+	fighting_expirience = 15
+	won_slave_minimum_value = 300
+	get_girl = 1
+	trophy_warg = 1
+	fog_battle = 1
+	master_str_rate += 4
+	master_domination_rate += 2 
+	won_slave['deflowered'] = 1
+	won_slave['parasite'] = 0
+END
+!orc with a girl
+IF $враг[1] = 'orc':
+	fighting_expirience = 10
+	won_slave_minimum_value = 200
+	get_girl = 1
+	trophy_orc = 1
+	fog_battle = 1
+	won_slave['parasite'] = 0
+	won_slave['deflowered'] = 0
+END
+
+!Special Event - Dragon Fire Staff Relic - crushboss
+IF trophy_ogre = 1 and trophy_warg = 1 and trophy_werewolf = 1 and trophy_hugefiend = 1 and trophy_vampire = 1 and trophy_lich = 1 and посох_огня = 0 and trophy_fire_staff = 0 and fog_battle = 1:
+ IF master_mage >= 5 and master_str >= 5 and master_domination >= 5:
+ msg 'Something is strange here.  I should investigate...'
+ gt 'special_screen'
+ END
+END
+
 !Slave won and get girl code - Overhauled - crushboss
 IF get_girl = 1:
  :won_slave_calc

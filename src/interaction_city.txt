@@ -1,28 +1,33 @@
 # interaction_city
 !INTERACTIONS IN CITY
+
 gs '#txt'
 gs '#txt_2'
 
-$special_part = ''
-$special_bg = ''   
-$special_text = ''
-$picture_type = ''
+killvar 'play_sound'
+killvar '$sp_text'
 killvar '$special_image'
 killvar '$special_image_full'
 killvar '$special_action'
 killvar '$special_bg'
 killvar '$forum_encouner_description'
+
+$special_part = ''
+$special_bg = ''   
+$special_text = ''
+$picture_type = ''
+
 npc = 0
 skip_to = 0
 multiple = 0
 city_form = 0
 
-$interaction_type = 'standart' 
-$place = 'study' 
-
 if sp_txt_is_set_from_save = 0: sp_txt = 1
 sl_txt = 1
 txt_count = 1
+txt = 1
+$msg_txt = ''
+
 arena_mode = 0
 byer_interested = 0
 charm_demand = 0
@@ -32,10 +37,7 @@ noprice = 0
 slave_offered_to_subpurchaser = 0
 purse = 0
 
-$msg_txt = ''
-killvar 'play_sound'
-killvar '$sp_text'
-$interaction_type = 'basic' 
+$interaction_type = 'basic'
 
 IF interaction_city = 111:
  npc = 1
@@ -1040,7 +1042,7 @@ IF interaction_city = 119:
  $return_lock  = 'menu_form' 
  npc = 1
  txt_count = 3 
- gs '$slave_price'
+ gs '$slave_price_stock'
  farid_potential_debt = halfprice
  $npc_id = 'фарид_аукционщик'
  $place = 'slave_stage'
@@ -1298,6 +1300,7 @@ END
 IF interaction_city = 1294:
  $place = 'colloseum_arena'
 ! $return_lock = 'goto_loc'
+ city_form = 1
  $return_lock = 'city_menu_form'
  $picture_type = 'untyped' 
  $special_bg = 'content\pic\scene\arena_end.jpg'
@@ -1321,7 +1324,6 @@ IF interaction_city = 1294:
  fgn = 1 + slave['winning_series'] * slave['winning_series']
  slave_rate['fame'] += fgn 
  brand_rate += (3 + challenge_type)
- if slave['arena_level'] = 8: slave['arena_level'] = 9
  !Duplicate code necessary - do not remove - crushboss
  if $ge = 'champion_kamira': trophy_camira = 1
  if $ge = 'champion_corvus': trophy_corvus = 1
@@ -1351,8 +1353,10 @@ IF interaction_city = 1294:
   trophy_arenafiend = 1
  END 
  IF challenge_type = 4:
+  slave['c4done'] = 1
+  slave['arena_level'] = 9
   trophy_absolute = 1
- END 
+ END
 END
 
 !slave is freed in the arena due to winning the Arena Championship
@@ -1419,7 +1423,7 @@ IF interaction_city = 1296:
   master_str_rate += 2
   master_hygiene_rate += 15
   master_domination_rate += 1
- END 
+ END
  combatant = 0 
  colloseum_fight = 0
  $fight_return = ''
@@ -1776,7 +1780,7 @@ IF interaction_city = 13411:
  $yes = {
 $study = 'basic'
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1797,7 +1801,7 @@ IF interaction_city = 13412:
 $study = 'econom'
 sparks -= 20
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1818,7 +1822,7 @@ IF interaction_city = 13413:
 $study = 'japan'
 sparks -= 25
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1839,7 +1843,7 @@ IF interaction_city = 13414:
 $study = 'comfy'
 sparks -= 25
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1860,7 +1864,7 @@ IF interaction_city = 13415:
 $study = 'fort'
 sparks -= 50
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1881,7 +1885,7 @@ IF interaction_city = 13416:
 $study = 'modern'
 sparks -= 50
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1895,14 +1899,14 @@ IF interaction_city = 13417:
  txt_count = 1
  txt = 1
  $picture_type = 'pic_jpg'
- $special_bg = 'bg\study'
+ $special_bg = 'bg\interiors\classic_study'
  $text[1] = '   [Gloria]
    - This premium design set is available for a one-time fee of 50 sparks. Our workers will install it within a day. Will do?'
  $yes = {
 $study = 'classic'
 sparks -= 50
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1923,7 +1927,7 @@ IF interaction_city = 13418:
 $study = 'victorian'
 sparks -= 100
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1944,7 +1948,7 @@ IF interaction_city = 13419:
 $study = 'gothic'
 sparks -= 100
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1965,7 +1969,7 @@ IF interaction_city = 134110:
 $study = 'elite'
 sparks -= 100
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -1986,7 +1990,7 @@ IF interaction_city = 134111:
 $study = 'slaver'
 sparks -= 150
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -2007,7 +2011,7 @@ IF interaction_city = 134112:
 $study = 'lux'
 sparks -= 200
 $bg['study'] = $interior_study[$study]
-$bg['home_lux'] = $interior_bg[$study]
+$bg['home_lux'] = $interior_study_large[$study]
 $place_info['study'] = $interior_study_info[$study]
 gt 'shop_general'}
  $no = {sp_txt = 41
@@ -2028,6 +2032,7 @@ IF interaction_city = 13421:
  $yes = {
 $bed = 'basic'
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_study_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2048,6 +2053,7 @@ IF interaction_city = 13422:
 $bed = 'econom'
 sparks -= 15
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2068,6 +2074,7 @@ IF interaction_city = 13423:
 $bed = 'japan'
 sparks -= 25
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_study_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2088,6 +2095,7 @@ IF interaction_city = 13424:
 $bed = 'comfy'
 sparks -= 25
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2108,6 +2116,7 @@ IF interaction_city = 13425:
 $bed = 'fort'
 sparks -= 30
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2128,6 +2137,7 @@ IF interaction_city = 13426:
 $bed = 'modern'
 sparks -= 50
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2141,13 +2151,14 @@ IF interaction_city = 13427:
  txt_count = 1
  txt = 1
  $picture_type = 'pic_jpg'
- $special_bg = 'bg\bedroom'
+ $special_bg = 'bg\interiors\classic_bedroom'
  $text[1] = '   [Gloria]
    - This premium design set is available for a one-time fee of 100 sparks. Our workers will install it within a day. Will do?'
  $yes = {
 $bed = 'classic'
 sparks -= 100
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2168,6 +2179,7 @@ IF interaction_city = 13428:
 $bed = 'slaver'
 sparks -= 100
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2188,6 +2200,7 @@ IF interaction_city = 13429:
 $bed = 'stylish'
 sparks -= 150
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2208,6 +2221,7 @@ IF interaction_city = 134210:
 $bed = 'gothic'
 sparks -= 150
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bathroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2228,6 +2242,7 @@ IF interaction_city = 134211:
 $bed = 'elite'
 sparks -= 150
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2248,6 +2263,7 @@ IF interaction_city = 134212:
 $bed = 'lux'
 sparks -= 200
 $bg['bedroom'] = $interior_bed[$bed]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
 $place_info['bedroom'] = $interior_bed_info[$bed]
 gt 'shop_general'}
  $no = {sp_txt = 42
@@ -2262,13 +2278,14 @@ IF interaction_city = 13431:
  txt_count = 1
  txt = 1
  $picture_type = 'pic_jpg'
- $special_bg = 'bg\kitchen'
+ $special_bg = 'bg\interiors\basic_kitchen'
  $text[1] = '   [Gloria]
    - This budget design set is available for a one-time fee of 20 sparks. Our workers will install it within a day. Will do?'
  $yes = {
 $kitchen = 'basic'
 sparks -= 20
 $bg['kitchen'] = $interior_kitchen[$kitchen]
+$bg['kitchen_lux'] = $interior_kitchen_large[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
  $no = {sp_txt = 43
@@ -2289,6 +2306,7 @@ IF interaction_city = 13432:
 $kitchen = 'econom'
 sparks -= 20
 $bg['kitchen'] = $interior_kitchen[$kitchen]
+$bg['kitchen_lux'] = $interior_kitchen_large[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
  $no = {sp_txt = 43
@@ -2309,6 +2327,7 @@ IF interaction_city = 13433:
 $kitchen = 'fort'
 sparks -= 20
 $bg['kitchen'] = $interior_kitchen[$kitchen]
+$bg['kitchen_lux'] = $interior_kitchen_large[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
  $no = {sp_txt = 43
@@ -2330,6 +2349,7 @@ IF interaction_city = 13434:
 $kitchen = 'gothic'
 sparks -= 50
 $bg['kitchen'] = $interior_kitchen[$kitchen]
+$bg['kitchen_lux'] = $interior_kitchen_large[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
  $no = {sp_txt = 43
@@ -2350,6 +2370,7 @@ IF interaction_city = 13435:
 $kitchen = 'elite'
 sparks -= 50
 $bg['kitchen'] = $interior_kitchen[$kitchen]
+$bg['kitchen_lux'] = $interior_kitchen_large[$kitchen]
 $place_info['kitchen'] = $interior_kitchen_info[$kitchen]
 gt 'shop_general'}
  $no = {sp_txt = 43
@@ -2370,6 +2391,7 @@ IF interaction_city = 13441:
 $bath = 'econom'
 sparks -= 20
 $bg['bathroom'] = $interior_bath[$bath]
+$bg['bathroom_lux'] = $interior_bath_large[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
  $no = {sp_txt = 44
@@ -2390,6 +2412,7 @@ IF interaction_city = 13442:
 $bath = 'fort'
 sparks -= 20
 $bg['bathroom'] = $interior_bath[$bath]
+$bg['bathroom_lux'] = $interior_bath_large[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
  $no = {sp_txt = 44
@@ -2403,13 +2426,14 @@ IF interaction_city = 13443:
  txt_count = 1
  txt = 1
  $picture_type = 'pic_jpg'
- $special_bg = 'bg\bathroom'
+ $special_bg = 'bg\interiors\classic_bathroom'
  $text[1] = '   [Gloria]
    - This premium design set is available for a one-time fee of 50 sparks. Our workers will install it within a day. Will do?'
  $yes = {
 $bath = 'classic'
 sparks -= 50
 $bg['bathroom'] = $interior_bath[$bath]
+$bg['bathroom_lux'] = $interior_bath_large[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
  $no = {sp_txt = 44
@@ -2430,6 +2454,7 @@ IF interaction_city = 13444:
 $bath = 'japan'
 sparks -= 50
 $bg['bathroom'] = $interior_bath[$bath]
+$bg['bathroom_lux'] = $interior_bath_large[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
  $no = {sp_txt = 44
@@ -2450,6 +2475,7 @@ IF interaction_city = 13445:
 $bath = 'gothic'
 sparks -= 50
 $bg['bathroom'] = $interior_bath[$bath]
+$bg['bathroom_lux'] = $interior_bath_large[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
  $no = {sp_txt = 44
@@ -2470,6 +2496,7 @@ IF interaction_city = 13446:
 $bath = 'elite'
 sparks -= 50
 $bg['bathroom'] = $interior_bath[$bath]
+$bg['bathroom_lux'] = $interior_bath_large[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
  $no = {sp_txt = 44
@@ -2490,6 +2517,7 @@ IF interaction_city = 13448:
 $bath = 'lux'
 sparks -= 100
 $bg['bathroom'] = $interior_bath[$bath]
+$bg['bathroom_lux'] = $interior_bath_large[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
  $no = {sp_txt = 44
@@ -2509,6 +2537,7 @@ IF interaction_city = 13447:
  $yes = {
 $bath = 'basic'
 $bg['bathroom'] = $interior_bath[$bath]
+$bg['bathroom_lux'] = $interior_bath_large[$bath]
 $place_info['bathroom'] = $interior_bath_info[$bath]
 gt 'shop_general'}
  $no = {sp_txt = 44
@@ -2529,6 +2558,7 @@ IF interaction_city = 13451:
 $dungeon = 'basic'
 sparks -= 0
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2549,6 +2579,7 @@ IF interaction_city = 13452:
 $dungeon = 'econom'
 sparks -= 20
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2569,6 +2600,7 @@ IF interaction_city = 13453:
 $dungeon = 'fort'
 sparks -= 10
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2589,6 +2621,7 @@ IF interaction_city = 13454:
 $dungeon = 'entomb'
 sparks -= 10
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2602,13 +2635,14 @@ IF interaction_city = 13455:
  txt_count = 1
  txt = 1
  $picture_type = 'pic_jpg'
- $special_bg = 'bg\dungeon'
+ $special_bg = 'bg\interiors\classic_dungeon'
  $text[1] = '   [Gloria]
    - This design set is available for a one-time fee of 20 sparks. Our workers will install it within a day. Will do?'
  $yes = {
 $dungeon = 'classic'
 sparks -= 20
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2629,6 +2663,7 @@ IF interaction_city = 13456:
 $dungeon = 'pastoral'
 sparks -= 20
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2649,6 +2684,7 @@ IF interaction_city = 13457:
 $dungeon = 'gothic'
 sparks -= 20
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2669,6 +2705,7 @@ IF interaction_city = 13458:
 $dungeon = 'executor'
 sparks -= 25
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2689,6 +2726,7 @@ IF interaction_city = 13459:
 $dungeon = 'slaver'
 sparks -= 25
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2709,6 +2747,7 @@ IF interaction_city = 134510:
 $dungeon = 'victorian'
 sparks -= 50
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2729,6 +2768,7 @@ IF interaction_city = 134511:
 $dungeon = 'elite'
 sparks -= 50
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2749,6 +2789,7 @@ IF interaction_city = 134512:
 $dungeon = 'lux'
 sparks -= 50
 $bg['dungeon'] = $interior_dungeon[$dungeon]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
 $place_info['dungeon'] = $interior_dungeon_info[$dungeon]
 gt 'shop_general'}
  $no = {sp_txt = 45
@@ -2770,6 +2811,7 @@ IF interaction_city = 13461:
 $bouduar = 'basic'
 sparks -= 0
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2790,6 +2832,7 @@ IF interaction_city = 13462:
 $bouduar = 'econom'
 sparks -= 10
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2810,6 +2853,7 @@ IF interaction_city = 13463:
 $bouduar = 'modern'
 sparks -= 20
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2830,6 +2874,7 @@ IF interaction_city = 13464:
 $bouduar = 'comfy'
 sparks -= 20
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2850,6 +2895,7 @@ IF interaction_city = 13465:
 $bouduar = 'magic'
 sparks -= 50
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2870,6 +2916,7 @@ IF interaction_city = 13466:
 $bouduar = 'victorian'
 sparks -= 50
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2890,6 +2937,7 @@ IF interaction_city = 13467:
 $bouduar = 'slaver'
 sparks -= 50
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2910,6 +2958,7 @@ IF interaction_city = 13468:
 $bouduar = 'fort'
 sparks -= 100
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2930,6 +2979,7 @@ IF interaction_city = 13469:
 $bouduar = 'elite'
 sparks -= 150
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2950,6 +3000,7 @@ IF interaction_city = 134610:
 $bouduar = 'gothic'
 sparks -= 200
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2970,6 +3021,7 @@ IF interaction_city = 134611:
 $bouduar = 'lux'
 sparks -= 250
 $bg['bouduar'] = $interior_bouduar[$bouduar]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $place_info['bouduar'] = $interior_bouduar_info[$bouduar]
 gt 'shop_general'}
  $no = {sp_txt = 46
@@ -2990,6 +3042,7 @@ IF interaction_city = 13471:
 $lab = 'econom'
 sparks -= 20
 $bg['lab'] = $interior_lab[$lab]
+$bg['lab_lux'] = $interior_lab_large[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
  $no = {sp_txt = 47
@@ -3010,6 +3063,7 @@ IF interaction_city = 13472:
 $lab = 'basic'
 sparks -= 20
 $bg['lab'] = $interior_lab[$lab]
+$bg['lab_lux'] = $interior_lab_large[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
  $no = {sp_txt = 47
@@ -3030,6 +3084,7 @@ IF interaction_city = 13473:
 $lab = 'fort'
 sparks -= 50
 $bg['lab'] = $interior_lab[$lab]
+$bg['lab_lux'] = $interior_lab_large[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
  $no = {sp_txt = 47
@@ -3050,6 +3105,7 @@ IF interaction_city = 13474:
 $lab = 'gothic'
 sparks -= 100
 $bg['lab'] = $interior_lab[$lab]
+$bg['lab_lux'] = $interior_lab_large[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
  $no = {sp_txt = 47
@@ -3070,6 +3126,7 @@ IF interaction_city = 13475:
 $lab = 'slaver'
 sparks -= 100
 $bg['lab'] = $interior_lab[$lab]
+$bg['lab_lux'] = $interior_lab_large[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
  $no = {sp_txt = 47
@@ -3090,6 +3147,7 @@ IF interaction_city = 13476:
 $lab = 'victorian'
 sparks -= 100
 $bg['lab'] = $interior_lab[$lab]
+$bg['lab_lux'] = $interior_lab_large[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
  $no = {sp_txt = 47
@@ -3110,6 +3168,7 @@ IF interaction_city = 13477:
 $lab = 'elite'
 sparks -= 100
 $bg['lab'] = $interior_lab[$lab]
+$bg['lab_lux'] = $interior_lab_large[$lab]
 $place_info['lab'] = $interior_lab_info[$lab]
 gt 'shop_general'}
  $no = {sp_txt = 47
@@ -3745,6 +3804,54 @@ IF interaction_city = 15343:
  tentacle_hp = 0 
 END
 
+!Post Patrician Quest for end game - crushboss
+IF interaction_city = 1535:
+	npc = 1
+	$npc_id = 'lord_spectre'
+	$place = 'forum'
+	$return_lock  = 'shop_general' 
+	sp_txt = 2
+	gs '#txt_2'
+	gs '#quest_base'
+	IF active[$quest[12]] = 0:  
+		interaction_city = 15351
+	else
+		interaction_city = 15352
+		IF slave_type = 908 and rating = 10 and slave_state = CONST_INT['slave_exist'] and sex_sum = 35 and slave["pride"] = 0 and slave["spoil"] = 0 and slave["moral"] = 5 and slave['has_ride_win'] > 6:
+			IF v_balls_rule = 1 and slave_eats_remains = 0 and slave_food_type = 2 and blowjob_rule = 1 and slave_washes_rule = 1 and slave_tentacle_rule = 1 and pet_tentacle > 0:
+				IF slave["fiend_tattoo"] = 1 and slave["tatoo"] >= 5 and slave["piercings"] >= 9 and slave["piercing_count"] >= 5 and slave['pregnant'] > 0 and slave["arousal"] = 5:
+					IF $slave["earrings"] ! '' and $slave["collar"] ! '' and $slave["headband"] ! '' and $slave["gloves"] ! '' and $slave["nipplerings"] = 'nipple_chain' and $slave["clitring"] ! '' and $slave["boots"] ! '' and $slave["ring_left"] ! '' and $slave["ring_right"] ! '' and $slave["naval"] = 'belly_ring' and $slave["tongue"] = 'tongue_barbell':
+						IF slave["exhibitionism"] = 2 and slave["nymphomania"] = 1 and slave["preversion"] = 2 and slave["homosexualism"] = 1:
+							interaction_city = 15353
+						END
+					END
+				END
+			END
+		END
+	END
+END
+
+IF interaction_city = 15351:
+ txt_count = arrsize('$spectre_quest') - 1
+ copyarr '$text', '$spectre_quest'
+ active[$quest[12]] = 1
+END
+
+IF interaction_city = 15352:
+ txt_count = arrsize('$spectre_fail') - 1
+ copyarr '$text', '$spectre_fail'
+END
+
+IF interaction_city = 15353:
+ txt_count = arrsize('$spectre_win') - 1
+ copyarr '$text', '$spectre_win'
+ active[$quest[12]] = 2 
+ кольчуга = 1
+ brand_rate += 10
+ guild_reputation_rate += 10
+ slave_state = CONST_INT['no_slave']
+END
+
 !VATICAN
 IF interaction_city = 16:
  $place = 'vatican_gate'
@@ -3885,7 +3992,7 @@ IF interaction_city = 199:
  $text[1] = "  <<$описание_моба[$враг[1]]>>"
  $special_bg = '<<$силуэт_моба[$враг[1]]>>'
  $return_lock = 'начать_бой'
- memcf = colloseum_fight 
+ memcf = colloseum_fight
 END
 
 IF interaction_city = 1941:
@@ -5344,6 +5451,7 @@ slave_rate['stamina'] -= 20
 slave['reabilitation'] += 20
 slave['fertility'] = 1
 slave['vaginal_modification'] = 4
+slave['parasite'] = 0
 gt 'shop_general'}
  $no = {sp_txt = 2
 gt 'shop_general'}
@@ -5896,6 +6004,7 @@ assistant_rate['stamina'] -= 20
 assistant['reabilitation'] += 20
 assistant['fertility'] = 1
 assistant['vaginal_modification'] = 4
+assistant['parasite'] = 0
 gt 'shop_general'}
  $no = {sp_txt = 3
 gt 'shop_general'}
@@ -7401,8 +7510,10 @@ END
 
 !starting the patrol
 IF interaction_city = 62:
+ gs '$combat_variable_reset'
  $place = 'edge_patrool'
  $return_lock  = 'city_menu_form'
+ combatant = 0
  !the upper bound of this MUST equal the total number of encounters
  patrol_num = RAND (1,14)
 !Testing code - comment out the line above and uncomment the line below to have all fights in order - crushboss
@@ -7429,13 +7540,7 @@ IF interaction_city = 6201:
  $sp_text[6201] = '    You see the young fiend that crept through the Fogs and caught a girl, which it fertilizes with its tentacles, rumbling. Maybe she can still be saved.'
  количество_врагов = 1
  $враг[1] = 'исчадие_молодь'
- fighting_expirience = 5
- won_slave_minimum_value = 200
- get_girl = 1
- trophy_youngfiend = 1
  copyarr '$display_options', '$edge_of_mists'  
- won_slave['parasite'] = 1
- won_slave['deflowered'] = 1
  GT 'shop_general' 
 END
 
@@ -7446,14 +7551,7 @@ IF interaction_city = 6202:
  количество_врагов = 1
  $враг[1] = 'исчадие' 
  $sp_text[6202] = '   You stumble upon a large Fog fiend, that accidentally crawled farther form its border than usual. It''s many tentacles desperately beat a woman. The Fiend methodically pumps all her holes with loads of thick seed, trying to fertilize her.'
- fighting_expirience = 10
- won_slave_minimum_value = 200
- get_girl = 1
- trophy_maturefiend = 1
- master_str_rate += 2
  copyarr '$display_options', '$edge_of_mists'  
- won_slave['parasite'] = 1
- won_slave['deflowered'] = 1
  GT 'shop_general'
 END
 
@@ -7464,15 +7562,7 @@ IF interaction_city = 6203:
  $sp_text[6203] = '   You notice a huge, hardened Fog Fiend, that wandered in its search of a victim near the border. The search was not in vain - you see the creature''s tentacles desperately beating a woman, and the beast will not let her go until it impregnates her. If only someone would come and rescue her.'
  количество_врагов = 1
  $враг[1] = 'чудовщиное_исчадие' 
- fighting_expirience = 15
- won_slave_minimum_value = 300
- get_girl = 1
- trophy_hugefiend = 1
- master_str_rate += 4
- master_domination_rate += 2
  copyarr '$display_options', '$edge_of_mists'  
- won_slave['parasite'] = 1
- won_slave['deflowered'] = 1
  GT 'shop_general'
 END
 
@@ -7486,13 +7576,7 @@ IF interaction_city = 6204:
  $враг[2] = 'подручный' 
  $враг[3] = 'подручный' 
  $враг[4] = 'подручный'   
- fighting_expirience = 15
- won_slave_minimum_value = 300
- get_girl = 1
- trophy_blackmedic = 1
  copyarr '$display_options', '$edge_of_mists'
- won_slave['parasite'] = 0
- won_slave['deflowered'] = 0  
  GT 'shop_general'
 END
 
@@ -7505,14 +7589,7 @@ IF interaction_city = 6205:
  $враг[1] = 'паладин' 
  $враг[2] = 'пехотинец' 
  $враг[3] = 'пехотинец' 
- fighting_expirience = 10
- won_slave_minimum_value = 200
- get_girl = 1
- trophy_paladin = 1
- master_str_rate += 2
  copyarr '$display_options', '$edge_of_mists'
- won_slave['parasite'] = 0
- won_slave['deflowered'] = 0  
  GT 'shop_general'
 END
 
@@ -7534,14 +7611,7 @@ IF interaction_city = 6206:
  $враг[3] = $зверолюд[a] 
  a = RAND (1,4) 
  $враг[4] = $зверолюд[a] 
- fighting_expirience = 10
- won_slave_minimum_value = 200
- get_girl = 1
- trophy_beastmen = 1
- master_str_rate += 2
  copyarr '$display_options', '$edge_of_mists'  
- won_slave['ill'] = 1
- won_slave['deflowered'] = 1
  GT 'shop_general'
 END
 
@@ -7552,15 +7622,7 @@ IF interaction_city = 6207:
  $sp_text[6207] = '   Like gray lightning something rushes past you and jumps on a girl who is trying to stay hidden, knocking her to the ground. It''s a werewolf, and he seems to believe that the prey belongs to him. Glancing at you with the corner of his eye, the werewolf tears off the victim''s clothes, ready to rape and then eat her alive.'
  количество_врагов = 1
  $враг[1] = 'вервольф' 
- fighting_expirience = 15
- won_slave_minimum_value = 300
- get_girl = 1
- trophy_werewolf = 1
- master_str_rate += 4
- master_domination_rate += 2 
  copyarr '$display_options', '$edge_of_mists'
- won_slave['parasite'] = 0
- won_slave['deflowered'] = 0  
  GT 'shop_general'
 END
 
@@ -7571,14 +7633,7 @@ IF interaction_city = 6208:
  количество_врагов = 1
  $враг[1] = 'вампир'  
  $sp_text[6208] = '   Close to the border of Fogs you see two human figures. Dressed in black armor as dark as the night itself, a vampire enchanted a young girl with his eyes and is ready to drink her blood. Your approach has not gone unnoticed.'
- fighting_expirience = 10
- won_slave_minimum_value = 200
- get_girl = 1
- trophy_vampire = 1
- master_str_rate += 2
  copyarr '$display_options', '$edge_of_mists'
- won_slave['parasite'] = 0
- won_slave['deflowered'] = 0  
  GT 'shop_general'
 END
 
@@ -7589,14 +7644,7 @@ IF interaction_city = 6209:
  количество_врагов = 1
  $враг[1] = 'лич'   
  $sp_text[6209] = '   From a distance you notice a deathly blue flash of magic. It''s a lich necromancer who has emerged from the Fogs and spell bounded a young girl with paralysis. He seems to need her as a sacrifice for some dark magic ritual.' 
- fighting_expirience = 10
- won_slave_minimum_value = 200
- get_girl = 1
- trophy_lich = 1
- master_str_rate += 2
  copyarr '$display_options', '$edge_of_mists'
- won_slave['parasite'] = 0
- won_slave['deflowered'] = 0  
  GT 'shop_general'
 END
 
@@ -7605,10 +7653,6 @@ IF interaction_city = 6210:
  $fight_return  = 'city_menu_form'
  skip_to = 6210
  $sp_text[6210] = '   You hear the raucous laughter and screams that lead you to a small gang of scum from the slums. The scums caught a young girl and are taking turns raping her, while their fellows are collecting wood for a fire. It seems like they don`t like raw meat.'
- fighting_expirience = 10
- won_slave_minimum_value = 200
- get_girl = 1
- trophy_scum = 1
  $вт[1] = 'канибал'
  $вт[2] = 'калека'
  $вт[3] = 'нищеброд'
@@ -7626,8 +7670,6 @@ IF interaction_city = 6210:
  a = RAND (1,5) 
  $враг[5] = $вт[a]
  copyarr '$display_options', '$edge_of_mists'  
- won_slave['ill'] = 1
- won_slave['deflowered'] = 1
  GT 'shop_general'
 END
 
@@ -7638,15 +7680,7 @@ IF interaction_city = 6211:
  $sp_text[6211] = '   Near the edge of the Fogs you hear a deep, gravelly laugh, followed by a scream. Approaching the source, you find a girl in the grips of a large ogre. His massive cock is pistoning in and out of her as he rapes her, making her belly bulge with each thrust. They haven''t noticed you yet.'
  количество_врагов = 1
  $враг[1] = 'ogre' 
- fighting_expirience = 15
- won_slave_minimum_value = 300
- get_girl = 1
- trophy_ogre = 1
- master_str_rate += 4
- master_domination_rate += 2
  copyarr '$display_options', '$edge_of_mists'  
- won_slave['deflowered'] = 1
- won_slave['parasite'] = 0
  GT 'shop_general'
 END
 
@@ -7658,13 +7692,7 @@ IF interaction_city = 6212:
  количество_врагов = 2
  $враг[1] = 'goblin'
  $враг[2] = 'goblin'
- fighting_expirience = 5
- won_slave_minimum_value = 100
- get_girl = 1
- trophy_goblins = 1
  copyarr '$display_options', '$edge_of_mists'  
- won_slave['ill'] = 1
- won_slave['deflowered'] = 1
  GT 'shop_general' 
 END
 
@@ -7675,15 +7703,7 @@ IF interaction_city = 6213:
  количество_врагов = 1
  $враг[1] = 'warg' 
  $sp_text[6213] = '   As you patrol the border of the Fogs, you hear a deep snarling sound accompanied by haggard sobs. Approaching quietly, you see a large wolf-like creature raping a wounded girl. He grips her neck in his teeth, and will surely kill and eat her once he cums. He smells you approaching and growls deeply.'
- fighting_expirience = 15
- won_slave_minimum_value = 300
- get_girl = 1
- trophy_warg = 1
- master_str_rate += 4
- master_domination_rate += 2 
  copyarr '$display_options', '$edge_of_mists'  
- won_slave['deflowered'] = 1
- won_slave['parasite'] = 0
  GT 'shop_general'
 END
 
@@ -7694,13 +7714,7 @@ IF interaction_city = 6214:
  количество_врагов = 1
  $враг[1] = 'orc' 
  $sp_text[6214] = '   Stalking along the edge of the Fogs, you come across two figures - a large one striding powerfully, and a smaller one bound and limping along behind. Coming closer, you see it is an orcish warrior who appears to have captured a young woman. He sees you and brandishes his large axe.'
- fighting_expirience = 10
- won_slave_minimum_value = 200
- get_girl = 1
- trophy_orc = 1
  copyarr '$display_options', '$edge_of_mists'
- won_slave['parasite'] = 0
- won_slave['deflowered'] = 0
  GT 'shop_general'
 END
 
@@ -8013,6 +8027,30 @@ IF interaction_city = 6533:
    - You're lucky kid. I just now have this amazon woman right here. Gimme sparks and take her away."
 END
 
+!Post Patrician Quest - crushboss
+IF interaction_city = 6535:
+ npc = 1
+ $npc_id = 'bararaika'
+ $place = 'smuglers_den'
+ $return_lock  = 'shop_general' 
+
+ slave_type = 908
+ 
+ gs 'get_demo_slave'
+ gs '$slave_price'
+
+ rand_roll = RAND(0,1)
+ slave["grace"] = rand_roll
+ killvar 'rand_roll'
+ slave['brand'] = 0
+ tattoo_brand = slave['brand']
+ sparks -= 10000
+ felicity = 1
+ txt_count = 1
+ $text[1] = "   [Balalaika]
+   - We've been expecting you <<$master_name>>. I have this spoiled brat right here. Gimme sparks and take her away."
+END
+
 !misc
 IF interaction_city = 900:
  $return_lock  = 'slave_to_train' 
@@ -8195,6 +8233,7 @@ IF interaction_city = 9511:
  full_search_cost = search["cost"] * 70
  npc = 1
  $npc_id = 'scoops'
+ txt_count = 1
  txt = 1
  $text[1] = '  [MASTER SKUPS]
    - It will cost you <<full_search_cost>> sparks, <<$master_name>>. Sparks forward and mind you, even if you cancel the order, I do not do refunds.'
@@ -8217,37 +8256,41 @@ IF interaction_city = 952:
  $place = 'guild_hall'
  $return_lock  = 'guild' 
  npc = 1
- $npc_id = 'scoops' 
+ $npc_id = 'scoops'
+ txt_count = 1
+ txt = 1
  $text[1] = '  [MASTER SKUPS]
  - As you say, <<$master_name>>. I''ll stop searching, but do not count on a refund!'
  search['active'] = 0
+ killvar 'search'
 END
 
 
 IF interaction_city = 953:
  $place = 'guild_hall'
- $return_lock  = 'guild' 
+ $return_lock  = 'guild'
  npc = 1
- $npc_id = 'scoops' 
+ $npc_id = 'scoops'
+ txt_count = 1
+ txt = 1
  IF slave_state = CONST_INT['no_slave']:
   $text[1] = '  [MASTER SKUPS]
- - Here, <<$master_name>>. At its best, just like you ordered - I guarantee! Take it and enjoy. I''m sure you''ll be able to perfectly prepare her, good luck!'
-  search['active'] = 0
-  gs 'expert_to_slave'
+ - Here, <<$master_name>>. An awesome slave, just like you ordered - I guarantee! Take it and enjoy. I''m sure you''ll be able to perfectly prepare her, good luck!'
+  expert_give_slave = 1
   else
   $text[1] = '  [MASTER SKUPS]
   - The place is not ready yet? Well, apparently you have to put somewhere the current slave to take this one. I know, free space - it is an eternal problem, but I am just can not keep her forever. Come when you can pick up this slave and try to do it quickly, please!' 
  END
 END
 
-
 !Grab weapons to fight
 IF interaction_city = 901:
  $place = $memplace
  $return_lock  = 'shop_general'
  nogoto = 1
- $sp_text[1] = '  Before you engage in battle, you have time to prepare and ready your weapons.  You can only attack with one weapon at a time but you can switch weapons during combat.  The last weapon you choose, when selecting a 2nd or 3rd weapon will become your default and primary weapon.'
- $sp_text[2] = '  Your second hand is still free. You can try to fight with a weapon in two hands in order to have more options to attack.' 
+ $sp_text[1] = '  Before you engage in battle, you have time to prepare and ready your weapons.  You can attack with a single two-handed weapon (shoulder slot), a single one-handed weapon (any non-shoulder slot), or dual wield a primary weapon (right hand) and an off hand weapon (left hand).  The first weapon you select will become your primary weapon.  You can also switch weapons during combat.'
+ $sp_text[2] = '  Your left hand is still free. You can try to fight with a weapon in each hand in order to have more options to attack.  NOTE:  Special Combat Techniques (if the slaver learned any) are only available for the primary weapon to prevent dual wielding from being overpowered.' 
+ gs '$weapon_assignments'
  copyarr '$display_options', '$get_weapon'  
  GT 'shop_general'
 END

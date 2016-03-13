@@ -1,0 +1,57 @@
+# menu_form_zero
+!Menu Form Zero -  launch the slave and assistant activity menu - code duplicated from menu_form - menu_form = 0 - crushboss
+
+gs 'main_layout'
+
+IF menu_form = 0:
+  
+  FUNC('$menu', '===BEGIN===', 'column_0') 
+
+  IF slave_state = CONST_INT['slave_exist']:
+    FUNC('$menu', 'menu_form', $menu_item_slave_act, menu_slave_act, 'Slave activities',  '<<$slave_name>> activities')
+  ELSEIF slave_state = CONST_INT['no_slave']:
+    FUNC('$menu', 'exec', $menu_item_slave_act_gray, empty, 'Slave activities', 'No slave obtained')
+  ELSEIF slave_state = CONST_INT['slave_faint']:
+    FUNC('$menu', 'exec', $menu_item_slave_act_gray, empty, 'Slave activities', '<<$slave_name>> is unconscious')
+  END
+ 
+  FUNC('$menu', 'goto', $menu_item_leave_home, estate_location[$estate],'city_form', 'city_menu_form', 'Leave the house', 'Leave the house') 
+  FUNC('$menu', 'menu_form', $menu_item_domestic, menu_domestic, 'Domestic issues',  'Domestic issues')
+
+  IF sparks > 0:
+    FUNC('$menu', 'menu_form', $menu_item_cast_spell, menu_cast_spell, 'Cast a spell',  'Cast a spell')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_cast_spell_gray, empty, 'Cast a spell',  'Not enough sparks')
+  END
+  
+  IF assistant_state = 1:
+    FUNC('$menu', 'menu_form', $menu_item_assistant_assig, menu_assistant_assig, 'Assistant assignments',  '<<$assistant_name>>''s assignments')
+  ELSEIF slave_state = CONST_INT['slave_exist'] and slave["moral"] >= 3: 
+    FUNC('$menu', 'goto', $menu_item_appoint, slave_to_assistant, 'menu_form', 'slave_to_assistant', 'Appoint assistant', 'Appoint <<$slave_name>> as assistant') 
+  ELSEIF slave_state = CONST_INT['slave_exist'] and slave["moral"] < 3:
+    FUNC('$menu', 'exec', $menu_item_appoint_gray, empty, 'Appoint assistant',  '<<$slave_name>>`s obedience is low')
+  ELSEIF slave_state = CONST_INT['no_slave']:
+    FUNC('$menu', 'exec', $menu_item_appoint_gray, empty, 'Appoint assistant',  'No slave obtained')
+  ELSEIF slave_state = CONST_INT['slave_faint']:
+    FUNC('$menu', 'exec', $menu_item_appoint_gray, empty, 'Appoint assistant',  '<<$slave_name>> is unconscious')
+  END
+  
+  IF slave_state = CONST_INT['slave_exist'] and slave["energy"] > -4:
+    FUNC('$menu', 'menu_form', $menu_item_slave_assig, menu_slave_assig, 'Slave assignments',  '<<$slave_name>>`s assignments')
+  ELSEIF slave["energy"] = -4:
+    FUNC('$menu', 'menu_form', $menu_item_slave_assig, menu_slave_assig, 'Slave assignments',  $text_exhausted)
+  ELSEIF assistant_state = 1:
+    FUNC('$menu', 'goto', $menu_item_train_assistant, slave_to_assistant, 'menu_form', 'slave_to_assistant', 'Train assistant', 'Train <<$assistant_name>>') 
+  ELSEIF slave_state = CONST_INT['no_slave']:
+    FUNC('$menu', 'exec', $menu_item_slave_assig_gray, empty, 'Slave assignments',  'No slave obtained')
+  ELSEIF slave_state = CONST_INT['slave_faint']:
+    FUNC('$menu', 'exec', $menu_item_slave_assig_gray, empty, 'Slave assignments',  '<<$slave_name>> is unconscious')
+  END  
+  
+  FUNC('$menu', 'goto', $menu_item_end_day, next_day, 'menu_form', 'next_day', 'End of the day', 'End the day') 
+
+  FUNC('$menu', '===END===')
+END
+
+--- menu_form_zero ---------------------------------
+

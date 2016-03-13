@@ -728,7 +728,7 @@ height:585px;
 #center_text_column_1 {
 position:absolute;
 left:303px;
-top:83px;
+top:60px;
 width:400px;
 height:585px;
 font-family:"Segoe Print";
@@ -737,7 +737,7 @@ font-family:"Segoe Print";
 #center_text_column_2 {
 position:absolute;
 left:700px;
-top:83px;
+top:60px;
 width:300px;
 height:585px;
 font-family:"Segoe Print";
@@ -796,10 +796,10 @@ font-family:"Segoe Print";
 text-align:right;
 }
 
-#a_apperiance {
+#assistant_appear {
 position:absolute;
 left:780px;
-top:315px;
+top:348px;
 width:230px;
 height:200px;
 color:#FFD700;
@@ -857,7 +857,7 @@ font-family:"Segoe Print";
 
 #stat_text {
 position:absolute;
-left:360px;
+left:270px;
 top:460px;
 text-align:center;
 color:#0000CD;
@@ -1006,9 +1006,29 @@ height:790px;
 font-family:"Segoe Print";
 }
 
+#left_column_master_rules {
+position:absolute;
+left:28px;
+top:432px;
+width:210px;
+height:160px;
+text-align:left;
+font-family:"Segoe Print";
+}
+
+#faction_selection {
+position:absolute;
+left:576px;
+top:232px;
+width:160px;
+height:160px;
+text-align:left;
+font-family:"Segoe Print";
+}
+
 #right_column {
 position:absolute;
-left:1063px;
+left:1062px;
 top:5px;
 width:210px;
 height:790px;
@@ -1159,6 +1179,14 @@ width:30px;
 height:30px;
 }
 
+#refresh_database_icon {
+position:absolute;
+left:880px;
+top:7px;
+width:15px;
+height:15px;
+}
+
 #choose_left {
 position:absolute;
 left:1px;
@@ -1182,6 +1210,8 @@ top:1px;
 width:250px;
 height:796px;
 }
+
+
 
 #chekbox_1s {
 position:absolute;
@@ -1355,6 +1385,78 @@ height:25px;
 position:absolute;
 left:250px;
 top:535px;
+width:25px;
+height:25px;
+}
+
+#chekbox_200 {
+position:absolute;
+left:2px;
+top:500px;
+width:25px;
+height:25px;
+}
+
+#chekbox_204 {
+position:absolute;
+left:2px;
+top:531px;
+width:25px;
+height:25px;
+}
+
+#chekbox_202 {
+position:absolute;
+left:2px;
+top:562px;
+width:25px;
+height:25px;
+}
+
+#chekbox_203 {
+position:absolute;
+left:2px;
+top:593px;
+width:25px;
+height:25px;
+}
+
+#chekbox_205 {
+position:absolute;
+left:550px;
+top:300px;
+width:25px;
+height:25px;
+}
+
+#chekbox_206 {
+position:absolute;
+left:550px;
+top:331px;
+width:25px;
+height:25px;
+}
+
+#chekbox_207 {
+position:absolute;
+left:550px;
+top:362px;
+width:25px;
+height:25px;
+}
+
+#chekbox_208 {
+position:absolute;
+left:550px;
+top:393px;
+width:25px;
+height:25px;
+}
+
+#chekbox_209 {
+position:absolute;
+left:550px;
+top:424px;
 width:25px;
 height:25px;
 }
@@ -1727,12 +1829,495 @@ width:48px;
 height:48px;
 }
 
-#fast_chat {
+#fast_question_tutorial {
 position:absolute;
-left:1020px;
+left:1000px;
+top:270px;
+width:48px;
+height:48px;
+}
+
+#fast_influence_tutorial {
+position:absolute;
+left:1000px;
+top:300px;
+width:48px;
+height:48px;
+}
+
+#fast_interior {
+position:absolute;
+left:1030px;
+top:758px;
+width:21px;
+height:21px;
+}
+
+#debug_info {
+position:absolute;
+left:1022px;
 top:380px;
 width:48px;
 height:48px;
+}
+
+#debug_info_assistant {
+position:absolute;
+left:1022px;
+top:630px;
+width:48px;
+height:48px;
+}
+
+#title_scroll_debug {
+position:absolute;
+left:480px;
+top:25px;
+width:800px;
+height:750px;
+}
+
+#close_button_debug {
+position:absolute;
+left:860px;
+top:712px;
+width:48px;
+height:48px;
+}
+
+#debug_whip {
+position:absolute;
+left:780px;
+top:120px;
+width:200px;
+height:175px;
+}
+
+#title_scroll_column_right_top {
+position:absolute;
+left:990px;
+top:75px;
+width:240px;
+height:160px;
+color:#000000;
+font-size:16px;
+font-family:"Segoe Print";
+}
+
+#title_scroll_column_right {
+position:absolute;
+left:990px;
+top:270px;
+width:240px;
+height:580px;
+color:#000000;
+font-size:16px;
+font-family:"Segoe Print";
+}
+
+#title_scroll_column_left_top {
+position:absolute;
+left:530px;
+top:75px;
+width:240px;
+height:160px;
+color:#000000;
+font-size:16px;
+font-family:"Segoe Print";
+}
+
+#title_scroll_column_left {
+position:absolute;
+left:530px;
+top:270px;
+width:240px;
+height:580px;
+color:#000000;
+font-size:16px;
+font-family:"Segoe Print";
+}
+
+#title_scroll_column_middle {
+position:absolute;
+left:840px;
+top:585px;
+width:430px;
+height:200px;
+color:#000000;
+font-size:12px;
+font-family:"Segoe Print";
+}
+
+#debug_image_slave {
+position:absolute;
+left:670px;
+top:280px;
+width:306px;
+height:306px;
+}
+
+#full_image_slave {
+position:absolute;
+left:-150px;
+top:200px;
+width:795px;
+height:595px;
+}
+
+#trophy_room {
+position:absolute;
+left:1020px;
+top:130px;
+width:48px;
+height:48px;
+}
+
+#trophy_title {
+position:absolute;
+left:380px;
+top:43px;
+width:240px;
+height:60px;
+color:#0000FF;
+font-size:36px;
+font-family:Victoriana;
+}
+
+#trophy_right_column {
+position:absolute;
+left:1040px;
+top:40px;
+width:200px;
+height:180px;
+color:#20dfdd;
+font-size:28px;
+font-family:Victoriana;
+}
+
+#trophy_right_column_mid {
+position:absolute;
+left:1050px;
+top:220px;
+width:210px;
+height:180px;
+color:#ffffff;
+font-size:24px;
+font-family:Victoriana;
+}
+
+#trophy_right_column_trophy {
+position:absolute;
+left:1035px;
+top:460px;
+width:210px;
+height:230px;
+color:#800000;
+font-size:24px;
+font-family:Victoriana;
+}
+
+#next_button_trophy {
+position:absolute;
+left:1068px;
+top:580px;
+width:48px;
+height:48px;
+}
+
+#back_button_trophy {
+position:absolute;
+left:1165px;
+top:580px;
+width:48px;
+height:48px;
+}
+
+#random_button_trophy {
+position:absolute;
+left:1025px;
+top:720px;
+width:48px;
+height:48px;
+}
+
+#toggle_button_trophy {
+position:absolute;
+left:1200px;
+top:730px;
+width:48px;
+height:48px;
+}
+
+#close_button_trophy {
+position:absolute;
+left:1120px;
+top:712px;
+width:48px;
+height:48px;
+}
+
+#trophy_room_ogre {
+position:absolute;
+left:0px;
+top:80px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_warg {
+position:absolute;
+left:170px;
+top:80px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_werewolf {
+position:absolute;
+left:340px;
+top:80px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_hugefiend {
+position:absolute;
+left:510px;
+top:80px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_blackmedic {
+position:absolute;
+left:680px;
+top:80px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_maturefiend {
+position:absolute;
+left:850px;
+top:80px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_vampire {
+position:absolute;
+left:0px;
+top:260px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_lich {
+position:absolute;
+left:170px;
+top:260px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_beastmen {
+position:absolute;
+left:340px;
+top:260px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_paladin {
+position:absolute;
+left:510px;
+top:260px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_orc {
+position:absolute;
+left:680px;
+top:260px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_youngfiend {
+position:absolute;
+left:850px;
+top:260px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_scum {
+position:absolute;
+left:0px;
+top:440px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_goblin {
+position:absolute;
+left:170px;
+top:440px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_corvus {
+position:absolute;
+left:340px;
+top:440px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_camira {
+position:absolute;
+left:510px;
+top:440px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_serpis {
+position:absolute;
+left:680px;
+top:440px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_taurus {
+position:absolute;
+left:850px;
+top:440px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_vatican {
+position:absolute;
+left:0px;
+top:620px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_absolute {
+position:absolute;
+left:170px;
+top:620px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:20px;
+font-family:Philosopher;
+}
+
+#trophy_room_slaves {
+position:absolute;
+left:340px;
+top:620px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_arenafiend {
+position:absolute;
+left:510px;
+top:620px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_racechampion {
+position:absolute;
+left:680px;
+top:620px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
+}
+
+#trophy_room_racegrandchampion {
+position:absolute;
+left:850px;
+top:620px;
+width:150px;
+height:150px;
+color:#0000FF;
+font-size:22px;
+font-family:Philosopher;
 }
 
 #exchange {
@@ -1784,6 +2369,54 @@ left:820px;
 top:500px;
 width:155px;
 height:155px;
+}
+
+#stasis_cell_1 {
+position:absolute;
+left:972px;
+top:500px;
+width:24px;
+height:26px;
+}
+
+#stasis_cell_2 {
+position:absolute;
+left:972px;
+top:528px;
+width:24px;
+height:26px;
+}
+
+#stasis_cell_3 {
+position:absolute;
+left:972px;
+top:556px;
+width:24px;
+height:26px;
+}
+
+#stasis_cell_4 {
+position:absolute;
+left:972px;
+top:584px;
+width:24px;
+height:26px;
+}
+
+#stasis_cell_5 {
+position:absolute;
+left:972px;
+top:612px;
+width:24px;
+height:26px;
+}
+
+#stasis_cell_6 {
+position:absolute;
+left:972px;
+top:640px;
+width:24px;
+height:26px;
 }
 
 #teach {
@@ -3237,7 +3870,7 @@ height:66px;
 #Back_Take_S_drug {
 position:absolute;
 left:0px;
-top:434px;
+top:298px;
 width:25px;
 height:66px;
 }
@@ -3245,7 +3878,7 @@ height:66px;
 #Cancel_Take_S_drug {
 position:absolute;
 left:0px;
-top:496px;
+top:360px;
 width:25px;
 height:66px;
 }
@@ -3253,7 +3886,7 @@ height:66px;
 #Back_Drink_S_potion {
 position:absolute;
 left:0px;
-top:496px;
+top:298px;
 width:25px;
 height:66px;
 }
@@ -3261,7 +3894,7 @@ height:66px;
 #Cancel_Drink_S_potion {
 position:absolute;
 left:0px;
-top:558px;
+top:360px;
 width:25px;
 height:66px;
 }
@@ -3861,7 +4494,7 @@ height:66px;
 #Back_Serveme {
 position:absolute;
 left:0px;
-top:372px;
+top:248px;
 width:25px;
 height:66px;
 }
@@ -3869,7 +4502,7 @@ height:66px;
 #Cancel_Serveme {
 position:absolute;
 left:0px;
-top:434px;
+top:310px;
 width:25px;
 height:66px;
 }

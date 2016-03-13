@@ -1,15 +1,16 @@
 # $addon
-IF $ARGS[0] = 'update' :
+IF $ARGS[0] = 'update':
 
 !Updates changed databases cleans up old variables
 
   IF $ARGS[1] = 'full':
     
     !Reload database
-    GS '#txt'
-    GS '#item_base'
-    GS '#estate_base'
-    GS '#options'
+	gs 'refresh_database'
+!    GS '#txt'
+!    GS '#item_base'
+!    GS '#estate_base'
+!    GS '#options'
 
     !master_mood bug fix
     master_mood_value = master_mood & master_mood['a'] = 9
@@ -51,6 +52,25 @@ IF $ARGS[0] = 'stat_tooltip_text' :
     $result = "<<slave_rate[$args[1]]>> ~ (10/-80)"
   END
 END
+
+IF $ARGS[0] = 'assistant_stat_tooltip_text' :
+  IF slave[$args[1]] = 0 or slave[$args[1]] = 1:
+    $result = "<<assistant_rate[$args[1]]>> ~ (+/-10)"
+  END
+  IF slave[$args[1]] = 2:
+    $result = "<<assistant_rate[$args[1]]>> ~ (+/-20)"
+  END
+  IF slave[$args[1]] = 3:
+    $result = "<<assistant_rate[$args[1]]>> ~ (+/-40)"
+  END
+  IF slave[$args[1]] = 4:
+    $result = "<<assistant_rate[$args[1]]>> ~ (+/-80)"
+  END
+  IF slave[$args[1]] = 5:
+    $result = "<<assistant_rate[$args[1]]>> ~ (10/-80)"
+  END
+END
+
 
 IF $ARGS[0] = 'info_box' :
   $info_box[0] = "content\pic\buttons\info_0.png"

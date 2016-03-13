@@ -1,24 +1,26 @@
 # expert_to_slave
 !Expert sends found slave to master
 slave_state = CONST_INT['slave_exist']
+gs '$newloc'
 search['active'] = 0
 tattoo_brand = 0
 
 slave_type = selected_type
 $slave_type = $selected_type
-stock['age'] = selected['age']
 virginity = selected_virginity
 
-killvar 'slave' 
+killvar 'slave'
 killvar 'slave_rate' 
 killvar 'slave_inventory' 
-killvar 'already_done_curslave'
-killvar 'already_gain_virtue'
 copyarr 'slave','selected'
 copyarr '$slave','$selected'
-copyarr 'slave_ava','selected'
-copyarr '$slave_ava','$selected'
+copyarr 'slave_rate','selected_rate'
+copyarr 'slave_inventory','selected_inventory'
+copyarr '$slave_inventory','$selected_inventory'
+copyarr 'slave_ava','selected_ava'
+copyarr '$slave_ava','$selected_ava'
 
+slave['age'] = selected['age']
 $slave_name = $selected_name
 $slave_psy_basic = $selected_psy_basic
 $slave_world_description = $selected_world_description
@@ -61,7 +63,30 @@ IF slave['age'] = CONST_INT['loli_age'] and cheat_h ! 1 and cheat_j ! 1 and chea
  slave_rate["instinct"] = 0
 END
 
-!Testing Code - Remove for Release - crushboss
+!Ensure the slave starts out with empty arena variables - crushboss
+slave['has_ride_win'] = 0
+slave['arena_level'] = 0
+slave['c1done'] = 0
+slave['c2done'] = 0
+slave['c3done'] = 0
+slave['c4done'] = 0
+$slave["trademark_style"] = ''
+$g_type = ''
+superviser_message = 0
+challenge_type = 0
+
+!Fix blank screen bug - crushboss
+$slave["wpn"] = 'безоружный'
+$slave["armor"] = 'без_брони'
+$slave["scnd"] = ''
+$slave["back_wpn"] = ''
+$slave["left_wpn"] = ''
+$slave["right_wpn"] = ''
+$slave["arm_wpn"] = ''
+$slave["leg_wpn"] = ''
+$slave["cloth"] = 'голая'
+
+!Testing Code - crushboss
 if cheat_h = 1 or cheat_j = 1: gs 'stock_to_slave_testing'
 if cheat_k = 1 and get_girl = 0: gs 'stock_to_slave_testing2'
 !End of Testing Code
@@ -154,16 +179,8 @@ slave['beauty_enchanced'] = 0
 slave["bcheck"] = 0
 slave["echeck"] = 0
 
-!Fix blank screen bug - crushboss
-$slave["wpn"] = 'безоружный'
-$slave["armor"] = 'без_брони'
-$slave["scnd"] = ''
-$slave["back_wpn"] = ''
-$slave["left_wpn"] = ''
-$slave["right_wpn"] = ''
-$slave["arm_wpn"] = ''
-$slave["leg_wpn"] = ''
-$slave["cloth"] = 'голая'
+killvar 'search'
+change_loc = 1
 
 gs '#txt'
 gs '#txt_2'

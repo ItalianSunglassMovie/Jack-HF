@@ -15,7 +15,7 @@ $text_display = ''
 dynamic $display_options[sp_txt]
 
 IF $interaction_type = 'special':
- if nsfw = 0:*p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
+ if nsfw = 0: *p '<div id = "bg"><img src="content\pic\<<$special_bg>>.gif"></div>'
 END
 
 IF $place = 'gastronom':

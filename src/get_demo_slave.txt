@@ -149,6 +149,45 @@ $slave["leg_wpn"] = ''
 
 $slave["cloth"] = 'leather_corset'
 
+IF slave_type = 908:
+	$slave["wpn"] = 'кинжал'
+	$slave["armor"] = 'кожан'
+	$slave["left_wpn"] = 'стилет'
+	$slave["right_wpn"] = 'кинжал'
+	$slave["back_wpn"] = ''
+	$slave["cloth"] = 'bellydance'
+	slave["ear_piercing"] = 1
+	slave["manicure"] = 5
+	slave["parfume"] = 1
+	slave["hygiene"] = 0
+	slave_rate["hygiene"] = 0
+	slave["epilation"] = 12
+	slave["hairstyle"] = 7
+	slave["pos_gentle"] = 2
+	slave['pos_slave_clean'] = 2
+	$slave["earrings"] = 'incrusted_earrings'
+	$slave["gloves"] = 'laced_gloves'
+	$slave["boots"] = 'pointes'
+	$slave["ring_left"] = 'incrusted_ring'
+	$slave["ring_right"] = 'incrusted_ring'
+	slave_sleep_condition = 0
+	slave_food_type = 2
+	slave_eats_remains = 0
+	slave_food_portion = 4
+	slave_washes_rule = 1
+	blowjob_rule = 1
+	v_balls_rule = 1
+	force_rules = 1
+	master_rule = 1
+	slave_tentacle_rule = 1
+	IF spawn_semen < 120:
+		spawn_semen = 120
+	else
+		spawn_semen += 60
+	END
+	slave["metabolism"] = 3
+END
+
 slave['newness'] = 10
 
 if slave["bruises"] = 1: slave_rate["bruises"] = 10

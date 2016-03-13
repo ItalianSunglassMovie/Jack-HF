@@ -27,8 +27,8 @@ $хиты_справка = "&nbsp&nbsp&nbsp<font color='red'>Red heart</font> de
    <font color='purple'>Purple heart</font> demonstrates morale. 0 = retreat."
 
 $блок_справка = "&nbsp&nbsp&nbsp<font color='red'>Power attack</font> will pierce this defense, inflicting double damage.
-   <font color='purple'>Precise attack</font> will inflict a negative state on a blocking person. 
-   <font color='green'>Speed attack</font> will give the attacker a favorable condition."
+   <font color='purple'>Precise attack</font> will give the attacker a favorable condition. 
+   <font color='green'>Speed attack</font> will inflict a negative state on a blocking person."
 $контратака_справка = "&nbsp&nbsp&nbsp<font color='purple'>Precise attack</font> will pierce this defense, inflicting double damage.
    <font color='red'>Power attack</font> will inflict a negative state on a blocking person. 
    <font color='green'>Speed attack</font> will give the attacker a favorable condition."

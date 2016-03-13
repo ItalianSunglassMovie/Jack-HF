@@ -1,0 +1,80 @@
+# init_story_mode
+!Initialize Story Mode Game
+!Created by crushboss
+
+hero_points = 0
+sparks = 0
+
+master_str = 0
+master_cha = 0
+master_style = 0
+master_libido = 0
+master_energy = 5
+
+master_tutor = 0
+master_fighter = 0
+master_butler = 0
+master_artdirector = 0
+master_medic = 0
+master_mage = 0
+master_torture = 0
+master_domination = 0
+master_bondage = 0
+master_flagelation = 0
+
+master_petting = 0
+master_oral = 0
+master_penetration = 0
+master_fetish = 0
+
+$estate = 'slum_house'
+$starting_area = 'Slum'
+
+$assistant["armor"] = 'без_брони'
+$slave["armor"] = 'без_брони'
+
+$master_wpn = 'безоружный'
+$master_armor = 'без_брони'
+$master_scnd = ''
+
+$master_back_wpn = ''
+$master_left_wpn = ''
+$master_right_wpn = ''
+$master_arm_wpn = ''
+$master_leg_wpn = ''
+
+$master_cloth = 'man_rugs'
+$master_head_gear = 'none'
+$master_earring = 'none'
+$master_amulet = 'none'
+$master_ring = 'none'
+
+нагайка = 0
+кнут = 0
+вакхический_нектар = 0
+тонизируюзщий_эликсир = 0
+целительный_бальзам = 0
+мощный_афодизиак = 0
+regal_suit = 0
+medic_robes = 0
+wizard_robes = 0
+frige["alcohol"] = 0
+frige["virgin_meat"] = 0
+alcohol = 0
+virgin_meat = 0
+
+faction_fame['neutral'] = 0
+faction_fame['taurus'] = 0
+faction_fame['serpis'] = 0
+faction_fame['korvus'] = 0
+faction_fame['kamira'] = 0
+
+story_mode = 1
+sandbox_game = 0
+custom_game = 0
+demo_game = 0
+patrician_mode_off = 1
+difficulty_setting = 0
+
+--- init_story_mode ---------------------------------
+

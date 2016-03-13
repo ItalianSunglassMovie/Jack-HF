@@ -26,7 +26,7 @@ mem_skip = 6201
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -37,7 +37,7 @@ mem_skip = 6202
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -48,7 +48,7 @@ mem_skip = 6203
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -59,7 +59,7 @@ mem_skip = 6204
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -70,7 +70,7 @@ mem_skip = 6205
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -81,7 +81,7 @@ mem_skip = 6206
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -92,7 +92,7 @@ mem_skip = 6207
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -103,7 +103,7 @@ mem_skip = 6208
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -114,7 +114,7 @@ mem_skip = 6209
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -125,7 +125,7 @@ mem_skip = 6210
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -137,7 +137,7 @@ mem_skip = 6211
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -149,7 +149,7 @@ mem_skip = 6212
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -161,7 +161,7 @@ mem_skip = 6213
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -173,7 +173,7 @@ mem_skip = 6214
 $text_display = '<br>'
 FUNC('$menu', 'spacer', 4)
 
-FUNC('$menu', '===BEGIN===', 'center')
+FUNC('$menu', '===BEGIN===', 'column_0')
 FUNC('$menu', 'join_battle', $menu_item_Joinbattle, 'Join the battle')
 FUNC('$menu', 'interaction_city', $menu_item_Leavethem, menu_Leavethem, 'Leave them alone')
 FUNC('$menu', '===END===')
@@ -325,7 +325,7 @@ IF assistant['reabilitation'] < 1 and assistant_state = 1:
 ELSE
   FUNC('$menu', 'location_gray', $menu_item_A_augmentation_gray, empty, 'Assistant Augmentation')
 END
-FUNC('$menu', 'interaction_city', $menu_item_need_nurses, menu_need_nurses, 'Check the need for nurses')
+FUNC('$menu', 'interaction_city', $menu_item_need_nurses, menu_need_nurses, 'Check the need for witchdoctors')
 IF slave_state = CONST_INT['slave_exist'] and slave['brand'] > 0 and slave['brand'] ! 4:
   FUNC('$menu', 'interaction_city', $menu_item_Offer_employee, menu_Offer_employee, 'Offer an employee')
 ELSE
@@ -584,7 +584,7 @@ IF sparks >= 25 and slave['lactation'] = 0 and slave['age'] ! CONST_INT['loli_ag
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SPermanent_lactation_gray, empty, 'Permanent Lactation')
 END
-IF sparks >= 50 and slave['fertility'] = 0 and slave['reabilitation'] < 1:
+IF sparks >= 50 and slave['fertility'] = 0 and slave['reabilitation'] < 1 and slave['parasite'] = 0:
  FUNC('$menu', 'interaction_city', $menu_item_SOviparity, menu_SOviparity, 'Oviparity')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_SOviparity_gray, empty, 'Oviparity')
@@ -626,7 +626,7 @@ IF sparks >= 25 and assistant['lactation'] = 0 and assistant['age'] ! CONST_INT[
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_APermanent_lactation_gray, empty, 'Permanent Lactation')
 END
-IF sparks >= 50 and assistant['fertility'] = 0 and assistant['reabilitation'] < 1:
+IF sparks >= 50 and assistant['fertility'] = 0 and assistant['reabilitation'] < 1 and assistant['parasite'] = 0:
  FUNC('$menu', 'interaction_city', $menu_item_AOviparity, menu_AOviparity, 'Oviparity')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_AOviparity_gray, empty, 'Oviparity')
@@ -747,7 +747,7 @@ FUNC('$menu', '===END===')
 $realtor_options[2] = {
 $text_display = '<br><br><br>'
 FUNC('$menu', '===BEGIN===', 'column_0') 
-IF sparks >= 250 and brand_reputation > 2:
+IF sparks >= 250 and (brand_reputation > 2 or faction_fame['neutral'] >= 1):
  FUNC('$menu', 'interaction_city', $menu_item_realtorWhite, menu_realtorWhite, 'White Town')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_realtorWhite_gray, empty, 'White Town')
@@ -1002,6 +1002,10 @@ if active[$quest[6]] < 2: FUNC('$menu', 'interaction_city', $menu_item_Aramus, m
 if active[$quest[7]] < 2: FUNC('$menu', 'interaction_city', $menu_item_Vujin, menu_Vujin, 'Vujin the Wise')
 if active[$quest[8]] < 2: FUNC('$menu', 'interaction_city', $menu_item_Garsid, menu_Garsid, 'Garsid the Inseminator')
 if active[$quest[9]] < 2: FUNC('$menu', 'interaction_city', $menu_item_Valios, menu_Valios, 'Master Valios')
+!Post Patrician Quest - crushboss
+IF (active[$quest[12]] = 0 and sparks >= 15000 and brand_reputation >= 3 and guild_reputation >= 3 and noble_status = 1) or active[$quest[12]] = 1:
+	FUNC('$menu', 'interaction_city', $menu_item_Spectre, menu_Spectre, 'Lord Spectre')
+END
 FUNC('$menu', 'exec_options', $menu_item_Lookaround, 'sp_txt = 1 & gt $curloc', 'Look around')
 FUNC('$menu', '===END===')
 }
@@ -1077,6 +1081,12 @@ IF yasmin = 0 and slave_state = CONST_INT['no_slave'] and sparks >= 3000:
  FUNC('$menu', 'interaction_city', $menu_item_BuyYasmin, menu_BuyYasmin, 'Buy Yasmin (3000$)')
  ELSE
  FUNC('$menu', 'location_gray', $menu_item_BuyYasmin_gray, empty, 'Buy Yasmin (3000$)')
+END
+!Post Patrician Quest - crushboss
+IF felicity = 0 and slave_state = CONST_INT['no_slave'] and active[$quest[12]] = 1 and pet_tentacle > 0 and sparks >= 15000:
+ FUNC('$menu', 'interaction_city', $menu_item_BuyFelicity, menu_BuyFelicity, 'Buy Felicity (10000$)')
+ ELSEIF felicity = 0 and active[$quest[12]] = 1:
+ FUNC('$menu', 'location_gray', $menu_item_BuyFelicity_gray, empty, 'Buy Felicity (10000$)')
 END
 IF pen > 0 and pet_tentacle = 0:
  FUNC('$menu', 'interaction_city', $menu_item_Buyfog, menu_Buyfog, 'Buy a Fog Fiend (100$)')
@@ -2279,8 +2289,8 @@ $colloseum_options[1] = {
  IF ride_count ! 0: 
   FUNC('$menu', 'location_gray', $menu_item_racecount_gray, empty, 'Days to race: <<ride_count>>')
   else
-  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 1:
-   FUNC('$menu', 'exec_options', $menu_item_Participate_race, 'sp_txt = 23 & gt $curloc', 'Participate in the race')
+  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 1 and slave['brand'] ! 0 and already_done_today[665] = 0:
+   FUNC('$menu', 'exec_options', $menu_item_Participate_race, 'already_done_today[665] = 1 & sp_txt = 23 & gt $curloc', 'Participate in the race')
    else
    FUNC('$menu', 'interaction_city', $menu_item_Watch_race, menu_Watch_race, 'Watch the race')
   END  
@@ -2288,8 +2298,8 @@ $colloseum_options[1] = {
  IF gladi_count ! 0: 
   FUNC('$menu', 'location_gray', $menu_item_battlecount_gray, empty, 'Days to battle: <<gladi_count>>')
   else
-  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 1:
-   FUNC('$menu', 'exec_options', $menu_item_Put_gladiatrix, 'sp_txt = 24 & gt $curloc', 'Gladiatrix Contest')
+  IF slave_state = CONST_INT['slave_exist'] and slave['energy'] > 1 and slave['brand'] ! 0 and slave["gladiatrix_contest"] = 0 and (gladiatrix_contest_count <= brand_reputation or gladiatrix_contest_count <= guild_reputation or gladiatrix_contest_count <= 1):
+   FUNC('$menu', 'exec_options', $menu_item_Put_gladiatrix, 'combatant = 1 & sp_txt = 24 & gt $curloc', 'Gladiatrix Contest')
    else
    FUNC('$menu', 'interaction_city', $menu_item_Watch_battle, menu_Watch_battle, 'Watch the battle')
   END  
@@ -2389,18 +2399,18 @@ $colloseum_options[24] = {
  FUNC('$menu', '===BEGIN===', 'column_0')
  IF $slave['trademark_style'] = '':
   $sp_text[24] = '   Battles take place in the arena with a clear regulation of weapons and equipment. You need to choose a style that <<$slave_name>> will fight with.'
-  FUNC('$menu', 'exec_options', $menu_item_trident, '$g_type = "retiarius" & gt "$gladiator_setup"', 'Net and Trident')
-  FUNC('$menu', 'exec_options', $menu_item_whipsaw, '$g_type = "flagrius" & gt "$gladiator_setup"', 'Armor and Whipsaw')
-  FUNC('$menu', 'exec_options', $menu_item_Dual, '$g_type = "dimacherus" & gt "$gladiator_setup"', 'Dual Wield')
-  FUNC('$menu', 'exec_options', $menu_item_shield, '$g_type = "hoplomachus" & gt "$gladiator_setup"', 'Weapon and Shield')
-  FUNC('$menu', 'exec_options', $menu_item_Heavy, '$g_type = "kimerian" & gt "$gladiator_setup"', 'Heavy Weapons')
+  FUNC('$menu', 'exec_options', $menu_item_trident, '$g_type = "retiarius" & slave["gladiatrix_contest"] = 1 & gladiatrix_contest_count += 1 & gt "$gladiator_setup"', 'Net and Trident')
+  FUNC('$menu', 'exec_options', $menu_item_whipsaw, '$g_type = "flagrius" & slave["gladiatrix_contest"] = 1 & gladiatrix_contest_count += 1 & gt "$gladiator_setup"', 'Armor and Whipsaw')
+  FUNC('$menu', 'exec_options', $menu_item_Dual, '$g_type = "dimacherus" & slave["gladiatrix_contest"] = 1 & gladiatrix_contest_count += 1 & gt "$gladiator_setup"', 'Dual Wield')
+  FUNC('$menu', 'exec_options', $menu_item_shield, '$g_type = "hoplomachus" & slave["gladiatrix_contest"] = 1 & gladiatrix_contest_count += 1 & gt "$gladiator_setup"', 'Weapon and Shield')
+  FUNC('$menu', 'exec_options', $menu_item_Heavy, '$g_type = "kimerian" & slave["gladiatrix_contest"] = 1 & gladiatrix_contest_count += 1 & gt "$gladiator_setup"', 'Heavy Weapons')
   FUNC('$menu', 'exec_options', $menu_item_Refusefight, 'sp_txt = 1 & gt $curloc', 'Refuse the Fight')
   ELSE
   $sp_text[24] = '   Recognized champion of the arena fights only in the most spectacular battles, which leads the audience the most. Usually this unusual fights that involves the champions opens and closes days in the arena.'
-  FUNC('$menu', 'exec_options', $menu_item_Challange_champion, '$slave["trademark_style"] & challenge_type = 1 & gt "$gladiator_setup"', 'Challenge the Champion')
-  FUNC('$menu', 'exec_options', $menu_item_Group_fight, '$slave["trademark_style"] & challenge_type = 2 & gt "$gladiator_setup"', 'Group Fight')
-  FUNC('$menu', 'exec_options', $menu_item_Battle_fiend, '$slave["trademark_style"] & challenge_type = 3 & gt "$gladiator_setup"', 'Battle against a Fiend')
-  if slave['arena_level'] = 8: FUNC('$menu', 'exec_options', $menu_item_absolute_champion, '$g_type = $slave["trademark_style"] & challenge_type = 4 & gt "$gladiator_setup"', 'Challenge the Absolute Champion')
+  FUNC('$menu', 'exec_options', $menu_item_Challange_champion, '$slave["trademark_style"] & challenge_type = 1 & slave["gladiatrix_contest"] = 1 & gladiatrix_contest_count += 1 & gt "$gladiator_setup"', 'Challenge the Champion')
+  FUNC('$menu', 'exec_options', $menu_item_Group_fight, '$slave["trademark_style"] & challenge_type = 2 & slave["gladiatrix_contest"] = 1 & gladiatrix_contest_count += 1 & gt "$gladiator_setup"', 'Group Fight')
+  FUNC('$menu', 'exec_options', $menu_item_Battle_fiend, '$slave["trademark_style"] & challenge_type = 3 & slave["gladiatrix_contest"] = 1 & gladiatrix_contest_count += 1 & gt "$gladiator_setup"', 'Battle against a Fiend')
+  if (slave['arena_level'] >= 8 and slave['c4done'] = 0) or (slave['c1done'] = 1 and slave['c2done'] = 1 and slave['c3done'] = 1 and slave['c4done'] = 0): FUNC('$menu', 'exec_options', $menu_item_absolute_champion, '$g_type = $slave["trademark_style"] & challenge_type = 4 & arena_mode = 1 & slave["gladiatrix_contest"] = 1 & gladiatrix_contest_count += 1 & gt "$gladiator_setup"', 'Challenge the Absolute Champion')
   FUNC('$menu', 'exec_options', $menu_item_Refusefight, 'sp_txt = 1 & gt $curloc', 'Refuse the Fight')
  END
  FUNC('$menu', '===END===')
@@ -2410,11 +2420,11 @@ $colloseum_options[2] = {
  FUNC('$menu', 'spacer', 2)
 
  FUNC('$menu', '===BEGIN===', 'column_0')
- FUNC('$menu', 'exec_options', $menu_item_unarmed, 'colloseum_fight = 1 & gt $curloc', 'Against Unarmed Slave')
- FUNC('$menu', 'exec_options', $menu_item_wardress, 'colloseum_fight = 2 & gt $curloc', 'Against Wardress')
- FUNC('$menu', 'exec_options', $menu_item_shinobi, 'colloseum_fight = 3 & gt $curloc', 'Against Shinobi')
- FUNC('$menu', 'exec_options', $menu_item_amazon, 'colloseum_fight = 4 & gt $curloc', 'Against Amazon')
- FUNC('$menu', 'exec_options', $menu_item_ironclad, 'colloseum_fight = 5 & gt $curloc', 'Against Ironclad')
+ FUNC('$menu', 'exec_options', $menu_item_unarmed, 'colloseum_fight = 1 & combatant = 0 & gt $curloc', 'Against Unarmed Slave')
+ FUNC('$menu', 'exec_options', $menu_item_wardress, 'colloseum_fight = 2 & combatant = 0 & gt $curloc', 'Against Wardress')
+ FUNC('$menu', 'exec_options', $menu_item_shinobi, 'colloseum_fight = 3 & combatant = 0 & gt $curloc', 'Against Shinobi')
+ FUNC('$menu', 'exec_options', $menu_item_amazon, 'colloseum_fight = 4 & combatant = 0 & gt $curloc', 'Against Amazon')
+ FUNC('$menu', 'exec_options', $menu_item_ironclad, 'colloseum_fight = 5 & combatant = 0 & gt $curloc', 'Against Ironclad')
 !$text_display += {<div id="under_gray">- Against you!<br></div>} 
  FUNC('$menu', 'exec_options', $menu_item_Refusesparring, 'sp_txt = 21 & gt $curloc', 'Albeit no, I`d rather...')
  FUNC('$menu', '===END===')
@@ -2424,11 +2434,11 @@ $colloseum_options[3] = {
  FUNC('$menu', 'spacer', 2)
 
  FUNC('$menu', '===BEGIN===', 'column_0')
- FUNC('$menu', 'exec_options', $menu_item_unarmed, 'colloseum_fight = 11 & gt $curloc', 'Against Unarmed Slave')
- FUNC('$menu', 'exec_options', $menu_item_wardress, 'colloseum_fight = 12 & gt $curloc', 'Against Wardress')
- FUNC('$menu', 'exec_options', $menu_item_shinobi, 'colloseum_fight = 13 & gt $curloc', 'Against Shinobi')
- FUNC('$menu', 'exec_options', $menu_item_amazon, 'colloseum_fight = 14 & gt $curloc', 'Against Amazon')
- FUNC('$menu', 'exec_options', $menu_item_ironclad, 'colloseum_fight = 15 & gt $curloc', 'Against Ironclad')
+ FUNC('$menu', 'exec_options', $menu_item_unarmed, 'colloseum_fight = 11 & combatant = 1 & gt $curloc', 'Against Unarmed Slave')
+ FUNC('$menu', 'exec_options', $menu_item_wardress, 'colloseum_fight = 12 & combatant = 1 & gt $curloc', 'Against Wardress')
+ FUNC('$menu', 'exec_options', $menu_item_shinobi, 'colloseum_fight = 13 & combatant = 1 & gt $curloc', 'Against Shinobi')
+ FUNC('$menu', 'exec_options', $menu_item_amazon, 'colloseum_fight = 14 & combatant = 1 & gt $curloc', 'Against Amazon')
+ FUNC('$menu', 'exec_options', $menu_item_ironclad, 'colloseum_fight = 15 & combatant = 1 & gt $curloc', 'Against Ironclad')
 !$text_display += {<div id="under_gray">- Against you!<br></div>} 
  FUNC('$menu', 'exec_options', $menu_item_Refusesparring, 'sp_txt = 21 & gt $curloc', 'Albeit no, I`d rather...')
  FUNC('$menu', '===END===')
@@ -2438,11 +2448,11 @@ $colloseum_options[4] = {
  FUNC('$menu', 'spacer', 2)
 
  FUNC('$menu', '===BEGIN===', 'column_0')
- FUNC('$menu', 'exec_options', $menu_item_unarmed, 'colloseum_fight = 31 & gt $curloc', 'Against Unarmed Slave')
- FUNC('$menu', 'exec_options', $menu_item_wardress, 'colloseum_fight = 32 & gt $curloc', 'Against Wardress')
- FUNC('$menu', 'exec_options', $menu_item_shinobi, 'colloseum_fight = 33 & gt $curloc', 'Against Shinobi')
- FUNC('$menu', 'exec_options', $menu_item_amazon, 'colloseum_fight = 34 & gt $curloc', 'Against Amazon')
- FUNC('$menu', 'exec_options', $menu_item_ironclad, 'colloseum_fight = 35 & gt $curloc', 'Against Ironclad')
+ FUNC('$menu', 'exec_options', $menu_item_unarmed, 'colloseum_fight = 31 & combatant = 2 & gt $curloc', 'Against Unarmed Slave')
+ FUNC('$menu', 'exec_options', $menu_item_wardress, 'colloseum_fight = 32 & combatant = 2 & gt $curloc', 'Against Wardress')
+ FUNC('$menu', 'exec_options', $menu_item_shinobi, 'colloseum_fight = 33 & combatant = 2 & gt $curloc', 'Against Shinobi')
+ FUNC('$menu', 'exec_options', $menu_item_amazon, 'colloseum_fight = 34 & combatant = 2 & gt $curloc', 'Against Amazon')
+ FUNC('$menu', 'exec_options', $menu_item_ironclad, 'colloseum_fight = 35 & combatant = 2 & gt $curloc', 'Against Ironclad')
 !$text_display += {<div id="under_gray">- Against you!<br></div>} 
  FUNC('$menu', 'exec_options', $menu_item_Refusesparring, 'sp_txt = 21 & gt $curloc', 'Albeit no, I`d rather...')
  FUNC('$menu', '===END===')
@@ -2561,126 +2571,115 @@ $text_display += {<br><div id="under">Check preferences<br><div id = "clear"><a 
 $text_display += {<br><div id="under">Bid farewell and leave<br><div id = "clear"><a href = 'EXEC: city_form = 31 & gt "city_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
-!STREC 2016-10-26 - Begin
-!preparing for fight
+!Preparing for fight - weapon selection screen - overhauled by crushboss
 $get_weapon[1] = {
-if iCurrentWeapon ! 0: суперудар_сделан[iCurrentWeapon] = 1
 
-FUNC('$menu', 'spacer', 2)
+$text_display = ''
 
-FUNC('$menu', '===BEGIN===', 'column_0')
-IF $за_спиной!'':
- FUNC('$menu', 'exec_options', $menu_item_the_shoulder, 'dynamic $взять_оружие_за_спиной & iCurrentWeapon=1 & no_wpn[""за_спиной""] = 1 & sp_txt = 2 & gt $curloc', 'Shoulder: <<$название_предмета[$за_спиной]>>')
- else
- FUNC('$menu', 'location_gray', $menu_item_the_shoulder_gray, empty, 'Nothing over the shoulder')
-END
-IF $слева!'':
- FUNC('$menu', 'exec_options', $menu_item_left_side, 'dynamic $взять_оружие_слева & iCurrentWeapon=2 & no_wpn[""слева""] = 1 & sp_txt = 2 & gt $curloc', 'Left: <<$название_предмета[$слева]>>')
- else
- FUNC('$menu', 'location_gray', $menu_item_left_side_gray, empty, 'Nothing on the left side')
-END
-IF $справа!'':
- FUNC('$menu', 'exec_options', $menu_item_right_side, 'dynamic $взять_оружие_справа & iCurrentWeapon=3 & no_wpn[""справа""] = 1 & sp_txt = 2 & gt $curloc', 'Right: <<$название_предмета[$справа]>>')
- else
- FUNC('$menu', 'location_gray', $menu_item_right_side_gray, empty, 'Nothing on the right side')
-END
-IF combatant ! 0:
- no_wpn["предплечье"] = 1
- $предплечье = ''
- $название_предмета[$предплечье] = ''
-END
-IF $предплечье!'':
- FUNC('$menu', 'exec_options', $menu_item_in_bracer, 'dynamic $взять_оружие_предплечье & iCurrentWeapon=4 & no_wpn[""предплечье""] = 1 & sp_txt = 2 & gt $curloc', 'Sleeve Holster: <<$название_предмета[$предплечье]>>')
- else
- FUNC('$menu', 'location_gray', $menu_item_in_bracer_gray, empty, 'Nothing in Sleeve')
-END
-IF combatant ! 0:
- no_wpn["в_сапоге"] = 1
- $в_сапоге = ''
- $название_предмета[$в_сапоге] = ''
-END
-IF $в_сапоге!'' and combatant = 0:
- FUNC('$menu', 'exec_options', $menu_item_in_boot, 'dynamic $взять_оружие_в_сапоге & no_wpn[""в_сапоге""] = 1 & sp_txt = 2 & gt $curloc', 'Boot Holster: <<$название_предмета[$в_сапоге]>>')
- else
- FUNC('$menu', 'location_gray', $menu_item_in_boot_gray, empty, 'Nothing in Boot')
+IF $за_спиной ! '':
+	$text_display += "<br><div id=""under"">Over the shoulder: <<$название_предмета[$за_спиной]>><br><div id = ""clear""><a href = 'EXEC: no_wpn[""за_спиной""] = 1 & sp_txt = 2 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
+else
+	$text_display += {<br><div id="under_gray">Nothing over the shoulder<br></div>}
 END
 
-IF iCurrentWeapon=1:
-	dynamic $взять_оружие_за_спиной
-	no_wpn["за_спиной"]=1
-END
-IF iCurrentWeapon=2:
-	dynamic $взять_оружие_слева
-	no_wpn["слева"]=1
-END
-IF iCurrentWeapon=3:
-	dynamic $взять_оружие_справа
-	no_wpn["справа"]=1
-END
-IF iCurrentWeapon=4:
-	dynamic $взять_оружие_предплечье
-	no_wpn["предплечье"]=1
+IF $слева ! '':
+	$text_display += "<br><div id=""under"">Left: <<$название_предмета[$слева]>><br><div id = ""clear""><a href = 'EXEC: no_wpn[""слева""] = 1 & sp_txt = 2 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
+else
+	$text_display += {<br><div id="under_gray">Nothing on the left side<br></div>}
 END
 
-FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" &  gt "начать_бой"', 'Join the battle')
-FUNC('$menu', '===END===')
+IF $справа ! '':
+	$text_display += "<br><div id=""under"">Right: <<$название_предмета[$справа]>><br><div id = ""clear""><a href = 'EXEC: no_wpn[""справа""] = 1 & sp_txt = 2 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
+else
+	$text_display += {<br><div id="under_gray">Nothing on the right side<br></div>}
+END
+
+IF $предплечье ! '':
+	$text_display += "<br><div id=""under"">In a bracer: <<$название_предмета[$предплечье]>><br><div id = ""clear""><a href = 'EXEC: no_wpn[""предплечье""] = 1 & sp_txt = 2 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
+elseif combatant = 0:
+	$text_display += {<br><div id="under_gray">Nothing in a bracer<br></div>}
+elseif combatant = 1 or combatant = 2:
+	$предплечье = ''
+	$slave["arm_wpn"] = ''
+	$assistant["arm_wpn"] = ''
+END
+
+IF $в_сапоге ! '':
+	$text_display += "<br><div id=""under"">In a boot: <<$название_предмета[$в_сапоге]>><br><div id = ""clear""><a href = 'EXEC: no_wpn[""в_сапоге""] = 1 & sp_txt = 2 & gt $curloc'><img src = ""content\pic\clear.gif""></a></div></div>"
+elseif combatant = 0:
+	$text_display += {<br><div id="under_gray">Nothing in a boot<br></div>}
+elseif combatant = 1 or combatant = 2:
+	$в_сапоге = ''
+	$slave["leg_wpn"] = ''
+	$assistant["leg_wpn"] = ''
+END
+
+IF combatant = 0 and $master["prev_primary_wpn"] ! '':
+	$text_display += "<br><div id=""under"">Use Previous Weapon Configuration<br><div id = ""clear""><a href = 'EXEC: nogoto = 0 & a = 1 & killvar ""no_wpn"" & gt ""начать_бой""'><img src = ""content\pic\clear.gif""></a></div></div>"
+elseif combatant = 1 and $slave["prev_primary_wpn"] ! '':
+	$text_display += "<br><div id=""under"">Use Previous Weapon Configuration<br><div id = ""clear""><a href = 'EXEC: nogoto = 0 & a = 1 & killvar ""no_wpn"" & gt ""начать_бой""'><img src = ""content\pic\clear.gif""></a></div></div>"
+elseif combatant = 2 and $assistant["prev_primary_wpn"] ! '':
+	$text_display += "<br><div id=""under"">Use Previous Weapon Configuration<br><div id = ""clear""><a href = 'EXEC: nogoto = 0 & a = 1 & killvar ""no_wpn"" & gt ""начать_бой""'><img src = ""content\pic\clear.gif""></a></div></div>"	
+END
+
+$text_display += {<br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: nogoto = 0 & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
-!STREC 2016-10-26 - End
 
 $get_weapon[2] = {
-FUNC('$menu', 'spacer', 2)
 
-FUNC('$menu', '===BEGIN===', 'column_0')
-if $класс_оружия[$за_спиной] = 'тяжелое_оружие': nogoto = 0 & killvar "no_wpn" &  gt "начать_бой"
-IF $за_спиной!'' and no_wpn["за_спиной"] = 0:
- IF $класс_оружия[$за_спиной] ! 'оружие' and $класс_оружия[$за_спиной] ! 'тяжелое_оружие': 
-  FUNC('$menu', 'exec_options', $menu_item_the_shoulder, 'dynamic $взять_вторичный_за_спиной & nogoto = 0 & killvar ""no_wpn"" & gt ""начать_бой""', 'Shoulder: <<$название_предмета[$за_спиной]>>')
-  else
-  FUNC('$menu', 'location_gray', $menu_item_the_shoulder_gray, empty, 'Shoulder: <<$название_предмета[$за_спиной]>>')
- END
- else
- FUNC('$menu', 'location_gray', $menu_item_the_shoulder_gray, empty, 'Nothing over the shoulder')
+if no_wpn["за_спиной"] = 1: nogoto = 0 & gt "начать_бой"
+
+$text_display = '<br>'
+
+!Shoulder slot will always be greyed out when selecting a secondary/off-hand weapon since all shoulder slot items are two-handed - crushboss
+IF $за_спиной ! '' and no_wpn["за_спиной"] = 0:
+	$text_display += "<br><div id=""under_gray"">Over the shoulder: <<$название_предмета[$за_спиной]>><br></div>"
+elseif $за_спиной = '':
+	$text_display += {<br><div id="under_gray">Nothing over the shoulder<br></div>}
 END
-IF $слева!'' and no_wpn["слева"] = 0:
- IF $класс_оружия[$слева] ! 'оружие':
-  FUNC('$menu', 'exec_options', $menu_item_left_side, 'dynamic $взять_вторичный_слева & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Left: <<$название_предмета[$слева]>>')
-  else
-  FUNC('$menu', 'location_gray', $menu_item_left_side_gray, empty, 'Left: <<$название_предмета[$слева]>>')
- END
- else
- FUNC('$menu', 'location_gray', $menu_item_left_side_gray, empty, 'Nothing on the left side')
+
+IF $слева ! '' and no_wpn["слева"] = 0:
+	$text_display += '<br><div id="under">Left: <<$название_предмета[$слева]>><br><div id = "clear"><a href = ''EXEC: no_wpn["слева"] = 2 & nogoto = 0 & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+elseif no_wpn["слева"] = 1 or no_wpn["слева"] = 2:
+	$text_display += '<br><div id="under_gray">Left: <<$название_предмета[$слева]>><br></div>' 
+elseif $слева = '':
+	$text_display += {<br><div id="under_gray">Nothing on the left side<br></div>}
 END
-IF $справа!'' and no_wpn["справа"] = 0:
- IF $класс_оружия[$справа] ! 'оружие':
-  FUNC('$menu', 'exec_options', $menu_item_right_side, 'dynamic $взять_вторичный_справа & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Right: <<$название_предмета[$справа]>>')
-  else
-  FUNC('$menu', 'location_gray', $menu_item_right_side_gray, empty, 'Right: <<$название_предмета[$справа]>>')
- END
- else
- FUNC('$menu', 'location_gray', $menu_item_right_side_gray, empty, 'Nothing on the right side')
+
+IF $справа ! '' and no_wpn["справа"] = 0:
+	$text_display += '<br><div id="under">Right: <<$название_предмета[$справа]>><br><div id = "clear"><a href = ''EXEC: no_wpn["справа"] = 2 & nogoto = 0 & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+elseif no_wpn["справа"] = 1 or no_wpn["справа"] = 2:
+	$text_display += '<br><div id="under_gray">Right: <<$название_предмета[$справа]>><br></div>' 
+elseif $справа = '':
+	$text_display += {<br><div id="under_gray">Nothing on the right side<br></div>}
 END
-IF $предплечье!'' and no_wpn["предплечье"] = 0:
- FUNC('$menu', 'exec_options', $menu_item_in_bracer, 'dynamic $взять_вторичный_предплечье & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'In Sleeve: <<$название_предмета[$предплечье]>>')
- else
- FUNC('$menu', 'location_gray', $menu_item_in_bracer_gray, empty, 'Nothing in Sleeve')
+
+IF $предплечье ! '' and no_wpn["предплечье"] = 0:
+	$text_display += '<br><div id="under">In a bracer: <<$название_предмета[$предплечье]>><br><div id = "clear"><a href = ''EXEC: no_wpn["предплечье"] = 2 & nogoto = 0 & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+elseif no_wpn["предплечье"] = 1 or no_wpn["предплечье"] = 2:
+	$text_display += '<br><div id="under_gray">In a bracer: <<$название_предмета[$предплечье]>><br></div>'
+elseif $предплечье = '' and combatant = 0:
+	$text_display += {<br><div id="under_gray">Nothing in a bracer<br></div>}
 END
-IF $в_сапоге!'' and no_wpn["в_сапоге"] = 0 and combatant = 0:
- FUNC('$menu', 'exec_options', $menu_item_in_boot, 'dynamic $взять_вторичный_в_сапоге & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'In Boot: <<$название_предмета[$в_сапоге]>>')
- else
- FUNC('$menu', 'location_gray', $menu_item_in_boot_gray, empty, 'Nothing in Boot')
+
+IF $в_сапоге ! '' and no_wpn["в_сапоге"] = 0:
+	$text_display += '<br><div id="under">In a boot: <<$название_предмета[$в_сапоге]>><br><div id = "clear"><a href = ''EXEC: no_wpn["в_сапоге"] = 2 & nogoto = 0 & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+elseif no_wpn["в_сапоге"] = 1 or no_wpn["в_сапоге"] = 2:
+	$text_display += '<br><div id="under_gray">In a boot: <<$название_предмета[$в_сапоге]>><br></div>'
+elseif $в_сапоге = '' and combatant = 0:
+	$text_display += {<br><div id="under_gray">Nothing in a boot<br></div>}
 END
-FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Join the Battle')
-FUNC('$menu', '===END===')
+
+$text_display += {<br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: nogoto = 0 & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
 }
 
 $get_weapon[3] = {
-FUNC('$menu', 'spacer', 4)
-
-FUNC('$menu', '===BEGIN===', 'column_0')
-FUNC('$menu', 'exec_options', $menu_item_Stool, '$оружие = "табуретка" & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Stool')
-FUNC('$menu', 'exec_options', $menu_item_Dagger, '$оружие = "кинжал" & nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Dagger')
-FUNC('$menu', 'exec_options', $menu_item_battle, 'nogoto = 0 & killvar "no_wpn" & gt "начать_бой"', 'Join the Battle')
-FUNC('$menu', '===END===')
+IF no_wpn["за_спиной"] = 0 and no_wpn["слева"] = 0 and no_wpn["справа"] = 0 and no_wpn["предплечье"] = 0 and no_wpn["в_сапоге"] = 0:
+	$text_display = '<br><br><br>'
+	$text_display += '<br><div id="under">Stool <br><div id = "clear"><a href = ''EXEC: $оружие = "табуретка" & nogoto = 0 & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+	$text_display += '<br><div id="under">Dagger <br><div id = "clear"><a href = ''EXEC: $оружие = "кинжал" & nogoto = 0 & gt "начать_бой"''><img src = "content\pic\clear.gif"></a></div></div>'
+	$text_display += {<br><div id="under">Join the battle<br><div id = "clear"><a href = 'EXEC: nogoto = 0 & gt "начать_бой"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
 }
 
 --- #options ---------------------------------

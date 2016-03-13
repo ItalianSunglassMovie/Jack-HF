@@ -52,42 +52,7 @@ IF exam_in_progress = 1:
  END
 END
 
-!'
-IF slave_state = 2:
- IF slave["energy"] > -5: 
-  slave_state = 1
-  msg '<<$slave_name>> пришла в сознание.'
- END
-END
-'
-!'Menu option - empty
- $text_display += {<br><div id="under_gray">Деалать <br></div>}
-
-Menu option - active
- $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-
-Menu option - active with variable
- IF assistant_state = 1:
-  $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: menu_form = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  else
-  $text_display += {<br><div id="under_gray">Деалать <br></div>}
- END
- 
-Menu interaction option - active
- $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: interaction = 1 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
-
-Menu interaction option - active with variable
- IF assistant_state = 1:
-  $text_display += {<br><div id="under">Деалать <br><div id = "clear"><a href = 'EXEC: interaction = 1 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
-  else
-  $text_display += {<br><div id="under_gray">Деалать <br></div>}
- END
- 
-Cancel
- $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-'
-!debug
-!msg '$place = <<$place>>'
+!main menu
 IF menu_form = 0:
  $place = 'home_lux'
  IF slave_state = CONST_INT['slave_exist']:
@@ -143,6 +108,7 @@ IF menu_form = 3:
   $text_display += {<br><div id="under_gray">Tidy up the house<br></div>}
  END   
  $text_display += {<br><div id="under">Take a drug<br><div id = "clear"><a href = 'EXEC: menu_form = 37 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">Drink a potion<br><div id = "clear"><a href = 'EXEC: menu_form = menu_Drink_potion & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Accounting <br><div id = "clear"><a href = 'EXEC: menu_form = 31 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
@@ -162,6 +128,7 @@ IF menu_form = 5:
  END   
  $text_display += {<br><div id="under">- Serve me<br><div id = "clear"><a href = 'EXEC: menu_form = 541 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">- Take a drug<br><div id = "clear"><a href = 'EXEC: menu_form = 57 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+ $text_display += {<br><div id="under">- Drink a potion<br><div id = "clear"><a href = 'EXEC: menu_form = menu_potion_S & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
 END
 
@@ -177,9 +144,9 @@ IF menu_form = 6:
   IF slave["virtue"] > 0: $text_display += {<br><div id="under">Delikacia (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 63 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
   IF slave["virtue"] = 0 and slave["sin"] = 0: 
    if already_done_today[64] = 0: 
-    $text_display += {<br><div id="under">Sententia veritas (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 64 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
+    $text_display += {<br><div id="under">Sententia Veritas (5 sparks)<br><div id = "clear"><a href = 'EXEC: interaction = 64 & gt "interaction"'><img src = "content\pic\clear.gif"></a></div></div>}
     else
-    $text_display += {<br><div id="under_gray">Sententia veritas<br></div>}
+    $text_display += {<br><div id="under_gray">Sententia Veritas<br></div>}
    END 
   END
   IF already_done_today[65] = 0: 
@@ -198,7 +165,7 @@ IF menu_form = 6:
    $text_display += {<br><div id="under_gray">Domini Dictum<br></div>}
   END
   else 
-  $text_display += {<br><div id="under_gray">Sententia veritas (5 sparks)<br></div>}      
+  $text_display += {<br><div id="under_gray">Sententia Veritas (5 sparks)<br></div>}      
   $text_display += {<br><div id="under_gray">Magna Magnifika (5 sparks)<br></div>}
   $text_display += {<br><div id="under_gray">Tremendio (5 sparks)<br></div>} 
   $text_display += {<br><div id="under_gray">Domini Dictum (5 sparks)<br></div>}
@@ -360,38 +327,38 @@ END
 IF menu_form = 31:
  IF master_wealth_target = 0:
   $text_display += {<br><div id="under_gray">Standard of Living: Impoverished<br></div>}
-  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
   $text_display += {<div id="under_gray">Decrease<br></div>}
  END   
  IF master_wealth_target = 1:
   $text_display += {<br><div id="under_gray">Standard of Living: Poor<br></div>}
-  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 2:
   $text_display += {<br><div id="under_gray">Standard of Living: Basic<br></div>}
-  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 1 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 3:
   $text_display += {<br><div id="under_gray">Standard of Living: Comfortable<br></div>}
-  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 2 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 4:
   $text_display += {<br><div id="under_gray">Standard of Living: Respectable<br></div>}
-  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 3 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 5:
   $text_display += {<br><div id="under_gray">Standard of Living: Luxurious<br></div>}
-  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 6 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
-  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Increase<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 6 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 4 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF master_wealth_target = 6:
   $text_display += {<br><div id="under_gray">Standard of Living: Extravagant<br></div>}
   $text_display += {<div id="under_gray">Increase<br></div>}
-  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<div id="under">Decrease<br><div id = "clear"><a href = 'EXEC: master_wealth_target = 5 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END   
  IF $bill_message ! '':
   $text_display += {<br><div id="under">Financial report<br><div id = "clear"><a href = 'EXEC: msg "<<$bill_message>>"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -402,13 +369,13 @@ IF menu_form = 31:
  IF slave_account_rule = 0 and assistant_account_rule = 0:
   $text_display += {<br><br><div id="under">Do accounting personally<br></div>}
   else
-  $text_display += {<br><br><div id="under_gray">Do accounting personally<br><div id = "clear"><a href = 'EXEC: assistant_account_rule = 0 & slave_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><br><div id="under_gray">Do accounting personally<br><div id = "clear"><a href = 'EXEC: assistant_account_rule = 0 & slave_account_rule = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END
  IF slave_state = CONST_INT['slave_exist'] and slave_account_rule = 1:
   $text_display += {<br><div id="under">Slave - accountant<br></div>}
   elseif slave_state ! CONST_INT['slave_exist']: $text_display += {<br><div id="under_gray">Slave - accountant<br></div>}
   else
-  $text_display += {<br><div id="under_gray">Slave - accountant<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & master_account_rule = 0 & gt "menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+  $text_display += {<br><div id="under_gray">Slave - accountant<br><div id = "clear"><a href = 'EXEC: slave_account_rule = 1 & assistant_account_rule = 0 & master_account_rule = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  END
  $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
@@ -442,6 +409,100 @@ IF menu_form = 37:
  END  
  $text_display += {<br><div id="under">Back <br><div id = "clear"><a href = 'EXEC: menu_form = 3 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
  $text_display += {<br><div id="under">Cancel <br><div id = "clear"><a href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\clear.gif"></a></div></div>}
+END
+
+!main menu - Drink a potion - self
+IF menu_form = menu_Drink_potion:
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  IF вакхический_нектар > 0:
+    FUNC('$menu', 'goto', $menu_item_nectar_master, menu_nectar_master, 'interaction', 'interaction', 'Bacchic nectar', 'Drink Bacchic Nectar potion (<<вакхический_нектар>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_nectar_master_gray, empty, 'Bacchic nectar', 'you ran out of bacchic nectar potions')
+  END
+  IF тонизируюзщий_эликсир > 0:
+    FUNC('$menu', 'goto', $menu_item_elixir_master, menu_elixir_master, 'interaction', 'interaction', 'Tonic elixir', 'Drink Tonic elixir potion (<<тонизируюзщий_эликсир>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_elixir_master_gray, empty, 'Tonic elixir', 'you ran out of Tonic elixir potions')
+  END
+  IF целительный_бальзам > 0:
+    FUNC('$menu', 'goto', $menu_item_Balm_master, menu_Balm_master, 'interaction', 'interaction', 'Miracle Balm', 'Drink Miracle Balm potion (<<целительный_бальзам>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Balm_master_gray, empty, 'Miracle Balm', 'you ran out of Miracle Balm potions')
+  END
+  IF афродизиак > 0:
+    FUNC('$menu', 'goto', $menu_item_Aphrodisiac_master, menu_Aphrodisiac_master, 'interaction', 'interaction', 'Aphrodisiac', 'Drink Aphrodisiac potion (<<афродизиак>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Aphrodisiac_master_gray, empty, 'Aphrodisiac', 'you ran out of Aphrodisiac potions')
+  END
+  IF мощный_афодизиак > 0:
+    FUNC('$menu', 'goto', $menu_item_PowerfulAphrodisiac_master, menu_PowerfulAphrodisiac_master, 'interaction', 'interaction', 'Powerful Aphrodisiac', 'Drink Powerful Aphrodisiac potion (<<мощный_афодизиак>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_PowerfulAphrodisiac_master_gray, empty, 'Powerful Aphrodisiac', 'you ran out of Powerful Aphrodisiac potions')
+  END
+  IF приворотное_зелье > 0:
+    FUNC('$menu', 'goto', $menu_item_Philtre_master, menu_Philtre_master, 'interaction', 'interaction', 'Philtre', 'Drink Philtre potion (<<приворотное_зелье>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Philtre_master_gray, empty, 'Philtre', 'you ran out of Philtre potions')
+  END
+  IF вода_леты > 0:
+    FUNC('$menu', 'goto', $menu_item_Lethe_master, menu_Lethe_master, 'interaction', 'interaction', 'Water of Lethe', 'Drink Water of Lethe potion (<<вода_леты>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Lethe_master_gray, empty, 'Water of Lethe', 'you ran out of Water of Lethe potions')
+  END
+  
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Drink_potion"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 4 & gt "demo_menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Drink_potion"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
+END
+
+!main menu - Slave assignments - Drink a potion
+IF menu_form = menu_potion_S:
+  if nsfw = 0: $text_display += '<div id="center_image_home"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
+  FUNC('$menu', 'spacer', 2)
+
+  FUNC('$menu', '===BEGIN===', 'column_0')
+
+  IF вакхический_нектар > 0:
+    FUNC('$menu', 'goto', $menu_item_nectar_slave, menu_nectar_slave, 'interaction', 'interaction', 'Bacchic nectar', 'Order <<$slave_name>> to drink a Bacchic Nectar potion (<<вакхический_нектар>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_nectar_slave_gray, empty, 'Bacchic nectar', 'You ran out of Bacchic Nectar potions')
+  END 
+  IF тонизируюзщий_эликсир > 0:
+    FUNC('$menu', 'goto', $menu_item_elixir_slave, menu_elixir_slave, 'interaction', 'interaction', 'Tonic elixir', 'Order <<$slave_name>> to drink a Tonic Elixir potion (<<тонизируюзщий_эликсир>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_elixir_slave_gray, empty, 'Tonic elixir', 'You ran out of Tonic Elixir potions')
+  END 
+  IF целительный_бальзам > 0:
+    FUNC('$menu', 'goto', $menu_item_Balm_slave, menu_Balm_slave, 'interaction', 'interaction', 'Miracle Balm', 'Order <<$slave_name>> to drink a Miracle Balm potion (<<целительный_бальзам>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Balm_slave_gray, empty, 'Miracle Balm', 'You ran out of Miracle Balm potions')
+  END 
+  IF афродизиак > 0:
+    FUNC('$menu', 'goto', $menu_item_Aphrodisiac_slave, menu_Aphrodisiac_slave, 'interaction', 'interaction', 'Aphrodisiac', 'Order <<$slave_name>> to drink an Aphrodisiac potion (<<афродизиак>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Aphrodisiac_slave_gray, empty, 'Aphrodisiac', 'You ran out of Aphrodisiac potions')
+  END 
+  IF мощный_афодизиак > 0:
+    FUNC('$menu', 'goto', $menu_item_PowerfulAphrodisiac_slave, menu_PowerfulAphrodisiac_slave, 'interaction', 'interaction', 'Powerful Aphrodisiac', 'Order <<$slave_name>> to drink a Powerful Aphrodisiac potion (<<мощный_афодизиак>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_PowerfulAphrodisiac_slave_gray, empty, 'Powerful Aphrodisiac', 'You ran out of Powerful Aphrodisiac potions')
+  END 
+  IF приворотное_зелье > 0:
+    FUNC('$menu', 'goto', $menu_item_Philtre_slave, menu_Philtre_slave, 'interaction', 'interaction', 'Philtre', 'Order <<$slave_name>> to drink a Philtre potion (<<приворотное_зелье>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Philtre_slave_gray, empty, 'Philtre', 'You ran out of Philtre potions')
+  END 
+  IF вода_леты > 0:
+    FUNC('$menu', 'goto', $menu_item_Lethe_slave, menu_Lethe_slave, 'interaction', 'interaction', 'Water of Lethe', 'Order <<$slave_name>> to drink a Water of Lethe potion (<<вода_леты>>)')
+  ELSE
+    FUNC('$menu', 'exec', $menu_item_Lethe_slave_gray, empty, 'Water of Lethe', 'You ran out of Water of Lethe potions')
+  END 
+
+  FUNC('$menu', '===END===')
+ $text_display += {<br><div id="Back_Drink_S_potion"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Back" href = 'EXEC: menu_form = 5 & gt "demo_menu_form"'><img src = "content\pic\ui overhaul\back.png"></a></div>}
+ $text_display += {<br><div id="Cancel_Drink_S_potion"><a style="text-decoration: none; padding-top: 75px;" class="icon tooltip-right" tooltip-data="Cancel" href = 'EXEC: menu_form = 0 & gt "demo_menu_form"'><img src = "content\pic\ui overhaul\cancel.png"></a></div>}
 END
 
 IF menu_form = 57:

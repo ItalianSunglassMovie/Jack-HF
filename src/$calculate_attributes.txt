@@ -634,6 +634,7 @@ if master_energy < -5: master_energy = -5
 master_supermacy = (master_cha + master_domination + master_style + master_str + slave['beaten_ever'] + magna_magnifika + item_supermacy_bonus) - (slave["temper"] + slave["ego"] + slave["pride"] + slave["stamina"] + (slave["intellect"] - 3))
 if $master_cloth = 'regal_suit': master_supermacy += 1
 if $master_cloth = 'comfy_robes': master_supermacy -= 1
+if $master_back_wpn = 'посох_огня': master_supermacy += 2
 
 --- $calculate_attributes ---------------------------------
 

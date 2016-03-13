@@ -64,32 +64,30 @@ isabella_met = 0
 slave_exhaustion_fainted = 0
 slave_nearly_fainted = 0
 slave_stamina_fainted = 0
+assistant_exhaustion_fainted = 0
+assistant_nearly_fainted = 0
+assistant_stamina_fainted = 0
+auspex = 0
+sententia_veritas = 0
+sententia_veritas_casted = 0
+magna_magnifika = 0
+cruciato = 0
+tremendio = 0
+auspex_auto_cast = 0
+sententia_auto_cast = 0
+magna_magnifika_auto_cast = 0
+silent_auto_cast = 0
+slave['domini_dictum'] = 0
+prisoner['domini_dictum'] = 0
+assistant['domini_dictum'] = 0
+release_notes_message = 0
+difficulty_setting = 0
+assistant['nude'] = 0
+$estate = ''
+gladiatrix_contest_count = 1
 
-gs '#simple_npc'
-gs '#dynamic'
-gs '#npc_base'
 gs '#place_base'
-gs '#estate_base'
-gs '#txt'
-gs '#txt_2'
-gs '#var_base'
-gs '#variative'
-gs '#options'
-gs '#item_base'
-gs '#moodlet_base'
-gs '#food_base'
-gs '#charriots_base'
-gs '#masters_base'
-gs '#quest_base'
-gs '#help_msg'
-!fight engine
-gs '#тексты_движка'
-gs '#противники'
-gs '#суперудары'
-gs '#боевые_предметы'
-!sex engine
-gs '#sex_texts'
-gs '#sex_options'
+gs 'refresh_database'
 
 $music['ride'] = 'content\snd\race_master.mp3'
 $music['arena'] = 'content\snd\fight_arena.mp3'
@@ -100,10 +98,11 @@ $music['city'] = 'content\snd\city.mp3'
 $music['mainscreen'] = 'content\snd\mainscreen.mp3'
 
 !AddOn - Initialisation
-$title_fix = 'Jack HF 1.6 by crushboss'
+$title_fix = 'Jack HF 1.7.2 by crushboss'
 $game_ver = $title_fix
-GS '$addon_custom_data'
+gs '$addon_custom_data'
 
 GT 'main_menu'
+
 --- Start ---------------------------------
 

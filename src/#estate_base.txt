@@ -154,25 +154,31 @@ $estate_lab_location['white_house'] = 'Vatican Suburbs'
 !Лачуга [slum_house]
 interior_prestige['slum_house'] = -1
 
-$interior_bg['slum_house'] = 'interiors\slum_large'
+$interior_study_large['slum_house'] = 'interiors\slum_study_large'
 $interior_study['slum_house'] = 'interiors\slum_study'
 $interior_study_info['slum_house'] = '   You had to live in the remains of house that was half-eaten by the Fog. For slum this place was built very thoroughly, but staying here is not comfortably at all, and most importantly - very, very dangerous.'
 
+$interior_bed_large['slum_house'] = 'interiors\slum_bed_large'
 $interior_bed['slum_house'] = 'interiors\slum_bed'
 $interior_bed_info['slum_house'] = '   You tried to equip your bed with maximum comfort. As far as possible in the old shack on the border of fog.'
 
+$interior_bath_large['slum_house'] = 'interiors\slum_bath_large'
 $interior_bath['slum_house'] = 'interiors\slum_bath'
 $interior_bath_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
+$interior_bouduar_large['slum_house'] = 'interiors\slum_bouduar_large'
 $interior_bouduar['slum_house'] = 'interiors\slum_bouduar'
 $interior_bouduar_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
+$interior_kitchen_large['slum_house'] = 'interiors\slum_kitchen_large'
 $interior_kitchen['slum_house'] = 'interiors\slum_kitchen'
 $interior_kitchen_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
+$interior_dungeon_large['slum_house'] = 'interiors\slum_dungeon_large'
 $interior_dungeon['slum_house'] = 'interiors\slum_dungeon'
 $interior_dungeon_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
+$interior_lab_large['slum_house'] = 'interiors\slum_lab_large'
 $interior_lab['slum_house'] = 'interiors\slum_lab'
 $interior_lab_info['slum_house'] = '   If you`re reading this, it means that there is something wrong...'
 
@@ -180,25 +186,31 @@ $interior_lab_info['slum_house'] = '   If you`re reading this, it means that the
 !Базовый интерьер ['basic']
 interior_prestige['basic'] = 0
 
-$interior_bg['basic'] = 'interiors\basic_large'
+$interior_study_large['basic'] = 'interiors\basic_study_large'
 $interior_study['basic'] = 'interiors\basic_study'
 $interior_study_info['basic'] = '   '
 
+$interior_bed_large['basic'] = 'interiors\basic_bed_large'
 $interior_bed['basic'] = 'interiors\basic_bed'
 $interior_bed_info['basic'] = '   '
 
+$interior_bath_large['basic'] = 'interiors\basic_bath_large'
 $interior_bath['basic'] = 'interiors\basic_bath'
 $interior_bath_info['basic'] = '   '
 
+$interior_bouduar_large['basic'] = 'interiors\basic_bouduar_large'
 $interior_bouduar['basic'] = 'interiors\basic_bouduar'
 $interior_bouduar_info['basic'] = '   '
 
-$interior_kitchen['basic'] = 'kitchen'
+$interior_kitchen_large['basic'] = 'interiors\basic_kitchen_large'
+$interior_kitchen['basic'] = 'interiors\basic_kitchen'
 $interior_kitchen_info['basic'] = '   '
 
+$interior_dungeon_large['basic'] = 'interiors\basic_dungeon_large'
 $interior_dungeon['basic'] = 'interiors\basic_dungeon'
 $interior_dungeon_info['basic'] = '   '
 
+$interior_lab_large['basic'] = 'interiors\basic_lab_large'
 $interior_lab['basic'] = 'interiors\basic_lab'
 $interior_lab_info['basic'] = '   '
 
@@ -206,125 +218,162 @@ $interior_lab_info['basic'] = '   '
 !Интерьер эконом класса ['subprime']
 interior_prestige['econom'] = 0
 
-$interior_bg['econom'] = 'interiors\econom_large'
+$interior_study_large['econom'] = 'interiors\econom_study_large'
 $interior_study['econom'] = 'interiors\econom_study'
 $interior_study_info['econom'] = '   '
 
+$interior_bed_large['econom'] = 'interiors\econom_bed_large'
 $interior_bed['econom'] = 'interiors\econom_bed'
 $interior_bed_info['econom'] = '   '
 
+$interior_bath_large['econom'] = 'interiors\econom_bath_large'
 $interior_bath['econom'] = 'interiors\econom_bath'
 $interior_bath_info['econom'] = '   '
 
+$interior_bouduar_large['econom'] = 'interiors\econom_bouduar_large'
 $interior_bouduar['econom'] = 'interiors\econom_bouduar'
 $interior_bouduar_info['econom'] = '   '
 
+$interior_kitchen_large['econom'] = 'interiors\econom_kitchen_large'
 $interior_kitchen['econom'] = 'interiors\econom_kitchen'
 $interior_kitchen_info['econom'] = '   '
 
+$interior_dungeon_large['econom'] = 'interiors\econom_dungeon_large'
 $interior_dungeon['econom'] = 'interiors\econom_dungeon'
 $interior_dungeon_info['econom'] = '   '
 
+$interior_lab_large['econom'] = 'interiors\econom_lab_large'
 $interior_lab['econom'] = 'interiors\econom_lab'
 $interior_lab_info['econom'] = '   '
 
 !Готический набор ['gothic']
 interior_prestige['gothic'] = 1
 
-$interior_bg['gothic'] = 'interiors\gothic_large'
+$interior_study_large['gothic'] = 'interiors\gothic_study_large'
 $interior_study['gothic'] = 'interiors\gothic_study'
 $interior_study_info['gothic'] = '   '
 
+$interior_bed_large['gothic'] = 'interiors\gothic_bed_large'
 $interior_bed['gothic'] = 'interiors\gothic_bed'
 $interior_bed_info['gothic'] = '   '
 
+$interior_bath_large['gothic'] = 'interiors\gothic_bath_large'
 $interior_bath['gothic'] = 'interiors\gothic_bath'
 $interior_bath_info['gothic'] = '   '
 
+$interior_bouduar_large['gothic'] = 'interiors\gothic_bouduar_large'
 $interior_bouduar['gothic'] = 'interiors\gothic_bouduar'
 $interior_bouduar_info['gothic'] = '   '
 
+$interior_kitchen_large['gothic'] = 'interiors\gothic_kitchen_large'
 $interior_kitchen['gothic'] = 'interiors\gothic_kitchen'
 $interior_kitchen_info['gothic'] = '   '
 
+$interior_dungeon_large['gothic'] = 'interiors\gothic_dungeon_large'
 $interior_dungeon['gothic'] = 'interiors\gothic_dungeon'
 $interior_dungeon_info['gothic'] = '   '
 
+$interior_lab_large['gothic'] = 'interiors\gothic_lab_large'
 $interior_lab['gothic'] = 'interiors\gothic_lab'
 $interior_lab_info['gothic'] = '   '
 
 !Набор форт ['fort']
 interior_prestige['fort'] = 0
 
-$interior_bg['fort'] = 'interiors\fort_large'
+$interior_study_large['fort'] = 'interiors\fort_study_large'
 $interior_study['fort'] = 'interiors\fort_study'
 $interior_study_info['fort'] = '   '
 
+$interior_bed_large['fort'] = 'interiors\fort_bed_large'
 $interior_bed['fort'] = 'interiors\fort_bed'
 $interior_bed_info['fort'] = '   '
 
+$interior_bath_large['fort'] = 'interiors\fort_bath_large'
 $interior_bath['fort'] = 'interiors\fort_bath'
 $interior_bath_info['fort'] = '   '
 
+$interior_bouduar_large['fort'] = 'interiors\fort_bouduar_large'
 $interior_bouduar['fort'] = 'interiors\fort_bouduar'
 $interior_bouduar_info['fort'] = '   '
 
+$interior_kitchen_large['fort'] = 'interiors\fort_kitchen_large'
 $interior_kitchen['fort'] = 'interiors\fort_kitchen'
 $interior_kitchen_info['fort'] = '   '
 
+$interior_dungeon_large['fort'] = 'interiors\fort_dungeon_large'
 $interior_dungeon['fort'] = 'interiors\fort_dungeon'
 $interior_dungeon_info['fort'] = '   '
 
+$interior_lab_large['fort'] = 'interiors\fort_lab_large'
 $interior_lab['fort'] = 'interiors\fort_lab'
 $interior_lab_info['fort'] = '   '
 
 !Название ['elite']
 interior_prestige['elite'] = 1
 
-$interior_bg['elite'] = 'interiors\elite_large'
+$interior_study_large['elite'] = 'interiors\elite_study_large'
 $interior_study['elite'] = 'interiors\elite_study'
 $interior_study_info['elite'] = '   '
 
+$interior_bed_large['elite'] = 'interiors\elite_bed_large'
 $interior_bed['elite'] = 'interiors\elite_bed'
 $interior_bed_info['elite'] = '   '
 
+$interior_bath_large['elite'] = 'interiors\elite_bath_large'
 $interior_bath['elite'] = 'interiors\elite_bath'
 $interior_bath_info['elite'] = '   '
 
+$interior_bouduar_large['elite'] = 'interiors\elite_bouduar_large'
 $interior_bouduar['elite'] = 'interiors\elite_bouduar'
 $interior_bouduar_info['elite'] = '   '
 
+$interior_kitchen_large['elite'] = 'interiors\elite_kitchen_large'
 $interior_kitchen['elite'] = 'interiors\elite_kitchen'
 $interior_kitchen_info['elite'] = '   '
 
+$interior_dungeon_large['elite'] = 'interiors\elite_dungeon_large'
 $interior_dungeon['elite'] = 'interiors\elite_dungeon'
 $interior_dungeon_info['elite'] = '   '
 
+$interior_lab_large['elite'] = 'interiors\elite_lab_large'
 $interior_lab['elite'] = 'interiors\elite_lab'
 $interior_lab_info['elite'] = '   '
 
 !Классический набор ['classic']
 interior_prestige['classic'] = 1
 
-$interior_bg['classic'] = 'study_large'
-$interior_study['classic'] = 'study'
+$interior_study_large['classic'] = 'interiors\classic_study_large'
+$interior_study['classic'] = 'interiors\classic_study'
 $interior_study_info['classic'] = '   '
 
-$interior_bed['classic'] = 'bedroom'
+$interior_bed_large['classic'] = 'interiors\classic_bedroom_large'
+$interior_bed['classic'] = 'interiors\classic_bedroom'
 $interior_bed_info['classic'] = '   '
 
+$interior_bouduar_large['classic'] = 'interiors\classic_bouduar_large'
 $interior_bouduar['classic'] = 'interiors\classic_bouduar'
 $interior_bouduar_info['classic'] = '   '
 
-$interior_bath['classic'] = 'bathroom'
+$interior_kitchen_large['classic'] = 'interiors\classic_kitchen_large'
+$interior_kitchen['classic'] = 'interiors\classic_kitchen'
+$interior_kitchen_info['classic'] = '   '
+
+$interior_bath_large['classic'] = 'interiors\classic_bathroom_large'
+$interior_bath['classic'] = 'interiors\classic_bathroom'
 $interior_bath_info['classic'] = '   '
 
-$interior_dungeon['classic'] = 'dungeon'
+$interior_dungeon_large['classic'] = 'interiors\classic_dungeon_large'
+$interior_dungeon['classic'] = 'interiors\classic_dungeon'
 $interior_dungeon_info['classic'] = '   '
+
+$interior_lab_large['classic'] = 'interiors\classic_lab_large'
+$interior_lab['classic'] = 'interiors\classic_lab'
+$interior_lab_info['classic'] = '   '
 
 !Набор альков ['alcove']
 interior_prestige['alcove'] = 1
 
+$interior_bed_large['alcove'] = 'interiors\alcove_bed_large'
 $interior_bed['alcove'] = 'interiors\alcove_bed'
 $interior_bed_info['alcove'] = '   '
 
@@ -332,156 +381,151 @@ $interior_bed_info['alcove'] = '   '
 !Набор комфорт ['comfy']
 interior_prestige['comfy'] = 0
 
-$interior_bg['comfy'] = 'interiors\comfy_large'
+$interior_study_large['comfy'] = 'interiors\comfy_study_large'
 $interior_study['comfy'] = 'interiors\comfy_study'
 $interior_study_info['comfy'] = '   '
 
+$interior_bed_large['comfy'] = 'interiors\comfy_bed_large'
 $interior_bed['comfy'] = 'interiors\comfy_bed'
 $interior_bed_info['comfy'] = '   '
 
+$interior_bouduar_large['comfy'] = 'interiors\comfy_bouduar_large'
 $interior_bouduar['comfy'] = 'interiors\comfy_bouduar'
 $interior_bouduar_info['comfy'] = '   '
 
 !Каменный мешок ['entomb']
 interior_prestige['entomb'] = 0
 
+$interior_dungeon_large['entomb'] = 'interiors\entomb_dungeon_large'
 $interior_dungeon['entomb'] = 'interiors\entomb_dungeon'
 $interior_dungeon_info['entomb'] = '   '
 
 !Палач ['executor']
 interior_prestige['executor'] = 0
 
+$interior_dungeon_large['executor'] = 'interiors\executor_dungeon_large'
 $interior_dungeon['executor'] = 'interiors\executor_dungeon'
 $interior_dungeon_info['executor'] = '   '
 
 !Пасторальный набор ['pastoral']
 interior_prestige['pastoral'] = 0
 
-$interior_bg['pastoral'] = 'interiors\pastoral_large'
+$interior_study_large['pastoral'] = 'interiors\pastoral_study_large'
 $interior_study['pastoral'] = 'interiors\pastoral_study'
 $interior_study_info['pastoral'] = '   '
 
+$interior_dungeon_large['pastoral'] = 'interiors\pastoral_dungeon_large'
 $interior_dungeon['pastoral'] = 'interiors\pastoral_dungeon'
 $interior_dungeon_info['pastoral'] = '   '
 
 !Японский набор ['japan']
 interior_prestige['japan'] = 0
 
-$interior_bg['japan'] = 'interiors\japan_large'
+$interior_study_large['japan'] = 'interiors\japan_study_large'
 $interior_study['japan'] = 'interiors\japan_study'
 $interior_study_info['japan'] = '   '
 
+$interior_bed_large['japan'] = 'interiors\japan_bed_large'
 $interior_bed['japan'] = 'interiors\japan_bed'
 $interior_bed_info['japan'] = '   '
 
+$interior_bath_large['japan'] = 'interiors\japan_bath_large'
 $interior_bath['japan'] = 'interiors\japan_bath'
 $interior_bath_info['japan'] = '   '
 
 !Набор люкс ['lux']
 interior_prestige['lux'] = 1
 
-$interior_bg['lux'] = 'interiors\lux_large'
+$interior_study_large['lux'] = 'interiors\lux_study_large'
 $interior_study['lux'] = 'interiors\lux_study'
 $interior_study_info['lux'] = '   '
 
+$interior_bed_large['lux'] = 'interiors\lux_bed_large'
 $interior_bed['lux'] = 'interiors\lux_bed'
 $interior_bed_info['lux'] = '   '
 
+$interior_bath_large['lux'] = 'interiors\lux_bath_large'
 $interior_bath['lux'] = 'interiors\lux_bath'
 $interior_bath_info['lux'] = '   '
 
+$interior_bouduar_large['lux'] = 'interiors\lux_bouduar_large'
 $interior_bouduar['lux'] = 'interiors\lux_bouduar'
 $interior_bouduar_info['lux'] = '   '
 
+$interior_dungeon_large['lux'] = 'interiors\lux_dungeon_large'
 $interior_dungeon['lux'] = 'interiors\lux_dungeon'
 $interior_dungeon_info['lux'] = '   '
 
 !Магический набор ['magic']
 interior_prestige['magic'] = 0
 
+$interior_bouduar_large['magic'] = 'interiors\magic_bouduar_large'
 $interior_bouduar['magic'] = 'interiors\magic_bouduar'
 $interior_bouduar_info['magic'] = '   '
 
 !Набор модерн ['modern']
 interior_prestige['modern'] = 1
 
-$interior_bg['modern'] = 'interiors\modern_large'
+$interior_study_large['modern'] = 'interiors\modern_study_large'
 $interior_study['modern'] = 'interiors\modern_study'
 $interior_study_info['modern'] = '   '
 
+$interior_bed_large['modern'] = 'interiors\modern_bed_large'
 $interior_bed['modern'] = 'interiors\modern_bed'
 $interior_bed_info['modern'] = '   '
 
+$interior_bouduar_large['modern'] = 'interiors\modern_bouduar_large'
 $interior_bouduar['modern'] = 'interiors\modern_bouduar'
 $interior_bouduar_info['modern'] = '   '
 
 !Набор работорговец ['slaver']
 interior_prestige['slaver'] = 1 
 
-$interior_bg['slaver'] = 'interiors\slaver_large'
+$interior_study_large['slaver'] = 'interiors\slaver_study_large'
 $interior_study['slaver'] = 'interiors\slaver_study'
 $interior_study_info['slaver'] = '   '
 
+$interior_bed_large['slaver'] = 'interiors\slaver_bed_large'
 $interior_bed['slaver'] = 'interiors\slaver_bed'
 $interior_bed_info['slaver'] = '   '
 
+$interior_bouduar_large['slaver'] = 'interiors\slaver_bouduar_large'
 $interior_bouduar['slaver'] = 'interiors\slaver_bouduar'
 $interior_bouduar_info['slaver'] = '   '
 
+$interior_dungeon_large['slaver'] = 'interiors\slaver_dungeon_large'
 $interior_dungeon['slaver'] = 'interiors\slaver_dungeon'
 $interior_dungeon_info['slaver'] = '   '
 
+$interior_lab_large['slaver'] = 'interiors\slaver_lab_large'
 $interior_lab['slaver'] = 'interiors\slaver_lab'
 $interior_lab_info['slaver'] = '   '
 
 !Стильный набор ['stylish']
 interior_prestige['stylish'] = 1
 
+$interior_bed_large['stylish'] = 'interiors\stylish_bed_large'
 $interior_bed['stylish'] = 'interiors\stylish_bed'
 $interior_bed_info['stylish'] = '   '
 
 !Викторианский набор ['victorian']
 interior_prestige['victorian'] = 1
 
-$interior_bg['victorian'] = 'interiors\victorian_large'
+$interior_study_large['victorian'] = 'interiors\victorian_study_large'
 $interior_study['victorian'] = 'interiors\victorian_study'
 $interior_study_info['victorian'] = '   '
 
+$interior_bouduar_large['victorian'] = 'interiors\victorian_bouduar_large'
 $interior_bouduar['victorian'] = 'interiors\victorian_bouduar'
 $interior_bouduar_info['victorian'] = '   '
 
+$interior_dungeon_large['victorian'] = 'interiors\victorian_dungeon_large'
 $interior_dungeon['victorian'] = 'interiors\victorian_dungeon'
 $interior_dungeon_info['victorian'] = '   '
 
+$interior_lab_large['victorian'] = 'interiors\victorian_lab_large'
 $interior_lab['victorian'] = 'interiors\victorian_lab'
 $interior_lab_info['victorian'] = '   '
-
-
-!'
-!Название ['']
-interior_prestige['basic'] = 0
-
-$interior_bg['basic'] = 'interiors\_large'
-$interior_study['basic'] = 'interiors\_study'
-$interior_study_info['basic'] = '   '
-
-$interior_bed['basic'] = 'interiors\_bed'
-$interior_bed_info['basic'] = '   '
-
-$interior_bath['basic'] = 'interiors\_bath'
-$interior_bath_info['basic'] = '   '
-
-$interior_bouduar['basic'] = 'interiors\_bouduar'
-$interior_bouduar_info['basic'] = '   '
-
-$interior_kitchen['basic'] = 'interiors\_kitchen'
-$interior_kitchen_info['basic'] = '   '
-
-$interior_dungeon['basic'] = 'interiors\_dungeon'
-$interior_dungeon_info['basic'] = '   '
-
-$interior_lab['basic'] = 'interiors\_lab'
-$interior_lab_info['basic'] = '   ''
 
 --- #estate_base ---------------------------------
 

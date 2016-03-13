@@ -1,15 +1,23 @@
 # stock_to_expert
 !expert stashes a matched slave for a master
+
+stock = 0
+tattoo_brand = 0
+
 selected_type = stock_type
 $selected_type = $stock_type
 stock['age'] = seed_age[stock_type]
 
-killvar 'selected' 
-killvar 'selected_rate' 
+killvar 'selected'
+killvar 'selected_rate'
+killvar 'selected_inventory'
 copyarr 'selected','stock'
 copyarr '$selected','$stock'
-copyarr 'selected','stock_ava'
-copyarr '$selected','$stock_ava'
+copyarr 'selected_rate','stock_rate'
+copyarr 'selected_inventory','stock_inventory'
+copyarr '$selected_inventory','$stock_inventory'
+copyarr 'selected_ava','stock_ava'
+copyarr '$selected_ava','$stock_ava'
 
 $selected_name = $stock_name
 $selected_psy_basic = $stock_psy_basic

@@ -1,0 +1,30 @@
+# $weapon_assignments
+!Weapon Assignments - crushboss
+
+!TAKE OUT THE WEAPONS
+
+!Master/Slaver Weapons
+$за_спиной = $master_back_wpn
+$слева = $master_left_wpn
+$справа = $master_right_wpn
+$предплечье = $master_arm_wpn
+$в_сапоге = $master_leg_wpn
+
+IF combatant = 1:
+	$за_спиной = $slave["back_wpn"]
+	$слева = $slave["left_wpn"]
+	$справа = $slave["right_wpn"]
+	$предплечье = $slave["arm_wpn"]
+	$в_сапоге = $slave["leg_wpn"]
+END
+
+IF combatant = 2:
+	$за_спиной = $assistant["back_wpn"]
+	$слева = $assistant["left_wpn"]
+	$справа = $assistant["right_wpn"]
+	$предплечье = $assistant["arm_wpn"]
+	$в_сапоге = $assistant["leg_wpn"]
+END
+
+--- $weapon_assignments ---------------------------------
+

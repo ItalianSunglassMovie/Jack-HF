@@ -15,6 +15,8 @@ IF $estate = 'white_house': $interior = 'elite'
 gs 'new_estate'
 
 slave_state = CONST_INT['no_slave']
+assistant_state = CONST_INT['no_slave']
+prisoner_state = CONST_INT['no_slave']
 day = 1
 decade = 0
 decadecount = 1
@@ -24,6 +26,14 @@ gladi_count = 4
 
 slave_food_portion = 2
 active[$quest[0]] = 1
+
+IF sandbox_game = 1:
+	faction_fame['neutral'] = 1
+	faction_fame['korvus'] = 1
+	faction_fame['taurus'] = 1
+	faction_fame['serpis'] = 1
+	faction_fame['kamira'] = 1
+END
 
 !declare variables
 slave["nul"] = 0 

@@ -8,8 +8,8 @@ $slave["scnd"] = ''
 $slave["armor"] = 'плейт'
 $slave["right_wpn"] = 'катана'
 $slave["left_wpn"] = 'кинжал'
-$slave["back_wpn"] = 'фламберг'
-$slave["cloth"] = 'leather_corset'
+if slave_type ! 908: $slave["back_wpn"] = 'фламберг'
+$slave["cloth"] = 'sun_dress'
 
 !Slave Rules
 slave_sleep_condition = 1

@@ -1,196 +1,261 @@
 # $assistant_traits
-!reveals assistant traits - crushboss
+!reveals assistant traits - overhauled by crushboss
 
 !Check for habit - assistant
-if assistant["exhibitionism_xp"] > 10 and assistant["exhibitionism"] = 0: assistant["exhibitionism"] = 1
-if assistant["masohism_xp"] > 30 and assistant["masohism"] = 0: assistant["masohism"] = 1
-if assistant["preversion_xp"] > 10 and assistant["preversion"] = 0: assistant["preversion"] = 1
-if assistant["lesbian_xp"] > 10 and assistant["homosexualism"] = 0: assistant["homosexualism"] = 1
-if assistant["abuse_xp"] > 30 and assistant["abuse_attitude"] = 0: assistant["abuse_attitude"] = 1
-if assistant["darkness_xp"] > 10 and assistant["darkness_attitude"] = 0: assistant["darkness_attitude"] = 1
-if assistant["blood_xp"] > 10 and assistant["blood_attitude"] = 0: assistant["blood_attitude"] = 1
-if assistant["fire_xp"] > 10 and assistant["fire_attitude"] = 0: assistant["fire_attitude"] = 1
-if assistant["water_xp"] > 10 and assistant["water_attitude"] = 0: assistant["water_attitude"] = 1
-if assistant["vermin_xp"] > 10 and assistant["vermin_attitude"] = 0: assistant["vermin_attitude"] = 1
-if assistant["deprivation_xp"] > 10 and assistant["deprivation_attitude"] = 0: assistant["deprivation_attitude"] = 1
+if assistant["exhibitionism_xp"] > 75 and assistant["exhibitionism"] < 2: assistant["exhibitionism"] = 2
+if assistant["masohism_xp"] > 50 and assistant["masohism"] = 0: assistant["masohism"] = 1
+if assistant["nymphomania_xp"] > 100 and assistant["nymphomania"] = 0: assistant["nymphomania"] = 1
+if assistant["preversion_xp"] > 150 and assistant["preversion"] < 2: assistant["preversion"] = 2
+if assistant["lesbian_xp"] > 50 and assistant["homosexualism"] = 0: assistant["homosexualism"] = 1
+if assistant["abuse_xp"] > 30 and assistant["abuse_attitude"] < 2: assistant["abuse_attitude"] = 2
+if assistant["darkness_xp"] > 10 and assistant["darkness_attitude"] < 2: assistant["darkness_attitude"] = 2
+if assistant["blood_xp"] > 10 and assistant["blood_attitude"] < 2: assistant["blood_attitude"] = 2
+if assistant["fire_xp"] > 10 and assistant["fire_attitude"] < 2: assistant["fire_attitude"] = 2
+if assistant["water_xp"] > 10 and assistant["water_attitude"] < 2: assistant["water_attitude"] = 2
+if assistant["vermin_xp"] > 10 and assistant["vermin_attitude"] < 2: assistant["vermin_attitude"] = 2
+if assistant["deprivation_xp"] > 10 and assistant["deprivation_attitude"] < 2: assistant["deprivation_attitude"] = 2
+if assistant["compassion_xp"] > 10 and assistant["compassion"] = 0: assistant["compassion"] = 1 
 
-IF assistant["nymphomania_revealed"] = 1:
- IF assistant["nymphomania"] > 0: msg '<<$Нимфоманка>>'
- IF assistant["nymphomania"] < 0: msg '<<$Фригидная>>'
- assistant["nymphomania_revealed"] = 2
+IF assistant["nymphomania_revealed"] = 1 and assistant["nymphomania"] ! 0:
+	IF assistant["nymphomania"] > 0: msg '<<$Нимфоманка>>'
+	IF assistant["nymphomania"] < 0: msg '<<$Фригидная>>'
+	assistant["nymphomania_revealed"] = 2
+ELSEIF assistant["nymphomania"] = 0:
+	assistant["nymphomania_revealed"] = 0
 END
 
-IF assistant["masohism_revealed"] = 1:
- IF assistant["masohism"] = 2: msg '<<$Мазохистка>>'
- IF assistant["masohism"] = 1: msg '<<$Привычна_к_боли>>'
- IF assistant["masohism"] = -1: msg '<<$Боится_боли>>' 
- assistant["masohism_revealed"] = 2
+IF assistant["masohism_revealed"] = 1 and assistant["masohism"] ! 0:
+	IF assistant["masohism"] = 2: msg '<<$Мазохистка>>'
+	IF assistant["masohism"] = 1: msg '<<$Привычна_к_боли>>'
+	IF assistant["masohism"] = -1: msg '<<$Боится_боли>>' 
+	assistant["masohism_revealed"] = 2
+ELSEIF assistant["masohism"] = 0:
+	assistant["masohism_revealed"] = 0
 END
  
-IF assistant["exhibitionism_revealed"] = 1:
- IF assistant["exhibitionism"] = 2: msg '<<$Эксгибиционистка>>'
- IF assistant["exhibitionism"] = -1: msg '<<$Стеснительная>>'
- assistant["exhibitionism_revealed"] = 2
+IF assistant["exhibitionism_revealed"] = 1 and assistant["exhibitionism"] ! 0:
+	IF assistant["exhibitionism"] = 2: msg '<<$Эксгибиционистка>>'
+	IF assistant["exhibitionism"] = -1: msg '<<$Стеснительная>>'
+	assistant["exhibitionism_revealed"] = 2
+ELSEIF assistant["exhibitionism"] = 0:
+	assistant["exhibitionism_revealed"] = 0
 END
 
-IF assistant["preversion_revealed"] = 1:
- IF assistant["preversion"] = 2: msg '<<$Извращенка>>'
- IF assistant["preversion"] = -1: msg '<<$Пуристка>>'
- assistant["preversion_revealed"] = 2
+IF assistant["preversion_revealed"] = 1 and assistant["preversion"] ! 0:
+	IF assistant["preversion"] = 2: msg '<<$Извращенка>>'
+	IF assistant["preversion"] = -1: msg '<<$Пуристка>>'
+	assistant["preversion_revealed"] = 2
+ELSEIF assistant["preversion"] = 0:
+	assistant["preversion_revealed"] = 0
 END
 
-IF assistant["homosexualism_revealed"] = 1:
- IF assistant["homosexualism"] = 2: msg '<<$Лесбиянка>>'
- IF assistant["homosexualism"] = 1: msg '<<$Бисексуальная>>'
- IF assistant["homosexualism"] = -1: msg '<<$Гомофобка>>'
- assistant["homosexualism_revealed"] = 2
+IF assistant["homosexualism_revealed"] = 1 and assistant["homosexualism"] ! 0:
+	IF assistant["homosexualism"] = 2: msg '<<$Лесбиянка>>'
+	IF assistant["homosexualism"] = 1: msg '<<$Бисексуальная>>'
+	IF assistant["homosexualism"] = -1: msg '<<$Гомофобка>>'
+	assistant["homosexualism_revealed"] = 2
+ELSEIF assistant["homosexualism"] = 0:
+	assistant["homosexualism_revealed"] = 0
 END
 
-IF assistant["abuse_attitude_revealed"] = 1:
- IF assistant["abuse_attitude"] = 2: msg '<<$Пси_мазохистка>>'
- IF assistant["abuse_attitude"] = -1: msg '<<$Истеричка>>'
- assistant["abuse_attitude_revealed"] = 2
+IF assistant["abuse_attitude_revealed"] = 1 and assistant["abuse_attitude"] ! 0:
+	IF assistant["abuse_attitude"] = 2: msg '<<$Пси_мазохистка>>'
+	IF assistant["abuse_attitude"] = -1: msg '<<$Истеричка>>'
+	assistant["abuse_attitude_revealed"] = 2
+ELSEIF assistant["abuse_attitude"] = 0:
+	assistant["abuse_attitude_revealed"] = 0
 END
 
-IF assistant["darkness_attitude_revealed"] = 1:
- IF assistant["darkness_attitude"] = 2: msg '<<$Дитя_тьмы>>'
- IF assistant["darkness_attitude"] = -1: msg '<<$Боится_темноты>>'
- assistant["darkness_attitude_revealed"] = 2
+IF assistant["darkness_attitude_revealed"] = 1 and assistant["darkness_attitude"] ! 0:
+	IF assistant["darkness_attitude"] = 2: msg '<<$Дитя_тьмы>>'
+	IF assistant["darkness_attitude"] = -1: msg '<<$Боится_темноты>>'
+	assistant["darkness_attitude_revealed"] = 2
+ELSEIF assistant["darkness_attitude"] = 0:
+	assistant["darkness_attitude_revealed"] = 0
 END
 
-IF assistant["blood_attitude_revealed"] = 1:
- IF assistant["blood_attitude"] = 2: msg '<<$Кровожадная>>'
- IF assistant["blood_attitude"] = -1: msg '<<$Боится_крови>>'
- assistant["blood_attitude_revealed"] = 2
+IF assistant["blood_attitude_revealed"] = 1 and assistant["blood_attitude"] ! 0:
+	IF assistant["blood_attitude"] = 2: msg '<<$Кровожадная>>'
+	IF assistant["blood_attitude"] = -1: msg '<<$Боится_крови>>'
+	assistant["blood_attitude_revealed"] = 2
+ELSEIF assistant["blood_attitude"] = 0:
+	assistant["blood_attitude_revealed"] = 0
 END
 
-IF assistant["fire_attitude_revealed"] = 1:
- IF assistant["fire_attitude"] = 2: msg '<<$Пиромания>>'
- IF assistant["fire_attitude"] = -1: msg '<<$Пирофобия>>'
- assistant["fire_attitude_revealed"] = 2
+IF assistant["fire_attitude_revealed"] = 1 and assistant["fire_attitude"] ! 0:
+	IF assistant["fire_attitude"] = 2: msg '<<$Пиромания>>'
+	IF assistant["fire_attitude"] = -1: msg '<<$Пирофобия>>'
+	assistant["fire_attitude_revealed"] = 2
+ELSEIF assistant["fire_attitude"] = 0:
+	assistant["fire_attitude_revealed"] = 0
 END
 
-IF assistant["water_attitude_revealed"] = 1:
- IF assistant["water_attitude"] = 2: msg '<<$Дитя_воды>>'
- IF assistant["water_attitude"] = -1: msg '<<$Гидрофобия>>'
- assistant["water_attitude_revealed"] = 2
+IF assistant["water_attitude_revealed"] = 1 and assistant["water_attitude"] ! 0:
+	IF assistant["water_attitude"] = 2: msg '<<$Дитя_воды>>'
+	IF assistant["water_attitude"] = -1: msg '<<$Гидрофобия>>'
+	assistant["water_attitude_revealed"] = 2
+ELSEIF assistant["water_attitude"] = 0:
+	assistant["water_attitude_revealed"] = 0
 END
 
-IF assistant["vermin_attitude_revealed"] = 1:
- IF assistant["vermin_attitude"] = 2: msg '<<$Арахнофилия>>'
- IF assistant["vermin_attitude"] = -1: msg '<<$Арахнофобия>>'
- assistant["vermin_attitude_revealed"] = 2
+IF assistant["vermin_attitude_revealed"] = 1 and assistant["vermin_attitude"] ! 0:
+	IF assistant["vermin_attitude"] = 2: msg '<<$Арахнофилия>>'
+	IF assistant["vermin_attitude"] = -1: msg '<<$Арахнофобия>>'
+	assistant["vermin_attitude_revealed"] = 2
+ELSEIF assistant["vermin_attitude"] = 0:
+	assistant["vermin_attitude_revealed"] = 0
 END
 
-IF assistant["deprivation_attitude_revealed"] = 1:
- IF assistant["deprivation_attitude"] = 2: msg '<<$Любит_беспомощность>>'
- IF assistant["deprivation_attitude"] = -1: msg '<<$Клаустрофобия>>'
- assistant["deprivation_attitude_revealed"] = 2
+IF assistant["deprivation_attitude_revealed"] = 1 and assistant["deprivation_attitude"] ! 0:
+	IF assistant["deprivation_attitude"] = 2: msg '<<$Любит_беспомощность>>'
+	IF assistant["deprivation_attitude"] = -1: msg '<<$Клаустрофобия>>'
+	assistant["deprivation_attitude_revealed"] = 2
+ELSEIF assistant["deprivation_attitude"] = 0:
+	assistant["deprivation_attitude_revealed"] = 0
 END
 
-IF assistant["passion_comfort_revealed"] = 1:
- IF assistant["passion_comfort"] = 1: msg '<<$Ленивая>>'
- IF assistant["passion_comfort"] = -1: msg '<<$Гиперактивная>>'
- assistant["passion_comfort_revealed"] = 2
+IF assistant["passion_comfort_revealed"] = 1 and assistant["passion_comfort"] ! 0:
+	IF assistant["passion_comfort"] = 1: msg '<<$Ленивая>>'
+	IF assistant["passion_comfort"] = -1: msg '<<$Гиперактивная>>'
+	assistant["passion_comfort_revealed"] = 2
+ELSEIF assistant["passion_comfort"] = 0:
+	assistant["passion_comfort_revealed"] = 0
 END
 
-IF assistant["passion_luxury_revealed"] = 1:
- IF assistant["passion_luxury"] = 1: msg '<<$Любит_роскошь>>'
- IF assistant["passion_luxury"] = -1: msg '<<$Аскетичная>>'
- assistant["passion_luxury_revealed"] = 2
+IF assistant["passion_luxury_revealed"] = 1 and assistant["passion_luxury"] ! 0:
+	IF assistant["passion_luxury"] = 1: msg '<<$Любит_роскошь>>'
+	IF assistant["passion_luxury"] = -1: msg '<<$Аскетичная>>'
+	assistant["passion_luxury_revealed"] = 2
+ELSEIF assistant["passion_luxury"] = 0:
+	assistant["passion_luxury_revealed"] = 0
 END
 
-IF assistant["passion_sweets_revealed"] = 1:
- IF assistant["passion_sweets"] = 1: msg '<<$Сладкоежка>>'
- IF assistant["passion_sweets"] = -1: msg '<<$Не_любит_сладкое>>'
- assistant["passion_sweets_revealed"] = 2
+IF assistant["passion_sweets_revealed"] = 1 and assistant["passion_sweets"] ! 0:
+	IF assistant["passion_sweets"] = 1: msg '<<$Сладкоежка>>'
+	IF assistant["passion_sweets"] = -1: msg '<<$Не_любит_сладкое>>'
+	assistant["passion_sweets_revealed"] = 2
+ELSEIF assistant["passion_sweets"] = 0:
+	assistant["passion_sweets_revealed"] = 0
 END
 
-IF assistant["passion_fame_revealed"] = 1:
- IF assistant["passion_fame"] = 1: msg '<<$Тщеславная>>'
- IF assistant["passion_fame"] = -1: msg '<<$Хикикомори>>'
- assistant["passion_fame_revealed"] = 2
+IF assistant["passion_fame_revealed"] = 1 and assistant["passion_fame"] ! 0:
+	IF assistant["passion_fame"] = 1: msg '<<$Тщеславная>>'
+	IF assistant["passion_fame"] = -1: msg '<<$Хикикомори>>'
+	assistant["passion_fame_revealed"] = 2
+ELSEIF assistant["passion_fame"] = 0:
+	assistant["passion_fame_revealed"] = 0
 END
 
-IF assistant["courage_revealed"] = 1:
- IF assistant["courage"] = 2: msg '<<$Отмороженая>>'
- IF assistant["courage"] = 1: msg '<<$Храбрая>>'
- IF assistant["courage"] = -1: msg '<<$Трусиха>>' 
- assistant["courage_revealed"] = 2
+IF assistant["courage_revealed"] = 1 and assistant["courage"] ! 0:
+	IF assistant["courage"] = 2: msg '<<$Отмороженая>>'
+	IF assistant["courage"] = 1: msg '<<$Храбрая>>'
+	IF assistant["courage"] = -1: msg '<<$Трусиха>>' 
+	assistant["courage_revealed"] = 2
+ELSEIF assistant["courage"] = 0:
+	assistant["courage_revealed"] = 0
+END
+if assistant["fear"] > 0 and assistant["courage"] ! 0 and assistant["courage_revealed"] = 0: assistant["courage_revealed"] = 1
+
+IF assistant["metabolism_revealed"] = 1 and assistant["metabolism"] ! 3:
+	IF assistant["metabolism"] = 5: msg '<<$Мощный_метаболизм>>'
+	IF assistant["metabolism"] = 4: msg '<<$Хороший_метаболизм>>'
+	IF assistant["metabolism"] = 2: msg '<<$Ослабленный_метаболизм>>' 
+	IF assistant["metabolism"] = 1: msg '<<$Слабый_метаболизм>>' 
+	assistant["metabolism_revealed"] = 2
+ELSEIF assistant["metabolism"] = 3:
+	assistant["metabolism_revealed"] = 0
 END
 
-IF assistant["metabolism_revealed"] = 1:
- IF assistant["metabolism"] = 5: msg '<<$Мощный_метаболизм>>'
- IF assistant["metabolism"] = 4: msg '<<$Хороший_метаболизм>>'
- IF assistant["metabolism"] = 2: msg '<<$Ослабленный_метаболизм>>' 
- IF assistant["metabolism"] = 1: msg '<<$Слабый_метаболизм>>' 
- assistant["metabolism_revealed"] = 2
+IF assistant["sport_affinity_revealed"] = 1 and assistant["sport_affinity"] ! 0:
+	IF assistant["sport_affinity"] = 1: msg '<<$Спортивная>>'
+	IF assistant["sport_affinity"] = -1: msg '<<$Апатичная>>'
+	assistant["sport_affinity_revealed"] = 2
+ELSEIF assistant["sport_affinity"] = 0:
+	assistant["sport_affinity_revealed"] = 0
 END
 
-IF assistant["sport_affinity_revealed"] = 1:
- IF assistant["sport_affinity"] = 1: msg '<<$Спортивная>>'
- IF assistant["sport_affinity"] = -1: msg '<<$Апатичная>>'
- assistant["sport_affinity_revealed"] = 2
+IF assistant["expression_affinity_revealed"] = 1 and assistant["expression_affinity"] ! 0:
+	IF assistant["expression_affinity"] > 0: msg '<<$оратор>>'
+	assistant["expression_affinity_revealed"] = 2
+ELSEIF assistant["expression_affinity"] = 0:
+	assistant["expression_affinity_revealed"] = 0
 END
 
-IF assistant["expression_affinity_revealed"] = 1:
- IF assistant["expression_affinity"] > 0: msg '<<$оратор>>'
- assistant["expression_affinity_revealed"] = 2
+IF assistant["pet_affinity_revealed"] = 1 and assistant["pet_affinity"] ! 0:
+	IF assistant["pet_affinity"] > 0: msg '<<$питомец>>'
+	assistant["pet_affinity_revealed"] = 2
+ELSEIF assistant["pet_affinity"] = 0:
+	assistant["pet_affinity_revealed"] = 0
 END
 
-IF assistant["pet_affinity_revealed"] = 1:
- IF assistant["pet_affinity"] > 0: msg '<<$питомец>>'
- assistant["pet_affinity_revealed"] = 2
+IF assistant["dressage_affinity_revealed"] = 1 and assistant["dressage_affinity"] ! 0:
+	IF assistant["dressage_affinity"] > 0: msg '<<$Brony>>'
+	assistant["dressage_affinity_revealed"] = 2
+ELSEIF assistant["dressage_affinity"] = 0:
+	assistant["dressage_affinity_revealed"] = 0
 END
 
-IF assistant["dressage_affinity_revealed"] = 1:
- IF assistant["dressage_affinity"] > 0: msg '<<$Brony>>'
- assistant["dressage_affinity_revealed"] = 2
+IF assistant["nurse_affinity_revealed"] = 1 and assistant["nurse_affinity"] ! 0:
+	IF assistant["nurse_affinity"] > 0: msg '<<$медсестра>>'
+	assistant["nurse_affinity_revealed"] = 2
+ELSEIF assistant["nurse_affinity"] = 0:
+	assistant["nurse_affinity_revealed"] = 0
 END
 
-IF assistant["nurse_affinity_revealed"] = 1:
- IF assistant["nurse_affinity"] > 0: msg '<<$медсестра>>'
- assistant["nurse_affinity_revealed"] = 2
+IF assistant["service_affinity_revealed"] = 1 and assistant["service_affinity"] ! 0:
+	IF assistant["service_affinity"] > 0: msg '<<$горничная>>'
+	assistant["service_affinity_revealed"] = 2
+ELSEIF assistant["service_affinity"] = 0:
+	assistant["service_affinity_revealed"] = 0
 END
 
-IF assistant["service_affinity_revealed"] = 1:
- IF assistant["service_affinity"] > 0: msg '<<$горничная>>'
- assistant["service_affinity_revealed"] = 2
+IF assistant["cook_affinity_revealed"] = 1 and assistant["cook_affinity"] ! 0:
+	IF assistant["cook_affinity"] > 0: msg '<<$кухарка>>'
+	assistant["cook_affinity_revealed"] = 2
+ELSEIF assistant["cook_affinity"] = 0:
+	assistant["cook_affinity_revealed"] = 0
 END
 
-IF assistant["cook_affinity_revealed"] = 1:
- IF assistant["cook_affinity"] > 0: msg '<<$кухарка>>'
- assistant["cook_affinity_revealed"] = 2
+IF assistant["gladiatrix_affinity_revealed"] = 1 and assistant["gladiatrix_affinity"] ! 0:
+	IF assistant["gladiatrix_affinity"] > 0: msg '<<$воительница>>'
+	assistant["gladiatrix_affinity_revealed"] = 2
+ELSEIF assistant["gladiatrix_affinity"] = 0:
+	assistant["gladiatrix_affinity_revealed"] = 0
 END
 
-IF assistant["gladiatrix_affinity_revealed"] = 1:
- IF assistant["gladiatrix_affinity"] > 0: msg '<<$воительница>>'
- assistant["gladiatrix_affinity_revealed"] = 2
+IF assistant["enchanter_affinity_revealed"] = 1 and assistant["enchanter_affinity"] ! 0:
+	IF assistant["enchanter_affinity"] > 0: msg '<<$чародейка>>'
+	assistant["enchanter_affinity_revealed"] = 2
+ELSEIF assistant["enchanter_affinity"] = 0:
+	assistant["enchanter_affinity_revealed"] = 0
 END
 
-IF assistant["enchanter_affinity_revealed"] = 1:
- IF assistant["enchanter_affinity"] > 0: msg '<<$чародейка>>'
- assistant["enchanter_affinity_revealed"] = 2
+IF assistant["vocal_affinity_revealed"] = 1 and assistant["vocal_affinity"] ! 0:
+	IF assistant["vocal_affinity"] > 0: msg '<<$певица>>'
+	assistant["vocal_affinity_revealed"] = 2
+ELSEIF assistant["vocal_affinity"] = 0:
+	assistant["vocal_affinity_revealed"] = 0
 END
 
-IF assistant["vocal_affinity_revealed"] = 1:
- IF assistant["vocal_affinity"] > 0: msg '<<$певица>>'
- assistant["vocal_affinity_revealed"] = 2
+IF assistant["music_affinity_revealed"] = 1 and assistant["music_affinity"] ! 0:
+	IF assistant["music_affinity"] > 0: msg '<<$музыкантка>>'
+	assistant["music_affinity_revealed"] = 2
+ELSEIF assistant["music_affinity"] = 0:
+	assistant["music_affinity_revealed"] = 0
 END
 
-IF assistant["music_affinity_revealed"] = 1:
- IF assistant["music_affinity"] > 0: msg '<<$музыкантка>>'
- assistant["music_affinity_revealed"] = 2
+IF assistant["callisthenics_affinity_revealed"] = 1 and assistant["callisthenics_affinity"] ! 0:
+	IF assistant["callisthenics_affinity"] > 0: msg '<<$танцовщица>>'
+	assistant["callisthenics_affinity_revealed"] = 2
+ELSEIF assistant["callisthenics_affinity"] = 0:
+	assistant["callisthenics_affinity_revealed"] = 0
 END
 
-IF assistant["callisthenics_affinity_revealed"] = 1:
- IF assistant["callisthenics_affinity"] > 0: msg '<<$танцовщица>>'
- assistant["callisthenics_affinity_revealed"] = 2
-END
-
-IF assistant["secretary_affinity_revealed"] = 1:
- IF assistant["secretary_affinity"] > 0: msg '<<$секретарша>>'
- assistant["secretary_affinity_revealed"] = 2
+IF assistant["secretary_affinity_revealed"] = 1 and assistant["secretary_affinity"] ! 0:
+	IF assistant["secretary_affinity"] > 0: msg '<<$секретарша>>'
+	assistant["secretary_affinity_revealed"] = 2
+ELSEIF assistant["secretary_affinity"] = 0:
+	assistant["secretary_affinity_revealed"] = 0
 END
 
 !"IF assistant["memory_revealed"] = 1:
@@ -199,25 +264,31 @@ END
  assistant["memory_revealed"] = 2
 END"
 
-IF assistant["meekness_revealed"] = 1:
- IF assistant["meekness"] > 0: msg '<<$Дисциплинированная>>'
- IF assistant["meekness"] < 0: msg '<<$Своенравная>>'
- assistant["meekness_revealed"] = 2
+IF assistant["meekness_revealed"] = 1 and assistant["meekness"] ! 0:
+	IF assistant["meekness"] > 0: msg '<<$Дисциплинированная>>'
+	IF assistant["meekness"] < 0: msg '<<$Своенравная>>'
+	assistant["meekness_revealed"] = 2
+ELSEIF assistant["meekness"] = 0:
+	assistant["meekness_revealed"] = 0
 END
 
-IF assistant["selfesteem_revealed"] = 1:
- IF assistant["selfesteem"] > 0: msg '<<$Мания_величия>>'
- IF assistant["selfesteem"] < 0: msg '<<$Комплекс_вины>>'
- assistant["selfesteem_revealed"] = 2
+IF assistant["selfesteem_revealed"] = 1 and assistant["selfesteem"] ! 0:
+	IF assistant["selfesteem"] > 0: msg '<<$Мания_величия>>'
+	IF assistant["selfesteem"] < 0: msg '<<$Комплекс_вины>>'
+	assistant["selfesteem_revealed"] = 2
+ELSEIF assistant["selfesteem"] = 0:
+	assistant["selfesteem_revealed"] = 0
 END
 
-IF assistant["compassion_revealed"] = 1:
- IF assistant["compassion"] > 0: msg '<<$Милосердная>>'
- IF assistant["compassion"] < 0: msg '<<$Садистка>>'
- assistant["compassion_revealed"] = 2
+IF assistant["compassion_revealed"] = 1 and assistant["compassion"] ! 0:
+	IF assistant["compassion"] > 0: msg '<<$Милосердная>>'
+	IF assistant["compassion"] < 0: msg '<<$Садистка>>'
+	assistant["compassion_revealed"] = 2
+ELSEIF assistant["compassion"] = 0:
+	assistant["compassion_revealed"] = 0
 END
 
-!Fixed message display when slave has Oviparity (egglaying) for assistant - crushboss
+!Fixed message display when assistant has Oviparity (egglaying) - for assistant and prisoner - crushboss
 IF assistant['pregnant'] > 0 and assistant["pregnant_revealed"] = 1 and assistant['vaginal_modification'] ! 4 and assistant['fertility'] = 0:
  msg '<<$assistant_name>> is experiencing morning sickness and has not menstruated for a long time. It looks like she''s pregnant!'
  assistant["pregnant_revealed"] = 2
@@ -225,7 +296,7 @@ END
 
 IF assistant["pregnant_revealed"] = 2 and assistant['pregnant'] = 0: assistant["pregnant_revealed"] = 0
 
-!traits
+!assistant traits
 $assistant_features_list = ''
 assistant_sanity = assistant["ego"] + assistant["temper"] + assistant["pride"]
 if assistant_sanity < 3: $assistant_sanity = '<a style = "color: #cd0000;" href="EXEC: $info_text = $sanity_broken & gt $curloc">Sanity</a>'
@@ -268,7 +339,7 @@ IF assistant["nymphomania"] > 0:
  if assistant["nymphomania_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Нимфоманка">Nymphomaniac</a><BR>' 
 END
 IF assistant["nymphomania"] < 0: 
- if assistant["nymphomania_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Фригидная">Frigid</a><BR>' 
+ if assistant["nymphomania_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Фригидная"><font color="#cd0000">Frigid</font></a><BR>' 
  assistant['neg_horny'] = 0
 END
 IF assistant["masohism"] = 2: 
@@ -276,10 +347,10 @@ IF assistant["masohism"] = 2:
  assistant['neg_pain'] = 0  
 END
 IF assistant["masohism"] = 1: 
- if assistant["masohism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Привычна_к_боли">Accustomed to pain</a><BR>'
+ if assistant["masohism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Привычна_к_боли">Accustomed to Pain</a><BR>'
 END
 IF assistant["masohism"] = -1: 
- if assistant["masohism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Боится_боли">Afraid of pain</a><BR>' 
+ if assistant["masohism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Боится_боли"><font color="#cd0000">Afraid of Pain</font></a><BR>' 
 END
 IF assistant["exhibitionism"] = 2: 
  if assistant["exhibitionism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Эксгибиционистка">Exhibitionist</a><BR>' 
@@ -287,13 +358,13 @@ IF assistant["exhibitionism"] = 2:
  assistant['neg_shame'] = 0   
 END
 IF assistant["exhibitionism"] = -1: 
- if assistant["exhibitionism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Стеснительная">Shy</a><BR>' 
+ if assistant["exhibitionism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Стеснительная"><font color="#cd0000">Shy</font></a><BR>' 
 END
 IF assistant["preversion"] = 2: 
  if assistant["preversion_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Извращенка">Pervert</a><BR>' 
 END
 IF assistant["preversion"] = -1: 
- if assistant["preversion_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Пуристка">Purist</a><BR>' 
+ if assistant["preversion_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Пуристка"><font color="#cd0000">Purist</font></a><BR>' 
 END
 IF assistant["homosexualism"] = 2: 
  if assistant["homosexualism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Лесбиянка">Lesbian</a><BR>'
@@ -302,10 +373,10 @@ IF assistant["homosexualism"] = 1:
  if assistant["homosexualism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Бисексуальная">Bisexual</a><BR>' 
 END
 IF assistant["homosexualism"] = -1: 
- if assistant["homosexualism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Гомофобка">Homophobic</a><BR>' 
+ if assistant["homosexualism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Гомофобка"><font color="#cd0000">Homophobic</font></a><BR>' 
 END
 IF assistant["abuse_attitude"] = 2: 
- if assistant["abuse_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Пси_мазохистка">Psi-masochist</a><BR>'
+ if assistant["abuse_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Пси_мазохистка">Psi-Masochist</a><BR>'
  assistant['neg_abuse'] = 0 
 END
 IF assistant["abuse_attitude"] = -1: 
@@ -315,63 +386,63 @@ IF assistant["darkness_attitude"] = 2:
  if assistant["darkness_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Дитя_тьмы">Darkness Child</a><BR>' 
 END
 IF assistant["darkness_attitude"] = -1: 
- if assistant["darkness_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Боится_темноты">Nyctophobia</a><BR>' 
+ if assistant["darkness_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Боится_темноты"><font color="#cd0000">Nyctophobia</font></a><BR>' 
 END
 IF assistant["blood_attitude"] = 2: 
  if assistant["blood_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Кровожадная">Bloodthirsty</a><BR>' 
 END
 IF assistant["blood_attitude"] = -1:
- if assistant["blood_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Боится_крови">Hemophobia</a><BR>' 
+ if assistant["blood_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Боится_крови"><font color="#cd0000">Hemophobia</font></a><BR>' 
 END
 IF assistant["fire_attitude"] = 2:
  if assistant["fire_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Пиромания">Pyromania</a><BR>' 
 END
 IF assistant["fire_attitude"] = -1: 
- if assistant["fire_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Пирофобия">Pyrophobia</a><BR>' 
+ if assistant["fire_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Пирофобия"><font color="#cd0000">Pyrophobia</font></a><BR>' 
 END
 IF assistant["water_attitude"] = 2: 
  if assistant["water_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Дитя_воды">Water Child</a><BR>' 
 END
 IF assistant["water_attitude"] = -1:
- if assistant["water_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Гидрофобия">Hydrophobia</a><BR>' 
+ if assistant["water_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Гидрофобия"><font color="#cd0000">Hydrophobia</font></a><BR>' 
 END
 IF assistant["vermin_attitude"] = 2:
  if assistant["vermin_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Арахнофилия">Arachnophilia</a><BR>' 
 END
 IF assistant["vermin_attitude"] = -1:
- if assistant["vermin_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Арахнофобия">Arachnophobia</a><BR>'
+ if assistant["vermin_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Арахнофобия"><font color="#cd0000">Arachnophobia</font></a><BR>'
 END
 IF assistant["deprivation_attitude"] = 2:
- if assistant["deprivation_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Любит_беспомощность">Loves helplessness</a><BR>' 
+ if assistant["deprivation_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Любит_беспомощность">Loves Helplessness</a><BR>' 
 END
 IF assistant["deprivation_attitude"] = -1:
- if assistant["deprivation_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Клаустрофобия">Claustrophobia</a><BR>' 
+ if assistant["deprivation_attitude_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Клаустрофобия"><font color="#cd0000">Claustrophobia</font></a><BR>' 
 END
 IF assistant["passion_comfort"] = 1:
  if assistant["passion_comfort_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Ленивая">Lazy</a><BR>' 
 END
 IF assistant["passion_comfort"] = -1:
- if assistant["passion_comfort_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Гиперактивная">Hyperactive</a><BR>' 
+ if assistant["passion_comfort_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Гиперактивная"><font color="#cd0000">Hyperactive</font></a><BR>' 
  assistant['pos_well_rested'] = 0  
 END
 IF assistant["passion_luxury"] = 1:
- if assistant["passion_luxury_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Любит_роскошь">Loves luxury</a><BR>' 
+ if assistant["passion_luxury_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Любит_роскошь">Loves Luxury</a><BR>' 
 END
 IF assistant["passion_luxury"] = -1:
- if assistant["passion_luxury_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Аскетичная">Ascetic</a><BR>' 
+ if assistant["passion_luxury_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Аскетичная"><font color="#cd0000">Ascetic</font></a><BR>' 
 END
 IF assistant["passion_sweets"] = 1:
  if assistant["passion_sweets_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Сладкоежка">Sweet-tooth</a><BR>' 
 END
 IF assistant["passion_sweets"] = -1:
- if assistant["passion_sweets_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Не_любит_сладкое">Dislikes sweets</a><BR>' 
+ if assistant["passion_sweets_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Не_любит_сладкое"><font color="#cd0000">Dislikes Sweets</font></a><BR>' 
  assistant['pos_desert'] = 0   
 END
 IF assistant["passion_fame"] = 1:
  if assistant["passion_fame_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Тщеславная">Conceited</a><BR>' 
 END
 IF assistant["passion_fame"] = -1:
- if assistant["passion_fame_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Хикикомори">Hikikomori</a><BR>' 
+ if assistant["passion_fame_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Хикикомори"><font color="#cd0000">Hikikomori</font></a><BR>' 
  assistant['pos_prise'] = 0    
 END
 IF assistant["courage"] = 2:
@@ -379,28 +450,28 @@ IF assistant["courage"] = 2:
  assistant['neg_fear'] = 0     
 END
 IF assistant["courage"] = 1:
- if assistant["courage_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Храбрая">Brace</a><BR>'
+ if assistant["courage_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Храбрая">Brave</a><BR>'
 END
 IF assistant["courage"] = -1:
- if assistant["courage_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Трусиха">Coward</a><BR>' 
+ if assistant["courage_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Трусиха"><font color="#cd0000">Coward</font></a><BR>' 
 END
 IF assistant["metabolism"] = 5:
- if assistant["metabolism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Мощный_метаболизм">Powerful metabolism</a><BR>' 
+ if assistant["metabolism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Мощный_метаболизм">Powerful Metabolism</a><BR>' 
 END
 IF assistant["metabolism"] = 4:
- if assistant["metabolism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Хороший_метаболизм">Good metabolism</a><BR>' 
+ if assistant["metabolism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Хороший_метаболизм">Good Metabolism</a><BR>' 
 END
 IF assistant["metabolism"] = 2:
- if assistant["metabolism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Ослабленный_метаболизм">Weakened metabolism</a><BR>' 
+ if assistant["metabolism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Ослабленный_метаболизм"><font color="#cd0000">Weakened Metabolism</font></a><BR>' 
 END
 IF assistant["metabolism"] = 1:
- if assistant["metabolism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Слабый_метаболизм">Weak metabolism</a><BR>' 
+ if assistant["metabolism_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Слабый_метаболизм"><font color="#cd0000">Weak Metabolism</font></a><BR>' 
 END
 IF assistant["sport_affinity"] = 1:
  if assistant["sport_affinity_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Спортивная">Sportive</a><BR>' 
 END
 IF assistant["sport_affinity"] = -1:
- if assistant["sport_affinity_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Апатичная">Torpid</a><BR>' 
+ if assistant["sport_affinity_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Апатичная"><font color="#cd0000">Torpid</font></a><BR>' 
 END
 IF assistant["expression_affinity"] > 0:
  if assistant["expression_affinity_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $оратор">Orator</a><BR>'
@@ -453,20 +524,21 @@ IF assistant["meekness"] > 0:
  if assistant["meekness_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Дисциплинированная">Disciplined</a><BR>' 
 END
 IF assistant["meekness"] < 0:
- if assistant["meekness_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Своенравная">Wayward</a><BR>' 
+ if assistant["meekness_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Своенравная"><font color="#cd0000">Wayward</font></a><BR>' 
 END
 IF assistant["selfesteem"] > 0:
  if assistant["selfesteem_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Мания_величия">Megalomania</a><BR>'
 END
 IF assistant["selfesteem"] < 0:
- if assistant["selfesteem_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Комплекс_вины">Guilt Complex</a><BR>' 
+ if assistant["selfesteem_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Комплекс_вины"><font color="#cd0000">Guilt Complex</font></a><BR>' 
 END
 IF assistant["compassion"] > 0:
  if assistant["compassion_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Милосердная">Merciful</a><BR>'
 END
 IF assistant["compassion"] < 0:
- if assistant["compassion_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Садистка">Sadist</a><BR>' 
+ if assistant["compassion_revealed"] > 0: $assistant_features_list += '<a href="EXEC: msg $Садистка"><font color="#cd0000">Sadist</font></a><BR>' 
 END
+
 
 --- $assistant_traits ---------------------------------
 

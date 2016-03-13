@@ -74,8 +74,8 @@ END
 
 !turn on assistant moodlets
 IF assistant_state = 1:
- assistant['neg_slave_mess'] = 0
- if house_mess > 3: assistant['neg_slave_mess'] = 100  
+ assistant['neg_assistant_mess'] = 0
+ if house_mess > 3: assistant['neg_assistant_mess'] = 100  
  if assistant["hygiene"] > 1: assistant["pos_slave_clean"] = 0
  if assistant["hygiene"] > 3: assistant["neg_slave_dirty"] = 1
  if assistant["hygiene"] <= 3: assistant["neg_slave_dirty"] = 0
@@ -85,6 +85,12 @@ IF assistant_state = 1:
   assistant["neg_exhausted"] = 1
   else
   assistant["neg_exhausted"] = 0 
+ END
+
+ IF $assistant["cloth"] = 'голая':
+  if assistant['sub_exhibit'] < assistant['ego']: assistant['neg_naked'] = 1
+  else
+  assistant['neg_naked'] = 0
  END
 END
 

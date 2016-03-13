@@ -114,5 +114,6 @@ Food costs: <<barn_report_food_cost>> sparks
 --------------------------
        Profit: <<barn_total_profit>> sparks'
 
+
 --- billing ---------------------------------
 

@@ -2,6 +2,10 @@
 !move slave to a cryo cell with replacement
 tattoo_brand = 0
 
+$slave["prev_primary_wpn"] = ''
+$slave["prev_secondary_wpn"] = ''
+slave["gladiatrix_contest"] = 0
+
 temp = slave_state
 slave_state = iced_4_state
 iced_4_state = temp
@@ -92,12 +96,9 @@ $iced_4_psy_basic = $temp_psy_basic
 iced_4_virginity = temp_virginity
 $iced_4_ava = $temp_ava
 
-tempo["mood"] = slave_prev["mood"]
-tempo["arousal"] = slave_prev["mood"]
-slave["mood"] = iced_4_prev["mood"]
-slave["arousal"] = iced_4_prev["arousal"]
-iced_4["mood"] = tempo["mood"]
-iced_4["arousal"] = tempo["mood"]
+$tmp = $g_type
+$g_type = $g_type_iced_4
+$g_type_iced_4 = $tmp
 
 tmp = prise_promised
 prise_promised = prise_promised_iced_4

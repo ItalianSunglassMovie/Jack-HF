@@ -282,6 +282,13 @@ Serpis House'
 $npc_info['wujen'] = 'This suspicious eared old man, as you know, is one of the best specialists in the Serpis House on magical artifacts. With the help of sparks, he produces charms that work well not only in Eternal Rome, but also in any of the worlds behind the Fog.'
 npc_attitude['wujen'] = 30
 
+$npc_image['lord_spectre'] = 'lord_spectre'
+$npc_name['lord_spectre'] = 'Lord Spectre'
+$npc_status['lord_spectre'] = 'A Lord of 
+White House'
+$npc_info['lord_spectre'] = 'A Lord of White Town who is one of the rulers and nobles of White House.  He is rich, powerful, respected, and influential in Eternal Rome.  It is generally considered unwise to cross him as he is both dangerous and powerful with many influential friends in high places.'
+npc_attitude['lord_spectre'] = 30
+
 !constant NPC
 $npc_image['madame_jofre'] = 'madame_jofre'
 $npc_name['madame_jofre'] = 'Madame Jofre'
@@ -445,9 +452,9 @@ $npc_info['doctor'] = 'This woman looks tired and detached. Apparently, she has 
 npc_attitude['doctor'] = 12
 $interesting_specialisation['doctor'] = 'witchdoctor'
 $doctor_pref[1] = '  [Doctor]
- - Yes, we do prefer to use slaves as nurses. It''s easier and cheaper.'
+ - Yes, we do prefer to use slaves as witch doctors. It''s easier and cheaper.'
 $doctor_pref[2] = '  [Doctor]
- - A complete list of requirements can be acquired at the reception, but the rules are quite simple. We acquire slaves trained as nurses of rank <<$rating[2]>> and higher, at a fixed price of <<common_price[2]>> sparks.'
+ - A complete list of requirements can be acquired at the reception, but the rules are quite simple. We acquire slaves trained as witchdoctors of rank <<$rating[2]>> and higher, at a fixed price of <<common_price[2]>> sparks.'
 $doctor_pref[3] = '  [Doctor]
  - I personally conduct an examination for compliance with the service, and if all goes well we pay on the same day.'
 $doctor_pref[4] = '  [Doctor]

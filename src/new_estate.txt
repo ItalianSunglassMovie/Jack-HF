@@ -22,37 +22,49 @@ $bouduar = $interior
 $lab = $interior
 $dungeon = $interior
 
-$bg['home_lux'] = $interior_bg[$interior]
+$bg['home_lux'] = $interior_study_large[$interior]
 
 $bg['study'] = $interior_study[$interior]
 $place_name['study'] = $estate_study_name[$estate]
 $place_location['study'] = $estate_study_location[$estate]
 $place_info['study'] = $interior_study_info[$interior]
 
+$bg['bedroom_lux'] = $interior_bed_large[$interior]
+
 $bg['bedroom'] = $interior_bed[$interior]
 $place_name['bedroom'] = $estate_bed_name[$estate]
 $place_location['bedroom'] = $estate_bed_location[$estate]
 $place_info['bedroom'] = $interior_bed_info[$interior]
+
+$bg['bathroom_lux'] = $interior_bath_large[$interior]
 
 $bg['bathroom'] = $interior_bath[$interior]
 $place_name['bathroom'] = $estate_bath_name[$estate]
 $place_location['bathroom'] = $estate_bath_location[$estate]
 $place_info['bathroom'] = $interior_bath_info[$interior]
 
+$bg['dungeon_lux'] = $interior_dungeon_large[$interior]
+
 $bg['dungeon'] = $interior_dungeon[$interior]
 $place_name['dungeon'] = $estate_dungeon_name[$estate]
 $place_location['dungeon'] = $estate_dungeon_location[$estate]
 $place_info['dungeon'] = $interior_dungeon_info[$interior]
+
+$bg['kitchen_lux'] = $interior_kitchen_large[$interior]
 
 $bg['kitchen'] = $interior_kitchen[$interior]
 $place_name['kitchen'] = $estate_kitchen_name[$estate]
 $place_location['kitchen'] = $estate_kitchen_location[$estate]
 $place_info['kitchen'] = $interior_kitchen_info[$interior]
 
+$bg['lab_lux'] = $interior_lab_large[$interior]
+
 $bg['lab'] = $interior_lab[$interior]
 $place_name['lab'] = $estate_lab_name[$estate]
 $place_location['lab'] = $estate_lab_location[$estate]
 $place_info['lab'] = $interior_lab_info[$interior]
+
+$bg['bouduar_lux'] = $interior_bouduar_large[$interior]
 
 $bg['bouduar'] = $interior_bouduar[$interior]
 $place_name['bouduar'] = $estate_bouduar_name[$estate]

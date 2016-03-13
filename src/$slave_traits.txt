@@ -1,198 +1,261 @@
 # $slave_traits
-!reveals slave traits - crushboss
+!reveals slave traits - overhauled by crushboss
 
 !Check for habit - slave
-if slave["exhibitionism_xp"] > 10 and slave["exhibitionism"] = 0: slave["exhibitionism"] = 1
-if slave["masohism_xp"] > 30 and slave["masohism"] = 0: slave["masohism"] = 1
-if slave["preversion_xp"] > 10 and slave["preversion"] = 0: slave["preversion"] = 1
-if slave["lesbian_xp"] > 10 and slave["homosexualism"] = 0: slave["homosexualism"] = 1
-if slave["abuse_xp"] > 30 and slave["abuse_attitude"] = 0: slave["abuse_attitude"] = 1
-if slave["darkness_xp"] > 10 and slave["darkness_attitude"] = 0: slave["darkness_attitude"] = 1
-if slave["blood_xp"] > 10 and slave["blood_attitude"] = 0: slave["blood_attitude"] = 1 
-if slave["fire_xp"] > 10 and slave["fire_attitude"] = 0: slave["fire_attitude"] = 1
-if slave["water_xp"] > 10 and slave["water_attitude"] = 0: slave["water_attitude"] = 1
-if slave["vermin_xp"] > 10 and slave["vermin_attitude"] = 0: slave["vermin_attitude"] = 1
-if slave["deprivation_xp"] > 10 and slave["deprivation_attitude"] = 0: slave["deprivation_attitude"] = 1 
+if slave["exhibitionism_xp"] > 75 and slave["exhibitionism"] < 2: slave["exhibitionism"] = 2
+if slave["masohism_xp"] > 50 and slave["masohism"] = 0: slave["masohism"] = 1
+if slave["nymphomania_xp"] > 100 and slave["nymphomania"] = 0: slave["nymphomania"] = 1
+if slave["preversion_xp"] > 150 and slave["preversion"] < 2: slave["preversion"] = 2
+if slave["lesbian_xp"] > 50 and slave["homosexualism"] = 0: slave["homosexualism"] = 1
+if slave["abuse_xp"] > 30 and slave["abuse_attitude"] < 2: slave["abuse_attitude"] = 2
+if slave["darkness_xp"] > 10 and slave["darkness_attitude"] < 2: slave["darkness_attitude"] = 2
+if slave["blood_xp"] > 10 and slave["blood_attitude"] < 2: slave["blood_attitude"] = 2
+if slave["fire_xp"] > 10 and slave["fire_attitude"] < 2: slave["fire_attitude"] = 2
+if slave["water_xp"] > 10 and slave["water_attitude"] < 2: slave["water_attitude"] = 2
+if slave["vermin_xp"] > 10 and slave["vermin_attitude"] < 2: slave["vermin_attitude"] = 2
+if slave["deprivation_xp"] > 10 and slave["deprivation_attitude"] < 2: slave["deprivation_attitude"] = 2
 if slave["compassion_xp"] > 10 and slave["compassion"] = 0: slave["compassion"] = 1 
-if slave["fear"] > 0 and slave["courage_revealed"] = 0: slave["courage_revealed"] = 1
 
-IF slave["nymphomania_revealed"] = 1:
- IF slave["nymphomania"] > 0: msg '<<$Нимфоманка>>'
- IF slave["nymphomania"] < 0: msg '<<$Фригидная>>'
- slave["nymphomania_revealed"] = 2
+IF slave["nymphomania_revealed"] = 1 and slave["nymphomania"] ! 0:
+	IF slave["nymphomania"] > 0: msg '<<$Нимфоманка>>'
+	IF slave["nymphomania"] < 0: msg '<<$Фригидная>>'
+	slave["nymphomania_revealed"] = 2
+ELSEIF slave["nymphomania"] = 0:
+	slave["nymphomania_revealed"] = 0
 END
 
-IF slave["masohism_revealed"] = 1:
- IF slave["masohism"] = 2: msg '<<$Мазохистка>>'
- IF slave["masohism"] = 1: msg '<<$Привычна_к_боли>>'
- IF slave["masohism"] = -1: msg '<<$Боится_боли>>' 
- slave["masohism_revealed"] = 2
+IF slave["masohism_revealed"] = 1 and slave["masohism"] ! 0:
+	IF slave["masohism"] = 2: msg '<<$Мазохистка>>'
+	IF slave["masohism"] = 1: msg '<<$Привычна_к_боли>>'
+	IF slave["masohism"] = -1: msg '<<$Боится_боли>>' 
+	slave["masohism_revealed"] = 2
+ELSEIF slave["masohism"] = 0:
+	slave["masohism_revealed"] = 0
 END
  
-IF slave["exhibitionism_revealed"] = 1:
- IF slave["exhibitionism"] = 2: msg '<<$Эксгибиционистка>>'
- IF slave["exhibitionism"] = -1: msg '<<$Стеснительная>>'
- slave["exhibitionism_revealed"] = 2
+IF slave["exhibitionism_revealed"] = 1 and slave["exhibitionism"] ! 0:
+	IF slave["exhibitionism"] = 2: msg '<<$Эксгибиционистка>>'
+	IF slave["exhibitionism"] = -1: msg '<<$Стеснительная>>'
+	slave["exhibitionism_revealed"] = 2
+ELSEIF slave["exhibitionism"] = 0:
+	slave["exhibitionism_revealed"] = 0
 END
 
-IF slave["preversion_revealed"] = 1:
- IF slave["preversion"] = 2: msg '<<$Извращенка>>'
- IF slave["preversion"] = -1: msg '<<$Пуристка>>'
- slave["preversion_revealed"] = 2
+IF slave["preversion_revealed"] = 1 and slave["preversion"] ! 0:
+	IF slave["preversion"] = 2: msg '<<$Извращенка>>'
+	IF slave["preversion"] = -1: msg '<<$Пуристка>>'
+	slave["preversion_revealed"] = 2
+ELSEIF slave["preversion"] = 0:
+	slave["preversion_revealed"] = 0
 END
 
-IF slave["homosexualism_revealed"] = 1:
- IF slave["homosexualism"] = 2: msg '<<$Лесбиянка>>'
- IF slave["homosexualism"] = 1: msg '<<$Бисексуальная>>'
- IF slave["homosexualism"] = -1: msg '<<$Гомофобка>>'
- slave["homosexualism_revealed"] = 2
+IF slave["homosexualism_revealed"] = 1 and slave["homosexualism"] ! 0:
+	IF slave["homosexualism"] = 2: msg '<<$Лесбиянка>>'
+	IF slave["homosexualism"] = 1: msg '<<$Бисексуальная>>'
+	IF slave["homosexualism"] = -1: msg '<<$Гомофобка>>'
+	slave["homosexualism_revealed"] = 2
+ELSEIF slave["homosexualism"] = 0:
+	slave["homosexualism_revealed"] = 0
 END
 
-IF slave["abuse_attitude_revealed"] = 1:
- IF slave["abuse_attitude"] = 2: msg '<<$Пси_мазохистка>>'
- IF slave["abuse_attitude"] = -1: msg '<<$Истеричка>>'
- slave["abuse_attitude_revealed"] = 2
+IF slave["abuse_attitude_revealed"] = 1 and slave["abuse_attitude"] ! 0:
+	IF slave["abuse_attitude"] = 2: msg '<<$Пси_мазохистка>>'
+	IF slave["abuse_attitude"] = -1: msg '<<$Истеричка>>'
+	slave["abuse_attitude_revealed"] = 2
+ELSEIF slave["abuse_attitude"] = 0:
+	slave["abuse_attitude_revealed"] = 0
 END
 
-IF slave["darkness_attitude_revealed"] = 1:
- IF slave["darkness_attitude"] = 2: msg '<<$Дитя_тьмы>>'
- IF slave["darkness_attitude"] = -1: msg '<<$Боится_темноты>>'
- slave["darkness_attitude_revealed"] = 2
+IF slave["darkness_attitude_revealed"] = 1 and slave["darkness_attitude"] ! 0:
+	IF slave["darkness_attitude"] = 2: msg '<<$Дитя_тьмы>>'
+	IF slave["darkness_attitude"] = -1: msg '<<$Боится_темноты>>'
+	slave["darkness_attitude_revealed"] = 2
+ELSEIF slave["darkness_attitude"] = 0:
+	slave["darkness_attitude_revealed"] = 0
 END
 
-IF slave["blood_attitude_revealed"] = 1:
- IF slave["blood_attitude"] = 2: msg '<<$Кровожадная>>'
- IF slave["blood_attitude"] = -1: msg '<<$Боится_крови>>'
- slave["blood_attitude_revealed"] = 2
+IF slave["blood_attitude_revealed"] = 1 and slave["blood_attitude"] ! 0:
+	IF slave["blood_attitude"] = 2: msg '<<$Кровожадная>>'
+	IF slave["blood_attitude"] = -1: msg '<<$Боится_крови>>'
+	slave["blood_attitude_revealed"] = 2
+ELSEIF slave["blood_attitude"] = 0:
+	slave["blood_attitude_revealed"] = 0
 END
 
-IF slave["fire_attitude_revealed"] = 1:
- IF slave["fire_attitude"] = 2: msg '<<$Пиромания>>'
- IF slave["fire_attitude"] = -1: msg '<<$Пирофобия>>'
- slave["fire_attitude_revealed"] = 2
+IF slave["fire_attitude_revealed"] = 1 and slave["fire_attitude"] ! 0:
+	IF slave["fire_attitude"] = 2: msg '<<$Пиромания>>'
+	IF slave["fire_attitude"] = -1: msg '<<$Пирофобия>>'
+	slave["fire_attitude_revealed"] = 2
+ELSEIF slave["fire_attitude"] = 0:
+	slave["fire_attitude_revealed"] = 0
 END
 
-IF slave["water_attitude_revealed"] = 1:
- IF slave["water_attitude"] = 2: msg '<<$Дитя_воды>>'
- IF slave["water_attitude"] = -1: msg '<<$Гидрофобия>>'
- slave["water_attitude_revealed"] = 2
+IF slave["water_attitude_revealed"] = 1 and slave["water_attitude"] ! 0:
+	IF slave["water_attitude"] = 2: msg '<<$Дитя_воды>>'
+	IF slave["water_attitude"] = -1: msg '<<$Гидрофобия>>'
+	slave["water_attitude_revealed"] = 2
+ELSEIF slave["water_attitude"] = 0:
+	slave["water_attitude_revealed"] = 0
 END
 
-IF slave["vermin_attitude_revealed"] = 1:
- IF slave["vermin_attitude"] = 2: msg '<<$Арахнофилия>>'
- IF slave["vermin_attitude"] = -1: msg '<<$Арахнофобия>>'
- slave["vermin_attitude_revealed"] = 2
+IF slave["vermin_attitude_revealed"] = 1 and slave["vermin_attitude"] ! 0:
+	IF slave["vermin_attitude"] = 2: msg '<<$Арахнофилия>>'
+	IF slave["vermin_attitude"] = -1: msg '<<$Арахнофобия>>'
+	slave["vermin_attitude_revealed"] = 2
+ELSEIF slave["vermin_attitude"] = 0:
+	slave["vermin_attitude_revealed"] = 0
 END
 
-IF slave["deprivation_attitude_revealed"] = 1:
- IF slave["deprivation_attitude"] = 2: msg '<<$Любит_беспомощность>>'
- IF slave["deprivation_attitude"] = -1: msg '<<$Клаустрофобия>>'
- slave["deprivation_attitude_revealed"] = 2
+IF slave["deprivation_attitude_revealed"] = 1 and slave["deprivation_attitude"] ! 0:
+	IF slave["deprivation_attitude"] = 2: msg '<<$Любит_беспомощность>>'
+	IF slave["deprivation_attitude"] = -1: msg '<<$Клаустрофобия>>'
+	slave["deprivation_attitude_revealed"] = 2
+ELSEIF slave["deprivation_attitude"] = 0:
+	slave["deprivation_attitude_revealed"] = 0
 END
 
-IF slave["passion_comfort_revealed"] = 1:
- IF slave["passion_comfort"] = 1: msg '<<$Ленивая>>'
- IF slave["passion_comfort"] = -1: msg '<<$Гиперактивная>>'
- slave["passion_comfort_revealed"] = 2
+IF slave["passion_comfort_revealed"] = 1 and slave["passion_comfort"] ! 0:
+	IF slave["passion_comfort"] = 1: msg '<<$Ленивая>>'
+	IF slave["passion_comfort"] = -1: msg '<<$Гиперактивная>>'
+	slave["passion_comfort_revealed"] = 2
+ELSEIF slave["passion_comfort"] = 0:
+	slave["passion_comfort_revealed"] = 0
 END
 
-IF slave["passion_luxury_revealed"] = 1:
- IF slave["passion_luxury"] = 1: msg '<<$Любит_роскошь>>'
- IF slave["passion_luxury"] = -1: msg '<<$Аскетичная>>'
- slave["passion_luxury_revealed"] = 2
+IF slave["passion_luxury_revealed"] = 1 and slave["passion_luxury"] ! 0:
+	IF slave["passion_luxury"] = 1: msg '<<$Любит_роскошь>>'
+	IF slave["passion_luxury"] = -1: msg '<<$Аскетичная>>'
+	slave["passion_luxury_revealed"] = 2
+ELSEIF slave["passion_luxury"] = 0:
+	slave["passion_luxury_revealed"] = 0
 END
 
-IF slave["passion_sweets_revealed"] = 1:
- IF slave["passion_sweets"] = 1: msg '<<$Сладкоежка>>'
- IF slave["passion_sweets"] = -1: msg '<<$Не_любит_сладкое>>'
- slave["passion_sweets_revealed"] = 2
+IF slave["passion_sweets_revealed"] = 1 and slave["passion_sweets"] ! 0:
+	IF slave["passion_sweets"] = 1: msg '<<$Сладкоежка>>'
+	IF slave["passion_sweets"] = -1: msg '<<$Не_любит_сладкое>>'
+	slave["passion_sweets_revealed"] = 2
+ELSEIF slave["passion_sweets"] = 0:
+	slave["passion_sweets_revealed"] = 0
 END
 
-IF slave["passion_fame_revealed"] = 1:
- IF slave["passion_fame"] = 1: msg '<<$Тщеславная>>'
- IF slave["passion_fame"] = -1: msg '<<$Хикикомори>>'
- slave["passion_fame_revealed"] = 2
+IF slave["passion_fame_revealed"] = 1 and slave["passion_fame"] ! 0:
+	IF slave["passion_fame"] = 1: msg '<<$Тщеславная>>'
+	IF slave["passion_fame"] = -1: msg '<<$Хикикомори>>'
+	slave["passion_fame_revealed"] = 2
+ELSEIF slave["passion_fame"] = 0:
+	slave["passion_fame_revealed"] = 0
 END
 
-IF slave["courage_revealed"] = 1:
- IF slave["courage"] = 2: msg '<<$Отмороженая>>'
- IF slave["courage"] = 1: msg '<<$Храбрая>>'
- IF slave["courage"] = -1: msg '<<$Трусиха>>' 
- slave["courage_revealed"] = 2
+IF slave["courage_revealed"] = 1 and slave["courage"] ! 0:
+	IF slave["courage"] = 2: msg '<<$Отмороженая>>'
+	IF slave["courage"] = 1: msg '<<$Храбрая>>'
+	IF slave["courage"] = -1: msg '<<$Трусиха>>' 
+	slave["courage_revealed"] = 2
+ELSEIF slave["courage"] = 0:
+	slave["courage_revealed"] = 0
+END
+if slave["fear"] > 0 and slave["courage"] ! 0 and slave["courage_revealed"] = 0: slave["courage_revealed"] = 1
+
+IF slave["metabolism_revealed"] = 1 and slave["metabolism"] ! 3:
+	IF slave["metabolism"] = 5: msg '<<$Мощный_метаболизм>>'
+	IF slave["metabolism"] = 4: msg '<<$Хороший_метаболизм>>'
+	IF slave["metabolism"] = 2: msg '<<$Ослабленный_метаболизм>>' 
+	IF slave["metabolism"] = 1: msg '<<$Слабый_метаболизм>>' 
+	slave["metabolism_revealed"] = 2
+ELSEIF slave["metabolism"] = 3:
+	slave["metabolism_revealed"] = 0
 END
 
-IF slave["metabolism_revealed"] = 1:
- IF slave["metabolism"] = 5: msg '<<$Мощный_метаболизм>>'
- IF slave["metabolism"] = 4: msg '<<$Хороший_метаболизм>>'
- IF slave["metabolism"] = 2: msg '<<$Ослабленный_метаболизм>>' 
- IF slave["metabolism"] = 1: msg '<<$Слабый_метаболизм>>' 
- slave["metabolism_revealed"] = 2
+IF slave["sport_affinity_revealed"] = 1 and slave["sport_affinity"] ! 0:
+	IF slave["sport_affinity"] = 1: msg '<<$Спортивная>>'
+	IF slave["sport_affinity"] = -1: msg '<<$Апатичная>>'
+	slave["sport_affinity_revealed"] = 2
+ELSEIF slave["sport_affinity"] = 0:
+	slave["sport_affinity_revealed"] = 0
 END
 
-IF slave["sport_affinity_revealed"] = 1:
- IF slave["sport_affinity"] = 1: msg '<<$Спортивная>>'
- IF slave["sport_affinity"] = -1: msg '<<$Апатичная>>'
- slave["sport_affinity_revealed"] = 2
+IF slave["expression_affinity_revealed"] = 1 and slave["expression_affinity"] ! 0:
+	IF slave["expression_affinity"] > 0: msg '<<$оратор>>'
+	slave["expression_affinity_revealed"] = 2
+ELSEIF slave["expression_affinity"] = 0:
+	slave["expression_affinity_revealed"] = 0
 END
 
-IF slave["expression_affinity_revealed"] = 1:
- IF slave["expression_affinity"] > 0: msg '<<$оратор>>'
- slave["expression_affinity_revealed"] = 2
+IF slave["pet_affinity_revealed"] = 1 and slave["pet_affinity"] ! 0:
+	IF slave["pet_affinity"] > 0: msg '<<$питомец>>'
+	slave["pet_affinity_revealed"] = 2
+ELSEIF slave["pet_affinity"] = 0:
+	slave["pet_affinity_revealed"] = 0
 END
 
-IF slave["pet_affinity_revealed"] = 1:
- IF slave["pet_affinity"] > 0: msg '<<$питомец>>'
- slave["pet_affinity_revealed"] = 2
+IF slave["dressage_affinity_revealed"] = 1 and slave["dressage_affinity"] ! 0:
+	IF slave["dressage_affinity"] > 0: msg '<<$Brony>>'
+	slave["dressage_affinity_revealed"] = 2
+ELSEIF slave["dressage_affinity"] = 0:
+	slave["dressage_affinity_revealed"] = 0
 END
 
-IF slave["dressage_affinity_revealed"] = 1:
- IF slave["dressage_affinity"] > 0: msg '<<$Brony>>'
- slave["dressage_affinity_revealed"] = 2
+IF slave["nurse_affinity_revealed"] = 1 and slave["nurse_affinity"] ! 0:
+	IF slave["nurse_affinity"] > 0: msg '<<$медсестра>>'
+	slave["nurse_affinity_revealed"] = 2
+ELSEIF slave["nurse_affinity"] = 0:
+	slave["nurse_affinity_revealed"] = 0
 END
 
-IF slave["nurse_affinity_revealed"] = 1:
- IF slave["nurse_affinity"] > 0: msg '<<$медсестра>>'
- slave["nurse_affinity_revealed"] = 2
+IF slave["service_affinity_revealed"] = 1 and slave["service_affinity"] ! 0:
+	IF slave["service_affinity"] > 0: msg '<<$горничная>>'
+	slave["service_affinity_revealed"] = 2
+ELSEIF slave["service_affinity"] = 0:
+	slave["service_affinity_revealed"] = 0
 END
 
-IF slave["service_affinity_revealed"] = 1:
- IF slave["service_affinity"] > 0: msg '<<$горничная>>'
- slave["service_affinity_revealed"] = 2
+IF slave["cook_affinity_revealed"] = 1 and slave["cook_affinity"] ! 0:
+	IF slave["cook_affinity"] > 0: msg '<<$кухарка>>'
+	slave["cook_affinity_revealed"] = 2
+ELSEIF slave["cook_affinity"] = 0:
+	slave["cook_affinity_revealed"] = 0
 END
 
-IF slave["cook_affinity_revealed"] = 1:
- IF slave["cook_affinity"] > 0: msg '<<$кухарка>>'
- slave["cook_affinity_revealed"] = 2
+IF slave["gladiatrix_affinity_revealed"] = 1 and slave["gladiatrix_affinity"] ! 0:
+	IF slave["gladiatrix_affinity"] > 0: msg '<<$воительница>>'
+	slave["gladiatrix_affinity_revealed"] = 2
+ELSEIF slave["gladiatrix_affinity"] = 0:
+	slave["gladiatrix_affinity_revealed"] = 0
 END
 
-IF slave["gladiatrix_affinity_revealed"] = 1:
- IF slave["gladiatrix_affinity"] > 0: msg '<<$воительница>>'
- slave["gladiatrix_affinity_revealed"] = 2
+IF slave["enchanter_affinity_revealed"] = 1 and slave["enchanter_affinity"] ! 0:
+	IF slave["enchanter_affinity"] > 0: msg '<<$чародейка>>'
+	slave["enchanter_affinity_revealed"] = 2
+ELSEIF slave["enchanter_affinity"] = 0:
+	slave["enchanter_affinity_revealed"] = 0
 END
 
-IF slave["enchanter_affinity_revealed"] = 1:
- IF slave["enchanter_affinity"] > 0: msg '<<$чародейка>>'
- slave["enchanter_affinity_revealed"] = 2
+IF slave["vocal_affinity_revealed"] = 1 and slave["vocal_affinity"] ! 0:
+	IF slave["vocal_affinity"] > 0: msg '<<$певица>>'
+	slave["vocal_affinity_revealed"] = 2
+ELSEIF slave["vocal_affinity"] = 0:
+	slave["vocal_affinity_revealed"] = 0
 END
 
-IF slave["vocal_affinity_revealed"] = 1:
- IF slave["vocal_affinity"] > 0: msg '<<$певица>>'
- slave["vocal_affinity_revealed"] = 2
+IF slave["music_affinity_revealed"] = 1 and slave["music_affinity"] ! 0:
+	IF slave["music_affinity"] > 0: msg '<<$музыкантка>>'
+	slave["music_affinity_revealed"] = 2
+ELSEIF slave["music_affinity"] = 0:
+	slave["music_affinity_revealed"] = 0
 END
 
-IF slave["music_affinity_revealed"] = 1:
- IF slave["music_affinity"] > 0: msg '<<$музыкантка>>'
- slave["music_affinity_revealed"] = 2
+IF slave["callisthenics_affinity_revealed"] = 1 and slave["callisthenics_affinity"] ! 0:
+	IF slave["callisthenics_affinity"] > 0: msg '<<$танцовщица>>'
+	slave["callisthenics_affinity_revealed"] = 2
+ELSEIF slave["callisthenics_affinity"] = 0:
+	slave["callisthenics_affinity_revealed"] = 0
 END
 
-IF slave["callisthenics_affinity_revealed"] = 1:
- IF slave["callisthenics_affinity"] > 0: msg '<<$танцовщица>>'
- slave["callisthenics_affinity_revealed"] = 2
-END
-
-IF slave["secretary_affinity_revealed"] = 1:
- IF slave["secretary_affinity"] > 0: msg '<<$секретарша>>'
- slave["secretary_affinity_revealed"] = 2
+IF slave["secretary_affinity_revealed"] = 1 and slave["secretary_affinity"] ! 0:
+	IF slave["secretary_affinity"] > 0: msg '<<$секретарша>>'
+	slave["secretary_affinity_revealed"] = 2
+ELSEIF slave["secretary_affinity"] = 0:
+	slave["secretary_affinity_revealed"] = 0
 END
 
 !"IF slave["memory_revealed"] = 1:
@@ -201,22 +264,28 @@ END
  slave["memory_revealed"] = 2
 END"
 
-IF slave["meekness_revealed"] = 1:
- IF slave["meekness"] > 0: msg '<<$Дисциплинированная>>'
- IF slave["meekness"] < 0: msg '<<$Своенравная>>'
- slave["meekness_revealed"] = 2
+IF slave["meekness_revealed"] = 1 and slave["meekness"] ! 0:
+	IF slave["meekness"] > 0: msg '<<$Дисциплинированная>>'
+	IF slave["meekness"] < 0: msg '<<$Своенравная>>'
+	slave["meekness_revealed"] = 2
+ELSEIF slave["meekness"] = 0:
+	slave["meekness_revealed"] = 0
 END
 
-IF slave["selfesteem_revealed"] = 1:
- IF slave["selfesteem"] > 0: msg '<<$Мания_величия>>'
- IF slave["selfesteem"] < 0: msg '<<$Комплекс_вины>>'
- slave["selfesteem_revealed"] = 2
+IF slave["selfesteem_revealed"] = 1 and slave["selfesteem"] ! 0:
+	IF slave["selfesteem"] > 0: msg '<<$Мания_величия>>'
+	IF slave["selfesteem"] < 0: msg '<<$Комплекс_вины>>'
+	slave["selfesteem_revealed"] = 2
+ELSEIF slave["selfesteem"] = 0:
+	slave["selfesteem_revealed"] = 0
 END
 
-IF slave["compassion_revealed"] = 1:
- IF slave["compassion"] > 0: msg '<<$Милосердная>>'
- IF slave["compassion"] < 0: msg '<<$Садистка>>'
- slave["compassion_revealed"] = 2
+IF slave["compassion_revealed"] = 1 and slave["compassion"] ! 0:
+	IF slave["compassion"] > 0: msg '<<$Милосердная>>'
+	IF slave["compassion"] < 0: msg '<<$Садистка>>'
+	slave["compassion_revealed"] = 2
+ELSEIF slave["compassion"] = 0:
+	slave["compassion_revealed"] = 0
 END
 
 !Fixed message display when slave has Oviparity (egglaying) - for slave and prisoner - crushboss
@@ -262,6 +331,7 @@ IF slave['has_ride_win'] > 6:
  trophy_racechampion = 1
  trophy_racegrandchampion = 1
 END
+
 !These traits are displayed on the slave portrait and don''t need to be duplicated - plus the traits area needed more space - crushboss
 !if slave['fertility'] = -2: $features_list += 'Immature<BR>' 
 !IF slave['fertility'] = -1: 

@@ -115,28 +115,23 @@ stock_inventory['plain_headband'] = 1
 stock_inventory['golden_collar'] = 1
 stock_inventory['leather_collar'] = 1
 stock_inventory['spiked_collar'] = 1
-stock_inventory['sun_dress'] = 1
 stock_inventory['common_apron'] = 1
 stock_inventory['maid_dress'] = 1
-stock_inventory['nurse_dress'] = 1
 stock_inventory['enchanter_robe'] = 1
-stock_inventory['leotard'] = 1
-stock_inventory['chainmail_bikini'] = 1
 stock_inventory['laced_underwear'] = 1
 stock_inventory['bellydance'] = 1
-stock_inventory['leather_corset'] = 1
 stock_inventory['anal_tail'] = 1
 stock_inventory['exotic_wig'] = 1
 stock_inventory['pony_plume'] = 1
 stock_inventory['incrusted_earrings'] = 4
-stock_inventory['golden_collar'] = 1
-stock_inventory['leather_gloves'] = 1
 stock_inventory['ponygirl_harness'] = 1
 stock_inventory['nipple_chain'] = 1
 stock_inventory['high_heels'] = 1
 stock_inventory['high_boots'] = 1
 stock_inventory['hoofed_boots'] = 1
 stock_inventory['incrusted_ring'] = 4
+stock_inventory['belly_ring'] = 1
+stock_inventory['tongue_barbell'] = 1
 
 !Slave Makeup and Tattoos
 IF stock["age"] ! CONST_INT['loli_age']:
@@ -163,12 +158,14 @@ $stock["clitring"] = 'incrusted_earrings'
 $stock["boots"] = 'high_boots'
 $stock["ring_left"] = 'incrusted_ring'
 $stock["ring_right"] = 'incrusted_ring'
+$stock["naval"] = 'belly_ring'
+$stock["tongue"] = 'tongue_barbell'
 
 !Pet Fiend
 IF pet_tentacle < 1:
  pet_tentacle = 1
  tentacle_hp = 0
- tentacle_size = 4
+ tentacle_size = 0
 END
 
 !Slave Rules
@@ -241,15 +238,25 @@ stock["enchanter"] = 0
 stock["vocal"] = 0
 stock["music"] = 0
 stock["custom"] = 0
+stock_rate["custom"] = 0
 stock["moral"] = 0
+stock_rate["moral"] = 0
 stock["rational"] = 0
+stock_rate["rational"] = 0
 stock["instinct"] = 0
+stock_rate["instinct"] = 0
 stock["exotic"] = 4
 stock["energy"] = 5
 stock["hygiene"] = 4
+stock["meekness"] = 0
+stock["selfesteem"] = 0
+stock["abuse_attitude"] = 0
+stock["passion_fame"] = 0
+stock["passion_comfort"] = 0
+if stock_virginity > 0: stock_virginity = 0 
 !End of Testing Code'
 
-!Full Trophy Room - Testing Code'
+!Full Trophy Room - Testing Code
 trophy_ogre = 1
 trophy_warg = 1
 trophy_werewolf = 1
@@ -272,7 +279,9 @@ trophy_vatican = 1
 trophy_absolute = 1
 trophy_slaves = 1
 trophy_arenafiend = 1
-!End of Testing Code'
+trophy_racechampion = 1
+trophy_racegrandchampion = 1
+!End of Testing Code
 
 gs '$slave_price_stock'
 gs '#txt'

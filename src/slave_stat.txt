@@ -99,8 +99,6 @@ $tooltip_text = FUNC('$addon', 'stat_tooltip_text', 'pride')
 <font size = 3%><<$features_list>></font>
 </div>'
 
-!*p '<div id="rank_help"><a href = "EXEC: msg $rank_help & msg $rank_help_2 & rank_help = 1 & gt curloc">&nbsp;<img src="content/pic/chart.png"></a></div>'
-
 !calculation the food cost
 food_cost = 0
 IF slave_ration = -2: food_cost = 1
@@ -112,17 +110,12 @@ IF vitamin = 1: food_cost += 1
 
 daily_cost = food_cost
 
-!$info_text = ''&nbsp'' - info text reset if not exist, $info_text = '''' - show the specific text in certain tab
 IF slave_stat_screen = 0:
  *p '<div id = "mark_one"><img src = "content\pic\buttons\sel_button.png"></div>'
  *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  *p '<div id = "mark_three"><a href = "EXEC: slave_stat_screen = 2 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  *p '<div id = "mark_four"><a href = "EXEC: slave_stat_screen = 3 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>' 
- IF exam_in_progress = 1:
-  *p '<div id="center_image"><img src = "content\pic\bg\study.jpg"></div>'
-  else
-  *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
- END
+ *p '<div id="center_image"><img src = "content\pic\bg\<<$interior_study[$study]>>.jpg"></div>'
  if nsfw = 0: *p '<div id="center_image"><img src="content\pic\<<$slave["fullimage"]>>.gif"></div>' 
 IF presets_list = 0: 
  *p '<div id="left_padding">SLEEP: <BR><BR><BR><BR><BR><BR>DIET:<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>CALORIE COUNTER:</div>'  
@@ -306,10 +299,7 @@ IF presets_list = 0:
  END
 
 !Disable Assistant identical rule if Slave identical rule is selected - crushboss
-IF slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist']:
- assistant_washes_rule = 0
- assistant_washe_slave_rule = 0
-END
+if slave_washes_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_washes_rule = 0
 if slave_cleans_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_cleans_rule = 0
 if slave_cooks_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_cooks_rule = 0
 if slave_tentacle_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_tentacle_rule = 0
@@ -544,6 +534,7 @@ If slave_stat_screen = 2:
 
 END
 
+!Slave Aura Tab
 If slave_stat_screen = 3:
  *p '<div id = "mark_one"><a href = "EXEC: slave_stat_screen = 0 & $info_text = '''' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
  *p '<div id = "mark_two"><a href = "EXEC: slave_stat_screen = 1 & $info_text = ''&nbsp'' & gt curloc"><img src = "content\pic\buttons\unsel_button.png"></a></div>'
@@ -556,6 +547,9 @@ If slave_stat_screen = 3:
  END
  gs 'auspex_list'
   *p '<div id = "center_text_compact_blue"><<$auspex_list>></div>'
+  !Testing Code - crushboss
+  !msg 'Exhibitionism: <<slave["exhibitionism_xp"]>><br>Masohism: <<slave["masohism_xp"]>><br>Nymphomania: <<slave["nymphomania_xp"]>><br>Preversion: <<slave["preversion_xp"]>><br>Lesbian: <<slave["lesbian_xp"]>><br><<slave_type>><br><<rating>><br><<sex_sum>><br><<slave["pride"]>><br><<slave["spoil"]>><br><<slave["moral"]>><br><<slave["has_ride_win"]>><br>Tattoo: <<slave["tatoo"]>><br>'
+  !End of Testing Code - crushboss
 END
 
 IF slave_state = CONST_INT['slave_exist']:
@@ -597,9 +591,9 @@ IF slave_state = CONST_INT['slave_exist']:
 <u>SKILLS</u>
 <<$skill_text>>
 <u>SEX-TECHNIQUES</u>
-<a href = "EXEC: menu_form = 131 & gt ''menu_form''"><<$slave_petting[slave["petting"]]>></a> 
-<a href = "EXEC: menu_form = 133 & gt ''menu_form''"><<$slave_penetration[slave["penetration"]]>></a> 
+<a href = "EXEC: menu_form = 131 & gt ''menu_form''"><<$slave_petting[slave["petting"]]>></a>
 <a href = "EXEC: menu_form = 132 & gt ''menu_form''"><<$slave_oral[slave["oral"]]>></a>
+<a href = "EXEC: menu_form = 133 & gt ''menu_form''"><<$slave_penetration[slave["penetration"]]>></a> 
 <a href = "EXEC: menu_form = 134 & gt ''menu_form''"><<$slave_orgy[slave["orgy"]]>></a>
 <a href = "EXEC: menu_form = 137 & gt ''menu_form''"><<$slave_roleplay[slave["roleplay"]]>></a>
 <a href = "EXEC: menu_form = 136 & gt ''menu_form''"><<$slave_fetishism[slave["fetishism"]]>></a>
@@ -623,9 +617,9 @@ IF slave_state = CONST_INT['slave_exist']:
 <<$slave_dressage[slave["dressage"]]>> 
 
 <u>SEX-TECHNIQUES</u>
-<<$slave_petting[slave["petting"]]>> 
-<<$slave_penetration[slave["penetration"]]>> 
+<<$slave_petting[slave["petting"]]>>
 <<$slave_oral[slave["oral"]]>>
+<<$slave_penetration[slave["penetration"]]>> 
 <<$slave_orgy[slave["orgy"]]>>
 <<$slave_roleplay[slave["roleplay"]]>>
 <<$slave_fetishism[slave["fetishism"]]>>
@@ -636,6 +630,10 @@ END
 *p '<div id="info"><<$info_text>></div>'
 
 !Used for debugging variables I need to track - crushboss
+
+!msg 'Cooking: <<$cooking[slave_type]>><br>Slave Type: <<slave_type>><br>'
+!msg 'Ovulation: <<slave["ovulation"]>><br>Menstruation: <<menstruation>><br>Pregnant: <<slave["pregnant"]>><br>Fertility: <<slave["fertility"]>><br>Vaginal Modification: <<slave["vaginal_modification"]>><br>'
+!msg '<<модификатор_колющий>><br>'
 !msg '<<slave_rate["rational"]>>'
 !msg '<<$slave_ava>>.jpg'
 !msg 'Charm: <<charm>>'

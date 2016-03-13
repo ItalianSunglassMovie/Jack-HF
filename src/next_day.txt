@@ -1,5 +1,11 @@
 # next_day
-!Переход на следующий день
+!Next Day
+!Overhauled by crushboss
+
+gs '#dynamic'
+gs '#txt'
+gs '#txt_2'
+
 killvar 'play_sound'
 killvar '$text'
 killvar 'sex'
@@ -10,6 +16,7 @@ killvar 'today_sex_assistant'
 killvar 'today_sex_curslave'
 killvar 'already_sex_curslave'
 killvar 'суперудар_сделан'
+
 !Debug
 !msg 'total_food_cost = <<total_food_cost>>'
 !AddOn - makes more sense to reset here instead on every $newloc trigger
@@ -26,8 +33,6 @@ if assistant_tentacle_rule = 1 and assistant_state = 1: slave_tentacle_rule = 0
 if slave_state = CONST_INT['no_exist']: slave_tentacle_rule = 0
 if slave_tentacle_rule = 1 and slave_state = CONST_INT['slave_exist']: assistant_tentacle_rule = 0
 if assistant_state ! 1: assistant_tentacle_rule = 0
-if pet_tentacle > 0 and assistant_state = 1 and slave_tentacle_rule ! 1: assistant_tentacle_rule = 1
-if pet_tentacle > 0 and slave_state = CONST_INT['slave_exist'] and assistant_state ! 1: slave_tentacle_rule = 1
 
 debt_count -= 1
 if debt_count < 0 and debt > 0:
@@ -52,9 +57,10 @@ IF gladi_count > 0:
  gladi_count = 7
 END
 
-!Testing Code - every day is a Gladiatrix or Race contest - crushboss
+!Testing Code - every day is a Gladiatrix contest, Race contest, or auction day - crushboss
 !gladi_count = 0
 !ride_count = 1
+!auction_count = 1
 !End of Testing Code - crushboss
 
 IF ride_count > 0:
@@ -77,16 +83,6 @@ IF auction_count > 0:
  else
  auction_count = 7
 END
-
-!lillimerge: moved sententia_veritas further down to aviod empty checks
-sententia_veritas = 0
-magna_magnifika = 0
-slave['domini_dictum'] = 0
-prisoner['domini_dictum'] = 0
-assistant['domini_dictum'] = 0
-slave['reabilitation'] -= 1
-assistant['reabilitation'] -= 1
-prisoner['reabilitation'] -= 1
 
 !Daily Expanses
 if stasis_tank > 0: sparks -= 2
@@ -150,17 +146,38 @@ IF slave["mood"] < 0 and slave['temper'] > slave['obedience']:
  IF chance = 1 and slave['stamina'] > 0 and slave_state = CONST_INT['slave_exist']:
   IF slave['angst'] > 0 and master_power < slave_power:
    slave_attack = 1
-   elseif slave['brand'] ! 3:
+   elseif slave['brand'] ! 3 and slave['slave_collar'] = 0:
    slave_escape = 1
    elseif slave['brand'] = 3:
    slave_escape = 2
+   elseif (slave['brand'] = 1 or slave['brand'] = 2) and slave['slave_collar'] = 1:
+   slave_escape = 3
+   elseif slave['brand'] = 4 and slave['slave_collar'] = 1:
+   slave_escape = 4
   END
  END 
 END
 
+!Added an extra chance for the slave to turn on her master and attack - crushboss
+IF slave['angst'] > 2 and slave['stamina'] > 3 and slave["gladiatrix"] > 3 and slave["obedience"] < 5 and slave["moral"] = 0 and slave["mood"] < 0 and master_supermacy < 2 and exam_in_progress = 0:
+	slave_attack = 1
+	slave_escape = 0
+END
+
+!Slave will not escape or attack with high obedience or devotion - crushboss
+IF slave["obedience"] > 7 or slave["moral"] > 1 or slave["instinct"] > 3:
+	slave_escape = 0
+	slave_attack = 0
+END
+
 !slave cannot escape during exam in training mode
+!slaves will heal from wounds in tutorial mode since there is no medical center to visit - crushboss
+!slaves will recover from negative energy in tutorial mode - crushboss
 IF exam_in_progress = 1:
  slave_escape = 0
+ if slave_rate["wounds"] > 0: slave_rate["wounds"] += slave["stamina"] + 2
+ if slave["energy"] < 0: slave["energy"] += 1
+ if slave["energy"] < 0 and slave["stamina"] > 3: slave["energy"] += 1
 END
 
 a = slave['ego'] + slave['custom']
@@ -170,13 +187,16 @@ IF slave['angst'] > a:
 END
 
 !Bull Ring enhancement - crushboss
-if bull_ring_on = 1 and master_energy < 0: master_energy = 0
+if bull_ring_on = 1 and master_energy < 1: master_energy = 1
 
 !No free time if energy is 0 or less - crushboss
 if slave["energy"] <= 0: free_time = 0
 
+!Decrease Fiend Milking count by one each day - crushboss
+if spawn_milked > 0: spawn_milked -= 1
+
 !Slave Cook rule
-IF slave_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and slave["energy"] > 0 and slave["obedience"] > slave["pride"] and slave_state = CONST_INT['slave_exist']:
+IF slave_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and slave["energy"] > 0 and slave_state = CONST_INT['slave_exist']:
  slave_auto_cook = 1
  cooked_food = slave["cook"]
  slave_rate["cook"] += 1
@@ -192,7 +212,7 @@ IF slave_tentacle_rule = 1 and pet_tentacle > 0  and slave["energy"] >= 0 and sl
   slave_rate["hygiene"] += 20
   tentacle_hp += 2
   IF slave["sub_tentacles"] > tentacle_size: 
-   spawn_milked = 1
+   spawn_milked = 2
    tentacle_state = 2
    tentacle_hp += 2
    spawn_semen += semen_gain[tentacle_size]
@@ -215,7 +235,7 @@ IF slave["energy"] >= 0 and slave_washes_rule = 1 and master_hygiene > 0 and bat
 END
 
 !Slave Clean rule
-IF slave_cleans_rule = 1 and house_mess > 1 and slave["energy"] > 0 and slave["obedience"] > slave["pride"] and slave_state = CONST_INT['slave_exist']:
+IF slave_cleans_rule = 1 and house_mess > 1 and slave["energy"] > 0 and slave_state = CONST_INT['slave_exist']:
  slave_auto_clean = 1
  slave_rate["service"] += 1
  house_mess_rate = 0  
@@ -254,7 +274,9 @@ slave["energy"] += slave_well_rested
 if slave["energy"] > 5: slave["energy"] = 5
 slave_well_rested = 0
 
-!independent assistant actions
+!Independent assistant actions
+
+!Assistant Cooks Rule
 IF assistant_cooks_rule = 1 and cooked_food <= 0 and kitchen > 0 and assistant["energy"] > 0:
  assistant_auto_cook = 1
  cooked_food = assistant["cook"]
@@ -271,7 +293,7 @@ IF assistant_tentacle_rule = 1 and pet_tentacle > 0 and assistant["energy"] >= 0
   assistant_rate["hygiene"] += 20
   tentacle_hp += 2
   IF assistant["sub_tentacles"] > tentacle_size: 
-   spawn_milked = 1
+   spawn_milked = 2
    tentacle_state = 2
    tentacle_hp += 2
    spawn_semen += semen_gain[tentacle_size]
@@ -279,12 +301,12 @@ IF assistant_tentacle_rule = 1 and pet_tentacle > 0 and assistant["energy"] >= 0
  END 
 END
 
-!Tentacle state - milked or needs milking
+!Tentacle state - milked or needs milking - crushboss
 IF pet_tentacle = 0:
  tentacle_state = 0
  else
  if spawn_milked = 0: tentacle_state = 1
- if spawn_milked = 1: tentacle_state = 2
+ if spawn_milked > 0: tentacle_state = 2
 END
 
 !Assistant washes master - Bath Rule - Assistant
@@ -322,7 +344,9 @@ IF assistant_cleans_rule = 1 and house_mess > 1 and assistant["energy"] > 0:
  assistant["energy"] -= 1
 END
 
-!Master will make a meal if no one else does so he eats well
+!Independent Master Rules - crushboss
+
+!Master will make a meal if no one else does so he eats well - crushboss
 IF master_energy >= 0 and cooked_food <= 0 and kitchen > 0:
  master_auto_cook = 1
  $interaction_type = 'special' 
@@ -336,8 +360,8 @@ IF master_energy >= 0 and cooked_food <= 0 and kitchen > 0:
  npc = 0
 END
 
-!Master will clean the house if no one else does and it is really messy
-IF master_energy > 0 and house_mess > 3:
+!Master will clean the house if no one else does and it is really messy - crushboss
+IF master_energy >= 0 and (house_mess > 3 or house_mess_rate >= 60):
  master_auto_clean = 1
  $interaction_type = 'special' 
  master_butler_rate += 1
@@ -478,11 +502,12 @@ gs '$mod_global_drop', 1
 
 if raven_crown_on = 1: auspex = 1
 
-!Slave wakes up from fainting if not dead or starving - slave can recover from stamina loss - crushboss
+!Slave wakes up from fainting / pass_out / unconscious if not dead or starving - slave can recover from stamina loss - crushboss
 if slave_state = CONST_INT['slave_faint'] and slave["fat"] > 0 and slave['starvation'] < 10: slave_rate["stamina"] += 1
-IF slave_state ! CONST_INT['no_exist'] and slave["stamina"] < 1 and (master_medic > 3 or assistant['nurse'] > 3):
- if slave_rate["stamina"] < -5: slave_rate["stamina"] = -5
+IF slave_state ! CONST_INT['no_exist'] and slave["stamina"] < 2 and slave['starvation'] < 10 and (master_medic > 3 or assistant['nurse'] > 3):
  slave_rate["stamina"] += 2
+ elseif slave_state ! CONST_INT['no_exist'] and slave["stamina"] < 2 and slave['starvation'] < 5:
+ slave_rate["stamina"] += 1
 END
 IF slave_state = CONST_INT['slave_faint'] and slave["stamina"] > 0:
  slave_state = CONST_INT['slave_exist']
@@ -491,6 +516,22 @@ IF slave_state = CONST_INT['slave_faint'] and slave["stamina"] > 0:
   slave_rate["stamina"] = 0
  END
  slave["energy"] = -4
+END
+
+!Assistant wakes up from fainting / pass_out / unconscious if not dead or starving - assistant can recover from stamina loss - crushboss
+if assistant_state = CONST_INT['slave_faint'] and assistant["fat"] > 0 and assistant['starvation'] < 10: assistant_rate["stamina"] += 1
+IF assistant_state ! CONST_INT['no_exist'] and assistant["stamina"] < 2 and assistant['starvation'] < 10 and (master_medic > 3 or assistant['nurse'] > 3):
+ assistant_rate["stamina"] += 2
+ elseif assistant_state ! CONST_INT['no_exist'] and assistant["stamina"] < 2 and assistant['starvation'] < 5:
+ assistant_rate["stamina"] += 1
+END
+IF assistant_state = CONST_INT['slave_faint'] and assistant["stamina"] > 0:
+ assistant_state = CONST_INT['slave_exist']
+ IF assistant["stamina"] > 1:
+  assistant["stamina"] -= 1
+  assistant_rate["stamina"] = 0
+ END
+ assistant["energy"] = -4
 END
 
 !slave part
@@ -526,29 +567,77 @@ IF slave["energy"] < 4 and slave_state ! CONST_INT['no_exist']:
  daily_bonus["instinct"] = 0
  daily_bonus["rational"] = 0
  daily_bonus["custom"] = 0
- 
+
  !Slave age count daily increase for keeping track of how long you''ve owned the slave - crushboss
+ if slave['age_count'] < 0: slave['age_count'] = 0
  if slave_state = CONST_INT['slave_exist']: slave['age_count'] += 1
  if slave_state = CONST_INT['no_exist']: slave['age_count'] = 0
  if assistant_state = 1: assistant['age_count'] += 1
  if assistant_state ! 1 and assistant['age_count'] > 0: assistant['age_count'] = 0
- if prisoner > 0: prisoner['age_count'] += 1
- if prisoner = 0 and prisoner['age_count'] > 0: prisoner['age_count'] = 0
+ if prisoner_state > 0: prisoner['age_count'] += 1
+ if prisoner_state = 0 and prisoner['age_count'] > 0: prisoner['age_count'] = 0
  
  !Obedience difficult daily decrease - crushboss 
- if slave_state = CONST_INT['slave_exist'] and slave['obedience_difficulty'] > 6: slave['obedience_difficulty'] -= 1
- if assistant_state = 1 and assistant['obedience_difficulty'] < 6: assistant['obedience_difficulty'] = 6
- if slave_state = CONST_INT['no_exist']: slave['obedience_difficulty'] = 14
- if assistant_state ! 1: assistant['obedience_difficulty'] = 14
-
+ IF slave_state = CONST_INT['slave_exist'] and difficulty_setting = 2:
+	if slave["moral"] > 2 and slave['obedience_difficulty'] > 6: slave['obedience_difficulty'] = 6
+	IF slave['obedience_difficulty'] > 6:
+		slave['obedience_difficulty'] -= 1
+	elseif slave['obedience_difficulty'] < 6:
+		slave['obedience_difficulty'] += 1
+	END
+ END
+ IF assistant_state = CONST_INT['slave_exist'] and difficulty_setting = 2:
+	if assistant["moral"] > 2 and assistant['obedience_difficulty'] > 6: assistant['obedience_difficulty'] = 6
+	IF assistant['obedience_difficulty'] > 6:
+		assistant['obedience_difficulty'] -= 1
+	elseif assistant['obedience_difficulty'] < 6:
+		assistant['obedience_difficulty'] += 1
+	END
+ END
+ IF prisoner_state = CONST_INT['slave_exist'] and difficulty_setting = 2:
+	if prisoner["moral"] > 2 and prisoner['obedience_difficulty'] > 6: prisoner['obedience_difficulty'] = 6
+	IF prisoner['obedience_difficulty'] > 6:
+		prisoner['obedience_difficulty'] -= 1
+	elseif prisoner['obedience_difficulty'] < 6:
+		prisoner['obedience_difficulty'] += 1
+	END
+ END
+ 
  !Raise interest to the slave
  if slave_state = CONST_INT['slave_exist']: slave['newness'] += 1 + charm/6
  if assistant_state > 0: assistant['newness'] += 1 + assistant_charm/6
 !End of energy check - this END statement is needed - do not remove - crushboss
 END
 
+if slave_state = CONST_INT['no_exist']: slave['obedience_difficulty'] = 14
+if assistant_state = CONST_INT['no_exist']: assistant['obedience_difficulty'] = 14
+
+!daily bonuses for the assistant - added by crushboss
+IF slave["energy"] < 4 and assistant_state = 1:
+ !Added code to handle item bonuses for the assistant - crushboss
+ assistant_rate["stamina"] += daily_bonus_assistant["stamina"]
+ assistant_rate["sensitivity"] += daily_bonus_assistant["sensitivity"]
+ assistant_rate["temper"] += daily_bonus_assistant["temper"]
+ assistant_rate["intellect"] += daily_bonus_assistant["intellect"]
+ assistant_rate["ego"] += daily_bonus_assistant["ego"]
+ assistant_rate["pride"] += daily_bonus_assistant["pride"]
+ assistant_rate["instinct"] += daily_bonus_assistant["instinct"]
+ assistant_rate["rational"] += daily_bonus_assistant["rational"]
+ assistant_rate["custom"] += daily_bonus_assistant["custom"]
+ daily_bonus_assistant["stamina"] = 0
+ daily_bonus_assistant["sensitivity"] = 0
+ daily_bonus_assistant["temper"] = 0
+ daily_bonus_assistant["intellect"] = 0
+ daily_bonus_assistant["ego"] = 0
+ daily_bonus_assistant["pride"] = 0
+ daily_bonus_assistant["instinct"] = 0
+ daily_bonus_assistant["rational"] = 0
+ daily_bonus_assistant["custom"] = 0
+END
+
 !lactation
 slave['milk_gain'] = 0
+slave['cream_gain'] = 0
 IF slave['lactation'] > 0:
  slave['milk_gain'] = slave["boobs"] + slave["stamina"] - 3 + slave['mood'] - slave['angst']
  if slave['age'] = CONST_INT['milf_age']: slave['milk_gain'] += 2
@@ -646,7 +735,6 @@ IF slave["calories"] < 0 and slave["fat"] = 0:
 END
 
 !Chance of death due to no stamina and no stamina_rate - crushboss
-if slave["stamina"] = 0 and slave_rate["stamina"] <= 0: dynamic '$slave_pass_out'
 if prisoner_state = 1 and prisoner["stamina"] = 0 and prisoner_rate["stamina"] <= 0: prisoner_died = 1
 if prisoner_state = 1 and prisoner['starvation'] > 50: prisoner_died = 1
 
@@ -781,6 +869,7 @@ if slave['dipsomania'] >= slave['stamina']: slave_rate['stamina'] -= slave['dips
 
 IF slave['on_meth'] > 0:
  slave['on_meth'] = 0
+ slave['pos_slave_meth'] = 0
  if slave['meth_addiction'] > slave['stamina']: slave['neg_slave_meth'] = slave['meth_addiction']
  slave['meth_addiction'] += 1
  slave_rate['stamina'] -= 1
@@ -859,15 +948,23 @@ IF slave['parasite'] > 0:
  slave['parasite'] += 1
 END
 
-!Menstrual cycle and pregnancy
+!Menstrual cycle and pregnancy - slave - improved and fixed - crushboss
 IF slave["age"] = CONST_INT['loli_age']: slave['fertility'] = -2
-if slave['fertility'] < 0: slave['parasite'] = 0
-if slave['fertility'] < 0: slave['pregnant'] = 0
+IF slave['fertility'] < 0:
+	slave['parasite'] = 0
+	slave['pregnant'] = 0
+END
+IF assistant['fertility'] < 0:
+	assistant['parasite'] = 0
+	assistant['pregnant'] = 0
+END
+if slave['vaginal_modification'] = 4: slave['parasite'] = 0
+if assistant['vaginal_modification'] = 4: assistant['parasite'] = 0
 slave['cycle_day'] += 1
 if slave['cycle_day'] > 28: slave['cycle_day'] = 1
 IF slave['pregnant'] = 0: 
  IF slave["age"] ! CONST_INT['loli_age'] and slave_state ! CONST_INT['no_slave']:
-  slave['ovulation'] -= 1
+  if slave['ovulation'] > 0: slave['ovulation'] -= 1
   if slave['ovulation'] < 0: slave['ovulation'] = 0
   IF slave['cycle_day'] = 1:
    slave['neg_menstruation'] = 6 - slave['stamina']
@@ -877,10 +974,12 @@ IF slave['pregnant'] = 0:
  END
  ELSE
  slave['pregnant'] += 1 
- slave_rate['stamina'] -= 1 
+ slave_rate['stamina'] -= 1
+ if slave['pregnant'] > 0: slave['ovulation'] = 0 
 END
 
 !Egglaying - slave
+slave['egg_time'] = 0
 IF slave['pregnant'] > 3 and slave['fertility'] = 1:
  IF slave['eggs_to_lay'] = 0:
   virginity = 3
@@ -1103,16 +1202,13 @@ IF num_rules_broken > 0:
 END
 
 IF rules_broken = 1:
- sin_gained = max (1, slave["obedience"])
- if sin_gained > 5: sin_gained = 5
- IF sin_gained >= slave["virtue"]:
-  slave["virtue"] = 0
-  if sin_gained > slave["sin"]: slave["sin"] = sin_gained
-  if sententia_veritas = 1: slave["sin"] = 5
+ sin_potential = max (1, slave["obedience"])
+ dynamic $sin_gained_now
+ IF slave["sin"] > 1: 
   slave_rate["custom"] -= num_rules_broken
   slave_rate["instinct"] -= slave["temper"]
   slave_rate["rational"] -= slave["ego"]
- END 
+ END
  IF silence_rule = 1 and unenforced_silence_rule_broken = 1:
   slave_rate["expression"] += 1
   slave_rate["temper"] += 1
@@ -1371,12 +1467,25 @@ IF slave["fear"] > slave["custom"] and slave["fear"] > slave["ego"] and slave["f
  if slave["fear"] > slave["instinct"]: slave["neg_fear"] = 1
 END
 
+gs '$difficulty_setting'
+
 !Spoil increase if too many rewards are given out per day - slaves should not expect a reward every time they obey - crushboss
 if daily_reward_count > 2: slave_rate["spoil"] += (daily_reward_count * 5)
 
+!Spoil increase if not enough rules are enabled per day - slaves do not respect a master who does not expect them to follow any rules - crushboss
+if rules_count < 3: slave_rate["spoil"] += (slave["pride"] + slave["ego"] + slave["temper"])
+
+!Too high of spoiling causes obedience to fade - crushboss
+IF slave["spoil"] > 3:
+	slave_rate["custom"] -= 2
+	slave_rate["rational"] -= 2
+	slave_rate["instinct"] -= 2
+	slave_rate["moral"] -= 4
+END
+
 !lowering spoil - improved - crushboss
-if slave_rate["spoil"] > 0 or slave["spoil"] > 0: slave_rate["spoil"] -= (1 + slave["fear"] + slave["moral"] + slave["angst"])
-if (slave_rate["spoil"] > 0 or slave["spoil"] > 0) and slave["mood"] < 0: slave_rate["spoil"] -= slave["sensitivity"]
+if slave_rate["spoil"] > 0 or slave["spoil"] > 0 and rules_count > 2: slave_rate["spoil"] -= (1 + slave["fear"] + slave["moral"] + slave["angst"])
+if (slave_rate["spoil"] > 0 or slave["spoil"] > 0) and slave["mood"] < 0 and rules_count > 2: slave_rate["spoil"] -= slave["sensitivity"]
 if slave["spoil"] < 0: slave["spoil"] = 0
 if slave["spoil"] = 0 and slave_rate["spoil"] < -10: slave_rate["spoil"] = -10
 
@@ -1387,17 +1496,20 @@ if slave['moral'] > 0: slave['pos_moral'] = slave['moral']
 if slave['angst'] > 0: slave['neg_angst'] = slave['angst']
 if slave["spoil"] > 0 and slave["spoil"] > slave["mood"]: slave["neg_spoil"] = 1
 
+!Overhauled arousal calculation and modifiers - crushboss
 arousal_modifier = 0
-if slave["nymphomania"] > 0: arousal_modifier += slave["temper"] + slave["sensitivity"] + slave["mood"]
-if slave["nymphomania"] < 0: arousal_modifier -= slave["temper"] + slave["sensitivity"] + slave["mood"]
-if slave["nymphomania"] > -1: slave_rate["arousal"] += slave["moral"]
-slave_rate["arousal"] += slave["stamina"] + daily_bonus["arousal"] + slave["energy"] + slave["temper"] + slave["mood"] - 6 - slave["angst"] + arousal_modifier
-slave['pos_orgasm'] -= 1 + slave["arousal"]
- 
-a = slave['ego'] + slave['pride'] + rebell[$slave_psy_basic] - slave['pos_orgasm']
-if slave["arousal"] > 0 and a < 0: slave['neg_horny'] = 1
-if slave["nymphomania"] > 1: slave['neg_horny'] = 1
+if slave["nymphomania"] > 0: arousal_modifier += ((slave["temper"] + slave["sensitivity"] + slave["mood"])/2)
+if slave["nymphomania"] < 0: arousal_modifier -= ((slave["temper"] + slave["sensitivity"] + slave["mood"])/2)
+slave_rate["arousal"] += slave["stamina"] + daily_bonus["arousal"] + slave["energy"] + slave["temper"] + slave["mood"] + slave["moral"] + arousal_modifier - (6 + slave["angst"] + slave["pride"] + slave["fear"] + slave["spoil"]) 
+if slave["arousal"] > 5: slave["arousal"] = 5
+if slave_rate["arousal"] > 200: slave_rate["arousal"] = 200
+
+a = ((slave['pos_orgasm'] + slave['ego'] + slave['pride'] + slave['temper'] + slave['sensitivity'])/3)
+if slave["arousal"] > 0 and a < slave["arousal"]: slave['neg_horny'] = 1
+if slave["nymphomania"] > 1 and slave["arousal"] > 0: slave['neg_horny'] = 1
 if slave["nymphomania"] < 0: slave['neg_horny'] = 0
+if slave['pos_orgasm'] > 0: slave['pos_orgasm'] -= 1
+if slave['pos_orgasm'] < 0: slave['pos_orgasm'] = 0
 
 !Growing moral - i.e. Daily Devotion Bonus - improved - crushboss
 moral_app = min (slave["moral"], slave["custom"], slave["rational"], slave["instinct"])
@@ -1406,6 +1518,18 @@ IF slave["angst"] < 1 and slave["mood"] > 0 and moral_app = slave["moral"] and s
  moral_boost = min (slave["mood"], moral_basis)
  if moral_boost < 1: moral_boost = 1
  slave_rate["moral"] += moral_boost
+END
+
+!Training bonuses for easy obedience difficulty - crushboss
+IF difficulty_setting = 1:
+	moral_basis = ((master_str + master_domination + master_fighter + master_cha)/5)
+	if moral_basis < 1: moral_basis = 1
+	slave_rate["moral"] += moral_basis
+	slave_rate["custom"] += 1
+	slave_rate["rational"] += 1
+	slave_rate["instinct"] += 1
+	slave_rate["spoil"] -= 5
+	slave_rate["angst"] -= 5
 END
 
 daily_reward_count = 0
@@ -1554,6 +1678,7 @@ if prisoner['neg_prisoner'] < 0: prisoner['neg_prisoner'] = 0
 prisoner['neg_prisoner'] += 1  
 
 prisoner['milk_gain'] = 0
+prisoner['cream_gain'] = 0
 IF prisoner['lactation'] > 0:
  prisoner['milk_gain'] = prisoner["boobs"] + prisoner["stamina"] - 3 + prisoner['mood'] - prisoner['angst']
  if prisoner['age'] = CONST_INT['milf_age']: prisoner['milk_gain'] += 2
@@ -1655,7 +1780,7 @@ IF prisoner['parasite'] > 0:
  prisoner['parasite'] += 1
 END
 
-!Menstrual cycle and pregnancy
+!Menstrual cycle and pregnancy - prisoner - improved and fixed - crushboss
 IF prisoner["age"] = CONST_INT['loli_age']: prisoner['fertility'] = -2
 if prisoner['fertility'] < 0: prisoner['parasite'] = 0
 if prisoner['fertility'] < 0: prisoner['pregnant'] = 0
@@ -1663,7 +1788,7 @@ prisoner['cycle_day'] += 1
 if prisoner['cycle_day'] > 28: prisoner['cycle_day'] = 1
 IF prisoner['pregnant'] = 0: 
  IF prisoner["age"] ! CONST_INT['loli_age'] and prisoner_state = 1:
-  prisoner['ovulation'] -= 1
+  if prisoner['ovulation'] > 0: prisoner['ovulation'] -= 1
   if prisoner['ovulation'] < 0: prisoner['ovulation'] = 0
   IF prisoner['cycle_day'] = 1:
    prisoner['neg_menstruation'] = 6 - prisoner['stamina']
@@ -1673,8 +1798,11 @@ IF prisoner['pregnant'] = 0:
  ELSE
  prisoner['pregnant'] += 1 
  prisoner_rate['stamina'] -= 1
+ if prisoner['pregnant'] > 0: prisoner['ovulation'] = 0
 END
 
+!Egglaying - prisoner
+prisoner['egg_time'] = 0
 IF prisoner['pregnant'] > 3 and prisoner['fertility'] = 1:
  IF prisoner['eggs_to_lay'] = 0:
   a = RAND (3,6)
@@ -1715,9 +1843,9 @@ IF prisoner["sin"] > 0: prisoner["sin"] = 0
 prisoner_rate["mood"] += prisoner["moral"] + (prisoner["stamina"] - 3) + prisoner["energy"] - prisoner["arousal"] - prisoner["fear"] - prisoner["spoil"] - prisoner["angst"] - prisoner["hygiene"] - 5 - prisoner["mood"]
 
 arousal_modifier = 0
-if prisoner["nymphomania"] > 0: arousal_modifier += prisoner["temper"] + prisoner["sensitivity"] + prisoner["mood"]
-if prisoner["nymphomania"] < 0: arousal_modifier -= prisoner["temper"] + prisoner["sensitivity"] + prisoner["mood"]
-prisoner_rate["arousal"] += (prisoner["stamina"] - 3) + prisoner["energy"] + prisoner["temper"] + prisoner["sensitivity"] + prisoner["mood"] - prisoner["angst"] + arousal_modifier
+if prisoner["nymphomania"] > 0: arousal_modifier += ((prisoner["temper"] + prisoner["sensitivity"] + prisoner["mood"])/2)
+if prisoner["nymphomania"] < 0: arousal_modifier -= ((prisoner["temper"] + prisoner["sensitivity"] + prisoner["mood"])/2)
+prisoner_rate["arousal"] += (prisoner["stamina"] - 3) + prisoner["temper"] + prisoner["sensitivity"] + prisoner["mood"] - prisoner["angst"] + arousal_modifier
 
 !Angst does the dirty work
 if $prisoner_psy_status = 'depresive': prisoner_rate["angst"] += 2
@@ -1777,6 +1905,7 @@ if assistant_state ! 0: total_food_cost += assistant_food_cost
 
 !Assistant lactation - fixed - crushboss
 assistant['milk_gain'] = 0
+assistant['cream_gain'] = 0
 IF assistant['lactation'] > 0:
  assistant['milk_gain'] = assistant["boobs"] + assistant["stamina"] + assistant['mood'] - 3
  if assistant['age'] = CONST_INT['milf_age']: assistant['milk_gain'] += 2
@@ -1829,7 +1958,7 @@ IF assistant['parasite'] > 0:
  assistant['parasite'] += 1
 END
 
-!Menstrual cycle and pregnancy
+!Menstrual cycle and pregnancy - assistant - improved and fixed - crushboss
 IF assistant["age"] = CONST_INT['loli_age']: assistant['fertility'] = -2
 if assistant['fertility'] < 0: assistant['parasite'] = 0
 if assistant['fertility'] < 0: assistant['pregnant'] = 0
@@ -1837,19 +1966,22 @@ assistant['cycle_day'] += 1
 if assistant['cycle_day'] > 28: assistant['cycle_day'] = 1
 IF assistant['pregnant'] = 0: 
  IF assistant["age"] ! CONST_INT['loli_age'] and assistant_state = 1:
-  assistant['ovulation'] -= 1
+  if assistant['ovulation'] > 0: assistant['ovulation'] -= 1
   if assistant['ovulation'] < 0: assistant['ovulation'] = 0
   IF assistant['cycle_day'] = 1:
    assistant['neg_menstruation'] = 6 - assistant['stamina']
+   assistant_menstruation = 1
   END
   if assistant['cycle_day'] = 9: assistant['ovulation'] = 7
  END
  ELSE
  assistant['pregnant'] += 1 
- assistant_rate['stamina'] -= 1 
+ assistant_rate['stamina'] -= 1
+ if assistant['pregnant'] > 0: assistant['ovulation'] = 0
 END
 
 !Egglaying - assistant - fixed - crushboss
+assistant['egg_time'] = 0
 IF assistant['pregnant'] > 3 and assistant['fertility'] = 1:
  IF assistant['eggs_to_lay'] = 0:
   assistant_virginity = 3
@@ -1863,9 +1995,118 @@ IF assistant['pregnant'] > 3 and assistant['fertility'] = 1:
  if assistant_virginity < 2: assistant_virginity = 2  
 END
 
+!Obtain/reduce Angst - assistant - crushboss
+IF assistant["mood"] < 0:
+ angst_rise = 6 - assistant["sensitivity"] + assistant["mood"]
+ if angst_rise < 0: assistant_rate["angst"] += assistant["sensitivity"]
+ else
+ assistant_rate["angst"] -= ((assistant["moral"]*4) + (assistant["instinct"]*3) + (assistant["rational"]*2) + (assistant["custom"]*2))
+END
+
+!Angst does the dirty work - assistant
+if $assistant_psy_status = 'depresive': assistant_rate["angst"] += 3
+
+IF assistant["angst"] > 0:
+ assistant_rate["temper"] -= assistant["angst"]
+ assistant_rate["ego"] -= assistant["angst"]
+END
+
+a = assistant["stamina"] - assistant["wounds"]
+if a < 1 and master_medic > assistant["wounds"]: a = 1
+assistant["energy"] += a
+if assistant["energy"] > 5: assistant["energy"] = 5
+if assistant["energy"] < -5: assistant["energy"] = -5
+
+IF assistant["energy"] = -5 and assistant["stamina"] > 0:
+ assistant["energy"] = -4
+END
+
+IF assistant["angst"] > 0: 
+ gs '$mod_assistant_drop', assistant["angst"]
+ if assistant["angst"] > assistant["temper"]: assistant["neg_angst"] = assistant["angst"]
+END
+
+!Lowering fear - assistant - crushboss
+IF assistant["moral"] > assistant["fear"] and assistant["fear"] > 0 and assistant["mood"] > 0:
+ assistant["fear"] -= 1
+ assistant_rate["fear"] = 0
+ elseif assistant["moral"] > 0 and assistant["fear"] > 0 and assistant["mood"] > 0:
+ assistant_rate["fear"] -= (assistant["moral"]*10)
+END
+
+!Reduce the mood because of fear - assistant
+IF assistant["fear"] > assistant["custom"] and assistant["fear"] > assistant["ego"] and assistant["fear"] > assistant["pride"]:
+ if assistant["fear"] > assistant["instinct"]: assistant["neg_fear"] = 1
+END
+
+!lowering spoil - assistant - improved - crushboss
+if assistant_rate["spoil"] > 0 or assistant["spoil"] > 0: assistant_rate["spoil"] -= (1 + assistant["fear"] + assistant["moral"] + assistant["angst"])
+if (assistant_rate["spoil"] > 0 or assistant["spoil"] > 0) and assistant["mood"] < 0: assistant_rate["spoil"] -= assistant["sensitivity"]
+if assistant["spoil"] < 0: assistant["spoil"] = 0
+if assistant["spoil"] = 0 and assistant_rate["spoil"] < -10: assistant_rate["spoil"] = -10
+
+!counting arousal and mood - assistant
+assistant_rate["mood"] += assistant["moral"] + (assistant["stamina"] - 3) + assistant["energy"] + daily_bonus["mood"] - assistant["arousal"] - assistant["fear"] - assistant["spoil"] - assistant["angst"] - assistant["hygiene"] - (house_mess - 1) - assistant["mood"]
+
+if assistant['moral'] > 0: assistant['pos_moral'] = assistant['moral']
+if assistant['angst'] > 0: assistant['neg_angst'] = assistant['angst']
+if assistant["spoil"] > 0 and assistant["spoil"] > assistant["mood"]: assistant["neg_spoil"] = 1
+
+!Added arousal calculation and modifiers - assistant - crushboss
+arousal_modifier = 0
+if assistant["nymphomania"] > 0: arousal_modifier += ((assistant["temper"] + assistant["sensitivity"] + assistant["mood"])/2)
+if assistant["nymphomania"] < 0: arousal_modifier -= ((assistant["temper"] + assistant["sensitivity"] + assistant["mood"])/2)
+assistant_rate["arousal"] += assistant["stamina"] + daily_bonus_assistant["arousal"] + assistant["temper"] + assistant["mood"] + assistant["moral"] + arousal_modifier - (6 + assistant["angst"] + assistant["pride"] + assistant["fear"] + assistant["spoil"]) 
+if assistant["arousal"] > 5: assistant["arousal"] = 5
+if assistant_rate["arousal"] > 200: assistant_rate["arousal"] = 200
+
+a = ((assistant['pos_orgasm'] + assistant['ego'] + assistant['pride'] + assistant['temper'] + assistant['sensitivity'])/3)
+if assistant["arousal"] > 0 and a < assistant["arousal"]: assistant['neg_horny'] = 1
+if assistant["nymphomania"] > 1 and assistant["arousal"] > 0: assistant['neg_horny'] = 1
+if assistant["nymphomania"] < 0: assistant['neg_horny'] = 0
+if assistant['pos_orgasm'] > 0: assistant['pos_orgasm'] -= 1
+if assistant['pos_orgasm'] < 0: assistant['pos_orgasm'] = 0
+
+!Growing moral - i.e. Daily Devotion Bonus - assistant - crushboss
+moral_app = min (assistant["moral"], assistant["custom"], assistant["rational"], assistant["instinct"])
+IF assistant["angst"] < 1 and assistant["mood"] > 0 and moral_app = assistant["moral"] and assistant["spoil"] < 3 and assistant["fear"] < 5 and assistant["pride"] < 5:
+ moral_basis = ((assistant["custom"] + assistant["rational"] + assistant["instinct"])/3)
+ moral_boost = min (assistant["mood"], moral_basis)
+ if moral_boost < 1: moral_boost = 1
+ assistant_rate["moral"] += moral_boost
+END
+
+!Training bonuses for easy obedience difficulty - crushboss
+IF difficulty_setting = 1:
+	moral_basis = ((master_str + master_domination + master_fighter + master_cha)/5)
+	if moral_basis < 1: moral_basis = 1
+	assistant_rate["moral"] += moral_basis
+	assistant_rate["custom"] += 1
+	assistant_rate["rational"] += 1
+	assistant_rate["instinct"] += 1
+	assistant_rate["spoil"] -= 5
+END
+
+!brand effect - assistant
+if assistant['brand'] > 0: assistant_rate["custom"] += 1
+if assistant['brand'] = 3: assistant_rate["custom"] += 1
+
+!chance of dying at zero value health - assistant
+!base - 14% - min 6% max 20%
+IF assistant_state = 1 and assistant["stamina"] = 0:
+ dprob_max = 7
+! psy status affect the chance
+ if $assistant_psy_status = 'servile' or $assistant_psy_status = 'obedient': dprob_max = 16 
+ if $assistant_psy_status = 'soft' or $assistant_psy_status = 'optimistic': dprob_max = 9 
+ if $assistant_psy_status = 'broken': dprob_max = 5
+ death_prob = RAND (1,dprob_max)
+ IF death_prob = 5:
+  assistant_died = 1
+ END
+END
+
 !Normalize mood, arousal, and hygiene for assistant - crushboss
 IF assistant_state = 1:
- if assistant["mood"] ! 0: assistant_prev["mood"] = assistant["mood"]
  if assistant["mood"] < 2: assistant["mood"] = 2
  assistant_rate["mood"] += 5 + assistant["mood"]
  IF assistant_rate["mood"] >= 50:
@@ -1877,23 +2118,13 @@ IF assistant_state = 1:
   assistant_rate["mood"] = 0
  END
  if assistant["mood"] > 5: assistant["mood"] = 5
+ if assistant["mood"] < 0: assistant["mood"] = 0 & assistant_rate["mood"] = 0
 END
-IF assistant_state = 1:
- if assistant["arousal"] ! 0: assistant_prev["arousal"] = assistant["arousal"]
- assistant_rate["arousal"] += assistant["sensitivity"] + assistant["temper"]
- if assistant["arousal"] > 5: assistant["arousal"] = 5
- if assistant_rate["arousal"] > 200: assistant_rate["arousal"] = 200
-END
-IF assistant_state = 1 and assistant_washes_rule ! 1 and assistant_washe_slave_rule ! 1 and assistant["hygiene"] > 0 and bath > 0:
+
+IF assistant_state = 1 and assistant_washes_rule ! 1 and assistant_washe_slave_rule ! 1 and assistant["energy"] >= 0 and assistant["hygiene"] > 0 and bath > 0:
  assistant_rate["hygiene"] = 0
  assistant["hygiene"] = 0
 END
-
-!lowering spoil - assistant - improved - crushboss
-if assistant_rate["spoil"] > 0 or assistant["spoil"] > 0: assistant_rate["spoil"] -= (1 + assistant["fear"] + assistant["moral"] + assistant["angst"])
-if (assistant_rate["spoil"] > 0 or assistant["spoil"] > 0) and assistant["mood"] < 0: assistant_rate["spoil"] -= assistant["sensitivity"]
-if assistant["spoil"] < 0: assistant["spoil"] = 0
-if assistant["spoil"] = 0 and assistant_rate["spoil"] < -10: assistant_rate["spoil"] = -10
 
 !reset all that does not affect the assistant
 assistant["virtue"] = 0
@@ -1991,6 +2222,14 @@ IF (prisoner['pregnant'] > 0 and prisoner["pregnant_revealed"] = 0 and inventory
 END
 
 !Morning milking
+total_milk_gain = 0
+total_cream_gain = 0
+if slave['milk_gain'] < 0: slave['milk_gain'] = 0
+if assistant['milk_gain'] < 0: assistant['milk_gain'] = 0
+if prisoner['milk_gain'] < 0: prisoner['milk_gain'] = 0
+if slave['cream_gain'] < 0: slave['cream_gain'] = 0
+if assistant['cream_gain'] < 0: assistant['cream_gain'] = 0
+if prisoner['cream_gain'] < 0: prisoner['cream_gain'] = 0
 total_milk_gain = slave['milk_gain'] + assistant['milk_gain'] + prisoner['milk_gain']
 total_cream_gain = slave['cream_gain'] + assistant['cream_gain'] + prisoner['cream_gain']
 milk_summ += total_milk_gain
@@ -2014,6 +2253,10 @@ IF cream_summ >= 5:
 END
 
 !egg-laying
+total_eggs_gain = 0
+if slave['egg_time'] < 0: slave['egg_time'] = 0
+if assistant['egg_time'] < 0: assistant['egg_time'] = 0
+if prisoner['egg_time'] < 0: prisoner['egg_time'] = 0
 total_eggs_gain = slave['egg_time'] + assistant['egg_time'] + prisoner['egg_time']
 IF total_eggs_gain > 0:
  egg_time = 1
@@ -2031,14 +2274,46 @@ IF pet_tentacle > 0:
  END 
 END
 
+!Arousal check for end_day_screen event - crushboss
+IF slave["arousal"] > 4 and slave_state = CONST_INT['slave_exist'] and slave["obedience"] > 7 and master_supermacy > 0:
+	slave_beg_for_sex = 1
+  else
+	slave_beg_for_sex = 0
+END
+IF assistant["arousal"] > 4 and assistant_state = 1 and assistant["obedience"] > 7 and master_supermacy > 0:
+	assistant_beg_for_sex = 1
+  else
+	assistant_beg_for_sex = 0
+END
+
 txt_count = 1000
 txt = 1
 menu_form = 0
-!debug
-!msg 'master_ill = <<master_ill>>'
 
-!lillimerge: sententia_veritas disabling moved to here
+!Magic Spell Reset - moved out of $end_day_variable_reset to work with auto casting rules - crushboss
+auspex = 0
 sententia_veritas = 0
+sententia_veritas_casted = 0
+magna_magnifika = 0
+tremendio = 0
+cruciato = 0
+spell_adverto_servili = 0
+slave['domini_dictum'] = 0
+prisoner['domini_dictum'] = 0
+assistant['domini_dictum'] = 0
+
+!Lower rehabilitation time by one
+if slave['reabilitation'] > 0: slave['reabilitation'] -= 1
+if assistant['reabilitation'] > 0: assistant['reabilitation'] -= 1
+if prisoner['reabilitation'] > 0: prisoner['reabilitation'] -= 1
+if slave['reabilitation'] < 0: slave['reabilitation'] = 0
+if assistant['reabilitation'] < 0: assistant['reabilitation'] = 0
+if prisoner['reabilitation'] < 0: prisoner['reabilitation'] = 0
+
+!Reset tasks already performed 
+killvar 'already_done_today'
+
+if raven_crown_on = 1: auspex = 1
 
 !loss condition in tutorial if slave is killed
 IF exam_in_progress = 1:
@@ -2598,9 +2873,14 @@ IF barn_pig = 1 AND pig['fat'] = 5 AND barn_farmhand = 1 AND barn_farmhand_slaug
  barn_pig_profit += mince_gain + meat_gain*2 + virgin_meat_gain*4
 END
 
-spawn_milked = 0
+!Post Patrician Quest - Daily Quest Handling - crushboss
+if active[$quest[12]] = 1: gs 'quest12'
+
 end_of_the_day = 1
 if rules_broken = 1: rules_broken_message = 1
+
+!Save current interior settings - crushboss
+gs 'interior_storage'
 
 GT 'end_day_screen'
 

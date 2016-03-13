@@ -41,7 +41,7 @@ $secondary_stt += '<<$master_fetish[master_fetish]>><br>'
 
 *p '<div id = "confirm_box"><a href = ''EXEC: dynamic $name_and_start''><img src = "content\pic\buttons\approve_small.png"></a></div>'
 
-*p '<div id = "scroll_forward"><a href = ''EXEC: dynamic $scroll_heroes''><img src = "content\pic\buttons\forward_button.png"></a></div>'
-*p '<div id = "scroll_back"><a href = ''EXEC: dynamic $scroll_heroes_back''><img src = "content\pic\buttons\back_button.png"></a></div>'
+*p '<div id = "scroll_forward"><a href = ''EXEC: gs "init_story_mode" & dynamic $scroll_heroes''><img src = "content\pic\buttons\forward_button.png"></a></div>'
+*p '<div id = "scroll_back"><a href = ''EXEC: gs "init_story_mode" & dynamic $scroll_heroes_back''><img src = "content\pic\buttons\back_button.png"></a></div>'
 --- hero_description ---------------------------------
 

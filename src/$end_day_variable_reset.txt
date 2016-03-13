@@ -63,12 +63,14 @@ compassion = 0
 sensitivity_threshold = 6
 
 npc = 0
+skip_to = 0
+multiple = 0
+city_form = 0
 city_random_event = 0
 stock_sold = 0
 stock_pending = 0
 auction_phase = 0
 haggling_stage = 0
-sl_txt = 0
 menu_form = 0
 starvation_warning = 0
 
@@ -79,6 +81,7 @@ flattering = 0
 everlasting = 0
 
 sex_acceptance = 0
+sex_acceptance_assistant = 0
 erotic_stimulation = 0
 final_stimulation = 0
 ejaculation_intensity = 0
@@ -137,28 +140,97 @@ angst_rise = 0
 moral_app = 0
 moral_basis = 0
 moral_boost = 0
+arousal_modifier = 0
 slave_fights_back = 0
 
 res = 0
 diligence = 0
+complex_diligence = 0
+virtue_gained = 0
+show_slave_fullimage = 0
+show_assistant_fullimage = 0
+sin_potential = 0
+previous_slave_sin = 0
+previous_slave_virtue = 0
+sin_gain = 0
+sin_gained = 0
+slave_beg_for_sex = 0
+assistant_beg_for_sex = 0
+fog_battle = 0
+slave["gladiatrix_contest"] = 0
+assistant["gladiatrix_contest"] = 0
+gladiatrix_contest_count = 1
+arena_mode = 0
 
 $special_part = ''
-$special_bg = ''   
-$special_text = ''
+$special_bg = ''
 $place = ''
-
-sententia_veritas = 0
-magna_magnifika = 0
-cruciato = 0
-slave['domini_dictum'] = 0
-prisoner['domini_dictum'] = 0
-assistant['domini_dictum'] = 0
 
 slave_exhaustion_fainted = 0
 slave_nearly_fainted = 0
 slave_stamina_fainted = 0
+assistant_exhaustion_fainted = 0
+assistant_nearly_fainted = 0
+assistant_stamina_fainted = 0
+
+faction_purchase_kamira = 0
+faction_purchase_serpis = 0
+faction_purchase_taurus = 0
+faction_purchase_korvus = 0
+faction_purchase_neutral = 0
+
+slave['on_opium'] = 0
+slave['pos_slave_opium'] = 0
+slave['on_meth'] = 0
+slave['pos_slave_meth'] = 0
+slave['on_alco'] = 0
+slave['pos_slave_alco'] = 0
+slave['pos_slave_kannabis'] = 0
+slave['koffed'] = 0
+slave['pos_slave_koffe'] = 0
+
+assistant['on_opium'] = 0
+assistant['pos_slave_opium'] = 0
+assistant['on_meth'] = 0
+assistant['pos_slave_meth'] = 0
+assistant['on_alco'] = 0
+assistant['pos_slave_alco'] = 0
+assistant['pos_slave_kannabis'] = 0
+assistant['koffed'] = 0
+assistant['pos_slave_koffe'] = 0
+
+prisoner['on_opium'] = 0
+prisoner['pos_slave_opium'] = 0
+prisoner['on_meth'] = 0
+prisoner['pos_slave_meth'] = 0
+prisoner['on_alco'] = 0
+prisoner['pos_slave_alco'] = 0
+prisoner['pos_slave_kannabis'] = 0
+prisoner['koffed'] = 0
+prisoner['pos_slave_koffe'] = 0
+
+slave["beaten"] = 0
+prisoner["beaten"] = 0
+assistant["beaten"] = 0
+slave["massaged"] = 0
+prisoner["massaged"] = 0
+assistant["massaged"] = 0
+slave["tatoo_timeup"] = 0
+prisoner["tatoo_timeup"] = 0
+assistant["tatoo_timeup"] = 0
+slave['half_action'] = 0
+assistant['half_action'] = 0
+prisoner['half_action'] = 0
+master_half_action = 0
+master_massaged = 0
+master_spaed = 0
+master_erected = 0
+master_styled = 0
 
 killvar 'already_done_today'
+killvar 'already_gain_virtue'
+killvar 'already_gain_assistant'
+killvar 'already_gain_prisoner'
 killvar 'play_sound'
 killvar 'sex'
 killvar 'sex_num'
@@ -170,8 +242,16 @@ killvar 'already_sex_curslave'
 killvar 'суперудар_сделан'
 killvar '$text'
 killvar '$race_winner'
+killvar '$fight_return'
+killvar '$return_lock'
 
+sl_txt = 0
+sp_txt = 0
 $text = ''
+$special_text = ''
+$refuse_txt = ''
+$done_txt = ''
+$msg_txt = ''
 $text[0] = ''
 $text[1] = ''
 $text[2] = ''

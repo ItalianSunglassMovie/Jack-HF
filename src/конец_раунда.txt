@@ -111,6 +111,10 @@ IF i < количество_врагов:
    дух_врага[i] += нанесенный_вред[i]/2
    jump 'loop2'
   END
+  !Vatican Champion damage bug fix/hack - crushboss
+  IF challenge_type = 1 and $ge = 'champion_vatican' and нанесенный_вред[i] > 36:
+	нанесенный_вред[i] = RAND(10,24)
+  END
   здоровье_игрока -= нанесенный_вред[i] 
   выносливость_игрока -= нанесенный_вред[i] 
   дух_игрока -= нанесенный_вред[i]

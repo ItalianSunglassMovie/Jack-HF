@@ -1,0 +1,12 @@
+# $mod_assistant_drop
+!Decrease good moodlets of assistant
+n = arrsize('$assistant_good_mod')
+i = 0
+:loop
+i += 1
+$curmod = $assistant_good_mod[i]
+assistant['<<$curmod>>'] -= args
+
+if i < n: jump 'loop'
+--- $mod_assistant_drop ---------------------------------
+

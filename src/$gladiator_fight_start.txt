@@ -14,20 +14,17 @@ base_flagelation = slave['gladiatrix'] + slave["gladiatrix_affinity"]
 восприятие = slave['gladiatrix'] + slave["gladiatrix_affinity"]
 if slave["gladiatrix_affinity_revealed"] = 0: slave["gladiatrix_affinity_revealed"] = 1
 
-!reset vars - added lots of variables that were not being cleared and were causing bugs - crushboss
-gs '$combat_variable_reset'
-
 суперудар_сделан[1] = IIF(slave['gladiatrix'] > 2, 0, 1)
 
-!interface
-gs 'раскладка_бой'
-
-!Getting information about the player
+!Load Combat Database
 gs '#тексты_движка'
 gs '#противники'
 gs '#суперудары'
 gs '#боевые_предметы'
 gs '#dynamic'
+
+!Interface
+gs 'раскладка_бой'
 
 !For some reason I have to set this twice for it to work everytime - crushboss
 !Fixes slave and enemy portraits in battle - crushboss

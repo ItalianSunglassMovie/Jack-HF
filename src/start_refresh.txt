@@ -1,0 +1,547 @@
+# start_refresh
+!Start Refresh - fixes several bugs when the game reload the main Start menu
+!Created by crushboss
+
+if warning_pass = 0: killall
+
+usehtml = 1
+debug = 0
+sound_on = 1
+music_volume = 100
+sound_volume = 100
+
+SHOWOBJS 0
+SHOWACTS 0
+SHOWINPUT 0
+SHOWSTAT 0
+
+INTEGRATED_ACTIONS = 1
+HIDE_SCROLL_ARROWS = 1
+DISABLESCROLL = 1
+
+$FNAME = 'Consolas'
+
+$counter = '$counter'
+$onobjsel = '$objsel'
+
+!Reset Variables
+hero_choice = 0
+hero_points = 0
+sparks = 0
+master_str = 0
+master_str_rate = 0
+master_cha = 0
+master_cha_rate = 0
+master_style = 0
+master_style_rate = 0
+master_libido = 0
+master_libido_rate = 0
+master_tutor = 0
+master_tutor_rate = 0
+master_fighter = 0
+master_fighter_rate = 0
+master_butler = 0
+master_butler_rate = 0
+master_artdirector = 0
+master_artdirector_rate = 0
+master_medic = 0
+master_medic_rate = 0
+master_mage = 0
+master_mage_rate = 0
+master_torture = 0
+master_torture_rate = 0
+master_domination = 0
+master_domination_rate = 0
+master_bondage = 0
+master_bondage_rate = 0
+master_flagelation = 0
+master_flagelation_rate = 0
+master_petting = 0
+master_petting_rate = 0
+master_oral = 0
+master_oral_rate = 0
+master_penetration = 0
+master_penetration_rate = 0
+master_fetish = 0
+master_fetish_rate = 0
+master_excitement = 0
+master_excitement_rate = 0
+killvar '$sepia_ava_path'
+killvar '$clear_ava_path'
+killvar '$master_base_name'
+killvar '$hero_difficulty'
+killvar '$hero_description'
+killvar '$master_version_stats'
+killvar '$trainer_id'
+killvar '$base_slave_type'
+inventory['stethoscope'] = 0
+faction_fame['neutral'] = 0
+faction_fame['taurus'] = 0
+faction_fame['serpis'] = 0
+faction_fame['korvus'] = 0
+faction_fame['kamira'] = 0
+faction_purchase_kamira = 0
+faction_purchase_serpis = 0
+faction_purchase_taurus = 0
+faction_purchase_korvus = 0
+faction_purchase_neutral = 0
+killvar '$spm_learned'
+killvar '$master_spm'
+killvar '$estate'
+killvar '$starting_area'
+killvar 'estate_prestige'
+killvar 'estate_size'
+killvar 'estate_cost_main'
+killvar 'estate_cost_bouduar'
+killvar 'estate_cost_dungeon'
+killvar 'estate_cost_lab'
+killvar 'estate_location'
+killvar '$estate_study_name'
+killvar '$estate_study_location'
+killvar '$estate_bed_name'
+killvar '$estate_bed_location'
+killvar '$estate_bath_name'
+killvar '$estate_bath_location'
+killvar '$estate_bouduar_name'
+killvar '$estate_bouduar_location'
+killvar '$estate_kitchen_name'
+killvar '$estate_kitchen_location'
+killvar '$estate_dungeon_name'
+killvar '$estate_dungeon_location'
+killvar '$estate_lab_name'
+killvar '$estate_lab_location'
+lab = 0
+bouduar = 0
+dungeon = 0
+barn = 0
+bath = 0
+kitchen = 0
+pen = 0
+svine = 0
+arachnidSpider = 0
+polypusvermin = 0
+horse = 0
+dog = 0
+killvar '$dog_name'
+killvar '$study'
+killvar '$interior_study_large'
+killvar '$interior_study'
+killvar '$interior_study_info'
+killvar '$bg'
+killvar '$place_name'
+killvar '$place_location' 
+killvar '$place_info'
+killvar '$bed'
+killvar '$interior_bed_large'
+killvar '$interior_bed'
+killvar '$interior_bed_info'
+killvar '$bath'
+killvar '$interior_bath_large'
+killvar '$interior_bath'
+killvar '$interior_bath_info'
+killvar '$dungeon'
+killvar '$interior_dungeon_large'
+killvar '$interior_dungeon'
+killvar '$interior_dungeon_info'
+killvar '$kitchen'
+killvar '$interior_kitchen_large'
+killvar '$interior_kitchen'
+killvar '$interior_kitchen_info'
+killvar '$lab'
+killvar '$interior_lab_large'
+killvar '$interior_lab'
+killvar '$interior_lab_info'
+killvar '$bouduar'
+killvar '$interior_bouduar_large'
+killvar '$interior_bouduar'
+killvar '$interior_bouduar_info'
+master_wealth_target = 0
+master_wealth = 0
+brand_rate = 0
+плейт = 0
+бастард = 0
+катана = 0
+кинжал = 0
+стилет = 0
+тесак = 0
+фламберг = 0
+нагината = 0
+моргенштерн = 0
+трезубец = 0
+грейтекс = 0
+нагайка = 0
+кнут = 0
+шпага = 0
+бита = 0
+посох_огня = 0
+comfy_robes = 0
+fancy_suit = 0
+regal_suit = 0
+formal_suit = 0
+aketon = 0
+livery = 0
+medic_robes = 0
+wizard_robes = 0
+raven_crown = 0
+chimera_earring = 0
+snake_amulet = 0
+bull_ring = 0
+killvar '$master_wpn'
+killvar '$master_scnd'
+killvar '$master_cloth'
+killvar '$master_armor'
+killvar '$master_back_wpn'
+killvar '$master_left_wpn'
+killvar '$master_right_wpn'
+killvar '$master_arm_wpn'
+killvar '$master_leg_wpn'
+killvar '$master_head_gear'
+killvar '$master_earring'
+killvar '$master_amulet'
+killvar '$master_ring'
+raven_crown_on = 0
+chimera_gem_on = 0
+snake_amulet_on = 0
+bull_ring_on = 0
+item_supermacy_bonus = 0
+$master["prev_primary_wpn"] = ''
+$master["prev_secondary_wpn"] = ''
+$slave["prev_primary_wpn"] = ''
+$slave["prev_secondary_wpn"] = ''
+$assistant["prev_primary_wpn"] = ''
+$assistant["prev_secondary_wpn"] = ''
+killvar 'frige'
+killvar 'lab_store'
+killvar 'inventory'
+frige["vegetables"] = 0
+frige["flower"] = 0
+frige["spice"] = 0
+frige["cheese"] = 0
+frige["eggs"] = 0
+frige["milk"] = 0
+frige["cream"] = 0
+frige["mince"] = 0
+frige["meat"] = 0
+frige["alcohol"] = 0
+frige["virgin_meat"] = 0
+spawn_semen = 0
+lab_store["slime"] = 0
+lab_store["kanabis"] = 0
+lab_store["koffe"] = 0
+lab_store["meth"] = 0
+lab_store["opium"] = 0
+вакхический_нектар = 0
+тонизируюзщий_эликсир = 0
+целительный_бальзам = 0
+приворотное_зелье = 0
+мощный_афодизиак = 0
+вода_леты = 0
+inventory['deprivation_suit'] = 0
+inventory['vaginal_balls'] = 0
+inventory['anal_plug'] = 0
+inventory['secure_gag'] = 0
+inventory['chastity_belt'] = 0
+inventory['pissuar_stable'] = 0
+inventory['toilet_stable'] = 0
+inventory['stethoscope'] = 0
+vibrator = 0
+killvar '$quest'
+slave = 0
+slave["nul"] = 0
+slave_name = ''
+slave_sleep_condition = 0 
+slave_food_type = 0
+slave_eats_remains = 0
+slave_ration = 0
+slave_food_portion = 0
+vitamin = 0
+silence_rule = 0
+master_rule = 0
+rule_masturbation = 0
+orgasm_prohibited = 0
+shit_prohibited = 0
+pet_rule = 0
+blowjob_rule = 0
+pissuar_rule = 0
+toilet_rule = 0
+slave_cleans_rule = 0
+slave_cooks_rule = 0
+slave_washes_rule = 0
+slave_tentacle_rule = 0
+slave_account_rule = 0
+v_balls_rule = 0
+force_rules = 0
+rules_broken = 0
+prise_promised = 0
+prise_level = 0
+prise_potence = 0
+prise_cost = 0
+prise_succes = 0
+slave_fights_back = 0
+gift_promised = 0
+slave["pain_treat"] = 0
+slave["virtue"] = 0
+slave["sin"] = 0
+slave['brand'] = 0
+slave['has_ride_win'] = 0
+slave['arena_level'] = 0
+slave['c1done'] = 0
+slave['c2done'] = 0
+slave['c3done'] = 0
+slave['c4done'] = 0
+$slave["trademark_style"] = ''
+$g_type = ''
+superviser_message = 0
+challenge_type = 0
+tattoo_brand = 0
+abandon_treat = 0
+death_treat = 0
+preset = 0
+slave['on_love_drug'] = 0
+date_succes = 0
+succes = 0
+angst_rise = 0
+moral_app = 0
+moral_basis = 0
+moral_boost = 0
+slave_fights_back = 0
+slave_escape = 0
+slave_attack = 0
+menstruation = 0
+slave_suicide = 0
+slave_died = 0
+rules_broken_message = 0
+rules_broken_sin = 0
+res = 0
+diligence = 0
+virtue_gained = 0
+show_slave_fullimage = 0
+sin_potential = 0
+previous_slave_sin = 0
+previous_slave_virtue = 0
+repulse = 0
+complex_repulse = 0
+cheer_effect = 0
+cheer_rate = 0
+reasoning_effect = 0
+reasoning_rate = 0 
+sin_gained = 0
+slave_well_rested = 0
+free_time = 0
+rules_count = 0
+daily_reward_count = 0
+rules_broken = 0
+num_rules_broken = 0
+num_rules_wanttobreak = 0
+slave_will_masturbate = 0
+slave_masturbating_anyway = 0
+silence_rule_res = 0
+master_rule_res = 0
+shit_prohibited_res = 0
+pet_rule_res = 0
+blowjob_rule_res = 0
+pissuar_rule_res = 0
+toilet_rule_res = 0
+v_balls_rule_res = 0
+slave['age_count'] = 0
+iwanttobreakbutcant_silence_rule = 0
+iwanttobreakbutcant_master_rule = 0
+iwanttobreakbutcant_shit_prohibited = 0
+iwanttobreakbutcant_pet_rule = 0
+iwanttobreakbutcant_blowjob_rule = 0
+iwanttobreakbutcant_pissuar_rule = 0
+iwanttobreakbutcant_toilet_rule = 0
+iwanttobreakbutcant_v_balls = 0
+unenforced_silence_rule_broken = 0
+unenforced_master_rule_broken = 0
+unenforced_shit_prohibited_broken = 0
+unenforced_pet_rule_broken = 0
+unenforced_blowjob_rule_broken = 0
+unenforced_pissuar_rule_broken = 0
+unenforced_toilet_rule_broken = 0
+unenforced_v_balls_rule_broken = 0
+shameful = 0
+painful = 0
+disgusting = 0
+lesbian = 0
+darkness = 0
+bloody = 0
+fire_based = 0
+water_based = 0
+vermin_based = 0
+deprivation = 0
+abuse = 0	
+compassion = 0
+sensitivity_threshold = 0
+starvation_warning = 0
+comforting = 0
+sweet = 0
+luxury = 0
+flattering = 0
+everlasting = 0
+sex_acceptance = 0
+erotic_stimulation = 0
+final_stimulation = 0
+ejaculation_intensity = 0
+sex_ability = 0
+sex_quality = 0
+orgastic = 0
+orgasm_description = 0    
+talent_bonus = 0
+torture_skill = 0
+torture_intensity = 0
+fear_force = 0
+fear_rised = 0
+fear_resistance = 0
+riser = 0
+rise_difficulty = 0
+rise_modifer = 0
+slave_power = 0
+master_power = 0
+damage = 0
+bruising = 0
+scarification = 0
+noresist = 0
+futile_threat = 0
+easy_for_master = 0
+slave_exhaustion_fainted = 0
+slave_nearly_fainted = 0
+slave_stamina_fainted = 0
+sententia_veritas = 0
+sententia_veritas_casted = 0
+tremendio = 0
+magna_magnifika = 0
+cruciato = 0
+slave_beg_for_sex = 0
+killvar 'slave'
+killvar '$slave' 
+killvar 'slave_rate'
+killvar 'slave_'
+killvar 'slave_inventory'
+killvar '$slave_inventory'
+killvar 'slave_specialisation'
+killvar 'already_done_today'
+killvar 'already_done_curslave'
+killvar 'already_gain_virtue'
+killvar 'sex'
+killvar 'sex_done_today'
+killvar 'sex_done_thisperson'
+killvar 'today_sex_curslave'
+killvar 'already_sex_curslave'
+$slave["wpn"] = 'безоружный'
+$slave["armor"] = 'без_брони'
+$slave["scnd"] = ''
+$slave["back_wpn"] = ''
+$slave["left_wpn"] = ''
+$slave["right_wpn"] = ''
+$slave["arm_wpn"] = ''
+$slave["leg_wpn"] = ''
+$slave["cloth"] = 'голая'
+assistant_cleans_rule = 0
+assistant_cooks_rule = 0
+assistant_washes_rule = 0
+assistant_washe_slave_rule = 0
+assistant_supervise_rule = 0
+assistant_buy_vegetables = 0
+assistant_buy_flower = 0  
+assistant_buy_spice = 0
+assistant_buy_cheese = 0
+assistant_buy_alcohol = 0
+assistant_buy_eggs = 0
+assistant_buy_milk = 0
+assistant_buy_cream = 0
+assistant_buy_mince = 0
+assistant_buy_meat = 0
+assistant_account_rule = 0
+assistant_alchemist_rule = 0
+assistant_cleans_rule = 0
+assistant_cooks_rule = 0
+assistant_washes_rule = 0
+assistant_supervise_rule = 0
+assistant_alchemist_rule = 0
+get_initial_slave = 0
+custom_game = 0
+story_mode = 0
+sandbox_game = 0
+demo_game = 0
+patrician_mode_off = 0
+difficulty_setting = 0
+killvar '$master_ava'
+killvar '$master_ava_color'
+killvar '$master_name'
+flute = 0
+guitar = 0
+piano = 0
+cello = 0
+violin = 0
+exam_in_progress = 0
+release_notes_message = 0
+tattoo_brand = 0
+teach_stat_screen = 0
+master_stat_screen = 0
+slave_stat_screen = 0
+assistant_stat_screen = 0
+get_girl = 0
+assistant_aura = 0
+$text_display = ''
+$setting_display = ''
+$setting_display_c = ''
+$setting_display_c2 = ''
+$setting_display_r = ''
+$return_lock  = ''
+sp_txt = 0
+txt = 0
+txt_count = 0
+quest_description_mode = 0
+$special_age = ''
+get_new_slave = 0
+change_interior = 0
+interior_num = 0
+assistant_state = 0
+slave_state = 0
+prisoner_state = 0
+ui_style = 2
+killvar 'active'
+killvar '$place'
+day = 1
+decade = 0
+decadecount = 1
+ride_count = 1
+auction_count = 7
+gladi_count = 4
+slave_food_portion = 1
+cooked_food = -1
+
+!Fix blank screen bug - crushboss
+$assistant["wpn"] = 'безоружный'
+$assistant["armor"] = 'без_брони'
+$assistant["scnd"] = ''
+$assistant["back_wpn"] = ''
+$assistant["left_wpn"] = ''
+$assistant["right_wpn"] = ''
+$assistant["arm_wpn"] = ''
+$assistant["leg_wpn"] = ''
+$assistant["cloth"] = 'голая'
+
+!Fix blank screen bug - crushboss
+$slave["wpn"] = 'безоружный'
+$slave["armor"] = 'без_брони'
+$slave["cloth"] = 'голая' 
+
+!reset items that will be re-calculated further down in $newloc
+slave['slave_collar'] = 0
+slave['wig'] = 0
+assistant['slave_collar'] = 0
+assistant['wig'] = 0
+
+$music['ride'] = 'content\snd\race_master.mp3'
+$music['arena'] = 'content\snd\fight_arena.mp3'
+$music['girl'] = 'content\snd\fight_girl.mp3'
+$music['fight'] = 'content\snd\fight_master.mp3'
+$music['home'] = 'content\snd\home.mp3'
+$music['city'] = 'content\snd\city.mp3'
+$music['mainscreen'] = 'content\snd\mainscreen.mp3'
+
+
+--- start_refresh ---------------------------------
+

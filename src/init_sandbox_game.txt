@@ -12,7 +12,7 @@ master_style = 0
 master_libido = 0
 master_energy = 5
 
-master_tutor = 1
+master_tutor = 0
 master_fighter = 0
 master_butler = 0
 master_artdirector = 0
@@ -31,9 +31,18 @@ master_fetish = 0
 $estate = 'slum_house'
 $starting_area = 'Slum'
 
-custom_game = 0
+faction_fame['neutral'] = 1
+faction_fame['korvus'] = 1
+faction_fame['taurus'] = 1
+faction_fame['serpis'] = 1
+faction_fame['kamira'] = 1
+
 sandbox_game = 1
+custom_game = 0
+story_mode = 0
+demo_game = 0
 patrician_mode_off = 0
+difficulty_setting = 0
 
 $assistant["armor"] = 'без_брони'
 $slave["armor"] = 'без_брони'
@@ -41,8 +50,6 @@ $slave["armor"] = 'без_брони'
 $master_armor = 'эльчуга'
 $master_cloth = 'regal_suit'
 $master_right_wpn = 'шпага'
-faction_fame['taurus'] = 1
-faction_fame['serpis'] = 0
 
 --- init_sandbox_game ---------------------------------
 

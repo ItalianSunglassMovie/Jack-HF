@@ -1,0 +1,16 @@
+# interior_storage
+!Interior Storage - created by crushboss
+!Fixes bugs when restoring/reloading all the databases in the game
+
+previous_ui_style = ui_style
+previous_nsfw = nsfw
+
+$previous_study = $study
+$previous_bed = $bed
+if bath > 0: $previous_bath = $bath
+if dungeon > 0: $previous_dungeon = $dungeon
+if kitchen > 0: $previous_kitchen = $kitchen
+if lab > 0: $previous_lab = $lab
+if bouduar > 0: $previous_bouduar = $bouduar
+--- interior_storage ---------------------------------
+

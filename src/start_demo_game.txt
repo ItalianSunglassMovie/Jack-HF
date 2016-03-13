@@ -1,4 +1,14 @@
 # start_demo_game
+!Start Tutorial Game
+
+bath = 1
+kitchen = 1
+barn = 1
+dungeon = 0
+lab = 0
+
+gs 'demo_estate'
+
 $place = 'dungeon'
 
 slave_state = CONST_INT['slave_exist']
@@ -9,13 +19,9 @@ ride_count = 1
 auction_count = 7
 gladi_count = 4
 
-bath = 1
-kitchen = 1
-barn = 1
-dungeon = 0
 slave_food_portion = 1
 cooked_food = -1
-sparks = 600
+sparks = 800
 demo_game = 1
 
 ui_style = 1
@@ -50,7 +56,6 @@ trainer_slave_training_count['ling'] = -1
 trainer_slave_training_count['minosia'] = -1
 trainer_slave_training_count['rabban'] = -1
 trainer_slave_training_count['sheepherd'] = -1
-
 
 $choose = 'choose_slave'
 txt = 1

@@ -6,36 +6,36 @@ $master_ava_color = 'content\pic\master\master_noble.jpg'
 $master_name = 'Jack'
 hero_choice = 1
 
-master_str = 4
-master_cha = 4
-master_style = 4
-master_libido = 4
-master_energy = 5
+master_str = 0
+master_cha = 0
+master_style = 0
+master_libido = 0
+master_energy = 0
 
-master_tutor = 1
-master_fighter = 3
-master_butler = 3
-master_artdirector = 3
-master_medic = 3
-master_mage = 3
-master_torture = 3
-master_domination = 3
-master_bondage = 3
-master_flagelation = 3
+master_tutor = 0
+master_fighter = 0
+master_butler = 0
+master_artdirector = 0
+master_medic = 0
+master_mage = 0
+master_torture = 0
+master_domination = 0
+master_bondage = 0
+master_flagelation = 0
 
-master_petting = 3
-master_oral = 3
-master_penetration = 3
-master_fetish = 3
+master_petting = 0
+master_oral = 0
+master_penetration = 0
+master_fetish = 0
 
 !other settings
 stock_limit = 8
 
 bath = 1
 kitchen = 1
-dungeon = 1
-lab = 1
-library = 1
+dungeon = 0
+lab = 0
+library = 0
 barn = 0
 
 flute = 1
@@ -52,7 +52,6 @@ arachnidSpider = 0
 polypusvermin = 0
 
 cooked_food = -1
-sparks = 1000
 $защита[0] = 'блок'
 
 $суперудар[1] = ''
@@ -84,11 +83,17 @@ $slave["armor"] = 'без_брони'
 $estate = 'white_house'
 $starting_area = 'White Town'
 
-faction_fame['neutral'] = 1
+faction_fame['neutral'] = 0
 faction_fame['taurus'] = 0
 faction_fame['serpis'] = 0
 faction_fame['korvus'] = 0
 faction_fame['kamira'] = 0
+
+faction_purchase_kamira = 0
+faction_purchase_serpis = 0
+faction_purchase_taurus = 0
+faction_purchase_korvus = 0
+faction_purchase_neutral = 0
 
 vibrator = 1
 get_initial_slave = 1
@@ -138,6 +143,27 @@ isabella_met = 0
 slave_exhaustion_fainted = 0
 slave_nearly_fainted = 0
 slave_stamina_fainted = 0
+assistant_exhaustion_fainted = 0
+assistant_nearly_fainted = 0
+assistant_stamina_fainted = 0
+auspex = 0
+sententia_veritas = 0
+sententia_veritas_casted = 0
+magna_magnifika = 0
+cruciato = 0
+tremendio = 0
+auspex_auto_cast = 0
+sententia_auto_cast = 0
+magna_magnifika_auto_cast = 0
+silent_auto_cast = 0
+slave['domini_dictum'] = 0
+prisoner['domini_dictum'] = 0
+assistant['domini_dictum'] = 0
+release_notes_message = 0
+difficulty_setting = 0
+assistant['nude'] = 0
+$estate = ''
+gladiatrix_contest_count = 1
 
 !Chariot Defaults - crushboss
 heavy_frame = 1
@@ -158,10 +184,13 @@ active[$quest[1]] = 1
 active[$quest[3]] = 1
 active[$quest[11]] = 1
 
+ui_style = 2
 story_mode = 0
 custom_game = 0
 sandbox_game = 0
+demo_game = 0
 patrician_mode_off = 1
+difficulty_setting = 0
 
 --- init_game ---------------------------------
 

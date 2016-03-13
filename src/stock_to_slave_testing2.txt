@@ -38,28 +38,22 @@ slave_inventory['plain_headband'] = 1
 slave_inventory['golden_collar'] = 1
 slave_inventory['leather_collar'] = 1
 slave_inventory['spiked_collar'] = 1
-slave_inventory['sun_dress'] = 1
 slave_inventory['common_apron'] = 1
-slave_inventory['maid_dress'] = 1
-slave_inventory['nurse_dress'] = 1
 slave_inventory['enchanter_robe'] = 1
-slave_inventory['leotard'] = 1
-slave_inventory['chainmail_bikini'] = 1
 slave_inventory['laced_underwear'] = 1
 slave_inventory['bellydance'] = 1
-slave_inventory['leather_corset'] = 1
 slave_inventory['anal_tail'] = 1
 slave_inventory['exotic_wig'] = 1
 slave_inventory['pony_plume'] = 1
 slave_inventory['incrusted_earrings'] = 4
-slave_inventory['golden_collar'] = 1
-slave_inventory['leather_gloves'] = 1
 slave_inventory['ponygirl_harness'] = 1
 slave_inventory['nipple_chain'] = 1
 slave_inventory['high_heels'] = 1
 slave_inventory['high_boots'] = 1
 slave_inventory['hoofed_boots'] = 1
 slave_inventory['incrusted_ring'] = 4
+slave_inventory['belly_ring'] = 1
+slave_inventory['tongue_barbell'] = 1
 
 !Slave Makeup and Tattoos
 IF slave["age"] ! CONST_INT['loli_age']:
@@ -82,8 +76,8 @@ $slave["scnd"] = ''
 $slave["armor"] = 'плейт'
 $slave["right_wpn"] = 'катана'
 $slave["left_wpn"] = 'кинжал'
-$slave["back_wpn"] = 'фламберг'
-$slave["cloth"] = 'leather_corset'
+if slave_type ! 908: $slave["back_wpn"] = 'фламберг'
+$slave["cloth"] = 'sun_dress'
 
 !Slave Equipped Gear
 $slave["earrings"] = 'incrusted_earrings'
@@ -95,6 +89,8 @@ $slave["clitring"] = 'incrusted_earrings'
 $slave["boots"] = 'high_boots'
 $slave["ring_left"] = 'incrusted_ring'
 $slave["ring_right"] = 'incrusted_ring'
+$slave["naval"] = 'belly_ring'
+$slave["tongue"] = 'tongue_barbell'
 
 !Slave Rules
 slave_sleep_condition = 0

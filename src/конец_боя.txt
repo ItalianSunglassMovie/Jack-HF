@@ -1,8 +1,7 @@
 # конец_боя
 !WHEN FIGHT IS FINISHED WE WILL BE HERE
 arena_mode = 0
-!superb usage will reset if a master decent fighter
-if master_fighter > 2: killvar 'суперудар_сделан'
+killvar 'суперудар_сделан'
 
 !Information about the latest actions of the player and opponents
 $информация_о_бое = ''

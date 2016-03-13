@@ -73,7 +73,13 @@ $bg['class_sport'] = 'class_sport'
 !bic pics
 $bg['barn'] = 'barn'
 $bg['bills'] = 'bill_sheet'
-$bg['home_lux'] = 'study_large'
+$bg['home_lux'] = $interior_study_large[$study]
+$bg['bedroom_lux'] = $interior_bed_large[$bed]
+$bg['bathroom_lux'] = $interior_bath_large[$bath]
+$bg['dungeon_lux'] = $interior_dungeon_large[$dungeon]
+$bg['kitchen_lux'] = $interior_kitchen_large[$kitchen]
+$bg['lab_lux'] = $interior_lab_large[$lab]
+$bg['bouduar_lux'] = $interior_bouduar_large[$bouduar]
 $bg['city'] = 'city_large'
 $bg['white_city'] = 'white_city_large'
 $bg['market_large'] = 'market_large'
@@ -135,7 +141,7 @@ dynamic $pb_cycle, 'witch_shop', 'The Rarity Of Mystra', 'Quarter of the Outcast
 dynamic $pb_cycle, 'stasis_cell', 'Cryostatic cell', 'Your Home', 'You rented this highly convenient unit in the technosphere. Unfortunately, its maintenance costs a lot of sparks.'
 dynamic $pb_cycle, 'stasis_bank', 'Cryostatic store', 'Technosphere', 'This place was originally created for the military of Serpis House, who did not want to spend money on food and housing for their soldiers until they are busy. In order to free cells did not stand idle, Serpis House rents them to private customers. Stasis chambers used throughout Rome for the storage of products, they based on the same principle, but the maintenance of working cryocapsules outside technosphere is not cheap.'
 dynamic $pb_cycle, 'stasis_bank_2', 'Cryostatic center', 'Technosphere', ''
-dynamic $pb_cycle, 'hospital', 'Medical Center', 'Technosphere', 'In this high-tech medical center you can heal yourself or your slaves, and also this place offers a variety of bodily modifications, from the banal to the most exotic. In addition, the office staff acquires slaves for the position of nurses.'
+dynamic $pb_cycle, 'hospital', 'Medical Center', 'Technosphere', 'In this high-tech medical center you can heal yourself or your slaves, and also this place offers a variety of bodily modifications, from the banal to the most exotic. In addition, the office staff acquires slaves for the position of witchdoctor.'
 dynamic $pb_cycle, 'class_common', 'The Academy of St. Peter', 'Taurus Sector', ''
 dynamic $pb_cycle, 'class_magic', 'The Academy of St. Peter', 'Taurus Sector', ''
 dynamic $pb_cycle, 'class_music', 'The Academy of St. Peter', 'Taurus Sector', ''

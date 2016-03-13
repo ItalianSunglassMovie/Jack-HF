@@ -83,6 +83,12 @@ IF slave_state = CONST_INT['slave_faint']:
 </div>'
 END
 
+IF assistant_state = CONST_INT['slave_faint']:
+ *p '<div id = "assistant_short_ava"><img src = "<<$assistant["ava_gray"]>>.jpg"></div>'
+ *p '<div id = "assistant_short_stat">Unconscious
+</div>'
+END
+
 IF ui_style = 2:
  IF sound_on = 1:
   *p '<div id="sound_icon"><a href = "EXEC: sound_on = 0 & close all & gt curloc"><img src="content\pic\ui\grimdark\buttons\sound_on.png"></a></div>'  
@@ -105,8 +111,8 @@ IF ui_style = 2:
 END
 
 IF city_form = 1000:
- *p '<div style="position:absolute;top:525px;left:619px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
- *p '<div style="position:absolute;top:504px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
+ *p '<div style="position:absolute;top:725px;left:619px;font-family:Victoriana;"><img src = "content/pic/sound_setting.png"></div>'
+ *p '<div style="position:absolute;top:704px;left:640px;font-family:Victoriana;"><table><TR><TD style="width:130px"><font color="#FFD700" size="5">MUSIC:</font></TD><TD><a href = 1><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<music_volume>>%</font></center></TD><TD><a href = 2><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 3><img src="content/pic/buttons/close_button.png"></a></TD></TR>
 <TR><TD style="width:130px"><font color="#FFD700" size="5">SOUND:</font></TD><TD><a href = 4><img src="content/pic/buttons/Minus.png"></a></TD><TD><center><font color="#FFD700" size="5"><<sound_volume>>%</font></center></TD><TD><a href = 5><img src="content/pic/buttons/Plus.png"></a></TD><TD><a href = 6><img src="content/pic/buttons/close_button.png"></a></TD></TR></table></div>'
 END
 
@@ -162,7 +168,7 @@ END
 *p '<div id = "master_short_ava"><img src = "<<$master_ava>>"></div>'
 *p '<div id = "main_screen"><<$text_display>></div>'
 
-if sbros = 1:
+IF sbros = 1:
  sbros = 0
  gt 'city_menu_form'
 END
