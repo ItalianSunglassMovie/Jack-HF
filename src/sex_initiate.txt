@@ -300,10 +300,11 @@ if chimera_gem_on = 1: sex['pc_energy'] += 25
 IF chimera_gem_on = 1:
  master_excitement = 5
  master_excitement_rate = 200
- sex['pc_boner'] = master_excitement
- sex['base_boner'] = master_excitement
- pc_boner_plus = master_excitement
 END
+
+sex['pc_boner'] = master_excitement
+sex['base_boner'] = master_excitement
+pc_boner_plus = master_excitement
 
 IF sex['pc_boner'] <= 0:
  sex['pc_boner'] = 1
